@@ -61,45 +61,41 @@ export function SwipeStack({
 
   return (
     <div className="flex flex-col flex-1 min-h-0">
-      {/* Header: deck name + level tag + close button */}
-      <div className="flex items-center justify-between px-4 pt-4">
-        <div className="flex items-center gap-2">
-          <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">
+      {/* Header: deck name + progress + close — compact single row */}
+      <div className="flex items-center gap-3 px-4 pt-3 pb-1">
+        <div className="flex items-center gap-2 shrink-0">
+          <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">
             {deckName}
           </span>
           <span className="bg-primary/20 text-primary text-[10px] font-bold px-2 py-0.5 rounded-full">
-            Niveau {level}
+            N{level}
           </span>
         </div>
-        <button
-          onClick={() => router.push("/play")}
-          className="w-10 h-10 rounded-full bg-card flex items-center justify-center text-muted-foreground hover:bg-danger hover:text-white transition-colors shadow-sm"
-        >
-          ✕
-        </button>
-      </div>
-
-      {/* Progress */}
-      <div className="px-4 pt-4 pb-2">
-        <div className="flex flex-col items-center gap-1.5">
-          <span className="text-xs font-semibold text-muted-foreground">
-            {currentIndex + 1} / {totalCards}
-          </span>
-          <div className="flex gap-1 w-[220px]">
+        <div className="flex items-center gap-2 flex-1 min-w-0">
+          <div className="flex gap-0.5 flex-1">
             {Array.from({ length: totalCards }).map((_, i) => (
               <div
                 key={i}
-                className={`h-1.5 flex-1 rounded-full transition-colors duration-300 ${
+                className={`h-1 flex-1 rounded-full transition-colors duration-300 ${
                   i <= currentIndex ? "bg-primary" : "bg-muted"
                 }`}
               />
             ))}
           </div>
+          <span className="text-[10px] font-semibold text-muted-foreground shrink-0">
+            {currentIndex + 1}/{totalCards}
+          </span>
         </div>
+        <button
+          onClick={() => router.push("/play")}
+          className="w-8 h-8 rounded-full bg-card flex items-center justify-center text-muted-foreground hover:bg-danger hover:text-white transition-colors shadow-sm shrink-0"
+        >
+          ✕
+        </button>
       </div>
 
       {/* Card stack */}
-      <div className="flex-1 relative mx-4 mb-4" style={{ perspective: 1000 }}>
+      <div className="flex-1 relative mx-4 mb-2" style={{ perspective: 1000 }}>
         <AnimatePresence>
           {/* Next card (behind) */}
           {nextCardInPile && (
@@ -133,15 +129,8 @@ export function SwipeStack({
         )}
       </div>
 
-      {/* Brand label */}
-      <div className="text-center py-2">
-        <span className="text-[11px] font-black text-muted-foreground tracking-[0.2em] uppercase">
-          La Tronçonneuse
-        </span>
-      </div>
-
       {/* Bottom action buttons */}
-      <div className="px-6 pb-8 flex items-center justify-between">
+      <div className="px-6 pb-4 flex items-center justify-between">
         <div className="flex flex-col items-center gap-3">
           <button
             onClick={() => currentCard && handleSwipe("keep")}

@@ -115,16 +115,16 @@ function CardContent({
   return (
     <div className="flex flex-col h-full">
       {/* Hero area with icon + gradient */}
-      <div className="h-[220px] relative w-full overflow-hidden bg-gradient-to-br from-card via-background to-card">
+      <div className="h-[140px] relative w-full overflow-hidden bg-gradient-to-br from-card via-background to-card shrink-0">
         {/* Large emoji background */}
         <div className="absolute inset-0 flex items-center justify-center opacity-20">
-          <span className="text-[120px]">{card.icon}</span>
+          <span className="text-[90px]">{card.icon}</span>
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
 
         {/* Category badge + detail button */}
-        <div className="absolute top-4 left-4 right-4 flex justify-between items-start z-10">
-          <span className="bg-primary text-primary-foreground text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-sm">
+        <div className="absolute top-3 left-4 right-4 flex justify-between items-start z-10">
+          <span className="bg-primary text-primary-foreground text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
             {card.deckId}
           </span>
           {onTapDetail && (
@@ -142,58 +142,55 @@ function CardContent({
         </div>
 
         {/* Title on image bottom */}
-        <div className="absolute bottom-4 left-5 right-5 z-10">
-          <h1 className="text-2xl font-bold text-foreground leading-tight drop-shadow-md">
+        <div className="absolute bottom-3 left-4 right-4 z-10">
+          <h1 className="text-xl font-bold text-foreground leading-tight drop-shadow-md">
             {card.title}
           </h1>
         </div>
       </div>
 
       {/* Content area */}
-      <div className="p-5 flex flex-col gap-4 flex-1 rounded-t-[1.5rem] -mt-4 bg-card relative z-20">
+      <div className="p-4 flex flex-col gap-3 flex-1 rounded-t-[1.5rem] -mt-3 bg-card relative z-20 overflow-y-auto">
         {/* Amount stats */}
-        <div className="grid grid-cols-2 gap-3">
-          <div className="bg-background/50 p-3 rounded-xl flex flex-col justify-center border border-border">
-            <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-1">
+        <div className="grid grid-cols-2 gap-2">
+          <div className="bg-background/50 p-2.5 rounded-xl flex flex-col justify-center border border-border">
+            <span className="text-[9px] font-bold text-muted-foreground uppercase tracking-wider mb-0.5">
               Coût Annuel
             </span>
-            <span className="text-2xl font-black text-primary">
+            <span className="text-xl font-black text-primary">
               {card.amountBillions} Md€
             </span>
           </div>
-          <div className="bg-background/50 p-3 rounded-xl flex flex-col justify-center border border-border">
-            <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-1">
+          <div className="bg-background/50 p-2.5 rounded-xl flex flex-col justify-center border border-border">
+            <span className="text-[9px] font-bold text-muted-foreground uppercase tracking-wider mb-0.5">
               Par Citoyen
             </span>
-            <span className="text-2xl font-black text-primary">
+            <span className="text-xl font-black text-primary">
               {card.costPerCitizen}€
             </span>
           </div>
         </div>
 
         {/* Description */}
-        <p className="text-[15px] leading-relaxed text-muted-foreground font-medium">
+        <p className="text-sm leading-relaxed text-muted-foreground font-medium">
           {card.description}
         </p>
 
         {/* Equivalence / Subtitle */}
         {card.subtitle && (
-          <>
-            <div className="h-px w-full bg-border" />
-            <div className="flex items-center gap-4 py-2 px-3 rounded-xl bg-white/[0.04] backdrop-blur-sm border border-white/5">
-              <div className="w-12 h-12 rounded-xl bg-warning/10 flex items-center justify-center flex-shrink-0 text-warning border border-warning/20">
-                <span className="text-lg">📊</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[10px] font-bold text-warning uppercase tracking-wider mb-0.5">
-                  Équivalence
-                </span>
-                <p className="text-[13px] font-bold text-foreground/90 leading-snug">
-                  {card.subtitle}
-                </p>
-              </div>
+          <div className="flex items-center gap-3 py-2 px-3 rounded-xl bg-white/[0.04] backdrop-blur-sm border border-white/5">
+            <div className="w-10 h-10 rounded-lg bg-warning/10 flex items-center justify-center flex-shrink-0 text-warning border border-warning/20">
+              <span className="text-base">📊</span>
             </div>
-          </>
+            <div className="flex flex-col">
+              <span className="text-[9px] font-bold text-warning uppercase tracking-wider mb-0.5">
+                Équivalence
+              </span>
+              <p className="text-xs font-bold text-foreground/90 leading-snug">
+                {card.subtitle}
+              </p>
+            </div>
+          </div>
         )}
       </div>
     </div>
