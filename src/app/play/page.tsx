@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import decksData from "@/data/decks.json";
+import { getPlayedDeckIds } from "@/lib/stats";
 import type { Deck } from "@/types";
 
 const decks = decksData.decks as Deck[];
@@ -12,6 +13,11 @@ export default function PlayPage() {
   const router = useRouter();
   const [selectedDeck, setSelectedDeck] = useState<string | null>(null);
   const [randomMode, setRandomMode] = useState(false);
+  const [playedDecks, setPlayedDecks] = useState<string[]>([]);
+
+  useEffect(() => {
+    setPlayedDecks(getPlayedDeckIds());
+  }, []);
 
   function handleLaunch() {
     if (randomMode) {
@@ -164,7 +170,7 @@ export default function PlayPage() {
               <div className="w-full bg-muted rounded-full h-1.5 mt-auto">
                 <div
                   className="bg-primary h-1.5 rounded-full transition-all"
-                  style={{ width: deck.played ? "100%" : "0%" }}
+                  style={{ width: playedDecks.includes(deck.id) ? "100%" : "0%" }}
                 />
               </div>
             </button>

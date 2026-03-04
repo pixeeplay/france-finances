@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import type { Card, Vote, VoteDirection, Session, SessionStats } from "@/types";
 import { computeStats, determineArchetype } from "@/lib/archetype";
+import { saveCompletedSession } from "@/lib/stats";
 
 interface GameState {
   /** Session en cours */
@@ -84,14 +85,17 @@ export const useGameStore = create<GameState>((set, get) => ({
     if (!session) return;
 
     const endedAt = Date.now();
-    set({
-      session: {
-        ...session,
-        completed: true,
-        endedAt,
-        totalDuration: endedAt - session.startedAt,
-      },
-    });
+    const completed: Session = {
+      ...session,
+      completed: true,
+      endedAt,
+      totalDuration: endedAt - session.startedAt,
+    };
+
+    set({ session: completed });
+
+    // Persist to localStorage
+    saveCompletedSession(completed);
   },
 
   reset: () => set({ session: null }),

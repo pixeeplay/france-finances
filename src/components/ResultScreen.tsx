@@ -247,7 +247,7 @@ function HistoryItem({ card, vote }: { card: Card; vote: Vote | null }) {
         {isKeep ? (
           <ShieldIcon size={16} className="text-primary group-hover/item:text-white transition-colors" />
         ) : (
-          <ChainsawIcon size={16} />
+          <ChainsawIcon size={16} className="chainsaw-hover-white" />
         )}
       </div>
     </div>

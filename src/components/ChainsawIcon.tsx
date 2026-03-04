@@ -12,11 +12,7 @@ export function ChainsawIcon({ size = 24, className }: ChainsawIconProps) {
       alt=""
       width={size}
       height={size}
-      className={className}
-      style={{
-        filter:
-          "brightness(0) saturate(100%) invert(29%) sepia(93%) saturate(6040%) hue-rotate(352deg) brightness(99%) contrast(91%)",
-      }}
+      className={`chainsaw-icon ${className ?? ""}`}
     />
   );
 }
