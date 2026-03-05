@@ -58,7 +58,7 @@ export function BottomNav() {
   }
 
   return (
-    <nav className="sticky bottom-0 bg-card/70 backdrop-blur-xl rounded-t-[32px] border-t border-border/30 px-4 pt-4 pb-8 z-50">
+    <nav className="sticky bottom-0 bg-card/70 backdrop-blur-xl rounded-t-[32px] border-t border-border/30 px-4 pt-3 pb-4 z-50">
       <div className="flex items-center justify-around">
         {navItems.map((item) => {
           const isActive =

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ChainsawIcon } from "@/components/ChainsawIcon";
 import { ShieldIcon } from "@/components/ShieldIcon";
 import leaderboardData from "@/data/leaderboard.json";
@@ -44,6 +44,8 @@ const mostProtected = [
 export default function RankingPage() {
   const [tab, setTab] = useState<Tab>("archetypes");
   const [players, setPlayers] = useState<LeaderboardPlayer[]>([]);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [showChevron, setShowChevron] = useState(false);
 
   useEffect(() => {
     const profile = getPlayerProfile();
@@ -67,6 +69,19 @@ export default function RankingPage() {
     setPlayers(allPlayers);
   }, []);
 
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const check = () => {
+      const scrollable = el.scrollHeight > el.clientHeight + 20;
+      const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 20;
+      setShowChevron(scrollable && !atBottom);
+    };
+    check();
+    el.addEventListener("scroll", check, { passive: true });
+    return () => el.removeEventListener("scroll", check);
+  }, [tab]);
+
   const tabs: { value: Tab; label: string }[] = [
     { value: "archetypes", label: "Archétypes" },
     { value: "top", label: "Top XP" },
@@ -74,9 +89,9 @@ export default function RankingPage() {
   ];
 
   return (
-    <div className="flex-1 flex flex-col overflow-y-auto pb-24">
+    <div className="flex-1 flex flex-col overflow-hidden relative">
       {/* Header */}
-      <header className="flex items-center p-4 pb-2 justify-center sticky top-0 bg-background/90 backdrop-blur-md z-10 border-b border-border">
+      <header className="flex items-center p-4 pb-2 justify-center bg-background/90 backdrop-blur-md z-10 border-b border-border">
         <h1 className="text-xl font-bold leading-tight tracking-[-0.015em] text-center">
           Classement & Tendances
         </h1>
@@ -102,16 +117,27 @@ export default function RankingPage() {
       </div>
 
       {/* Tab content */}
-      {tab === "archetypes" && <ArchetypesTab />}
-      {tab === "top" && <TopXPTab players={players} />}
-      {tab === "semaine" && <TendancesTab />}
+      <div ref={scrollRef} className="flex-1 overflow-y-auto scrollbar-hide pb-4">
+        {tab === "archetypes" && <ArchetypesTab />}
+        {tab === "top" && <TopXPTab players={players} />}
+        {tab === "semaine" && <TendancesTab />}
 
-      {/* Footer */}
-      <div className="px-4 py-4 text-center mt-auto">
-        <p className="text-xs text-muted-foreground">
-          Stats basées sur 12 847 sessions anonymisées.
-        </p>
+        {/* Footer */}
+        <div className="px-4 py-4 text-center">
+          <p className="text-xs text-muted-foreground">
+            Stats communautaires anonymisées.
+          </p>
+        </div>
       </div>
+
+      {/* Scroll chevron */}
+      {showChevron && (
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 pointer-events-none animate-bounce">
+          <div className="w-8 h-8 rounded-full bg-card/80 backdrop-blur border border-border/50 flex items-center justify-center shadow-lg">
+            <span className="text-muted-foreground text-sm">&darr;</span>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -7,6 +7,7 @@ import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 import { ChainsawIcon } from "@/components/ChainsawIcon";
 import { Onboarding, useOnboarding } from "@/components/Onboarding";
+import { getGlobalStats } from "@/lib/stats";
 import decksData from "@/data/decks.json";
 import type { Deck } from "@/types";
 
@@ -15,6 +16,11 @@ const decks = (decksData.decks as Deck[]).filter((d) => d.type !== "thematic");
 export default function HomePage() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const { showOnboarding, dismissOnboarding } = useOnboarding();
+  const [sessionCount, setSessionCount] = useState(0);
+
+  useEffect(() => {
+    setSessionCount(getGlobalStats().totalSessions);
+  }, []);
 
   // Auto-scroll categories
   useEffect(() => {
@@ -71,12 +77,14 @@ export default function HomePage() {
         <span className="text-xs font-black tracking-[0.2em] text-foreground uppercase opacity-90">
           la tronçonneuse de poche
         </span>
-        <div className="flex items-center gap-1 bg-card/50 px-3 py-1 rounded-full border border-border/30">
-          <span className="text-primary text-sm">&#9889;</span>
-          <span className="text-[10px] font-bold text-muted-foreground">
-            SÉRIE : 12
-          </span>
-        </div>
+        {sessionCount > 0 && (
+          <div className="flex items-center gap-1 bg-card/50 px-3 py-1 rounded-full border border-border/30">
+            <span className="text-primary text-sm">&#9889;</span>
+            <span className="text-[10px] font-bold text-muted-foreground">
+              {sessionCount} {sessionCount === 1 ? "SESSION" : "SESSIONS"}
+            </span>
+          </div>
+        )}
       </header>
 
       {/* Category chips — auto-scroll + swipeable */}
@@ -85,15 +93,6 @@ export default function HomePage() {
           ref={scrollRef}
           className="flex gap-2 overflow-x-auto hide-scrollbar -mx-6 px-6"
         >
-          <Link
-            href="/play"
-            className="bg-primary text-primary-foreground px-5 py-2 rounded-full flex items-center gap-2 shrink-0"
-          >
-            <span className="text-sm">&#128293;</span>
-            <span className="text-xs font-bold uppercase tracking-wider">
-              Populaire
-            </span>
-          </Link>
           {decks.map((deck) => (
             <Link
               key={deck.id}

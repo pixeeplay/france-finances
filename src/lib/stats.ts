@@ -61,6 +61,24 @@ function setItem<T>(key: string, value: T): void {
   }
 }
 
+/** Generate a random anonymous username */
+function generateUsername(): string {
+  const adjectives = [
+    "Brave", "Agile", "Rusé", "Vif", "Calme",
+    "Malin", "Discret", "Hardi", "Lucide", "Tenace",
+    "Furtif", "Alerte", "Sagace", "Austère", "Rigoureux",
+  ];
+  const nouns = [
+    "Renard", "Faucon", "Lynx", "Loup", "Aigle",
+    "Tigre", "Puma", "Ours", "Cerf", "Lion",
+    "Bison", "Vautour", "Cobra", "Requin", "Coyote",
+  ];
+  const adj = adjectives[Math.floor(Math.random() * adjectives.length)];
+  const noun = nouns[Math.floor(Math.random() * nouns.length)];
+  const num = Math.floor(Math.random() * 900) + 100;
+  return `${adj}${noun}${num}`;
+}
+
 // === Public API ===
 
 export function getSessions(): StoredSession[] {
@@ -80,13 +98,19 @@ export function getGlobalStats(): GlobalStats {
 }
 
 export function getPlayerProfile(): PlayerProfile {
-  return getItem<PlayerProfile>(PROFILE_KEY, {
+  const profile = getItem<PlayerProfile>(PROFILE_KEY, {
     archetypeId: "",
     archetypeName: "",
     archetypeIcon: "",
     level: 1,
-    username: "Username",
+    username: "",
   });
+  // Generate and persist a random username if none exists
+  if (!profile.username) {
+    profile.username = generateUsername();
+    setItem(PROFILE_KEY, profile);
+  }
+  return profile;
 }
 
 /** Compute XP for a single session */
