@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useEffect, useState, useCallback } from "react";
+import type { ReactNode } from "react";
 import { useGameStore } from "@/stores/gameStore";
 import { useArchetype } from "@/hooks/useArchetype";
 import { ChainsawIcon } from "./ChainsawIcon";
@@ -26,6 +27,7 @@ export function ResultScreen() {
   const { archetype, stats } = useArchetype();
   const [showConfetti, setShowConfetti] = useState(true);
   const [shareCopied, setShareCopied] = useState(false);
+  const level = session?.level ?? 1;
 
   // Hide confetti after a few seconds
   useEffect(() => {
@@ -50,10 +52,14 @@ export function ResultScreen() {
 
   const keepCount = stats.keepCount;
   const cutCount = stats.cutCount;
+  const reinforceCount = stats.reinforceCount ?? 0;
+  const unjustifiedCount = stats.unjustifiedCount ?? 0;
   const keepPercent = Math.round(stats.keepPercent);
   const cutPercent = Math.round(stats.cutPercent);
+  const reinforcePercent = stats.totalCards > 0 ? Math.round((reinforceCount / stats.totalCards) * 100) : 0;
+  const unjustifiedPercent = stats.totalCards > 0 ? Math.round((unjustifiedCount / stats.totalCards) * 100) : 0;
 
-  // Calculate totals kept/cut in Md€
+  // Calculate totals by direction in Md€
   const totalKept = session.cards
     .filter((c) => session.votes.find((v) => v.cardId === c.id && v.direction === "keep"))
     .reduce((sum, c) => sum + c.amountBillions, 0);
@@ -166,34 +172,73 @@ export function ResultScreen() {
           <p className="text-base font-bold mb-4 text-center">
             Répartition des choix
           </p>
-          <div className="flex items-center justify-center gap-6 mb-4">
-            {/* Donut chart via conic-gradient */}
-            <div
-              className="w-24 h-24 rounded-full flex items-center justify-center"
-              style={{
-                background: `conic-gradient(var(--color-danger) 0% ${cutPercent}%, var(--color-primary) ${cutPercent}% 100%)`,
-              }}
-            >
-              <div className="w-16 h-16 bg-card rounded-full" />
-            </div>
 
-            <div className="flex flex-col gap-3">
-              <div className="flex items-center gap-2">
-                <span className="w-3 h-3 rounded-full bg-primary" />
-                <span className="text-sm font-bold">{keepPercent}%</span>
-                <span className="text-sm text-muted-foreground flex items-center gap-1">
-                  <ShieldIcon size={14} /> OK ({keepCount})
-                </span>
+          {level >= 2 ? (
+            /* Level 2: 4-bar layout */
+            <div className="flex flex-col gap-3 mb-4">
+              <StatBar
+                icon={<ShieldIcon size={14} className="text-primary" />}
+                label="OK"
+                count={keepCount}
+                percent={keepPercent}
+                colorClass="bg-primary"
+                glowClass="shadow-[0_0_8px_rgba(16,185,129,0.5)]"
+              />
+              <StatBar
+                icon={<ChainsawIcon size={14} />}
+                label="Réduire"
+                count={cutCount}
+                percent={cutPercent}
+                colorClass="bg-warning"
+                glowClass="shadow-[0_0_8px_rgba(245,158,11,0.5)]"
+              />
+              <StatBar
+                icon={<span className="text-sm">📈</span>}
+                label="Renforcer"
+                count={reinforceCount}
+                percent={reinforcePercent}
+                colorClass="bg-info"
+                glowClass="shadow-[0_0_8px_rgba(59,130,246,0.5)]"
+              />
+              <StatBar
+                icon={<span className="text-sm">❌</span>}
+                label="Injustifié"
+                count={unjustifiedCount}
+                percent={unjustifiedPercent}
+                colorClass="bg-danger"
+                glowClass="shadow-[0_0_8px_rgba(239,68,68,0.5)]"
+              />
+            </div>
+          ) : (
+            /* Level 1: donut chart */
+            <div className="flex items-center justify-center gap-6 mb-4">
+              <div
+                className="w-24 h-24 rounded-full flex items-center justify-center"
+                style={{
+                  background: `conic-gradient(var(--color-danger) 0% ${cutPercent}%, var(--color-primary) ${cutPercent}% 100%)`,
+                }}
+              >
+                <div className="w-16 h-16 bg-card rounded-full" />
               </div>
-              <div className="flex items-center gap-2">
-                <span className="w-3 h-3 rounded-full bg-danger" />
-                <span className="text-sm font-bold">{cutPercent}%</span>
-                <span className="text-sm text-muted-foreground flex items-center gap-1">
-                  <ChainsawIcon size={14} /> À revoir ({cutCount})
-                </span>
+
+              <div className="flex flex-col gap-3">
+                <div className="flex items-center gap-2">
+                  <span className="w-3 h-3 rounded-full bg-primary" />
+                  <span className="text-sm font-bold">{keepPercent}%</span>
+                  <span className="text-sm text-muted-foreground flex items-center gap-1">
+                    <ShieldIcon size={14} /> OK ({keepCount})
+                  </span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="w-3 h-3 rounded-full bg-danger" />
+                  <span className="text-sm font-bold">{cutPercent}%</span>
+                  <span className="text-sm text-muted-foreground flex items-center gap-1">
+                    <ChainsawIcon size={14} /> À revoir ({cutCount})
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
+          )}
 
           {/* Totals kept/cut */}
           <div className="grid grid-cols-2 gap-3 pt-3 border-t border-border">
@@ -219,18 +264,29 @@ export function ResultScreen() {
 
       {/* CTAs */}
       <div className="flex flex-col gap-3 px-4 py-6 mt-2">
-        <button
-          disabled
-          className="flex items-center justify-center gap-2 w-full rounded-xl py-4 px-6 bg-primary/40 text-primary-foreground/60 font-bold text-lg cursor-not-allowed"
-        >
-          Passer au Niveau 2
-          <span className="text-base">🔒</span>
-        </button>
+        {level === 1 && (
+          <button
+            onClick={() => { reset(); router.push("/play?level=2"); }}
+            className="flex items-center justify-center gap-2 w-full rounded-xl py-4 px-6 bg-primary text-primary-foreground font-bold text-lg shadow-[0_0_20px_rgba(16,185,129,0.3)] active:scale-95 transition-transform"
+          >
+            Passer au Niveau 2
+            <span className="text-base">🔓</span>
+          </button>
+        )}
+        {level === 2 && (
+          <button
+            disabled
+            className="flex items-center justify-center gap-2 w-full rounded-xl py-4 px-6 bg-primary/40 text-primary-foreground/60 font-bold text-lg cursor-not-allowed"
+          >
+            Passer au Niveau 3
+            <span className="text-base">🔒</span>
+          </button>
+        )}
         <button
           onClick={handleContinue}
           className="flex items-center justify-center w-full rounded-xl py-4 px-6 border-2 border-border text-foreground font-bold hover:bg-card transition-colors"
         >
-          Continuer (nouveau deck)
+          {level >= 2 ? `Nouveau deck Niveau ${level}` : "Continuer (nouveau deck)"}
         </button>
       </div>
 
@@ -260,7 +316,21 @@ export function ResultScreen() {
 }
 
 function HistoryItem({ card, vote }: { card: Card; vote: Vote | null }) {
-  const isKeep = vote?.direction === "keep";
+  const dir = vote?.direction ?? "keep";
+
+  const iconMap: Record<string, React.ReactNode> = {
+    keep: <ShieldIcon size={16} className="text-primary group-hover/item:text-white transition-colors" />,
+    cut: <ChainsawIcon size={16} className="chainsaw-hover-white" />,
+    reinforce: <span className="text-sm">📈</span>,
+    unjustified: <span className="text-sm">❌</span>,
+  };
+
+  const hoverBgMap: Record<string, string> = {
+    keep: "group-hover/item:bg-primary",
+    cut: "group-hover/item:bg-danger",
+    reinforce: "group-hover/item:bg-info",
+    unjustified: "group-hover/item:bg-danger",
+  };
 
   return (
     <div className="group/item flex items-center justify-between p-2 rounded-lg hover:bg-muted/30 cursor-pointer transition-all">
@@ -276,17 +346,33 @@ function HistoryItem({ card, vote }: { card: Card; vote: Vote | null }) {
         </div>
       </div>
       <div
-        className={`w-8 h-8 rounded-full flex items-center justify-center transition-all ${
-          isKeep
-            ? "group-hover/item:bg-primary group-hover/item:scale-110"
-            : "group-hover/item:bg-danger group-hover/item:scale-110"
-        }`}
+        className={`w-8 h-8 rounded-full flex items-center justify-center transition-all group-hover/item:scale-110 ${hoverBgMap[dir]}`}
       >
-        {isKeep ? (
-          <ShieldIcon size={16} className="text-primary group-hover/item:text-white transition-colors" />
-        ) : (
-          <ChainsawIcon size={16} className="chainsaw-hover-white" />
-        )}
+        {iconMap[dir]}
+      </div>
+    </div>
+  );
+}
+
+function StatBar({ icon, label, count, percent, colorClass, glowClass }: {
+  icon: ReactNode;
+  label: string;
+  count: number;
+  percent: number;
+  colorClass: string;
+  glowClass: string;
+}) {
+  return (
+    <div className="flex flex-col gap-1.5">
+      <div className="flex justify-between text-xs font-bold uppercase tracking-wider text-muted-foreground">
+        <span className="flex items-center gap-1">{icon} {label}</span>
+        <span>{count} carte{count > 1 ? "s" : ""}</span>
+      </div>
+      <div className="w-full bg-muted h-2.5 rounded-full overflow-hidden">
+        <div
+          className={`${colorClass} h-full rounded-full ${glowClass}`}
+          style={{ width: `${percent}%` }}
+        />
       </div>
     </div>
   );

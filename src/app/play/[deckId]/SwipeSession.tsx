@@ -11,9 +11,10 @@ interface SwipeSessionProps {
   deckId: string;
   deckName: string;
   cards: Card[];
+  level?: 1 | 2 | 3;
 }
 
-export function SwipeSession({ deckId, deckName, cards }: SwipeSessionProps) {
+export function SwipeSession({ deckId, deckName, cards, level = 1 }: SwipeSessionProps) {
   const router = useRouter();
   const [detailCard, setDetailCard] = useState<Card | null>(null);
   const { session, recordVote, nextCard, completeSession } = useGameStore();
@@ -46,10 +47,12 @@ export function SwipeSession({ deckId, deckName, cards }: SwipeSessionProps) {
         cards={cards}
         deckId={deckId}
         deckName={deckName}
+        level={level}
         onCardTap={handleCardTap}
       />
       <CardDetail
         card={detailCard}
+        level={level}
         onClose={() => setDetailCard(null)}
         onVote={handleDetailVote}
       />

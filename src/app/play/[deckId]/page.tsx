@@ -5,10 +5,14 @@ import type { Card } from "@/types";
 
 export default async function SwipePage({
   params,
+  searchParams,
 }: {
   params: Promise<{ deckId: string }>;
+  searchParams: Promise<{ level?: string }>;
 }) {
   const { deckId } = await params;
+  const { level: levelStr } = await searchParams;
+  const level = (Number(levelStr) || 1) as 1 | 2 | 3;
 
   const allCards = decksData.cards as Card[];
   const deckCards = deckId === "random" ? allCards : filterByDeck(allCards, deckId);
@@ -21,6 +25,7 @@ export default async function SwipePage({
       deckId={deckId}
       deckName={deck?.name ?? "Aléatoire"}
       cards={sessionCards}
+      level={level}
     />
   );
 }

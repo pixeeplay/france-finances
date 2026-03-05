@@ -44,6 +44,77 @@
       "condition": {
         "maxDurationSeconds": 60
       }
+    },
+    {
+      "id": "stratege",
+      "name": "Le Stratège",
+      "icon": "🎯",
+      "tagline": "Chaque euro est pesé, soupesé, arbitré.",
+      "description": "Tu répartis tes choix de manière équilibrée entre les 4 options. Aucun dogme, que de la stratégie.",
+      "level": 2,
+      "condition": {
+        "minKeepPercent": 15,
+        "maxKeepPercent": 40,
+        "minCutPercent": 15,
+        "maxCutPercent": 40
+      }
+    },
+    {
+      "id": "reformateur",
+      "name": "Le Réformateur",
+      "icon": "📈",
+      "tagline": "On ne coupe pas, on investit mieux.",
+      "description": "Plus de 40% de renforcements. Tu crois en l'État mais tu veux qu'il fasse plus et mieux.",
+      "level": 2,
+      "condition": {
+        "minReinforcePercent": 40
+      }
+    },
+    {
+      "id": "demolisseur",
+      "name": "Le Démolisseur",
+      "icon": "💥",
+      "tagline": "On rase tout et on recommence.",
+      "description": "Plus de 50% de tes votes sont négatifs (réduire + injustifié). Tu veux un État profondément transformé.",
+      "level": 2,
+      "condition": {
+        "minNegativePercent": 50
+      }
+    },
+    {
+      "id": "conservateur",
+      "name": "Le Conservateur",
+      "icon": "🏛️",
+      "tagline": "Les fondations sont solides, consolidons-les.",
+      "description": "Plus de 50% de votes positifs (OK + renforcer). Tu protèges le modèle social français.",
+      "level": 2,
+      "condition": {
+        "minPositivePercent": 50
+      }
+    },
+    {
+      "id": "sceptique",
+      "name": "Le Sceptique",
+      "icon": "🔍",
+      "tagline": "Rien n'est justifié jusqu'à preuve du contraire.",
+      "description": "Plus de 40% de tes votes sont \"Injustifié\". Tu doutes de l'utilité de nombreuses dépenses.",
+      "level": 2,
+      "condition": {
+        "minUnjustifiedPercent": 40
+      }
+    },
+    {
+      "id": "chirurgien",
+      "name": "Le Chirurgien",
+      "icon": "🔬",
+      "tagline": "Tu coupes dans le gras, pas dans l'os.",
+      "description": "Mix de réduire et renforcer, peu d'injustifié. Tu optimises chirurgicalement.",
+      "level": 2,
+      "condition": {
+        "minCutPercent": 25,
+        "minReinforcePercent": 20,
+        "maxUnjustifiedPercent": 15
+      }
     }
   ]
 }

@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useState, useEffect, Suspense } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
 import decksData from "@/data/decks.json";
 import { getPlayedDeckIds } from "@/lib/stats";
@@ -9,23 +9,33 @@ import type { Deck } from "@/types";
 
 const decks = decksData.decks as Deck[];
 
-export default function PlayPage() {
+function PlayPageContent() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const initialLevel = (Number(searchParams.get("level")) || 1) as 1 | 2 | 3;
   const [selectedDeck, setSelectedDeck] = useState<string | null>(null);
   const [randomMode, setRandomMode] = useState(false);
   const [playedDecks, setPlayedDecks] = useState<string[]>([]);
+  const [level, setLevel] = useState<1 | 2 | 3>(initialLevel);
 
   useEffect(() => {
     setPlayedDecks(getPlayedDeckIds());
   }, []);
 
   function handleLaunch() {
+    const levelParam = level > 1 ? `?level=${level}` : "";
     if (randomMode) {
-      router.push("/play/random");
+      router.push(`/play/random${levelParam}`);
     } else if (selectedDeck) {
-      router.push(`/play/${selectedDeck}`);
+      router.push(`/play/${selectedDeck}${levelParam}`);
     }
   }
+
+  const levelOptions: { value: 1 | 2 | 3; label: string; locked: boolean }[] = [
+    { value: 1, label: "Niveau 1", locked: false },
+    { value: 2, label: "Niveau 2", locked: false },
+    { value: 3, label: "Niveau 3", locked: true },
+  ];
 
   return (
     <div className="flex-1 flex flex-col overflow-y-auto pb-40">
@@ -80,40 +90,32 @@ export default function PlayPage() {
       {/* Level Selector */}
       <div className="px-4 py-4">
         <div className="flex h-12 items-center justify-center rounded-xl bg-card p-1">
-          <label className="flex cursor-pointer h-full grow items-center justify-center rounded-lg px-2 bg-primary text-primary-foreground text-sm font-semibold transition-colors">
-            <span>Niveau 1</span>
-            <input
-              className="invisible w-0 absolute"
-              name="level"
-              type="radio"
-              value="1"
-              defaultChecked
-            />
-          </label>
-          <label className="flex cursor-pointer h-full grow items-center justify-center rounded-lg px-2 opacity-50 text-foreground text-sm font-semibold">
-            <span className="flex items-center gap-1">
-              Niveau 2 <span className="text-xs">🔒</span>
-            </span>
-            <input
-              className="invisible w-0 absolute"
-              name="level"
-              type="radio"
-              value="2"
-              disabled
-            />
-          </label>
-          <label className="flex cursor-pointer h-full grow items-center justify-center rounded-lg px-2 opacity-50 text-foreground text-sm font-semibold">
-            <span className="flex items-center gap-1">
-              Niveau 3 <span className="text-xs">🔒</span>
-            </span>
-            <input
-              className="invisible w-0 absolute"
-              name="level"
-              type="radio"
-              value="3"
-              disabled
-            />
-          </label>
+          {levelOptions.map((opt) => (
+            <label
+              key={opt.value}
+              className={`flex cursor-pointer h-full grow items-center justify-center rounded-lg px-2 text-sm font-semibold transition-colors ${
+                level === opt.value
+                  ? "bg-primary text-primary-foreground"
+                  : opt.locked
+                    ? "opacity-50 text-foreground cursor-not-allowed"
+                    : "text-foreground hover:bg-muted/50"
+              }`}
+            >
+              <span className="flex items-center gap-1">
+                {opt.label}
+                {opt.locked && <span className="text-xs">🔒</span>}
+              </span>
+              <input
+                className="invisible w-0 absolute"
+                name="level"
+                type="radio"
+                value={opt.value}
+                checked={level === opt.value}
+                disabled={opt.locked}
+                onChange={() => setLevel(opt.value)}
+              />
+            </label>
+          ))}
         </div>
       </div>
 
@@ -187,10 +189,18 @@ export default function PlayPage() {
             className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg py-4 rounded-xl shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all active:scale-95 flex items-center justify-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed"
           >
             <span className="text-xl">▶</span>
-            Lancer la session
+            Lancer la session {level > 1 ? `(N${level})` : ""}
           </button>
         </div>
       </div>
     </div>
+  );
+}
+
+export default function PlayPage() {
+  return (
+    <Suspense fallback={<div className="flex-1 flex items-center justify-center text-muted-foreground">Chargement...</div>}>
+      <PlayPageContent />
+    </Suspense>
   );
 }

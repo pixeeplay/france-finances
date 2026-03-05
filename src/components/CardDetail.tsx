@@ -8,11 +8,12 @@ import type { Card, VoteDirection } from "@/types";
 
 interface CardDetailProps {
   card: Card | null;
+  level?: 1 | 2 | 3;
   onClose: () => void;
   onVote: (direction: VoteDirection) => void;
 }
 
-export function CardDetail({ card, onClose, onVote }: CardDetailProps) {
+export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps) {
   const dragControls = useDragControls();
   const constraintsRef = useRef<HTMLDivElement>(null);
 
@@ -199,22 +200,55 @@ export function CardDetail({ card, onClose, onVote }: CardDetailProps) {
 
             {/* Sticky Footer Actions */}
             <div className="absolute bottom-0 left-0 right-0 bg-card/95 backdrop-blur-xl border-t border-border p-5 pt-4 rounded-t-3xl z-30 shadow-[0_-10px_20px_rgba(0,0,0,0.05)]">
-              <div className="grid grid-cols-2 gap-3 mb-3">
-                <button
-                  onClick={() => handleVote("keep")}
-                  className="flex items-center justify-center gap-2 py-3.5 rounded-xl border-2 border-primary/80 text-primary font-bold hover:bg-primary hover:text-primary-foreground active:scale-95 transition-all"
-                >
-                  <ShieldIcon size={20} />
-                  OK pour moi
-                </button>
-                <button
-                  onClick={() => handleVote("cut")}
-                  className="flex items-center justify-center gap-2 py-3.5 rounded-xl border-2 border-danger/80 text-danger font-bold hover:bg-danger hover:text-white active:scale-95 transition-all"
-                >
-                  <ChainsawIcon size={20} />
-                  À revoir
-                </button>
-              </div>
+              {level >= 2 ? (
+                <div className="grid grid-cols-4 gap-2 mb-3">
+                  <button
+                    onClick={() => handleVote("keep")}
+                    className="flex flex-col items-center justify-center gap-1 py-3 rounded-xl border-2 border-primary/80 text-primary font-bold active:scale-95 transition-all"
+                  >
+                    <ShieldIcon size={20} />
+                    <span className="text-[10px] uppercase">OK</span>
+                  </button>
+                  <button
+                    onClick={() => handleVote("cut")}
+                    className="flex flex-col items-center justify-center gap-1 py-3 rounded-xl border-2 border-warning/80 text-warning font-bold active:scale-95 transition-all"
+                  >
+                    <ChainsawIcon size={20} />
+                    <span className="text-[10px] uppercase">Réduire</span>
+                  </button>
+                  <button
+                    onClick={() => handleVote("reinforce")}
+                    className="flex flex-col items-center justify-center gap-1 py-3 rounded-xl border-2 border-info/80 text-info font-bold active:scale-95 transition-all"
+                  >
+                    <span className="text-lg">📈</span>
+                    <span className="text-[10px] uppercase">Renforcer</span>
+                  </button>
+                  <button
+                    onClick={() => handleVote("unjustified")}
+                    className="flex flex-col items-center justify-center gap-1 py-3 rounded-xl border-2 border-danger/80 text-danger font-bold active:scale-95 transition-all"
+                  >
+                    <span className="text-lg">❌</span>
+                    <span className="text-[10px] uppercase">Injustifié</span>
+                  </button>
+                </div>
+              ) : (
+                <div className="grid grid-cols-2 gap-3 mb-3">
+                  <button
+                    onClick={() => handleVote("keep")}
+                    className="flex items-center justify-center gap-2 py-3.5 rounded-xl border-2 border-primary/80 text-primary font-bold hover:bg-primary hover:text-primary-foreground active:scale-95 transition-all"
+                  >
+                    <ShieldIcon size={20} />
+                    OK pour moi
+                  </button>
+                  <button
+                    onClick={() => handleVote("cut")}
+                    className="flex items-center justify-center gap-2 py-3.5 rounded-xl border-2 border-danger/80 text-danger font-bold hover:bg-danger hover:text-white active:scale-95 transition-all"
+                  >
+                    <ChainsawIcon size={20} />
+                    À revoir
+                  </button>
+                </div>
+              )}
             </div>
           </motion.div>
         </>
