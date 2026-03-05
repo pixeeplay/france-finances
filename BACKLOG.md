@@ -58,15 +58,15 @@
 | ID | Priorite | Effort | Description | Statut |
 |----|----------|--------|-------------|--------|
 | UX-01 to UX-16 | - | - | (Done Sprints 4-8) | Done |
-| UX-17 | P1 | S | Navigation clavier (fleches) pour le swipe | A faire |
-| UX-18 | P1 | S | Focus trap + Escape sur CardDetail | A faire |
-| UX-19 | P1 | XS | Retirer userScalable: false (permettre zoom) | A faire |
-| UX-20 | P1 | S | prefers-reduced-motion (framer-motion + CSS) | A faire |
-| UX-21 | P1 | S | Focus-visible rings sur tous les boutons | A faire |
-| UX-22 | P2 | XS | Touch targets 44px minimum | A faire |
-| UX-23 | P2 | S | Confirmation avant quitter session | A faire |
-| UX-24 | P2 | XS | aria-label sur boutons Level 2 | A faire |
-| UX-25 | P2 | XS | aria-hidden sur icones SVG decoratives | A faire |
+| UX-17 | P1 | S | Navigation clavier (fleches) pour le swipe | Done Sprint 13 |
+| UX-18 | P1 | S | Focus trap + Escape sur CardDetail | Done Sprint 13 |
+| UX-19 | P1 | XS | Retirer userScalable: false (permettre zoom) | Done Sprint 13 |
+| UX-20 | P1 | S | prefers-reduced-motion (framer-motion + CSS) | Done Sprint 13 |
+| UX-21 | P1 | S | Focus-visible rings sur tous les boutons | Done Sprint 13 |
+| UX-22 | P2 | XS | Touch targets 44px minimum | Done Sprint 13 |
+| UX-23 | P2 | S | Confirmation avant quitter session | Done Sprint 13 |
+| UX-24 | P2 | XS | aria-label sur boutons Level 2 | Done Sprint 13 |
+| UX-25 | P2 | XS | aria-hidden sur icones SVG decoratives | Done Sprint 13 |
 | UX-26 | P2 | S | 6 badges categorie manquants (complementaires) | A faire |
 | UX-27 | P2 | S | 4 achievements manquants | A faire |
 | UX-28 | P3 | XS | Re-acces au tutoriel depuis Infos/Profil | A faire |
@@ -124,6 +124,6 @@
 
 | Statut | Count |
 |--------|-------|
-| Done | 57 |
-| A faire | 21 |
+| Done | 66 |
+| A faire | 12 |
 | **Total** | **78** |

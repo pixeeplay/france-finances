@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useImperativeHandle, forwardRef } from "react";
-import { motion, animate as fmAnimate } from "framer-motion";
+import { motion, animate as fmAnimate, useReducedMotion } from "framer-motion";
 import { useSwipeGesture } from "@/hooks/useSwipeGesture";
 import { ChainsawIcon } from "./ChainsawIcon";
 import { ShieldIcon } from "./ShieldIcon";
@@ -21,6 +21,7 @@ interface SwipeCardProps {
 
 export const SwipeCard = forwardRef<SwipeCardHandle, SwipeCardProps>(
   function SwipeCard({ card, isTop, onSwipe, onTap, level = 1 }, ref) {
+  const prefersReducedMotion = useReducedMotion();
   const didDrag = useRef(false);
 
   const {
@@ -32,22 +33,25 @@ export const SwipeCard = forwardRef<SwipeCardHandle, SwipeCardProps>(
 
   useImperativeHandle(ref, () => ({
     triggerSwipe(direction: VoteDirection) {
+      const springConfig = prefersReducedMotion
+        ? { type: "tween" as const, duration: 0 }
+        : { type: "spring" as const, stiffness: 300, damping: 30 };
       const isVertical = direction === "reinforce" || direction === "unjustified";
       if (isVertical) {
         const exitY = direction === "reinforce" ? -500 : 500;
         fmAnimate(y, exitY, {
-          type: "spring", stiffness: 300, damping: 30,
+          ...springConfig,
           onComplete: () => onSwipe(direction),
         });
       } else {
         const exitX = direction === "keep" ? -500 : 500;
         fmAnimate(x, exitX, {
-          type: "spring", stiffness: 300, damping: 30,
+          ...springConfig,
           onComplete: () => onSwipe(direction),
         });
       }
     },
-  }), [x, y, onSwipe]);
+  }), [x, y, onSwipe, prefersReducedMotion]);
 
   if (!isTop) {
     return (

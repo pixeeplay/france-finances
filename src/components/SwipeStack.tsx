@@ -10,6 +10,7 @@ import { ShieldIcon } from "./ShieldIcon";
 import { useGameStore } from "@/stores/gameStore";
 import { useShallow } from "zustand/react/shallow";
 import { track } from "@/lib/analytics";
+import { useKeyboardSwipe } from "@/hooks/useKeyboardSwipe";
 import type { Card, VoteDirection, GameMode } from "@/types";
 
 interface SwipeStackProps {
@@ -55,6 +56,25 @@ export function SwipeStack({
     }
   }, [initialized, startSession, deckId, cards, level, gameMode, budgetTarget]);
 
+  // Warn before leaving mid-session (browser navigation)
+  useEffect(() => {
+    if (!session || session.completed) return;
+    function handleBeforeUnload(e: BeforeUnloadEvent) {
+      e.preventDefault();
+    }
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    return () => window.removeEventListener("beforeunload", handleBeforeUnload);
+  }, [session]);
+
+  const handleQuitSession = useCallback(() => {
+    if (session && !session.completed && session.votes.length > 0) {
+      if (!window.confirm("Quitter la session ? Votre progression sera perdue.")) {
+        return;
+      }
+    }
+    router.push("/play");
+  }, [session, router]);
+
   const currentIndex = session?.currentIndex ?? 0;
   const totalCards = cards.length;
 
@@ -94,6 +114,12 @@ export function SwipeStack({
     },
     [currentIndex, cards, handleSwipe]
   );
+
+  useKeyboardSwipe({
+    onVote: handleButtonVote,
+    enabled: !!cards[currentIndex] && !isAnimating.current,
+    level,
+  });
 
   const currentCard = cards[currentIndex];
   const nextCardInPile = cards[currentIndex + 1];
@@ -138,7 +164,7 @@ export function SwipeStack({
           </span>
         </div>
         <button
-          onClick={() => router.push("/play")}
+          onClick={handleQuitSession}
           aria-label="Quitter la session"
           className="w-8 h-8 rounded-full bg-card flex items-center justify-center text-muted-foreground hover:bg-danger hover:text-white transition-colors shadow-sm shrink-0"
         >
@@ -309,7 +335,8 @@ function Level2Buttons({
         <button
           onClick={() => onVote("keep")}
           disabled={!currentCard}
-          className="flex flex-col items-center gap-1.5 py-2 rounded-xl bg-card border-2 border-primary transition-transform active:scale-90 disabled:opacity-40"
+          aria-label="Valider cette depense"
+          className="flex flex-col items-center gap-1.5 py-3 min-h-[44px] rounded-xl bg-card border-2 border-primary transition-transform active:scale-90 disabled:opacity-40"
         >
           <ShieldIcon size={24} className="text-primary" />
           <span className="text-[9px] font-bold text-primary uppercase">OK</span>
@@ -317,7 +344,8 @@ function Level2Buttons({
         <button
           onClick={() => onVote("cut")}
           disabled={!currentCard}
-          className="flex flex-col items-center gap-1.5 py-2 rounded-xl bg-card border-2 border-warning transition-transform active:scale-90 disabled:opacity-40"
+          aria-label="Reduire cette depense"
+          className="flex flex-col items-center gap-1.5 py-3 min-h-[44px] rounded-xl bg-card border-2 border-warning transition-transform active:scale-90 disabled:opacity-40"
         >
           <ChainsawIcon size={24} />
           <span className="text-[9px] font-bold text-warning uppercase">Réduire</span>
@@ -325,17 +353,19 @@ function Level2Buttons({
         <button
           onClick={() => onVote("reinforce")}
           disabled={!currentCard}
-          className="flex flex-col items-center gap-1.5 py-2 rounded-xl bg-card border-2 border-info transition-transform active:scale-90 disabled:opacity-40"
+          aria-label="Renforcer cette depense"
+          className="flex flex-col items-center gap-1.5 py-3 min-h-[44px] rounded-xl bg-card border-2 border-info transition-transform active:scale-90 disabled:opacity-40"
         >
-          <span className="text-lg">📈</span>
+          <span className="text-lg" aria-hidden="true">📈</span>
           <span className="text-[9px] font-bold text-info uppercase">Renforcer</span>
         </button>
         <button
           onClick={() => onVote("unjustified")}
           disabled={!currentCard}
-          className="flex flex-col items-center gap-1.5 py-2 rounded-xl bg-card border-2 border-danger transition-transform active:scale-90 disabled:opacity-40"
+          aria-label="Marquer comme injustifie"
+          className="flex flex-col items-center gap-1.5 py-3 min-h-[44px] rounded-xl bg-card border-2 border-danger transition-transform active:scale-90 disabled:opacity-40"
         >
-          <span className="text-lg">❌</span>
+          <span className="text-lg" aria-hidden="true">❌</span>
           <span className="text-[9px] font-bold text-danger uppercase">Injustifié</span>
         </button>
       </div>

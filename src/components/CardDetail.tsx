@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useCallback } from "react";
+import { useRef, useCallback, useEffect } from "react";
 import { motion, AnimatePresence, useDragControls } from "framer-motion";
 import { ChainsawIcon } from "./ChainsawIcon";
 import { ShieldIcon } from "./ShieldIcon";
@@ -17,6 +17,7 @@ interface CardDetailProps {
 export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps) {
   const dragControls = useDragControls();
   const constraintsRef = useRef<HTMLDivElement>(null);
+  const sheetRef = useRef<HTMLDivElement>(null);
 
   const handleVote = useCallback(
     (direction: VoteDirection) => {
@@ -25,6 +26,50 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
     },
     [onVote, onClose]
   );
+
+  // Escape key to close
+  useEffect(() => {
+    if (!card) return;
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") onClose();
+    }
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [card, onClose]);
+
+  // Focus trap: keep focus inside the bottom sheet
+  useEffect(() => {
+    if (!card || !sheetRef.current) return;
+    const sheet = sheetRef.current;
+    const previouslyFocused = document.activeElement as HTMLElement | null;
+
+    // Focus the close button on open
+    const closeBtn = sheet.querySelector<HTMLElement>("[aria-label='Fermer le détail']");
+    closeBtn?.focus();
+
+    function trapFocus(e: KeyboardEvent) {
+      if (e.key !== "Tab") return;
+      const focusable = sheet.querySelectorAll<HTMLElement>(
+        "button, [href], input, select, textarea, [tabindex]:not([tabindex='-1'])"
+      );
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+
+    window.addEventListener("keydown", trapFocus);
+    return () => {
+      window.removeEventListener("keydown", trapFocus);
+      previouslyFocused?.focus();
+    };
+  }, [card]);
 
   return (
     <AnimatePresence>
@@ -44,7 +89,10 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
           {/* Bottom Sheet */}
           <motion.div
             key="sheet"
-            ref={constraintsRef}
+            ref={(el) => {
+              constraintsRef.current = el;
+              sheetRef.current = el;
+            }}
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             exit={{ y: "100%" }}
@@ -121,7 +169,7 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
               {card.subtitle && (
                 <section className="mb-8">
                   <h3 className="text-lg font-bold text-foreground mb-3 flex items-center gap-2 tracking-tight">
-                    <span className="text-primary text-xl">📊</span>
+                    <span className="text-primary text-xl" aria-hidden="true">📊</span>
                     Détail
                   </h3>
                   <div className="bg-primary/5 border border-primary/20 rounded-2xl p-4 flex items-start gap-3">
@@ -161,7 +209,7 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
               {/* Sources */}
               <section className="mb-6">
                 <h3 className="text-lg font-bold text-foreground mb-3 flex items-center gap-2 tracking-tight">
-                  <span className="text-muted-foreground text-xl">🔗</span>
+                  <span className="text-muted-foreground text-xl" aria-hidden="true">🔗</span>
                   Sources
                 </h3>
                 <div className="flex flex-col gap-2.5">
@@ -210,30 +258,34 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
                 <div className="grid grid-cols-4 gap-2 mb-3">
                   <button
                     onClick={() => handleVote("keep")}
-                    className="flex flex-col items-center justify-center gap-1 py-3 rounded-xl border-2 border-primary/80 text-primary font-bold active:scale-95 transition-all"
+                    aria-label="Valider cette depense"
+                    className="flex flex-col items-center justify-center gap-1 py-3 min-h-[44px] rounded-xl border-2 border-primary/80 text-primary font-bold active:scale-95 transition-all"
                   >
                     <ShieldIcon size={20} />
                     <span className="text-[10px] uppercase">OK</span>
                   </button>
                   <button
                     onClick={() => handleVote("cut")}
-                    className="flex flex-col items-center justify-center gap-1 py-3 rounded-xl border-2 border-warning/80 text-warning font-bold active:scale-95 transition-all"
+                    aria-label="Reduire cette depense"
+                    className="flex flex-col items-center justify-center gap-1 py-3 min-h-[44px] rounded-xl border-2 border-warning/80 text-warning font-bold active:scale-95 transition-all"
                   >
                     <ChainsawIcon size={20} />
                     <span className="text-[10px] uppercase">Réduire</span>
                   </button>
                   <button
                     onClick={() => handleVote("reinforce")}
-                    className="flex flex-col items-center justify-center gap-1 py-3 rounded-xl border-2 border-info/80 text-info font-bold active:scale-95 transition-all"
+                    aria-label="Renforcer cette depense"
+                    className="flex flex-col items-center justify-center gap-1 py-3 min-h-[44px] rounded-xl border-2 border-info/80 text-info font-bold active:scale-95 transition-all"
                   >
-                    <span className="text-lg">📈</span>
+                    <span className="text-lg" aria-hidden="true">📈</span>
                     <span className="text-[10px] uppercase">Renforcer</span>
                   </button>
                   <button
                     onClick={() => handleVote("unjustified")}
-                    className="flex flex-col items-center justify-center gap-1 py-3 rounded-xl border-2 border-danger/80 text-danger font-bold active:scale-95 transition-all"
+                    aria-label="Marquer comme injustifie"
+                    className="flex flex-col items-center justify-center gap-1 py-3 min-h-[44px] rounded-xl border-2 border-danger/80 text-danger font-bold active:scale-95 transition-all"
                   >
-                    <span className="text-lg">❌</span>
+                    <span className="text-lg" aria-hidden="true">❌</span>
                     <span className="text-[10px] uppercase">Injustifié</span>
                   </button>
                 </div>
@@ -241,14 +293,16 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
                 <div className="grid grid-cols-2 gap-3 mb-3">
                   <button
                     onClick={() => handleVote("keep")}
-                    className="flex items-center justify-center gap-2 py-3.5 rounded-xl border-2 border-primary/80 text-primary font-bold hover:bg-primary hover:text-primary-foreground active:scale-95 transition-all"
+                    aria-label="Valider cette depense"
+                    className="flex items-center justify-center gap-2 py-3.5 min-h-[44px] rounded-xl border-2 border-primary/80 text-primary font-bold hover:bg-primary hover:text-primary-foreground active:scale-95 transition-all"
                   >
                     <ShieldIcon size={20} />
                     OK pour moi
                   </button>
                   <button
                     onClick={() => handleVote("cut")}
-                    className="flex items-center justify-center gap-2 py-3.5 rounded-xl border-2 border-danger/80 text-danger font-bold hover:bg-danger hover:text-white active:scale-95 transition-all"
+                    aria-label="Remettre en question cette depense"
+                    className="flex items-center justify-center gap-2 py-3.5 min-h-[44px] rounded-xl border-2 border-danger/80 text-danger font-bold hover:bg-danger hover:text-white active:scale-95 transition-all"
                   >
                     <ChainsawIcon size={20} />
                     À revoir

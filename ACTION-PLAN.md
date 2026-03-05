@@ -61,19 +61,19 @@ Voir historique dans git log. 38 items livres.
 
 **Objectif :** Rendre le jeu accessible clavier, screen reader, reduced motion.
 
-| # | Item | Effort | Ref |
-|---|------|--------|-----|
-| 1 | Navigation clavier (fleches) pour le swipe | S | UX-17 |
-| 2 | Focus-visible rings sur tous les boutons | S | UX-21 |
-| 3 | prefers-reduced-motion (framer-motion + CSS) | S | UX-20 |
-| 4 | Focus trap + Escape sur CardDetail (bottom sheet) | S | UX-18 |
-| 5 | Retirer userScalable: false | XS | UX-19 |
-| 6 | Touch targets 44px minimum (detail, quitter, avatar) | XS | UX-22 |
-| 7 | aria-label sur boutons Level 2 | XS | UX-24 |
-| 8 | aria-hidden sur icones SVG decoratives | XS | UX-25 |
-| 9 | Confirmation avant quitter session | S | UX-23 |
+| # | Item | Effort | Ref | Statut |
+|---|------|--------|-----|--------|
+| 1 | Navigation clavier (fleches) pour le swipe | S | UX-17 | Done |
+| 2 | Focus-visible rings sur tous les boutons | S | UX-21 | Done |
+| 3 | prefers-reduced-motion (framer-motion + CSS) | S | UX-20 | Done |
+| 4 | Focus trap + Escape sur CardDetail (bottom sheet) | S | UX-18 | Done |
+| 5 | Retirer userScalable: false | XS | UX-19 | Done |
+| 6 | Touch targets 44px minimum (detail, quitter, avatar) | XS | UX-22 | Done |
+| 7 | aria-label sur boutons Level 2 | XS | UX-24 | Done |
+| 8 | aria-hidden sur icones SVG decoratives | XS | UX-25 | Done |
+| 9 | Confirmation avant quitter session | S | UX-23 | Done |
 
-**Effort total :** ~2 jours
+**Livrable :** Keyboard nav, focus trap, reduced motion, 44px targets, aria-labels, quit confirm.
 
 ---
 
@@ -134,7 +134,7 @@ Voir historique dans git log. 38 items livres.
 | Bugs hautes | 27 | < 10 | < 5 |
 | Cartes | 330 | 330 | 330 |
 | Archetypes | 14 | 14 (gaps corriges) | 14 |
-| WCAG violations | 11 | 11 | 0 |
-| Headers securite | 0 | 0 | 6+ |
+| WCAG violations | 11 | 11 | 0 (9 corriges Sprint 13) |
+| Headers securite | 0 | 6 | 6+ |
 | Error boundaries | 0 | 4 | 4 |
 | Rate limiting | Non | Oui | Oui |
