@@ -184,7 +184,7 @@ function CardContent({
             <button
               onClick={(e) => { e.stopPropagation(); onTapDetail(); }}
               onPointerDown={(e) => e.stopPropagation()}
-              aria-label="Voir le detail de cette depense"
+              aria-label="Voir le détail de cette dépense"
               className="w-8 h-8 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-card transition-colors border border-white/20 shadow-sm"
             >
               <span className="text-sm font-bold">+</span>

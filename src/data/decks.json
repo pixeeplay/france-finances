@@ -86,7 +86,7 @@
       "description": "PAC, forêts, eau, sécurité alimentaire",
       "icon": "🌾",
       "color": "#84CC16",
-      "cardCount": 8,
+      "cardCount": 20,
       "type": "main"
     },
     {
@@ -95,7 +95,7 @@
       "description": "Logement social, hébergement, rénovation urbaine",
       "icon": "🏠",
       "color": "#F97316",
-      "cardCount": 8,
+      "cardCount": 18,
       "type": "main"
     },
     {
@@ -104,7 +104,7 @@
       "description": "Accueil, intégration, rétention, AME",
       "icon": "🛂",
       "color": "#06B6D4",
-      "cardCount": 8,
+      "cardCount": 18,
       "type": "main"
     },
     {
@@ -113,7 +113,7 @@
       "description": "France 2030, spatial, IA, quantique",
       "icon": "🚀",
       "color": "#A855F7",
-      "cardCount": 8,
+      "cardCount": 18,
       "type": "main"
     },
     {
@@ -122,7 +122,7 @@
       "description": "TVA, IR, IS, CSG, impôts locaux",
       "icon": "💰",
       "color": "#EAB308",
-      "cardCount": 10,
+      "cardCount": 18,
       "type": "main"
     },
     {
@@ -131,7 +131,7 @@
       "description": "Formation, primes, aides à l'emploi",
       "icon": "🏢",
       "color": "#0EA5E9",
-      "cardCount": 8,
+      "cardCount": 18,
       "type": "main"
     },
     {
@@ -5322,6 +5322,1086 @@
         "patrimoine"
       ],
       "equivalence": "0,60€/m2 de construction pour proteger 2 000 ans de patrimoine enfoui"
+    },
+    {
+      "id": "agr-09",
+      "title": "Peche et aquaculture",
+      "subtitle": "FEAMPA europeen + budget national",
+      "description": "La peche francaise emploie ~15 000 marins sur ~4 000 navires. La France a perdu 25% de ses quotas post-Brexit. Le FEAMPA finance la modernisation de la flotte et la transition ecologique. L'exoneration de gazole pour les pecheurs coute ~100 M/an. L'aquaculture pese 800 M de CA mais reste sous-developpee.",
+      "amountBillions": 0.4,
+      "costPerCitizen": 6,
+      "deckId": "agriculture",
+      "icon": "🌾",
+      "source": "FEAMPA, FranceAgriMer, DPMA",
+      "level": 1,
+      "tags": [
+        "agriculture",
+        "peche",
+        "aquaculture"
+      ],
+      "equivalence": "La France a le 2e domaine maritime mondial mais importe 70% de sa consommation de poisson"
+    },
+    {
+      "id": "agr-10",
+      "title": "Bien-etre animal et abattoirs",
+      "subtitle": "Controles DGAL + mises aux normes",
+      "description": "La France compte ~250 abattoirs (divise par 2 en 20 ans). Cameras obligatoires en abattoir depuis 2023 (taux reel : ~40%). Veterinaires inspecteurs en sous-effectif (-20% en 10 ans). La loi Egalim interdit le broyage des poussins males et la castration a vif des porcelets depuis 2022.",
+      "amountBillions": 0.15,
+      "costPerCitizen": 2,
+      "deckId": "agriculture",
+      "icon": "🌾",
+      "source": "DGAL, ANSES, L214, Commission europeenne",
+      "level": 1,
+      "tags": [
+        "agriculture",
+        "abattoirs",
+        "bien-etre animal"
+      ],
+      "equivalence": "2 par Francais par an pour controler les conditions d'abattage de 1 milliard d'animaux"
+    },
+    {
+      "id": "agr-11",
+      "title": "Vigne, vin et spiritueux",
+      "subtitle": "Filiere viticole et fiscalite alcool",
+      "description": "La France est le 2e producteur mondial de vin et 1er exportateur en valeur (13 Md/an dont cognac). La consommation a chute de 50% en 40 ans. L'Etat aide a arracher des vignes (6 000/ha). Paradoxe : promotion du vin a l'export tout en combattant la consommation d'alcool (loi Evin).",
+      "amountBillions": 0.5,
+      "costPerCitizen": 52,
+      "deckId": "agriculture",
+      "icon": "🌾",
+      "source": "FranceAgriMer, Douanes, OIV, Cour des comptes",
+      "level": 1,
+      "tags": [
+        "agriculture",
+        "vin",
+        "fiscalite"
+      ],
+      "equivalence": "Le vin rapporte 4 Md de taxes et 13 Md d'export, mais l'alcool coute 120 Md/an a la societe"
+    },
+    {
+      "id": "agr-12",
+      "title": "Gaspillage alimentaire et loi AGEC",
+      "subtitle": "10 millions de tonnes perdues/an",
+      "description": "10 millions de tonnes de nourriture gaspillees chaque annee en France. La loi AGEC (2020) interdit la destruction des invendus alimentaires. Le gaspillage en grande distribution a baisse de 20% depuis la loi Garot (2016). Les menages gaspillent encore ~30 kg/personne/an. Objectif : diviser par 2 d'ici 2030.",
+      "amountBillions": 16,
+      "costPerCitizen": 235,
+      "deckId": "agriculture",
+      "icon": "🌾",
+      "source": "ADEME, ministere de la Transition ecologique, loi AGEC",
+      "level": 1,
+      "tags": [
+        "agriculture",
+        "gaspillage",
+        "AGEC"
+      ],
+      "equivalence": "Chaque Francais jette 1 de nourriture par jour a la poubelle"
+    },
+    {
+      "id": "log-09",
+      "title": "Action Logement (1% patronal)",
+      "subtitle": "PEEC — participation des employeurs",
+      "description": "Action Logement collecte 0,45% de la masse salariale et redistribue : aide a la mobilite, garantie Visale (caution gratuite), prets accession, financement HLM et renovation urbaine (ANRU). 2e financeur du logement social. L'Etat ponctionne regulierement ses reserves (~300 M en 2025).",
+      "amountBillions": 5,
+      "costPerCitizen": 0,
+      "deckId": "logement",
+      "icon": "🏠",
+      "source": "Action Logement, PLF 2026, Cour des comptes",
+      "level": 1,
+      "tags": [
+        "logement",
+        "action logement",
+        "patronal"
+      ],
+      "equivalence": "Visale a garanti 1,2 million de baux depuis 2016 — 1er dispositif anti-galere locative des jeunes actifs"
+    },
+    {
+      "id": "log-10",
+      "title": "Coproprietes degradees et habitat indigne",
+      "subtitle": "ANAH + Plan Initiative Coproprietes",
+      "description": "100 000 coproprietes fragiles en France, dont 15 000 en grande difficulte. L'habitat indigne touche 420 000 logements. L'effondrement de la rue d'Aubagne a Marseille (8 morts, 2018) a declenche l'evacuation de 10 000 personnes et un plan d'urgence de 3 Md.",
+      "amountBillions": 0.5,
+      "costPerCitizen": 7,
+      "deckId": "logement",
+      "icon": "🏠",
+      "source": "ANAH, Fondation Abbe Pierre rapport 2025, PLF 2026",
+      "level": 1,
+      "tags": [
+        "logement",
+        "coproprietes",
+        "habitat indigne"
+      ],
+      "equivalence": "420 000 logements indignes en France, 6e puissance mondiale — un paradoxe national"
+    },
+    {
+      "id": "log-11",
+      "title": "Logement intermediaire (classes moyennes)",
+      "subtitle": "Banque des Territoires — loyers sous le marche",
+      "description": "Le logement intermediaire (loyers 15-20% sous le marche) cible les classes moyennes coincees. 155 000 logements intermediaires crees en 10 ans. La crise du credit immobilier (taux passes de 1% a 4%) a fait exploser la demande en locatif intermediaire.",
+      "amountBillions": 10,
+      "costPerCitizen": 0,
+      "deckId": "logement",
+      "icon": "🏠",
+      "source": "Banque des Territoires, CDC, USH",
+      "level": 1,
+      "tags": [
+        "logement",
+        "intermediaire",
+        "classes moyennes"
+      ],
+      "equivalence": "Un loyer intermediaire a Paris = ~20/m2 (vs 25-30 dans le prive, vs 7-12 en HLM)"
+    },
+    {
+      "id": "log-12",
+      "title": "RLS : la ponction sur les HLM",
+      "subtitle": "Reduction de loyer de solidarite",
+      "description": "En 2018, l'Etat a baisse les APL de 5/mois et compense en imposant aux bailleurs HLM une RLS du meme montant. Depuis 2017, 16 Md ponctionnes aux organismes HLM, reduisant leur capacite a construire et renover. L'USH qualifie ce mecanisme de toxique.",
+      "amountBillions": 1.3,
+      "costPerCitizen": 15,
+      "deckId": "logement",
+      "icon": "🏠",
+      "source": "USH, PLF 2026, Public Senat",
+      "level": 1,
+      "tags": [
+        "logement",
+        "HLM",
+        "RLS"
+      ],
+      "equivalence": "16 Md ponctionnes en 7 ans = 200 000 logements sociaux qui auraient pu etre construits"
+    },
+    {
+      "id": "imm-09",
+      "title": "OFPRA et delais d'instruction asile",
+      "subtitle": "130 000 demandes/an",
+      "description": "L'OFPRA traite ~130 000 demandes d'asile/an. Delai moyen ramene a ~9 mois. Taux de protection ~35% en premiere instance. La CNDA est la juridiction qui rend le plus de decisions en France (~70 000/an). Les deboutes (65%) doivent quitter le territoire mais le taux d'execution des OQTF reste ~7%.",
+      "amountBillions": 0.1,
+      "costPerCitizen": 1.5,
+      "deckId": "immigration",
+      "icon": "🛂",
+      "source": "OFPRA rapport 2024, CNDA, PLF 2026",
+      "level": 1,
+      "tags": [
+        "immigration",
+        "asile",
+        "OFPRA"
+      ],
+      "equivalence": "130 000 dossiers d'asile/an pour 100 M = ~770 de cout d'instruction par demande"
+    },
+    {
+      "id": "imm-10",
+      "title": "Titres de sejour et visas (recettes)",
+      "subtitle": "600 M/an de taxes",
+      "description": "Titres de sejour payants : 200-300 pour un premier titre. La France delivre ~3,5 millions de visas/an (1re au monde) et ~270 000 premiers titres de sejour. Ces taxes financent partiellement l'OFII et les consulats. La dematerialisation (ANEF) reduit les files d'attente mais exclut les personnes sans acces numerique.",
+      "amountBillions": 0.6,
+      "costPerCitizen": 9,
+      "deckId": "immigration",
+      "icon": "🛂",
+      "source": "PLF 2026, DGEF, ASH",
+      "level": 1,
+      "tags": [
+        "immigration",
+        "visas",
+        "recettes"
+      ],
+      "equivalence": "Les etrangers financent ~600 M/an en taxes de sejour — ca couvre le tiers du budget Immigration"
+    },
+    {
+      "id": "imm-11",
+      "title": "Regularisations et sans-papiers",
+      "subtitle": "600 000-900 000 personnes en situation irreguliere",
+      "description": "~30 000 regularisations/an. Les sans-papiers travaillent massivement dans le BTP, la restauration, l'aide a domicile. Ils cotisent a la Secu sans pouvoir beneficier de la retraite. Le cout net est un sujet de guerre de chiffres entre think tanks.",
+      "amountBillions": 4,
+      "costPerCitizen": 60,
+      "deckId": "immigration",
+      "icon": "🛂",
+      "source": "DGEF, IGAS, Cour des comptes, estimations INSEE/INED",
+      "level": 1,
+      "tags": [
+        "immigration",
+        "sans-papiers",
+        "regularisation"
+      ],
+      "equivalence": "30 000 regularisations/an sur 600 000-900 000 sans-papiers = un stock qui se renouvelle plus vite qu'il ne se resorbe"
+    },
+    {
+      "id": "imm-12",
+      "title": "Accueil refugies ukrainiens",
+      "subtitle": "Protection temporaire UE",
+      "description": "~100 000 Ukrainiens beneficient de la protection temporaire en France. Droit au travail immediat, ADA, scolarisation. Dispositif distinct de l'asile classique. 65% sont des femmes et enfants. Le taux d'emploi atteint ~30% apres 2 ans (superieur aux autres flux).",
+      "amountBillions": 0.5,
+      "costPerCitizen": 7,
+      "deckId": "immigration",
+      "icon": "🛂",
+      "source": "DGEF, OFII, PLF 2026, Eurostat",
+      "level": 1,
+      "tags": [
+        "immigration",
+        "Ukraine",
+        "refugies"
+      ],
+      "equivalence": "Accueillir 100 000 Ukrainiens coute ~5 000/personne/an, soit le prix d'un semestre d'universite"
+    },
+    {
+      "id": "num-09",
+      "title": "Bpifrance (financement de l'innovation)",
+      "subtitle": "40 Md/an de financements mobilises",
+      "description": "Bpifrance soutient 100 000 entreprises/an via prets (~20 Md), garanties (~12 Md), fonds propres (~5 Md) et aides a l'innovation (~3 Md). Elle gere aussi les PGE. Critique : finance-t-elle les startups qui en ont besoin, ou les licornes qui trouvent deja du capital prive ?",
+      "amountBillions": 40,
+      "costPerCitizen": 588,
+      "deckId": "numerique",
+      "icon": "🚀",
+      "source": "Bpifrance rapport annuel, PLF 2026, Cour des comptes",
+      "level": 1,
+      "tags": [
+        "numerique",
+        "Bpifrance",
+        "innovation"
+      ],
+      "equivalence": "Bpifrance mobilise chaque jour l'equivalent du budget annuel de 4 lycees"
+    },
+    {
+      "id": "num-10",
+      "title": "French Tech et ecosysteme startup",
+      "subtitle": "25 000 startups, 30 licornes",
+      "description": "La French Tech regroupe ~25 000 startups et 30 licornes (Doctolib, BlaBlaCar, Mistral AI). La France est devenue le 1er ecosysteme startup europeen en 2022 (13 Md de levees), avant de retomber a ~8 Md en 2024. Le taux de survie a 5 ans est de 40%.",
+      "amountBillions": 0.3,
+      "costPerCitizen": 4,
+      "deckId": "numerique",
+      "icon": "🚀",
+      "source": "Mission French Tech, DGE, France Digitale",
+      "level": 1,
+      "tags": [
+        "numerique",
+        "startups",
+        "French Tech"
+      ],
+      "equivalence": "4/an par Francais pour un ecosysteme qui leve 8 Md de capital prive — effet de levier x25"
+    },
+    {
+      "id": "num-11",
+      "title": "Cables sous-marins et souverainete numerique",
+      "subtitle": "99% du trafic internet passe par les cables",
+      "description": "Marseille est le 1er point d'atterrissage en Mediterranee. Alcatel Submarine Networks est le 1er fabricant mondial. Les GAFAM posent desormais leurs propres cables, marginalisant les operateurs telecoms. Le sabotage de cables en mer Baltique (2023) a revele la vulnerabilite de cette infrastructure.",
+      "amountBillions": 0.2,
+      "costPerCitizen": 3,
+      "deckId": "numerique",
+      "icon": "🚀",
+      "source": "ANSSI, SGDSN, Alcatel Submarine Networks, ARCEP",
+      "level": 1,
+      "tags": [
+        "numerique",
+        "cables",
+        "souverainete"
+      ],
+      "equivalence": "1 cable sous-marin transatlantique coute ~300 M et transporte toute la bibliotheque du Congres en 1 seconde"
+    },
+    {
+      "id": "num-12",
+      "title": "Cloud souverain et donnees publiques",
+      "subtitle": "Label SecNumCloud — hebergement des donnees critiques",
+      "description": "L'Etat heberge ses donnees critiques dans des clouds souverains labellises SecNumCloud. Le Health Data Hub a ete transfere de Microsoft Azure vers un hebergeur certifie apres un bras de fer de 3 ans. Le marche du cloud public en France pese ~16 Md, domine a 65% par AWS, Azure et Google.",
+      "amountBillions": 0.5,
+      "costPerCitizen": 7,
+      "deckId": "numerique",
+      "icon": "🚀",
+      "source": "ANSSI, DINUM, Health Data Hub, ARCEP",
+      "level": 1,
+      "tags": [
+        "numerique",
+        "cloud",
+        "souverainete"
+      ],
+      "equivalence": "Les donnees de sante de 67 millions de Francais etaient hebergees chez Microsoft jusqu'en 2024"
+    },
+    {
+      "id": "emp-09",
+      "title": "Fraude au CPF",
+      "subtitle": "Compte personnel de formation",
+      "description": "Le CPF (500/an par actif, plafonne a 5 000) est devenu un terrain de chasse pour les escrocs. La Caisse des depots a bloque 43 000 comptes suspects en 2023. FranceConnect+ obligatoire depuis 2023, reduisant la fraude de 80%. 40% des formations CPF jugees sans valeur par la Cour des comptes.",
+      "amountBillions": 0.25,
+      "costPerCitizen": 4,
+      "deckId": "emploi",
+      "icon": "🏢",
+      "source": "Caisse des depots, Cour des comptes, France Competences",
+      "level": 1,
+      "tags": [
+        "emploi",
+        "CPF",
+        "fraude"
+      ],
+      "equivalence": "Le CPF distribue 2 Md/an en formation, dont 40% jugees inutiles par la Cour des comptes"
+    },
+    {
+      "id": "emp-10",
+      "title": "Zones franches et ZRR (ruralite)",
+      "subtitle": "Exonerations fiscales et sociales",
+      "description": "Les ZFU (~100 quartiers) et ZRR (~18 000 communes) offrent des exonerations pour attirer les entreprises. Les ZRR remplacees par les France Ruralites Revitalisation (FRR) en 2024. Effet positif modere sur l'emploi local (+5-10%) mais cout eleve par emploi cree (~30 000/an).",
+      "amountBillions": 0.7,
+      "costPerCitizen": 10,
+      "deckId": "emploi",
+      "icon": "🏢",
+      "source": "DGCL, ANCT, Cour des comptes, PLF 2026",
+      "level": 1,
+      "tags": [
+        "emploi",
+        "zones franches",
+        "ruralite"
+      ],
+      "equivalence": "18 000 communes en ZRR = la moitie des communes francaises beneficient d'avantages fiscaux"
+    },
+    {
+      "id": "emp-11",
+      "title": "Dialogue social et representativite",
+      "subtitle": "Financement syndicats + patronat",
+      "description": "L'AGFPN repartit ~130 M/an entre les 5 syndicats representatifs et les 3 organisations patronales. Le taux de syndicalisation en France est de ~8% (plus bas d'Europe). Les cotisations syndicales ne couvrent que 40% du budget des syndicats.",
+      "amountBillions": 0.13,
+      "costPerCitizen": 2,
+      "deckId": "emploi",
+      "icon": "🏢",
+      "source": "AGFPN, DARES, DREES",
+      "level": 1,
+      "tags": [
+        "emploi",
+        "syndicats",
+        "dialogue social"
+      ],
+      "equivalence": "2/an par Francais pour financer un dialogue social avec 8% de syndiques — le plus bas taux d'Europe"
+    },
+    {
+      "id": "emp-12",
+      "title": "Travail detache (travailleurs europeens)",
+      "subtitle": "300 000 travailleurs declares + fraude",
+      "description": "300 000 travailleurs detaches declares en France (BTP, agriculture, transport). Payes aux conditions francaises mais cotisant dans leur pays d'origine. La fraude au detachement est estimee a 200 000-500 000 travailleurs supplementaires. Un travailleur detache coute 20-30% de moins qu'un salarie francais.",
+      "amountBillions": 2.5,
+      "costPerCitizen": 35,
+      "deckId": "emploi",
+      "icon": "🏢",
+      "source": "DGT, Commission europeenne, Cour des comptes",
+      "level": 1,
+      "tags": [
+        "emploi",
+        "detachement",
+        "Europe"
+      ],
+      "equivalence": "1 travailleur detache coute 20-30% de moins qu'un salarie francais a poste equivalent"
+    },
+    {
+      "id": "agr-13",
+      "title": "Crise agricole et plans d'urgence",
+      "subtitle": "800 M/an de mesures d'urgence recurrentes",
+      "description": "Chaque annee depuis 2014, plans d'urgence : gel du vignoble, secheresse, effondrement des prix du lait, grippe aviaire. En 2024, le blocage des autoroutes a declenche un plan de 400 M. Ces plans exceptionnels reviennent si regulierement qu'ils sont devenus structurels. Le revenu agricole moyen reste a ~26 000/an.",
+      "amountBillions": 0.8,
+      "costPerCitizen": 12,
+      "deckId": "agriculture",
+      "icon": "🌾",
+      "source": "Ministere Agriculture, MSA, FNSEA",
+      "level": 1,
+      "tags": [
+        "agriculture",
+        "crise",
+        "urgence"
+      ],
+      "equivalence": "La France decrete une crise agricole en moyenne tous les 8 mois depuis 10 ans"
+    },
+    {
+      "id": "agr-14",
+      "title": "Enseignement agricole",
+      "subtitle": "220 etablissements publics + 600 prives",
+      "description": "170 000 eleves dans 800 etablissements. Taux d'insertion professionnelle : 87% (le meilleur de l'enseignement professionnel francais). Les lycees agricoles gerent des exploitations pedagogiques. Paradoxe : le reseau est excellent mais meconnu.",
+      "amountBillions": 1.5,
+      "costPerCitizen": 22,
+      "deckId": "agriculture",
+      "icon": "🌾",
+      "source": "DGER, Ministere Agriculture, CEREQ",
+      "level": 1,
+      "tags": [
+        "agriculture",
+        "enseignement",
+        "formation"
+      ],
+      "equivalence": "87% d'insertion professionnelle — le meilleur taux de tout l'enseignement francais"
+    },
+    {
+      "id": "agr-15",
+      "title": "Irrigation et gestion de l'eau agricole",
+      "subtitle": "Mega-bassines et adaptation climatique",
+      "description": "6% de la surface agricole francaise est irriguee (vs 30% en Espagne). Les mega-bassines cristallisent un conflit majeur (Sainte-Soline, 2023 : 200 blesses). Le BRGM estime que les nappes phreatiques baisseront de 10-25% d'ici 2050. Cout d'une mega-bassine = 5-10 M.",
+      "amountBillions": 0.5,
+      "costPerCitizen": 7,
+      "deckId": "agriculture",
+      "icon": "🌾",
+      "source": "BRGM, OFB, Ministere Transition ecologique",
+      "level": 1,
+      "tags": [
+        "agriculture",
+        "eau",
+        "irrigation"
+      ],
+      "equivalence": "L'agriculture utilise 45% de l'eau douce consommee en France, mais n'irrigue que 6% des terres"
+    },
+    {
+      "id": "agr-16",
+      "title": "Pesticides et plan Ecophyto",
+      "subtitle": "Objectif -50% en 10 ans... resultat +15%",
+      "description": "Le plan Ecophyto visait a diviser par 2 l'usage des pesticides en 10 ans. Bilan 2024 : +15%. Le plan a ete mis en pause en 2024. Le glyphosate re-autorise dans l'UE pour 10 ans. Le cout sanitaire des pesticides est estime a 1-3 Md/an. La redevance pour pollution diffuse rapporte ~150 M/an.",
+      "amountBillions": 0.3,
+      "costPerCitizen": 4,
+      "deckId": "agriculture",
+      "icon": "🌾",
+      "source": "Plan Ecophyto, ANSES, Inserm, OFB",
+      "level": 1,
+      "tags": [
+        "agriculture",
+        "pesticides",
+        "sante"
+      ],
+      "equivalence": "Objectif : -50% de pesticides en 10 ans. Resultat : +15%. Et le plan a ete suspendu"
+    },
+    {
+      "id": "agr-17",
+      "title": "Souverainete alimentaire",
+      "subtitle": "Dependance aux importations",
+      "description": "La France est excedentaire en cereales, vin, produits laitiers, mais dependante en fruits (60% importes), legumes (40%), poisson (70%). La France nourrirait 80 millions de personnes avec sa production... mais pas avec les memes produits que ceux que les Francais mangent.",
+      "amountBillions": 50,
+      "costPerCitizen": 735,
+      "deckId": "agriculture",
+      "icon": "🌾",
+      "source": "Douanes, FranceAgriMer, Ministere Agriculture",
+      "level": 1,
+      "tags": [
+        "agriculture",
+        "souverainete",
+        "importations"
+      ],
+      "equivalence": "La France exporte 1 Md de fromage/an et importe 1 Md d'avocats et mangues"
+    },
+    {
+      "id": "agr-18",
+      "title": "Cantines publiques et restauration collective",
+      "subtitle": "3,5 milliards de repas/an",
+      "description": "La restauration collective publique sert 3,5 milliards de repas/an. La loi EGalim impose 50% de produits durables et 20% de bio — objectif atteint a ~30%. Un repas de cantine scolaire coute 8-10 a produire. Un repas d'hopital coute 3-5. Le gaspillage en restauration collective = 120g/repas.",
+      "amountBillions": 4,
+      "costPerCitizen": 59,
+      "deckId": "agriculture",
+      "icon": "🌾",
+      "source": "CNRC, ADEME, loi EGalim, DGAL",
+      "level": 1,
+      "tags": [
+        "agriculture",
+        "cantines",
+        "EGalim"
+      ],
+      "equivalence": "Un repas d'hopital coute moins qu'un cafe au comptoir — et ca se goute"
+    },
+    {
+      "id": "agr-19",
+      "title": "Grippe aviaire et crises sanitaires animales",
+      "subtitle": "50 millions de volailles abattues en 4 ans",
+      "description": "La grippe aviaire H5N1 a frappe la France 4 hivers consecutifs (2020-2024). Cout : 600 M d'indemnisations + 400 M de pertes de marche + 500 M de prophylaxie. La vaccination obligatoire depuis 2023 coute 100 M/an mais n'est pas acceptee par tous les partenaires commerciaux.",
+      "amountBillions": 1.5,
+      "costPerCitizen": 5,
+      "deckId": "agriculture",
+      "icon": "🌾",
+      "source": "DGAL, Ministere Agriculture, ANSES",
+      "level": 1,
+      "tags": [
+        "agriculture",
+        "grippe aviaire",
+        "sanitaire"
+      ],
+      "equivalence": "50 millions de volailles abattues en 4 ans = plus que la population francaise en poulets"
+    },
+    {
+      "id": "agr-20",
+      "title": "Foret francaise et bois-energie",
+      "subtitle": "ONF + reboisement + filiere bois",
+      "description": "La foret francaise couvre 17 millions d'hectares (31% du territoire). Menacee par les scolytes, secheresses et incendies (+50% de surfaces brulees en 2022). Plan de reboisement France 2030 : 1 milliard d'arbres en 10 ans. Le bois-energie represente 40% de la production d'energie renouvelable.",
+      "amountBillions": 1.2,
+      "costPerCitizen": 18,
+      "deckId": "agriculture",
+      "icon": "🌾",
+      "source": "ONF, IGN, France 2030, ADEME",
+      "level": 1,
+      "tags": [
+        "agriculture",
+        "foret",
+        "bois"
+      ],
+      "equivalence": "La France exporte des grumes vers la Chine et importe des meubles chinois en bois francais"
+    },
+    {
+      "id": "log-13",
+      "title": "Airbnb et meubles touristiques",
+      "subtitle": "800 000 annonces — regulation",
+      "description": "La France compte ~800 000 annonces Airbnb (1re destination mondiale). A Paris, 25 000 logements entiers retires du marche locatif. La loi Le Meur (2024) reduit la niche fiscale des meubles touristiques. Impact : +5 a 15% sur les loyers dans les zones touristiques tendues.",
+      "amountBillions": 0.3,
+      "costPerCitizen": 0,
+      "deckId": "logement",
+      "icon": "🏠",
+      "source": "DGFIP, Observatoire Airbnb, loi Le Meur, APUR",
+      "level": 1,
+      "tags": [
+        "logement",
+        "Airbnb",
+        "tourisme"
+      ],
+      "equivalence": "25 000 logements Airbnb retires du marche a Paris = 10 ans de construction de logements sociaux parisiens"
+    },
+    {
+      "id": "log-14",
+      "title": "Passoires thermiques et DPE",
+      "subtitle": "5,2 millions de logements classes F ou G",
+      "description": "Depuis janvier 2025, les logements G ne peuvent plus etre loues. Les F interdits en 2028, les E en 2034. MaPrimeRenov finance une partie (5-20 000/logement) mais le reste a charge est prohibitif pour les proprietaires modestes. Risque social : retrait du marche locatif.",
+      "amountBillions": 150,
+      "costPerCitizen": 30000,
+      "deckId": "logement",
+      "icon": "🏠",
+      "source": "ADEME, Observatoire DPE, CNR Logement, loi Climat Resilience",
+      "level": 1,
+      "tags": [
+        "logement",
+        "DPE",
+        "renovation"
+      ],
+      "equivalence": "5,2 millions de passoires = 1 logement sur 5 bientot interdit a la location"
+    },
+    {
+      "id": "log-15",
+      "title": "Loi SRU et obligation de 25% HLM",
+      "subtitle": "1 113 communes deficitaires",
+      "description": "La loi SRU impose 25% de logements sociaux. 280 communes sont carencees et paient une penalite majoree. Neuilly-sur-Seine paie ~8 M/an de penalite et continue de ne pas construire. L'objectif de 25% reporte a 2031 par la loi 3DS (2022).",
+      "amountBillions": 0.2,
+      "costPerCitizen": 3,
+      "deckId": "logement",
+      "icon": "🏠",
+      "source": "DHUP, Fondation Abbe Pierre, PLF 2026",
+      "level": 1,
+      "tags": [
+        "logement",
+        "SRU",
+        "HLM"
+      ],
+      "equivalence": "Neuilly prefere payer 8 M/an d'amende plutot que construire des HLM — la loi sans les dents"
+    },
+    {
+      "id": "log-16",
+      "title": "Mal-logement (rapport Fondation Abbe Pierre)",
+      "subtitle": "4,2 millions de personnes mal logees",
+      "description": "330 000 sans domicile (record, +130% en 10 ans), 900 000 en hebergement contraint, 2,4 millions en surpeuplement. Le mal-logement aggrave tout : echec scolaire (+3 points), problemes de sante (+30%), chomage. C'est le multiplicateur invisible des autres depenses sociales.",
+      "amountBillions": 6.5,
+      "costPerCitizen": 0,
+      "deckId": "logement",
+      "icon": "🏠",
+      "source": "Fondation Abbe Pierre rapport 2025, INSEE, DREES",
+      "level": 1,
+      "tags": [
+        "logement",
+        "mal-logement",
+        "social"
+      ],
+      "equivalence": "330 000 personnes sans domicile en France = la population de Nice"
+    },
+    {
+      "id": "log-17",
+      "title": "Accession a la propriete",
+      "subtitle": "Taux et pouvoir d'achat immobilier",
+      "description": "Taux de proprietaires en France : 58% (stable, vs 65% en moyenne UE). La crise du credit (taux de 1% a 4%) a fait chuter les primo-accedants de 35%. Il faut en moyenne 7 annees de salaire pour acheter un logement moyen. A Paris, 15 ans.",
+      "amountBillions": 5,
+      "costPerCitizen": 74,
+      "deckId": "logement",
+      "icon": "🏠",
+      "source": "Notaires de France, CGEDD, SGFGAS",
+      "level": 1,
+      "tags": [
+        "logement",
+        "accession",
+        "credit"
+      ],
+      "equivalence": "A Paris, il faut epargner 15 ans de salaire pour acheter un appartement — c'etait 5 ans en 1998"
+    },
+    {
+      "id": "log-18",
+      "title": "Amenagement commercial et friches",
+      "subtitle": "170 000 hectares a recycler",
+      "description": "170 000 hectares de friches en France. L'objectif ZAN (zero artificialisation nette) d'ici 2050 impose de recycler ces friches. Le fonds friches a permis 1 400 projets. 50 000 locaux commerciaux vacants en centre-ville. La reconversion d'une friche coute 2-5x plus qu'un terrain vierge.",
+      "amountBillions": 0.5,
+      "costPerCitizen": 7,
+      "deckId": "logement",
+      "icon": "🏠",
+      "source": "CEREMA, ANCT, fonds friches, loi Climat Resilience",
+      "level": 1,
+      "tags": [
+        "logement",
+        "friches",
+        "ZAN"
+      ],
+      "equivalence": "Recycler 170 000 ha de friches = eviter l'artificialisation de 2x la surface de Paris intra-muros"
+    },
+    {
+      "id": "imm-13",
+      "title": "Scolarisation des enfants etrangers",
+      "subtitle": "70 000 eleves allophones/an en UPE2A",
+      "description": "Obligation constitutionnelle de scolariser tous les enfants de 3 a 16 ans, quelle que soit la situation administrative. Le cout par eleve allophone est 30-50% superieur (FLE, accompagnement). 95% des enfants allophones atteignent le niveau B1 en francais apres 2 ans.",
+      "amountBillions": 1.5,
+      "costPerCitizen": 22,
+      "deckId": "immigration",
+      "icon": "🛂",
+      "source": "DEPP, Ministere Education nationale, DESCO",
+      "level": 1,
+      "tags": [
+        "immigration",
+        "education",
+        "integration"
+      ],
+      "equivalence": "Un enfant allophone atteint le niveau B1 en francais en 2 ans — le meilleur investissement d'integration"
+    },
+    {
+      "id": "imm-14",
+      "title": "Diaspora et transferts de fonds",
+      "subtitle": "12 Md/an envoyes vers les pays d'origine",
+      "description": "Les travailleurs immigres envoient ~12 Md/an vers leurs pays d'origine (Maghreb, Afrique, Turquie, Asie). C'est 3x l'aide publique au developpement francaise. Les frais de transfert restent eleves (~5-7%). Pour les pays recepteurs, ces remises representent 10-20% du PIB.",
+      "amountBillions": 12,
+      "costPerCitizen": 0,
+      "deckId": "immigration",
+      "icon": "🛂",
+      "source": "Banque mondiale, Banque de France, AFD",
+      "level": 1,
+      "tags": [
+        "immigration",
+        "transferts",
+        "developpement"
+      ],
+      "equivalence": "Les transferts prives des immigres (12 Md) = 3x l'aide publique au developpement francaise"
+    },
+    {
+      "id": "imm-15",
+      "title": "Eloignement et OQTF (execution)",
+      "subtitle": "140 000 OQTF/an, 7% executees",
+      "description": "~140 000 OQTF prononcees chaque annee, ~7% executees. Un eloignement force coute ~10 000-15 000. Obstacles : laissez-passer consulaires non delivres, absence de cooperation (Algerie, Maroc, Tunisie), recours suspensifs. L'aide au retour volontaire (2 500/personne) est 5x moins chere.",
+      "amountBillions": 0.5,
+      "costPerCitizen": 7,
+      "deckId": "immigration",
+      "icon": "🛂",
+      "source": "DGEF, Ministere Interieur, Cour des comptes",
+      "level": 1,
+      "tags": [
+        "immigration",
+        "OQTF",
+        "eloignement"
+      ],
+      "equivalence": "Sur 100 OQTF prononcees, 93 ne sont jamais executees"
+    },
+    {
+      "id": "imm-16",
+      "title": "Immigration de travail et metiers en tension",
+      "subtitle": "40 000 titres de sejour economiques/an",
+      "description": "60% des entreprises declarent des difficultes de recrutement. Le Passeport Talent vise les profils qualifies : 15 000 delivres/an. Debat : immigration choisie (Canada, Australie) plutot que subie (regroupement familial = 90 000 titres/an) ?",
+      "amountBillions": 0,
+      "costPerCitizen": 0,
+      "deckId": "immigration",
+      "icon": "🛂",
+      "source": "DGEF, DARES, France Strategie",
+      "level": 1,
+      "tags": [
+        "immigration",
+        "travail",
+        "metiers en tension"
+      ],
+      "equivalence": "Les immigres occupent 40% des emplois d'aide a domicile, 30% du BTP et 25% de la restauration"
+    },
+    {
+      "id": "imm-17",
+      "title": "Deboutes d'asile (ni regularises, ni expulses)",
+      "subtitle": "Le stock des ni-ni",
+      "description": "65% des demandeurs d'asile sont deboutes. Beaucoup restent en France dans un statut de ni-ni : ni regularisables, ni expulsables. Ils basculent dans l'hebergement d'urgence, le travail informel et l'AME. Stock estime : 100 000-300 000 personnes.",
+      "amountBillions": 1.5,
+      "costPerCitizen": 22,
+      "deckId": "immigration",
+      "icon": "🛂",
+      "source": "Forum Refugies, DGEF, Cour des comptes",
+      "level": 1,
+      "tags": [
+        "immigration",
+        "asile",
+        "deboutes"
+      ],
+      "equivalence": "Le stock de deboutes non expulses grandit chaque annee de ~80 000 personnes"
+    },
+    {
+      "id": "imm-18",
+      "title": "Naturalisation et acquisition de la nationalite",
+      "subtitle": "120 000 nouveaux Francais/an",
+      "description": "~50 000 par decret, ~30 000 par mariage, ~30 000 par declaration. Delai moyen 12-18 mois. Conditions : 5 ans de residence, niveau B1, assimilation. La France est le pays europeen qui naturalise le plus en valeur absolue. Taux de refus ~15%.",
+      "amountBillions": 0.1,
+      "costPerCitizen": 1.5,
+      "deckId": "immigration",
+      "icon": "🛂",
+      "source": "DGEF, Ministere Interieur, vie-publique.fr",
+      "level": 1,
+      "tags": [
+        "immigration",
+        "naturalisation",
+        "nationalite"
+      ],
+      "equivalence": "120 000 nouveaux Francais/an = la population d'une ville comme Amiens"
+    },
+    {
+      "id": "num-13",
+      "title": "IA generative et investissements francais",
+      "subtitle": "Mistral AI, Hugging Face, Jean Zay",
+      "description": "Mistral AI (valorisation ~6 Md en 2024) est le champion francais. Hugging Face est le GitHub de l'IA. L'Etat investit 500 M dans les compute credits. Mais les Etats-Unis investissent 100x plus. Le risque : la France forme les chercheurs, les GAFAM les embauchent.",
+      "amountBillions": 0.5,
+      "costPerCitizen": 7,
+      "deckId": "numerique",
+      "icon": "🚀",
+      "source": "France 2030, SGPI, Station F, Mistral AI",
+      "level": 1,
+      "tags": [
+        "numerique",
+        "IA",
+        "Mistral"
+      ],
+      "equivalence": "Le budget IA de la France = ce que Google depense en IA en 2 semaines"
+    },
+    {
+      "id": "num-14",
+      "title": "Illectronisme et fracture numerique",
+      "subtitle": "13 millions de Francais en difficulte",
+      "description": "20% des Francais en difficulte avec le numerique. L'Etat dematerialise massivement les demarches tout en creant une barriere pour 1 Francais sur 5. Le Defenseur des droits recoit 30 000 reclamations/an. 4 000 conseillers numeriques France Services deployes.",
+      "amountBillions": 0.3,
+      "costPerCitizen": 4,
+      "deckId": "numerique",
+      "icon": "🚀",
+      "source": "Defenseur des droits, ANCT, INSEE, France Services",
+      "level": 1,
+      "tags": [
+        "numerique",
+        "illectronisme",
+        "inclusion"
+      ],
+      "equivalence": "L'Etat a dematerialise 100% des demarches mais 20% des Francais ne savent pas cliquer"
+    },
+    {
+      "id": "num-15",
+      "title": "Regulation du numerique (CNIL, DSA, DMA)",
+      "subtitle": "Amendes record et cadre europeen",
+      "description": "La CNIL sanctionne les geants du numerique (150 M a Google en 2024). Le DSA et le DMA imposent de nouvelles obligations aux plateformes. L'AI Act reglemente l'IA par le risque. La France pousse l'UE vers plus de regulation.",
+      "amountBillions": 0.1,
+      "costPerCitizen": 1.5,
+      "deckId": "numerique",
+      "icon": "🚀",
+      "source": "CNIL, ARCOM, Commission europeenne",
+      "level": 1,
+      "tags": [
+        "numerique",
+        "regulation",
+        "CNIL"
+      ],
+      "equivalence": "1,50/an par Francais pour reguler des plateformes qui pesent 10 000 Md$ de capitalisation"
+    },
+    {
+      "id": "num-16",
+      "title": "Datacenters et consommation energetique",
+      "subtitle": "3% de la consommation electrique nationale",
+      "description": "La France est le 4e marche europeen de datacenters. L'IA fait exploser les besoins : consommation pourrait doubler d'ici 2030. Avantage : l'electricite nucleaire bas carbone attire les hyperscalers. Inconvenient : chaque datacenter consomme autant qu'une ville de 50 000 habitants.",
+      "amountBillions": 3.5,
+      "costPerCitizen": 0,
+      "deckId": "numerique",
+      "icon": "🚀",
+      "source": "ARCEP, RTE, France Datacenter, ADEME",
+      "level": 1,
+      "tags": [
+        "numerique",
+        "datacenters",
+        "energie"
+      ],
+      "equivalence": "1 datacenter d'IA consomme autant d'electricite qu'une ville de 50 000 habitants"
+    },
+    {
+      "id": "num-17",
+      "title": "Identite numerique (France Identite)",
+      "subtitle": "Carte d'identite sur smartphone",
+      "description": "L'application France Identite permet de dematerialiser la carte d'identite. Socle de FranceConnect+ pour les demarches sensibles. 8 millions de Francais l'ont adoptee fin 2025. La France est en avance sur l'UE (portefeuille d'identite europeen prevu 2026-2027).",
+      "amountBillions": 0.1,
+      "costPerCitizen": 1.5,
+      "deckId": "numerique",
+      "icon": "🚀",
+      "source": "ANTS, France Identite, Commission europeenne eIDAS2",
+      "level": 1,
+      "tags": [
+        "numerique",
+        "identite",
+        "FranceConnect"
+      ],
+      "equivalence": "France Identite = votre carte d'identite dans votre poche, acceptee partout (en theorie)"
+    },
+    {
+      "id": "num-18",
+      "title": "Open data et donnees publiques",
+      "subtitle": "data.gouv.fr — 45 000 jeux de donnees",
+      "description": "La France est classee 1re en Europe et 2e mondiale pour l'open data. 40 000 developpeurs utilisent les API publiques. L'ouverture des donnees de sante et des algorithmes (Parcoursup) fait debat. Cout microscopique pour un impact economique estime a 1-3 Md/an.",
+      "amountBillions": 0.03,
+      "costPerCitizen": 0.45,
+      "deckId": "numerique",
+      "icon": "🚀",
+      "source": "Etalab, OCDE OUR Data Index, Commission europeenne",
+      "level": 1,
+      "tags": [
+        "numerique",
+        "open data",
+        "transparence"
+      ],
+      "equivalence": "0,45/an par Francais pour l'open data, genere 1-3 Md de valeur economique — ratio x3000"
+    },
+    {
+      "id": "rec-11",
+      "title": "Taxe GAFAM (services numeriques)",
+      "subtitle": "3% du CA en France",
+      "description": "Taxe de 3% sur le CA realise en France par les geants du numerique. Les Etats-Unis ont menace de represailles commerciales. La taxe devait etre temporaire (accord OCDE Pilier 1 en retard), mais elle est reconduite chaque annee. La France est le seul grand pays a l'avoir maintenue.",
+      "amountBillions": 0.7,
+      "costPerCitizen": 10,
+      "deckId": "recettes",
+      "icon": "💰",
+      "source": "PLF 2026, DGFiP, OCDE",
+      "level": 1,
+      "tags": [
+        "recettes",
+        "GAFAM",
+        "numerique"
+      ],
+      "equivalence": "Google paie ~200 M/an de taxe GAFAM en France — moins qu'une PME de 500 salaries en IS"
+    },
+    {
+      "id": "rec-12",
+      "title": "Taxe sur les transactions financieres (TTF)",
+      "subtitle": "0,3% sur les achats d'actions",
+      "description": "La TTF rapporte ~2 Md/an. Creee en 2012, affectee au budget general et a l'aide au developpement. La taxe Tobin europeenne est bloquee depuis 20 ans. La France applique seule la taxe la plus elevee d'Europe, penalisant la Place de Paris face a Amsterdam et Francfort.",
+      "amountBillions": 2,
+      "costPerCitizen": 29,
+      "deckId": "recettes",
+      "icon": "💰",
+      "source": "PLF 2026, DGFiP, AMF",
+      "level": 1,
+      "tags": [
+        "recettes",
+        "TTF",
+        "finance"
+      ],
+      "equivalence": "La TTF rapporte 2 Md/an — autant que le budget du ministere de la Culture"
+    },
+    {
+      "id": "rec-13",
+      "title": "Cotisations sociales (detail)",
+      "subtitle": "480 Md/an — le 1er prelevement obligatoire",
+      "description": "Sur 100 de salaire brut, ~22 partent en cotisations salariales et ~32 en cotisations patronales. Le cout du travail francais est le 2e plus eleve de la zone euro. Les allegements sur les bas salaires creent une trappe a bas salaires au-dela de 1,6 SMIC.",
+      "amountBillions": 480,
+      "costPerCitizen": 7060,
+      "deckId": "recettes",
+      "icon": "💰",
+      "source": "URSSAF, LFSS 2026, Senat",
+      "level": 1,
+      "tags": [
+        "recettes",
+        "cotisations",
+        "Secu"
+      ],
+      "equivalence": "Pour un salarie paye 2 000 net, l'entreprise verse 3 500 au total (dont 1 500 de cotisations)"
+    },
+    {
+      "id": "rec-14",
+      "title": "Taxe fonciere entreprises et CFE",
+      "subtitle": "15 Md/an — impots de production",
+      "description": "Les entreprises paient ~15 Md de taxe fonciere et CFE. Le commerce physique paie plein pot alors que le e-commerce (entrepots en peripherie) est peu taxe. Amazon paie ~4/m2 de CFE pour ses entrepots ruraux, quand un petit commerce paie ~30/m2.",
+      "amountBillions": 15,
+      "costPerCitizen": 0,
+      "deckId": "recettes",
+      "icon": "💰",
+      "source": "DGFiP, CCI France, DGCL",
+      "level": 1,
+      "tags": [
+        "recettes",
+        "foncier",
+        "entreprises"
+      ],
+      "equivalence": "Un commerce de centre-ville paie 7x plus de foncier au m2 qu'un entrepot Amazon"
+    },
+    {
+      "id": "rec-15",
+      "title": "Jeux d'argent (FDJ, PMU, paris)",
+      "subtitle": "50 Md/an de mises, 6 Md de recettes fiscales",
+      "description": "Les Francais misent ~50 Md/an. L'Etat preleve ~12%. La FDJ reverse ~3,5 Md/an a l'Etat. Les paris sportifs en ligne explosent (+25%/an). L'addiction aux jeux touche ~600 000 personnes. Les sites illegaux offshore proliferent.",
+      "amountBillions": 6,
+      "costPerCitizen": 88,
+      "deckId": "recettes",
+      "icon": "💰",
+      "source": "ANJ, FDJ, PLF 2026",
+      "level": 1,
+      "tags": [
+        "recettes",
+        "jeux",
+        "FDJ"
+      ],
+      "equivalence": "Les Francais jouent 50 Md/an — davantage que le budget de l'Education nationale"
+    },
+    {
+      "id": "rec-16",
+      "title": "Amendes et sanctions administratives",
+      "subtitle": "Radars + PV + sanctions CNIL",
+      "description": "Radars (~800 M), PV stationnement (~1,5 Md pour les communes), amendes penales (~800 M), sanctions CNIL/AMF/ADLC (~400 M). 48% des Francais estiment que les radars servent davantage a remplir les caisses qu'a sauver des vies.",
+      "amountBillions": 3.5,
+      "costPerCitizen": 51,
+      "deckId": "recettes",
+      "icon": "💰",
+      "source": "ONISR, DGFIP, CNIL, PLF 2026",
+      "level": 1,
+      "tags": [
+        "recettes",
+        "amendes",
+        "radars"
+      ],
+      "equivalence": "1 radar rapporte en moyenne ~170 000/an a l'Etat"
+    },
+    {
+      "id": "rec-17",
+      "title": "Taxe d'habitation residences secondaires",
+      "subtitle": "3,6 millions de residences secondaires",
+      "description": "Maintenue sur les residences secondaires, peut etre majoree de 5 a 60% en zones tendues. Paris applique +60%. Vise a inciter les proprietaires a remettre leurs logements sur le marche locatif. Recettes en hausse (+15%) depuis la suppression de la TH residences principales.",
+      "amountBillions": 2.5,
+      "costPerCitizen": 0,
+      "deckId": "recettes",
+      "icon": "💰",
+      "source": "DGFiP, DGCL, PLF 2026",
+      "level": 1,
+      "tags": [
+        "recettes",
+        "taxe habitation",
+        "secondaire"
+      ],
+      "equivalence": "3,6 millions de residences secondaires = plus que le stock de logements sociaux en attente"
+    },
+    {
+      "id": "rec-18",
+      "title": "Dividendes et participations de l'Etat (APE)",
+      "subtitle": "83 entreprises, 160 Md de portefeuille",
+      "description": "L'APE gere un portefeuille de ~160 Md (EDF, La Poste, Engie, Orange, Thales, Airbus, Renault, ADP, FDJ). Dividendes de 3 a 6 Md/an. L'Etat actionnaire est critique pour gerer ses participations comme un fonds de pension plutot que comme un stratege industriel.",
+      "amountBillions": 4.5,
+      "costPerCitizen": 66,
+      "deckId": "recettes",
+      "icon": "💰",
+      "source": "APE, PLF 2026, Cour des comptes",
+      "level": 1,
+      "tags": [
+        "recettes",
+        "APE",
+        "participations"
+      ],
+      "equivalence": "L'Etat est actionnaire de 83 entreprises valant 160 Md — le plus gros portefeuille d'Europe"
+    },
+    {
+      "id": "emp-13",
+      "title": "Inspection du travail",
+      "subtitle": "2 000 inspecteurs pour 20 millions de salaries",
+      "description": "1 inspecteur pour 10 000 salaries (OIT recommande 1 pour 8 000). 450 000 interventions/an, 25 000 PV. 200 agressions declarees/an. Le travail dissimule est estime a 6-8% du PIB (~180 Md), dont l'essentiel echappe aux controles.",
+      "amountBillions": 0.6,
+      "costPerCitizen": 9,
+      "deckId": "emploi",
+      "icon": "🏢",
+      "source": "DGT, OIT, PLF 2026",
+      "level": 1,
+      "tags": [
+        "emploi",
+        "inspection",
+        "travail"
+      ],
+      "equivalence": "1 inspecteur du travail pour 10 000 salaries — 1 policier pour 300 habitants"
+    },
+    {
+      "id": "emp-14",
+      "title": "Travail illegal et economie souterraine",
+      "subtitle": "6-8% du PIB soit 170-220 Md/an",
+      "description": "L'economie souterraine est moins elevee qu'en Italie (~20%) ou Grece (~25%), mais superieure a l'Allemagne (~4%). Les cotisations eludees : 20-25 Md/an. Secteurs touches : BTP (25%), restauration (20%), services a la personne (30%). La task force recouvre ~1 Md/an, soit 5% du manque a gagner.",
+      "amountBillions": 200,
+      "costPerCitizen": 2900,
+      "deckId": "emploi",
+      "icon": "🏢",
+      "source": "ACOSS/URSSAF, INSEE, CNLTI, Cour des comptes",
+      "level": 1,
+      "tags": [
+        "emploi",
+        "travail illegal",
+        "economie souterraine"
+      ],
+      "equivalence": "Le travail au noir represente 2x le budget de la Defense en cotisations perdues"
+    },
+    {
+      "id": "emp-15",
+      "title": "Temps de travail et 35 heures",
+      "subtitle": "Cout et debat depuis 25 ans",
+      "description": "Les 35 heures compensees par des allegements de ~12 Md/an. Les Francais travaillent 1 607h/an (vs 1 800 en Allemagne). Mais la duree effective des salaries a temps complet est de 39,1h/semaine. Les etudes divergent : 300 000 emplois crees (DARES) vs 0 emploi net (IFRAP).",
+      "amountBillions": 12,
+      "costPerCitizen": 176,
+      "deckId": "emploi",
+      "icon": "🏢",
+      "source": "DARES, INSEE, Cour des comptes",
+      "level": 1,
+      "tags": [
+        "emploi",
+        "35 heures",
+        "temps de travail"
+      ],
+      "equivalence": "Les Francais travaillent officiellement 35h mais effectivement 39h — debat depuis 25 ans"
+    },
+    {
+      "id": "emp-16",
+      "title": "RSE et index egalite professionnelle",
+      "subtitle": "Score moyen 88/100 mais ecart reel 16%",
+      "description": "L'index d'egalite professionnelle oblige les entreprises de +50 salaries a publier un score sur 100. Ecart salarial H/F toutes choses egales : ~5-7%. La CSRD europeenne (2024) impose un reporting extra-financier. Cout de conformite : ~100 000/an pour une ETI.",
+      "amountBillions": 0.2,
+      "costPerCitizen": 0,
+      "deckId": "emploi",
+      "icon": "🏢",
+      "source": "Ministere Travail, DARES, Commission europeenne CSRD",
+      "level": 1,
+      "tags": [
+        "emploi",
+        "RSE",
+        "egalite"
+      ],
+      "equivalence": "Score moyen 88/100 mais ecart salarial reel de 16% — l'index mesure mal ce qu'il est cense corriger"
+    },
+    {
+      "id": "emp-17",
+      "title": "Accidents du travail mortels",
+      "subtitle": "2 morts par jour — pire bilan d'Europe de l'Ouest",
+      "description": "~650 000 accidents/an dont ~700 mortels. Taux de mortalite 2x superieur a l'Allemagne et 3x aux Pays-Bas. Le BTP concentre 20% des accidents mortels pour 8% des emplois. Un interimaire a 2x plus de risques qu'un CDI.",
+      "amountBillions": 50,
+      "costPerCitizen": 735,
+      "deckId": "emploi",
+      "icon": "🏢",
+      "source": "CNAM AT-MP, Eurostat, DARES, ANACT",
+      "level": 1,
+      "tags": [
+        "emploi",
+        "accidents",
+        "securite"
+      ],
+      "equivalence": "2 morts au travail par jour en France — 3x plus qu'aux Pays-Bas, et personne n'en parle"
+    },
+    {
+      "id": "emp-18",
+      "title": "Seniors et emploi",
+      "subtitle": "Taux d'emploi 60-64 ans : 38%",
+      "description": "1 senior sur 2 est hors emploi avant l'age de la retraite. La reforme des retraites (64 ans) aggrave le probleme : sans emploi pour les seniors, ils basculent au chomage/RSA. La retraite progressive ne concerne que 25 000 personnes. L'index senior annule au Conseil constitutionnel en 2023.",
+      "amountBillions": 2,
+      "costPerCitizen": 29,
+      "deckId": "emploi",
+      "icon": "🏢",
+      "source": "DARES, France Strategie, COR, INSEE",
+      "level": 1,
+      "tags": [
+        "emploi",
+        "seniors",
+        "retraite"
+      ],
+      "equivalence": "Repousser la retraite a 64 ans sans emploi pour les seniors = transformer le chomage en RSA"
     }
   ]
 }

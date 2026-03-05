@@ -4,7 +4,11 @@ import { useState, useEffect, useRef } from "react";
 import { ChainsawIcon } from "@/components/ChainsawIcon";
 import { ShieldIcon } from "@/components/ShieldIcon";
 import leaderboardData from "@/data/leaderboard.json";
-import { getGlobalStats, getPlayerProfile, type GlobalStats, type PlayerProfile } from "@/lib/stats";
+import { getGlobalStats, getPlayerProfile, getSessions, type GlobalStats, type PlayerProfile } from "@/lib/stats";
+import { RadarChart } from "@/components/RadarChart";
+import { computeRadarFromHistory } from "@/lib/radarData";
+import { useCommunityStats } from "@/hooks/useCommunityStats";
+import decksData from "@/data/decks.json";
 
 type Tab = "archetypes" | "top" | "semaine";
 
@@ -21,11 +25,11 @@ interface LeaderboardPlayer {
 
 // Fake community distribution
 const archetypeDistribution = [
-  { icon: "⚖️", name: "Équilibristes", percent: 34, color: "bg-info" },
-  { icon: "🪚", name: "Austéritaires", percent: 23, color: "bg-info" },
-  { icon: "🛡️", name: "Gardiens", percent: 18, color: "bg-primary" },
-  { icon: "🎯", name: "Chirurgiens", percent: 15, color: "bg-danger" },
-  { icon: "📈", name: "Investisseurs", percent: 10, color: "bg-warning" },
+  { icon: "⚖️", name: "Équilibristes", percent: 34, color: "bg-info", ids: ["equilibriste"] },
+  { icon: "🪚", name: "Austéritaires", percent: 23, color: "bg-info", ids: ["austeritaire", "demolisseur", "liquidateur_en_chef"] },
+  { icon: "🛡️", name: "Gardiens", percent: 18, color: "bg-primary", ids: ["gardien", "conservateur", "investisseur_public"] },
+  { icon: "🎯", name: "Chirurgiens", percent: 15, color: "bg-danger", ids: ["chirurgien", "stratege", "reformateur", "optimisateur"] },
+  { icon: "📈", name: "Investisseurs", percent: 10, color: "bg-warning", ids: ["sceptique", "auditeur_rigoureux"] },
 ];
 
 // Fake most cut/protected
@@ -41,19 +45,26 @@ const mostProtected = [
   { title: "Sécurité civile (pompiers)", percent: 82 },
 ];
 
+// All cards for lookup by ID
+const allCards = (decksData as { cards: { id: string; title: string; deckId: string }[] }).cards;
+
 export default function RankingPage() {
   const [tab, setTab] = useState<Tab>("archetypes");
   const [players, setPlayers] = useState<LeaderboardPlayer[]>([]);
   const [myProfile, setMyProfile] = useState<PlayerProfile | null>(null);
   const [myStats, setMyStats] = useState<GlobalStats | null>(null);
+  const [radarAxes, setRadarAxes] = useState<{ label: string; playerValue: number; communityValue: number }[]>([]);
   const scrollRef = useRef<HTMLDivElement>(null);
   const [showChevron, setShowChevron] = useState(false);
+  const communityStats = useCommunityStats();
 
   useEffect(() => {
     const profile = getPlayerProfile();
     const stats = getGlobalStats();
+    const sessions = getSessions();
     setMyProfile(profile);
     setMyStats(stats);
+    setRadarAxes(computeRadarFromHistory(sessions));
 
     const currentPlayer: LeaderboardPlayer = {
       id: "current",
@@ -154,9 +165,9 @@ export default function RankingPage() {
 
       {/* Tab content */}
       <div ref={scrollRef} className="flex-1 overflow-y-auto scrollbar-hide pb-4">
-        {tab === "archetypes" && <ArchetypesTab />}
+        {tab === "archetypes" && <ArchetypesTab playerArchetypeId={myProfile?.archetypeId} radarAxes={radarAxes} />}
         {tab === "top" && <TopXPTab players={players} />}
-        {tab === "semaine" && <TendancesTab />}
+        {tab === "semaine" && <TendancesTab communityStats={communityStats} allCards={allCards} />}
 
         {/* Footer */}
         <div className="px-4 py-4 text-center">
@@ -178,9 +189,22 @@ export default function RankingPage() {
   );
 }
 
-function ArchetypesTab() {
+function ArchetypesTab({ playerArchetypeId, radarAxes }: { playerArchetypeId?: string; radarAxes: { label: string; playerValue: number; communityValue: number }[] }) {
   return (
     <div className="px-4 py-2 flex flex-col gap-6">
+      {/* Radar: Tes choix vs la communauté */}
+      {radarAxes.length >= 3 && (
+        <div className="flex flex-col gap-4 rounded-xl border border-border bg-card p-5">
+          <div>
+            <h2 className="text-lg font-bold">Tes choix vs la communauté</h2>
+            <p className="text-sm text-muted-foreground mt-1">
+              % de coupes par catégorie
+            </p>
+          </div>
+          <RadarChart axes={radarAxes} size={240} />
+        </div>
+      )}
+
       {/* Distribution */}
       <div className="flex flex-col gap-4 rounded-xl border border-border bg-card p-5">
         <div>
@@ -190,20 +214,26 @@ function ArchetypesTab() {
           </p>
         </div>
         <div className="flex flex-col gap-3">
-          {archetypeDistribution.map((a) => (
-            <div key={a.name} className="flex flex-col gap-1.5">
-              <div className="flex justify-between items-end text-sm font-medium">
-                <span>{a.icon} {a.name}</span>
-                <span className="font-bold">{a.percent}%</span>
+          {archetypeDistribution.map((a) => {
+            const isPlayer = !!(playerArchetypeId && a.ids.includes(playerArchetypeId));
+            return (
+              <div key={a.name} className={`flex flex-col gap-1.5 rounded-lg px-2 py-1.5 -mx-2 transition-colors ${isPlayer ? "bg-primary/10 ring-1 ring-primary/30" : ""}`}>
+                <div className="flex justify-between items-end text-sm font-medium">
+                  <span>
+                    {a.icon} {a.name}
+                    {isPlayer && <span className="ml-2 text-[10px] font-bold text-primary bg-primary/20 px-1.5 py-0.5 rounded-full">Toi</span>}
+                  </span>
+                  <span className="font-bold">{a.percent}%</span>
+                </div>
+                <div className="w-full h-2.5 bg-muted rounded-full overflow-hidden">
+                  <div
+                    className={`h-full ${a.color} rounded-full`}
+                    style={{ width: `${a.percent}%` }}
+                  />
+                </div>
               </div>
-              <div className="w-full h-2.5 bg-muted rounded-full overflow-hidden">
-                <div
-                  className={`h-full ${a.color} rounded-full`}
-                  style={{ width: `${a.percent}%` }}
-                />
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>
@@ -275,9 +305,39 @@ function TopXPTab({ players }: { players: LeaderboardPlayer[] }) {
   );
 }
 
-function TendancesTab() {
+function TendancesTab({
+  communityStats,
+  allCards,
+}: {
+  communityStats: ReturnType<typeof useCommunityStats>;
+  allCards: { id: string; title: string }[];
+}) {
+  // Use real data when available, fallback to mocks
+  const cutItems = !communityStats.isFallback && communityStats.topCut.length > 0
+    ? communityStats.topCut.map((c) => ({
+        title: allCards.find((card) => card.id === c.cardId)?.title ?? c.cardId,
+        percent: c.cutPercent ?? 0,
+      }))
+    : mostCut;
+
+  const protectedItems = !communityStats.isFallback && communityStats.topProtected.length > 0
+    ? communityStats.topProtected.map((c) => ({
+        title: allCards.find((card) => card.id === c.cardId)?.title ?? c.cardId,
+        percent: c.keepPercent ?? 0,
+      }))
+    : mostProtected;
+
   return (
     <div className="px-4 py-2 flex flex-col gap-6">
+      {/* Data source indicator */}
+      {!communityStats.isFallback && (
+        <div className="flex items-center justify-center">
+          <span className="text-[10px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full border border-primary/20">
+            Données réelles ({communityStats.totalSessions} sessions)
+          </span>
+        </div>
+      )}
+
       {/* Most cut */}
       <div>
         <div className="flex items-center gap-2 mb-3">
@@ -285,7 +345,7 @@ function TendancesTab() {
           <h3 className="text-lg font-bold">Dépenses les plus coupées</h3>
         </div>
         <div className="flex flex-col gap-3">
-          {mostCut.map((item, i) => (
+          {cutItems.map((item, i) => (
             <div
               key={item.title}
               className="flex items-center gap-3 bg-card rounded-xl p-3 border-l-4 border-l-danger border border-border"
@@ -320,7 +380,7 @@ function TendancesTab() {
           <h3 className="text-lg font-bold">Dépenses les plus protégées</h3>
         </div>
         <div className="flex flex-col gap-3">
-          {mostProtected.map((item, i) => (
+          {protectedItems.map((item, i) => (
             <div
               key={item.title}
               className="flex items-center gap-3 bg-card rounded-xl p-3 border-l-4 border-l-primary border border-border"

@@ -243,7 +243,7 @@ export function SwipeStack({
             <button
               onClick={() => handleButtonVote("keep")}
               disabled={!currentCard}
-              aria-label="Valider cette depense"
+              aria-label="Valider cette dépense"
               className="w-20 h-20 rounded-full bg-card border-[3px] border-primary flex items-center justify-center shadow-lg shadow-primary/30 transition-transform active:scale-90 disabled:opacity-40"
             >
               <ShieldIcon size={40} className="text-primary" />
@@ -268,7 +268,7 @@ export function SwipeStack({
             <button
               onClick={() => handleButtonVote("cut")}
               disabled={!currentCard}
-              aria-label="Remettre en question cette depense"
+              aria-label="Remettre en question cette dépense"
               className="w-20 h-20 rounded-full bg-card border-[3px] border-danger flex items-center justify-center shadow-lg shadow-danger/30 transition-transform active:scale-90 disabled:opacity-40"
             >
               <ChainsawIcon size={40} />

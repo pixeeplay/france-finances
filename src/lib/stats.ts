@@ -44,6 +44,7 @@ export interface PlayerProfile {
   archetypeIcon: string;
   level: number;
   username: string;
+  customAvatar?: string;
 }
 
 // === Helpers ===
@@ -248,6 +249,13 @@ function syncSessionToApi(
   }).catch(() => {
     // Silently fail — localStorage is the source of truth
   });
+}
+
+/** Update the player's custom avatar emoji */
+export function updatePlayerAvatar(emoji: string): void {
+  const profile = getPlayerProfile();
+  profile.customAvatar = emoji;
+  setItem(PROFILE_KEY, profile);
 }
 
 /** Get decks that have been played */

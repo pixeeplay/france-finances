@@ -22,21 +22,20 @@ export default function InfosPage() {
                 <ChainsawIcon size={28} />
               </div>
               <div>
-                <h2 className="text-lg font-bold">La Tronconneuse de Poche</h2>
+                <h2 className="text-lg font-bold">La Tronçonneuse de Poche</h2>
                 <p className="text-xs text-muted-foreground">
                   par{" "}
                   <a href="https://nicoquipaie.co" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">nicoquipaie.co</a>
                   {" "}et{" "}
-                  <span className="text-foreground font-medium">pixeeplay</span>
-                  {" "}(lien a venir)
+                  <a href="https://pixeeplay.fr" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">pixeeplay</a>
                 </p>
               </div>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Un mini-jeu citoyen pour explorer le budget de la France.
-              Swipez les depenses publiques, decouvrez votre profil budgetaire
-              et comparez-vous a la communaute. 270 cartes, 17 categories,
-              des donnees sourcees et neutres.
+              Swipez les dépenses publiques, découvrez votre profil budgétaire
+              et comparez-vous à la communauté. 270 cartes, 17 catégories,
+              des données sourcées et neutres.
             </p>
           </div>
         </section>
@@ -44,13 +43,13 @@ export default function InfosPage() {
         {/* How it works */}
         <section className="px-4 py-2">
           <div className="flex flex-col gap-4 rounded-xl border border-border bg-card p-5">
-            <h2 className="text-lg font-bold">Comment ca marche ?</h2>
+            <h2 className="text-lg font-bold">Comment ça marche ?</h2>
             <div className="flex flex-col gap-3">
               {[
-                { step: "1", text: "Choisissez une categorie ou le mode aleatoire" },
-                { step: "2", text: "Swipez les cartes : a gauche pour garder, a droite pour couper" },
-                { step: "3", text: "Decouvrez votre archetype budgetaire et vos stats" },
-                { step: "4", text: "Montez de niveau pour debloquer plus de profondeur" },
+                { step: "1", text: "Choisissez une catégorie ou le mode aléatoire" },
+                { step: "2", text: "Swipez les cartes : à gauche pour garder, à droite pour couper" },
+                { step: "3", text: "Découvrez votre archétype budgétaire et vos stats" },
+                { step: "4", text: "Montez de niveau pour débloquer plus de profondeur" },
               ].map((item) => (
                 <div key={item.step} className="flex items-start gap-3">
                   <div className="w-7 h-7 rounded-full bg-primary/20 text-primary flex items-center justify-center text-sm font-bold shrink-0">
@@ -68,18 +67,18 @@ export default function InfosPage() {
         {/* Sources */}
         <section className="px-4 py-2">
           <div className="flex flex-col gap-4 rounded-xl border border-border bg-card p-5">
-            <h2 className="text-lg font-bold">Sources des donnees</h2>
+            <h2 className="text-lg font-bold">Sources des données</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Toutes les donnees sont factuelles, sourcees et neutres.
+              Toutes les données sont factuelles, sourcées et neutres.
               Pas de ton militant. Les montants sont en milliards d&apos;euros,
-              le cout par citoyen est base sur ~68M d&apos;habitants.
+              le coût par citoyen est basé sur ~68M d&apos;habitants.
             </p>
             <div className="flex flex-col gap-2">
               {[
                 "PLF / LFSS 2025-2026",
                 "Cour des comptes",
-                "Senat / Assemblee nationale",
-                "Ministeres (rapports annuels)",
+                "Sénat / Assemblée nationale",
+                "Ministères (rapports annuels)",
                 "vie-publique.fr",
               ].map((source) => (
                 <div key={source} className="flex items-center gap-2 text-sm">
@@ -97,8 +96,8 @@ export default function InfosPage() {
             <h2 className="text-lg font-bold">Contribuer</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Ce projet est open source. Vous pouvez contribuer en proposant
-              de nouvelles cartes, en signalant des erreurs de donnees,
-              ou en ameliorant le code.
+              de nouvelles cartes, en signalant des erreurs de données,
+              ou en améliorant le code.
             </p>
             <a
               href="https://github.com/pixeeplay/tronconneuse"
@@ -119,8 +118,8 @@ export default function InfosPage() {
           <div className="flex flex-col gap-4 rounded-xl border border-border bg-card p-5">
             <h2 className="text-lg font-bold">Sponsors</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Ce projet est realise benevolement. Si vous souhaitez
-              soutenir son developpement, contactez-nous !
+              Ce projet est réalisé bénévolement. Si vous souhaitez
+              soutenir son développement, contactez-nous !
             </p>
             <div className="flex items-center gap-3 bg-muted/30 rounded-xl p-4 border border-border/50">
               <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-lg shrink-0">
@@ -129,17 +128,17 @@ export default function InfosPage() {
               <div>
                 <p className="text-sm font-semibold">Devenez sponsor</p>
                 <p className="text-xs text-muted-foreground">
-                  Aidez a maintenir le projet gratuit et sans pub
+                  Aidez à maintenir le projet gratuit et sans pub
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Credits */}
+        {/* Crédits */}
         <section className="px-4 py-2">
           <div className="flex flex-col gap-3 rounded-xl border border-border bg-card p-5">
-            <h2 className="text-lg font-bold">Credits</h2>
+            <h2 className="text-lg font-bold">Crédits</h2>
             <div className="flex flex-col gap-2 text-sm text-muted-foreground">
               <div className="flex justify-between">
                 <span>Conception & dev</span>
@@ -160,7 +159,7 @@ export default function InfosPage() {
         {/* Footer */}
         <div className="px-4 py-6 text-center">
           <p className="text-xs text-muted-foreground">
-            Fait avec rigueur (et un peu de tronconneuse).
+            Fait avec rigueur (et un peu de tronçonneuse).
           </p>
         </div>
       </div>

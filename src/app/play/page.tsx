@@ -18,7 +18,7 @@ function RandomIcon({ size = 24, className }: { size?: number; className?: strin
 
 function CardsIcon({ size = 24, className }: { size?: number; className?: string }) {
   return (
-    <svg className={className} width={size} height={size} viewBox="0 0 512 512">
+    <svg className={`${className ?? ""} shrink-0`} width={size} height={size} viewBox="0 0 512 320">
       <path d="m152 16-120 48 112 240 99.411-41.421z" fill="currentColor" opacity=".6" />
       <path d="m296 59.294v-51.294h-144v256h104z" fill="currentColor" opacity=".8" />
       <path d="m354.508 254.044 101.492-150.044-136-80-136 200 124.253 80.684" fill="currentColor" />
@@ -179,7 +179,7 @@ function PlayPageContent() {
                   Mode Budget
                 </p>
                 <p className="text-xs text-muted-foreground">
-                  Atteignez un objectif d&apos;economies
+                  Atteignez un objectif d&apos;économies
                 </p>
               </div>
             </div>
@@ -201,7 +201,7 @@ function PlayPageContent() {
           {budgetMode && (
             <div className="px-4 pb-4">
               <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2">
-                Objectif : {budgetTarget} Md&euro; d&apos;economies
+                Objectif : {budgetTarget} Md&euro; d&apos;économies
               </p>
               <div className="flex gap-2">
                 {BUDGET_TARGETS.map((t) => (
@@ -323,14 +323,14 @@ function PlayPageContent() {
       )}
 
       {/* Bottom Action Button */}
-      <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-background via-background/90 to-transparent pt-8 z-20">
+      <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-background via-background/90 to-transparent pt-10 z-30">
         <button
           onClick={handleLaunch}
           disabled={!selectedDeck && !randomMode}
-          className="relative z-10 w-full bg-primary hover:bg-primary/90 text-white font-bold text-lg py-4 rounded-xl shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all active:scale-95 flex items-center justify-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed"
+          className="relative w-full bg-primary hover:bg-primary/90 text-white font-bold text-lg py-4 rounded-xl shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all active:scale-95 flex items-center justify-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed"
         >
           <CardsIcon size={24} />
-          {budgetMode ? `Lancer le defi (${budgetTarget} Md\u20AC)` : `Lancer la session ${level > 1 ? `(N${level})` : ""}`}
+          {budgetMode ? `Lancer le défi (${budgetTarget} Md\u20AC)` : `Lancer la session ${level > 1 ? `(N${level})` : ""}`}
         </button>
       </div>
     </div>

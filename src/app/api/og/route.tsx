@@ -176,7 +176,7 @@ export async function GET(request: NextRequest) {
               display: "flex",
             }}
           >
-            La Tronconneuse de Poche — nicoquipaie.co
+            La Tronçonneuse de Poche — nicoquipaie.co
           </div>
         </div>
       </div>

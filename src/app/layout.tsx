@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { BottomNav } from "@/components/BottomNav";
+import { AuthProvider } from "@/components/AuthProvider";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -76,10 +77,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-dvh flex items-center justify-center`}
       >
-        <div className="mx-auto max-w-md w-full min-h-dvh lg:min-h-0 lg:h-[900px] lg:max-h-[90vh] lg:rounded-3xl lg:border lg:border-border lg:shadow-2xl lg:overflow-hidden flex flex-col relative">
-          {children}
-          <BottomNav />
-        </div>
+        <AuthProvider>
+          <div className="mx-auto max-w-md w-full min-h-dvh lg:min-h-0 lg:h-[900px] lg:max-h-[90vh] lg:rounded-3xl lg:border lg:border-border lg:shadow-2xl lg:overflow-hidden flex flex-col relative">
+            {children}
+            <BottomNav />
+          </div>
+        </AuthProvider>
       </body>
     </html>
   );

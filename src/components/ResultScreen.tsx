@@ -8,6 +8,8 @@ import { useArchetype } from "@/hooks/useArchetype";
 import { ChainsawIcon } from "./ChainsawIcon";
 import { ShieldIcon } from "./ShieldIcon";
 import { track } from "@/lib/analytics";
+import { RadarChart } from "./RadarChart";
+import { computeRadarFromSession } from "@/lib/radarData";
 import type { Vote, Card, AuditRecommendation } from "@/types";
 
 const SITE_URL = "https://nicoquipaie.pixeeplay.fr";
@@ -264,6 +266,25 @@ export function ResultScreen() {
         </div>
       </div>
 
+      {/* Radar: Tes choix vs la communauté (Level 2+) */}
+      {level >= 2 && session.cards && (() => {
+        const radarAxes = computeRadarFromSession(session.cards, session.votes);
+        if (radarAxes.length < 3) return null;
+        return (
+          <div className="px-4 py-2">
+            <div className="bg-card rounded-2xl p-5 border border-border">
+              <h3 className="text-base font-bold mb-1 text-center">
+                Tes choix vs la communauté
+              </h3>
+              <p className="text-xs text-muted-foreground text-center mb-4">
+                % de coupes par catégorie
+              </p>
+              <RadarChart axes={radarAxes} size={240} />
+            </div>
+          </div>
+        );
+      })()}
+
       {/* Budget Mode Result */}
       {isBudgetMode && budgetTarget > 0 && (
         <div className="px-4 py-2">
@@ -340,7 +361,7 @@ export function ResultScreen() {
       <div className="px-4 pb-10">
         <details className="group bg-card rounded-xl border border-border overflow-hidden">
           <summary className="flex items-center justify-center gap-2 p-4 cursor-pointer font-medium text-sm hover:bg-muted/30 transition-colors list-none">
-            <ChainsawIcon size={18} /> Voir le detail de mes choix
+            <ChainsawIcon size={18} /> Voir le détail de mes choix
             <ChevronIcon />
           </summary>
           <div className="p-4 border-t border-border bg-background/30 flex flex-col gap-3">
@@ -556,7 +577,7 @@ function AuditReport({ cards, auditResponses }: {
       {/* Detail per card */}
       <div>
         <h3 className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2 px-1">
-          Detail du rapport
+          Détail du rapport
         </h3>
         <div className="flex flex-col gap-2">
           {auditResponses.map((r) => {

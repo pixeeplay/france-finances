@@ -1,9 +1,10 @@
 # Rapport d'Audit Consolidé — La Tronçonneuse de Poche
 
 **Date :** 2026-03-05
-**Version :** Post-Sprint 2
+**Version :** Post-Sprint 9
 **Build :** OK (Next.js 16 + serwist, compile sans erreur)
-**Données :** 270 cartes, 17 decks, 0 anomalies structurelles
+**Donnees :** 330 cartes, 17 decks, 0 anomalies structurelles
+**Auth :** NextAuth.js v5 (Google + GitHub) pret (a activer avec cles OAuth)
 
 ---
 
@@ -92,40 +93,43 @@ Le brief précise "swipe ne donne PAS de XP contributeur" mais tout le XP vient 
 
 ## 6. Conformité Briefs
 
-### Implémenté (100%)
+### Implemente (100%)
 - Gameplay Niveau 1 (swipe 2 directions)
-- Gameplay Niveau 2 (swipe 4 directions + communauté)
+- Gameplay Niveau 2 (swipe 4 directions + communaute)
 - Gameplay Niveau 3 (micro-audit + prescriptions)
-- 14 archétypes (4 L1 + 6 L2 + 4 L3)
-- 270 cartes avec équivalences
-- 17 decks (8 master + 6 complémentaires + 3 thématiques)
-- Système d'achievements (8 badges)
-- Persistance localStorage
-- Progression par niveaux (unlock L2 après 3 sessions, L3 après 5)
-- Onboarding 3 écrans
+- 14 archetypes (4 L1 + 6 L2 + 4 L3)
+- 330 cartes avec equivalences (14 categories, 18-22 cartes chacune)
+- 17 decks (8 master + 6 complementaires + 3 thematiques)
+- Systeme d'achievements (8 badges generaux + 8 badges categories)
+- Persistance localStorage + sync fire-and-forget API
+- Progression par niveaux (unlock L2 apres 3 sessions, L3 apres 5)
+- Onboarding 3 ecrans
 - Partage social (Web Share API + OG image dynamique)
 - PWA installable
 - Analytics events (7 types)
-- Profil joueur (3 onglets)
+- Profil joueur (3 onglets, avatar editable, pseudo aleatoire)
+- Backend Drizzle + PostgreSQL (dual-mode graceful degradation)
+- API community/stats (agregats reels par categorie/archetype)
+- Radar SVG "Tes choix vs la communaute" (resultats + page communaute)
+- Mode Budget Contraint (5 paliers, tracker live)
+- Badges par categorie (8 badges, seuil 3 sessions)
+- Replay anciennes sessions (historique + bouton Rejouer)
+- Deblocage conditionnel des thematiques
+- Infobulles acronymes (80+ acronymes)
+- Accessibilite ARIA + focus management
+- Auth OAuth (NextAuth.js v5, Google + GitHub) — pret a activer
 
-### Partiellement implémenté
-- Données communautaires (mockées, pas de vrai backend)
-- Durée de session (trackée mais pas de leaderboard vitesse)
-- Déblocage thématiques (pas conditionné au jeu de chaque catégorie)
+### Partiellement implemente
+- Duree de session (trackee mais pas de leaderboard vitesse)
+- Sync multi-device (auth prete, sync a implementer)
 
-### Non implémenté
-- Backend / base de données (Drizzle + PostgreSQL)
-- Sync multi-device / comptes utilisateurs
-- Rapport d'impact Level 3 (X Md d'économies)
-- Mode Budget Contraint
-- Mode Duel
-- Rejouer anciennes sessions
-- Cartes événementielles dynamiques
-- Feed communautaire auto-généré
+### Non implemente
+- Mode Duel (2 joueurs)
+- Cartes evenementielles dynamiques
 - Export CSV / API ouverte
-- Filtrage démographique (âge/CSP)
-- Badges par catégorie
-- Simulateur d'impact fiscal
+- Filtrage demographique (age/CSP)
+- Distinction XP tronconneur vs contributeur
+- Analytics Plausible/PostHog
 
 ---
 
