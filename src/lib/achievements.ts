@@ -28,6 +28,12 @@ const CATEGORY_BADGES: Achievement[] = [
   { id: "badge_securite", icon: "\u2696\uFE0F", title: "Expert Securite", description: `Jouer ${BADGE_THRESHOLD} sessions Securite.`, category: "category", check: (s) => deckSessions(s, "securite") >= BADGE_THRESHOLD, progress: (s) => Math.min(100, Math.round((deckSessions(s, "securite") / BADGE_THRESHOLD) * 100)) },
   { id: "badge_etat", icon: "\uD83C\uDFDB\uFE0F", title: "Expert Etat", description: `Jouer ${BADGE_THRESHOLD} sessions Fonctionnement de l'Etat.`, category: "category", check: (s) => deckSessions(s, "etat") >= BADGE_THRESHOLD, progress: (s) => Math.min(100, Math.round((deckSessions(s, "etat") / BADGE_THRESHOLD) * 100)) },
   { id: "badge_culture", icon: "\uD83C\uDFAD", title: "Expert Culture", description: `Jouer ${BADGE_THRESHOLD} sessions Culture.`, category: "category", check: (s) => deckSessions(s, "culture") >= BADGE_THRESHOLD, progress: (s) => Math.min(100, Math.round((deckSessions(s, "culture") / BADGE_THRESHOLD) * 100)) },
+  { id: "badge_agriculture", icon: "\uD83C\uDF3E", title: "Expert Agriculture", description: `Jouer ${BADGE_THRESHOLD} sessions Agriculture.`, category: "category", check: (s) => deckSessions(s, "agriculture") >= BADGE_THRESHOLD, progress: (s) => Math.min(100, Math.round((deckSessions(s, "agriculture") / BADGE_THRESHOLD) * 100)) },
+  { id: "badge_logement", icon: "\uD83C\uDFE0", title: "Expert Logement", description: `Jouer ${BADGE_THRESHOLD} sessions Logement.`, category: "category", check: (s) => deckSessions(s, "logement") >= BADGE_THRESHOLD, progress: (s) => Math.min(100, Math.round((deckSessions(s, "logement") / BADGE_THRESHOLD) * 100)) },
+  { id: "badge_immigration", icon: "\uD83D\uDEC2", title: "Expert Immigration", description: `Jouer ${BADGE_THRESHOLD} sessions Immigration.`, category: "category", check: (s) => deckSessions(s, "immigration") >= BADGE_THRESHOLD, progress: (s) => Math.min(100, Math.round((deckSessions(s, "immigration") / BADGE_THRESHOLD) * 100)) },
+  { id: "badge_numerique", icon: "\uD83D\uDE80", title: "Expert Numerique", description: `Jouer ${BADGE_THRESHOLD} sessions Numerique.`, category: "category", check: (s) => deckSessions(s, "numerique") >= BADGE_THRESHOLD, progress: (s) => Math.min(100, Math.round((deckSessions(s, "numerique") / BADGE_THRESHOLD) * 100)) },
+  { id: "badge_recettes", icon: "\uD83D\uDCB0", title: "Expert Recettes", description: `Jouer ${BADGE_THRESHOLD} sessions Recettes.`, category: "category", check: (s) => deckSessions(s, "recettes") >= BADGE_THRESHOLD, progress: (s) => Math.min(100, Math.round((deckSessions(s, "recettes") / BADGE_THRESHOLD) * 100)) },
+  { id: "badge_emploi", icon: "\uD83C\uDFE2", title: "Expert Emploi", description: `Jouer ${BADGE_THRESHOLD} sessions Emploi.`, category: "category", check: (s) => deckSessions(s, "emploi") >= BADGE_THRESHOLD, progress: (s) => Math.min(100, Math.round((deckSessions(s, "emploi") / BADGE_THRESHOLD) * 100)) },
 ];
 
 /** General (non-category) achievements */
@@ -122,6 +128,54 @@ const GENERAL_ACHIEVEMENTS: Achievement[] = [
     description: "Swiper 100 cartes au total.",
     check: (s) => s.totalCards >= 100,
     progress: (s) => Math.min(100, Math.round((s.totalCards / 100) * 100)),
+  },
+  {
+    id: "speedrunner",
+    icon: "⚡",
+    title: "Speedrunner",
+    description: "Terminer une session en moins de 60 secondes.",
+    check: (_, sessions) =>
+      sessions.some((s) => s.totalDurationMs > 0 && s.totalDurationMs < 60000),
+    progress: (_, sessions) => {
+      if (sessions.length === 0) return 0;
+      const fastest = sessions.reduce(
+        (min, s) => (s.totalDurationMs > 0 ? Math.min(min, s.totalDurationMs) : min),
+        Infinity
+      );
+      return fastest === Infinity ? 0 : Math.min(100, Math.round((60000 / fastest) * 50));
+    },
+  },
+  {
+    id: "expert_n3",
+    icon: "🔬",
+    title: "Expert",
+    description: "Completer 5 sessions en Niveau 3 (micro-audit).",
+    check: (s) => s.auditsN3 >= 5,
+    progress: (s) => Math.min(100, Math.round((s.auditsN3 / 5) * 100)),
+  },
+  {
+    id: "millionnaire",
+    icon: "💎",
+    title: "Millionnaire",
+    description: "Cumuler 100 Md\u20AC de coupes au total.",
+    check: (s) => s.totalCutBillions >= 100,
+    progress: (s) => Math.min(100, Math.round((s.totalCutBillions / 100) * 100)),
+  },
+  {
+    id: "collectionneur",
+    icon: "🏆",
+    title: "Collectionneur",
+    description: "Debloquer 10 badges ou achievements.",
+    check: (s, sessions) => {
+      const completed = GENERAL_ACHIEVEMENTS.filter((a) => a.id !== "collectionneur" && a.check(s, sessions));
+      const badges = CATEGORY_BADGES.filter((a) => a.check(s, sessions));
+      return completed.length + badges.length >= 10;
+    },
+    progress: (s, sessions) => {
+      const completed = GENERAL_ACHIEVEMENTS.filter((a) => a.id !== "collectionneur" && a.check(s, sessions));
+      const badges = CATEGORY_BADGES.filter((a) => a.check(s, sessions));
+      return Math.min(100, Math.round(((completed.length + badges.length) / 10) * 100));
+    },
   },
 ];
 

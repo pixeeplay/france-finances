@@ -81,16 +81,16 @@ Voir historique dans git log. 38 items livres.
 
 **Objectif :** Completer les badges et achievements, ameliorer la rejouabilite.
 
-| # | Item | Effort | Ref |
-|---|------|--------|-----|
-| 1 | 6 badges categorie manquants (agriculture -> emploi) | S | UX-26 |
-| 2 | 4 achievements manquants (Speedrunner, Expert, Millionnaire, Collectionneur) | S | UX-27 |
-| 3 | Fix quasi-doublon san-04/san-13 | XS | BUG-21 |
-| 4 | Ajouter subtitle/source/level dans validateData | S | TECH-07 |
-| 5 | Schema versioning localStorage + migration | S | TECH-08 |
-| 6 | generateMetadata sur 5 pages client (titres distincts) | S | SEO-04 |
+| # | Item | Effort | Ref | Statut |
+|---|------|--------|-----|--------|
+| 1 | 6 badges categorie manquants (agriculture -> emploi) | S | UX-26 | Done |
+| 2 | 4 achievements manquants (Speedrunner, Expert, Millionnaire, Collectionneur) | S | UX-27 | Done |
+| 3 | Fix quasi-doublon san-04/san-13 | XS | BUG-21 | Done |
+| 4 | Ajouter subtitle/source/level dans validateData | S | TECH-07 | Done |
+| 5 | Schema versioning localStorage + migration | S | TECH-08 | Done |
+| 6 | generateMetadata sur 4 pages client (titres distincts) | S | SEO-04 | Done |
 
-**Effort total :** ~2 jours
+**Livrable :** 14 badges categorie, 12 achievements generaux, localStorage v2, metadata pages.
 
 ---
 

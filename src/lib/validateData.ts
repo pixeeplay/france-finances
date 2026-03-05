@@ -51,6 +51,17 @@ export function validateDecksData(data: { decks: Deck[]; cards: Card[] }): Valid
       errors.push(`Card "${card.id}": references unknown deck "${card.deckId}"`);
     }
 
+    // Recommended fields (warnings, not errors)
+    if (!card.source) {
+      warnings.push(`Card "${card.id}": missing recommended field "source"`);
+    }
+    if (!card.subtitle) {
+      warnings.push(`Card "${card.id}": missing recommended field "subtitle"`);
+    }
+    if (card.level === undefined) {
+      warnings.push(`Card "${card.id}": missing recommended field "level"`);
+    }
+
     // Data sanity
     if (card.amountBillions < 0) {
       warnings.push(`Card "${card.id}": negative amountBillions (${card.amountBillions})`);
