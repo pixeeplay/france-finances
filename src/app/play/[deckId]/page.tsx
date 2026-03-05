@@ -1,8 +1,18 @@
 import { SwipeSession } from "./SwipeSession";
 import decksData from "@/data/decks.json";
 import { drawCards, filterByDeck } from "@/lib/deckUtils";
-import type { Card } from "@/types";
+import { validateDecksData } from "@/lib/validateData";
+import type { Card, Deck } from "@/types";
 import type { Metadata } from "next";
+
+// Validate data at module load (runs once at build/start)
+const validation = validateDecksData(decksData as { decks: Deck[]; cards: Card[] });
+if (!validation.valid) {
+  console.error("[DATA] Validation errors:", validation.errors);
+}
+if (validation.warnings.length > 0) {
+  console.warn("[DATA] Validation warnings:", validation.warnings);
+}
 
 export async function generateMetadata({
   params,

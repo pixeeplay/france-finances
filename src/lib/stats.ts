@@ -192,6 +192,53 @@ export function saveCompletedSession(session: Session): void {
   profile.archetypeIcon = archetype.icon;
   profile.level = Math.floor(stats.xp / 500) + 1;
   setItem(PROFILE_KEY, profile);
+
+  // Fire-and-forget: sync to backend API (graceful degradation if unavailable)
+  syncSessionToApi(session, stored, archetype);
+}
+
+/** Async sync to backend — never blocks or throws */
+function syncSessionToApi(
+  session: Session,
+  stored: StoredSession,
+  archetype: ReturnType<typeof determineArchetype>
+): void {
+  const reinforceVotes = session.votes.filter((v) => v.direction === "reinforce");
+  const unjustifiedVotes = session.votes.filter((v) => v.direction === "unjustified");
+
+  const payload = {
+    id: stored.id,
+    deckId: stored.deckId,
+    level: stored.level,
+    archetypeId: archetype.id,
+    archetypeName: archetype.name,
+    totalDurationMs: stored.totalDurationMs,
+    totalCards: stored.totalCards,
+    keepCount: stored.keepCount,
+    cutCount: stored.cutCount,
+    reinforceCount: reinforceVotes.length,
+    unjustifiedCount: unjustifiedVotes.length,
+    totalKeptBillions: stored.totalKeptBillions,
+    totalCutBillions: stored.totalCutBillions,
+    votes: session.votes.map((v) => ({
+      cardId: v.cardId,
+      direction: v.direction,
+      durationMs: v.duration,
+    })),
+    auditResponses: session.auditResponses?.map((r) => ({
+      cardId: r.cardId,
+      diagnostics: r.diagnostics,
+      recommendation: r.recommendation,
+    })),
+  };
+
+  fetch("/api/sessions", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  }).catch(() => {
+    // Silently fail — localStorage is the source of truth
+  });
 }
 
 /** Get decks that have been played */
