@@ -1,6 +1,6 @@
 # Backlog -- La Tronconneuse de Poche
 
-**Derniere mise a jour :** 2026-03-05 (Sprint 9 termine)
+**Derniere mise a jour :** 2026-03-05 (Audit Post-Sprint 9)
 
 ## Legende Priorite
 - P0 = Bloquant / bug critique
@@ -17,7 +17,7 @@
 
 ---
 
-## BUGS & FIXES
+## BUGS & FIXES (Sprints 3-9) -- DONE
 
 | ID | Priorite | Effort | Description | Statut |
 |----|----------|--------|-------------|--------|
@@ -29,8 +29,27 @@
 | BUG-06 | P2 | XS | Empecher double vote sur meme carte | Done Sprint 3 |
 | BUG-07 | P3 | XS | Ajouter level aux deps de useImperativeHandle | Done Sprint 3 |
 | BUG-08 | P1 | XS | Accents francais manquants | Done Sprint 6 |
-| BUG-09 | P1 | XS | Z-index bouton "Lancer la session" | Done Sprint 6 |
+| BUG-09 | P1 | XS | Z-index bouton Lancer la session | Done Sprint 6 |
 | BUG-10 | P2 | XS | Scrollbar visible desktop sur page profil | Done Sprint 6 |
+
+---
+
+## BUGS & FIXES (Audit Post-Sprint 9)
+
+| ID | Priorite | Effort | Description | Statut |
+|----|----------|--------|-------------|--------|
+| BUG-11 | P0 | XS | Guard completeSession si session.completed | A faire |
+| BUG-12 | P0 | S | Fusionner recordVote+nextCard en action atomique | A faire |
+| BUG-13 | P0 | S | Selectors Zustand (useShallow) SwipeStack/SwipeSession | A faire |
+| BUG-14 | P1 | XS | startSession dans useEffect (pas dans le render) | A faire |
+| BUG-15 | P1 | XS | Guard isAnimating pour empecher double-swipe | A faire |
+| BUG-16 | P1 | XS | Valider et clamper param level (1-3) server-side | A faire |
+| BUG-17 | P1 | XS | Valider deckId server-side, notFound() si invalide | A faire |
+| BUG-18 | P1 | S | Budget mode : inclure unjustified dans totalCut | A faire |
+| BUG-19 | P1 | S | Audit L3 Back : deplacer recordVote dans handleAuditSubmit | A faire |
+| BUG-20 | P1 | XS | Fix session callback NextAuth pour mode JWT | A faire |
+| BUG-21 | P2 | XS | Quasi-doublon san-04/san-13 (meme montant 37Md) | A faire |
+| BUG-22 | P2 | S | Gap archetypes N1 (cutPercent 60-80% = fallback) | A faire |
 
 ---
 
@@ -38,22 +57,22 @@
 
 | ID | Priorite | Effort | Description | Statut |
 |----|----------|--------|-------------|--------|
-| UX-01 | P1 | S | Badges par categorie (8 badges, seuil 3 sessions) | Done Sprint 4 |
-| UX-02 | P1 | M | Rejouer anciennes sessions (historique + bouton Rejouer) | Done Sprint 4 |
-| UX-03 | P2 | S | Deblocage thematiques conditionne (3 categories main jouees) | Done Sprint 4 |
-| UX-04 | P2 | M | Mode Budget Contraint (objectif d'economie a atteindre) | Done Sprint 6 |
-| UX-05 | P2 | S | Rapport d'impact Level 3 (X Md d'economies estimees) | Done |
-| UX-06 | P2 | S | Distinction XP tronconneur vs XP contributeur | Reporte (lien nicoquipaie) |
-| UX-07 | P3 | L | Mode Duel (2 joueurs comparent leurs choix) | |
-| UX-08 | P3 | M | Leaderboard vitesse (session la plus rapide) | |
-| UX-09 | P1 | M | Infobulles acronymes dans la vue detail | Done Sprint 4 |
-| UX-10 | P1 | M | Radar "Tes choix vs la communaute" (polygon SVG) | Done Sprint 7 |
-| UX-11 | P2 | XS | Highlight archetype joueur dans distribution communaute | Done Sprint 6 |
-| UX-12 | P2 | XS | Lien pixeeplay.fr sur page infos | Done Sprint 6 |
-| UX-13 | P1 | S | Redesign header profil (compact, pseudo aleatoire, login) | Done Sprint 8 |
-| UX-14 | P2 | S | Editeur d'avatar (emoji picker) | Done Sprint 8 |
-| UX-15 | P2 | XS | Tooltip sur hauts faits verrouilles | Done Sprint 8 |
-| UX-16 | P2 | XS | Rename onglet Journal + Audits | Done Sprint 8 |
+| UX-01 to UX-16 | - | - | (Done Sprints 4-8) | Done |
+| UX-17 | P1 | S | Navigation clavier (fleches) pour le swipe | A faire |
+| UX-18 | P1 | S | Focus trap + Escape sur CardDetail | A faire |
+| UX-19 | P1 | XS | Retirer userScalable: false (permettre zoom) | A faire |
+| UX-20 | P1 | S | prefers-reduced-motion (framer-motion + CSS) | A faire |
+| UX-21 | P1 | S | Focus-visible rings sur tous les boutons | A faire |
+| UX-22 | P2 | XS | Touch targets 44px minimum | A faire |
+| UX-23 | P2 | S | Confirmation avant quitter session | A faire |
+| UX-24 | P2 | XS | aria-label sur boutons Level 2 | A faire |
+| UX-25 | P2 | XS | aria-hidden sur icones SVG decoratives | A faire |
+| UX-26 | P2 | S | 6 badges categorie manquants (complementaires) | A faire |
+| UX-27 | P2 | S | 4 achievements manquants | A faire |
+| UX-28 | P3 | XS | Re-acces au tutoriel depuis Infos/Profil | A faire |
+| UX-29 | P3 | XS | pb-safe sur BottomNav et footers (iOS) | A faire |
+| UX-30 | P3 | M | Leaderboard vitesse | |
+| UX-31 | P3 | L | Mode Duel (2 joueurs) | |
 
 ---
 
@@ -61,9 +80,10 @@
 
 | ID | Priorite | Effort | Description | Statut |
 |----|----------|--------|-------------|--------|
-| SEO-01 | P1 | S | generateMetadata dynamique sur /results et /play/[deckId] | Done Sprint 3 |
-| SEO-02 | P2 | S | OG image archetype dans les meta tags de resultats | Done Sprint 4 |
+| SEO-01 to SEO-02 | - | - | (Done Sprints 3-4) | Done |
 | SEO-03 | P3 | XS | Metadata profil joueur | |
+| SEO-04 | P2 | S | generateMetadata sur pages client | A faire |
+| SEO-05 | P3 | XS | Ajouter favicon.ico | A faire |
 
 ---
 
@@ -71,25 +91,19 @@
 
 | ID | Priorite | Effort | Description | Statut |
 |----|----------|--------|-------------|--------|
-| BACK-01 | P2 | XL | Base de donnees (Drizzle + PostgreSQL) | Done Sprint 5 |
-| BACK-02 | P2 | L | API pour agregation votes communautaires | Done Sprint 5 |
-| BACK-03 | P2 | M | Auth OAuth (NextAuth.js v5, Google + GitHub) | Done Sprint 8 |
+| BACK-01 to BACK-03 | - | - | (Done Sprints 5-8) | Done |
 | BACK-04 | P3 | L | Sync multi-device | |
 | BACK-05 | P3 | M | API ouverte / export CSV | |
 | BACK-06 | P3 | L | Integration analytics (Plausible/PostHog) | |
-
----
-
-## CONTENU & DONNEES
-
-| ID | Priorite | Effort | Description | Statut |
-|----|----------|--------|-------------|--------|
-| DATA-01 | P1 | M | API community/stats (vrais agregats) | Done Sprint 7 |
-| DATA-02 | P3 | L | Cartes evenementielles dynamiques | |
-| DATA-03 | P1 | S | Feed tendances reel (top coupe/protege) | Done Sprint 7 |
-| DATA-04 | P3 | S | Filtrage demographique optionnel | |
-| DATA-05 | P1 | M | 24 cartes "Renfort" (6 categories complementaires) | Done Sprint 9 |
-| DATA-06 | P1 | L | 46 cartes "Boost Final" (alignement 18-20/categorie) | Done Sprint 9 |
+| BACK-07 | P0 | S | Retirer credentials docker-compose + restreindre port PG | A faire |
+| BACK-08 | P1 | S | Headers de securite (CSP, X-Frame-Options, HSTS) | A faire |
+| BACK-09 | P1 | M | Validation payload Zod sur POST /api/sessions | A faire |
+| BACK-10 | P1 | M | Rate limiting API | A faire |
+| BACK-11 | P2 | S | Index DB sur colonnes requetees | A faire |
+| BACK-12 | P2 | S | Connection pooling PostgreSQL | A faire |
+| BACK-13 | P2 | S | Error.tsx + global-error.tsx + not-found.tsx + loading.tsx | A faire |
+| BACK-14 | P2 | XS | Healthcheck conteneur + /api/health | A faire |
+| BACK-15 | P2 | S | Error responses coherentes API | A faire |
 
 ---
 
@@ -97,12 +111,12 @@
 
 | ID | Priorite | Effort | Description | Statut |
 |----|----------|--------|-------------|--------|
-| TECH-01 | P2 | XS | Upgrade tsconfig target ES2020 | Done Sprint 5 |
-| TECH-02 | P2 | S | Memoiser sessionStats() dans le store | Done Sprint 6 |
-| TECH-03 | P2 | S | Validation runtime des donnees JSON | Done Sprint 5 |
-| TECH-04 | P3 | S | Ameliorer accessibilite (ARIA, focus management) | Done Sprint 6 |
-| TECH-05 | P3 | XS | Verifier/documenter service worker | |
-| TECH-06 | P2 | M | Splitter decks.json en fichiers par categorie | |
+| TECH-01 to TECH-06 | - | - | (Done Sprints 5-10) | Done |
+| TECH-07 | P1 | S | Ajouter subtitle/source/level dans validateData | A faire |
+| TECH-08 | P2 | S | Schema versioning localStorage + migration | A faire |
+| TECH-09 | P2 | S | Convertir /infos en RSC | A faire |
+| TECH-10 | P2 | M | Lazy load framer-motion sur homepage | A faire |
+| TECH-11 | P3 | S | Drizzle migrations tracees | A faire |
 
 ---
 
@@ -110,6 +124,6 @@
 
 | Statut | Count |
 |--------|-------|
-| Done | 38 |
-| En cours / Planifie | 10 |
-| **Total** | **48** |
+| Done | 39 |
+| A faire | 39 |
+| **Total** | **78** |

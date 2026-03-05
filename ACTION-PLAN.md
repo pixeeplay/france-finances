@@ -1,142 +1,114 @@
 # Plan d'Action Priorise -- La Tronconneuse de Poche
 
 **Date :** 2026-03-05
-**Base sur :** Audit consolide + Backlog (48 items)
+**Base sur :** Audit consolide 6 agents (11 critiques, 27 hautes, 43 moyennes, 28 basses)
 
 ---
 
-## Sprint 3 -- Hotfixes & Polish TERMINE
+## Sprints 3-9 -- TERMINES
 
-**Objectif :** Corriger les bugs critiques et ameliorer la stabilite.
+Voir historique dans git log. 38 items livres.
 
-| # | Item | Effort | Ref | Statut |
-|---|------|--------|-----|--------|
-| 1 | Ajuster dragConstraints Level 2+ pour swipe fluide | XS | BUG-01 | Done |
-| 2 | Fix costPerCitizen = 0 sur cul-09, ukr-08 | XS | BUG-02 | Done |
-| 3 | Fix typo image educuation -> education | XS | BUG-03 | Done |
-| 4 | Dead-zone diagonale dans useSwipeGesture | XS | BUG-04 | Done |
-| 5 | Guard nextCard() / empecher double vote | XS | BUG-05/06 | Done |
-| 6 | generateMetadata dynamique /results + /play/[deckId] | S | SEO-01 | Done |
-| 7 | Fix archetypes OG route (14 archetypes) | XS | -- | Done |
-| 8 | Fix card count onboarding (270/17) | XS | -- | Done |
-| 9 | robots.txt + sitemap.xml | XS | -- | Done |
-| 10 | noindex sur env de dev | XS | -- | Done |
+## Sprint 10 -- Refacto Data TERMINE
+
+| # | Item | Effort | Statut |
+|---|------|--------|--------|
+| 1 | Splitter decks.json en fichiers par categorie | M | Done |
 
 ---
 
-## Sprint 4 -- Gameplay Depth TERMINE
+## Sprint 11 -- Hotfixes Critiques (PROCHAIN)
 
-**Objectif :** Enrichir la rejouabilite et la progression.
+**Objectif :** Corriger les 11 findings critiques de l'audit. Stabilite et fiabilite du jeu.
 
-| # | Item | Effort | Ref | Statut |
-|---|------|--------|-----|--------|
-| 1 | Badges par categorie (8 badges, seuil 3 sessions) | S | UX-01 | Done |
-| 2 | Historique + replay anciennes sessions (bouton Rejouer) | M | UX-02 | Done |
-| 3 | Rapport d'impact Level 3 (estimation economies) | S | UX-05 | Done |
-| 4 | Deblocage conditionnel des thematiques (3 categories) | S | UX-03 | Done |
-| 5 | OG image archetype via /share page + meta tags | S | SEO-02 | Done |
-| 6 | Infobulles acronymes dans la vue detail (80+ acronymes) | M | UX-09 | Done |
+| # | Item | Effort | Ref |
+|---|------|--------|-----|
+| 1 | Guard `completeSession` si `session.completed` | XS | BUG-11 |
+| 2 | Fusionner recordVote+nextCard en `voteAndAdvance()` atomique | S | BUG-12 |
+| 3 | Selectors Zustand avec `useShallow` (SwipeStack + SwipeSession) | S | BUG-13 |
+| 4 | Deplacer startSession dans useEffect | XS | BUG-14 |
+| 5 | Guard isAnimating pour empecher double-swipe | XS | BUG-15 |
+| 6 | Retirer credentials docker-compose + restreindre port PG | S | BACK-07 |
+| 7 | Budget mode : inclure unjustified dans totalCut (ResultScreen + stats) | S | BUG-18 |
+| 8 | Audit L3 Back : deplacer recordVote dans handleAuditSubmit | S | BUG-19 |
+| 9 | Elargir plages archetypes N1 (couvrir gap 60-80%) | S | BUG-22 |
+| 10 | Fix session callback NextAuth pour mode JWT | XS | BUG-20 |
 
----
-
-## Sprint 5 -- Backend Foundation TERMINE
-
-**Objectif :** Passer du localStorage au backend pour activer les fonctionnalites communautaires.
-
-| # | Item | Effort | Ref | Statut |
-|---|------|--------|-----|--------|
-| 1 | Setup Drizzle + PostgreSQL + docker-compose | XL | BACK-01 | Done |
-| 2 | API agregation votes (GET /api/community) | L | BACK-02 | Done |
-| 3 | API save session (POST /api/sessions) | M | BACK-02 | Done |
-| 4 | Frontend fire-and-forget sync (dual mode localStorage + API) | S | -- | Done |
-| 5 | Validation runtime JSON au chargement | S | TECH-03 | Done |
-| 6 | Fix Turbopack + tsconfig ES2020 | XS | TECH-01 | Done |
+**Effort total :** ~S-M par item, sprint de 1-2 jours
 
 ---
 
-## Sprint 6 -- Modes Avances, Accessibilite & Polish TERMINE
+## Sprint 12 -- Securite & Robustesse
 
-**Objectif :** Nouveaux modes de jeu, qualite, corrections UX.
+**Objectif :** Securiser les API, ajouter les protections web standard.
 
-| # | Item | Effort | Ref | Statut |
-|---|------|--------|-----|--------|
-| 1 | Mode Budget Contraint (objectif economies, 5 paliers, tracker live) | M | UX-04 | Done |
-| 2 | Accessibilite ARIA + focus management (nav, cards, dialog, sr-only) | S | TECH-04 | Done |
-| 3 | Memoiser sessionStats() dans le store | S | TECH-02 | Done |
-| 4 | Fix accents francais (page infos, aria-labels, OG route, play) | XS | BUG-08 | Done |
-| 5 | Fix z-index bouton "Lancer la session" | XS | BUG-09 | Done |
-| 6 | Scrollbar-hide sur toutes les pages (profil, infos) | XS | BUG-10 | Done |
-| 7 | Highlight archetype joueur dans distribution communaute | XS | UX-11 | Done |
-| 8 | Lien pixeeplay.fr sur page infos | XS | UX-12 | Done |
-| 9 | Fix image education (renommage fichier) | XS | BUG-03 | Done |
+| # | Item | Effort | Ref |
+|---|------|--------|-----|
+| 1 | Headers de securite dans next.config.ts | S | BACK-08 |
+| 2 | Validation payload Zod sur POST /api/sessions | M | BACK-09 |
+| 3 | Rate limiting API (middleware ou upstash) | M | BACK-10 |
+| 4 | Valider + clamper param level server-side | XS | BUG-16 |
+| 5 | Valider deckId server-side, notFound() si invalide | XS | BUG-17 |
+| 6 | Error.tsx + global-error.tsx + not-found.tsx + loading.tsx | S | BACK-13 |
+| 7 | Error responses coherentes sur toutes les API routes | S | BACK-15 |
+| 8 | Healthcheck conteneur + endpoint /api/health | XS | BACK-14 |
 
----
-
-## Sprint 7 -- Radar & Donnees Communautaires TERMINE
-
-**Objectif :** Exploiter les donnees communautaires pour enrichir l'experience comparaison.
-
-| # | Item | Effort | Ref | Statut |
-|---|------|--------|-----|--------|
-| 1 | Radar SVG "Tes choix vs la communaute" (polygon, N axes) | M | UX-10 | Done |
-| 2 | Integrer le radar sur resultats Niv.2+ ET page communaute | S | UX-10 | Done |
-| 3 | API /api/community/stats (vrais agregats par categorie/archetype) | M | DATA-01 | Done |
-| 4 | Feed tendances reel (top coupe / top protege depuis API) | S | DATA-03 | Done |
-
-**Livrable :** RadarChart SVG, computeRadarFromSession/History, API community/stats, hook useCommunityStats, integration resultats + ranking.
+**Effort total :** ~2 jours
 
 ---
 
-## Sprint 8 -- Auth & Profil TERMINE
+## Sprint 13 -- Accessibilite WCAG 2.1 AA
 
-**Objectif :** Authentification OAuth, redesign profil, avatars.
+**Objectif :** Rendre le jeu accessible clavier, screen reader, reduced motion.
 
-| # | Item | Effort | Ref | Statut |
-|---|------|--------|-----|--------|
-| 1 | NextAuth.js v5 (Google + GitHub providers, Drizzle adapter) | M | BACK-03 | Done |
-| 2 | SessionProvider + API route /api/auth/[...nextauth] | S | BACK-03 | Done |
-| 3 | Redesign header profil (compact, pseudo aleatoire, boutons login) | S | UX-13 | Done |
-| 4 | Editeur d'avatar (emoji picker, 24 choix, persistance localStorage) | S | UX-14 | Done |
-| 5 | Tooltip sur hauts faits verrouilles (condition de deblocage) | XS | UX-15 | Done |
-| 6 | Rename onglet "Journal H.F." -> "Journal", "Audits N3" -> "Audits (Niveau 3)" | XS | UX-16 | Done |
+| # | Item | Effort | Ref |
+|---|------|--------|-----|
+| 1 | Navigation clavier (fleches) pour le swipe | S | UX-17 |
+| 2 | Focus-visible rings sur tous les boutons | S | UX-21 |
+| 3 | prefers-reduced-motion (framer-motion + CSS) | S | UX-20 |
+| 4 | Focus trap + Escape sur CardDetail (bottom sheet) | S | UX-18 |
+| 5 | Retirer userScalable: false | XS | UX-19 |
+| 6 | Touch targets 44px minimum (detail, quitter, avatar) | XS | UX-22 |
+| 7 | aria-label sur boutons Level 2 | XS | UX-24 |
+| 8 | aria-hidden sur icones SVG decoratives | XS | UX-25 |
+| 9 | Confirmation avant quitter session | S | UX-23 |
 
-**Livrable :** Auth Google/GitHub prete (a activer avec les cles OAuth), profil compact avec avatar editable.
-
----
-
-## Sprint 9 -- Contenu : 70 nouvelles cartes TERMINE
-
-**Objectif :** Enrichir les 6 categories complementaires (agriculture, logement, immigration, numerique, recettes, emploi).
-
-| # | Item | Effort | Ref | Statut |
-|---|------|--------|-----|--------|
-| 1 | Ajouter 24 cartes "Renfort" (4 par categorie complementaire) | M | DATA-05 | Done |
-| 2 | Ajouter 46 cartes "Boost Final" (6-8 par categorie) | L | DATA-06 | Done |
-| 3 | Mettre a jour les cardCount dans les decks | XS | -- | Done |
-
-**Livrable :** 330 cartes au total (vs 270 avant). Chaque categorie complementaire passe de 8-10 a 18-20 cartes.
-
-| Categorie | Avant | Apres |
-|-----------|-------|-------|
-| Agriculture | 8 | 20 |
-| Logement | 8 | 18 |
-| Immigration | 8 | 18 |
-| Numerique | 8 | 18 |
-| Recettes | 10 | 18 |
-| Emploi | 8 | 18 |
+**Effort total :** ~2 jours
 
 ---
 
-## Sprint 10 -- Refacto Data + Polish (PROCHAIN)
+## Sprint 14 -- Contenu & Progression
 
-**Objectif :** Splitter le JSON monolithique, ameliorer la maintenabilite.
+**Objectif :** Completer les badges et achievements, ameliorer la rejouabilite.
 
-| # | Item | Effort | Ref | Statut |
-|---|------|--------|-----|--------|
-| 1 | Splitter decks.json en 1 fichier par categorie | M | TECH-06 | A faire |
-| 2 | Leaderboard vitesse (session la plus rapide) | M | UX-08 | A faire |
-| 3 | Sync multi-device | L | BACK-04 | A faire |
-| 4 | Metadata profil joueur (SEO) | XS | SEO-03 | A faire |
+| # | Item | Effort | Ref |
+|---|------|--------|-----|
+| 1 | 6 badges categorie manquants (agriculture -> emploi) | S | UX-26 |
+| 2 | 4 achievements manquants (Speedrunner, Expert, Millionnaire, Collectionneur) | S | UX-27 |
+| 3 | Fix quasi-doublon san-04/san-13 | XS | BUG-21 |
+| 4 | Ajouter subtitle/source/level dans validateData | S | TECH-07 |
+| 5 | Schema versioning localStorage + migration | S | TECH-08 |
+| 6 | generateMetadata sur 5 pages client (titres distincts) | S | SEO-04 |
+
+**Effort total :** ~2 jours
+
+---
+
+## Sprint 15 -- Performance & DX
+
+**Objectif :** Optimiser le bundle, ameliorer l'architecture.
+
+| # | Item | Effort | Ref |
+|---|------|--------|-----|
+| 1 | Lazy load framer-motion sur homepage (next/dynamic) | M | TECH-10 |
+| 2 | Convertir /infos en RSC (supprimer "use client") | S | TECH-09 |
+| 3 | Index DB sur colonnes requetees | S | BACK-11 |
+| 4 | Connection pooling PostgreSQL | S | BACK-12 |
+| 5 | pb-safe sur BottomNav et footers (iOS) | XS | UX-29 |
+| 6 | Re-acces au tutoriel depuis Infos/Profil | XS | UX-28 |
+| 7 | Ajouter favicon.ico | XS | SEO-05 |
+
+**Effort total :** ~1-2 jours
 
 ---
 
@@ -144,25 +116,25 @@
 
 | Item | Effort | Ref |
 |------|--------|-----|
-| Mode Duel (2 joueurs) | L | UX-07 |
-| Distinction XP tronconneur vs contributeur | S | UX-06 |
-| Cartes evenementielles dynamiques | L | DATA-02 |
+| Mode Duel (2 joueurs) | L | UX-31 |
+| Sync multi-device | L | BACK-04 |
+| Leaderboard vitesse | M | UX-30 |
 | API ouverte / export CSV | M | BACK-05 |
 | Analytics Plausible/PostHog | L | BACK-06 |
-| Filtrage demographique | S | DATA-04 |
-| Service worker documentation | XS | TECH-05 |
+| Drizzle migrations tracees | S | TECH-11 |
+| Metadata profil joueur | XS | SEO-03 |
 
 ---
 
 ## KPIs de Suivi
 
-| Metrique | Sprint 3 | Sprint 6 | Sprint 9 |
-|----------|----------|----------|----------|
-| Bugs critiques | 0 | 0 | 0 |
-| Build time | < 30s | < 30s | < 30s |
-| Lighthouse mobile | > 90 | > 95 | > 95 |
-| Cartes | 270 | 270 | 330 |
-| Archetypes | 14 | 14 | 14 |
-| Categories | 17 | 17 | 17 |
-| Donnees communautaires | Mock | API ready | Reelles |
-| Auth | Non | Non | Google + GitHub |
+| Metrique | Sprint 9 | Sprint 11 (cible) | Sprint 13 (cible) |
+|----------|----------|-------------------|-------------------|
+| Bugs critiques | 11 | 0 | 0 |
+| Bugs hautes | 27 | < 10 | < 5 |
+| Cartes | 330 | 330 | 330 |
+| Archetypes | 14 | 14 (gaps corriges) | 14 |
+| WCAG violations | 11 | 11 | 0 |
+| Headers securite | 0 | 0 | 6+ |
+| Error boundaries | 0 | 4 | 4 |
+| Rate limiting | Non | Oui | Oui |
