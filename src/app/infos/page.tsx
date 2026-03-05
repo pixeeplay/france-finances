@@ -24,7 +24,11 @@ export default function InfosPage() {
               <div>
                 <h2 className="text-lg font-bold">La Tronconneuse de Poche</h2>
                 <p className="text-xs text-muted-foreground">
-                  par nicoquipaie.co
+                  par{" "}
+                  <a href="https://nicoquipaie.co" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">nicoquipaie.co</a>
+                  {" "}et{" "}
+                  <span className="text-foreground font-medium">pixeeplay</span>
+                  {" "}(lien a venir)
                 </p>
               </div>
             </div>
@@ -139,11 +143,11 @@ export default function InfosPage() {
             <div className="flex flex-col gap-2 text-sm text-muted-foreground">
               <div className="flex justify-between">
                 <span>Conception & dev</span>
-                <span className="font-medium text-foreground">nicoquipaie.co</span>
+                <span className="font-medium text-foreground">pixeeplay</span>
               </div>
               <div className="flex justify-between">
-                <span>Hebergement</span>
-                <span className="font-medium text-foreground">Coolify</span>
+                <span>H&eacute;bergement</span>
+                <span className="font-medium text-foreground">OVH</span>
               </div>
               <div className="flex justify-between">
                 <span>Version</span>
