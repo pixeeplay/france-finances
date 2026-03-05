@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import type { Card, Vote, VoteDirection, Session, SessionStats, AuditResponse } from "@/types";
+import type { Card, Vote, VoteDirection, Session, SessionStats, AuditResponse, GameMode } from "@/types";
 import { computeStats, determineArchetype } from "@/lib/archetype";
 import { saveCompletedSession } from "@/lib/stats";
 import { track } from "@/lib/analytics";
@@ -9,10 +9,12 @@ interface GameState {
   session: Session | null;
   /** Timestamp when the current card was shown */
   cardShownAt: number;
+  /** Cached stats (computed once at session completion) */
+  _cachedStats: SessionStats | null;
 
   // === Actions ===
   /** Démarrer une nouvelle session */
-  startSession: (deckId: string, cards: Card[], level?: 1 | 2 | 3) => void;
+  startSession: (deckId: string, cards: Card[], level?: 1 | 2 | 3, gameMode?: GameMode, budgetTarget?: number) => void;
   /** Enregistrer un vote pour la carte courante */
   recordVote: (cardId: string, direction: VoteDirection) => void;
   /** Passer à la carte suivante */
@@ -38,13 +40,16 @@ interface GameState {
 export const useGameStore = create<GameState>((set, get) => ({
   session: null,
   cardShownAt: 0,
+  _cachedStats: null,
 
-  startSession: (deckId, cards, level = 1) => {
+  startSession: (deckId, cards, level = 1, gameMode = "classic", budgetTarget) => {
     set({
       session: {
         id: crypto.randomUUID(),
         deckId,
         level,
+        gameMode,
+        budgetTarget,
         cards,
         votes: [],
         currentIndex: 0,
@@ -52,6 +57,7 @@ export const useGameStore = create<GameState>((set, get) => ({
         completed: false,
       },
       cardShownAt: Date.now(),
+      _cachedStats: null,
     });
   },
 
@@ -105,17 +111,20 @@ export const useGameStore = create<GameState>((set, get) => ({
       totalDuration: endedAt - session.startedAt,
     };
 
-    set({ session: completed });
+    // Compute stats once and cache
+    const rawStats = computeStats(completed.votes, completed.totalDuration ?? 0);
+    const archetype = determineArchetype(rawStats, completed.level);
+    const cachedStats: SessionStats = { ...rawStats, archetype };
+
+    set({ session: completed, _cachedStats: cachedStats });
 
     // Persist to localStorage
     saveCompletedSession(completed);
 
     // Track analytics
-    const rawStats = computeStats(completed.votes, completed.totalDuration ?? 0);
-    const arch = determineArchetype(rawStats, completed.level);
     track("session_complete", {
       deckId: completed.deckId,
-      archetype: arch.id,
+      archetype: archetype.id,
       keepPercent: Math.round(rawStats.keepPercent),
       cutPercent: Math.round(rawStats.cutPercent),
       totalDurationMs: completed.totalDuration,
@@ -134,7 +143,7 @@ export const useGameStore = create<GameState>((set, get) => ({
     });
   },
 
-  reset: () => set({ session: null }),
+  reset: () => set({ session: null, _cachedStats: null }),
 
   // === Computed (fonctions, pas des valeurs réactives) ===
 
@@ -157,12 +166,13 @@ export const useGameStore = create<GameState>((set, get) => ({
   },
 
   sessionStats: () => {
-    const { session } = get();
+    const { _cachedStats, session } = get();
+    if (_cachedStats) return _cachedStats;
     if (!session || !session.completed || !session.totalDuration) return null;
 
+    // Fallback: compute if cache was lost (shouldn't happen in normal flow)
     const rawStats = computeStats(session.votes, session.totalDuration);
     const archetype = determineArchetype(rawStats, session.level);
-
     return { ...rawStats, archetype };
   },
 }));

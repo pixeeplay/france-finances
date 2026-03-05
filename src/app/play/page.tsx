@@ -38,6 +38,8 @@ const LEVEL_UNLOCK = {
   3: { sessions: 5, label: "5 sessions au Niveau 2" },
 } as const;
 
+const BUDGET_TARGETS = [5, 10, 15, 20, 30] as const;
+
 function PlayPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -48,6 +50,8 @@ function PlayPageContent() {
   const [level, setLevel] = useState<1 | 2 | 3>(initialLevel);
   const [tooltip, setTooltip] = useState<2 | 3 | null>(null);
   const [sessionsCount, setSessionsCount] = useState(0);
+  const [budgetMode, setBudgetMode] = useState(false);
+  const [budgetTarget, setBudgetTarget] = useState<number>(15);
   const scrollRef = useRef<HTMLDivElement>(null);
   const [showChevron, setShowChevron] = useState(false);
 
@@ -97,9 +101,15 @@ function PlayPageContent() {
   function handleLaunch() {
     const deckId = randomMode ? "random" : selectedDeck;
     if (!deckId) return;
-    track("deck_selected", { deckId, level });
-    const levelParam = level > 1 ? `?level=${level}` : "";
-    router.push(`/play/${deckId}${levelParam}`);
+    track("deck_selected", { deckId, level, mode: budgetMode ? "budget" : "classic" });
+    const params = new URLSearchParams();
+    if (level > 1) params.set("level", String(level));
+    if (budgetMode) {
+      params.set("mode", "budget");
+      params.set("target", String(budgetTarget));
+    }
+    const qs = params.toString();
+    router.push(`/play/${deckId}${qs ? `?${qs}` : ""}`);
   }
 
   return (
@@ -155,6 +165,61 @@ function PlayPageContent() {
               }}
             />
           </label>
+        </div>
+
+        {/* Budget Mode Toggle */}
+        <div className="flex flex-col border-b border-border">
+          <div className="flex items-center gap-4 px-4 py-4 justify-between">
+            <div className="flex items-center gap-4">
+              <div className="w-10 h-10 rounded-lg bg-warning/15 flex items-center justify-center text-warning shrink-0">
+                <span className="text-lg">&#127919;</span>
+              </div>
+              <div className="flex flex-col">
+                <p className="text-base font-semibold leading-tight">
+                  Mode Budget
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  Atteignez un objectif d&apos;economies
+                </p>
+              </div>
+            </div>
+            <label className="relative flex h-8 w-14 cursor-pointer items-center rounded-full p-1 transition-colors duration-300"
+              style={{ backgroundColor: budgetMode ? "var(--color-warning)" : "var(--muted)" }}
+            >
+              <div
+                className="h-6 w-6 rounded-full bg-white shadow-sm transition-transform duration-300"
+                style={{ transform: budgetMode ? "translateX(1.5rem)" : "translateX(0)" }}
+              />
+              <input
+                className="invisible absolute"
+                type="checkbox"
+                checked={budgetMode}
+                onChange={(e) => setBudgetMode(e.target.checked)}
+              />
+            </label>
+          </div>
+          {budgetMode && (
+            <div className="px-4 pb-4">
+              <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2">
+                Objectif : {budgetTarget} Md&euro; d&apos;economies
+              </p>
+              <div className="flex gap-2">
+                {BUDGET_TARGETS.map((t) => (
+                  <button
+                    key={t}
+                    onClick={() => setBudgetTarget(t)}
+                    className={`flex-1 py-2 rounded-lg text-sm font-bold transition-colors ${
+                      budgetTarget === t
+                        ? "bg-warning text-white"
+                        : "bg-card border border-border text-foreground hover:bg-muted"
+                    }`}
+                  >
+                    {t}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Level Selector */}
@@ -265,7 +330,7 @@ function PlayPageContent() {
           className="relative z-10 w-full bg-primary hover:bg-primary/90 text-white font-bold text-lg py-4 rounded-xl shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all active:scale-95 flex items-center justify-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed"
         >
           <CardsIcon size={24} />
-          Lancer la session {level > 1 ? `(N${level})` : ""}
+          {budgetMode ? `Lancer le defi (${budgetTarget} Md\u20AC)` : `Lancer la session ${level > 1 ? `(N${level})` : ""}`}
         </button>
       </div>
     </div>

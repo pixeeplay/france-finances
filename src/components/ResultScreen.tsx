@@ -29,6 +29,8 @@ export function ResultScreen() {
   const [showConfetti, setShowConfetti] = useState(true);
   const [shareCopied, setShareCopied] = useState(false);
   const level = session?.level ?? 1;
+  const isBudgetMode = session?.gameMode === "budget";
+  const budgetTarget = session?.budgetTarget ?? 0;
 
   // Hide confetti after a few seconds
   useEffect(() => {
@@ -261,6 +263,45 @@ export function ResultScreen() {
           </div>
         </div>
       </div>
+
+      {/* Budget Mode Result */}
+      {isBudgetMode && budgetTarget > 0 && (
+        <div className="px-4 py-2">
+          <div className={`rounded-2xl p-5 border ${
+            totalCut >= budgetTarget
+              ? "bg-primary/10 border-primary/30"
+              : "bg-danger/10 border-danger/30"
+          }`}>
+            <div className="flex items-center gap-3 mb-3">
+              <span className="text-3xl">{totalCut >= budgetTarget ? "\u2705" : "\u274C"}</span>
+              <div>
+                <p className="text-lg font-bold">
+                  {totalCut >= budgetTarget ? "Objectif atteint !" : "Objectif non atteint"}
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  Cible : {budgetTarget} Md&euro; d&apos;economies
+                </p>
+              </div>
+            </div>
+            <div className="w-full bg-muted h-3 rounded-full overflow-hidden mb-2">
+              <div
+                className={`h-full rounded-full transition-all ${
+                  totalCut >= budgetTarget ? "bg-primary" : "bg-warning"
+                }`}
+                style={{ width: `${Math.min((totalCut / budgetTarget) * 100, 100)}%` }}
+              />
+            </div>
+            <p className="text-center text-sm font-bold">
+              {totalCut.toFixed(1)} / {budgetTarget} Md&euro;
+              {totalCut >= budgetTarget && (
+                <span className="text-primary ml-2">
+                  (+{(totalCut - budgetTarget).toFixed(1)} Md&euro;)
+                </span>
+              )}
+            </p>
+          </div>
+        </div>
+      )}
 
       {/* Level 3: Audit Report */}
       {level === 3 && session.auditResponses && session.auditResponses.length > 0 && (

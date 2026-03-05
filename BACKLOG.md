@@ -38,7 +38,7 @@
 | UX-01 | P1 | S | Badges par catégorie ("Expert Défense" après 3 sessions) | ✅ Sprint 4 |
 | UX-02 | P1 | M | Rejouer anciennes sessions (historique + bouton Rejouer) | ✅ Sprint 4 |
 | UX-03 | P2 | S | Déblocage thématiques conditionné (3 catégories main jouées) | ✅ Sprint 4 |
-| UX-04 | P2 | M | Mode Budget Contraint (objectif d'économie à atteindre) | |
+| UX-04 | P2 | M | Mode Budget Contraint (objectif d'économie à atteindre) | ✅ Sprint 6 |
 | UX-05 | P2 | S | Rapport d'impact Level 3 (X Md d'économies estimées) | ✅ Déjà implémenté |
 | UX-06 | P2 | S | Distinction XP tronçonneur vs XP contributeur | Reporté (lien nicoquipaie) |
 | UX-07 | P3 | L | Mode Duel (2 joueurs comparent leurs choix) | |
@@ -86,9 +86,9 @@
 | ID | Priorité | Effort | Description |
 |----|----------|--------|-------------|
 | TECH-01 | P2 | XS | Upgrade tsconfig target ES2017 → ES2020 | ✅ Sprint 5 |
-| TECH-02 | P2 | S | Memoïser sessionStats() dans le store |
+| TECH-02 | P2 | S | Memoïser sessionStats() dans le store | ✅ Sprint 6 |
 | TECH-03 | P2 | S | Validation runtime des données JSON au chargement | ✅ Sprint 5 |
-| TECH-04 | P3 | S | Améliorer accessibilité (ARIA labels, focus management) |
+| TECH-04 | P3 | S | Améliorer accessibilité (ARIA labels, focus management) | ✅ Sprint 6 |
 | TECH-05 | P3 | XS | Vérifier/documenter auto-registration du service worker |
 
 ---

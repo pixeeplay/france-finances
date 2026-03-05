@@ -11,6 +11,8 @@ export interface StoredSession {
   id: string;
   deckId: string;
   level: 1 | 2 | 3;
+  gameMode?: "classic" | "budget";
+  budgetTarget?: number;
   votes: Vote[];
   archetypeId: string;
   archetypeName: string;
@@ -20,6 +22,7 @@ export interface StoredSession {
   totalCards: number;
   totalKeptBillions: number;
   totalCutBillions: number;
+  budgetTargetReached?: boolean;
   date: string; // ISO string
 }
 
@@ -123,6 +126,7 @@ function computeSessionXP(session: StoredSession): number {
   xp += 50; // +50 for completing a session
   if (session.archetypeId === "speedrunner") xp += 100; // bonus
   if (session.level === 3) xp += 100; // Level 3 audit bonus
+  if (session.budgetTargetReached) xp += 150; // Budget challenge bonus
   return xp;
 }
 
@@ -148,6 +152,8 @@ export function saveCompletedSession(session: Session): void {
     id: session.id,
     deckId: session.deckId,
     level: session.level,
+    gameMode: session.gameMode,
+    budgetTarget: session.budgetTarget,
     votes: session.votes,
     archetypeId: archetype.id,
     archetypeName: archetype.name,
@@ -157,6 +163,9 @@ export function saveCompletedSession(session: Session): void {
     totalCards: session.votes.length,
     totalKeptBillions: Math.round(totalKeptBillions * 10) / 10,
     totalCutBillions: Math.round(totalCutBillions * 10) / 10,
+    budgetTargetReached: session.gameMode === "budget" && session.budgetTarget
+      ? totalCutBillions >= session.budgetTarget
+      : undefined,
     date: new Date().toISOString(),
   };
 

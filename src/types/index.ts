@@ -62,12 +62,19 @@ export interface Vote {
   timestamp: number;
 }
 
+// === GAME MODE ===
+export type GameMode = "classic" | "budget";
+
 // === SESSION ===
 export interface Session {
   id: string;
   deckId: string;
   /** Niveau de jeu */
   level: 1 | 2 | 3;
+  /** Mode de jeu */
+  gameMode: GameMode;
+  /** Objectif budget en Md€ (mode budget uniquement) */
+  budgetTarget?: number;
   /** Cartes de la session (dans l'ordre) */
   cards: Card[];
   /** Votes enregistrés */

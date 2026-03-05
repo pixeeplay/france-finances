@@ -58,6 +58,8 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
               }
             }}
             dragControls={dragControls}
+            role="dialog"
+            aria-label={`Detail : ${card.title}`}
             className="fixed bottom-0 left-0 right-0 z-50 flex flex-col bg-card rounded-t-[32px] max-h-[92vh] shadow-[0_-10px_40px_rgba(0,0,0,0.3)] max-w-md mx-auto"
           >
             {/* Drag Handle & Close */}
@@ -70,6 +72,7 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
               </button>
               <button
                 onClick={onClose}
+                aria-label="Fermer le detail"
                 className="absolute top-4 right-4 p-2 text-muted-foreground hover:text-foreground rounded-full hover:bg-muted transition-colors"
               >
                 <span className="text-lg">✕</span>

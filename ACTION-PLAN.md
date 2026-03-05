@@ -64,18 +64,19 @@
 
 ---
 
-## Sprint 6 — Modes Avancés (3-5 jours)
+## Sprint 6 — Modes Avances & Accessibilite ✅ TERMINE
 
-**Objectif :** Nouveaux modes de jeu pour la rétention.
+**Objectif :** Nouveaux modes de jeu pour la retention + qualite.
 
-| # | Item | Effort | Ref |
-|---|------|--------|-----|
-| 1 | Mode Budget Contraint | M | UX-04 |
-| 2 | Leaderboard vitesse | M | UX-08 |
-| 3 | Sync multi-device | L | BACK-04 |
-| 4 | Accessibilité ARIA + focus management | S | TECH-04 |
+| # | Item | Effort | Ref | Statut |
+|---|------|--------|-----|--------|
+| 1 | Mode Budget Contraint (objectif economies, 5 paliers, tracker live) | M | UX-04 | ✅ |
+| 2 | Accessibilite ARIA + focus management (nav, cards, dialog, sr-only) | S | TECH-04 | ✅ |
+| 3 | Memoiser sessionStats() dans le store | S | TECH-02 | ✅ |
 
-**Livrable :** 2 nouveaux modes de jeu, accessibilité renforcée.
+**Reporte Sprint 7+ :** UX-08 (Leaderboard vitesse), BACK-04 (Sync multi-device) — necessitent BACK-03 (auth).
+
+**Livrable :** Mode Budget jouable, accessibilite amelioree, perf store optimisee.
 
 ---
 

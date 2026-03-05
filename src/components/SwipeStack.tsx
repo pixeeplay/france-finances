@@ -9,13 +9,15 @@ import { ChainsawIcon } from "./ChainsawIcon";
 import { ShieldIcon } from "./ShieldIcon";
 import { useGameStore } from "@/stores/gameStore";
 import { track } from "@/lib/analytics";
-import type { Card, VoteDirection } from "@/types";
+import type { Card, VoteDirection, GameMode } from "@/types";
 
 interface SwipeStackProps {
   cards: Card[];
   deckId: string;
   deckName: string;
   level?: 1 | 2 | 3;
+  gameMode?: GameMode;
+  budgetTarget?: number;
   onCardTap?: (card: Card) => void;
   /** Level 3: delegate swipe handling to parent (card + direction) */
   onSwipeComplete?: (card: Card, direction: VoteDirection) => void;
@@ -26,6 +28,8 @@ export function SwipeStack({
   deckId,
   deckName,
   level = 1,
+  gameMode = "classic",
+  budgetTarget,
   onCardTap,
   onSwipeComplete,
 }: SwipeStackProps) {
@@ -36,8 +40,8 @@ export function SwipeStack({
   const cardRef = useRef<SwipeCardHandle>(null);
 
   if (!initialized) {
-    startSession(deckId, cards, level);
-    track("session_start", { deckId, level });
+    startSession(deckId, cards, level, gameMode, budgetTarget);
+    track("session_start", { deckId, level, gameMode });
     setInitialized(true);
   }
 
@@ -82,6 +86,18 @@ export function SwipeStack({
   const currentCard = cards[currentIndex];
   const nextCardInPile = cards[currentIndex + 1];
 
+  // Budget mode: compute current savings from cut votes
+  const currentSavings = gameMode === "budget" && session
+    ? session.votes
+        .filter((v) => v.direction === "cut" || v.direction === "unjustified")
+        .reduce((sum, v) => {
+          const card = cards.find((c) => c.id === v.cardId);
+          return sum + (card?.amountBillions ?? 0);
+        }, 0)
+    : 0;
+  const savingsProgress = budgetTarget ? Math.min(currentSavings / budgetTarget, 1) : 0;
+  const targetReached = budgetTarget ? currentSavings >= budgetTarget : false;
+
   return (
     <div className="flex flex-col flex-1 min-h-0">
       {/* Header */}
@@ -91,7 +107,7 @@ export function SwipeStack({
             {deckName}
           </span>
           <span className="bg-primary/20 text-primary text-[10px] font-bold px-2 py-0.5 rounded-full">
-            N{level}
+            {gameMode === "budget" ? "Budget" : `N${level}`}
           </span>
         </div>
         <div className="flex items-center gap-2 flex-1 min-w-0">
@@ -111,10 +127,49 @@ export function SwipeStack({
         </div>
         <button
           onClick={() => router.push("/play")}
+          aria-label="Quitter la session"
           className="w-8 h-8 rounded-full bg-card flex items-center justify-center text-muted-foreground hover:bg-danger hover:text-white transition-colors shadow-sm shrink-0"
         >
           ✕
         </button>
+      </div>
+
+      {/* Budget tracker */}
+      {gameMode === "budget" && budgetTarget && (
+        <div className="px-4 pb-2">
+          <div className="bg-card rounded-xl p-3 border border-border">
+            <div className="flex items-center justify-between mb-1.5">
+              <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">
+                Objectif economies
+              </span>
+              <span className={`text-xs font-bold ${targetReached ? "text-primary" : "text-foreground"}`}>
+                {currentSavings.toFixed(1)} / {budgetTarget} Md&euro;
+              </span>
+            </div>
+            <div className="w-full bg-muted h-2.5 rounded-full overflow-hidden">
+              <div
+                className={`h-full rounded-full transition-all duration-500 ${
+                  targetReached
+                    ? "bg-primary shadow-[0_0_8px_rgba(16,185,129,0.5)]"
+                    : "bg-warning shadow-[0_0_8px_rgba(245,158,11,0.3)]"
+                }`}
+                style={{ width: `${savingsProgress * 100}%` }}
+              />
+            </div>
+            {targetReached && (
+              <p className="text-[10px] font-bold text-primary mt-1 text-center">
+                Objectif atteint !
+              </p>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* Screen reader announcement */}
+      <div className="sr-only" aria-live="polite" aria-atomic="true">
+        {currentCard
+          ? `Carte ${currentIndex + 1} sur ${totalCards} : ${currentCard.title}, ${currentCard.amountBillions} milliards d'euros.`
+          : "Session terminee."}
       </div>
 
       {/* Direction hints for Level 2 */}
@@ -188,6 +243,7 @@ export function SwipeStack({
             <button
               onClick={() => handleButtonVote("keep")}
               disabled={!currentCard}
+              aria-label="Valider cette depense"
               className="w-20 h-20 rounded-full bg-card border-[3px] border-primary flex items-center justify-center shadow-lg shadow-primary/30 transition-transform active:scale-90 disabled:opacity-40"
             >
               <ShieldIcon size={40} className="text-primary" />
@@ -212,6 +268,7 @@ export function SwipeStack({
             <button
               onClick={() => handleButtonVote("cut")}
               disabled={!currentCard}
+              aria-label="Remettre en question cette depense"
               className="w-20 h-20 rounded-full bg-card border-[3px] border-danger flex items-center justify-center shadow-lg shadow-danger/30 transition-transform active:scale-90 disabled:opacity-40"
             >
               <ChainsawIcon size={40} />

@@ -54,6 +54,7 @@ export const SwipeCard = forwardRef<SwipeCardHandle, SwipeCardProps>(
       <motion.div
         className="absolute inset-0 rounded-[1.5rem] bg-card border border-border shadow-xl overflow-hidden"
         style={{ scale: 0.95, opacity: 0.7, y: 16 }}
+        aria-hidden="true"
       >
         <CardContent card={card} />
       </motion.div>
@@ -62,6 +63,8 @@ export const SwipeCard = forwardRef<SwipeCardHandle, SwipeCardProps>(
 
   return (
     <motion.div
+      role="article"
+      aria-label={`${card.title} \u2014 ${card.amountBillions} Md\u20AC. Swipez pour voter.`}
       className="absolute inset-0 rounded-[1.5rem] bg-card border border-primary/30 shadow-[0_8px_30px_rgba(0,0,0,0.2)] overflow-hidden cursor-grab active:cursor-grabbing touch-none select-none"
       style={{ x, y: level >= 2 ? y : undefined, rotate }}
       drag={level >= 2 ? true : "x"}
@@ -181,6 +184,7 @@ function CardContent({
             <button
               onClick={(e) => { e.stopPropagation(); onTapDetail(); }}
               onPointerDown={(e) => e.stopPropagation()}
+              aria-label="Voir le detail de cette depense"
               className="w-8 h-8 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-card transition-colors border border-white/20 shadow-sm"
             >
               <span className="text-sm font-bold">+</span>

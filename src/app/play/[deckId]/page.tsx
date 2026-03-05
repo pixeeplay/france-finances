@@ -2,7 +2,7 @@ import { SwipeSession } from "./SwipeSession";
 import decksData from "@/data/decks.json";
 import { drawCards, filterByDeck } from "@/lib/deckUtils";
 import { validateDecksData } from "@/lib/validateData";
-import type { Card, Deck } from "@/types";
+import type { Card, Deck, GameMode } from "@/types";
 import type { Metadata } from "next";
 
 // Validate data at module load (runs once at build/start)
@@ -33,11 +33,13 @@ export default async function SwipePage({
   searchParams,
 }: {
   params: Promise<{ deckId: string }>;
-  searchParams: Promise<{ level?: string }>;
+  searchParams: Promise<{ level?: string; mode?: string; target?: string }>;
 }) {
   const { deckId } = await params;
-  const { level: levelStr } = await searchParams;
+  const { level: levelStr, mode, target } = await searchParams;
   const level = (Number(levelStr) || 1) as 1 | 2 | 3;
+  const gameMode: GameMode = mode === "budget" ? "budget" : "classic";
+  const budgetTarget = gameMode === "budget" ? (Number(target) || 15) : undefined;
 
   const allCards = decksData.cards as Card[];
   const deckCards = deckId === "random" ? allCards : filterByDeck(allCards, deckId);
@@ -51,6 +53,8 @@ export default async function SwipePage({
       deckName={deck?.name ?? "Aléatoire"}
       cards={sessionCards}
       level={level}
+      gameMode={gameMode}
+      budgetTarget={budgetTarget}
     />
   );
 }

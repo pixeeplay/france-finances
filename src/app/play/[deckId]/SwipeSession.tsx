@@ -6,16 +6,18 @@ import { SwipeStack } from "@/components/SwipeStack";
 import { CardDetail } from "@/components/CardDetail";
 import { AuditScreen } from "@/components/AuditScreen";
 import { useGameStore } from "@/stores/gameStore";
-import type { Card, VoteDirection, AuditResponse } from "@/types";
+import type { Card, VoteDirection, AuditResponse, GameMode } from "@/types";
 
 interface SwipeSessionProps {
   deckId: string;
   deckName: string;
   cards: Card[];
   level?: 1 | 2 | 3;
+  gameMode?: GameMode;
+  budgetTarget?: number;
 }
 
-export function SwipeSession({ deckId, deckName, cards, level = 1 }: SwipeSessionProps) {
+export function SwipeSession({ deckId, deckName, cards, level = 1, gameMode = "classic", budgetTarget }: SwipeSessionProps) {
   const router = useRouter();
   const [detailCard, setDetailCard] = useState<Card | null>(null);
   const { session, recordVote, recordAudit, nextCard, completeSession } = useGameStore();
@@ -103,6 +105,8 @@ export function SwipeSession({ deckId, deckName, cards, level = 1 }: SwipeSessio
         deckId={deckId}
         deckName={deckName}
         level={level}
+        gameMode={gameMode}
+        budgetTarget={budgetTarget}
         onCardTap={handleCardTap}
         onSwipeComplete={level === 3 ? handleSwipeComplete : undefined}
       />
