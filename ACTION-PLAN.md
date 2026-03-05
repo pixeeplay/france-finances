@@ -45,19 +45,22 @@
 
 ---
 
-## Sprint 5 — Backend Foundation (5-8 jours)
+## Sprint 5 — Backend Foundation ✅ TERMINÉ
 
 **Objectif :** Passer du localStorage au backend pour activer les fonctionnalités communautaires.
 
-| # | Item | Effort | Ref |
-|---|------|--------|-----|
-| 1 | Setup Drizzle + PostgreSQL + migrations | XL | BACK-01 |
-| 2 | API agrégation votes (vrais data communautaires) | L | BACK-02 |
-| 3 | Auth simple (email ou OAuth) | M | BACK-03 |
-| 4 | Remplacer données mockées par vrais agrégats | M | DATA-01 |
-| 5 | Validation runtime JSON au chargement | S | TECH-03 |
+| # | Item | Effort | Ref | Statut |
+|---|------|--------|-----|--------|
+| 1 | Setup Drizzle + PostgreSQL + docker-compose | XL | BACK-01 | ✅ |
+| 2 | API agrégation votes (GET /api/community) | L | BACK-02 | ✅ |
+| 3 | API save session (POST /api/sessions) | M | BACK-02 | ✅ |
+| 4 | Frontend fire-and-forget sync (dual mode localStorage + API) | S | — | ✅ |
+| 5 | Validation runtime JSON au chargement | S | TECH-03 | ✅ |
+| 6 | Fix Turbopack + tsconfig ES2020 | XS | TECH-01 | ✅ |
 
-**Livrable :** Backend fonctionnel, données communautaires réelles.
+**Reporté Sprint 6+ :** BACK-03 (Auth simple), DATA-01 (Remplacer données mockées — nécessite volume de données réelles).
+
+**Livrable :** Backend fonctionnel, API dual-mode (graceful degradation sans DB), docker-compose PostgreSQL. Commit `6bdd769`.
 
 ---
 

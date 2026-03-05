@@ -1,6 +1,6 @@
 # Backlog — La Tronçonneuse de Poche
 
-**Dernière mise à jour :** 2026-03-05 (Sprint 3 terminé)
+**Dernière mise à jour :** 2026-03-05 (Sprint 5 terminé)
 
 ## Légende Priorité
 - P0 = Bloquant / bug critique
@@ -61,8 +61,8 @@
 
 | ID | Priorité | Effort | Description |
 |----|----------|--------|-------------|
-| BACK-01 | P2 | XL | Base de données (Drizzle + PostgreSQL) |
-| BACK-02 | P2 | L | API pour agrégation votes communautaires |
+| BACK-01 | P2 | XL | Base de données (Drizzle + PostgreSQL) | ✅ Sprint 5 |
+| BACK-02 | P2 | L | API pour agrégation votes communautaires | ✅ Sprint 5 |
 | BACK-03 | P2 | M | Comptes utilisateurs (auth simple) |
 | BACK-04 | P3 | L | Sync multi-device |
 | BACK-05 | P3 | M | API ouverte / export CSV |
@@ -85,9 +85,9 @@
 
 | ID | Priorité | Effort | Description |
 |----|----------|--------|-------------|
-| TECH-01 | P2 | XS | Upgrade tsconfig target ES2017 → ES2020 |
+| TECH-01 | P2 | XS | Upgrade tsconfig target ES2017 → ES2020 | ✅ Sprint 5 |
 | TECH-02 | P2 | S | Memoïser sessionStats() dans le store |
-| TECH-03 | P2 | S | Validation runtime des données JSON au chargement |
+| TECH-03 | P2 | S | Validation runtime des données JSON au chargement | ✅ Sprint 5 |
 | TECH-04 | P3 | S | Améliorer accessibilité (ARIA labels, focus management) |
 | TECH-05 | P3 | XS | Vérifier/documenter auto-registration du service worker |
 
