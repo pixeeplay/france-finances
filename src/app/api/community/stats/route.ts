@@ -16,7 +16,10 @@ export const dynamic = "force-dynamic";
  */
 export async function GET() {
   if (!isDbAvailable() || !db) {
-    return NextResponse.json({ fallback: true }, { status: 200 });
+    return NextResponse.json(
+      { ok: false, error: "Database not configured" },
+      { status: 503 }
+    );
   }
 
   try {
@@ -111,6 +114,9 @@ export async function GET() {
     );
   } catch (error) {
     console.error("Failed to fetch community stats:", error);
-    return NextResponse.json({ fallback: true }, { status: 200 });
+    return NextResponse.json(
+      { ok: false, error: "Database error" },
+      { status: 500 }
+    );
   }
 }

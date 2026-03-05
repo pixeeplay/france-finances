@@ -42,18 +42,18 @@ Voir historique dans git log. 38 items livres.
 
 **Objectif :** Securiser les API, ajouter les protections web standard.
 
-| # | Item | Effort | Ref |
-|---|------|--------|-----|
-| 1 | Headers de securite dans next.config.ts | S | BACK-08 |
-| 2 | Validation payload Zod sur POST /api/sessions | M | BACK-09 |
-| 3 | Rate limiting API (middleware ou upstash) | M | BACK-10 |
-| 4 | Valider + clamper param level server-side | XS | BUG-16 |
-| 5 | Valider deckId server-side, notFound() si invalide | XS | BUG-17 |
-| 6 | Error.tsx + global-error.tsx + not-found.tsx + loading.tsx | S | BACK-13 |
-| 7 | Error responses coherentes sur toutes les API routes | S | BACK-15 |
-| 8 | Healthcheck conteneur + endpoint /api/health | XS | BACK-14 |
+| # | Item | Effort | Ref | Statut |
+|---|------|--------|-----|--------|
+| 1 | Headers de securite dans next.config.ts | S | BACK-08 | Done |
+| 2 | Validation payload Zod sur POST /api/sessions | M | BACK-09 | Done |
+| 3 | Rate limiting API (in-memory, 10 req/min) | M | BACK-10 | Done |
+| 4 | Valider + clamper param level server-side | XS | BUG-16 | Done |
+| 5 | Valider deckId server-side, notFound() si invalide | XS | BUG-17 | Done |
+| 6 | Error.tsx + global-error.tsx + not-found.tsx + loading.tsx | S | BACK-13 | Done |
+| 7 | Error responses coherentes (503/500) sur toutes les API | S | BACK-15 | Done |
+| 8 | Healthcheck endpoint /api/health | XS | BACK-14 | Done |
 
-**Effort total :** ~2 jours
+**Livrable :** 6 headers securite, validation Zod, rate limiting, 4 error pages, healthcheck.
 
 ---
 

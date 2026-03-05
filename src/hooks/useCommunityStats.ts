@@ -50,10 +50,13 @@ export function useCommunityStats(): CommunityStats {
     let cancelled = false;
 
     fetch("/api/community/stats")
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) throw new Error("API error");
+        return res.json();
+      })
       .then((json) => {
         if (cancelled) return;
-        if (json.fallback) {
+        if (json.ok === false || json.fallback) {
           setData(FALLBACK);
         } else {
           setData({ ...json, isFallback: false });

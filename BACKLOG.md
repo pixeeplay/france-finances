@@ -43,8 +43,8 @@
 | BUG-13 | P0 | S | Selectors Zustand (useShallow) SwipeStack/SwipeSession | Done Sprint 11 |
 | BUG-14 | P1 | XS | startSession dans useEffect (pas dans le render) | Done Sprint 11 |
 | BUG-15 | P1 | XS | Guard isAnimating pour empecher double-swipe | Done Sprint 11 |
-| BUG-16 | P1 | XS | Valider et clamper param level (1-3) server-side | A faire |
-| BUG-17 | P1 | XS | Valider deckId server-side, notFound() si invalide | A faire |
+| BUG-16 | P1 | XS | Valider et clamper param level (1-3) server-side | Done Sprint 12 |
+| BUG-17 | P1 | XS | Valider deckId server-side, notFound() si invalide | Done Sprint 12 |
 | BUG-18 | P1 | S | Budget mode : inclure unjustified dans totalCut | Done Sprint 11 |
 | BUG-19 | P1 | S | Audit L3 Back : deplacer recordVote dans handleAuditSubmit | Done Sprint 11 |
 | BUG-20 | P1 | XS | Fix session callback NextAuth pour mode JWT | Done Sprint 11 |
@@ -96,14 +96,14 @@
 | BACK-05 | P3 | M | API ouverte / export CSV | |
 | BACK-06 | P3 | L | Integration analytics (Plausible/PostHog) | |
 | BACK-07 | P0 | S | Retirer credentials docker-compose + restreindre port PG | Done Sprint 11 |
-| BACK-08 | P1 | S | Headers de securite (CSP, X-Frame-Options, HSTS) | A faire |
-| BACK-09 | P1 | M | Validation payload Zod sur POST /api/sessions | A faire |
-| BACK-10 | P1 | M | Rate limiting API | A faire |
+| BACK-08 | P1 | S | Headers de securite (CSP, X-Frame-Options, HSTS) | Done Sprint 12 |
+| BACK-09 | P1 | M | Validation payload Zod sur POST /api/sessions | Done Sprint 12 |
+| BACK-10 | P1 | M | Rate limiting API (in-memory, 10 req/min) | Done Sprint 12 |
 | BACK-11 | P2 | S | Index DB sur colonnes requetees | A faire |
 | BACK-12 | P2 | S | Connection pooling PostgreSQL | A faire |
-| BACK-13 | P2 | S | Error.tsx + global-error.tsx + not-found.tsx + loading.tsx | A faire |
-| BACK-14 | P2 | XS | Healthcheck conteneur + /api/health | A faire |
-| BACK-15 | P2 | S | Error responses coherentes API | A faire |
+| BACK-13 | P2 | S | Error.tsx + global-error.tsx + not-found.tsx + loading.tsx | Done Sprint 12 |
+| BACK-14 | P2 | XS | Healthcheck endpoint /api/health | Done Sprint 12 |
+| BACK-15 | P2 | S | Error responses coherentes API (503/500) | Done Sprint 12 |
 
 ---
 
@@ -124,6 +124,6 @@
 
 | Statut | Count |
 |--------|-------|
-| Done | 49 |
-| A faire | 29 |
+| Done | 57 |
+| A faire | 21 |
 | **Total** | **78** |

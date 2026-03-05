@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import { SwipeSession } from "./SwipeSession";
 import decksData from "@/data";
 import { drawCards, filterByDeck } from "@/lib/deckUtils";
@@ -37,15 +38,23 @@ export default async function SwipePage({
 }) {
   const { deckId } = await params;
   const { level: levelStr, mode, target } = await searchParams;
-  const level = (Number(levelStr) || 1) as 1 | 2 | 3;
+
+  // Validate deckId
+  const deck = decksData.decks.find((d) => d.id === deckId);
+  if (deckId !== "random" && !deck) {
+    notFound();
+  }
+
+  // Clamp level to 1-3
+  const rawLevel = Number(levelStr) || 1;
+  const level = Math.min(Math.max(rawLevel, 1), 3) as 1 | 2 | 3;
+
   const gameMode: GameMode = mode === "budget" ? "budget" : "classic";
   const budgetTarget = gameMode === "budget" ? (Number(target) || 15) : undefined;
 
   const allCards = decksData.cards as Card[];
   const deckCards = deckId === "random" ? allCards : filterByDeck(allCards, deckId);
   const sessionCards = drawCards(deckCards, 10);
-
-  const deck = decksData.decks.find((d) => d.id === deckId);
 
   return (
     <SwipeSession
