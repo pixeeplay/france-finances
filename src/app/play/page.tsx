@@ -8,7 +8,9 @@ import { getPlayedDeckIds } from "@/lib/stats";
 import { track } from "@/lib/analytics";
 import type { Deck } from "@/types";
 
-const decks = decksData.decks as Deck[];
+const allDecks = decksData.decks as Deck[];
+const mainDecks = allDecks.filter((d) => d.type !== "thematic");
+const thematicDecks = allDecks.filter((d) => d.type === "thematic");
 
 function PlayPageContent() {
   const router = useRouter();
@@ -120,65 +122,53 @@ function PlayPageContent() {
       </div>
 
       {/* Categories Grid */}
-      <div className="grid grid-cols-2 gap-4 p-4 flex-1">
-        {decks.map((deck) => {
-          const isSelected = selectedDeck === deck.id;
-          return (
-            <button
-              key={deck.id}
-              onClick={() => {
-                setRandomMode(false);
-                setSelectedDeck(isSelected ? null : deck.id);
-              }}
-              className={`bg-card rounded-xl p-4 flex flex-col gap-3 text-left border-2 relative overflow-hidden group transition-all duration-200 ${
-                isSelected
-                  ? "border-primary shadow-[0_0_12px_rgba(16,185,129,0.3)]"
-                  : "border-border hover:border-primary/50"
-              }`}
-              style={isSelected ? { transform: "scale(0.97)" } : undefined}
-            >
-              {/* Selected check */}
-              {isSelected && (
-                <div className="absolute top-2 right-2 text-primary">
-                  <span className="text-lg">✓</span>
-                </div>
-              )}
-
-              {/* Category image */}
-              <div className="mb-1">
-                {deck.image ? (
-                  <Image
-                    src={deck.image}
-                    alt={deck.name}
-                    width={40}
-                    height={40}
-                    className="w-10 h-10"
-                  />
-                ) : (
-                  <span className="text-3xl">{deck.icon}</span>
-                )}
-              </div>
-
-              <div>
-                <h3 className="font-bold text-sm leading-tight mb-1">
-                  {deck.name}
-                </h3>
-                <p className="text-xs text-muted-foreground">
-                  {deck.cardCount} cartes
-                </p>
-              </div>
-
-              {/* Progress bar */}
-              <div className="w-full bg-muted rounded-full h-1.5 mt-auto">
-                <div
-                  className="bg-primary h-1.5 rounded-full transition-all"
-                  style={{ width: playedDecks.includes(deck.id) ? "100%" : "0%" }}
-                />
-              </div>
-            </button>
-          );
-        })}
+      <div className="px-4 pt-2 pb-1">
+        <h3 className="text-xs font-bold text-muted-foreground uppercase tracking-wider">
+          Categories
+        </h3>
       </div>
+      <div className="grid grid-cols-2 gap-3 px-4 pb-4">
+        {mainDecks.map((deck) => (
+          <DeckCard
+            key={deck.id}
+            deck={deck}
+            isSelected={selectedDeck === deck.id}
+            isPlayed={playedDecks.includes(deck.id)}
+            onSelect={() => {
+              setRandomMode(false);
+              setSelectedDeck(selectedDeck === deck.id ? null : deck.id);
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Thematic Decks */}
+      {thematicDecks.length > 0 && (
+        <>
+          <div className="px-4 pt-2 pb-1 flex items-center gap-2">
+            <h3 className="text-xs font-bold text-muted-foreground uppercase tracking-wider">
+              Thematiques
+            </h3>
+            <span className="text-[10px] font-bold text-warning bg-warning/15 px-2 py-0.5 rounded-full uppercase">
+              Event
+            </span>
+          </div>
+          <div className="grid grid-cols-2 gap-3 px-4 pb-4">
+            {thematicDecks.map((deck) => (
+              <DeckCard
+                key={deck.id}
+                deck={deck}
+                isSelected={selectedDeck === deck.id}
+                isPlayed={playedDecks.includes(deck.id)}
+                onSelect={() => {
+                  setRandomMode(false);
+                  setSelectedDeck(selectedDeck === deck.id ? null : deck.id);
+                }}
+              />
+            ))}
+          </div>
+        </>
+      )}
 
       {/* Bottom Action Button */}
       <div className="fixed bottom-[72px] left-0 right-0 p-4 bg-gradient-to-t from-background via-background/90 to-transparent pt-8 z-20">
@@ -194,6 +184,59 @@ function PlayPageContent() {
         </div>
       </div>
     </div>
+  );
+}
+
+function DeckCard({
+  deck,
+  isSelected,
+  isPlayed,
+  onSelect,
+}: {
+  deck: Deck;
+  isSelected: boolean;
+  isPlayed: boolean;
+  onSelect: () => void;
+}) {
+  return (
+    <button
+      onClick={onSelect}
+      className={`bg-card rounded-xl p-4 flex flex-col gap-3 text-left border-2 relative overflow-hidden group transition-all duration-200 ${
+        isSelected
+          ? "border-primary shadow-[0_0_12px_rgba(16,185,129,0.3)]"
+          : "border-border hover:border-primary/50"
+      }`}
+      style={isSelected ? { transform: "scale(0.97)" } : undefined}
+    >
+      {isSelected && (
+        <div className="absolute top-2 right-2 text-primary">
+          <span className="text-lg">✓</span>
+        </div>
+      )}
+      <div className="mb-1">
+        {deck.image ? (
+          <Image
+            src={deck.image}
+            alt={deck.name}
+            width={40}
+            height={40}
+            className="w-10 h-10"
+          />
+        ) : (
+          <span className="text-3xl">{deck.icon}</span>
+        )}
+      </div>
+      <div>
+        <h3 className="font-bold text-sm leading-tight mb-1">{deck.name}</h3>
+        <p className="text-xs text-muted-foreground">{deck.cardCount} cartes</p>
+      </div>
+      <div className="w-full bg-muted rounded-full h-1.5 mt-auto">
+        <div
+          className="bg-primary h-1.5 rounded-full transition-all"
+          style={{ width: isPlayed ? "100%" : "0%" }}
+        />
+      </div>
+    </button>
   );
 }
 

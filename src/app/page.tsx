@@ -10,7 +10,7 @@ import { Onboarding, useOnboarding } from "@/components/Onboarding";
 import decksData from "@/data/decks.json";
 import type { Deck } from "@/types";
 
-const decks = decksData.decks as Deck[];
+const decks = (decksData.decks as Deck[]).filter((d) => d.type !== "thematic");
 
 export default function HomePage() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -131,7 +131,7 @@ export default function HomePage() {
             Prêt à trancher ?
           </h2>
           <p className="text-muted-foreground text-sm font-medium mb-12 max-w-[200px]">
-            15 nouvelles cartes de dépenses t&apos;attendent pour ce matin.
+            230 cartes, 17 catégories. Swipe pour trancher le budget.
           </p>
 
           {/* Slide to play CTA */}

@@ -42,6 +42,8 @@ export interface Deck {
   cardCount: number;
   /** Image/SVG du deck */
   image?: string;
+  /** Type de deck : main (catégorie) ou thematic (événementiel) */
+  type?: "main" | "thematic";
   /** Le deck a-t-il déjà été joué ? */
   played?: boolean;
 }

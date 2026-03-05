@@ -6,35 +6,39 @@
       "description": "Budget des armées, renseignement, gendarmerie",
       "icon": "⚔️",
       "color": "#3B82F6",
-      "cardCount": 10,
-      "image": "/categories/defense.svg"
+      "cardCount": 15,
+      "image": "/categories/defense.svg",
+      "type": "main"
     },
     {
       "id": "energie",
       "name": "Énergie",
-      "description": "Transition énergétique, nucléaire civil, renouvelables",
+      "description": "Nucléaire, renouvelables, hydrogène, crise énergétique, précarité",
       "icon": "⚡",
       "color": "#F59E0B",
-      "cardCount": 10,
-      "image": "/categories/energie.svg"
+      "cardCount": 25,
+      "image": "/categories/energie.svg",
+      "type": "main"
     },
     {
       "id": "sante",
       "name": "Santé",
-      "description": "Hôpitaux, médicaments, prestations",
+      "description": "Hôpitaux, médicaments, prévention, urgences, addictions",
       "icon": "🏥",
       "color": "#EF4444",
-      "cardCount": 10,
-      "image": "/categories/sante.svg"
+      "cardCount": 25,
+      "image": "/categories/sante.svg",
+      "type": "main"
     },
     {
       "id": "social",
       "name": "Social",
-      "description": "Protection sociale, retraites, minima sociaux",
+      "description": "Retraites, famille, handicap, dépendance, pauvreté",
       "icon": "🤝",
       "color": "#8B5CF6",
-      "cardCount": 12,
-      "image": "/categories/social.svg"
+      "cardCount": 27,
+      "image": "/categories/social.svg",
+      "type": "main"
     },
     {
       "id": "education",
@@ -42,8 +46,9 @@
       "description": "Enseignement, universités, recherche",
       "icon": "📚",
       "color": "#6366F1",
-      "cardCount": 10,
-      "image": "/categories/educuation.svg"
+      "cardCount": 15,
+      "image": "/categories/educuation.svg",
+      "type": "main"
     },
     {
       "id": "securite",
@@ -51,8 +56,9 @@
       "description": "Police, gendarmerie, tribunaux, prisons",
       "icon": "⚖️",
       "color": "#14B8A6",
-      "cardCount": 8,
-      "image": "/categories/justice.svg"
+      "cardCount": 13,
+      "image": "/categories/justice.svg",
+      "type": "main"
     },
     {
       "id": "etat",
@@ -60,8 +66,9 @@
       "description": "Administration, dette, collectivités, diplomatie",
       "icon": "🏛️",
       "color": "#64748B",
-      "cardCount": 10,
-      "image": "/categories/etat.svg"
+      "cardCount": 15,
+      "image": "/categories/etat.svg",
+      "type": "main"
     },
     {
       "id": "culture",
@@ -69,8 +76,9 @@
       "description": "Patrimoine, audiovisuel, rail, routes, écologie",
       "icon": "🎭",
       "color": "#EC4899",
-      "cardCount": 10,
-      "image": "/categories/culture.svg"
+      "cardCount": 15,
+      "image": "/categories/culture.svg",
+      "type": "main"
     },
     {
       "id": "agriculture",
@@ -78,7 +86,8 @@
       "description": "PAC, forêts, eau, sécurité alimentaire",
       "icon": "🌾",
       "color": "#84CC16",
-      "cardCount": 8
+      "cardCount": 8,
+      "type": "main"
     },
     {
       "id": "logement",
@@ -86,7 +95,8 @@
       "description": "Logement social, hébergement, rénovation urbaine",
       "icon": "🏠",
       "color": "#F97316",
-      "cardCount": 8
+      "cardCount": 8,
+      "type": "main"
     },
     {
       "id": "immigration",
@@ -94,7 +104,8 @@
       "description": "Accueil, intégration, rétention, AME",
       "icon": "🛂",
       "color": "#06B6D4",
-      "cardCount": 8
+      "cardCount": 8,
+      "type": "main"
     },
     {
       "id": "numerique",
@@ -102,7 +113,8 @@
       "description": "France 2030, spatial, IA, quantique",
       "icon": "🚀",
       "color": "#A855F7",
-      "cardCount": 8
+      "cardCount": 8,
+      "type": "main"
     },
     {
       "id": "recettes",
@@ -110,7 +122,8 @@
       "description": "TVA, IR, IS, CSG, impôts locaux",
       "icon": "💰",
       "color": "#EAB308",
-      "cardCount": 10
+      "cardCount": 10,
+      "type": "main"
     },
     {
       "id": "emploi",
@@ -118,23 +131,8 @@
       "description": "Formation, primes, aides à l'emploi",
       "icon": "🏢",
       "color": "#0EA5E9",
-      "cardCount": 8
-    },
-    {
-      "id": "crise-energie",
-      "name": "Crise énergétique",
-      "description": "Tout ce que la crise 2022-2024 a coûté aux Français",
-      "icon": "⚡",
-      "color": "#F59E0B",
-      "cardCount": 10
-    },
-    {
-      "id": "hopital",
-      "name": "Hôpital",
-      "description": "Zoom sur les 110 Md€ de l'hôpital public",
-      "icon": "🏥",
-      "color": "#EF4444",
-      "cardCount": 10
+      "cardCount": 8,
+      "type": "main"
     },
     {
       "id": "france-europe",
@@ -142,15 +140,8 @@
       "description": "Combien coûte l'Europe ? Combien rapporte-t-elle ?",
       "icon": "🇪🇺",
       "color": "#3B82F6",
-      "cardCount": 10
-    },
-    {
-      "id": "retraites",
-      "name": "Retraites",
-      "description": "Deep dive sur les 370 Md€ du 1er poste de dépenses françaises",
-      "icon": "👴",
-      "color": "#8B5CF6",
-      "cardCount": 10
+      "cardCount": 10,
+      "type": "thematic"
     },
     {
       "id": "zombies",
@@ -158,7 +149,8 @@
       "description": "Les dépenses qui auraient dû mourir mais qui persistent",
       "icon": "💀",
       "color": "#64748B",
-      "cardCount": 10
+      "cardCount": 10,
+      "type": "thematic"
     },
     {
       "id": "ukraine",
@@ -166,7 +158,8 @@
       "description": "Le coût du conflit pour la France depuis février 2022",
       "icon": "🇺🇦",
       "color": "#0EA5E9",
-      "cardCount": 10
+      "cardCount": 10,
+      "type": "thematic"
     }
   ],
   "cards": [
@@ -2459,7 +2452,7 @@
       "description": "Le coût du bouclier tarifaire varie du simple au triple selon qui calcule : 20,4 Md€ nets selon la CRE, 60 Md€ selon la Banque de France (2,2% du PIB sur 2022-2023), jusqu'à 72 Md€ selon la Cour des comptes en incluant toutes les mesures connexes. L'écart s'explique par l'inclusion ou non des remises carburant, chèques énergie, aides aux entreprises et charges absorbées par EDF. Ce flou comptable est en soi un problème démocratique.",
       "amountBillions": 26,
       "costPerCitizen": 382,
-      "deckId": "crise-energie",
+      "deckId": "energie",
       "icon": "🛡️",
       "source": "CRE (juil. 2024), Banque de France, Cour des comptes",
       "sourceUrl": null,
@@ -2478,7 +2471,7 @@
       "description": "L'État a plafonné les tarifs réglementés d'électricité : +4% en 2022 (au lieu de +35%), +15% en 2023 (au lieu de +45%). Le pic de dépense a été en 2023 : 19,2 Md€ sur une seule année. L'accise sur l'électricité a été réduite de 32€/MWh à 1€/MWh pendant la crise, avant de revenir à 33,70€/MWh en février 2025. Les ménages n'ont absorbé qu'un tiers de la hausse réelle des prix.",
       "amountBillions": 21.5,
       "costPerCitizen": 316,
-      "deckId": "crise-energie",
+      "deckId": "energie",
       "icon": "💡",
       "source": "CRE délibération juil. 2024, vie-publique.fr",
       "sourceUrl": "https://www.vie-publique.fr",
@@ -2497,7 +2490,7 @@
       "description": "En 2022, l'État a financé une remise de 18 centimes/litre (avril-août) puis 30 centimes/litre (sept-oct) sur tous les carburants. Mesure critiquée : elle bénéficiait davantage aux gros rouleurs et SUV qu'aux ménages modestes. Une aide ciblée sur les revenus aurait coûté 3x moins pour le même effet sur les plus fragiles. La remise a été remplacée par une indemnité carburant en 2023 (100€ pour 10M de ménages).",
       "amountBillions": 8.5,
       "costPerCitizen": 125,
-      "deckId": "crise-energie",
+      "deckId": "energie",
       "icon": "⛽",
       "source": "Cour des comptes, vie-publique.fr, PLF 2023",
       "sourceUrl": "https://www.vie-publique.fr",
@@ -2516,7 +2509,7 @@
       "description": "L'État détenait déjà 84% d'EDF. En 2022, il a racheté les 16% restants pour sortir l'entreprise de la Bourse, au prix de 12€/action. La nationalisation visait à donner à l'État les mains libres pour gérer la crise (ARENH, bouclier) et piloter le programme EPR2. EDF portait alors une dette de 65 Md€ et des pertes historiques liées au bouclier. L'action valait 35€ en 2017. Les petits actionnaires ont perdu 2/3 de leur mise.",
       "amountBillions": 9.7,
       "costPerCitizen": 143,
-      "deckId": "crise-energie",
+      "deckId": "energie",
       "icon": "🏭",
       "source": "Gouvernement, AMF, rapport parlementaire EDF",
       "sourceUrl": null,
@@ -2535,7 +2528,7 @@
       "description": "En 2022, l'État a relevé le volume d'ARENH (accès régulé au nucléaire) de 100 à 120 TWh, forçant EDF à vendre 20 TWh de plus à prix cassé (42€/MWh) alors que le marché était à 200-400€/MWh. Perte sèche pour EDF, qui s'est retrouvée à subventionner indirectement ses propres concurrents. Le mécanisme ARENH a pris fin au 31 décembre 2025.",
       "amountBillions": 8,
       "costPerCitizen": 118,
-      "deckId": "crise-energie",
+      "deckId": "energie",
       "icon": "⚛️",
       "source": "CRE, EDF rapport annuel 2022, Cour des comptes",
       "sourceUrl": null,
@@ -2555,7 +2548,7 @@
       "description": "Les chèques énergie (100-200€) ont été distribués à 12 millions de ménages modestes fin 2022. S'y ajoutent les chèques fioul, bois, et l'aide au chauffage collectif. Mesures jugées plus justes socialement que le bouclier (qui aide tout le monde, riches et pauvres), mais insuffisantes pour les ménages les plus précaires. La précarité énergétique touche 5,2 millions de ménages en France.",
       "amountBillions": 3,
       "costPerCitizen": 44,
-      "deckId": "crise-energie",
+      "deckId": "energie",
       "icon": "🎫",
       "source": "ADEME, ONPE, vie-publique.fr",
       "sourceUrl": "https://www.vie-publique.fr",
@@ -2574,7 +2567,7 @@
       "description": "Les entreprises grandes consommatrices d'énergie (industrie, boulangeries, serres, piscines publiques) ont bénéficié d'aides de guichet et d'un « amortisseur électricité » sur 50% de leur consommation. Le dispositif a été critiqué pour sa complexité administrative (dossiers indigestes) et sa lenteur de versement. Certaines PME ont fait faillite avant de recevoir l'aide. L'industrie française reste plus exposée que l'allemande (qui a déployé 200 Md€).",
       "amountBillions": 7,
       "costPerCitizen": 103,
-      "deckId": "crise-energie",
+      "deckId": "energie",
       "icon": "🏗️",
       "source": "Cour des comptes rapport énergie, vie-publique.fr",
       "sourceUrl": "https://www.vie-publique.fr",
@@ -2593,7 +2586,7 @@
       "description": "Paradoxe de la crise : quand les prix du marché dépassent le prix garanti aux opérateurs ENR, ce sont eux qui reversent la différence à l'État. En 2023, l'éolien terrestre a rapporté 3,4 Md€ au budget. Autrement dit, une partie du coût du bouclier a été financée par les énergies renouvelables — un argument rarement mentionné dans le débat public. En 2024-2025, les prix redescendant, les ENR redeviennent un coût net.",
       "amountBillions": 5.9,
       "costPerCitizen": 87,
-      "deckId": "crise-energie",
+      "deckId": "energie",
       "icon": "🌬️",
       "source": "CRE délibération juil. 2024, RTE",
       "sourceUrl": null,
@@ -2612,7 +2605,7 @@
       "description": "La France importe 98% de son pétrole et 100% de son gaz. La flambée des prix en 2022 a doublé la facture énergétique nationale. Chaque hausse de 10$/baril coûte ~5 Md€ à la balance commerciale française. La diversification post-Russie (GNL américain, norvégien, qatari) a réduit la dépendance à Moscou de 17% à <5% des importations de gaz. Le terminal GNL du Havre a été construit en urgence en 6 mois.",
       "amountBillions": 90,
       "costPerCitizen": 1324,
-      "deckId": "crise-energie",
+      "deckId": "energie",
       "icon": "🛢️",
       "source": "Douanes françaises, DGEC, bilan énergétique 2023",
       "sourceUrl": null,
@@ -2631,7 +2624,7 @@
       "description": "En cumulant bouclier tarifaire, remises carburant, chèques énergie, aides entreprises, surcoûts ARENH absorbés par EDF et mesures connexes, la Cour des comptes estime le coût total des aides à la consommation d'énergie à environ 85 Md€. C'est plus que le plan de relance COVID (100 Md€ mais sur 2 ans et incluant des investissements productifs). La sortie du bouclier en février 2025 ne signifie pas la fin des coûts : la dette générée pèsera pendant des décennies.",
       "amountBillions": 85,
       "costPerCitizen": 1250,
-      "deckId": "crise-energie",
+      "deckId": "energie",
       "icon": "📊",
       "source": "Cour des comptes (mars 2024), vie-publique.fr, Banque de France",
       "sourceUrl": "https://www.vie-publique.fr",
@@ -2650,7 +2643,7 @@
       "description": "Le budget cumulé des ~1 300 hôpitaux publics français dépasse 110 Md€. Malgré ce montant considérable, le secteur affiche un déficit structurel de ~3,5 Md€ en 2024. La France dépense autant que l'Allemagne par habitant pour ses hôpitaux, mais avec 30% de lits en moins. Le budget a augmenté de 20% depuis le Ségur de la Santé (2020), sans résoudre les problèmes d'attractivité ni de vétusté.",
       "amountBillions": 110,
       "costPerCitizen": 1618,
-      "deckId": "hopital",
+      "deckId": "sante",
       "icon": "🏥",
       "source": "DREES, DGOS, Cour des comptes rapport hospitalier",
       "sourceUrl": null,
@@ -2669,7 +2662,7 @@
       "description": "L'hôpital emploie ~1,2 million d'agents (dont ~300 000 infirmiers, ~120 000 médecins). Le Ségur de la Santé a revalorisé les salaires de 183€ nets/mois pour les soignants (+9 Md€/an). Malgré cela, 30% des postes infirmiers sont vacants dans certains services. Le turnover s'accélère : les jeunes soignants quittent l'hôpital en moyenne après 5 ans. L'intérim médical, plafonné à 1 390€/jour, reste massif.",
       "amountBillions": 65,
       "costPerCitizen": 956,
-      "deckId": "hopital",
+      "deckId": "sante",
       "icon": "👩‍⚕️",
       "source": "DGOS, Cour des comptes, FHF",
       "sourceUrl": null,
@@ -2688,7 +2681,7 @@
       "description": "La T2A finance l'hôpital « à l'acte » : chaque séjour, consultation ou intervention est rémunérée selon un tarif national. Critiquée pour inciter à la « course à l'acte » au détriment de la qualité, de la prévention et des pathologies chroniques. La réforme en cours vise à introduire 50% de financement « à la qualité et à la pertinence » d'ici 2028. Les urgences, non rentables en T2A, sont les premières victimes du système.",
       "amountBillions": 60,
       "costPerCitizen": 882,
-      "deckId": "hopital",
+      "deckId": "sante",
       "icon": "🏷️",
       "source": "Sénat, IGAS rapport T2A, FHF",
       "sourceUrl": null,
@@ -2708,7 +2701,7 @@
       "description": "21 millions de passages aux urgences par an en France (~1 passage pour 3 habitants). 40% des passages sont considérés comme « non pertinents » (relèveraient de la médecine de ville). Le temps d'attente moyen dépasse 4h dans les grands CHU. En été 2023 et 2024, de nombreux services ont fonctionné en mode dégradé (fermetures nocturnes, régulations SAMU). Le service d'accès aux soins (SAS) et les maisons médicales de garde peinent à réduire l'afflux.",
       "amountBillions": 5,
       "costPerCitizen": 74,
-      "deckId": "hopital",
+      "deckId": "sante",
       "icon": "🚑",
       "source": "DREES, SFMU, Cour des comptes",
       "sourceUrl": null,
@@ -2727,7 +2720,7 @@
       "description": "La dette des hôpitaux publics dépasse 30 Md€. L'investissement courant (maintenance, équipements) est en retard chronique : 20% des bâtiments hospitaliers ont plus de 50 ans. Le plan « investissement santé » post-COVID a promis 19 Md€ sur 10 ans (dont 9 Md€ d'État), mais les décaissements sont lents. L'hôpital de demain (numérique, ambulatoire, virage domicile) nécessite 10 Md€/an selon la FHF.",
       "amountBillions": 30,
       "costPerCitizen": 441,
-      "deckId": "hopital",
+      "deckId": "sante",
       "icon": "🏗️",
       "source": "FHF, Cour des comptes, DGOS",
       "sourceUrl": null,
@@ -2747,7 +2740,7 @@
       "description": "La psychiatrie hospitalière est le parent pauvre : 60 000 lits (divisé par 2 en 30 ans), 30% de postes de psychiatres vacants à l'hôpital, délai moyen de 6 mois pour un premier RDV en CMP. Les urgences psychiatriques explosent (+25% chez les 15-24 ans depuis le COVID). L'internement sous contrainte concerne ~90 000 personnes/an. La France a 2x moins de psychiatres par habitant que la Suisse ou le Danemark.",
       "amountBillions": 10,
       "costPerCitizen": 147,
-      "deckId": "hopital",
+      "deckId": "sante",
       "icon": "🧠",
       "source": "DREES, ARS, Cour des comptes rapport psychiatrie",
       "sourceUrl": null,
@@ -2766,7 +2759,7 @@
       "description": "Les 150 hôpitaux de proximité (ex-hôpitaux locaux) assurent la médecine polyvalente, les soins de suite et la gériatrie dans les zones rurales. Ils n'ont pas de chirurgie ni de maternité. Leur financement a été sécurisé par la loi « Ma santé 2022 ». Débat récurrent : faut-il maintenir des petits hôpitaux peu rentables pour le maillage territorial, ou concentrer les moyens sur les gros centres ? Chaque fermeture crée une tempête politique locale.",
       "amountBillions": 4,
       "costPerCitizen": 59,
-      "deckId": "hopital",
+      "deckId": "sante",
       "icon": "🏘️",
       "source": "DGOS, FHF, ARS",
       "sourceUrl": null,
@@ -2786,7 +2779,7 @@
       "description": "Les 32 CHU/CHR (dont AP-HP Paris, HCL Lyon, AP-HM Marseille) concentrent la recherche, la formation des médecins et les soins les plus complexes (greffes, cancérologie, grands brûlés). L'AP-HP seule pèse 8 Md€/an (plus gros employeur d'Île-de-France, 100 000 agents). Les CHU sont structurellement déficitaires car les tarifs T2A ne couvrent pas les surcoûts de la recherche et de l'enseignement. La réforme des CHU (rapport Claris 2020) est enlisée.",
       "amountBillions": 45,
       "costPerCitizen": 662,
-      "deckId": "hopital",
+      "deckId": "sante",
       "icon": "🎓",
       "source": "Conférence des DG de CHU, AP-HP, DGOS",
       "sourceUrl": null,
@@ -2806,7 +2799,7 @@
       "description": "Le recours à l'intérim médical explose depuis 2015 : certains hôpitaux dépensent 20% de leur masse salariale en intérimaires. Un médecin intérimaire peut gagner 1 390€/jour (plafond légal, souvent contourné). Les infirmiers intérimaires gagnent 2-3x plus que les titulaires. La loi Rist (2023) plafonne les rémunérations, mais les hôpitaux isolés n'ont pas d'alternative. Le marché de l'intérim médical pèse ~1,5 Md€ pour les seuls médecins.",
       "amountBillions": 3.5,
       "costPerCitizen": 51,
-      "deckId": "hopital",
+      "deckId": "sante",
       "icon": "⏰",
       "source": "IGAS, Cour des comptes, FHF rapport intérim",
       "sourceUrl": null,
@@ -2825,7 +2818,7 @@
       "description": "Le virage ambulatoire (chirurgie en journée, hospitalisation à domicile, télémédecine) est la principale piste d'économies. Le taux de chirurgie ambulatoire est passé de 50% à 62% en 10 ans, mais reste inférieur au Danemark (85%). L'hospitalisation à domicile (HAD) coûte 3x moins qu'un lit d'hôpital. Si la France atteignait les standards scandinaves, 5-8 Md€ d'économies annuelles seraient possibles, réinvestissables dans la qualité des soins restants.",
       "amountBillions": 6.5,
       "costPerCitizen": 96,
-      "deckId": "hopital",
+      "deckId": "sante",
       "icon": "🏠",
       "source": "HAS, ANAP, Cour des comptes rapport ambulatoire",
       "sourceUrl": null,
@@ -3040,7 +3033,7 @@
       "description": "Le régime général couvre ~18 millions de retraités du privé. La pension moyenne de base CNAV est de ~750€/mois, complétée par l'Agirc-Arrco (~700€/mois en moyenne). Le système est financé par les cotisations (salarié + employeur = ~28% du salaire brut). Avec le baby-boom partant à la retraite, le ratio actifs/retraités passe de 2,1 à 1,7 en 2030.",
       "amountBillions": 140,
       "costPerCitizen": 2059,
-      "deckId": "retraites",
+      "deckId": "social",
       "icon": "👷",
       "source": "CNAV, Agirc-Arrco, COR",
       "sourceUrl": null,
@@ -3059,7 +3052,7 @@
       "description": "Fait rare dans le paysage des retraites : l'Agirc-Arrco est excédentaire. Ses réserves dépassent 70 Md€. C'est un régime paritaire (géré par les syndicats et le patronat, pas par l'État). L'État a tenté en 2023 de ponctionner les réserves pour financer d'autres régimes, provoquant un bras de fer avec les partenaires sociaux. La sous-indexation des pensions Agirc-Arrco (-0,4 point vs inflation) a été décidée en 2023 pour préserver les réserves.",
       "amountBillions": 90,
       "costPerCitizen": 1324,
-      "deckId": "retraites",
+      "deckId": "social",
       "icon": "📈",
       "source": "Agirc-Arrco rapport annuel 2024, COR",
       "sourceUrl": null,
@@ -3078,7 +3071,7 @@
       "description": "Les fonctionnaires d'État ont un régime spécifique : pension calculée sur les 6 derniers mois de traitement (vs 25 meilleures années dans le privé). Le taux de cotisation « employeur » de l'État est de ~74% (vs ~17% dans le privé), mais c'est un jeu d'écriture comptable (l'État se paye à lui-même). La réforme des retraites n'a pas unifié les modes de calcul. Les militaires partent en moyenne à 48 ans, les enseignants à 62 ans.",
       "amountBillions": 57,
       "costPerCitizen": 838,
-      "deckId": "retraites",
+      "deckId": "social",
       "icon": "🏛️",
       "source": "CAS Pensions, DGAFP, COR",
       "sourceUrl": null,
@@ -3097,7 +3090,7 @@
       "description": "Les régimes spéciaux (SNCF, RATP, industries électriques/gazières, Banque de France, Opéra de Paris, Comédie-Française, marins, mineurs...) sont fermés aux nouveaux entrants depuis la réforme 2023, mais les droits acquis perdurent 40+ ans. Le ratio cotisants/retraités est catastrophique dans certains régimes (1 pour 3 aux mines). L'État verse une subvention d'équilibre de ~7 Md€/an. Un retraité de la RATP perçoit en moyenne ~2 800€/mois.",
       "amountBillions": 9,
       "costPerCitizen": 132,
-      "deckId": "retraites",
+      "deckId": "social",
       "icon": "🚂",
       "source": "COR, Cour des comptes rapport régimes spéciaux, PLF 2026",
       "sourceUrl": null,
@@ -3117,7 +3110,7 @@
       "description": "L'Allocation de Solidarité aux Personnes Âgées (ASPA, ex-minimum vieillesse) garantit un revenu minimum de 1 012€/mois pour une personne seule de 65+ ans. Environ 600 000 bénéficiaires. Particularité : l'ASPA est récupérable sur succession (si patrimoine > 100 000€), ce qui dissuade de nombreux ayants droit. Le taux de non-recours est estimé à 50% — la moitié des personnes éligibles ne la demandent pas.",
       "amountBillions": 4,
       "costPerCitizen": 59,
-      "deckId": "retraites",
+      "deckId": "social",
       "icon": "👴",
       "source": "DREES, CNAV, Fondation Abbé Pierre",
       "sourceUrl": null,
@@ -3137,7 +3130,7 @@
       "description": "La réforme reportant l'âge légal de 62 à 64 ans et accélérant l'allongement de la durée de cotisation (43 annuités) a été adoptée au 49.3 en mars 2023. Les économies attendues (18 Md€ sur 2023-2030) sont revues à la baisse par le COR. La réforme a été « suspendue » (gel de l'application de certaines mesures) en 2026-2027 dans le cadre de négociations entre les partenaires sociaux. 67% des Français restent opposés à cette réforme selon les sondages.",
       "amountBillions": 18,
       "costPerCitizen": 265,
-      "deckId": "retraites",
+      "deckId": "social",
       "icon": "📜",
       "source": "COR projections 2024, Sénat, DREES",
       "sourceUrl": null,
@@ -3156,7 +3149,7 @@
       "description": "25% des départs à la retraite se font de manière anticipée (avant l'âge légal) : carrières longues (début avant 20 ans), pénibilité (C2P, exposition à des facteurs de risque), handicap, inaptitude. Le Compte professionnel de prévention (C2P) a été jugé inefficace : seuls 3 000 salariés/an l'utilisent pour partir plus tôt. Les critères de pénibilité ont été réduits en 2017 (suppression de 4 facteurs sur 10). Les métiers physiques (BTP, aide-soignants) sont les plus pénalisés.",
       "amountBillions": 3,
       "costPerCitizen": 44,
-      "deckId": "retraites",
+      "deckId": "social",
       "icon": "⛏️",
       "source": "DREES, CNAV, COR",
       "sourceUrl": null,
@@ -3175,7 +3168,7 @@
       "description": "La pension de réversion (54% de la pension du conjoint décédé dans le régime général, 60% en complémentaire) concerne 4,3 millions de bénéficiaires, à 88% des femmes. Conditions : avoir été marié (pas pacsé), et sous condition de ressources au régime général. Les réversions représentent 10% des dépenses de retraite. Débat : faut-il ouvrir la réversion aux pacsés ? Faut-il l'augmenter (54% est faible vs 70% en Italie) ou la réduire ?",
       "amountBillions": 37,
       "costPerCitizen": 544,
-      "deckId": "retraites",
+      "deckId": "social",
       "icon": "💍",
       "source": "DREES, COR, CNAV",
       "sourceUrl": null,
@@ -3194,7 +3187,7 @@
       "description": "Les travailleurs indépendants (artisans, commerçants) et agriculteurs ont les retraites les plus faibles : pension moyenne de ~780€/mois pour les indépendants, ~730€/mois pour les agriculteurs (bien en dessous du seuil de pauvreté). La retraite agricole a été revalorisée à 85% du SMIC en 2021 pour les carrières complètes, mais beaucoup ont des carrières incomplètes. Les cotisations des indépendants sont plus basses (pas de part « employeur »), d'où des pensions plus faibles.",
       "amountBillions": 18,
       "costPerCitizen": 265,
-      "deckId": "retraites",
+      "deckId": "social",
       "icon": "🌾",
       "source": "MSA, SSI, DREES, COR",
       "sourceUrl": null,
@@ -3213,7 +3206,7 @@
       "description": "La France consacre 13,1% de son PIB aux retraites, record mondial (Italie : 15,7% mais en baisse, Allemagne : 10,3%, Suède : 7,5%, USA : 6,8%). L'âge effectif moyen de départ est de 62,5 ans (OCDE : 64,3 ans). Les Français passent en moyenne 27 ans à la retraite (espérance de vie à 62 ans) vs 22 ans dans l'OCDE. Le taux de remplacement (pension/salaire) est de ~74% (OCDE : ~58%). Le système français offre les retraites les plus généreuses du monde développé, mais pose un problème de soutenabilité.",
       "amountBillions": 370,
       "costPerCitizen": 5441,
-      "deckId": "retraites",
+      "deckId": "social",
       "icon": "🌐",
       "source": "OCDE Pensions at a Glance 2025, COR, Eurostat",
       "sourceUrl": null,
@@ -3614,6 +3607,766 @@
         "inflation"
       ],
       "trend": null
+    },
+    {
+      "id": "def-11",
+      "title": "Exportations d'armement",
+      "subtitle": "Prises de commandes record",
+      "description": "La France est le 2e exportateur mondial d'armes. Les contrats Rafale, sous-marins, missiles MBDA constituent le gros des ventes. Ces exportations financent la BITD et réduisent le coût unitaire des équipements. Critique : ventes à des régimes controversés (Arabie saoudite, Egypte).",
+      "amountBillions": 18,
+      "costPerCitizen": 265,
+      "deckId": "defense",
+      "icon": "🛩️",
+      "trend": 40,
+      "source": "Rapport au Parlement sur les exportations d'armement 2025, DGA",
+      "sourceUrl": "https://www.defense.gouv.fr",
+      "level": 1,
+      "tags": [
+        "armement",
+        "exportation",
+        "industrie"
+      ]
+    },
+    {
+      "id": "def-12",
+      "title": "Reserve militaire et Garde nationale",
+      "subtitle": "80 000 reservistes operationnels",
+      "description": "La Garde nationale regroupe les reservistes des armees, de la gendarmerie et de la police. Actives pour Sentinelle, les JOP 2024, les catastrophes naturelles. Un reserviste est paye ~80EUR/jour. La LPM 2024-2030 double le budget de la reserve.",
+      "amountBillions": 0.5,
+      "costPerCitizen": 7,
+      "deckId": "defense",
+      "icon": "🎖️",
+      "trend": 15,
+      "source": "LPM 2024-2030, Ministere des Armees",
+      "sourceUrl": "https://www.defense.gouv.fr",
+      "level": 1,
+      "tags": [
+        "reserve",
+        "garde nationale",
+        "defense"
+      ]
+    },
+    {
+      "id": "def-13",
+      "title": "Stocks de munitions et reconstitution",
+      "subtitle": "Montee en cadence post-Ukraine",
+      "description": "Les livraisons a l'Ukraine ont revele la faiblesse des stocks francais. La France produisait 2 000 obus de 155mm/mois en 2022, objectif 3 000/mois en 2025. La reconstitution complete prendra 5-7 ans. KNDS monte de nouvelles lignes a Bourges et Tarbes.",
+      "amountBillions": 3,
+      "costPerCitizen": 44,
+      "deckId": "defense",
+      "icon": "💣",
+      "trend": 50,
+      "source": "LPM, KNDS, Senat commission defense",
+      "sourceUrl": "https://www.senat.fr",
+      "level": 1,
+      "tags": [
+        "munitions",
+        "industrie",
+        "defense"
+      ]
+    },
+    {
+      "id": "def-14",
+      "title": "Service de sante des armees",
+      "subtitle": "Crise capacitaire du SSA",
+      "description": "Le SSA (8 hopitaux militaires, 15 000 personnels) traverse une crise d'attractivite. Le Val-de-Grace a ferme en 2016. Le SSA doit pouvoir traiter 700 blesses simultanement, mais les effectifs de chirurgiens militaires sont en forte baisse. Ouverture progressive aux civils.",
+      "amountBillions": 1.8,
+      "costPerCitizen": 26,
+      "deckId": "defense",
+      "icon": "🏥",
+      "trend": 5,
+      "source": "SSA rapport, LPM, Senat",
+      "sourceUrl": "https://www.defense.gouv.fr",
+      "level": 1,
+      "tags": [
+        "sante",
+        "militaire",
+        "hopital"
+      ]
+    },
+    {
+      "id": "def-15",
+      "title": "Participation francaise a l'OTAN",
+      "subtitle": "Contribution directe au budget OTAN",
+      "description": "La France contribue ~11% du budget commun de l'OTAN. Elle deploie ~10 000 militaires sous commandement OTAN (Estonie, Roumanie, Mediterranee). Le debat s'est deplace vers 3-3,5% du PIB suite aux declarations Trump et a la guerre en Ukraine.",
+      "amountBillions": 0.35,
+      "costPerCitizen": 5,
+      "deckId": "defense",
+      "icon": "🌐",
+      "trend": 10,
+      "source": "OTAN, Ministere des Armees, LPM",
+      "sourceUrl": "https://www.nato.int",
+      "level": 1,
+      "tags": [
+        "OTAN",
+        "alliance",
+        "defense"
+      ]
+    },
+    {
+      "id": "ene-11",
+      "title": "Strategie nationale hydrogene",
+      "subtitle": "9 Md EUR sur 2020-2030",
+      "description": "L'hydrogene vert est le pari industriel francais pour decarboner l'industrie lourde et les transports lourds. La France vise 6,5 GW d'electrolyseurs en 2030. Critique : le prix de l'hydrogene vert reste 3x superieur a l'hydrogene gris. La rentabilite depend du prix du carbone.",
+      "amountBillions": 0.9,
+      "costPerCitizen": 13,
+      "deckId": "energie",
+      "icon": "💧",
+      "trend": 0,
+      "source": "France 2030, ADEME, France Hydrogene",
+      "sourceUrl": "https://www.ademe.fr",
+      "level": 1,
+      "tags": [
+        "hydrogene",
+        "industrie",
+        "transition"
+      ]
+    },
+    {
+      "id": "ene-12",
+      "title": "Dechets nucleaires (Cigeo)",
+      "subtitle": "Stockage geologique profond a Bure",
+      "description": "Cigeo est le projet de stockage des dechets radioactifs les plus dangereux a Bure (Meuse). Chantier prevu vers 2027-2028, exploitation d'un siecle. Les dechets resteront radioactifs pendant 100 000 ans. L'estimation de cout a double en 10 ans (de 15 a 25 Md EUR).",
+      "amountBillions": 0.5,
+      "costPerCitizen": 7,
+      "deckId": "energie",
+      "icon": "☢️",
+      "trend": 8,
+      "source": "ANDRA, ASN, PLF 2026",
+      "sourceUrl": "https://www.andra.fr",
+      "level": 1,
+      "tags": [
+        "nucleaire",
+        "dechets",
+        "stockage"
+      ]
+    },
+    {
+      "id": "ene-13",
+      "title": "Precarite energetique",
+      "subtitle": "Cheque energie pour 5,6 millions de foyers",
+      "description": "5,2 millions de menages (12% des foyers) sont en precarite energetique. Le cheque energie (150-277 EUR/an) est distribue a 5,6 millions de foyers. Insuffisant : un foyer precaire depense en moyenne 1 800 EUR/an en energie. La vraie solution est la renovation thermique.",
+      "amountBillions": 0.8,
+      "costPerCitizen": 12,
+      "deckId": "energie",
+      "icon": "🔌",
+      "trend": -5,
+      "source": "ONPE, ADEME, PLF 2026",
+      "sourceUrl": "https://www.ecologie.gouv.fr",
+      "level": 1,
+      "tags": [
+        "precarite",
+        "social",
+        "energie"
+      ]
+    },
+    {
+      "id": "ene-14",
+      "title": "Bornes de recharge vehicules electriques",
+      "subtitle": "Objectif 400 000 bornes en 2030",
+      "description": "La France compte ~150 000 bornes publiques. Le programme ADVENIR subventionne l'installation. Les prix varient de 0,25 EUR/kWh a domicile a 0,80 EUR/kWh sur autoroute. L'interdiction des vehicules thermiques neufs en 2035 rend cet investissement incontournable.",
+      "amountBillions": 0.7,
+      "costPerCitizen": 10,
+      "deckId": "energie",
+      "icon": "🔋",
+      "trend": 20,
+      "source": "AVERE France, ADVENIR, France 2030",
+      "sourceUrl": "https://www.avere-france.org",
+      "level": 1,
+      "tags": [
+        "electrique",
+        "transport",
+        "infrastructure"
+      ]
+    },
+    {
+      "id": "ene-15",
+      "title": "Accise sur l'electricite",
+      "subtitle": "Taxe post-bouclier tarifaire",
+      "description": "L'accise sur l'electricite (ex-CSPE) est revenue a 33,70 EUR/MWh en 2025, representant ~20% de la facture d'electricite. Elle finance les energies renouvelables et la perequation tarifaire. Le consommateur paie moins cher l'electricite brute, mais davantage de taxes.",
+      "amountBillions": 10,
+      "costPerCitizen": 147,
+      "deckId": "energie",
+      "icon": "⚡",
+      "trend": 200,
+      "source": "CRE, PLF 2026, Selectra",
+      "sourceUrl": "https://www.cre.fr",
+      "level": 1,
+      "tags": [
+        "taxe",
+        "electricite",
+        "recette"
+      ]
+    },
+    {
+      "id": "san-11",
+      "title": "Prevention et vaccination",
+      "subtitle": "La France lanterne rouge de la prevention",
+      "description": "Les depenses de prevention representent ~2% des depenses totales de sante (vs 5% en Finlande). Le calendrier vaccinal couvre 13 vaccins obligatoires. La vaccination COVID a coute ~6 Md EUR mais a evite un cout hospitalier estime a 20 Md EUR.",
+      "amountBillions": 2.5,
+      "costPerCitizen": 37,
+      "deckId": "sante",
+      "icon": "💉",
+      "trend": 3,
+      "source": "DREES, Sante publique France, Cour des comptes",
+      "sourceUrl": "https://www.santepubliquefrance.fr",
+      "level": 1,
+      "tags": [
+        "prevention",
+        "vaccination",
+        "sante"
+      ]
+    },
+    {
+      "id": "san-12",
+      "title": "100% Sante (optique, dentaire, audio)",
+      "subtitle": "Zero reste a charge",
+      "description": "La reforme 100% Sante a supprime le reste a charge sur un panier de lunettes, protheses dentaires et audioprotheses. ~5 millions de Francais en beneficient. Succes en audioprotheses (appareillages x2), plus mitige en optique. Le renoncement aux soins a baisse de 30%.",
+      "amountBillions": 3,
+      "costPerCitizen": 44,
+      "deckId": "sante",
+      "icon": "👓",
+      "trend": 5,
+      "source": "DREES, Secu bilan 100% Sante, HCAAM",
+      "sourceUrl": "https://www.ameli.fr",
+      "level": 1,
+      "tags": [
+        "optique",
+        "dentaire",
+        "reforme"
+      ]
+    },
+    {
+      "id": "san-13",
+      "title": "Penuries de medicaments",
+      "subtitle": "5 000 signalements en 2024",
+      "description": "80% des principes actifs sont fabriques en Asie. La France a subi ~5 000 signalements de penuries en 2024 (x10 en 10 ans). Amoxicilline, paracetamol et anticancereux sont les plus touches. France 2030 investit 1 Md EUR pour relocaliser la production.",
+      "amountBillions": 37,
+      "costPerCitizen": 544,
+      "deckId": "sante",
+      "icon": "💊",
+      "trend": 4,
+      "source": "ANSM, CEPS, France 2030",
+      "sourceUrl": "https://ansm.sante.fr",
+      "level": 1,
+      "tags": [
+        "medicaments",
+        "industrie",
+        "penuries"
+      ]
+    },
+    {
+      "id": "san-14",
+      "title": "Addictions (tabac, alcool, drogues)",
+      "subtitle": "Cout social : 250 Md EUR/an",
+      "description": "Le tabac tue 73 000 Francais/an, l'alcool 41 000. Le cout social total depasse 250 Md EUR/an. En face : les taxes rapportent ~20 Md EUR. Le solde est massivement negatif. Chaque hausse de 10% du prix du tabac reduit la consommation de 4%.",
+      "amountBillions": 15,
+      "costPerCitizen": 220,
+      "deckId": "sante",
+      "icon": "🚬",
+      "trend": 2,
+      "source": "OFDT, Sante publique France, CAE",
+      "sourceUrl": "https://www.ofdt.fr",
+      "level": 1,
+      "tags": [
+        "addictions",
+        "tabac",
+        "alcool"
+      ]
+    },
+    {
+      "id": "san-15",
+      "title": "SAMU et transports sanitaires",
+      "subtitle": "2e poste de croissance des depenses de sante",
+      "description": "Les transports sanitaires representent +5%/an depuis 10 ans. Le SAMU recoit ~30 millions d'appels/an. 15-20% des transports sont juges non pertinents. Un transport en ambulance coute en moyenne ~200 EUR a la Secu, un taxi conventionne ~50 EUR.",
+      "amountBillions": 6,
+      "costPerCitizen": 88,
+      "deckId": "sante",
+      "icon": "🚑",
+      "trend": 5,
+      "source": "CNAM, DREES, Cour des comptes",
+      "sourceUrl": "https://www.ameli.fr",
+      "level": 1,
+      "tags": [
+        "SAMU",
+        "transport",
+        "urgences"
+      ]
+    },
+    {
+      "id": "soc-13",
+      "title": "Allocation adultes handicapes (AAH)",
+      "subtitle": "1 033 EUR/mois pour 1,4 million de personnes",
+      "description": "L'AAH garantit un revenu minimum a 1,4 million de personnes handicapees. Deconjugalisee depuis 2023. Montant en dessous du seuil de pauvrete (~1 200 EUR). La France consacre au total 52 Md EUR/an au handicap (2% du PIB). Delai moyen MDPH : 4 a 8 mois.",
+      "amountBillions": 13,
+      "costPerCitizen": 191,
+      "deckId": "social",
+      "icon": "♿",
+      "trend": 5,
+      "source": "CNAF, MDPH, PLF 2026",
+      "sourceUrl": "https://www.caf.fr",
+      "level": 1,
+      "tags": [
+        "handicap",
+        "AAH",
+        "social"
+      ]
+    },
+    {
+      "id": "soc-14",
+      "title": "Accueil petite enfance (creches)",
+      "subtitle": "22% des enfants obtiennent une place",
+      "description": "La France dispose de ~480 000 places en creche pour ~2,2 millions d'enfants de 0-3 ans. Le SPPE vise 200 000 places supplementaires d'ici 2030. Cout moyen d'une place : ~15 000 EUR/an. Inegalites enormes : 1 place pour 3 enfants en Ile-de-France, 1 pour 8 en Seine-Saint-Denis.",
+      "amountBillions": 8,
+      "costPerCitizen": 118,
+      "deckId": "social",
+      "icon": "👶",
+      "trend": 8,
+      "source": "CNAF, HCFEA, PLF 2026",
+      "sourceUrl": "https://www.caf.fr",
+      "level": 1,
+      "tags": [
+        "creches",
+        "petite enfance",
+        "famille"
+      ]
+    },
+    {
+      "id": "soc-15",
+      "title": "Branche autonomie (5e branche Secu)",
+      "subtitle": "40 Md EUR pour la dependance",
+      "description": "La 5e branche de la Securite sociale gere la perte d'autonomie des personnes agees et handicapees : APA, PCH, financement des EHPAD. Le vieillissement doublera les besoins d'ici 2050. La loi grand age promise depuis 2019 n'a jamais ete votee.",
+      "amountBillions": 40,
+      "costPerCitizen": 588,
+      "deckId": "social",
+      "icon": "🧓",
+      "trend": 6,
+      "source": "CNSA, DREES, PLF 2026",
+      "sourceUrl": "https://www.cnsa.fr",
+      "level": 1,
+      "tags": [
+        "autonomie",
+        "dependance",
+        "EHPAD"
+      ]
+    },
+    {
+      "id": "soc-16",
+      "title": "Accidents du travail (AT-MP)",
+      "subtitle": "Branche excedentaire mais siphonnee",
+      "description": "La branche AT-MP indemnise ~650 000 accidents du travail et ~50 000 maladies professionnelles par an. Financee par les cotisations employeurs. Structurellement excedentaire (~1-2 Md EUR/an), l'Etat la pontionne regulierement pour financer les branches deficitaires.",
+      "amountBillions": 14,
+      "costPerCitizen": 206,
+      "deckId": "social",
+      "icon": "⚠️",
+      "trend": 2,
+      "source": "CNAM AT-MP, DREES, LFSS 2026",
+      "sourceUrl": "https://www.ameli.fr",
+      "level": 1,
+      "tags": [
+        "travail",
+        "accidents",
+        "cotisations"
+      ]
+    },
+    {
+      "id": "soc-17",
+      "title": "Pauvrete des enfants",
+      "subtitle": "3 millions d'enfants sous le seuil de pauvrete",
+      "description": "21% des moins de 18 ans vivent sous le seuil de pauvrete. L'ASE prend en charge ~370 000 enfants dont ~180 000 places. Un placement en foyer coute ~50 000 EUR/an. 1 EUR investi dans un enfant de 0-5 ans rapporte 7-13 EUR a la societe sur 40 ans (Heckman).",
+      "amountBillions": 10,
+      "costPerCitizen": 147,
+      "deckId": "social",
+      "icon": "🧒",
+      "trend": 3,
+      "source": "DREES, Observatoire des inegalites, UNICEF France",
+      "sourceUrl": "https://www.inegalites.fr",
+      "level": 1,
+      "tags": [
+        "pauvrete",
+        "enfants",
+        "ASE"
+      ]
+    },
+    {
+      "id": "edu-11",
+      "title": "Education prioritaire (REP/REP+)",
+      "subtitle": "1,7 million d'eleves en zone prioritaire",
+      "description": "1 093 reseaux REP et 364 REP+ scolarisent 1,7 million d'eleves. Classes dedoublees en CP-CE1 (12 eleves au lieu de 24), primes enseignants jusqu'a 5 000 EUR/an en REP+. Amelioration de +15% en francais et maths en CP-CE1, mais l'ecart persiste au college.",
+      "amountBillions": 2,
+      "costPerCitizen": 29,
+      "deckId": "education",
+      "icon": "🏫",
+      "trend": 5,
+      "source": "DEPP, Ministere de l'Education nationale",
+      "sourceUrl": "https://www.education.gouv.fr",
+      "level": 1,
+      "tags": [
+        "REP",
+        "prioritaire",
+        "egalite"
+      ]
+    },
+    {
+      "id": "edu-12",
+      "title": "Cantine scolaire",
+      "subtitle": "8 millions d'eleves a la cantine chaque jour",
+      "description": "Le repas coute 8-10 EUR a produire, dont 3-4 EUR a la charge des familles. La loi EGalim impose 50% de produits durables et 20% de bio, objectifs atteints a 30% seulement. La cantine est souvent le seul repas equilibre pour les enfants defavorises.",
+      "amountBillions": 7,
+      "costPerCitizen": 103,
+      "deckId": "education",
+      "icon": "🍽️",
+      "trend": 3,
+      "source": "CNFCE, ADEME, Ministere de l'Education nationale",
+      "sourceUrl": "https://www.education.gouv.fr",
+      "level": 1,
+      "tags": [
+        "cantine",
+        "alimentation",
+        "ecole"
+      ]
+    },
+    {
+      "id": "edu-13",
+      "title": "Lycees professionnels",
+      "subtitle": "620 000 lyceens en voie professionnelle",
+      "description": "1/3 des lyceens sont en voie professionnelle. Taux de decrochage : 25% (vs 5% en voie generale). La reforme 2023 introduit des gratifications de stage et la fermeture des formations sans debouche. Le taux d'insertion des CAP/bac pro en apprentissage atteint 70%.",
+      "amountBillions": 7,
+      "costPerCitizen": 103,
+      "deckId": "education",
+      "icon": "🔧",
+      "trend": 7,
+      "source": "DEPP, Ministere de l'Education nationale, CEREQ",
+      "sourceUrl": "https://www.education.gouv.fr",
+      "level": 1,
+      "tags": [
+        "lycee pro",
+        "formation",
+        "apprentissage"
+      ]
+    },
+    {
+      "id": "edu-14",
+      "title": "AEFE (lycees francais a l'etranger)",
+      "subtitle": "580 etablissements dans 139 pays",
+      "description": "L'AEFE gere ou homologue 580 etablissements scolarisant 392 000 eleves (dont 40% de Francais). Les frais de scolarite varient de 3 000 a 30 000 EUR/an. C'est le 1er reseau scolaire mondial a l'etranger et un outil majeur de soft power.",
+      "amountBillions": 1.2,
+      "costPerCitizen": 6,
+      "deckId": "education",
+      "icon": "🌍",
+      "trend": 2,
+      "source": "AEFE, PLF 2026 Action exterieure, Senat",
+      "sourceUrl": "https://www.aefe.fr",
+      "level": 1,
+      "tags": [
+        "AEFE",
+        "etranger",
+        "soft power"
+      ]
+    },
+    {
+      "id": "edu-15",
+      "title": "Recherche spatiale et ESA",
+      "subtitle": "1er contributeur de l'Agence spatiale europeenne",
+      "description": "Le programme 193 finance la contribution francaise a l'ESA (~25% du budget). Missions scientifiques, lanceurs Ariane 6, observation de la Terre. La concurrence de SpaceX menace Ariane : cout de lancement 2x superieur. L'ESA investit dans un demonstrateur reutilisable.",
+      "amountBillions": 1.7,
+      "costPerCitizen": 25,
+      "deckId": "education",
+      "icon": "🚀",
+      "trend": 4,
+      "source": "PLF 2026, CNES, ESA",
+      "sourceUrl": "https://www.esa.int",
+      "level": 1,
+      "tags": [
+        "espace",
+        "ESA",
+        "recherche"
+      ]
+    },
+    {
+      "id": "sec-09",
+      "title": "Lutte contre le narcotrafic",
+      "subtitle": "Marche de la drogue : 3-4 Md EUR/an",
+      "description": "La France est le 1er consommateur europeen de cannabis. La repression mobilise ~40% de l'activite des brigades de surete urbaine. Malgre la politique la plus repressive d'Europe, la France est le plus gros consommateur. La loi narcotrafic 2025 renforce les peines.",
+      "amountBillions": 1.5,
+      "costPerCitizen": 22,
+      "deckId": "securite",
+      "icon": "🚔",
+      "trend": 10,
+      "source": "OFDT, MILDECA, Ministere de l'Interieur",
+      "sourceUrl": "https://www.interieur.gouv.fr",
+      "level": 1,
+      "tags": [
+        "narcotrafic",
+        "drogue",
+        "repression"
+      ]
+    },
+    {
+      "id": "sec-10",
+      "title": "Securite routiere",
+      "subtitle": "3 200 morts/an, stagnation depuis 10 ans",
+      "description": "4 700 radars rapportent ~800 M EUR/an. Le cout social des accidents est estime a ~50 Md EUR/an. Les amendes rapportent 3,5 Md EUR mais les accidents coutent 50 Md EUR. Les PV de stationnement decentralises generent des recettes pour les communes.",
+      "amountBillions": 3.5,
+      "costPerCitizen": 51,
+      "deckId": "securite",
+      "icon": "🚦",
+      "trend": 0,
+      "source": "ONISR, DSCR, PLF 2026, Cour des comptes",
+      "sourceUrl": "https://www.onisr.securite-routiere.gouv.fr",
+      "level": 1,
+      "tags": [
+        "routiere",
+        "radars",
+        "amendes"
+      ]
+    },
+    {
+      "id": "sec-11",
+      "title": "Justice des mineurs (PJJ)",
+      "subtitle": "160 000 mineurs suivis par la justice",
+      "description": "La PJJ encadre ~160 000 mineurs. Elle gere les centres educatifs fermes (52 etablissements, ~600 places). Cout d'un CEF : ~700 EUR/jour par mineur. Le code de la justice penale des mineurs privilegie l'educatif sur le repressif. La recidive baisse de 40% vs la prison.",
+      "amountBillions": 1,
+      "costPerCitizen": 15,
+      "deckId": "securite",
+      "icon": "👦",
+      "trend": 5,
+      "source": "PJJ, PLF 2026 mission Justice, Senat",
+      "sourceUrl": "https://www.justice.gouv.fr",
+      "level": 1,
+      "tags": [
+        "mineurs",
+        "justice",
+        "PJJ"
+      ]
+    },
+    {
+      "id": "sec-12",
+      "title": "Police municipale",
+      "subtitle": "27 000 agents dans 4 500 communes",
+      "description": "Budget entierement a la charge des collectivites. Depuis la loi Securite globale (2021), pouvoirs elargis. Inegalite territoriale massive : Nice depense ~200 EUR/habitant/an en police municipale, quand une commune rurale depense 0 EUR.",
+      "amountBillions": 5,
+      "costPerCitizen": 74,
+      "deckId": "securite",
+      "icon": "🏛️",
+      "trend": 8,
+      "source": "CNFPT, DGCL, Senat",
+      "sourceUrl": "https://www.senat.fr",
+      "level": 1,
+      "tags": [
+        "police municipale",
+        "collectivites",
+        "securite"
+      ]
+    },
+    {
+      "id": "sec-13",
+      "title": "Victimes et indemnisation",
+      "subtitle": "FGTI : 150 000 victimes indemnisees/an",
+      "description": "Le FGTI indemnise agressions, viols, vols avec violence, terrorisme. Finance par une taxe de 5,90 EUR sur chaque contrat d'assurance. Les indemnisations des attentats 2015-2016 ont depasse 1,5 Md EUR. Le systeme francais est considere comme le plus genereux au monde.",
+      "amountBillions": 0.7,
+      "costPerCitizen": 10,
+      "deckId": "securite",
+      "icon": "🤝",
+      "trend": 3,
+      "source": "FGTI, PLF 2026, Cour des comptes",
+      "sourceUrl": "https://www.fondsdegarantie.fr",
+      "level": 1,
+      "tags": [
+        "victimes",
+        "indemnisation",
+        "terrorisme"
+      ]
+    },
+    {
+      "id": "eta-11",
+      "title": "Presidence, Matignon, cabinets",
+      "subtitle": "Elysee ~115 M EUR, Matignon ~130 M EUR",
+      "description": "Le budget de l'Elysee est de ~115 M EUR/an (dont 72 M EUR de masse salariale, ~830 agents). Les cabinets ministeriels comptent ~500 conseillers. L'Elysee coute ~1,70 EUR par Francais par an, soit un croissant tous les 6 mois.",
+      "amountBillions": 0.4,
+      "costPerCitizen": 6,
+      "deckId": "etat",
+      "icon": "🏛️",
+      "trend": 3,
+      "source": "PLF 2026, Cour des comptes, Assemblee nationale",
+      "sourceUrl": "https://www.elysee.fr",
+      "level": 1,
+      "tags": [
+        "presidence",
+        "cabinets",
+        "executif"
+      ]
+    },
+    {
+      "id": "eta-12",
+      "title": "Parlement (AN + Senat)",
+      "subtitle": "577 deputes + 348 senateurs",
+      "description": "L'Assemblee coute ~600 M EUR/an, le Senat ~350 M EUR. Un depute gagne ~7 500 EUR brut/mois + IRFM de ~5 645 EUR pour ses frais. Les deux chambres jouissent d'une autonomie budgetaire sans controle de la Cour des comptes.",
+      "amountBillions": 1,
+      "costPerCitizen": 15,
+      "deckId": "etat",
+      "icon": "🗳️",
+      "trend": 2,
+      "source": "AN budget, Senat budget, HATVP",
+      "sourceUrl": "https://www.assemblee-nationale.fr",
+      "level": 1,
+      "tags": [
+        "parlement",
+        "deputes",
+        "senateurs"
+      ]
+    },
+    {
+      "id": "eta-13",
+      "title": "Immobilier de l'Etat",
+      "subtitle": "190 millions de m2 de batiments publics",
+      "description": "L'Etat possede ~190 millions de m2 (ministeres, prefectures, casernes, universites). Patrimoine estime a ~65 Md EUR. Le teletravail post-COVID a libere 10-15% des surfaces. Les batiments universitaires sont les plus degrades (40 Md EUR de travaux necessaires).",
+      "amountBillions": 8,
+      "costPerCitizen": 118,
+      "deckId": "etat",
+      "icon": "🏢",
+      "trend": 3,
+      "source": "DIE, PLF 2026, Cour des comptes",
+      "sourceUrl": "https://www.budget.gouv.fr",
+      "level": 1,
+      "tags": [
+        "immobilier",
+        "patrimoine",
+        "batiments"
+      ]
+    },
+    {
+      "id": "eta-14",
+      "title": "Systemes d'information (IT public)",
+      "subtitle": "60% des applications critiques ont plus de 15 ans",
+      "description": "Les ministeres depensent ~10 Md EUR/an en informatique. Grands echecs : Louvois (500 M EUR de surcout), Operateur national de paie (abandonne apres 300 M EUR). La DINUM tente de rationaliser mais chaque ministere garde ses propres systemes.",
+      "amountBillions": 10,
+      "costPerCitizen": 147,
+      "deckId": "etat",
+      "icon": "💻",
+      "trend": 6,
+      "source": "DINUM, PLF 2026, Cour des comptes",
+      "sourceUrl": "https://www.numerique.gouv.fr",
+      "level": 1,
+      "tags": [
+        "informatique",
+        "numerique",
+        "modernisation"
+      ]
+    },
+    {
+      "id": "eta-15",
+      "title": "Jours feries (cout pour l'economie)",
+      "subtitle": "11 jours feries, ~3-4 Md EUR perdus chacun",
+      "description": "La France compte 11 jours feries legaux (dont 6 religieux). Chaque jour ferie coute ~0,15% de PIB. La journee de solidarite rapporte ~2,4 Md EUR/an. Supprimer 1 jour ferie = financer le budget de la Culture (4,4 Md EUR). Politiquement suicidaire.",
+      "amountBillions": 3.5,
+      "costPerCitizen": 550,
+      "deckId": "etat",
+      "icon": "📅",
+      "trend": 0,
+      "source": "INSEE, Tresor, OFCE",
+      "sourceUrl": "https://www.insee.fr",
+      "level": 1,
+      "tags": [
+        "jours feries",
+        "economie",
+        "productivite"
+      ]
+    },
+    {
+      "id": "cul-11",
+      "title": "CNC et industrie du cinema",
+      "subtitle": "Autofinance par la taxe TSA",
+      "description": "Le CNC s'autofinance via la taxe sur les entrees en salle, la taxe TV et la taxe VOD. Budget ~800 M EUR sans subvention de l'Etat. Netflix et Disney+ contribuent ~100 M EUR/an. La France est le 1er producteur de films en Europe.",
+      "amountBillions": 0.8,
+      "costPerCitizen": 12,
+      "deckId": "culture",
+      "icon": "🎬",
+      "trend": 4,
+      "source": "CNC, PLF 2026",
+      "sourceUrl": "https://www.cnc.fr",
+      "level": 1,
+      "tags": [
+        "cinema",
+        "CNC",
+        "culture"
+      ]
+    },
+    {
+      "id": "cul-12",
+      "title": "Velo et mobilites douces",
+      "subtitle": "Plan velo : 2 Md EUR sur 4 ans",
+      "description": "Le Plan velo finance pistes cyclables, stationnements securises, aides a l'achat. La France est passee de 3% a 5% de part modale velo en 5 ans (vs 27% aux Pays-Bas). Les vols de velos restent un frein majeur (~400 000/an). 1 km de piste cyclable coute ~200 000 EUR.",
+      "amountBillions": 0.5,
+      "costPerCitizen": 7,
+      "deckId": "culture",
+      "icon": "🚲",
+      "trend": 25,
+      "source": "Plan velo, ADEME, Velo & Territoires",
+      "sourceUrl": "https://www.ecologie.gouv.fr",
+      "level": 1,
+      "tags": [
+        "velo",
+        "mobilite",
+        "transport"
+      ]
+    },
+    {
+      "id": "cul-13",
+      "title": "Grand Paris Express",
+      "subtitle": "200 km de metro automatique, 68 gares",
+      "description": "Plus grand projet de transport en Europe : 44 Md EUR au total. Les lignes 15 Sud et 16 en chantier avance. Le cout a depasse les previsions initiales de 35 Md EUR. Finance par des taxes franciliennes. Polemique : un projet parisien finance par des taxes nationales.",
+      "amountBillions": 44,
+      "costPerCitizen": 647,
+      "deckId": "culture",
+      "icon": "🚇",
+      "trend": 8,
+      "source": "Societe du Grand Paris, Cour des comptes",
+      "sourceUrl": "https://www.societedugrandparis.fr",
+      "level": 1,
+      "tags": [
+        "metro",
+        "transport",
+        "infrastructure"
+      ]
+    },
+    {
+      "id": "cul-14",
+      "title": "Tourisme (politique et recettes)",
+      "subtitle": "1ere destination mondiale, 3e en recettes",
+      "description": "100 millions de visiteurs/an mais seulement 3e en recettes (derriere les Etats-Unis et l'Espagne). Le tourisme represente 8% du PIB et 2 millions d'emplois. 1 EUR public investi genere ~30 EUR de recettes — meilleur ROI de toutes les politiques publiques.",
+      "amountBillions": 2,
+      "costPerCitizen": 29,
+      "deckId": "culture",
+      "icon": "✈️",
+      "trend": 5,
+      "source": "Atout France, DGE, OMT",
+      "sourceUrl": "https://www.atout-france.fr",
+      "level": 1,
+      "tags": [
+        "tourisme",
+        "recettes",
+        "attractivite"
+      ]
+    },
+    {
+      "id": "cul-15",
+      "title": "Taxe aerien et quotas carbone",
+      "subtitle": "Taxe de solidarite Chirac + ETS",
+      "description": "Taxe de solidarite sur les billets d'avion (1,13 EUR en eco, 45 EUR en business) qui finance UNITAID. Depuis 2024, les compagnies doivent acheter des quotas carbone. L'interdiction des vols courts (<2h30 si alternative TGV) ne concerne que 3 lignes.",
+      "amountBillions": 0.5,
+      "costPerCitizen": 7,
+      "deckId": "culture",
+      "icon": "✈️",
+      "trend": 10,
+      "source": "DGAC, PLF 2026, UNITAID",
+      "sourceUrl": "https://www.ecologie.gouv.fr",
+      "level": 1,
+      "tags": [
+        "aerien",
+        "taxe",
+        "carbone"
+      ]
     }
   ]
 }
