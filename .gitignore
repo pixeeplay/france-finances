@@ -37,9 +37,7 @@ yarn-error.log*
 .vercel
 
 # project assets (local only)
-/Visuels-source/
-/Maquettes/
-/Briefs/
+/_concept/
 /_old/
 
 # serwist (generated service worker)

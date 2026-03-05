@@ -273,24 +273,24 @@ export function ResultScreen() {
       <div className="flex flex-col gap-3 px-4 py-6 mt-2">
         {level === 1 && (
           <button
-            onClick={() => { reset(); router.push("/play?level=2"); }}
-            className="flex items-center justify-center gap-2 w-full rounded-xl py-4 px-6 bg-primary text-primary-foreground font-bold text-lg shadow-[0_0_20px_rgba(16,185,129,0.3)] active:scale-95 transition-transform"
+            onClick={() => router.push("/play?level=2")}
+            className="flex items-center justify-center gap-2 w-full rounded-xl py-4 px-6 bg-primary text-white font-bold text-lg shadow-[0_0_20px_rgba(16,185,129,0.3)] active:scale-95 transition-transform"
           >
             Passer au Niveau 2
-            <span className="text-base">{"\uD83D\uDD13"}</span>
+            <span className="text-base">&#8594;</span>
           </button>
         )}
         {level === 2 && (
           <button
-            onClick={() => { reset(); router.push("/play?level=3"); }}
-            className="flex items-center justify-center gap-2 w-full rounded-xl py-4 px-6 bg-primary text-primary-foreground font-bold text-lg shadow-[0_0_20px_rgba(16,185,129,0.3)] active:scale-95 transition-transform"
+            onClick={() => router.push("/play?level=3")}
+            className="flex items-center justify-center gap-2 w-full rounded-xl py-4 px-6 bg-primary text-white font-bold text-lg shadow-[0_0_20px_rgba(16,185,129,0.3)] active:scale-95 transition-transform"
           >
             Passer au Niveau 3
-            <span className="text-base">{"\uD83D\uDD13"}</span>
+            <span className="text-base">&#8594;</span>
           </button>
         )}
         <button
-          onClick={handleContinue}
+          onClick={() => router.push("/play")}
           className="flex items-center justify-center w-full rounded-xl py-4 px-6 border-2 border-border text-foreground font-bold hover:bg-card transition-colors"
         >
           {level >= 2 ? `Nouveau deck Niveau ${level}` : "Continuer (nouveau deck)"}

@@ -8,6 +8,24 @@ import { getPlayedDeckIds, getGlobalStats } from "@/lib/stats";
 import { track } from "@/lib/analytics";
 import type { Deck } from "@/types";
 
+function RandomIcon({ size = 24, className }: { size?: number; className?: string }) {
+  return (
+    <svg className={className} width={size} height={size} viewBox="0 0 128 128" fill="currentColor">
+      <path d="m31.648 40h-19.648c-2.209 0-4-1.791-4-4s1.791-4 4-4h19.648c9.021 0 17.541 4.383 22.785 11.725l4.651 6.511-4.916 6.882-6.245-8.743c-3.745-5.244-9.829-8.375-16.275-8.375zm87.18 49.172-16-16c-1.563-1.563-4.094-1.563-5.656 0s-1.563 4.094 0 5.656l9.172 9.172h-9.992c-6.445 0-12.529-3.131-16.275-8.375l-6.245-8.743-4.916 6.882 4.651 6.511c5.244 7.342 13.763 11.725 22.785 11.725h9.992l-9.172 9.172c-1.563 1.563-1.563 4.094 0 5.656.781.781 1.805 1.172 2.828 1.172s2.047-.391 2.828-1.172l16-16c1.563-1.562 1.563-4.094 0-5.656zm0-56-16-16c-1.563-1.563-4.094-1.563-5.656 0s-1.563 4.094 0 5.656l9.172 9.172h-9.992c-9.021 0-17.541 4.383-22.787 11.727l-25.639 35.896c-3.748 5.246-9.832 8.377-16.278 8.377h-19.648c-2.209 0-4 1.791-4 4s1.791 4 4 4h19.648c9.021 0 17.541-4.383 22.787-11.727l25.639-35.896c3.748-5.246 9.832-8.377 16.278-8.377h9.992l-9.172 9.172c-1.563 1.563-1.563 4.094 0 5.656.781.781 1.805 1.172 2.828 1.172s2.047-.391 2.828-1.172l16-16c1.563-1.562 1.563-4.094 0-5.656z" />
+    </svg>
+  );
+}
+
+function CardsIcon({ size = 24, className }: { size?: number; className?: string }) {
+  return (
+    <svg className={className} width={size} height={size} viewBox="0 0 512 512">
+      <path d="m152 16-120 48 112 240 99.411-41.421z" fill="currentColor" opacity=".6" />
+      <path d="m296 59.294v-51.294h-144v256h104z" fill="currentColor" opacity=".8" />
+      <path d="m354.508 254.044 101.492-150.044-136-80-136 200 124.253 80.684" fill="currentColor" />
+    </svg>
+  );
+}
+
 const allDecks = decksData.decks as Deck[];
 const mainDecks = allDecks.filter((d) => d.type !== "thematic");
 const thematicDecks = allDecks.filter((d) => d.type === "thematic");
@@ -49,8 +67,8 @@ function PlayPageContent() {
     return () => el.removeEventListener("scroll", check);
   }, []);
 
-  const isLevel2Unlocked = sessionsCount >= LEVEL_UNLOCK[2].sessions;
-  const isLevel3Unlocked = sessionsCount >= LEVEL_UNLOCK[3].sessions;
+  const isLevel2Unlocked = sessionsCount >= LEVEL_UNLOCK[2].sessions || initialLevel >= 2;
+  const isLevel3Unlocked = sessionsCount >= LEVEL_UNLOCK[3].sessions || initialLevel >= 3;
 
   const levelOptions: { value: 1 | 2 | 3; label: string; locked: boolean; unlockHint: string }[] = [
     { value: 1, label: "Niveau 1", locked: false, unlockHint: "" },
@@ -100,8 +118,8 @@ function PlayPageContent() {
         {/* Random Mode Toggle */}
         <div className="flex items-center gap-4 px-4 py-4 justify-between border-b border-border">
           <div className="flex items-center gap-4">
-            <div className="w-10 h-10 rounded-lg bg-card flex items-center justify-center text-primary shrink-0">
-              <span className="text-xl">&#128256;</span>
+            <div className="w-10 h-10 rounded-lg bg-primary/15 flex items-center justify-center text-primary shrink-0">
+              <RandomIcon size={22} />
             </div>
             <div className="flex flex-col">
               <p className="text-base font-semibold leading-tight">
@@ -231,9 +249,9 @@ function PlayPageContent() {
         <button
           onClick={handleLaunch}
           disabled={!selectedDeck && !randomMode}
-          className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg py-4 rounded-xl shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all active:scale-95 flex items-center justify-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed"
+          className="relative z-10 w-full bg-primary hover:bg-primary/90 text-white font-bold text-lg py-4 rounded-xl shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all active:scale-95 flex items-center justify-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed"
         >
-          <span className="text-xl">&#9654;</span>
+          <CardsIcon size={24} />
           Lancer la session {level > 1 ? `(N${level})` : ""}
         </button>
       </div>

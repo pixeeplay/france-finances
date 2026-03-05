@@ -130,7 +130,7 @@ export default function HomePage() {
             Prêt à trancher ?
           </h2>
           <p className="text-muted-foreground text-sm font-medium mb-12 max-w-[200px]">
-            230 cartes, 17 catégories. Swipe pour trancher le budget.
+            270 cartes, 17 catégories. Swipe pour trancher le budget.
           </p>
 
           {/* Slide to play CTA */}

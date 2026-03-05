@@ -6,7 +6,7 @@
       "description": "Budget des armées, renseignement, gendarmerie",
       "icon": "⚔️",
       "color": "#3B82F6",
-      "cardCount": 15,
+      "cardCount": 20,
       "image": "/categories/defense.svg",
       "type": "main"
     },
@@ -16,7 +16,7 @@
       "description": "Nucléaire, renouvelables, hydrogène, crise énergétique, précarité",
       "icon": "⚡",
       "color": "#F59E0B",
-      "cardCount": 25,
+      "cardCount": 30,
       "image": "/categories/energie.svg",
       "type": "main"
     },
@@ -26,7 +26,7 @@
       "description": "Hôpitaux, médicaments, prévention, urgences, addictions",
       "icon": "🏥",
       "color": "#EF4444",
-      "cardCount": 25,
+      "cardCount": 30,
       "image": "/categories/sante.svg",
       "type": "main"
     },
@@ -36,7 +36,7 @@
       "description": "Retraites, famille, handicap, dépendance, pauvreté",
       "icon": "🤝",
       "color": "#8B5CF6",
-      "cardCount": 27,
+      "cardCount": 32,
       "image": "/categories/social.svg",
       "type": "main"
     },
@@ -46,7 +46,7 @@
       "description": "Enseignement, universités, recherche",
       "icon": "📚",
       "color": "#6366F1",
-      "cardCount": 15,
+      "cardCount": 20,
       "image": "/categories/educuation.svg",
       "type": "main"
     },
@@ -56,7 +56,7 @@
       "description": "Police, gendarmerie, tribunaux, prisons",
       "icon": "⚖️",
       "color": "#14B8A6",
-      "cardCount": 13,
+      "cardCount": 18,
       "image": "/categories/justice.svg",
       "type": "main"
     },
@@ -66,7 +66,7 @@
       "description": "Administration, dette, collectivités, diplomatie",
       "icon": "🏛️",
       "color": "#64748B",
-      "cardCount": 15,
+      "cardCount": 20,
       "image": "/categories/etat.svg",
       "type": "main"
     },
@@ -76,7 +76,7 @@
       "description": "Patrimoine, audiovisuel, rail, routes, écologie",
       "icon": "🎭",
       "color": "#EC4899",
-      "cardCount": 15,
+      "cardCount": 20,
       "image": "/categories/culture.svg",
       "type": "main"
     },
@@ -180,7 +180,8 @@
         "militaire",
         "nucléaire",
         "souveraineté"
-      ]
+      ],
+      "equivalence": "Le budget cumule des ministeres de la Justice ET de la Culture"
     },
     {
       "id": "def-02",
@@ -198,7 +199,8 @@
         "militaire",
         "marine",
         "équipement"
-      ]
+      ],
+      "equivalence": "Le salaire annuel de ~30 000 infirmieres hospitalieres"
     },
     {
       "id": "def-03",
@@ -216,7 +218,8 @@
         "militaire",
         "opérations",
         "OTAN"
-      ]
+      ],
+      "equivalence": "Le budget annuel complet de la Gendarmerie nationale"
     },
     {
       "id": "def-04",
@@ -235,7 +238,8 @@
         "militaire",
         "cyber",
         "technologie"
-      ]
+      ],
+      "equivalence": "Le cout de 3 satellites militaires d'observation"
     },
     {
       "id": "def-05",
@@ -254,7 +258,8 @@
         "militaire",
         "renseignement",
         "souveraineté"
-      ]
+      ],
+      "equivalence": "~2x le budget annuel de l'Opera national de Paris"
     },
     {
       "id": "def-06",
@@ -272,7 +277,8 @@
         "militaire",
         "santé",
         "hôpitaux"
-      ]
+      ],
+      "equivalence": "Le fonctionnement de ~10 CHU de taille moyenne"
     },
     {
       "id": "def-07",
@@ -291,7 +297,8 @@
         "militaire",
         "espace",
         "technologie"
-      ]
+      ],
+      "equivalence": "~2 missions de la sonde Rosetta (ESA)"
     },
     {
       "id": "def-08",
@@ -310,7 +317,8 @@
         "militaire",
         "infrastructure",
         "logement"
-      ]
+      ],
+      "equivalence": "La construction de ~24 000 logements sociaux / an"
     },
     {
       "id": "def-09",
@@ -328,7 +336,8 @@
         "militaire",
         "innovation",
         "technologie"
-      ]
+      ],
+      "equivalence": "4x le budget annuel du CNRS en sciences informatiques"
     },
     {
       "id": "def-10",
@@ -346,7 +355,8 @@
         "militaire",
         "OTAN",
         "trajectoire"
-      ]
+      ],
+      "equivalence": "Les +40 Md€ recherches = le budget total de l'Education nationale hors salaires"
     },
     {
       "id": "ene-01",
@@ -364,7 +374,8 @@
         "énergie",
         "renouvelables",
         "subventions"
-      ]
+      ],
+      "equivalence": "2x le budget annuel de la recherche publique francaise"
     },
     {
       "id": "ene-02",
@@ -381,7 +392,8 @@
         "énergie",
         "éolien",
         "mer"
-      ]
+      ],
+      "equivalence": "1 GW offshore coute en subventions l'equivalent du budget annuel de 3 prefectures"
     },
     {
       "id": "ene-03",
@@ -399,7 +411,8 @@
         "énergie",
         "nucléaire",
         "construction"
-      ]
+      ],
+      "equivalence": "6 EPR = ~4x le cout du tunnel sous la Manche (ajuste inflation)"
     },
     {
       "id": "ene-04",
@@ -417,7 +430,8 @@
         "énergie",
         "fossiles",
         "importation"
-      ]
+      ],
+      "equivalence": "64 Md€ = le budget total de la Defense + celui de la Justice"
     },
     {
       "id": "ene-05",
@@ -434,7 +448,8 @@
         "énergie",
         "réseau",
         "infrastructure"
-      ]
+      ],
+      "equivalence": "200 Md€ sur 15 ans = ~1 Grand Paris Express tous les 3 ans"
     },
     {
       "id": "ene-06",
@@ -453,7 +468,8 @@
         "énergie",
         "mobilité",
         "électrique"
-      ]
+      ],
+      "equivalence": "1,5 Md€ = le cout de 2 ans de fonctionnement du reseau de tramways francais"
     },
     {
       "id": "ene-07",
@@ -470,7 +486,8 @@
         "énergie",
         "rénovation",
         "logement"
-      ]
+      ],
+      "equivalence": "3 Md€ = l'isolation complete de ~150 000 logements/an"
     },
     {
       "id": "ene-08",
@@ -487,7 +504,8 @@
         "énergie",
         "nucléaire",
         "maintenance"
-      ]
+      ],
+      "equivalence": "Prolonger 1 reacteur coute ~20x moins cher que d'en construire un neuf (EPR2)"
     },
     {
       "id": "ene-09",
@@ -505,7 +523,8 @@
         "énergie",
         "renouvelables",
         "PPE3"
-      ]
+      ],
+      "equivalence": "Dans le pire scenario, 212 Md€ = la moitie du cout de la LPM militaire 2024-2030"
     },
     {
       "id": "ene-10",
@@ -522,7 +541,8 @@
         "énergie",
         "exportation",
         "recettes"
-      ]
+      ],
+      "equivalence": "Les exportations d'electricite rapportent autant que l'industrie aeronautique civile"
     },
     {
       "id": "san-01",
@@ -541,7 +561,8 @@
         "santé",
         "ONDAM",
         "assurance maladie"
-      ]
+      ],
+      "equivalence": "L'ONDAM = 5x le budget de la Defense"
     },
     {
       "id": "san-02",
@@ -559,7 +580,8 @@
         "santé",
         "hôpital",
         "déficit"
-      ]
+      ],
+      "equivalence": "Le budget hospitalier annuel = 2x celui de l'ensemble des collectivites locales en investissement"
     },
     {
       "id": "san-03",
@@ -576,7 +598,8 @@
         "santé",
         "médecine",
         "soins de ville"
-      ]
+      ],
+      "equivalence": "Les soins de ville coutent plus que tout le budget de la Defense + de l'Education nationale reunis"
     },
     {
       "id": "san-04",
@@ -593,7 +616,8 @@
         "santé",
         "médicaments",
         "pharmacie"
-      ]
+      ],
+      "equivalence": "37 Md€ = le PIB annuel du Luxembourg"
     },
     {
       "id": "san-05",
@@ -610,7 +634,8 @@
         "santé",
         "dépendance",
         "personnes âgées"
-      ]
+      ],
+      "equivalence": "Le cout de la dependance augmentera de +50% d'ici 2050 selon la DREES"
     },
     {
       "id": "san-06",
@@ -627,7 +652,8 @@
         "santé",
         "psychiatrie",
         "santé mentale"
-      ]
+      ],
+      "equivalence": "Les troubles psychiques coutent ~109 Md€/an a la societe selon l'OMS"
     },
     {
       "id": "san-07",
@@ -645,7 +671,8 @@
         "santé",
         "arrêts maladie",
         "indemnités"
-      ]
+      ],
+      "equivalence": "16 Md€ d'IJ = le double du budget annuel de la Justice"
     },
     {
       "id": "san-08",
@@ -662,7 +689,8 @@
         "santé",
         "fraude",
         "contrôle"
-      ]
+      ],
+      "equivalence": "La fraude estimee a la Secu (5-8 Md€) = le budget annuel de la recherche publique"
     },
     {
       "id": "san-09",
@@ -679,7 +707,8 @@
         "santé",
         "accès aux soins",
         "territoires"
-      ]
+      ],
+      "equivalence": "Former un medecin coute ~200 000€ a l'Etat sur 9 a 12 ans d'etudes"
     },
     {
       "id": "san-10",
@@ -698,7 +727,8 @@
         "santé",
         "reste à charge",
         "mutuelles"
-      ]
+      ],
+      "equivalence": "Les Francais payent ~2x moins de leur poche que les Allemands pour se soigner"
     },
     {
       "id": "soc-01",
@@ -716,7 +746,8 @@
         "social",
         "retraites",
         "pensions"
-      ]
+      ],
+      "equivalence": "370 Md€ de retraites = 7x le budget de la Defense"
     },
     {
       "id": "soc-02",
@@ -734,7 +765,8 @@
         "social",
         "réforme",
         "retraites"
-      ]
+      ],
+      "equivalence": "Chaque annee de recul de l'age legal = ~7 Md€ d'economies"
     },
     {
       "id": "soc-03",
@@ -752,7 +784,8 @@
         "social",
         "retraites",
         "fonctionnaires"
-      ]
+      ],
+      "equivalence": "Le CAS Pensions = le 3e budget de l'Etat, devant la Defense"
     },
     {
       "id": "soc-04",
@@ -770,7 +803,8 @@
         "social",
         "chômage",
         "emploi"
-      ]
+      ],
+      "equivalence": "La dette de l'Unedic (50 Md€) = le cout de 3 EPR2 nucleaires"
     },
     {
       "id": "soc-05",
@@ -788,7 +822,8 @@
         "social",
         "famille",
         "natalité"
-      ]
+      ],
+      "equivalence": "59,5 Md€ = le budget combine de la Justice + Interieur + Culture"
     },
     {
       "id": "soc-06",
@@ -806,7 +841,8 @@
         "social",
         "solidarité",
         "minima sociaux"
-      ]
+      ],
+      "equivalence": "Les 30 Md€ de minima sociaux = 6% du budget total de l'Etat"
     },
     {
       "id": "soc-07",
@@ -825,7 +861,8 @@
         "social",
         "logement",
         "APL"
-      ]
+      ],
+      "equivalence": "16,5 Md€ d'APL = le cout de construction de ~80 000 logements sociaux/an"
     },
     {
       "id": "soc-08",
@@ -842,7 +879,8 @@
         "social",
         "emploi",
         "cotisations"
-      ]
+      ],
+      "equivalence": "Les 80 Md€ d'exonerations = plus que le budget de l'Education nationale"
     },
     {
       "id": "soc-09",
@@ -859,7 +897,8 @@
         "social",
         "fraude",
         "retraites"
-      ]
+      ],
+      "equivalence": "5,9 Md€ = le budget annuel du ministere de la Culture"
     },
     {
       "id": "soc-10",
@@ -877,7 +916,8 @@
         "social",
         "déficit",
         "sécurité sociale"
-      ]
+      ],
+      "equivalence": "Le deficit annuel de la Secu = 2x le budget de la Justice"
     },
     {
       "id": "soc-11",
@@ -895,7 +935,8 @@
         "social",
         "apprentissage",
         "formation"
-      ]
+      ],
+      "equivalence": "Les aides a l'apprentissage ont ete multipliees par 4 en 6 ans"
     },
     {
       "id": "soc-12",
@@ -912,7 +953,8 @@
         "social",
         "protection sociale",
         "modèle français"
-      ]
+      ],
+      "equivalence": "La protection sociale francaise = le PIB total de la Suisse"
     },
     {
       "id": "edu-01",
@@ -930,7 +972,8 @@
         "éducation",
         "budget",
         "enseignement"
-      ]
+      ],
+      "equivalence": "Le budget de l'EN = les recettes fiscales de la TVA sur l'alimentation"
     },
     {
       "id": "edu-02",
@@ -947,7 +990,8 @@
         "éducation",
         "supérieur",
         "universités"
-      ]
+      ],
+      "equivalence": "Le budget recherche + superieur = la moitie du budget Defense"
     },
     {
       "id": "edu-03",
@@ -964,7 +1008,8 @@
         "éducation",
         "salaires",
         "enseignants"
-      ]
+      ],
+      "equivalence": "Augmenter tous les enseignants de 300€/mois couterait ~3 Md€/an"
     },
     {
       "id": "edu-04",
@@ -981,7 +1026,8 @@
         "éducation",
         "infrastructure",
         "rénovation"
-      ]
+      ],
+      "equivalence": "Les 40 Md€ necessaires = le cout de 6 EPR2 nucleaires"
     },
     {
       "id": "edu-05",
@@ -998,7 +1044,8 @@
         "éducation",
         "handicap",
         "inclusion"
-      ]
+      ],
+      "equivalence": "Le budget ecole inclusive = le prix de 2 sous-marins nucleaires"
     },
     {
       "id": "edu-06",
@@ -1015,7 +1062,8 @@
         "éducation",
         "recherche",
         "CNRS"
-      ]
+      ],
+      "equivalence": "Le budget recherche publique = 1/5e de ce que les USA y consacrent (a population comparable)"
     },
     {
       "id": "edu-07",
@@ -1032,7 +1080,8 @@
         "éducation",
         "bourses",
         "étudiants"
-      ]
+      ],
+      "equivalence": "Doubler les bourses couterait ~2,4 Md€/an, soit moins que le CIR"
     },
     {
       "id": "edu-08",
@@ -1049,7 +1098,8 @@
         "éducation",
         "fiscalité",
         "R&D"
-      ]
+      ],
+      "equivalence": "7 Md€ de CIR = le budget annuel de la recherche publique au CNRS"
     },
     {
       "id": "edu-09",
@@ -1066,7 +1116,8 @@
         "éducation",
         "citoyenneté",
         "jeunesse"
-      ]
+      ],
+      "equivalence": "Generaliser le SNU couterait autant que l'ensemble des bourses + CROUS + ecole inclusive"
     },
     {
       "id": "edu-10",
@@ -1083,7 +1134,8 @@
         "éducation",
         "privé",
         "mixité sociale"
-      ]
+      ],
+      "equivalence": "13 Md€ = le budget annuel du ministere de la Justice"
     },
     {
       "id": "sec-01",
@@ -1101,7 +1153,8 @@
         "sécurité",
         "police",
         "LOPMI"
-      ]
+      ],
+      "equivalence": "13,4 Md€ = le budget cumule de l'Outre-mer + de la Culture"
     },
     {
       "id": "sec-02",
@@ -1120,7 +1173,8 @@
         "sécurité",
         "gendarmerie",
         "territoires"
-      ]
+      ],
+      "equivalence": "Le budget gendarmerie = la moitie du budget de la recherche publique"
     },
     {
       "id": "sec-03",
@@ -1138,7 +1192,8 @@
         "justice",
         "magistrats",
         "budget"
-      ]
+      ],
+      "equivalence": "Le budget Justice = 1/6e du budget Defense"
     },
     {
       "id": "sec-04",
@@ -1155,7 +1210,8 @@
         "justice",
         "prisons",
         "surpopulation"
-      ]
+      ],
+      "equivalence": "Construire les 15 000 places manquantes = ~2,6 Md€, soit 1 EPR2"
     },
     {
       "id": "sec-05",
@@ -1172,7 +1228,8 @@
         "sécurité",
         "pompiers",
         "crises"
-      ]
+      ],
+      "equivalence": "1 Canadair neuf = ~55 M€, la flotte francaise en compte 12 (les plus vieux d'Europe)"
     },
     {
       "id": "sec-06",
@@ -1189,7 +1246,8 @@
         "sécurité",
         "renseignement",
         "terrorisme"
-      ]
+      ],
+      "equivalence": "Le budget DGSI = 1/1 200e du budget de l'Etat"
     },
     {
       "id": "sec-07",
@@ -1206,7 +1264,8 @@
         "justice",
         "accès au droit",
         "avocats"
-      ]
+      ],
+      "equivalence": "700 M€ d'AJ = le cout de 2 jours d'indemnites journalieres maladie"
     },
     {
       "id": "sec-08",
@@ -1223,7 +1282,8 @@
         "sécurité",
         "cybersécurité",
         "ANSSI"
-      ]
+      ],
+      "equivalence": "Le cout moyen d'une cyberattaque reussie contre un hopital : 1-10 M€"
     },
     {
       "id": "eta-01",
@@ -1242,7 +1302,8 @@
         "état",
         "dette",
         "intérêts"
-      ]
+      ],
+      "equivalence": "Les 55 Md€ d'interets = le budget complet de la Defense"
     },
     {
       "id": "eta-02",
@@ -1260,7 +1321,8 @@
         "état",
         "fonctionnaires",
         "salaires"
-      ]
+      ],
+      "equivalence": "Les 5,7 millions de fonctionnaires = 20% de l'emploi total"
     },
     {
       "id": "eta-03",
@@ -1278,7 +1340,8 @@
         "état",
         "collectivités",
         "décentralisation"
-      ]
+      ],
+      "equivalence": "Les 36 000 communes francaises = plus que tous les pays de l'UE reunis"
     },
     {
       "id": "eta-04",
@@ -1295,7 +1358,8 @@
         "état",
         "fraude",
         "recettes"
-      ]
+      ],
+      "equivalence": "Si la fraude fiscale etait recuperee integralement, elle solderait le deficit public"
     },
     {
       "id": "eta-05",
@@ -1312,7 +1376,8 @@
         "état",
         "fiscalité",
         "niches"
-      ]
+      ],
+      "equivalence": "Les niches fiscales = le budget combine Defense + Justice + Interieur"
     },
     {
       "id": "eta-06",
@@ -1331,7 +1396,8 @@
         "état",
         "international",
         "aide"
-      ]
+      ],
+      "equivalence": "Les 15 Md€ d'APD = le budget annuel des APL (aides au logement)"
     },
     {
       "id": "eta-07",
@@ -1348,7 +1414,8 @@
         "état",
         "entreprises",
         "subventions"
-      ]
+      ],
+      "equivalence": "Les aides totales aux entreprises = les prestations sociales versees aux menages modestes"
     },
     {
       "id": "eta-08",
@@ -1366,7 +1433,8 @@
         "état",
         "outre-mer",
         "territoires"
-      ]
+      ],
+      "equivalence": "Le transfert net par ultramarin est ~3x superieur a la moyenne des transferts par metropolitain"
     },
     {
       "id": "eta-09",
@@ -1385,7 +1453,8 @@
         "état",
         "diplomatie",
         "affaires étrangères"
-      ]
+      ],
+      "equivalence": "Le budget du Quai d'Orsay = 1/10e de celui de la Defense"
     },
     {
       "id": "eta-10",
@@ -1403,7 +1472,8 @@
         "état",
         "déficit",
         "dette"
-      ]
+      ],
+      "equivalence": "La dette francaise (3 300 Md€) = le PIB de l'Inde"
     },
     {
       "id": "cul-01",
@@ -1422,7 +1492,8 @@
         "culture",
         "patrimoine",
         "musées"
-      ]
+      ],
+      "equivalence": "Le budget Culture = 1/20e du budget Defense"
     },
     {
       "id": "cul-02",
@@ -1440,7 +1511,8 @@
         "culture",
         "audiovisuel",
         "médias"
-      ]
+      ],
+      "equivalence": "L'audiovisuel public coute autant que la DGSI + l'aide juridictionnelle"
     },
     {
       "id": "cul-03",
@@ -1457,7 +1529,8 @@
         "transports",
         "rail",
         "SNCF"
-      ]
+      ],
+      "equivalence": "Remettre en etat tout le reseau ferre couterait ~100 Md€ sur 20 ans"
     },
     {
       "id": "cul-04",
@@ -1474,7 +1547,8 @@
         "transports",
         "routes",
         "autoroutes"
-      ]
+      ],
+      "equivalence": "Les autoroutes privees rapportent chaque annee autant que le budget Culture + Sport reunis"
     },
     {
       "id": "cul-05",
@@ -1491,7 +1565,8 @@
         "transports",
         "urbain",
         "Grand Paris"
-      ]
+      ],
+      "equivalence": "Le Grand Paris Express coutera autant que 6 EPR2 nucleaires"
     },
     {
       "id": "cul-06",
@@ -1508,7 +1583,8 @@
         "sport",
         "JOP",
         "clubs"
-      ]
+      ],
+      "equivalence": "1,5 Md€ = le prix de 3 stades de 60 000 places"
     },
     {
       "id": "cul-07",
@@ -1525,7 +1601,8 @@
         "culture",
         "presse",
         "médias"
-      ]
+      ],
+      "equivalence": "Les aides a la presse = le budget annuel de 3 grandes bibliotheques nationales"
     },
     {
       "id": "cul-08",
@@ -1542,7 +1619,8 @@
         "culture",
         "patrimoine",
         "monuments"
-      ]
+      ],
+      "equivalence": "Restaurer 1 cathedrale = le prix de 10 creches"
     },
     {
       "id": "cul-09",
@@ -1560,7 +1638,8 @@
         "transports",
         "aérien",
         "DGAC"
-      ]
+      ],
+      "equivalence": "La detaxe du kerosene = le budget annuel de la Culture"
     },
     {
       "id": "cul-10",
@@ -1578,7 +1657,8 @@
         "environnement",
         "biodiversité",
         "écologie"
-      ]
+      ],
+      "equivalence": "Le budget biodiversite francais = 1/10e du budget annuel de la PAC europeenne"
     },
     {
       "id": "agr-01",
@@ -1595,7 +1675,8 @@
         "agriculture",
         "PAC",
         "Europe"
-      ]
+      ],
+      "equivalence": "Sans la PAC, le prix du panier de courses augmenterait de ~5-10% selon les estimations"
     },
     {
       "id": "agr-02",
@@ -1613,7 +1694,8 @@
         "agriculture",
         "budget",
         "ministère"
-      ]
+      ],
+      "equivalence": "Moins de la moitie du budget d'un seul porte-avions (1,2 Md€/an)"
     },
     {
       "id": "agr-03",
@@ -1630,7 +1712,8 @@
         "agriculture",
         "eau",
         "environnement"
-      ]
+      ],
+      "equivalence": "1 km de metro du Grand Paris Express (~200 M€) pour chaque agence"
     },
     {
       "id": "agr-04",
@@ -1647,7 +1730,8 @@
         "agriculture",
         "forêts",
         "ONF"
-      ]
+      ],
+      "equivalence": "Moins d'1€ par hectare de foret publique et par mois"
     },
     {
       "id": "agr-05",
@@ -1664,7 +1748,8 @@
         "agriculture",
         "bio",
         "environnement"
-      ]
+      ],
+      "equivalence": "Le prix de 2 cafes par Francais et par an pour financer le bio"
     },
     {
       "id": "agr-06",
@@ -1681,7 +1766,8 @@
         "agriculture",
         "sécurité alimentaire",
         "contrôle"
-      ]
+      ],
+      "equivalence": "2 centimes par repas pour garantir la securite de ce qu'on mange"
     },
     {
       "id": "agr-07",
@@ -1698,7 +1784,8 @@
         "agriculture",
         "calamités",
         "assurance"
-      ]
+      ],
+      "equivalence": "Le prix d'un ticket de metro par Francais et par an contre les crises agricoles"
     },
     {
       "id": "agr-08",
@@ -1715,7 +1802,8 @@
         "agriculture",
         "total",
         "vue d'ensemble"
-      ]
+      ],
+      "equivalence": "~63 000€ de soutien public par exploitation agricole et par an"
     },
     {
       "id": "log-01",
@@ -1732,7 +1820,8 @@
         "logement",
         "social",
         "HLM"
-      ]
+      ],
+      "equivalence": "Chaque logement social neuf coute environ 150 000€ en aides publiques"
     },
     {
       "id": "log-02",
@@ -1749,7 +1838,8 @@
         "logement",
         "urgence",
         "sans-abri"
-      ]
+      ],
+      "equivalence": "~42€ par nuit et par personne hebergee (dont beaucoup en hotel)"
     },
     {
       "id": "log-03",
@@ -1766,7 +1856,8 @@
         "logement",
         "rénovation urbaine",
         "quartiers"
-      ]
+      ],
+      "equivalence": "450 quartiers renoves, soit ~27 M€ par quartier en moyenne"
     },
     {
       "id": "log-04",
@@ -1784,7 +1875,8 @@
         "logement",
         "PTZ",
         "accession"
-      ]
+      ],
+      "equivalence": "~40 000€ de subvention implicite par menage beneficiaire"
     },
     {
       "id": "log-05",
@@ -1801,7 +1893,8 @@
         "logement",
         "politique de la ville",
         "QPV"
-      ]
+      ],
+      "equivalence": "~110€ par habitant de quartier prioritaire et par an"
     },
     {
       "id": "log-06",
@@ -1818,7 +1911,8 @@
         "logement",
         "numérique",
         "fibre"
-      ]
+      ],
+      "equivalence": "Le budget de 6 CNRS chaque annee pendant 5 ans"
     },
     {
       "id": "log-07",
@@ -1837,7 +1931,8 @@
         "logement",
         "budget",
         "cohésion"
-      ]
+      ],
+      "equivalence": "Plus que le budget de la Defense (hors pensions)"
     },
     {
       "id": "log-08",
@@ -1854,7 +1949,8 @@
         "logement",
         "fiscalité",
         "investissement locatif"
-      ]
+      ],
+      "equivalence": "Les niches fiscales = le budget combine Defense + Justice + Interieur"
     },
     {
       "id": "imm-01",
@@ -1872,7 +1968,8 @@
         "immigration",
         "asile",
         "budget"
-      ]
+      ],
+      "equivalence": "Le budget annuel du ministere de la Culture (4,4 Md€) divise par 2"
     },
     {
       "id": "imm-02",
@@ -1890,7 +1987,8 @@
         "immigration",
         "santé",
         "AME"
-      ]
+      ],
+      "equivalence": "~3 000€ de depense annuelle par beneficiaire (vs ~3 900€/personne pour l'Assurance maladie classique)"
     },
     {
       "id": "imm-03",
@@ -1908,7 +2006,8 @@
         "immigration",
         "coût global",
         "budget"
-      ]
+      ],
+      "equivalence": "La mission Immigration ne represente que 22% du cout total"
     },
     {
       "id": "imm-04",
@@ -1926,7 +2025,8 @@
         "immigration",
         "rétention",
         "OQTF"
-      ]
+      ],
+      "equivalence": "~150 000€ de cout de construction par place de CRA"
     },
     {
       "id": "imm-05",
@@ -1944,7 +2044,8 @@
         "immigration",
         "asile",
         "allocation"
-      ]
+      ],
+      "equivalence": "L'ADA (204€/mois) = 38% du montant du RSA (607€/mois)"
     },
     {
       "id": "imm-06",
@@ -1961,7 +2062,8 @@
         "immigration",
         "hébergement",
         "asile"
-      ]
+      ],
+      "equivalence": "~32€ par nuit et par place en centre d'accueil"
     },
     {
       "id": "imm-07",
@@ -1978,7 +2080,8 @@
         "immigration",
         "intégration",
         "français"
-      ]
+      ],
+      "equivalence": "~1 500€ par parcours d'integration (contrat CIR de 4 ans)"
     },
     {
       "id": "imm-08",
@@ -1995,7 +2098,8 @@
         "immigration",
         "mineurs",
         "départements"
-      ]
+      ],
+      "equivalence": "~140€/jour par MNA pris en charge, comparable au cout d'une nuit d'hotel a Paris"
     },
     {
       "id": "num-01",
@@ -2012,7 +2116,8 @@
         "numérique",
         "investissement",
         "France 2030"
-      ]
+      ],
+      "equivalence": "Le budget de 6 CNRS chaque annee pendant 5 ans"
     },
     {
       "id": "num-02",
@@ -2029,7 +2134,8 @@
         "numérique",
         "spatial",
         "CNES"
-      ]
+      ],
+      "equivalence": "1 lancement Ariane 6 coute ~150 M€ (vs ~67 M$ pour un Falcon 9 SpaceX)"
     },
     {
       "id": "num-03",
@@ -2046,7 +2152,8 @@
         "numérique",
         "IA",
         "recherche"
-      ]
+      ],
+      "equivalence": "Le budget IA francais = ce que Google ou Microsoft investit en IA en ~1 semaine"
     },
     {
       "id": "num-04",
@@ -2063,7 +2170,8 @@
         "numérique",
         "quantique",
         "recherche"
-      ]
+      ],
+      "equivalence": "Le budget annuel de 4 lycees pour preparer la prochaine revolution informatique"
     },
     {
       "id": "num-05",
@@ -2080,7 +2188,8 @@
         "numérique",
         "État",
         "administration"
-      ]
+      ],
+      "equivalence": "0,4 centime par demarche en ligne (plus de 500 millions/an)"
     },
     {
       "id": "num-06",
@@ -2097,7 +2206,8 @@
         "numérique",
         "semiconducteurs",
         "industrie"
-      ]
+      ],
+      "equivalence": "1 usine de puces = 5-10 Md€ d'investissement (~le budget annuel de la Justice)"
     },
     {
       "id": "num-07",
@@ -2114,7 +2224,8 @@
         "numérique",
         "cybersécurité",
         "ANSSI"
-      ]
+      ],
+      "equivalence": "6€ de prevention par citoyen vs 2 Md€ de degats annuels"
     },
     {
       "id": "num-08",
@@ -2131,7 +2242,8 @@
         "numérique",
         "emploi",
         "France Travail"
-      ]
+      ],
+      "equivalence": "~1 800€ de cout d'accompagnement par demandeur d'emploi et par an"
     },
     {
       "id": "rec-01",
@@ -2149,7 +2261,8 @@
         "recettes",
         "TVA",
         "consommation"
-      ]
+      ],
+      "equivalence": "Chaque Francais paie ~8€ de TVA par jour sans le savoir"
     },
     {
       "id": "rec-02",
@@ -2168,7 +2281,8 @@
         "recettes",
         "IR",
         "impôt"
-      ]
+      ],
+      "equivalence": "Un foyer impose paie en moyenne ~3 500€/an d'IR"
     },
     {
       "id": "rec-03",
@@ -2185,7 +2299,8 @@
         "recettes",
         "IS",
         "entreprises"
-      ]
+      ],
+      "equivalence": "Les 40 entreprises du CAC40 paient ensemble ~30 Md€ d'IS (la moitie du total)"
     },
     {
       "id": "rec-04",
@@ -2203,7 +2318,8 @@
         "recettes",
         "CSG",
         "cotisations"
-      ]
+      ],
+      "equivalence": "Sur 100€ bruts de salaire, ~7,50€ partent en CSG avant meme l'IR"
     },
     {
       "id": "rec-05",
@@ -2220,7 +2336,8 @@
         "recettes",
         "carburants",
         "taxe"
-      ]
+      ],
+      "equivalence": "Sur un plein de 60L a 1,80€/L, ~40€ sont des taxes (accises + TVA)"
     },
     {
       "id": "rec-06",
@@ -2237,7 +2354,8 @@
         "recettes",
         "succession",
         "patrimoine"
-      ]
+      ],
+      "equivalence": "Les Francais transmettent ~300 Md€ par an, l'Etat en preleve ~7%"
     },
     {
       "id": "rec-07",
@@ -2254,7 +2372,8 @@
         "recettes",
         "foncier",
         "communes"
-      ]
+      ],
+      "equivalence": "Un proprietaire francais paie en moyenne ~800€/an de foncier (tres variable)"
     },
     {
       "id": "rec-08",
@@ -2271,7 +2390,8 @@
         "recettes",
         "IFI",
         "fortune"
-      ]
+      ],
+      "equivalence": "Le retour a l'ISF rapporterait ~3,5 Md€ de plus"
     },
     {
       "id": "rec-09",
@@ -2289,7 +2409,8 @@
         "recettes",
         "prélèvements",
         "PIB"
-      ]
+      ],
+      "equivalence": "Un salarie au SMIC travaille de janvier a debut juin uniquement pour les prelevements"
     },
     {
       "id": "rec-10",
@@ -2306,7 +2427,8 @@
         "recettes",
         "non fiscal",
         "dividendes"
-      ]
+      ],
+      "equivalence": "Les amendes radars rapportent ~1,8 Md€/an, soit le budget du ministere de la Culture"
     },
     {
       "id": "emp-01",
@@ -2323,7 +2445,8 @@
         "emploi",
         "formation",
         "CPF"
-      ]
+      ],
+      "equivalence": "~1 200€ de depense formation par actif et par an"
     },
     {
       "id": "emp-02",
@@ -2340,7 +2463,8 @@
         "emploi",
         "fiscalité",
         "services à la personne"
-      ]
+      ],
+      "equivalence": "2e plus grosse niche fiscale, juste derriere le CIR (7 Md€)"
     },
     {
       "id": "emp-03",
@@ -2357,7 +2481,8 @@
         "emploi",
         "outre-mer",
         "exonérations"
-      ]
+      ],
+      "equivalence": "Le transfert net par ultramarin est ~3x superieur a la moyenne des transferts par metropolitain"
     },
     {
       "id": "emp-04",
@@ -2375,7 +2500,8 @@
         "emploi",
         "compétitivité",
         "impôt de production"
-      ]
+      ],
+      "equivalence": "La suppression complete de la CVAE coutera ~10 Md€ a terme a l'Etat"
     },
     {
       "id": "emp-05",
@@ -2392,7 +2518,8 @@
         "emploi",
         "chômage partiel",
         "crise"
-      ]
+      ],
+      "equivalence": "Le pic COVID (35 Md€) = 2,5x le budget annuel de la Justice"
     },
     {
       "id": "emp-06",
@@ -2409,7 +2536,8 @@
         "emploi",
         "prime d'activité",
         "travailleurs pauvres"
-      ]
+      ],
+      "equivalence": "La prime d'activite coute plus que le RSA (~10,5 Md€ vs ~10 Md€)"
     },
     {
       "id": "emp-07",
@@ -2426,7 +2554,8 @@
         "emploi",
         "jeunes",
         "insertion"
-      ]
+      ],
+      "equivalence": "~5 000€ par jeune accompagne sur un parcours complet"
     },
     {
       "id": "emp-08",
@@ -2443,7 +2572,8 @@
         "emploi",
         "CICE",
         "cotisations"
-      ]
+      ],
+      "equivalence": "Si 200 000 emplois crees, chaque emploi coute ~125 000€/an au contribuable"
     },
     {
       "id": "cre-01",
@@ -2462,7 +2592,8 @@
         "bouclier tarifaire",
         "crise"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "Entre 1 et 3 ans de budget de la Defense engloutis en 3 ans de crise"
     },
     {
       "id": "cre-02",
@@ -2481,7 +2612,8 @@
         "électricité",
         "bouclier tarifaire"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "19,2 Md€ en 2023 = le budget annuel entier de la Justice x 2"
     },
     {
       "id": "cre-03",
@@ -2500,7 +2632,8 @@
         "carburant",
         "transport"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "8,5 Md€ = le double du budget annuel du ministere de la Culture"
     },
     {
       "id": "cre-04",
@@ -2519,7 +2652,8 @@
         "EDF",
         "nationalisation"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "Le prix de 8 EPR2 (cout unitaire estime ~1,2 Md€ hors surcouts)"
     },
     {
       "id": "cre-05",
@@ -2539,7 +2673,8 @@
         "nucléaire",
         "EDF"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "EDF a vendu son electricite 5 a 10x moins cher que le marche, sur ordre de l'Etat"
     },
     {
       "id": "cre-06",
@@ -2558,7 +2693,8 @@
         "aide sociale",
         "précarité"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "200€ de cheque energie = environ 1 mois de chauffage pour un studio"
     },
     {
       "id": "cre-07",
@@ -2577,7 +2713,8 @@
         "entreprises",
         "industrie"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "La France a depense 3x moins que l'Allemagne pour proteger ses entreprises"
     },
     {
       "id": "cre-08",
@@ -2596,7 +2733,8 @@
         "renouvelables",
         "recettes"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "Les eoliennes ont rembourse l'equivalent de 2 ans de cheques energie"
     },
     {
       "id": "cre-09",
@@ -2615,7 +2753,8 @@
         "importations",
         "hydrocarbures"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "La France envoie chaque annee l'equivalent du budget de l'Education nationale a l'etranger pour ses hydrocarbures"
     },
     {
       "id": "cre-10",
@@ -2634,7 +2773,8 @@
         "bilan",
         "crise"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "85 Md€ = la moitie de la charge annuelle de la dette publique"
     },
     {
       "id": "hop-01",
@@ -2653,7 +2793,8 @@
         "hôpital",
         "budget"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "Chaque Francais depense 135€/mois pour l'hopital public, soit un abonnement Netflix x 10"
     },
     {
       "id": "hop-02",
@@ -2672,7 +2813,8 @@
         "hôpital",
         "salaires"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "Un infirmier hospitalier gagne ~2 100€ nets/mois (apres Segur), vs ~2 800€ dans le prive ou en interim"
     },
     {
       "id": "hop-03",
@@ -2692,7 +2834,8 @@
         "T2A",
         "financement"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "Une appendicectomie est remboursee ~2 500€ a l'hopital, quel que soit le temps reel passe"
     },
     {
       "id": "hop-04",
@@ -2711,7 +2854,8 @@
         "urgences",
         "hôpital"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "Un passage aux urgences coute ~240€ en moyenne, vs ~25€ chez le generaliste"
     },
     {
       "id": "hop-05",
@@ -2731,7 +2875,8 @@
         "dette",
         "investissement"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "La dette de l'hopital = 3x le budget annuel du ministere de la Justice"
     },
     {
       "id": "hop-06",
@@ -2750,7 +2895,8 @@
         "psychiatrie",
         "santé mentale"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "Les troubles psychiques coutent ~109 Md€/an a la societe selon l'OMS"
     },
     {
       "id": "hop-07",
@@ -2770,7 +2916,8 @@
         "proximité",
         "rural"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "Un hopital de proximite coute ~27 M€/an pour desservir ~30 000 habitants"
     },
     {
       "id": "hop-08",
@@ -2790,7 +2937,8 @@
         "recherche",
         "formation"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "L'AP-HP = le PIB du Tchad (8 Md€), pour 10 millions de patients/an"
     },
     {
       "id": "hop-09",
@@ -2809,7 +2957,8 @@
         "intérim",
         "hôpital"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "1 medecin interimaire coute autant que 2-3 medecins titulaires"
     },
     {
       "id": "hop-10",
@@ -2828,7 +2977,8 @@
         "ambulatoire",
         "économies"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "Chaque point de chirurgie ambulatoire gagne = ~500 M€ d'economies"
     },
     {
       "id": "fre-01",
@@ -2847,7 +2997,8 @@
         "contribution",
         "budget UE"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "Chaque Francais paie ~1€/jour pour l'Union europeenne"
     },
     {
       "id": "fre-02",
@@ -2867,7 +3018,8 @@
         "PAC",
         "fonds structurels"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "La France recoit 65 centimes pour chaque euro verse a l'UE"
     },
     {
       "id": "fre-03",
@@ -2886,7 +3038,8 @@
         "relance",
         "NextGenerationEU"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "La France recoit plus de NextGenerationEU que ce que coute son budget Justice en 4 ans"
     },
     {
       "id": "fre-04",
@@ -2906,7 +3059,8 @@
         "Ukraine",
         "FEP"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "La contribution francaise a la FEP = le budget annuel de l'aide juridictionnelle"
     },
     {
       "id": "fre-05",
@@ -2926,7 +3080,8 @@
         "Erasmus",
         "mobilité"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "6€/an par Francais pour 600 000 echanges etudiants/an en Europe"
     },
     {
       "id": "fre-06",
@@ -2946,7 +3101,8 @@
         "immigration",
         "Frontex"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "Le budget Frontex = le prix de 2 heures d'operations militaires francaises par jour"
     },
     {
       "id": "fre-07",
@@ -2966,7 +3122,8 @@
         "souveraineté",
         "Galileo"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "Galileo est utilise chaque jour par 3,5 milliards d'appareils dans le monde"
     },
     {
       "id": "fre-08",
@@ -2985,7 +3142,8 @@
         "agriculture",
         "PAC"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "Sans la PAC, le prix du panier de courses augmenterait de ~5-10% selon les estimations"
     },
     {
       "id": "fre-09",
@@ -3005,7 +3163,8 @@
         "carbone",
         "MACF"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "Le MACF pourrait devenir la 1re ressource propre de l'UE"
     },
     {
       "id": "fre-10",
@@ -3024,7 +3183,8 @@
         "Brexit",
         "commerce"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "Le Brexit coute a chaque Francais l'equivalent d'un abonnement de streaming par mois"
     },
     {
       "id": "ret-01",
@@ -3043,7 +3203,8 @@
         "régime général",
         "privé"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "Pour 1 retraite du prive, 1,7 actif cotise (contre 4 en 1960)"
     },
     {
       "id": "ret-02",
@@ -3062,7 +3223,8 @@
         "Agirc-Arrco",
         "complémentaire"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "Les reserves Agirc-Arrco (70 Md€) = le budget du ministere de l'Education nationale"
     },
     {
       "id": "ret-03",
@@ -3081,7 +3243,8 @@
         "fonctionnaires",
         "État"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "La pension moyenne d'un fonctionnaire d'Etat = ~2 200€/mois brut (vs ~1 500€ regime general)"
     },
     {
       "id": "ret-04",
@@ -3101,7 +3264,8 @@
         "SNCF",
         "RATP"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "L'Etat subventionne ~75% des pensions SNCF/RATP (les cotisants ne financent que 25%)"
     },
     {
       "id": "ret-05",
@@ -3121,7 +3285,8 @@
         "ASPA",
         "solidarité"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "300 000 retraites eligibles ne demandent pas l'ASPA, par meconnaissance ou par peur de la recuperation sur succession"
     },
     {
       "id": "ret-06",
@@ -3140,7 +3305,8 @@
         "réforme",
         "âge légal"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "18 Md€ d'economies sur 7 ans = moins d'1 an de charge de la dette"
     },
     {
       "id": "ret-07",
@@ -3159,7 +3325,8 @@
         "pénibilité",
         "carrières longues"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "Un ouvrier vit en moyenne 6 ans de moins qu'un cadre, mais part seulement 2 ans plus tot"
     },
     {
       "id": "ret-08",
@@ -3178,7 +3345,8 @@
         "réversion",
         "veuvage"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "La reversion moyenne = ~600€/mois, souvent insuffisante pour une veuve agee"
     },
     {
       "id": "ret-09",
@@ -3197,7 +3365,8 @@
         "indépendants",
         "agriculteurs"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "Un agriculteur retraite gagne moitie moins qu'un fonctionnaire retraite, apres une carriere souvent plus longue"
     },
     {
       "id": "ret-10",
@@ -3217,7 +3386,8 @@
         "OCDE",
         "international"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "Un Francais passe ~42% de sa vie adulte au travail et ~33% a la retraite"
     },
     {
       "id": "zom-01",
@@ -3237,7 +3407,8 @@
         "CPF",
         "déficit"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "Le deficit de France Competences = 2x le budget du ministere de la Culture"
     },
     {
       "id": "zom-02",
@@ -3257,7 +3428,8 @@
         "PGE",
         "dette"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "Les PGE = un pret de 200 000€ en moyenne par entreprise, garanti par vous"
     },
     {
       "id": "zom-03",
@@ -3277,7 +3449,8 @@
         "énergie",
         "EDF"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "EDF a vendu son electricite a perte pendant 15 ans sur ordre de l'Etat, pour creer de la concurrence"
     },
     {
       "id": "zom-04",
@@ -3296,7 +3469,8 @@
         "indemnisation",
         "mille-feuille"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "20+ fonds d'indemnisation la ou 3-4 suffiraient"
     },
     {
       "id": "zom-05",
@@ -3315,7 +3489,8 @@
         "fiscalité",
         "taxe d'habitation"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "La suppression a ete compensee a l'euro pres — le contribuable paie toujours, mais autrement"
     },
     {
       "id": "zom-06",
@@ -3334,7 +3509,8 @@
         "institution",
         "CESE"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "45 M€ = le prix de 3 ecoles neuves par an"
     },
     {
       "id": "zom-07",
@@ -3354,7 +3530,8 @@
         "mille-feuille",
         "administration"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "438 operateurs = plus que le nombre de deputes (577) — chacun avec son DG, son CA et ses locaux"
     },
     {
       "id": "zom-08",
@@ -3373,7 +3550,8 @@
         "emploi",
         "revitalisation"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "~50 000€ par emploi cree, dont une partie enrichit les consultants"
     },
     {
       "id": "zom-09",
@@ -3393,7 +3571,8 @@
         "ARS",
         "bureaucratie"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "18 ARS avec 18 DG, 18 sieges, 18 comites, pour un pays de la taille du Texas"
     },
     {
       "id": "zom-10",
@@ -3413,7 +3592,8 @@
         "FRR",
         "réserves"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "21 Md€ dormants = 4 mois de deficit de la Securite sociale"
     },
     {
       "id": "ukr-01",
@@ -3432,7 +3612,8 @@
         "aide militaire",
         "défense"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "La France a donne l'equivalent en materiel de ~2,5% du budget annuel de la Defense"
     },
     {
       "id": "ukr-02",
@@ -3452,7 +3633,8 @@
         "Europe",
         "défense"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "La contribution francaise a la FEP = le budget annuel de la DGSI"
     },
     {
       "id": "ukr-03",
@@ -3471,7 +3653,8 @@
         "industrie défense",
         "bilatéral"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "Chaque euro du fonds finance un emploi industriel de defense en France"
     },
     {
       "id": "ukr-04",
@@ -3490,7 +3673,8 @@
         "formation",
         "militaire"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "Former 1 soldat ukrainien = ~15 000€ (vs ~100 000€ pour un soldat francais)"
     },
     {
       "id": "ukr-05",
@@ -3509,7 +3693,8 @@
         "humanitaire",
         "réfugiés"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "Les 100 000 refugies ukrainiens en France coutent ~500 M€/an (logement, sante, education)"
     },
     {
       "id": "ukr-06",
@@ -3528,7 +3713,8 @@
         "énergie",
         "surcoût"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "Le surcout energetique du conflit = la moitie du budget annuel de la Defense, chaque annee pendant 2 ans"
     },
     {
       "id": "ukr-07",
@@ -3548,7 +3734,8 @@
         "LPM",
         "budget"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "La hausse annuelle du budget Defense (+3,3 Md€) = le budget du SNU x 3"
     },
     {
       "id": "ukr-08",
@@ -3567,7 +3754,8 @@
         "sanctions",
         "avoirs russes"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "Les avoirs russes geles en France = le budget annuel du ministere de la Culture x 5"
     },
     {
       "id": "ukr-09",
@@ -3586,7 +3774,8 @@
         "bilan",
         "aide totale"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "L'aide francaise a l'Ukraine = le prix de 2 cafes par Francais et par mois pendant 4 ans"
     },
     {
       "id": "ukr-10",
@@ -3606,7 +3795,8 @@
         "croissance",
         "inflation"
       ],
-      "trend": null
+      "trend": null,
+      "equivalence": "La guerre a coute a la France 10x plus en croissance perdue qu'en aide militaire"
     },
     {
       "id": "def-11",
@@ -3625,7 +3815,8 @@
         "armement",
         "exportation",
         "industrie"
-      ]
+      ],
+      "equivalence": "Les exportations d'armes rapportent plus que le tourisme a Paris"
     },
     {
       "id": "def-12",
@@ -3644,7 +3835,8 @@
         "reserve",
         "garde nationale",
         "defense"
-      ]
+      ],
+      "equivalence": "Un reserviste coute 5x moins qu'un militaire d'active pour une mission similaire"
     },
     {
       "id": "def-13",
@@ -3663,7 +3855,8 @@
         "munitions",
         "industrie",
         "defense"
-      ]
+      ],
+      "equivalence": "1 obus de 155mm coute ~3 000€ — l'Ukraine en tire 4 000-6 000/jour"
     },
     {
       "id": "def-14",
@@ -3682,7 +3875,8 @@
         "sante",
         "militaire",
         "hopital"
-      ]
+      ],
+      "equivalence": "Le fonctionnement de ~10 CHU de taille moyenne"
     },
     {
       "id": "def-15",
@@ -3701,7 +3895,8 @@
         "OTAN",
         "alliance",
         "defense"
-      ]
+      ],
+      "equivalence": "Passer de 2% a 3,5% du PIB pour la defense = +40 Md€/an, soit 2x le budget de la Justice"
     },
     {
       "id": "ene-11",
@@ -3720,7 +3915,8 @@
         "hydrogene",
         "industrie",
         "transition"
-      ]
+      ],
+      "equivalence": "1 kg d'hydrogene vert = 5-8€ (vs 1,5€ pour le gris), mais zero CO2"
     },
     {
       "id": "ene-12",
@@ -3739,7 +3935,8 @@
         "nucleaire",
         "dechets",
         "stockage"
-      ]
+      ],
+      "equivalence": "Le projet le plus long de l'histoire humaine : 100 ans de chantier pour 100 000 ans de stockage"
     },
     {
       "id": "ene-13",
@@ -3758,7 +3955,8 @@
         "precarite",
         "social",
         "energie"
-      ]
+      ],
+      "equivalence": "Le cheque energie couvre ~1 mois de chauffage sur 6 mois d'hiver"
     },
     {
       "id": "ene-14",
@@ -3777,7 +3975,8 @@
         "electrique",
         "transport",
         "infrastructure"
-      ]
+      ],
+      "equivalence": "1,5 Md€ = le cout de 2 ans de fonctionnement du reseau de tramways francais"
     },
     {
       "id": "ene-15",
@@ -3796,7 +3995,8 @@
         "taxe",
         "electricite",
         "recette"
-      ]
+      ],
+      "equivalence": "Sur une facture de 1 500€/an, ~300€ sont des taxes (accise + TVA sur la taxe)"
     },
     {
       "id": "san-11",
@@ -3815,7 +4015,8 @@
         "prevention",
         "vaccination",
         "sante"
-      ]
+      ],
+      "equivalence": "1€ investi en prevention economise 4-7€ en soins curatifs selon l'OMS"
     },
     {
       "id": "san-12",
@@ -3834,7 +4035,8 @@
         "optique",
         "dentaire",
         "reforme"
-      ]
+      ],
+      "equivalence": "Une paire de lunettes 100% Sante = 0€ de reste a charge (vs 200-400€ avant)"
     },
     {
       "id": "san-13",
@@ -3853,7 +4055,8 @@
         "medicaments",
         "industrie",
         "penuries"
-      ]
+      ],
+      "equivalence": "80% des principes actifs viennent d'Inde et de Chine — un comprime de paracetamol parcourt 30 000 km"
     },
     {
       "id": "san-14",
@@ -3872,7 +4075,8 @@
         "addictions",
         "tabac",
         "alcool"
-      ]
+      ],
+      "equivalence": "Le tabac rapporte 16 Md€ de taxes mais coute 120 Md€ a la societe — solde negatif : -104 Md€"
     },
     {
       "id": "san-15",
@@ -3891,7 +4095,8 @@
         "SAMU",
         "transport",
         "urgences"
-      ]
+      ],
+      "equivalence": "Un transport en ambulance coute en moyenne ~200€ a la Secu, un taxi conventionne ~50€"
     },
     {
       "id": "soc-13",
@@ -3910,7 +4115,8 @@
         "handicap",
         "AAH",
         "social"
-      ]
+      ],
+      "equivalence": "L'AAH (1 033€) est inferieure au seuil de pauvrete (1 200€) — un handicape est pauvre par defaut"
     },
     {
       "id": "soc-14",
@@ -3929,7 +4135,8 @@
         "creches",
         "petite enfance",
         "famille"
-      ]
+      ],
+      "equivalence": "1 place en creche coute autant qu'1 an d'universite"
     },
     {
       "id": "soc-15",
@@ -3948,7 +4155,8 @@
         "autonomie",
         "dependance",
         "EHPAD"
-      ]
+      ],
+      "equivalence": "La France comptera 4,8 millions de personnes de 85+ ans en 2050 (vs 2,2 millions aujourd'hui)"
     },
     {
       "id": "soc-16",
@@ -3967,7 +4175,8 @@
         "travail",
         "accidents",
         "cotisations"
-      ]
+      ],
+      "equivalence": "La branche AT-MP est excedentaire mais l'Etat siphonne ses reserves pour boucher les trous de la Secu"
     },
     {
       "id": "soc-17",
@@ -3986,7 +4195,8 @@
         "pauvrete",
         "enfants",
         "ASE"
-      ]
+      ],
+      "equivalence": "1€ investi dans un enfant de 0-5 ans pauvre rapporte 7-13€ a la societe sur 40 ans"
     },
     {
       "id": "edu-11",
@@ -4005,7 +4215,8 @@
         "REP",
         "prioritaire",
         "egalite"
-      ]
+      ],
+      "equivalence": "Un eleve en REP+ coute ~30% de plus qu'un eleve hors education prioritaire"
     },
     {
       "id": "edu-12",
@@ -4024,7 +4235,8 @@
         "cantine",
         "alimentation",
         "ecole"
-      ]
+      ],
+      "equivalence": "Nourrir un enfant a l'ecole coute 2€/jour au contribuable, soit le prix d'un cafe"
     },
     {
       "id": "edu-13",
@@ -4043,7 +4255,8 @@
         "lycee pro",
         "formation",
         "apprentissage"
-      ]
+      ],
+      "equivalence": "Un lyceen professionnel coute ~11 000€/an a l'Etat (vs ~9 000€ en voie generale, stages inclus)"
     },
     {
       "id": "edu-14",
@@ -4062,7 +4275,8 @@
         "AEFE",
         "etranger",
         "soft power"
-      ]
+      ],
+      "equivalence": "580 lycees francais dans 139 pays — plus que McDonald's dans certains continents"
     },
     {
       "id": "edu-15",
@@ -4081,7 +4295,8 @@
         "espace",
         "ESA",
         "recherche"
-      ]
+      ],
+      "equivalence": "25€/Francais/an pour comprendre le climat, lancer des satellites et maintenir l'Europe dans l'espace"
     },
     {
       "id": "sec-09",
@@ -4100,7 +4315,8 @@
         "narcotrafic",
         "drogue",
         "repression"
-      ]
+      ],
+      "equivalence": "On depense ~1,5 Md€/an pour reprimer un marche de 3-4 Md€ — le trafic est 2x plus rentable que la repression"
     },
     {
       "id": "sec-10",
@@ -4119,7 +4335,8 @@
         "routiere",
         "radars",
         "amendes"
-      ]
+      ],
+      "equivalence": "Les amendes rapportent 3,5 Md€ mais les accidents coutent 50 Md€ — le bilan est 15x negatif"
     },
     {
       "id": "sec-11",
@@ -4138,7 +4355,8 @@
         "mineurs",
         "justice",
         "PJJ"
-      ]
+      ],
+      "equivalence": "Un mineur en CEF coute 255 000€/an, mais la recidive baisse de 40% vs la prison"
     },
     {
       "id": "sec-12",
@@ -4157,7 +4375,8 @@
         "police municipale",
         "collectivites",
         "securite"
-      ]
+      ],
+      "equivalence": "Nice depense ~200€/habitant/an en police municipale, quand une commune rurale depense 0€"
     },
     {
       "id": "sec-13",
@@ -4176,7 +4395,8 @@
         "victimes",
         "indemnisation",
         "terrorisme"
-      ]
+      ],
+      "equivalence": "Chaque contrat d'assurance contribue 5,90€/an pour indemniser toutes les victimes de France"
     },
     {
       "id": "eta-11",
@@ -4195,7 +4415,8 @@
         "presidence",
         "cabinets",
         "executif"
-      ]
+      ],
+      "equivalence": "L'Elysee coute ~1,70€ par Francais par an, soit un croissant tous les 6 mois"
     },
     {
       "id": "eta-12",
@@ -4214,7 +4435,8 @@
         "parlement",
         "deputes",
         "senateurs"
-      ]
+      ],
+      "equivalence": "Un depute coute ~1 M€/an tout compris (remuneration + collaborateurs + fonctionnement)"
     },
     {
       "id": "eta-13",
@@ -4233,7 +4455,8 @@
         "immobilier",
         "patrimoine",
         "batiments"
-      ]
+      ],
+      "equivalence": "L'Etat est le plus gros proprietaire immobilier de France — 190 millions de m2, dont beaucoup sous-occupes"
     },
     {
       "id": "eta-14",
@@ -4252,7 +4475,8 @@
         "informatique",
         "numerique",
         "modernisation"
-      ]
+      ],
+      "equivalence": "L'Etat depense autant en IT que le budget du Senegal, avec des resultats souvent mediocres"
     },
     {
       "id": "eta-15",
@@ -4271,7 +4495,8 @@
         "jours feries",
         "economie",
         "productivite"
-      ]
+      ],
+      "equivalence": "Supprimer 1 jour ferie = financer le budget de la Culture (4,4 Md€), mais aucun politique n'osera"
     },
     {
       "id": "cul-11",
@@ -4290,7 +4515,8 @@
         "cinema",
         "CNC",
         "culture"
-      ]
+      ],
+      "equivalence": "Netflix contribue ~100 M€/an au cinema francais via la taxe VOD"
     },
     {
       "id": "cul-12",
@@ -4309,7 +4535,8 @@
         "velo",
         "mobilite",
         "transport"
-      ]
+      ],
+      "equivalence": "1 km de piste cyclable coute ~200 000€ (vs ~10 M€ pour 1 km de tramway)"
     },
     {
       "id": "cul-13",
@@ -4328,7 +4555,8 @@
         "metro",
         "transport",
         "infrastructure"
-      ]
+      ],
+      "equivalence": "Le Grand Paris Express coute plus que 3 porte-avions nucleaires neufs"
     },
     {
       "id": "cul-14",
@@ -4347,7 +4575,8 @@
         "tourisme",
         "recettes",
         "attractivite"
-      ]
+      ],
+      "equivalence": "1€ public investi dans le tourisme genere ~30€ de recettes — meilleur ROI de toutes les politiques publiques"
     },
     {
       "id": "cul-15",
@@ -4366,7 +4595,733 @@
         "aerien",
         "taxe",
         "carbone"
-      ]
+      ],
+      "equivalence": "Un aller-retour Paris-New York genere ~1,7 tonne de CO2 par passager, taxe ~45€ en classe eco"
+    },
+    {
+      "id": "def-16",
+      "title": "Operation Sentinelle",
+      "subtitle": "Securite interieure militaire",
+      "description": "Depuis les attentats de 2015, l'armee deploie en permanence ~7 000 a 10 000 soldats sur le territoire national : gares, sites touristiques, lieux de culte, evenements. Le surcout annuel est de ~250 M€ (prime opex, hebergement, transport). Sentinelle monopolise 15-20% des effectifs de l'armee de Terre, au detriment de l'entrainement. Le dispositif devait etre temporaire — il dure depuis 10 ans.",
+      "amountBillions": 0.25,
+      "costPerCitizen": 4,
+      "deckId": "defense",
+      "icon": "🛡️",
+      "trend": -5,
+      "source": "Ministere des Armees, Senat rapport OPINT, PLF 2026",
+      "level": 1,
+      "tags": [
+        "defense",
+        "securite-interieure",
+        "sentinelle"
+      ],
+      "equivalence": "10 000 soldats en patrouille permanente = l'effectif d'une brigade blindee entiere, immobilisee"
+    },
+    {
+      "id": "def-17",
+      "title": "Anciens combattants et memoire",
+      "subtitle": "Mission Monde combattant, memoire et liens avec la Nation",
+      "description": "Pensions militaires d'invalidite (~620 M€), allocation de reconnaissance du combattant (~835€/an pour les anciens combattants de 65+ ans), institution nationale des Invalides, politique de memoire. Le budget baisse naturellement de ~6%/an car les anciens combattants d'Algerie ont 80-90 ans. Le point de PMI n'est pas revalorise en 2026 malgre l'inflation.",
+      "amountBillions": 1.7,
+      "costPerCitizen": 25,
+      "deckId": "defense",
+      "icon": "🎖️",
+      "trend": -6,
+      "source": "PLF 2026 mission Monde combattant, Senat, ONACVG",
+      "level": 1,
+      "tags": [
+        "defense",
+        "veterans",
+        "memoire"
+      ],
+      "equivalence": "Le budget baisse de 1 Md€ en 10 ans — les veterans decedent, le budget fond avec eux"
+    },
+    {
+      "id": "def-18",
+      "title": "Forces speciales (COS)",
+      "subtitle": "Commandement des operations speciales",
+      "description": "Le COS regroupe ~5 000 operateurs d'elite (1er RPIMa, commandos marine, 13e RDP, CPA 10). La France est la seule nation europeenne avec le Royaume-Uni a maintenir des capacites de forces speciales projetables au niveau mondial. Les FS ont mene plus de 60% des operations francaises au Sahel. Le surcout est estime a ~200 000€/an par operateur (vs ~50 000€ pour un soldat classique).",
+      "amountBillions": 1,
+      "costPerCitizen": 15,
+      "deckId": "defense",
+      "icon": "🎯",
+      "source": "Senat commission defense, LPM 2024-2030",
+      "level": 1,
+      "tags": [
+        "defense",
+        "forces-speciales",
+        "cos"
+      ],
+      "equivalence": "1 operateur des forces speciales coute 4x plus qu'un soldat conventionnel mais vaut 10x plus en impact operationnel"
+    },
+    {
+      "id": "def-19",
+      "title": "DGA et acquisition d'armement",
+      "subtitle": "Direction generale de l'armement — titre 5 equipement des forces",
+      "description": "La DGA pilote les programmes d'armement : Rafale, SCAF (avion 6e generation), MGCS (char du futur), sous-marins Barracuda, fregates FDI, satellites, drones. Le titre 5 passe de 18 a 22 Md€ entre 2024 et 2026. Les retards et surcouts sont endemiques : le programme Scorpion derive de 30% en cout. La cooperation franco-allemande (SCAF, MGCS) est paralysee par les desaccords industriels.",
+      "amountBillions": 22,
+      "costPerCitizen": 324,
+      "deckId": "defense",
+      "icon": "⚙️",
+      "trend": 22,
+      "source": "DGA rapport, PLF 2026 mission Defense, Senat",
+      "level": 1,
+      "tags": [
+        "defense",
+        "armement",
+        "dga"
+      ],
+      "equivalence": "1 Rafale coute ~120 M€ — la France commande 42 Rafale F5 d'ici 2030"
+    },
+    {
+      "id": "def-20",
+      "title": "Bases militaires outre-mer",
+      "subtitle": "Forces de souverainete et forces de presence",
+      "description": "La France maintient ~7 000 militaires dans ses territoires ultramarins et ~5 000 dans ses bases pre-positionnees (Djibouti, Emirats, Senegal, Cote d'Ivoire, Gabon). Ces forces permettent d'intervenir sur 3 oceans en moins de 48h. Apres le retrait du Sahel, le dispositif africain est en restructuration. La Nouvelle-Caledonie a mobilise 3 000 militaires supplementaires lors des troubles de 2024.",
+      "amountBillions": 1.7,
+      "costPerCitizen": 25,
+      "deckId": "defense",
+      "icon": "🌍",
+      "source": "Ministere des Armees, LPM, Senat",
+      "level": 1,
+      "tags": [
+        "defense",
+        "outre-mer",
+        "bases"
+      ],
+      "equivalence": "La France est le seul pays europeen present militairement sur tous les continents"
+    },
+    {
+      "id": "ene-16",
+      "title": "Dette d'EDF et restructuration",
+      "subtitle": "Dette nette EDF post-nationalisation",
+      "description": "EDF, detenu a 100% par l'Etat depuis 2023, porte une dette de 54 Md€ (en baisse vs 65 Md€ en 2022), accumulee par le bouclier tarifaire, l'ARENH, les retards EPR Flamanville (+12 Md€ de surcout). Les investissements necessaires sont massifs : 6 EPR2 (~60 Md€), 70 Md€ de grand carenage, developpement des ENR. EDF a besoin de ~25 Md€/an d'investissement.",
+      "amountBillions": 54,
+      "costPerCitizen": 794,
+      "deckId": "energie",
+      "icon": "⚡",
+      "source": "EDF rapport annuel, Cour des comptes, CRE",
+      "level": 1,
+      "tags": [
+        "energie",
+        "edf",
+        "dette"
+      ],
+      "equivalence": "La dette d'EDF = le budget annuel du ministere de la Defense"
+    },
+    {
+      "id": "ene-17",
+      "title": "Hydroelectricite (barrages)",
+      "subtitle": "Concessions hydroelectriques",
+      "description": "L'hydroelectricite est la 1re source d'energie renouvelable francaise : ~12% de la production electrique, 2 500 ouvrages dont 400 grands barrages. La France est le 2e producteur europeen. La mise en concurrence des concessions (exigee par l'UE depuis 2006) est bloquee par la France. La valeur patrimoniale des barrages est estimee a 40-50 Md€. Le changement climatique reduit la disponibilite en eau.",
+      "amountBillions": 2,
+      "costPerCitizen": 29,
+      "deckId": "energie",
+      "icon": "🌊",
+      "source": "EDF, CRE, Commission europeenne",
+      "level": 1,
+      "tags": [
+        "energie",
+        "hydro",
+        "barrages"
+      ],
+      "equivalence": "Les barrages francais stockent l'equivalent de 6 heures de consommation nationale — une batterie geante gratuite"
+    },
+    {
+      "id": "ene-18",
+      "title": "Pompes a chaleur (aides)",
+      "subtitle": "MaPrimeRenov' PAC + CEE + TVA reduite",
+      "description": "La France vise 1 million de pompes a chaleur installees/an d'ici 2027 (contre ~500 000 en 2024). Les aides cumulees peuvent couvrir 60-80% du cout d'installation (~12 000€ en moyenne). Le marche a chute de 15% en 2024. La France est le 1er marche europeen de PAC. Probleme : la filiere francaise est faible (Daikin, Mitsubishi dominent) — la France subventionne l'industrie japonaise.",
+      "amountBillions": 1.5,
+      "costPerCitizen": 22,
+      "deckId": "energie",
+      "icon": "🌡️",
+      "trend": -15,
+      "source": "ADEME, Uniclima, MaPrimeRenov', France 2030",
+      "level": 1,
+      "tags": [
+        "energie",
+        "pac",
+        "renovation"
+      ],
+      "equivalence": "1 pompe a chaleur divise par 3 la facture de chauffage, mais les aides financent surtout des marques japonaises"
+    },
+    {
+      "id": "ene-19",
+      "title": "Biogaz et biomethane",
+      "subtitle": "Tarif d'achat garanti biomethane",
+      "description": "Le biomethane (methane produit par methanisation de dechets agricoles et alimentaires) est injecte dans le reseau de gaz. La France vise 10% de gaz renouvelable en 2030. Environ 700 methaniseurs sont en fonctionnement. Le tarif d'achat garanti (~95€/MWh, vs ~30€ pour le gaz fossile) est critique pour son cout. Les agriculteurs y voient un complement de revenu vital (~50 000€/an par exploitation).",
+      "amountBillions": 1.5,
+      "costPerCitizen": 22,
+      "deckId": "energie",
+      "icon": "♻️",
+      "source": "GRDF, ADEME, CRE, PLF 2026",
+      "level": 1,
+      "tags": [
+        "energie",
+        "biogaz",
+        "methanisation"
+      ],
+      "equivalence": "1 methaniseur produit le gaz de ~2 000 foyers a partir de dechets agricoles"
+    },
+    {
+      "id": "ene-20",
+      "title": "Geothermie profonde",
+      "subtitle": "ADEME + Fonds chaleur + France 2030",
+      "description": "La France a le 1er reseau de chaleur geothermique d'Europe (Ile-de-France : 40 installations, 350 000 logements chauffes). La geothermie profonde (2-3 km, 60-90°C) est une energie renouvelable disponible 24h/24, sans intermittence. Le plan vise un triplement d'ici 2030. Cout d'un forage : 5-15 M€, avec un risque geologique (1 forage sur 5 est sec).",
+      "amountBillions": 0.2,
+      "costPerCitizen": 3,
+      "deckId": "energie",
+      "icon": "🌋",
+      "source": "ADEME, BRGM, AFPG",
+      "level": 1,
+      "tags": [
+        "energie",
+        "geothermie",
+        "renouvelable"
+      ],
+      "equivalence": "1 installation geothermique chauffe 10 000 logements pendant 30 ans — quasi zero CO2"
+    },
+    {
+      "id": "san-16",
+      "title": "Affections de longue duree (ALD)",
+      "subtitle": "Prise en charge a 100% des ALD",
+      "description": "12,5 millions de Francais (19%) sont en ALD (cancer, diabete, insuffisance cardiaque, VIH, maladies psychiatriques graves). Leurs soins sont rembourses a 100% par la Secu. Les ALD concentrent 66% des depenses de l'Assurance maladie. Le nombre d'ALD augmente de 3%/an. 4 ALD concentrent 50% des depenses : cancers, diabete, maladies psychiatriques, maladies cardiovasculaires.",
+      "amountBillions": 110,
+      "costPerCitizen": 1620,
+      "deckId": "sante",
+      "icon": "🏥",
+      "trend": 3,
+      "source": "CNAM, DREES, HCAAM",
+      "level": 1,
+      "tags": [
+        "sante",
+        "ald",
+        "assurance-maladie"
+      ],
+      "equivalence": "1 Francais sur 5 est en ALD — et concentre les 2/3 des depenses de soins"
+    },
+    {
+      "id": "san-17",
+      "title": "Maternites et perinatalite",
+      "subtitle": "Accouchements + suivi grossesse + neonatologie",
+      "description": "La France a ferme 40% de ses maternites en 20 ans (de 814 en 2000 a 461 en 2024). Certaines femmes font 1h+ de route pour accoucher. La mortalite neonatale francaise est superieure a la moyenne europeenne (3,7‰ vs 3,1‰). 700 000 accouchements/an, dont 21% par cesarienne. Les sages-femmes ont obtenu des revalorisations salariales apres des greves en 2021-2023.",
+      "amountBillions": 4,
+      "costPerCitizen": 59,
+      "deckId": "sante",
+      "icon": "👶",
+      "source": "DREES, HAS, CNAM",
+      "level": 1,
+      "tags": [
+        "sante",
+        "maternite",
+        "natalite"
+      ],
+      "equivalence": "Un accouchement coute ~5 000€ (voie basse) a 8 000€ (cesarienne) a la Secu"
+    },
+    {
+      "id": "san-18",
+      "title": "Obesite et maladies metaboliques",
+      "subtitle": "Cout sanitaire direct et indirect de l'obesite",
+      "description": "17% des Francais adultes sont obeses, 47% en surpoids. L'obesite est le 1er facteur de risque de diabete de type 2 (4 millions de diabetiques). Le cout sanitaire direct est estime a 10-12 Md€/an ; le cout indirect a 5-8 Md€/an. Les nouveaux medicaments GLP-1 (Ozempic, Mounjaro) coutent 300€/mois et pourraient revolutionner le traitement — mais leur remboursement generalise couterait 5-10 Md€/an supplementaires.",
+      "amountBillions": 17.5,
+      "costPerCitizen": 250,
+      "deckId": "sante",
+      "icon": "⚖️",
+      "source": "Inserm, Obesite 2024, CNAM, HAS",
+      "level": 1,
+      "tags": [
+        "sante",
+        "obesite",
+        "metabolique"
+      ],
+      "equivalence": "L'obesite coute autant a la Secu que le tabac, mais sans recettes fiscales en contrepartie"
+    },
+    {
+      "id": "san-19",
+      "title": "Medecins etrangers (PADHUE)",
+      "subtitle": "Medecins a diplome hors UE",
+      "description": "Environ 12 000 medecins a diplome hors UE exercent en France, principalement a l'hopital public dans les specialites en tension. Ils representent ~5% des medecins en activite mais 25% des urgentistes hospitaliers. Paradoxe : la France forme 10 000 medecins/an mais n'en retient pas assez, et fait appel a des medecins formes dans des pays qui en manquent cruellement eux-memes.",
+      "amountBillions": 0.5,
+      "costPerCitizen": 7,
+      "deckId": "sante",
+      "icon": "👨‍⚕️",
+      "source": "CNOM Atlas 2024, IGAS, Ministere de la Sante",
+      "level": 1,
+      "tags": [
+        "sante",
+        "medecins",
+        "padhue"
+      ],
+      "equivalence": "Sans les PADHUE, 20% des services d'urgence fermeraient faute de medecins"
+    },
+    {
+      "id": "san-20",
+      "title": "Telemedecine et numerique en sante",
+      "subtitle": "Segur numerique + Mon espace sante + teleconsultations",
+      "description": "Le Segur du numerique investit 2 Md€ pour moderniser les systemes d'information hospitaliers, deployer Mon espace sante (75 millions de comptes crees mais usage faible) et generaliser les ordonnances electroniques. Les teleconsultations representent 5% des consultations. La France a 10 ans de retard sur l'Estonie et le Danemark. L'interoperabilite entre systemes hospitaliers reste un cauchemar.",
+      "amountBillions": 2,
+      "costPerCitizen": 29,
+      "deckId": "sante",
+      "icon": "💻",
+      "source": "ANS, Ministere de la Sante, Segur numerique",
+      "level": 1,
+      "tags": [
+        "sante",
+        "numerique",
+        "telemedecine"
+      ],
+      "equivalence": "2 Md€ investis mais 60% des hopitaux utilisent encore des systemes informatiques des annees 2000"
+    },
+    {
+      "id": "soc-18",
+      "title": "Conge parental (PreParE)",
+      "subtitle": "Prestation partagee d'education de l'enfant",
+      "description": "La PreParE remunere le parent qui reduit ou arrete son activite : 428€/mois a taux plein. Le nombre de beneficiaires a chute de 50% en 10 ans (de 500 000 a 250 000) : le montant est trop faible pour compenser la perte de salaire. Les pays nordiques offrent 80% du salaire pendant 12-18 mois. La reforme annoncee en 2024 (conge de naissance) est reportee.",
+      "amountBillions": 1.5,
+      "costPerCitizen": 22,
+      "deckId": "social",
+      "icon": "👨‍👩‍👧",
+      "source": "CNAF, HCFEA, PLF 2026",
+      "level": 1,
+      "tags": [
+        "social",
+        "conge-parental",
+        "famille"
+      ],
+      "equivalence": "428€/mois = 30% du SMIC — aucun menage ne peut vivre avec ca"
+    },
+    {
+      "id": "soc-19",
+      "title": "Aide alimentaire",
+      "subtitle": "Restos du coeur, Banques alimentaires, Secours populaire",
+      "description": "5,5 millions de personnes recourent a l'aide alimentaire en France. Le nombre de beneficiaires a augmente de 30% depuis le COVID. L'Etat finance ~45% via le programme europeen FEAD. Les Restos du coeur ont failli arreter en 2023 (deficit de 35 M€). Le gaspillage alimentaire en France represente 10 millions de tonnes/an, dont une fraction seulement est recuperee par l'aide alimentaire.",
+      "amountBillions": 1.5,
+      "costPerCitizen": 22,
+      "deckId": "social",
+      "icon": "🍞",
+      "source": "Restos du coeur, Banques alimentaires, DGCS, FEAD",
+      "level": 1,
+      "tags": [
+        "social",
+        "aide-alimentaire",
+        "pauvrete"
+      ],
+      "equivalence": "La France gaspille en nourriture 10x plus que ce que coute l'aide alimentaire"
+    },
+    {
+      "id": "soc-20",
+      "title": "Pensions alimentaires impayees (ARIPA)",
+      "subtitle": "Agence de recouvrement des impayes",
+      "description": "L'ARIPA intervient quand un parent ne paie pas la pension alimentaire fixee par le juge. 30-40% des pensions alimentaires sont partiellement ou totalement impayees. 700 000 familles monoparentales sont touchees. Le taux de recouvrement effectif reste faible (~40%). Les familles monoparentales (85% de femmes) sont les plus exposees a la pauvrete.",
+      "amountBillions": 0.3,
+      "costPerCitizen": 4,
+      "deckId": "social",
+      "icon": "💔",
+      "source": "ARIPA/CAF, INSEE, DREES",
+      "level": 1,
+      "tags": [
+        "social",
+        "pensions",
+        "famille"
+      ],
+      "equivalence": "1 pension alimentaire sur 3 n'est pas payee — 1re cause de pauvrete des meres isolees"
+    },
+    {
+      "id": "soc-21",
+      "title": "Protection de l'enfance (ASE)",
+      "subtitle": "Aide sociale a l'enfance",
+      "description": "L'ASE protege ~370 000 enfants : 180 000 places (familles d'accueil ou foyers) et 190 000 suivis a domicile. Cout moyen d'un placement en foyer : 50 000€/an. Les familles d'accueil sont en crise d'attractivite. 23% des personnes sans domicile ont ete placees enfant. La loi Taquet (2022) renforce les droits des enfants places mais les departements manquent de moyens.",
+      "amountBillions": 9,
+      "costPerCitizen": 132,
+      "deckId": "social",
+      "icon": "👦",
+      "source": "DREES, ONPE, departements de France, Fondation Abbe Pierre",
+      "level": 1,
+      "tags": [
+        "social",
+        "enfance",
+        "ase"
+      ],
+      "equivalence": "Un enfant place en foyer coute 137€/jour — et 23% des SDF en France sont d'anciens enfants de l'ASE"
+    },
+    {
+      "id": "soc-22",
+      "title": "Fraude aux prestations sociales",
+      "subtitle": "Fraude detectee et estimee toutes branches",
+      "description": "La fraude aux prestations (RSA, allocations familiales, assurance maladie, chomage) est estimee entre 6 et 8 Md€/an par la Cour des comptes. Seuls ~2 Md€ sont detectes et 800 M€ effectivement recouvres. A comparer avec la fraude fiscale (80-120 Md€/an estimee) : la fraude aux prestations est 10-15x plus faible mais 10x plus mediatisee.",
+      "amountBillions": 2,
+      "costPerCitizen": 30,
+      "deckId": "social",
+      "icon": "🔍",
+      "source": "Cour des comptes rapport fraude, CNAF, CNAM, Unedic",
+      "level": 1,
+      "tags": [
+        "social",
+        "fraude",
+        "prestations"
+      ],
+      "equivalence": "La fraude sociale (~7 Md€) = 6% de la fraude fiscale (~120 Md€), mais occupe 60% du debat public"
+    },
+    {
+      "id": "edu-16",
+      "title": "Numerique educatif",
+      "subtitle": "Tablettes, ENT, logiciels scolaires",
+      "description": "Le plan numerique educatif finance les tablettes, les espaces numeriques de travail (ENT), les manuels numeriques et la formation des enseignants. Les collectivites supportent 70% du cout materiel. Le bilan est mitige : 65% des classes sont equipees mais l'usage pedagogique reel reste superficiel. La France interdit les smartphones au college et en debat pour le lycee.",
+      "amountBillions": 1,
+      "costPerCitizen": 15,
+      "deckId": "education",
+      "icon": "💻",
+      "source": "DNE, DEPP, Cour des comptes rapport numerique educatif",
+      "level": 1,
+      "tags": [
+        "education",
+        "numerique",
+        "tablettes"
+      ],
+      "equivalence": "1 Md€/an de numerique educatif mais 25% des enseignants declarent ne jamais utiliser le materiel"
+    },
+    {
+      "id": "edu-17",
+      "title": "CROUS et vie etudiante",
+      "subtitle": "Residences universitaires + restaurants + accompagnement social",
+      "description": "Les 26 CROUS gerent 175 000 logements universitaires (pour 2,9 millions d'etudiants — taux de couverture : 6%). Le repas au restaurant universitaire coute 3,30€ (1€ pour les boursiers). Plan 60 000 logements lance en 2018, a peine 30 000 livres en 2025. 20% des etudiants vivent sous le seuil de pauvrete.",
+      "amountBillions": 2,
+      "costPerCitizen": 29,
+      "deckId": "education",
+      "icon": "🏫",
+      "source": "CNOUS, OVE, Cour des comptes",
+      "level": 1,
+      "tags": [
+        "education",
+        "etudiants",
+        "crous"
+      ],
+      "equivalence": "6% des etudiants ont un logement CROUS — 94% se debrouillent seuls, souvent en precarite"
+    },
+    {
+      "id": "edu-18",
+      "title": "Parcoursup et orientation",
+      "subtitle": "Plateforme d'admission post-bac",
+      "description": "Parcoursup traite ~900 000 dossiers/an depuis 2018. 70% des candidats obtiennent un de leurs 3 premiers voeux. Mais l'algorithme reste opaque, le stress des familles est maximal en juin, et les filieres en tension refusent 80% des candidats. L'orientation au college et lycee est le parent pauvre : les conseillers d'orientation couvrent 1 500 eleves chacun.",
+      "amountBillions": 0.05,
+      "costPerCitizen": 1,
+      "deckId": "education",
+      "icon": "🎯",
+      "source": "MESRI, Cour des comptes rapport Parcoursup, ONISEP",
+      "level": 1,
+      "tags": [
+        "education",
+        "parcoursup",
+        "orientation"
+      ],
+      "equivalence": "Parcoursup decide du destin de 900 000 jeunes/an pour un budget equivalent a 5 centimes par candidat"
+    },
+    {
+      "id": "edu-19",
+      "title": "Harcelement scolaire",
+      "subtitle": "Plan de lutte pHARe + formations + numero 3018",
+      "description": "700 000 a 1 million d'eleves sont victimes de harcelement scolaire chaque annee. Le cyberharcelement touche 20% des adolescents. Le plan pHARe forme les adultes-referents et systematise le signalement. Depuis 2023, le harcelement est un delit penal. Le changement d'etablissement concerne desormais le harceleur (et non plus la victime). Budget faible au regard de l'ampleur du probleme.",
+      "amountBillions": 0.1,
+      "costPerCitizen": 2,
+      "deckId": "education",
+      "icon": "🚫",
+      "source": "Ministere de l'Education nationale, programme pHARe, 3018",
+      "level": 1,
+      "tags": [
+        "education",
+        "harcelement",
+        "jeunesse"
+      ],
+      "equivalence": "100 M€ pour proteger 700 000 enfants harceles = 143€ par enfant victime et par an"
+    },
+    {
+      "id": "edu-20",
+      "title": "Formation continue des enseignants",
+      "subtitle": "Formation professionnelle Education nationale",
+      "description": "Les enseignants francais recoivent en moyenne 3 jours de formation continue par an (contre 8 en Finlande, 12 au Japon). Le budget formation est le premier coupe en periode d'austerite. Seuls 40% des enseignants jugent leur formation utile. Le recrutement est en crise : le concours n'attire que 0,8 candidat par poste en maths. En 2024, des contractuels recrutes en 4 jours ont ete mis devant des classes sans aucune formation.",
+      "amountBillions": 0.5,
+      "costPerCitizen": 7,
+      "deckId": "education",
+      "icon": "👩‍🏫",
+      "source": "DEPP, OCDE TALIS, Cour des comptes",
+      "level": 1,
+      "tags": [
+        "education",
+        "enseignants",
+        "formation"
+      ],
+      "equivalence": "Un enseignant francais est forme 3 jours/an (vs 12 au Japon) — et on s'etonne du niveau PISA"
+    },
+    {
+      "id": "sec-14",
+      "title": "Violences conjugales et feminicides",
+      "subtitle": "Plan interministeriel 2024-2027",
+      "description": "94 femmes tuees par leur conjoint ou ex-conjoint en 2024. 230 000 femmes victimes de violences conjugales/an. Le telephone grave danger est attribue a ~5 000 femmes. Les bracelets anti-rapprochement sont en service (~1 000 portes). Le 3919 recoit 100 000 appels/an. Places d'hebergement specialise : 11 000 (en hausse mais insuffisant).",
+      "amountBillions": 0.36,
+      "costPerCitizen": 5,
+      "deckId": "securite",
+      "icon": "🛡️",
+      "source": "Ministere de l'Interieur, MIPROF, PLF 2026",
+      "level": 1,
+      "tags": [
+        "justice",
+        "violences",
+        "feminicides"
+      ],
+      "equivalence": "5€/an par Francais pour lutter contre un feminicide tous les 4 jours"
+    },
+    {
+      "id": "sec-15",
+      "title": "Bracelet electronique et alternatives",
+      "subtitle": "PSE + TIG + semi-liberte + sursis probatoire",
+      "description": "~14 000 personnes portent un bracelet electronique : cout ~15€/jour vs ~150€/jour de prison. 25 000 TIG prononces/an. La France a 78 000 detenus pour 62 000 places (taux d'occupation : 126%). Les alternatives sont moins couteuses et le taux de recidive est 2x plus faible (PSE : 30% vs prison : 60%).",
+      "amountBillions": 0.2,
+      "costPerCitizen": 3,
+      "deckId": "securite",
+      "icon": "📟",
+      "source": "DAP, Ministere de la Justice, Cour des comptes",
+      "level": 1,
+      "tags": [
+        "justice",
+        "prison",
+        "alternatives"
+      ],
+      "equivalence": "Le bracelet coute 10x moins que la prison et reduit la recidive de moitie"
+    },
+    {
+      "id": "sec-16",
+      "title": "Videoprotection et surveillance",
+      "subtitle": "Cameras + videosurveillance algorithmique (VSA)",
+      "description": "La France compte ~100 000 cameras de videoprotection sur voie publique. La loi JOP 2024 a autorise experimentalement la videosurveillance algorithmique (detection de comportements suspects par IA). L'experimentation est en debat de prolongation. La CNIL et la Defenseure des droits alertent sur les risques de surveillance de masse.",
+      "amountBillions": 0.3,
+      "costPerCitizen": 4,
+      "deckId": "securite",
+      "icon": "📹",
+      "source": "CNIL, AN rapport VSA JOP, Senat",
+      "level": 1,
+      "tags": [
+        "securite",
+        "video",
+        "surveillance"
+      ],
+      "equivalence": "Nice a 1 camera pour 80 habitants — l'une des densites les plus elevees d'Europe"
+    },
+    {
+      "id": "sec-17",
+      "title": "Juridictions commerciales et prud'homales",
+      "subtitle": "Tribunaux de commerce + conseils de prud'hommes",
+      "description": "134 tribunaux de commerce traitent ~200 000 affaires/an. Les juges consulaires sont des chefs d'entreprise benevoles. Les 210 conseils de prud'hommes traitent 100 000 litiges employeur/salarie par an, avec un delai moyen de 15 mois. Le taux de conciliation est tombe a 5% (vs 50% il y a 30 ans). La France est le pays d'Europe ou les litiges du travail sont les plus longs.",
+      "amountBillions": 0.5,
+      "costPerCitizen": 7,
+      "deckId": "securite",
+      "icon": "⚖️",
+      "source": "Ministere de la Justice, Senat, CEPEJ rapport europeen",
+      "level": 1,
+      "tags": [
+        "justice",
+        "prudhommes",
+        "tribunaux"
+      ],
+      "equivalence": "Un litige aux prud'hommes dure 15 mois en moyenne"
+    },
+    {
+      "id": "sec-18",
+      "title": "Deradicalisation et renseignement penitentiaire",
+      "subtitle": "CIPDR + quartiers d'evaluation de la radicalisation + SNRP",
+      "description": "La France surveille ~5 000 individus radicalises inscrits au FSPRT. 500 detenus sont incarceres pour terrorisme islamiste. Le renseignement penitentiaire (SNRP, 400 agents) detecte la radicalisation en prison. Les QER accueillent les detenus a evaluer pendant 4 mois. 5 attentats dejoues en 2024, mais les loups solitaires restent indetectables.",
+      "amountBillions": 0.1,
+      "costPerCitizen": 2,
+      "deckId": "securite",
+      "icon": "🔎",
+      "source": "CIPDR, DGSI, DAP, PLF 2026",
+      "level": 1,
+      "tags": [
+        "securite",
+        "radicalisation",
+        "terrorisme"
+      ],
+      "equivalence": "1,50€/an par Francais pour surveiller 5 000 individus radicalises + prevenir la radicalisation"
+    },
+    {
+      "id": "eta-16",
+      "title": "Prefectures et sous-prefectures",
+      "subtitle": "Administration territoriale de l'Etat (programme 354)",
+      "description": "101 prefectures et 233 sous-prefectures maillent le territoire. La dematerialisation des titres a supprime le guichet pour 80% des demarches, provoquant une fracture numerique (13M de Francais en difficulte). 5 sous-prefectures ont ferme depuis 2020. La reforme France Services a transforme d'anciennes sous-prefectures en maisons de services publics multifonctions.",
+      "amountBillions": 2.5,
+      "costPerCitizen": 37,
+      "deckId": "etat",
+      "icon": "🏛️",
+      "source": "PLF 2026, Cour des comptes, DGAFP",
+      "level": 1,
+      "tags": [
+        "etat",
+        "prefectures",
+        "administration"
+      ],
+      "equivalence": "233 sous-prefectures pour 35 000 communes — 1 sous-prefet pour 150 communes en moyenne"
+    },
+    {
+      "id": "eta-17",
+      "title": "INSP (ex-ENA) et hauts fonctionnaires",
+      "subtitle": "Formation des administrateurs de l'Etat",
+      "description": "L'INSP (ex-ENA depuis 2022) forme ~80 hauts fonctionnaires/an apres un concours ultra-selectif. Cout de formation par eleve : ~120 000€ sur 2 ans. Les 5 IRA forment 700 attaches/an. La reforme visait a diversifier le recrutement. Bilan mitige : 40% des admis sont encore enfants de cadres superieurs, les classes preparatoires Talents n'ont attire que 200 candidats.",
+      "amountBillions": 0.1,
+      "costPerCitizen": 2,
+      "deckId": "etat",
+      "icon": "🎓",
+      "source": "INSP, PLF 2026, Cour des comptes",
+      "level": 1,
+      "tags": [
+        "etat",
+        "ena",
+        "formation"
+      ],
+      "equivalence": "Former 1 haut fonctionnaire coute 120 000€ — il restera en poste 35 ans, c'est un bon investissement"
+    },
+    {
+      "id": "eta-18",
+      "title": "Cour des comptes et inspections generales",
+      "subtitle": "Cour des comptes + CRC + IGF + IGAS + IGA",
+      "description": "La Cour des comptes (700 magistrats et rapporteurs) certifie les comptes de l'Etat, evalue les politiques publiques et produit ~200 rapports/an. Les CRC controlent les collectivites. Ces corps identifient chaque annee des milliards d'economies possibles... rarement suivies d'effet. La Cour estime que si ses recommandations avaient ete appliquees, l'Etat economiserait 15-20 Md€/an.",
+      "amountBillions": 0.3,
+      "costPerCitizen": 4,
+      "deckId": "etat",
+      "icon": "🔍",
+      "source": "Cour des comptes rapport annuel, PLF 2026, IGAS",
+      "level": 1,
+      "tags": [
+        "etat",
+        "audit",
+        "controle"
+      ],
+      "equivalence": "4€ de controle pour identifier 15-20 Md€ d'economies potentielles — meilleur ROI de la Republique"
+    },
+    {
+      "id": "eta-19",
+      "title": "Conseil d'Etat et juridictions administratives",
+      "subtitle": "Conseil d'Etat + 42 TA + 9 CAA",
+      "description": "Les juridictions administratives traitent ~250 000 recours/an. Le contentieux des etrangers (OQTF, asile, visas) represente ~50% des affaires des tribunaux administratifs (saturation). Le delai moyen est de 9 mois en TA, 12 mois en appel. Les membres du Conseil d'Etat sont les fonctionnaires les mieux payes de France (~8 000-15 000€ nets/mois).",
+      "amountBillions": 0.5,
+      "costPerCitizen": 7,
+      "deckId": "etat",
+      "icon": "⚖️",
+      "source": "Conseil d'Etat rapport annuel, PLF 2026",
+      "level": 1,
+      "tags": [
+        "etat",
+        "justice-admin",
+        "contentieux"
+      ],
+      "equivalence": "50% du contentieux administratif = droit des etrangers — un tribunal sur deux ne fait plus que ca"
+    },
+    {
+      "id": "eta-20",
+      "title": "Vehicules de l'Etat",
+      "subtitle": "Parc automobile des administrations",
+      "description": "L'Etat possede ~65 000 vehicules (hors armee et police). La loi impose 50% de vehicules electriques dans les renouvellements depuis 2026. Le parc vieillit (age moyen : 7 ans). Voitures de fonction avec chauffeur : ~2 000 pour les ministres, directeurs d'administration et prefets (cout : ~50 000€/an par vehicule avec chauffeur).",
+      "amountBillions": 1.5,
+      "costPerCitizen": 22,
+      "deckId": "etat",
+      "icon": "🚗",
+      "source": "DIE, UGAP, PLF 2026",
+      "level": 1,
+      "tags": [
+        "etat",
+        "vehicules",
+        "logistique"
+      ],
+      "equivalence": "65 000 vehicules = la flotte d'une grande entreprise de location, pour un cout de ~23 000€/vehicule/an"
+    },
+    {
+      "id": "cul-16",
+      "title": "Musees nationaux",
+      "subtitle": "Louvre, Orsay, Versailles et grands musees",
+      "description": "Le Louvre est le musee le plus visite au monde (8,9 millions de visiteurs en 2024). Ses recettes propres couvrent 60% de son budget (~280 M€). L'Etat subventionne les 40% restants. Versailles est quasi autonome financierement. Les 1 200 musees de France forment un reseau sans equivalent mondial. Debat : la gratuite pour les -26 ans attire-t-elle de nouveaux publics ou subventionne-t-elle les touristes etrangers ?",
+      "amountBillions": 1.5,
+      "costPerCitizen": 22,
+      "deckId": "culture",
+      "icon": "🏛️",
+      "source": "Musees de France, PLF 2026 programme 175, Cour des comptes",
+      "level": 1,
+      "tags": [
+        "culture",
+        "musees",
+        "patrimoine"
+      ],
+      "equivalence": "Le Louvre genere plus de recettes touristiques que le PIB de certains pays africains"
+    },
+    {
+      "id": "cul-17",
+      "title": "Fret ferroviaire",
+      "subtitle": "Aides + subventions + investissement reseau fret",
+      "description": "Le fret ferroviaire ne transporte que 9% des marchandises en France (vs 19% en Allemagne, 30% en Suisse). La part modale a ete divisee par 2 en 20 ans. Fret SNCF a accumule 5 Md€ de dette. L'UE impose l'ouverture a la concurrence. Le gouvernement vise un doublement du fret ferroviaire d'ici 2030. Chaque tonne transportee par train emet 9x moins de CO2 que par camion.",
+      "amountBillions": 1,
+      "costPerCitizen": 15,
+      "deckId": "culture",
+      "icon": "🚂",
+      "source": "SNCF Reseau, DGITM, Commission europeenne",
+      "level": 1,
+      "tags": [
+        "transport",
+        "fret",
+        "ferroviaire"
+      ],
+      "equivalence": "Transferer 1% de marchandises de la route vers le rail = -500 000 camions/an sur les autoroutes"
+    },
+    {
+      "id": "cul-18",
+      "title": "Ports maritimes",
+      "subtitle": "Marseille, Le Havre, Dunkerque",
+      "description": "La France possede le 2e domaine maritime mondial (11 millions de km2) mais ses ports sont en decrochage : Marseille est le 5e port europeen (loin derriere Rotterdam, Anvers, Hambourg). Le Havre traite 3 millions de conteneurs/an (vs 14 millions pour Rotterdam). La Strategie nationale portuaire (2021) prevoit 1,5 Md€ d'investissement sur 10 ans.",
+      "amountBillions": 0.6,
+      "costPerCitizen": 9,
+      "deckId": "culture",
+      "icon": "⛴️",
+      "source": "DGITM, ports autonomes, Senat",
+      "level": 1,
+      "tags": [
+        "transport",
+        "ports",
+        "maritime"
+      ],
+      "equivalence": "Rotterdam traite 5x plus de conteneurs que Le Havre, avec un territoire 40x plus petit"
+    },
+    {
+      "id": "cul-19",
+      "title": "Bibliotheques publiques",
+      "subtitle": "16 500 bibliotheques + BnF",
+      "description": "16 500 bibliotheques publiques maillent le territoire (1er reseau culturel de France). 28% des Francais sont inscrits en bibliotheque. La BnF conserve 40 millions de documents. Gallica donne acces a 10 millions de documents gratuits en ligne. Les bibliotheques deviennent des tiers-lieux (coworking, formation numerique, aide aux demarches).",
+      "amountBillions": 2,
+      "costPerCitizen": 29,
+      "deckId": "culture",
+      "icon": "📚",
+      "source": "Ministere de la Culture, SLL, BnF",
+      "level": 1,
+      "tags": [
+        "culture",
+        "bibliotheques",
+        "lecture"
+      ],
+      "equivalence": "16 500 bibliotheques = plus que le nombre de boulangeries (32 000) rapporte au budget"
+    },
+    {
+      "id": "cul-20",
+      "title": "Archeologie preventive (INRAP)",
+      "subtitle": "Redevance d'archeologie preventive + INRAP",
+      "description": "Avant tout chantier de construction, un diagnostic archeologique est obligatoire depuis 2001. L'INRAP (2 000 agents) realise ~2 000 diagnostics et ~200 fouilles/an. Decouvertes majeures : villa gallo-romaine de Nimes, sepultures medievales sous Notre-Dame de Paris. La redevance (0,60€/m2) est payee par les amenageurs. La France decouvre en moyenne 1 site majeur par semaine.",
+      "amountBillions": 0.2,
+      "costPerCitizen": 3,
+      "deckId": "culture",
+      "icon": "⛏️",
+      "source": "INRAP, Ministere de la Culture, PLF 2026",
+      "level": 1,
+      "tags": [
+        "culture",
+        "archeologie",
+        "patrimoine"
+      ],
+      "equivalence": "0,60€/m2 de construction pour proteger 2 000 ans de patrimoine enfoui"
     }
   ]
 }

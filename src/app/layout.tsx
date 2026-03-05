@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://nicoquipaie.pixeeplay.fr"),
   title: "La Tronçonneuse de Poche",
   description:
-    "230 cartes, 17 catégories — Swipe les dépenses publiques et découvre ton profil budgétaire",
+    "270 cartes, 17 catégories — Swipe les dépenses publiques et découvre ton profil budgétaire",
   manifest: "/manifest.json",
   icons: {
     icon: "/favicon.ico",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "La Tronçonneuse de Poche",
     description:
-      "230 cartes de dépenses publiques. Swipe, tranche, découvre ton profil budgétaire.",
+      "270 cartes de dépenses publiques. Swipe, tranche, découvre ton profil budgétaire.",
     url: "https://nicoquipaie.pixeeplay.fr",
     siteName: "La Tronçonneuse de Poche",
     images: [
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "La Tronçonneuse de Poche",
     description:
-      "230 cartes de dépenses publiques. Swipe, tranche, découvre ton profil budgétaire.",
+      "270 cartes de dépenses publiques. Swipe, tranche, découvre ton profil budgétaire.",
     images: ["/og-default.png"],
   },
 };

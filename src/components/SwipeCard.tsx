@@ -215,11 +215,11 @@ function CardContent({
           </div>
         </div>
 
-        <p className="text-sm leading-relaxed text-muted-foreground font-medium">
+        <p className="text-sm leading-relaxed text-muted-foreground font-medium line-clamp-3">
           {card.description}
         </p>
 
-        {card.subtitle && (
+        {card.equivalence && (
           <div className="flex items-center gap-3 py-2 px-3 rounded-xl bg-white/[0.04] backdrop-blur-sm border border-white/5">
             <div className="w-10 h-10 rounded-lg bg-warning/10 flex items-center justify-center flex-shrink-0 text-warning border border-warning/20">
               <span className="text-base">📊</span>
@@ -228,8 +228,8 @@ function CardContent({
               <span className="text-[9px] font-bold text-warning uppercase tracking-wider mb-0.5">
                 Équivalence
               </span>
-              <p className="text-xs font-bold text-foreground/90 leading-snug">
-                {card.subtitle}
+              <p className="text-xs font-bold text-foreground/90 leading-snug line-clamp-2">
+                {card.equivalence}
               </p>
             </div>
           </div>

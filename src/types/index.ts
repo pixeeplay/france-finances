@@ -25,6 +25,8 @@ export interface Card {
   level: 1 | 2 | 3;
   /** Tags pour le filtrage */
   tags?: string[];
+  /** Equivalence parlante (comparaison budgetaire) */
+  equivalence?: string;
 }
 
 // === DECK ===

@@ -46,6 +46,7 @@ const navItems = [
   { label: "Jouer", href: "/play", icon: IconJouer },
   { label: "Profil", href: "/profile", icon: IconProfil },
   { label: "Communauté", href: "/ranking", icon: IconRang },
+  { label: "Infos", href: "/infos", icon: IconInfos },
 ];
 
 export function BottomNav() {
