@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
+import { auth } from "@/auth";
 import { db, isDbAvailable } from "@/db";
 import { sessions, votes, auditResponses } from "@/db/schema";
 
@@ -96,9 +97,14 @@ export async function POST(request: Request) {
   const body = parsed.data;
 
   try {
+    // Link session to authenticated user if available
+    const authSession = await auth();
+    const userId = authSession?.user?.id ?? null;
+
     await db.transaction(async (tx) => {
       await tx.insert(sessions).values({
         id: body.id,
+        userId,
         deckId: body.deckId,
         level: body.level,
         archetypeId: body.archetypeId,
