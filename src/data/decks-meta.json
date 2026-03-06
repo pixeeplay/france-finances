@@ -87,6 +87,7 @@
       "icon": "🌾",
       "color": "#84CC16",
       "cardCount": 20,
+      "image": "/categories/agriculture.svg",
       "type": "main"
     },
     {
@@ -96,6 +97,7 @@
       "icon": "🏠",
       "color": "#F97316",
       "cardCount": 18,
+      "image": "/categories/logement.svg",
       "type": "main"
     },
     {
@@ -105,6 +107,7 @@
       "icon": "🛂",
       "color": "#06B6D4",
       "cardCount": 18,
+      "image": "/categories/immigration.svg",
       "type": "main"
     },
     {
@@ -114,6 +117,7 @@
       "icon": "🚀",
       "color": "#A855F7",
       "cardCount": 18,
+      "image": "/categories/numerique.svg",
       "type": "main"
     },
     {
@@ -123,6 +127,7 @@
       "icon": "💰",
       "color": "#EAB308",
       "cardCount": 18,
+      "image": "/categories/recettes.svg",
       "type": "main"
     },
     {
@@ -132,6 +137,27 @@
       "icon": "🏢",
       "color": "#0EA5E9",
       "cardCount": 18,
+      "image": "/categories/emploi.svg",
+      "type": "main"
+    },
+    {
+      "id": "environnement",
+      "name": "Environnement & Climat",
+      "description": "Écologie, biodiversité, adaptation climatique, pollution",
+      "icon": "🌍",
+      "color": "#22C55E",
+      "cardCount": 20,
+      "image": "/categories/environnement.svg",
+      "type": "main"
+    },
+    {
+      "id": "collectivites",
+      "name": "Collectivités & Décentralisation",
+      "description": "Communes, départements, régions, finances locales",
+      "icon": "🏘️",
+      "color": "#D946EF",
+      "cardCount": 20,
+      "image": "/categories/collectivites.svg",
       "type": "main"
     },
     {

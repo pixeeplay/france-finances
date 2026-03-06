@@ -17,7 +17,7 @@
       "dette",
       "intérêts"
     ],
-    "equivalence": "Les 55 Md€ d'interets = le budget complet de la Defense"
+    "equivalence": "Les 55 Md€ d'intérêts = le budget complet de la Défense"
   },
   {
     "id": "eta-02",
@@ -91,7 +91,7 @@
       "fiscalité",
       "niches"
     ],
-    "equivalence": "Les niches fiscales = le budget combine Defense + Justice + Interieur"
+    "equivalence": "Les niches fiscales = le budget combine Défense + Justice + Interieur"
   },
   {
     "id": "eta-06",
@@ -168,7 +168,7 @@
       "diplomatie",
       "affaires étrangères"
     ],
-    "equivalence": "Le budget du Quai d'Orsay = 1/10e de celui de la Defense"
+    "equivalence": "Le budget du Quai d'Orsay = 1/10e de celui de la Défense"
   },
   {
     "id": "eta-10",
@@ -213,7 +213,7 @@
     "id": "eta-12",
     "title": "Parlement (AN + Senat)",
     "subtitle": "577 deputes + 348 senateurs",
-    "description": "L'Assemblee coute ~600 M EUR/an, le Senat ~350 M EUR. Un depute gagne ~7 500 EUR brut/mois + IRFM de ~5 645 EUR pour ses frais. Les deux chambres jouissent d'une autonomie budgetaire sans controle de la Cour des comptes.",
+    "description": "L'Assemblee coute ~600 M EUR/an, le Senat ~350 M EUR. Un depute gagne ~7 500 EUR brut/mois + IRFM de ~5 645 EUR pour ses frais. Les deux chambres jouissent d'une autonomie budgetaire sans contrôle de la Cour des comptes.",
     "amountBillions": 1,
     "costPerCitizen": 15,
     "deckId": "etat",
@@ -231,9 +231,9 @@
   },
   {
     "id": "eta-13",
-    "title": "Immobilier de l'Etat",
+    "title": "Immobilier de l'État",
     "subtitle": "190 millions de m2 de batiments publics",
-    "description": "L'Etat possede ~190 millions de m2 (ministeres, prefectures, casernes, universites). Patrimoine estime a ~65 Md EUR. Le teletravail post-COVID a libere 10-15% des surfaces. Les batiments universitaires sont les plus degrades (40 Md EUR de travaux necessaires).",
+    "description": "L'État possede ~190 millions de m2 (ministeres, prefectures, casernes, universites). Patrimoine estime a ~65 Md EUR. Le teletravail post-COVID a libere 10-15% des surfaces. Les batiments universitaires sont les plus degrades (40 Md EUR de travaux necessaires).",
     "amountBillions": 8,
     "costPerCitizen": 118,
     "deckId": "etat",
@@ -247,13 +247,13 @@
       "patrimoine",
       "batiments"
     ],
-    "equivalence": "L'Etat est le plus gros proprietaire immobilier de France — 190 millions de m2, dont beaucoup sous-occupes"
+    "equivalence": "L'État est le plus gros proprietaire immobilier de France — 190 millions de m2, dont beaucoup sous-occupes"
   },
   {
     "id": "eta-14",
-    "title": "Systemes d'information (IT public)",
+    "title": "Systèmes d'information (IT public)",
     "subtitle": "60% des applications critiques ont plus de 15 ans",
-    "description": "Les ministeres depensent ~10 Md EUR/an en informatique. Grands echecs : Louvois (500 M EUR de surcout), Operateur national de paie (abandonne apres 300 M EUR). La DINUM tente de rationaliser mais chaque ministere garde ses propres systemes.",
+    "description": "Les ministeres depensent ~10 Md EUR/an en informatique. Grands echecs : Louvois (500 M EUR de surcout), Operateur national de paie (abandonne apres 300 M EUR). La DINUM tente de rationaliser mais chaque ministere garde ses propres systèmes.",
     "amountBillions": 10,
     "costPerCitizen": 147,
     "deckId": "etat",
@@ -267,11 +267,11 @@
       "numerique",
       "modernisation"
     ],
-    "equivalence": "L'Etat depense autant en IT que le budget du Senegal, avec des resultats souvent mediocres"
+    "equivalence": "L'État dépense autant en IT que le budget du Senegal, avec des resultats souvent mediocres"
   },
   {
     "id": "eta-15",
-    "title": "Jours feries (cout pour l'economie)",
+    "title": "Jours feries (cout pour l'économie)",
     "subtitle": "11 jours feries, ~3-4 Md EUR perdus chacun",
     "description": "La France compte 11 jours feries legaux (dont 6 religieux). Chaque jour ferie coute ~0,15% de PIB. La journee de solidarite rapporte ~2,4 Md EUR/an. Supprimer 1 jour ferie = financer le budget de la Culture (4,4 Md EUR). Politiquement suicidaire.",
     "amountBillions": 3.5,
@@ -284,7 +284,7 @@
     "level": 1,
     "tags": [
       "jours feries",
-      "economie",
+      "économie",
       "productivite"
     ],
     "equivalence": "Supprimer 1 jour ferie = financer le budget de la Culture (4,4 Md€), mais aucun politique n'osera"
@@ -292,7 +292,7 @@
   {
     "id": "eta-16",
     "title": "Prefectures et sous-prefectures",
-    "subtitle": "Administration territoriale de l'Etat (programme 354)",
+    "subtitle": "Administration territoriale de l'État (programme 354)",
     "description": "101 prefectures et 233 sous-prefectures maillent le territoire. La dematerialisation des titres a supprime le guichet pour 80% des demarches, provoquant une fracture numerique (13M de Francais en difficulte). 5 sous-prefectures ont ferme depuis 2020. La reforme France Services a transforme d'anciennes sous-prefectures en maisons de services publics multifonctions.",
     "amountBillions": 2.5,
     "costPerCitizen": 37,
@@ -301,7 +301,7 @@
     "source": "PLF 2026, Cour des comptes, DGAFP",
     "level": 1,
     "tags": [
-      "etat",
+      "état",
       "prefectures",
       "administration"
     ],
@@ -310,7 +310,7 @@
   {
     "id": "eta-17",
     "title": "INSP (ex-ENA) et hauts fonctionnaires",
-    "subtitle": "Formation des administrateurs de l'Etat",
+    "subtitle": "Formation des administrateurs de l'État",
     "description": "L'INSP (ex-ENA depuis 2022) forme ~80 hauts fonctionnaires/an apres un concours ultra-selectif. Cout de formation par eleve : ~120 000€ sur 2 ans. Les 5 IRA forment 700 attaches/an. La reforme visait a diversifier le recrutement. Bilan mitige : 40% des admis sont encore enfants de cadres superieurs, les classes preparatoires Talents n'ont attire que 200 candidats.",
     "amountBillions": 0.1,
     "costPerCitizen": 2,
@@ -319,7 +319,7 @@
     "source": "INSP, PLF 2026, Cour des comptes",
     "level": 1,
     "tags": [
-      "etat",
+      "état",
       "ena",
       "formation"
     ],
@@ -329,7 +329,7 @@
     "id": "eta-18",
     "title": "Cour des comptes et inspections generales",
     "subtitle": "Cour des comptes + CRC + IGF + IGAS + IGA",
-    "description": "La Cour des comptes (700 magistrats et rapporteurs) certifie les comptes de l'Etat, evalue les politiques publiques et produit ~200 rapports/an. Les CRC controlent les collectivites. Ces corps identifient chaque annee des milliards d'economies possibles... rarement suivies d'effet. La Cour estime que si ses recommandations avaient ete appliquees, l'Etat economiserait 15-20 Md€/an.",
+    "description": "La Cour des comptes (700 magistrats et rapporteurs) certifie les comptes de l'État, evalue les politiques publiques et produit ~200 rapports/an. Les CRC controlent les collectivites. Ces corps identifient chaque annee des milliards d'economies possibles... rarement suivies d'effet. La Cour estime que si ses recommandations avaient ete appliquees, l'État economiserait 15-20 Md€/an.",
     "amountBillions": 0.3,
     "costPerCitizen": 4,
     "deckId": "etat",
@@ -337,25 +337,25 @@
     "source": "Cour des comptes rapport annuel, PLF 2026, IGAS",
     "level": 1,
     "tags": [
-      "etat",
+      "état",
       "audit",
-      "controle"
+      "contrôle"
     ],
-    "equivalence": "4€ de controle pour identifier 15-20 Md€ d'economies potentielles — meilleur ROI de la Republique"
+    "equivalence": "4€ de contrôle pour identifier 15-20 Md€ d'economies potentielles — meilleur ROI de la Republique"
   },
   {
     "id": "eta-19",
-    "title": "Conseil d'Etat et juridictions administratives",
-    "subtitle": "Conseil d'Etat + 42 TA + 9 CAA",
-    "description": "Les juridictions administratives traitent ~250 000 recours/an. Le contentieux des etrangers (OQTF, asile, visas) represente ~50% des affaires des tribunaux administratifs (saturation). Le delai moyen est de 9 mois en TA, 12 mois en appel. Les membres du Conseil d'Etat sont les fonctionnaires les mieux payes de France (~8 000-15 000€ nets/mois).",
+    "title": "Conseil d'État et juridictions administratives",
+    "subtitle": "Conseil d'État + 42 TA + 9 CAA",
+    "description": "Les juridictions administratives traitent ~250 000 recours/an. Le contentieux des etrangers (OQTF, asile, visas) represente ~50% des affaires des tribunaux administratifs (saturation). Le delai moyen est de 9 mois en TA, 12 mois en appel. Les membres du Conseil d'État sont les fonctionnaires les mieux payes de France (~8 000-15 000€ nets/mois).",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
     "deckId": "etat",
     "icon": "⚖️",
-    "source": "Conseil d'Etat rapport annuel, PLF 2026",
+    "source": "Conseil d'État rapport annuel, PLF 2026",
     "level": 1,
     "tags": [
-      "etat",
+      "état",
       "justice-admin",
       "contentieux"
     ],
@@ -363,9 +363,9 @@
   },
   {
     "id": "eta-20",
-    "title": "Vehicules de l'Etat",
+    "title": "Vehicules de l'État",
     "subtitle": "Parc automobile des administrations",
-    "description": "L'Etat possede ~65 000 vehicules (hors armee et police). La loi impose 50% de vehicules electriques dans les renouvellements depuis 2026. Le parc vieillit (age moyen : 7 ans). Voitures de fonction avec chauffeur : ~2 000 pour les ministres, directeurs d'administration et prefets (cout : ~50 000€/an par vehicule avec chauffeur).",
+    "description": "L'État possede ~65 000 vehicules (hors armee et police). La loi impose 50% de vehicules electriques dans les renouvellements depuis 2026. Le parc vieillit (age moyen : 7 ans). Voitures de fonction avec chauffeur : ~2 000 pour les ministres, directeurs d'administration et prefets (cout : ~50 000€/an par vehicule avec chauffeur).",
     "amountBillions": 1.5,
     "costPerCitizen": 22,
     "deckId": "etat",
@@ -373,7 +373,7 @@
     "source": "DIE, UGAP, PLF 2026",
     "level": 1,
     "tags": [
-      "etat",
+      "état",
       "vehicules",
       "logistique"
     ],

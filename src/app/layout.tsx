@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://nicoquipaie.pixeeplay.fr"),
   title: "france-finances.com — Comprendre les finances publiques",
   description:
-    "Explorez le budget de la France de manière interactive. 330 cartes, 17 catégories — Comprenez où vont vos impôts.",
+    "Explorez le budget de la France de manière interactive. 370 cartes, 16 catégories — Comprenez où vont vos impôts.",
   manifest: "/manifest.json",
   icons: {
     icon: "/favicon.ico",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "france-finances.com — Comprendre les finances publiques",
     description:
-      "Explorez le budget de la France de manière interactive. 330 cartes de dépenses publiques à découvrir.",
+      "Explorez le budget de la France de manière interactive. 370 cartes de dépenses publiques à découvrir.",
     url: "https://nicoquipaie.pixeeplay.fr",
     siteName: "france-finances.com",
     images: [
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "france-finances.com — Comprendre les finances publiques",
     description:
-      "Explorez le budget de la France de manière interactive. 330 cartes de dépenses publiques.",
+      "Explorez le budget de la France de manière interactive. 370 cartes de dépenses publiques.",
     images: ["/og-default.png"],
   },
 };
@@ -78,7 +78,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr">
+    <html lang="fr" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{if(window.matchMedia('(prefers-color-scheme:dark)').matches){document.documentElement.classList.add('dark')}}catch(e){}})()`,
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} antialiased`}
       >

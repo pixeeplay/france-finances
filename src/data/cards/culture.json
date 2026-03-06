@@ -17,7 +17,7 @@
       "patrimoine",
       "musées"
     ],
-    "equivalence": "Le budget Culture = 1/20e du budget Defense"
+    "equivalence": "Le budget Culture = 1/20e du budget Défense"
   },
   {
     "id": "cul-02",
@@ -54,7 +54,7 @@
       "rail",
       "SNCF"
     ],
-    "equivalence": "Remettre en etat tout le reseau ferre couterait ~100 Md€ sur 20 ans"
+    "equivalence": "Remettre en état tout le reseau ferre couterait ~100 Md€ sur 20 ans"
   },
   {
     "id": "cul-04",
@@ -188,7 +188,7 @@
     "id": "cul-11",
     "title": "CNC et industrie du cinema",
     "subtitle": "Autofinance par la taxe TSA",
-    "description": "Le CNC s'autofinance via la taxe sur les entrees en salle, la taxe TV et la taxe VOD. Budget ~800 M EUR sans subvention de l'Etat. Netflix et Disney+ contribuent ~100 M EUR/an. La France est le 1er producteur de films en Europe.",
+    "description": "Le CNC s'autofinance via la taxe sur les entrees en salle, la taxe TV et la taxe VOD. Budget ~800 M EUR sans subvention de l'État. Netflix et Disney+ contribuent ~100 M EUR/an. La France est le 1er producteur de films en Europe.",
     "amountBillions": 0.8,
     "costPerCitizen": 12,
     "deckId": "culture",
@@ -215,7 +215,7 @@
     "icon": "🚲",
     "trend": 25,
     "source": "Plan velo, ADEME, Velo & Territoires",
-    "sourceUrl": "https://www.ecologie.gouv.fr",
+    "sourceUrl": "https://www.écologie.gouv.fr",
     "level": 1,
     "tags": [
       "velo",
@@ -234,7 +234,7 @@
     "deckId": "culture",
     "icon": "🚇",
     "trend": 8,
-    "source": "Societe du Grand Paris, Cour des comptes",
+    "source": "Société du Grand Paris, Cour des comptes",
     "sourceUrl": "https://www.societedugrandparis.fr",
     "level": 1,
     "tags": [
@@ -275,7 +275,7 @@
     "icon": "✈️",
     "trend": 10,
     "source": "DGAC, PLF 2026, UNITAID",
-    "sourceUrl": "https://www.ecologie.gouv.fr",
+    "sourceUrl": "https://www.écologie.gouv.fr",
     "level": 1,
     "tags": [
       "aerien",
@@ -288,7 +288,7 @@
     "id": "cul-16",
     "title": "Musees nationaux",
     "subtitle": "Louvre, Orsay, Versailles et grands musees",
-    "description": "Le Louvre est le musee le plus visite au monde (8,9 millions de visiteurs en 2024). Ses recettes propres couvrent 60% de son budget (~280 M€). L'Etat subventionne les 40% restants. Versailles est quasi autonome financierement. Les 1 200 musees de France forment un reseau sans equivalent mondial. Debat : la gratuite pour les -26 ans attire-t-elle de nouveaux publics ou subventionne-t-elle les touristes etrangers ?",
+    "description": "Le Louvre est le musee le plus visite au monde (8,9 millions de visiteurs en 2024). Ses recettes propres couvrent 60% de son budget (~280 M€). L'État subventionne les 40% restants. Versailles est quasi autonome financierement. Les 1 200 musees de France forment un reseau sans equivalent mondial. Debat : la gratuite pour les -26 ans attire-t-elle de nouveaux publics ou subventionne-t-elle les touristes etrangers ?",
     "amountBillions": 1.5,
     "costPerCitizen": 22,
     "deckId": "culture",

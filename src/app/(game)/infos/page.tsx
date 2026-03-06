@@ -33,7 +33,7 @@ export default function InfosPage() {
             <p className="text-sm text-muted-foreground leading-relaxed">
               Un mini-jeu citoyen pour explorer le budget de la France.
               Swipez les dépenses publiques, découvrez votre profil budgétaire
-              et comparez-vous à la communauté. 270 cartes, 17 catégories,
+              et comparez-vous à la communauté. 370 cartes, 16 catégories,
               des données sourcées et neutres.
             </p>
           </div>

@@ -126,7 +126,7 @@
       "budget",
       "cohésion"
     ],
-    "equivalence": "Plus que le budget de la Defense (hors pensions)"
+    "equivalence": "Plus que le budget de la Défense (hors pensions)"
   },
   {
     "id": "log-08",
@@ -144,13 +144,13 @@
       "fiscalité",
       "investissement locatif"
     ],
-    "equivalence": "Les niches fiscales = le budget combine Defense + Justice + Interieur"
+    "equivalence": "Les niches fiscales = le budget combine Défense + Justice + Interieur"
   },
   {
     "id": "log-09",
     "title": "Action Logement (1% patronal)",
     "subtitle": "PEEC — participation des employeurs",
-    "description": "Action Logement collecte 0,45% de la masse salariale et redistribue : aide a la mobilite, garantie Visale (caution gratuite), prets accession, financement HLM et renovation urbaine (ANRU). 2e financeur du logement social. L'Etat ponctionne regulierement ses reserves (~300 M en 2025).",
+    "description": "Action Logement collecte 0,45% de la masse salariale et redistribue : aide a la mobilite, garantie Visale (caution gratuite), prets accession, financement HLM et renovation urbaine (ANRU). 2e financeur du logement social. L'État ponctionne regulierement ses reserves (~300 M en 2025).",
     "amountBillions": 5,
     "costPerCitizen": 0,
     "deckId": "logement",
@@ -204,7 +204,7 @@
     "id": "log-12",
     "title": "RLS : la ponction sur les HLM",
     "subtitle": "Reduction de loyer de solidarite",
-    "description": "En 2018, l'Etat a baisse les APL de 5/mois et compense en imposant aux bailleurs HLM une RLS du meme montant. Depuis 2017, 16 Md ponctionnes aux organismes HLM, reduisant leur capacite a construire et renover. L'USH qualifie ce mecanisme de toxique.",
+    "description": "En 2018, l'État a baisse les APL de 5/mois et compense en imposant aux bailleurs HLM une RLS du meme montant. Depuis 2017, 16 Md ponctionnes aux organismes HLM, reduisant leur capacite a construire et renover. L'USH qualifie ce mecanisme de toxique.",
     "amountBillions": 1.3,
     "costPerCitizen": 15,
     "deckId": "logement",
@@ -276,7 +276,7 @@
     "id": "log-16",
     "title": "Mal-logement (rapport Fondation Abbe Pierre)",
     "subtitle": "4,2 millions de personnes mal logees",
-    "description": "330 000 sans domicile (record, +130% en 10 ans), 900 000 en hebergement contraint, 2,4 millions en surpeuplement. Le mal-logement aggrave tout : echec scolaire (+3 points), problemes de sante (+30%), chomage. C'est le multiplicateur invisible des autres depenses sociales.",
+    "description": "330 000 sans domicile (record, +130% en 10 ans), 900 000 en hebergement contraint, 2,4 millions en surpeuplement. Le mal-logement aggrave tout : echec scolaire (+3 points), problèmes de sante (+30%), chomage. C'est le multiplicateur invisible des autres dépenses sociales.",
     "amountBillions": 6.5,
     "costPerCitizen": 0,
     "deckId": "logement",

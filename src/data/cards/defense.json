@@ -29,7 +29,7 @@
     "deckId": "defense",
     "icon": "🚢",
     "source": "Ministère des Armées PLF 2025, LPM 2024-2030",
-    "sourceUrl": "https://www.defense.gouv.fr",
+    "sourceUrl": "https://www.défense.gouv.fr",
     "level": 1,
     "tags": [
       "militaire",
@@ -68,7 +68,7 @@
     "icon": "🛡️",
     "trend": 15,
     "source": "Ministère des Armées PLF 2025",
-    "sourceUrl": "https://www.defense.gouv.fr",
+    "sourceUrl": "https://www.défense.gouv.fr",
     "level": 1,
     "tags": [
       "militaire",
@@ -88,7 +88,7 @@
     "icon": "🕵️",
     "trend": 13,
     "source": "Ministère des Armées PLF 2025, Sénat",
-    "sourceUrl": "https://www.defense.gouv.fr",
+    "sourceUrl": "https://www.défense.gouv.fr",
     "level": 1,
     "tags": [
       "militaire",
@@ -107,7 +107,7 @@
     "deckId": "defense",
     "icon": "🏥",
     "source": "Ministère des Armées PLF 2025",
-    "sourceUrl": "https://www.defense.gouv.fr",
+    "sourceUrl": "https://www.défense.gouv.fr",
     "level": 1,
     "tags": [
       "militaire",
@@ -127,7 +127,7 @@
     "icon": "🛰️",
     "trend": 15,
     "source": "Ministère des Armées PLF 2025, LPM 2024-2030",
-    "sourceUrl": "https://www.defense.gouv.fr",
+    "sourceUrl": "https://www.défense.gouv.fr",
     "level": 1,
     "tags": [
       "militaire",
@@ -147,7 +147,7 @@
     "icon": "🏗️",
     "trend": 12,
     "source": "Ministère des Armées PLF 2025",
-    "sourceUrl": "https://www.defense.gouv.fr",
+    "sourceUrl": "https://www.défense.gouv.fr",
     "level": 1,
     "tags": [
       "militaire",
@@ -166,7 +166,7 @@
     "deckId": "defense",
     "icon": "🤖",
     "source": "Ministère des Armées PLF 2025, LPM 2024-2030",
-    "sourceUrl": "https://www.defense.gouv.fr",
+    "sourceUrl": "https://www.défense.gouv.fr",
     "level": 1,
     "tags": [
       "militaire",
@@ -205,7 +205,7 @@
     "icon": "🛩️",
     "trend": 40,
     "source": "Rapport au Parlement sur les exportations d'armement 2025, DGA",
-    "sourceUrl": "https://www.defense.gouv.fr",
+    "sourceUrl": "https://www.défense.gouv.fr",
     "level": 1,
     "tags": [
       "armement",
@@ -225,12 +225,12 @@
     "icon": "🎖️",
     "trend": 15,
     "source": "LPM 2024-2030, Ministere des Armees",
-    "sourceUrl": "https://www.defense.gouv.fr",
+    "sourceUrl": "https://www.défense.gouv.fr",
     "level": 1,
     "tags": [
       "reserve",
       "garde nationale",
-      "defense"
+      "défense"
     ],
     "equivalence": "Un reserviste coute 5x moins qu'un militaire d'active pour une mission similaire"
   },
@@ -244,13 +244,13 @@
     "deckId": "defense",
     "icon": "💣",
     "trend": 50,
-    "source": "LPM, KNDS, Senat commission defense",
+    "source": "LPM, KNDS, Senat commission défense",
     "sourceUrl": "https://www.senat.fr",
     "level": 1,
     "tags": [
       "munitions",
       "industrie",
-      "defense"
+      "défense"
     ],
     "equivalence": "1 obus de 155mm coute ~3 000€ — l'Ukraine en tire 4 000-6 000/jour"
   },
@@ -258,19 +258,19 @@
     "id": "def-14",
     "title": "Service de sante des armees",
     "subtitle": "Crise capacitaire du SSA",
-    "description": "Le SSA (8 hopitaux militaires, 15 000 personnels) traverse une crise d'attractivite. Le Val-de-Grace a ferme en 2016. Le SSA doit pouvoir traiter 700 blesses simultanement, mais les effectifs de chirurgiens militaires sont en forte baisse. Ouverture progressive aux civils.",
+    "description": "Le SSA (8 hôpitaux militaires, 15 000 personnels) traverse une crise d'attractivite. Le Val-de-Grace a ferme en 2016. Le SSA doit pouvoir traiter 700 blesses simultanement, mais les effectifs de chirurgiens militaires sont en forte baisse. Ouverture progressive aux civils.",
     "amountBillions": 1.8,
     "costPerCitizen": 26,
     "deckId": "defense",
     "icon": "🏥",
     "trend": 5,
     "source": "SSA rapport, LPM, Senat",
-    "sourceUrl": "https://www.defense.gouv.fr",
+    "sourceUrl": "https://www.défense.gouv.fr",
     "level": 1,
     "tags": [
       "sante",
       "militaire",
-      "hopital"
+      "hôpital"
     ],
     "equivalence": "Le fonctionnement de ~10 CHU de taille moyenne"
   },
@@ -290,14 +290,14 @@
     "tags": [
       "OTAN",
       "alliance",
-      "defense"
+      "défense"
     ],
-    "equivalence": "Passer de 2% a 3,5% du PIB pour la defense = +40 Md€/an, soit 2x le budget de la Justice"
+    "equivalence": "Passer de 2% a 3,5% du PIB pour la défense = +40 Md€/an, soit 2x le budget de la Justice"
   },
   {
     "id": "def-16",
     "title": "Operation Sentinelle",
-    "subtitle": "Securite interieure militaire",
+    "subtitle": "Sécurité interieure militaire",
     "description": "Depuis les attentats de 2015, l'armee deploie en permanence ~7 000 a 10 000 soldats sur le territoire national : gares, sites touristiques, lieux de culte, evenements. Le surcout annuel est de ~250 M€ (prime opex, hebergement, transport). Sentinelle monopolise 15-20% des effectifs de l'armee de Terre, au detriment de l'entrainement. Le dispositif devait etre temporaire — il dure depuis 10 ans.",
     "amountBillions": 0.25,
     "costPerCitizen": 4,
@@ -307,8 +307,8 @@
     "source": "Ministere des Armees, Senat rapport OPINT, PLF 2026",
     "level": 1,
     "tags": [
-      "defense",
-      "securite-interieure",
+      "défense",
+      "sécurité-interieure",
       "sentinelle"
     ],
     "equivalence": "10 000 soldats en patrouille permanente = l'effectif d'une brigade blindee entiere, immobilisee"
@@ -326,7 +326,7 @@
     "source": "PLF 2026 mission Monde combattant, Senat, ONACVG",
     "level": 1,
     "tags": [
-      "defense",
+      "défense",
       "veterans",
       "memoire"
     ],
@@ -341,10 +341,10 @@
     "costPerCitizen": 15,
     "deckId": "defense",
     "icon": "🎯",
-    "source": "Senat commission defense, LPM 2024-2030",
+    "source": "Senat commission défense, LPM 2024-2030",
     "level": 1,
     "tags": [
-      "defense",
+      "défense",
       "forces-speciales",
       "cos"
     ],
@@ -353,17 +353,17 @@
   {
     "id": "def-19",
     "title": "DGA et acquisition d'armement",
-    "subtitle": "Direction generale de l'armement — titre 5 equipement des forces",
+    "subtitle": "Direction générale de l'armement — titre 5 equipement des forces",
     "description": "La DGA pilote les programmes d'armement : Rafale, SCAF (avion 6e generation), MGCS (char du futur), sous-marins Barracuda, fregates FDI, satellites, drones. Le titre 5 passe de 18 a 22 Md€ entre 2024 et 2026. Les retards et surcouts sont endemiques : le programme Scorpion derive de 30% en cout. La cooperation franco-allemande (SCAF, MGCS) est paralysee par les desaccords industriels.",
     "amountBillions": 22,
     "costPerCitizen": 324,
     "deckId": "defense",
     "icon": "⚙️",
     "trend": 22,
-    "source": "DGA rapport, PLF 2026 mission Defense, Senat",
+    "source": "DGA rapport, PLF 2026 mission Défense, Senat",
     "level": 1,
     "tags": [
-      "defense",
+      "défense",
       "armement",
       "dga"
     ],
@@ -381,7 +381,7 @@
     "source": "Ministere des Armees, LPM, Senat",
     "level": 1,
     "tags": [
-      "defense",
+      "défense",
       "outre-mer",
       "bases"
     ],

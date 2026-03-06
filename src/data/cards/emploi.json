@@ -15,7 +15,7 @@
       "formation",
       "CPF"
     ],
-    "equivalence": "~1 200€ de depense formation par actif et par an"
+    "equivalence": "~1 200€ de dépense formation par actif et par an"
   },
   {
     "id": "emp-02",
@@ -70,7 +70,7 @@
       "compétitivité",
       "impôt de production"
     ],
-    "equivalence": "La suppression complete de la CVAE coutera ~10 Md€ a terme a l'Etat"
+    "equivalence": "La suppression complete de la CVAE coutera ~10 Md€ a terme a l'État"
   },
   {
     "id": "emp-05",
@@ -220,7 +220,7 @@
     "id": "emp-13",
     "title": "Inspection du travail",
     "subtitle": "2 000 inspecteurs pour 20 millions de salaries",
-    "description": "1 inspecteur pour 10 000 salaries (OIT recommande 1 pour 8 000). 450 000 interventions/an, 25 000 PV. 200 agressions declarees/an. Le travail dissimule est estime a 6-8% du PIB (~180 Md), dont l'essentiel echappe aux controles.",
+    "description": "1 inspecteur pour 10 000 salaries (OIT recommande 1 pour 8 000). 450 000 interventions/an, 25 000 PV. 200 agressions declarees/an. Le travail dissimule est estime a 6-8% du PIB (~180 Md), dont l'essentiel echappe aux contrôles.",
     "amountBillions": 0.6,
     "costPerCitizen": 9,
     "deckId": "emploi",
@@ -236,9 +236,9 @@
   },
   {
     "id": "emp-14",
-    "title": "Travail illegal et economie souterraine",
+    "title": "Travail illegal et économie souterraine",
     "subtitle": "6-8% du PIB soit 170-220 Md/an",
-    "description": "L'economie souterraine est moins elevee qu'en Italie (~20%) ou Grece (~25%), mais superieure a l'Allemagne (~4%). Les cotisations eludees : 20-25 Md/an. Secteurs touches : BTP (25%), restauration (20%), services a la personne (30%). La task force recouvre ~1 Md/an, soit 5% du manque a gagner.",
+    "description": "L'économie souterraine est moins elevee qu'en Italie (~20%) ou Grece (~25%), mais superieure a l'Allemagne (~4%). Les cotisations eludees : 20-25 Md/an. Secteurs touches : BTP (25%), restauration (20%), services a la personne (30%). La task force recouvre ~1 Md/an, soit 5% du manque a gagner.",
     "amountBillions": 200,
     "costPerCitizen": 2900,
     "deckId": "emploi",
@@ -248,9 +248,9 @@
     "tags": [
       "emploi",
       "travail illegal",
-      "economie souterraine"
+      "économie souterraine"
     ],
-    "equivalence": "Le travail au noir represente 2x le budget de la Defense en cotisations perdues"
+    "equivalence": "Le travail au noir represente 2x le budget de la Défense en cotisations perdues"
   },
   {
     "id": "emp-15",
@@ -302,7 +302,7 @@
     "tags": [
       "emploi",
       "accidents",
-      "securite"
+      "sécurité"
     ],
     "equivalence": "2 morts au travail par jour en France — 3x plus qu'aux Pays-Bas, et personne n'en parle"
   },
@@ -310,7 +310,7 @@
     "id": "emp-18",
     "title": "Seniors et emploi",
     "subtitle": "Taux d'emploi 60-64 ans : 38%",
-    "description": "1 senior sur 2 est hors emploi avant l'age de la retraite. La reforme des retraites (64 ans) aggrave le probleme : sans emploi pour les seniors, ils basculent au chomage/RSA. La retraite progressive ne concerne que 25 000 personnes. L'index senior annule au Conseil constitutionnel en 2023.",
+    "description": "1 senior sur 2 est hors emploi avant l'age de la retraite. La reforme des retraites (64 ans) aggrave le problème : sans emploi pour les seniors, ils basculent au chomage/RSA. La retraite progressive ne concerne que 25 000 personnes. L'index senior annule au Conseil constitutionnel en 2023.",
     "amountBillions": 2,
     "costPerCitizen": 29,
     "deckId": "emploi",

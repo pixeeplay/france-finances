@@ -17,7 +17,7 @@
       "ONDAM",
       "assurance maladie"
     ],
-    "equivalence": "L'ONDAM = 5x le budget de la Defense"
+    "equivalence": "L'ONDAM = 5x le budget de la Défense"
   },
   {
     "id": "san-02",
@@ -54,7 +54,7 @@
       "médecine",
       "soins de ville"
     ],
-    "equivalence": "Les soins de ville coutent plus que tout le budget de la Defense + de l'Education nationale reunis"
+    "equivalence": "Les soins de ville coutent plus que tout le budget de la Défense + de l'Education nationale reunis"
   },
   {
     "id": "san-04",
@@ -108,7 +108,7 @@
       "psychiatrie",
       "santé mentale"
     ],
-    "equivalence": "Les troubles psychiques coutent ~109 Md€/an a la societe selon l'OMS"
+    "equivalence": "Les troubles psychiques coutent ~109 Md€/an a la société selon l'OMS"
   },
   {
     "id": "san-07",
@@ -163,7 +163,7 @@
       "accès aux soins",
       "territoires"
     ],
-    "equivalence": "Former un medecin coute ~200 000€ a l'Etat sur 9 a 12 ans d'etudes"
+    "equivalence": "Former un medecin coute ~200 000€ a l'État sur 9 a 12 ans d'etudes"
   },
   {
     "id": "san-10",
@@ -203,7 +203,7 @@
       "budget"
     ],
     "trend": null,
-    "equivalence": "Chaque Francais depense 135€/mois pour l'hopital public, soit un abonnement Netflix x 10"
+    "equivalence": "Chaque Francais dépense 135€/mois pour l'hôpital public, soit un abonnement Netflix x 10"
   },
   {
     "id": "hop-02",
@@ -244,7 +244,7 @@
       "financement"
     ],
     "trend": null,
-    "equivalence": "Une appendicectomie est remboursee ~2 500€ a l'hopital, quel que soit le temps reel passe"
+    "equivalence": "Une appendicectomie est remboursee ~2 500€ a l'hôpital, quel que soit le temps reel passe"
   },
   {
     "id": "hop-04",
@@ -285,7 +285,7 @@
       "investissement"
     ],
     "trend": null,
-    "equivalence": "La dette de l'hopital = 3x le budget annuel du ministere de la Justice"
+    "equivalence": "La dette de l'hôpital = 3x le budget annuel du ministere de la Justice"
   },
   {
     "id": "hop-06",
@@ -305,7 +305,7 @@
       "santé mentale"
     ],
     "trend": null,
-    "equivalence": "Les troubles psychiques coutent ~109 Md€/an a la societe selon l'OMS"
+    "equivalence": "Les troubles psychiques coutent ~109 Md€/an a la société selon l'OMS"
   },
   {
     "id": "hop-07",
@@ -326,7 +326,7 @@
       "rural"
     ],
     "trend": null,
-    "equivalence": "Un hopital de proximite coute ~27 M€/an pour desservir ~30 000 habitants"
+    "equivalence": "Un hôpital de proximite coute ~27 M€/an pour desservir ~30 000 habitants"
   },
   {
     "id": "hop-08",
@@ -393,7 +393,7 @@
     "id": "san-11",
     "title": "Prevention et vaccination",
     "subtitle": "La France lanterne rouge de la prevention",
-    "description": "Les depenses de prevention representent ~2% des depenses totales de sante (vs 5% en Finlande). Le calendrier vaccinal couvre 13 vaccins obligatoires. La vaccination COVID a coute ~6 Md EUR mais a evite un cout hospitalier estime a 20 Md EUR.",
+    "description": "Les dépenses de prevention representent ~2% des dépenses totales de sante (vs 5% en Finlande). Le calendrier vaccinal couvre 13 vaccins obligatoires. La vaccination COVID a coute ~6 Md EUR mais a evite un cout hospitalier estime a 20 Md EUR.",
     "amountBillions": 2.5,
     "costPerCitizen": 37,
     "deckId": "sante",
@@ -467,12 +467,12 @@
       "tabac",
       "alcool"
     ],
-    "equivalence": "Le tabac rapporte 16 Md€ de taxes mais coute 120 Md€ a la societe — solde negatif : -104 Md€"
+    "equivalence": "Le tabac rapporte 16 Md€ de taxes mais coute 120 Md€ a la société — solde negatif : -104 Md€"
   },
   {
     "id": "san-15",
     "title": "SAMU et transports sanitaires",
-    "subtitle": "2e poste de croissance des depenses de sante",
+    "subtitle": "2e poste de croissance des dépenses de sante",
     "description": "Les transports sanitaires representent +5%/an depuis 10 ans. Le SAMU recoit ~30 millions d'appels/an. 15-20% des transports sont juges non pertinents. Un transport en ambulance coute en moyenne ~200 EUR a la Secu, un taxi conventionne ~50 EUR.",
     "amountBillions": 6,
     "costPerCitizen": 88,
@@ -493,7 +493,7 @@
     "id": "san-16",
     "title": "Affections de longue duree (ALD)",
     "subtitle": "Prise en charge a 100% des ALD",
-    "description": "12,5 millions de Francais (19%) sont en ALD (cancer, diabete, insuffisance cardiaque, VIH, maladies psychiatriques graves). Leurs soins sont rembourses a 100% par la Secu. Les ALD concentrent 66% des depenses de l'Assurance maladie. Le nombre d'ALD augmente de 3%/an. 4 ALD concentrent 50% des depenses : cancers, diabete, maladies psychiatriques, maladies cardiovasculaires.",
+    "description": "12,5 millions de Francais (19%) sont en ALD (cancer, diabete, insuffisance cardiaque, VIH, maladies psychiatriques graves). Leurs soins sont rembourses a 100% par la Secu. Les ALD concentrent 66% des dépenses de l'Assurance maladie. Le nombre d'ALD augmente de 3%/an. 4 ALD concentrent 50% des dépenses : cancers, diabete, maladies psychiatriques, maladies cardiovasculaires.",
     "amountBillions": 110,
     "costPerCitizen": 1620,
     "deckId": "sante",
@@ -506,7 +506,7 @@
       "ald",
       "assurance-maladie"
     ],
-    "equivalence": "1 Francais sur 5 est en ALD — et concentre les 2/3 des depenses de soins"
+    "equivalence": "1 Francais sur 5 est en ALD — et concentre les 2/3 des dépenses de soins"
   },
   {
     "id": "san-17",
@@ -548,7 +548,7 @@
     "id": "san-19",
     "title": "Medecins etrangers (PADHUE)",
     "subtitle": "Medecins a diplome hors UE",
-    "description": "Environ 12 000 medecins a diplome hors UE exercent en France, principalement a l'hopital public dans les specialites en tension. Ils representent ~5% des medecins en activite mais 25% des urgentistes hospitaliers. Paradoxe : la France forme 10 000 medecins/an mais n'en retient pas assez, et fait appel a des medecins formes dans des pays qui en manquent cruellement eux-memes.",
+    "description": "Environ 12 000 medecins a diplome hors UE exercent en France, principalement a l'hôpital public dans les specialites en tension. Ils representent ~5% des medecins en activite mais 25% des urgentistes hospitaliers. Paradoxe : la France forme 10 000 medecins/an mais n'en retient pas assez, et fait appel a des medecins formes dans des pays qui en manquent cruellement eux-memes.",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
     "deckId": "sante",
@@ -566,7 +566,7 @@
     "id": "san-20",
     "title": "Telemedecine et numerique en sante",
     "subtitle": "Segur numerique + Mon espace sante + teleconsultations",
-    "description": "Le Segur du numerique investit 2 Md€ pour moderniser les systemes d'information hospitaliers, deployer Mon espace sante (75 millions de comptes crees mais usage faible) et generaliser les ordonnances electroniques. Les teleconsultations representent 5% des consultations. La France a 10 ans de retard sur l'Estonie et le Danemark. L'interoperabilite entre systemes hospitaliers reste un cauchemar.",
+    "description": "Le Segur du numerique investit 2 Md€ pour moderniser les systèmes d'information hospitaliers, deployer Mon espace sante (75 millions de comptes crees mais usage faible) et generaliser les ordonnances electroniques. Les teleconsultations representent 5% des consultations. La France a 10 ans de retard sur l'Estonie et le Danemark. L'interoperabilite entre systèmes hospitaliers reste un cauchemar.",
     "amountBillions": 2,
     "costPerCitizen": 29,
     "deckId": "sante",
@@ -578,6 +578,6 @@
       "numerique",
       "telemedecine"
     ],
-    "equivalence": "2 Md€ investis mais 60% des hopitaux utilisent encore des systemes informatiques des annees 2000"
+    "equivalence": "2 Md€ investis mais 60% des hôpitaux utilisent encore des systèmes informatiques des annees 2000"
   }
 ]

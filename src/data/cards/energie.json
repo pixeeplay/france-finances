@@ -64,15 +64,15 @@
     "costPerCitizen": 940,
     "deckId": "energie",
     "icon": "🛢️",
-    "source": "France Renouvelables, economie.gouv.fr PPE3",
-    "sourceUrl": "https://www.economie.gouv.fr",
+    "source": "France Renouvelables, économie.gouv.fr PPE3",
+    "sourceUrl": "https://www.économie.gouv.fr",
     "level": 1,
     "tags": [
       "énergie",
       "fossiles",
       "importation"
     ],
-    "equivalence": "64 Md€ = le budget total de la Defense + celui de la Justice"
+    "equivalence": "64 Md€ = le budget total de la Défense + celui de la Justice"
   },
   {
     "id": "ene-05",
@@ -102,8 +102,8 @@
     "deckId": "energie",
     "icon": "🚗",
     "trend": -15,
-    "source": "economie.gouv.fr, PPE3",
-    "sourceUrl": "https://www.economie.gouv.fr",
+    "source": "économie.gouv.fr, PPE3",
+    "sourceUrl": "https://www.économie.gouv.fr",
     "level": 1,
     "tags": [
       "énergie",
@@ -157,8 +157,8 @@
     "costPerCitizen": 17,
     "deckId": "energie",
     "icon": "☀️",
-    "source": "economie.gouv.fr PPE3, CRE",
-    "sourceUrl": "https://www.economie.gouv.fr",
+    "source": "économie.gouv.fr PPE3, CRE",
+    "sourceUrl": "https://www.économie.gouv.fr",
     "level": 1,
     "tags": [
       "énergie",
@@ -203,7 +203,7 @@
       "crise"
     ],
     "trend": null,
-    "equivalence": "Entre 1 et 3 ans de budget de la Defense engloutis en 3 ans de crise"
+    "equivalence": "Entre 1 et 3 ans de budget de la Défense engloutis en 3 ans de crise"
   },
   {
     "id": "cre-02",
@@ -284,7 +284,7 @@
       "EDF"
     ],
     "trend": null,
-    "equivalence": "EDF a vendu son electricite 5 a 10x moins cher que le marche, sur ordre de l'Etat"
+    "equivalence": "EDF a vendu son electricite 5 a 10x moins cher que le marche, sur ordre de l'État"
   },
   {
     "id": "cre-06",
@@ -304,7 +304,7 @@
       "précarité"
     ],
     "trend": null,
-    "equivalence": "200€ de cheque energie = environ 1 mois de chauffage pour un studio"
+    "equivalence": "200€ de cheque énergie = environ 1 mois de chauffage pour un studio"
   },
   {
     "id": "cre-07",
@@ -324,7 +324,7 @@
       "industrie"
     ],
     "trend": null,
-    "equivalence": "La France a depense 3x moins que l'Allemagne pour proteger ses entreprises"
+    "equivalence": "La France a dépense 3x moins que l'Allemagne pour proteger ses entreprises"
   },
   {
     "id": "cre-08",
@@ -344,7 +344,7 @@
       "recettes"
     ],
     "trend": null,
-    "equivalence": "Les eoliennes ont rembourse l'equivalent de 2 ans de cheques energie"
+    "equivalence": "Les eoliennes ont rembourse l'equivalent de 2 ans de cheques énergie"
   },
   {
     "id": "cre-09",
@@ -429,22 +429,22 @@
   {
     "id": "ene-13",
     "title": "Precarite energetique",
-    "subtitle": "Cheque energie pour 5,6 millions de foyers",
-    "description": "5,2 millions de menages (12% des foyers) sont en precarite energetique. Le cheque energie (150-277 EUR/an) est distribue a 5,6 millions de foyers. Insuffisant : un foyer precaire depense en moyenne 1 800 EUR/an en energie. La vraie solution est la renovation thermique.",
+    "subtitle": "Cheque énergie pour 5,6 millions de foyers",
+    "description": "5,2 millions de menages (12% des foyers) sont en precarite energetique. Le cheque énergie (150-277 EUR/an) est distribue a 5,6 millions de foyers. Insuffisant : un foyer precaire dépense en moyenne 1 800 EUR/an en énergie. La vraie solution est la renovation thermique.",
     "amountBillions": 0.8,
     "costPerCitizen": 12,
     "deckId": "energie",
     "icon": "🔌",
     "trend": -5,
     "source": "ONPE, ADEME, PLF 2026",
-    "sourceUrl": "https://www.ecologie.gouv.fr",
+    "sourceUrl": "https://www.écologie.gouv.fr",
     "level": 1,
     "tags": [
       "precarite",
       "social",
-      "energie"
+      "énergie"
     ],
-    "equivalence": "Le cheque energie couvre ~1 mois de chauffage sur 6 mois d'hiver"
+    "equivalence": "Le cheque énergie couvre ~1 mois de chauffage sur 6 mois d'hiver"
   },
   {
     "id": "ene-14",
@@ -470,7 +470,7 @@
     "id": "ene-15",
     "title": "Accise sur l'electricite",
     "subtitle": "Taxe post-bouclier tarifaire",
-    "description": "L'accise sur l'electricite (ex-CSPE) est revenue a 33,70 EUR/MWh en 2025, representant ~20% de la facture d'electricite. Elle finance les energies renouvelables et la perequation tarifaire. Le consommateur paie moins cher l'electricite brute, mais davantage de taxes.",
+    "description": "L'accise sur l'electricite (ex-CSPE) est revenue a 33,70 EUR/MWh en 2025, representant ~20% de la facture d'electricite. Elle finance les énergies renouvelables et la perequation tarifaire. Le consommateur paie moins cher l'electricite brute, mais davantage de taxes.",
     "amountBillions": 10,
     "costPerCitizen": 147,
     "deckId": "energie",
@@ -490,7 +490,7 @@
     "id": "ene-16",
     "title": "Dette d'EDF et restructuration",
     "subtitle": "Dette nette EDF post-nationalisation",
-    "description": "EDF, detenu a 100% par l'Etat depuis 2023, porte une dette de 54 Md€ (en baisse vs 65 Md€ en 2022), accumulee par le bouclier tarifaire, l'ARENH, les retards EPR Flamanville (+12 Md€ de surcout). Les investissements necessaires sont massifs : 6 EPR2 (~60 Md€), 70 Md€ de grand carenage, developpement des ENR. EDF a besoin de ~25 Md€/an d'investissement.",
+    "description": "EDF, detenu a 100% par l'État depuis 2023, porte une dette de 54 Md€ (en baisse vs 65 Md€ en 2022), accumulee par le bouclier tarifaire, l'ARENH, les retards EPR Flamanville (+12 Md€ de surcout). Les investissements necessaires sont massifs : 6 EPR2 (~60 Md€), 70 Md€ de grand carenage, developpement des ENR. EDF a besoin de ~25 Md€/an d'investissement.",
     "amountBillions": 54,
     "costPerCitizen": 794,
     "deckId": "energie",
@@ -498,17 +498,17 @@
     "source": "EDF rapport annuel, Cour des comptes, CRE",
     "level": 1,
     "tags": [
-      "energie",
+      "énergie",
       "edf",
       "dette"
     ],
-    "equivalence": "La dette d'EDF = le budget annuel du ministere de la Defense"
+    "equivalence": "La dette d'EDF = le budget annuel du ministere de la Défense"
   },
   {
     "id": "ene-17",
     "title": "Hydroelectricite (barrages)",
     "subtitle": "Concessions hydroelectriques",
-    "description": "L'hydroelectricite est la 1re source d'energie renouvelable francaise : ~12% de la production electrique, 2 500 ouvrages dont 400 grands barrages. La France est le 2e producteur europeen. La mise en concurrence des concessions (exigee par l'UE depuis 2006) est bloquee par la France. La valeur patrimoniale des barrages est estimee a 40-50 Md€. Le changement climatique reduit la disponibilite en eau.",
+    "description": "L'hydroelectricite est la 1re source d'énergie renouvelable francaise : ~12% de la production electrique, 2 500 ouvrages dont 400 grands barrages. La France est le 2e producteur europeen. La mise en concurrence des concessions (exigee par l'UE depuis 2006) est bloquee par la France. La valeur patrimoniale des barrages est estimee a 40-50 Md€. Le changement climatique reduit la disponibilite en eau.",
     "amountBillions": 2,
     "costPerCitizen": 29,
     "deckId": "energie",
@@ -516,7 +516,7 @@
     "source": "EDF, CRE, Commission europeenne",
     "level": 1,
     "tags": [
-      "energie",
+      "énergie",
       "hydro",
       "barrages"
     ],
@@ -526,7 +526,7 @@
     "id": "ene-18",
     "title": "Pompes a chaleur (aides)",
     "subtitle": "MaPrimeRenov' PAC + CEE + TVA reduite",
-    "description": "La France vise 1 million de pompes a chaleur installees/an d'ici 2027 (contre ~500 000 en 2024). Les aides cumulees peuvent couvrir 60-80% du cout d'installation (~12 000€ en moyenne). Le marche a chute de 15% en 2024. La France est le 1er marche europeen de PAC. Probleme : la filiere francaise est faible (Daikin, Mitsubishi dominent) — la France subventionne l'industrie japonaise.",
+    "description": "La France vise 1 million de pompes a chaleur installees/an d'ici 2027 (contre ~500 000 en 2024). Les aides cumulees peuvent couvrir 60-80% du cout d'installation (~12 000€ en moyenne). Le marche a chute de 15% en 2024. La France est le 1er marche europeen de PAC. Problème : la filiere francaise est faible (Daikin, Mitsubishi dominent) — la France subventionne l'industrie japonaise.",
     "amountBillions": 1.5,
     "costPerCitizen": 22,
     "deckId": "energie",
@@ -535,7 +535,7 @@
     "source": "ADEME, Uniclima, MaPrimeRenov', France 2030",
     "level": 1,
     "tags": [
-      "energie",
+      "énergie",
       "pac",
       "renovation"
     ],
@@ -553,7 +553,7 @@
     "source": "GRDF, ADEME, CRE, PLF 2026",
     "level": 1,
     "tags": [
-      "energie",
+      "énergie",
       "biogaz",
       "methanisation"
     ],
@@ -563,7 +563,7 @@
     "id": "ene-20",
     "title": "Geothermie profonde",
     "subtitle": "ADEME + Fonds chaleur + France 2030",
-    "description": "La France a le 1er reseau de chaleur geothermique d'Europe (Ile-de-France : 40 installations, 350 000 logements chauffes). La geothermie profonde (2-3 km, 60-90°C) est une energie renouvelable disponible 24h/24, sans intermittence. Le plan vise un triplement d'ici 2030. Cout d'un forage : 5-15 M€, avec un risque geologique (1 forage sur 5 est sec).",
+    "description": "La France a le 1er reseau de chaleur geothermique d'Europe (Ile-de-France : 40 installations, 350 000 logements chauffes). La geothermie profonde (2-3 km, 60-90°C) est une énergie renouvelable disponible 24h/24, sans intermittence. Le plan vise un triplement d'ici 2030. Cout d'un forage : 5-15 M€, avec un risque geologique (1 forage sur 5 est sec).",
     "amountBillions": 0.2,
     "costPerCitizen": 3,
     "deckId": "energie",
@@ -571,7 +571,7 @@
     "source": "ADEME, BRGM, AFPG",
     "level": 1,
     "tags": [
-      "energie",
+      "énergie",
       "geothermie",
       "renouvelable"
     ],

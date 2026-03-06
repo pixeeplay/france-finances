@@ -201,7 +201,7 @@
     "id": "num-12",
     "title": "Cloud souverain et donnees publiques",
     "subtitle": "Label SecNumCloud — hebergement des donnees critiques",
-    "description": "L'Etat heberge ses donnees critiques dans des clouds souverains labellises SecNumCloud. Le Health Data Hub a ete transfere de Microsoft Azure vers un hebergeur certifie apres un bras de fer de 3 ans. Le marche du cloud public en France pese ~16 Md, domine a 65% par AWS, Azure et Google.",
+    "description": "L'État heberge ses donnees critiques dans des clouds souverains labellises SecNumCloud. Le Health Data Hub a ete transfere de Microsoft Azure vers un hebergeur certifie apres un bras de fer de 3 ans. Le marche du cloud public en France pese ~16 Md, domine a 65% par AWS, Azure et Google.",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
     "deckId": "numerique",
@@ -219,7 +219,7 @@
     "id": "num-13",
     "title": "IA generative et investissements francais",
     "subtitle": "Mistral AI, Hugging Face, Jean Zay",
-    "description": "Mistral AI (valorisation ~6 Md en 2024) est le champion francais. Hugging Face est le GitHub de l'IA. L'Etat investit 500 M dans les compute credits. Mais les Etats-Unis investissent 100x plus. Le risque : la France forme les chercheurs, les GAFAM les embauchent.",
+    "description": "Mistral AI (valorisation ~6 Md en 2024) est le champion francais. Hugging Face est le GitHub de l'IA. L'État investit 500 M dans les compute credits. Mais les Etats-Unis investissent 100x plus. Le risque : la France forme les chercheurs, les GAFAM les embauchent.",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
     "deckId": "numerique",
@@ -231,13 +231,13 @@
       "IA",
       "Mistral"
     ],
-    "equivalence": "Le budget IA de la France = ce que Google depense en IA en 2 semaines"
+    "equivalence": "Le budget IA de la France = ce que Google dépense en IA en 2 semaines"
   },
   {
     "id": "num-14",
     "title": "Illectronisme et fracture numerique",
     "subtitle": "13 millions de Francais en difficulte",
-    "description": "20% des Francais en difficulte avec le numerique. L'Etat dematerialise massivement les demarches tout en creant une barriere pour 1 Francais sur 5. Le Defenseur des droits recoit 30 000 reclamations/an. 4 000 conseillers numeriques France Services deployes.",
+    "description": "20% des Francais en difficulte avec le numerique. L'État dematerialise massivement les demarches tout en creant une barriere pour 1 Francais sur 5. Le Defenseur des droits recoit 30 000 reclamations/an. 4 000 conseillers numeriques France Services deployes.",
     "amountBillions": 0.3,
     "costPerCitizen": 4,
     "deckId": "numerique",
@@ -249,7 +249,7 @@
       "illectronisme",
       "inclusion"
     ],
-    "equivalence": "L'Etat a dematerialise 100% des demarches mais 20% des Francais ne savent pas cliquer"
+    "equivalence": "L'État a dematerialise 100% des demarches mais 20% des Francais ne savent pas cliquer"
   },
   {
     "id": "num-15",
@@ -283,7 +283,7 @@
     "tags": [
       "numerique",
       "datacenters",
-      "energie"
+      "énergie"
     ],
     "equivalence": "1 datacenter d'IA consomme autant d'electricite qu'une ville de 50 000 habitants"
   },
@@ -309,7 +309,7 @@
     "id": "num-18",
     "title": "Open data et donnees publiques",
     "subtitle": "data.gouv.fr — 45 000 jeux de donnees",
-    "description": "La France est classee 1re en Europe et 2e mondiale pour l'open data. 40 000 developpeurs utilisent les API publiques. L'ouverture des donnees de sante et des algorithmes (Parcoursup) fait debat. Cout microscopique pour un impact economique estime a 1-3 Md/an.",
+    "description": "La France est classee 1re en Europe et 2e mondiale pour l'open data. 40 000 developpeurs utilisent les API publiques. L'ouverture des donnees de sante et des algorithmes (Parcoursup) fait debat. Cout microscopique pour un impact économique estime a 1-3 Md/an.",
     "amountBillions": 0.03,
     "costPerCitizen": 0.45,
     "deckId": "numerique",
@@ -321,6 +321,6 @@
       "open data",
       "transparence"
     ],
-    "equivalence": "0,45/an par Francais pour l'open data, genere 1-3 Md de valeur economique — ratio x3000"
+    "equivalence": "0,45/an par Francais pour l'open data, genere 1-3 Md de valeur économique — ratio x3000"
   }
 ]

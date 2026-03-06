@@ -35,7 +35,7 @@
       "santé",
       "AME"
     ],
-    "equivalence": "~3 000€ de depense annuelle par beneficiaire (vs ~3 900€/personne pour l'Assurance maladie classique)"
+    "equivalence": "~3 000€ de dépense annuelle par beneficiaire (vs ~3 900€/personne pour l'Assurance maladie classique)"
   },
   {
     "id": "imm-03",
@@ -277,7 +277,7 @@
   {
     "id": "imm-16",
     "title": "Immigration de travail et metiers en tension",
-    "subtitle": "40 000 titres de sejour economiques/an",
+    "subtitle": "40 000 titres de sejour économiques/an",
     "description": "60% des entreprises declarent des difficultes de recrutement. Le Passeport Talent vise les profils qualifies : 15 000 delivres/an. Debat : immigration choisie (Canada, Australie) plutot que subie (regroupement familial = 90 000 titres/an) ?",
     "amountBillions": 0,
     "costPerCitizen": 0,

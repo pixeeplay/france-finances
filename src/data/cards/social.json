@@ -16,7 +16,7 @@
       "retraites",
       "pensions"
     ],
-    "equivalence": "370 Md€ de retraites = 7x le budget de la Defense"
+    "equivalence": "370 Md€ de retraites = 7x le budget de la Défense"
   },
   {
     "id": "soc-02",
@@ -54,7 +54,7 @@
       "retraites",
       "fonctionnaires"
     ],
-    "equivalence": "Le CAS Pensions = le 3e budget de l'Etat, devant la Defense"
+    "equivalence": "Le CAS Pensions = le 3e budget de l'État, devant la Défense"
   },
   {
     "id": "soc-04",
@@ -111,7 +111,7 @@
       "solidarité",
       "minima sociaux"
     ],
-    "equivalence": "Les 30 Md€ de minima sociaux = 6% du budget total de l'Etat"
+    "equivalence": "Les 30 Md€ de minima sociaux = 6% du budget total de l'État"
   },
   {
     "id": "soc-07",
@@ -283,7 +283,7 @@
       "État"
     ],
     "trend": null,
-    "equivalence": "La pension moyenne d'un fonctionnaire d'Etat = ~2 200€/mois brut (vs ~1 500€ regime general)"
+    "equivalence": "La pension moyenne d'un fonctionnaire d'État = ~2 200€/mois brut (vs ~1 500€ regime général)"
   },
   {
     "id": "ret-04",
@@ -304,7 +304,7 @@
       "RATP"
     ],
     "trend": null,
-    "equivalence": "L'Etat subventionne ~75% des pensions SNCF/RATP (les cotisants ne financent que 25%)"
+    "equivalence": "L'État subventionne ~75% des pensions SNCF/RATP (les cotisants ne financent que 25%)"
   },
   {
     "id": "ret-05",
@@ -472,7 +472,7 @@
     "id": "soc-15",
     "title": "Branche autonomie (5e branche Secu)",
     "subtitle": "40 Md EUR pour la dependance",
-    "description": "La 5e branche de la Securite sociale gere la perte d'autonomie des personnes agees et handicapees : APA, PCH, financement des EHPAD. Le vieillissement doublera les besoins d'ici 2050. La loi grand age promise depuis 2019 n'a jamais ete votee.",
+    "description": "La 5e branche de la Sécurité sociale gere la perte d'autonomie des personnes agees et handicapees : APA, PCH, financement des EHPAD. Le vieillissement doublera les besoins d'ici 2050. La loi grand age promise depuis 2019 n'a jamais ete votee.",
     "amountBillions": 40,
     "costPerCitizen": 588,
     "deckId": "social",
@@ -492,7 +492,7 @@
     "id": "soc-16",
     "title": "Accidents du travail (AT-MP)",
     "subtitle": "Branche excedentaire mais siphonnee",
-    "description": "La branche AT-MP indemnise ~650 000 accidents du travail et ~50 000 maladies professionnelles par an. Financee par les cotisations employeurs. Structurellement excedentaire (~1-2 Md EUR/an), l'Etat la pontionne regulierement pour financer les branches deficitaires.",
+    "description": "La branche AT-MP indemnise ~650 000 accidents du travail et ~50 000 maladies professionnelles par an. Financee par les cotisations employeurs. Structurellement excedentaire (~1-2 Md EUR/an), l'État la pontionne regulierement pour financer les branches deficitaires.",
     "amountBillions": 14,
     "costPerCitizen": 206,
     "deckId": "social",
@@ -506,13 +506,13 @@
       "accidents",
       "cotisations"
     ],
-    "equivalence": "La branche AT-MP est excedentaire mais l'Etat siphonne ses reserves pour boucher les trous de la Secu"
+    "equivalence": "La branche AT-MP est excedentaire mais l'État siphonne ses reserves pour boucher les trous de la Secu"
   },
   {
     "id": "soc-17",
     "title": "Pauvrete des enfants",
     "subtitle": "3 millions d'enfants sous le seuil de pauvrete",
-    "description": "21% des moins de 18 ans vivent sous le seuil de pauvrete. L'ASE prend en charge ~370 000 enfants dont ~180 000 places. Un placement en foyer coute ~50 000 EUR/an. 1 EUR investi dans un enfant de 0-5 ans rapporte 7-13 EUR a la societe sur 40 ans (Heckman).",
+    "description": "21% des moins de 18 ans vivent sous le seuil de pauvrete. L'ASE prend en charge ~370 000 enfants dont ~180 000 places. Un placement en foyer coute ~50 000 EUR/an. 1 EUR investi dans un enfant de 0-5 ans rapporte 7-13 EUR a la société sur 40 ans (Heckman).",
     "amountBillions": 10,
     "costPerCitizen": 147,
     "deckId": "social",
@@ -526,7 +526,7 @@
       "enfants",
       "ASE"
     ],
-    "equivalence": "1€ investi dans un enfant de 0-5 ans pauvre rapporte 7-13€ a la societe sur 40 ans"
+    "equivalence": "1€ investi dans un enfant de 0-5 ans pauvre rapporte 7-13€ a la société sur 40 ans"
   },
   {
     "id": "soc-18",
@@ -550,7 +550,7 @@
     "id": "soc-19",
     "title": "Aide alimentaire",
     "subtitle": "Restos du coeur, Banques alimentaires, Secours populaire",
-    "description": "5,5 millions de personnes recourent a l'aide alimentaire en France. Le nombre de beneficiaires a augmente de 30% depuis le COVID. L'Etat finance ~45% via le programme europeen FEAD. Les Restos du coeur ont failli arreter en 2023 (deficit de 35 M€). Le gaspillage alimentaire en France represente 10 millions de tonnes/an, dont une fraction seulement est recuperee par l'aide alimentaire.",
+    "description": "5,5 millions de personnes recourent a l'aide alimentaire en France. Le nombre de beneficiaires a augmente de 30% depuis le COVID. L'État finance ~45% via le programme europeen FEAD. Les Restos du coeur ont failli arreter en 2023 (deficit de 35 M€). Le gaspillage alimentaire en France represente 10 millions de tonnes/an, dont une fraction seulement est recuperee par l'aide alimentaire.",
     "amountBillions": 1.5,
     "costPerCitizen": 22,
     "deckId": "social",

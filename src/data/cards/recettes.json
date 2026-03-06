@@ -109,7 +109,7 @@
       "succession",
       "patrimoine"
     ],
-    "equivalence": "Les Francais transmettent ~300 Md€ par an, l'Etat en preleve ~7%"
+    "equivalence": "Les Francais transmettent ~300 Md€ par an, l'État en preleve ~7%"
   },
   {
     "id": "rec-07",
@@ -206,7 +206,7 @@
     "id": "rec-12",
     "title": "Taxe sur les transactions financieres (TTF)",
     "subtitle": "0,3% sur les achats d'actions",
-    "description": "La TTF rapporte ~2 Md/an. Creee en 2012, affectee au budget general et a l'aide au developpement. La taxe Tobin europeenne est bloquee depuis 20 ans. La France applique seule la taxe la plus elevee d'Europe, penalisant la Place de Paris face a Amsterdam et Francfort.",
+    "description": "La TTF rapporte ~2 Md/an. Creee en 2012, affectee au budget général et a l'aide au developpement. La taxe Tobin europeenne est bloquee depuis 20 ans. La France applique seule la taxe la plus elevee d'Europe, penalisant la Place de Paris face a Amsterdam et Francfort.",
     "amountBillions": 2,
     "costPerCitizen": 29,
     "deckId": "recettes",
@@ -260,7 +260,7 @@
     "id": "rec-15",
     "title": "Jeux d'argent (FDJ, PMU, paris)",
     "subtitle": "50 Md/an de mises, 6 Md de recettes fiscales",
-    "description": "Les Francais misent ~50 Md/an. L'Etat preleve ~12%. La FDJ reverse ~3,5 Md/an a l'Etat. Les paris sportifs en ligne explosent (+25%/an). L'addiction aux jeux touche ~600 000 personnes. Les sites illegaux offshore proliferent.",
+    "description": "Les Francais misent ~50 Md/an. L'État preleve ~12%. La FDJ reverse ~3,5 Md/an a l'État. Les paris sportifs en ligne explosent (+25%/an). L'addiction aux jeux touche ~600 000 personnes. Les sites illegaux offshore proliferent.",
     "amountBillions": 6,
     "costPerCitizen": 88,
     "deckId": "recettes",
@@ -290,7 +290,7 @@
       "amendes",
       "radars"
     ],
-    "equivalence": "1 radar rapporte en moyenne ~170 000/an a l'Etat"
+    "equivalence": "1 radar rapporte en moyenne ~170 000/an a l'État"
   },
   {
     "id": "rec-17",
@@ -312,9 +312,9 @@
   },
   {
     "id": "rec-18",
-    "title": "Dividendes et participations de l'Etat (APE)",
+    "title": "Dividendes et participations de l'État (APE)",
     "subtitle": "83 entreprises, 160 Md de portefeuille",
-    "description": "L'APE gere un portefeuille de ~160 Md (EDF, La Poste, Engie, Orange, Thales, Airbus, Renault, ADP, FDJ). Dividendes de 3 a 6 Md/an. L'Etat actionnaire est critique pour gerer ses participations comme un fonds de pension plutot que comme un stratege industriel.",
+    "description": "L'APE gere un portefeuille de ~160 Md (EDF, La Poste, Engie, Orange, Thales, Airbus, Renault, ADP, FDJ). Dividendes de 3 a 6 Md/an. L'État actionnaire est critique pour gerer ses participations comme un fonds de pension plutot que comme un stratege industriel.",
     "amountBillions": 4.5,
     "costPerCitizen": 66,
     "deckId": "recettes",
@@ -326,6 +326,6 @@
       "APE",
       "participations"
     ],
-    "equivalence": "L'Etat est actionnaire de 83 entreprises valant 160 Md — le plus gros portefeuille d'Europe"
+    "equivalence": "L'État est actionnaire de 83 entreprises valant 160 Md — le plus gros portefeuille d'Europe"
   }
 ]

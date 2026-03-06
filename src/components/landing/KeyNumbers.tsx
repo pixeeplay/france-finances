@@ -8,14 +8,14 @@ const numbers = [
   { value: 55, suffix: " Md\u20AC", label: "Int\u00E9r\u00EAts dette", color: "text-landing-expense" },
   { value: 85, suffix: " Md\u20AC", label: "Bouclier \u00E9nergie", color: "text-landing-expense" },
   { value: 110, suffix: " Md\u20AC", label: "H\u00F4pital public", color: "text-landing-expense" },
-  { value: 340, suffix: "", label: "Cartes \u00E0 d\u00E9couvrir", color: "text-landing-primary" },
+  { value: 370, suffix: "", label: "Cartes à découvrir", color: "text-landing-primary dark:text-white" },
 ];
 
 export function KeyNumbers() {
   return (
     <section id="chiffres" className="section-padding">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
-        <h2 className="font-heading font-bold text-2xl md:text-3xl text-center mb-12 text-landing-primary">
+        <h2 className="font-heading font-bold text-2xl md:text-3xl text-center mb-12 text-landing-primary dark:text-white">
           Les chiffres clés
         </h2>
 
@@ -23,17 +23,17 @@ export function KeyNumbers() {
           {numbers.map((n, i) => (
             <div
               key={i}
-              className="text-center p-6 rounded-2xl bg-white border border-slate-200 hover-lift transition-all"
+              className="text-center p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover-lift transition-all"
             >
               <div className={`font-heading font-extrabold text-3xl md:text-4xl ${n.color}`}>
                 <AnimatedNumber
                   value={n.value}
                   suffix={n.suffix ? ` ${n.suffix.trim()}` : ""}
-                  replayInterval={30000}
+                  replayInterval={20000}
                   className={n.color}
                 />
               </div>
-              <div className="text-sm text-slate-500 mt-2">{n.label}</div>
+              <div className="text-sm text-slate-500 dark:text-slate-400 mt-2">{n.label}</div>
             </div>
           ))}
         </div>

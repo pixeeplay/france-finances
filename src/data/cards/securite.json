@@ -55,7 +55,7 @@
       "magistrats",
       "budget"
     ],
-    "equivalence": "Le budget Justice = 1/6e du budget Defense"
+    "equivalence": "Le budget Justice = 1/6e du budget Défense"
   },
   {
     "id": "sec-04",
@@ -109,7 +109,7 @@
       "renseignement",
       "terrorisme"
     ],
-    "equivalence": "Le budget DGSI = 1/1 200e du budget de l'Etat"
+    "equivalence": "Le budget DGSI = 1/1 200e du budget de l'État"
   },
   {
     "id": "sec-07",
@@ -145,7 +145,7 @@
       "cybersécurité",
       "ANSSI"
     ],
-    "equivalence": "Le cout moyen d'une cyberattaque reussie contre un hopital : 1-10 M€"
+    "equivalence": "Le cout moyen d'une cyberattaque reussie contre un hôpital : 1-10 M€"
   },
   {
     "id": "sec-09",
@@ -165,11 +165,11 @@
       "drogue",
       "repression"
     ],
-    "equivalence": "On depense ~1,5 Md€/an pour reprimer un marche de 3-4 Md€ — le trafic est 2x plus rentable que la repression"
+    "equivalence": "On dépense ~1,5 Md€/an pour reprimer un marche de 3-4 Md€ — le trafic est 2x plus rentable que la repression"
   },
   {
     "id": "sec-10",
-    "title": "Securite routiere",
+    "title": "Sécurité routiere",
     "subtitle": "3 200 morts/an, stagnation depuis 10 ans",
     "description": "4 700 radars rapportent ~800 M EUR/an. Le cout social des accidents est estime a ~50 Md EUR/an. Les amendes rapportent 3,5 Md EUR mais les accidents coutent 50 Md EUR. Les PV de stationnement decentralises generent des recettes pour les communes.",
     "amountBillions": 3.5,
@@ -178,7 +178,7 @@
     "icon": "🚦",
     "trend": 0,
     "source": "ONISR, DSCR, PLF 2026, Cour des comptes",
-    "sourceUrl": "https://www.onisr.securite-routiere.gouv.fr",
+    "sourceUrl": "https://www.onisr.sécurité-routiere.gouv.fr",
     "level": 1,
     "tags": [
       "routiere",
@@ -211,7 +211,7 @@
     "id": "sec-12",
     "title": "Police municipale",
     "subtitle": "27 000 agents dans 4 500 communes",
-    "description": "Budget entierement a la charge des collectivites. Depuis la loi Securite globale (2021), pouvoirs elargis. Inegalite territoriale massive : Nice depense ~200 EUR/habitant/an en police municipale, quand une commune rurale depense 0 EUR.",
+    "description": "Budget entierement a la charge des collectivites. Depuis la loi Sécurité globale (2021), pouvoirs elargis. Inegalite territoriale massive : Nice dépense ~200 EUR/habitant/an en police municipale, quand une commune rurale dépense 0 EUR.",
     "amountBillions": 5,
     "costPerCitizen": 74,
     "deckId": "securite",
@@ -223,15 +223,15 @@
     "tags": [
       "police municipale",
       "collectivites",
-      "securite"
+      "sécurité"
     ],
-    "equivalence": "Nice depense ~200€/habitant/an en police municipale, quand une commune rurale depense 0€"
+    "equivalence": "Nice dépense ~200€/habitant/an en police municipale, quand une commune rurale dépense 0€"
   },
   {
     "id": "sec-13",
     "title": "Victimes et indemnisation",
     "subtitle": "FGTI : 150 000 victimes indemnisees/an",
-    "description": "Le FGTI indemnise agressions, viols, vols avec violence, terrorisme. Finance par une taxe de 5,90 EUR sur chaque contrat d'assurance. Les indemnisations des attentats 2015-2016 ont depasse 1,5 Md EUR. Le systeme francais est considere comme le plus genereux au monde.",
+    "description": "Le FGTI indemnise agressions, viols, vols avec violence, terrorisme. Finance par une taxe de 5,90 EUR sur chaque contrat d'assurance. Les indemnisations des attentats 2015-2016 ont depasse 1,5 Md EUR. Le système francais est considere comme le plus genereux au monde.",
     "amountBillions": 0.7,
     "costPerCitizen": 10,
     "deckId": "securite",
@@ -295,7 +295,7 @@
     "source": "CNIL, AN rapport VSA JOP, Senat",
     "level": 1,
     "tags": [
-      "securite",
+      "sécurité",
       "video",
       "surveillance"
     ],
@@ -331,7 +331,7 @@
     "source": "CIPDR, DGSI, DAP, PLF 2026",
     "level": 1,
     "tags": [
-      "securite",
+      "sécurité",
       "radicalisation",
       "terrorisme"
     ],

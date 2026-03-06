@@ -106,7 +106,7 @@
       "sécurité alimentaire",
       "contrôle"
     ],
-    "equivalence": "2 centimes par repas pour garantir la securite de ce qu'on mange"
+    "equivalence": "2 centimes par repas pour garantir la sécurité de ce qu'on mange"
   },
   {
     "id": "agr-07",
@@ -165,7 +165,7 @@
   {
     "id": "agr-10",
     "title": "Bien-etre animal et abattoirs",
-    "subtitle": "Controles DGAL + mises aux normes",
+    "subtitle": "Contrôles DGAL + mises aux normes",
     "description": "La France compte ~250 abattoirs (divise par 2 en 20 ans). Cameras obligatoires en abattoir depuis 2023 (taux reel : ~40%). Veterinaires inspecteurs en sous-effectif (-20% en 10 ans). La loi Egalim interdit le broyage des poussins males et la castration a vif des porcelets depuis 2022.",
     "amountBillions": 0.15,
     "costPerCitizen": 2,
@@ -184,7 +184,7 @@
     "id": "agr-11",
     "title": "Vigne, vin et spiritueux",
     "subtitle": "Filiere viticole et fiscalite alcool",
-    "description": "La France est le 2e producteur mondial de vin et 1er exportateur en valeur (13 Md/an dont cognac). La consommation a chute de 50% en 40 ans. L'Etat aide a arracher des vignes (6 000/ha). Paradoxe : promotion du vin a l'export tout en combattant la consommation d'alcool (loi Evin).",
+    "description": "La France est le 2e producteur mondial de vin et 1er exportateur en valeur (13 Md/an dont cognac). La consommation a chute de 50% en 40 ans. L'État aide a arracher des vignes (6 000/ha). Paradoxe : promotion du vin a l'export tout en combattant la consommation d'alcool (loi Evin).",
     "amountBillions": 0.5,
     "costPerCitizen": 52,
     "deckId": "agriculture",
@@ -196,7 +196,7 @@
       "vin",
       "fiscalite"
     ],
-    "equivalence": "Le vin rapporte 4 Md de taxes et 13 Md d'export, mais l'alcool coute 120 Md/an a la societe"
+    "equivalence": "Le vin rapporte 4 Md de taxes et 13 Md d'export, mais l'alcool coute 120 Md/an a la société"
   },
   {
     "id": "agr-12",
@@ -310,7 +310,7 @@
     "id": "agr-18",
     "title": "Cantines publiques et restauration collective",
     "subtitle": "3,5 milliards de repas/an",
-    "description": "La restauration collective publique sert 3,5 milliards de repas/an. La loi EGalim impose 50% de produits durables et 20% de bio — objectif atteint a ~30%. Un repas de cantine scolaire coute 8-10 a produire. Un repas d'hopital coute 3-5. Le gaspillage en restauration collective = 120g/repas.",
+    "description": "La restauration collective publique sert 3,5 milliards de repas/an. La loi EGalim impose 50% de produits durables et 20% de bio — objectif atteint a ~30%. Un repas de cantine scolaire coute 8-10 a produire. Un repas d'hôpital coute 3-5. Le gaspillage en restauration collective = 120g/repas.",
     "amountBillions": 4,
     "costPerCitizen": 59,
     "deckId": "agriculture",
@@ -322,7 +322,7 @@
       "cantines",
       "EGalim"
     ],
-    "equivalence": "Un repas d'hopital coute moins qu'un cafe au comptoir — et ca se goute"
+    "equivalence": "Un repas d'hôpital coute moins qu'un cafe au comptoir — et ca se goute"
   },
   {
     "id": "agr-19",
@@ -344,9 +344,9 @@
   },
   {
     "id": "agr-20",
-    "title": "Foret francaise et bois-energie",
+    "title": "Foret francaise et bois-énergie",
     "subtitle": "ONF + reboisement + filiere bois",
-    "description": "La foret francaise couvre 17 millions d'hectares (31% du territoire). Menacee par les scolytes, secheresses et incendies (+50% de surfaces brulees en 2022). Plan de reboisement France 2030 : 1 milliard d'arbres en 10 ans. Le bois-energie represente 40% de la production d'energie renouvelable.",
+    "description": "La foret francaise couvre 17 millions d'hectares (31% du territoire). Menacee par les scolytes, secheresses et incendies (+50% de surfaces brulees en 2022). Plan de reboisement France 2030 : 1 milliard d'arbres en 10 ans. Le bois-énergie represente 40% de la production d'énergie renouvelable.",
     "amountBillions": 1.2,
     "costPerCitizen": 18,
     "deckId": "agriculture",

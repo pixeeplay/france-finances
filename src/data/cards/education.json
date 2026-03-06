@@ -34,7 +34,7 @@
       "supérieur",
       "universités"
     ],
-    "equivalence": "Le budget recherche + superieur = la moitie du budget Defense"
+    "equivalence": "Le budget recherche + superieur = la moitie du budget Défense"
   },
   {
     "id": "edu-03",
@@ -224,7 +224,7 @@
     "id": "edu-13",
     "title": "Lycees professionnels",
     "subtitle": "620 000 lyceens en voie professionnelle",
-    "description": "1/3 des lyceens sont en voie professionnelle. Taux de decrochage : 25% (vs 5% en voie generale). La reforme 2023 introduit des gratifications de stage et la fermeture des formations sans debouche. Le taux d'insertion des CAP/bac pro en apprentissage atteint 70%.",
+    "description": "1/3 des lyceens sont en voie professionnelle. Taux de decrochage : 25% (vs 5% en voie générale). La reforme 2023 introduit des gratifications de stage et la fermeture des formations sans debouche. Le taux d'insertion des CAP/bac pro en apprentissage atteint 70%.",
     "amountBillions": 7,
     "costPerCitizen": 103,
     "deckId": "education",
@@ -238,7 +238,7 @@
       "formation",
       "apprentissage"
     ],
-    "equivalence": "Un lyceen professionnel coute ~11 000€/an a l'Etat (vs ~9 000€ en voie generale, stages inclus)"
+    "equivalence": "Un lyceen professionnel coute ~11 000€/an a l'État (vs ~9 000€ en voie générale, stages inclus)"
   },
   {
     "id": "edu-14",
@@ -338,7 +338,7 @@
     "id": "edu-19",
     "title": "Harcelement scolaire",
     "subtitle": "Plan de lutte pHARe + formations + numero 3018",
-    "description": "700 000 a 1 million d'eleves sont victimes de harcelement scolaire chaque annee. Le cyberharcelement touche 20% des adolescents. Le plan pHARe forme les adultes-referents et systematise le signalement. Depuis 2023, le harcelement est un delit penal. Le changement d'etablissement concerne desormais le harceleur (et non plus la victime). Budget faible au regard de l'ampleur du probleme.",
+    "description": "700 000 a 1 million d'eleves sont victimes de harcelement scolaire chaque annee. Le cyberharcelement touche 20% des adolescents. Le plan pHARe forme les adultes-referents et systematise le signalement. Depuis 2023, le harcelement est un delit penal. Le changement d'etablissement concerne desormais le harceleur (et non plus la victime). Budget faible au regard de l'ampleur du problème.",
     "amountBillions": 0.1,
     "costPerCitizen": 2,
     "deckId": "education",

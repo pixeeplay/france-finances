@@ -17,6 +17,8 @@ import immigrationCards from "./cards/immigration.json";
 import numeriqueCards from "./cards/numerique.json";
 import recettesCards from "./cards/recettes.json";
 import emploiCards from "./cards/emploi.json";
+import environnementCards from "./cards/environnement.json";
+import collectivitesCards from "./cards/collectivites.json";
 import franceEuropeCards from "./cards/france-europe.json";
 import zombiesCards from "./cards/zombies.json";
 import ukraineCards from "./cards/ukraine.json";
@@ -36,6 +38,8 @@ const allCards: Card[] = [
   ...numeriqueCards,
   ...recettesCards,
   ...emploiCards,
+  ...environnementCards,
+  ...collectivitesCards,
   ...franceEuropeCards,
   ...zombiesCards,
   ...ukraineCards,

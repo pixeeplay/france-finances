@@ -9,7 +9,7 @@
     "deckId": "ukraine",
     "icon": "🪖",
     "source": "Ministère des Armées (liste mai 2024), Institut Kiel",
-    "sourceUrl": "https://www.defense.gouv.fr",
+    "sourceUrl": "https://www.défense.gouv.fr",
     "level": 1,
     "tags": [
       "Ukraine",
@@ -17,7 +17,7 @@
       "défense"
     ],
     "trend": null,
-    "equivalence": "La France a donne l'equivalent en materiel de ~2,5% du budget annuel de la Defense"
+    "equivalence": "La France a donne l'equivalent en materiel de ~2,5% du budget annuel de la Défense"
   },
   {
     "id": "ukr-02",
@@ -29,7 +29,7 @@
     "deckId": "ukraine",
     "icon": "🇪🇺",
     "source": "Ministère des Armées, Conseil de l'UE",
-    "sourceUrl": "https://www.defense.gouv.fr",
+    "sourceUrl": "https://www.défense.gouv.fr",
     "level": 1,
     "tags": [
       "Ukraine",
@@ -50,7 +50,7 @@
     "deckId": "ukraine",
     "icon": "🤝",
     "source": "Ministère des Armées, info.gouv.fr",
-    "sourceUrl": "https://www.defense.gouv.fr",
+    "sourceUrl": "https://www.défense.gouv.fr",
     "level": 1,
     "tags": [
       "Ukraine",
@@ -58,7 +58,7 @@
       "bilatéral"
     ],
     "trend": null,
-    "equivalence": "Chaque euro du fonds finance un emploi industriel de defense en France"
+    "equivalence": "Chaque euro du fonds finance un emploi industriel de défense en France"
   },
   {
     "id": "ukr-04",
@@ -70,7 +70,7 @@
     "deckId": "ukraine",
     "icon": "🎯",
     "source": "Ministère des Armées, EUMAM, info.gouv.fr",
-    "sourceUrl": "https://www.defense.gouv.fr",
+    "sourceUrl": "https://www.défense.gouv.fr",
     "level": 1,
     "tags": [
       "Ukraine",
@@ -118,7 +118,7 @@
       "surcoût"
     ],
     "trend": null,
-    "equivalence": "Le surcout energetique du conflit = la moitie du budget annuel de la Defense, chaque annee pendant 2 ans"
+    "equivalence": "Le surcout energetique du conflit = la moitie du budget annuel de la Défense, chaque annee pendant 2 ans"
   },
   {
     "id": "ukr-07",
@@ -130,7 +130,7 @@
     "deckId": "ukraine",
     "icon": "📈",
     "source": "LPM 2024-2030, PLF 2026, Ministère des Armées",
-    "sourceUrl": "https://www.defense.gouv.fr",
+    "sourceUrl": "https://www.défense.gouv.fr",
     "level": 1,
     "tags": [
       "Ukraine",
@@ -139,7 +139,7 @@
       "budget"
     ],
     "trend": null,
-    "equivalence": "La hausse annuelle du budget Defense (+3,3 Md€) = le budget du SNU x 3"
+    "equivalence": "La hausse annuelle du budget Défense (+3,3 Md€) = le budget du SNU x 3"
   },
   {
     "id": "ukr-08",
@@ -171,7 +171,7 @@
     "deckId": "ukraine",
     "icon": "🇫🇷",
     "source": "Ministère des Armées, Institut Kiel, lesfrancais.press",
-    "sourceUrl": "https://www.defense.gouv.fr",
+    "sourceUrl": "https://www.défense.gouv.fr",
     "level": 1,
     "tags": [
       "Ukraine",

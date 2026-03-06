@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef, useCallback } from "react";
 import { useInView } from "framer-motion";
 
 interface AnimatedNumberProps {
@@ -15,6 +15,13 @@ function formatNumber(n: number): string {
   return n.toLocaleString("fr-FR");
 }
 
+/**
+ * Easing function: ease-out cubic for a natural deceleration feel.
+ */
+function easeOutCubic(t: number): number {
+  return 1 - Math.pow(1 - t, 3);
+}
+
 export function AnimatedNumber({
   value,
   suffix = "",
@@ -22,48 +29,56 @@ export function AnimatedNumber({
   replayInterval = 0,
 }: AnimatedNumberProps) {
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: false, margin: "-50px" });
-  const [hasAnimated, setHasAnimated] = useState(false);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const hasAnimated = useRef(false);
 
   const animate = useCallback(() => {
-    const duration = 1500;
-    const steps = 60;
-    const increment = value / steps;
-    let step = 0;
-    const timer = setInterval(() => {
-      step++;
-      if (step >= steps) {
-        if (ref.current) ref.current.textContent = `${formatNumber(value)}${suffix}`;
-        clearInterval(timer);
-      } else {
-        if (ref.current) ref.current.textContent = `${formatNumber(Math.round(increment * step))}${suffix}`;
+    const duration = 1800;
+    let start: number | null = null;
+    let rafId: number;
+
+    function tick(timestamp: number) {
+      if (!start) start = timestamp;
+      const elapsed = timestamp - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const easedProgress = easeOutCubic(progress);
+      const current = Math.round(easedProgress * value);
+
+      if (ref.current) {
+        ref.current.textContent = `${formatNumber(current)}${suffix}`;
       }
-    }, duration / steps);
-    return () => clearInterval(timer);
+
+      if (progress < 1) {
+        rafId = requestAnimationFrame(tick);
+      }
+    }
+
+    rafId = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafId);
   }, [value, suffix]);
 
-  // Initial animation on view
+  // Initial animation when section enters viewport
   useEffect(() => {
-    if (isInView && !hasAnimated) {
-      setHasAnimated(true);  
+    if (isInView && !hasAnimated.current) {
+      hasAnimated.current = true;
       const cleanup = animate();
       return cleanup;
     }
-  }, [isInView, hasAnimated, animate]);
+  }, [isInView, animate]);
 
-  // Replay loop
+  // Replay loop: smooth re-animation without jarring reset
   useEffect(() => {
-    if (!hasAnimated || !replayInterval) return;
+    if (!hasAnimated.current || !replayInterval) return;
     const interval = setInterval(() => {
-      if (ref.current) ref.current.textContent = `0${suffix}`;
       animate();
     }, replayInterval);
     return () => clearInterval(interval);
-  }, [hasAnimated, replayInterval, animate, suffix]);
+  }, [isInView, replayInterval, animate]);
 
+  // SSR: show final value (never flash 0)
   return (
     <span ref={ref} className={className}>
-      0{suffix}
+      {formatNumber(value)}{suffix}
     </span>
   );
 }
