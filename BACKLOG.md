@@ -99,8 +99,8 @@
 | BACK-08 | P1 | S | Headers de securite (CSP, X-Frame-Options, HSTS) | Done Sprint 12 |
 | BACK-09 | P1 | M | Validation payload Zod sur POST /api/sessions | Done Sprint 12 |
 | BACK-10 | P1 | M | Rate limiting API (in-memory, 10 req/min) | Done Sprint 12 |
-| BACK-11 | P2 | S | Index DB sur colonnes requetees | A faire |
-| BACK-12 | P2 | S | Connection pooling PostgreSQL | A faire |
+| BACK-11 | P2 | S | Index DB sur colonnes requetees | Done Sprint 16 |
+| BACK-12 | P2 | S | Connection pooling PostgreSQL | Done Sprint 16 |
 | BACK-13 | P2 | S | Error.tsx + global-error.tsx + not-found.tsx + loading.tsx | Done Sprint 12 |
 | BACK-14 | P2 | XS | Healthcheck endpoint /api/health | Done Sprint 12 |
 | BACK-15 | P2 | S | Error responses coherentes API (503/500) | Done Sprint 12 |
@@ -116,7 +116,7 @@
 | TECH-08 | P2 | S | Schema versioning localStorage + migration | Done Sprint 14 |
 | TECH-09 | P2 | S | Convertir /infos en RSC | Done Sprint 15 |
 | TECH-10 | P2 | M | Lazy load framer-motion sur homepage | Done Sprint 15 |
-| TECH-11 | P3 | S | Drizzle migrations tracees | A faire |
+| TECH-11 | P3 | S | Drizzle migrations tracees | Done Sprint 16 |
 
 ---
 
@@ -124,6 +124,6 @@
 
 | Statut | Count |
 |--------|-------|
-| Done | 75 |
-| A faire | 3 |
+| Done | 78 |
+| A faire | 0 |
 | **Total** | **78** |

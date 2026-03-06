@@ -1,4 +1,4 @@
-import { pgTable, uuid, text, integer, real, boolean, timestamp, jsonb, smallint, primaryKey } from "drizzle-orm/pg-core";
+import { pgTable, uuid, text, integer, real, boolean, timestamp, jsonb, smallint, primaryKey, index } from "drizzle-orm/pg-core";
 import type { AdapterAccountType } from "next-auth/adapters";
 
 // === Users (Auth.js compatible) ===
@@ -27,6 +27,7 @@ export const accounts = pgTable("accounts", {
   session_state: text("session_state"),
 }, (account) => [
   primaryKey({ columns: [account.provider, account.providerAccountId] }),
+  index("idx_accounts_user_id").on(account.userId),
 ]);
 
 // === Auth.js Sessions (server-side) ===
@@ -62,7 +63,12 @@ export const sessions = pgTable("sessions", {
   totalKeptBillions: real("total_kept_billions").notNull(),
   totalCutBillions: real("total_cut_billions").notNull(),
   createdAt: timestamp("created_at").defaultNow().notNull(),
-});
+}, (t) => [
+  index("idx_sessions_user_id").on(t.userId),
+  index("idx_sessions_deck_id").on(t.deckId),
+  index("idx_sessions_archetype_id").on(t.archetypeId),
+  index("idx_sessions_created_at").on(t.createdAt),
+]);
 
 // === Votes (individual card votes for community aggregation) ===
 export const votes = pgTable("votes", {
@@ -72,7 +78,11 @@ export const votes = pgTable("votes", {
   direction: text("direction").notNull(), // keep | cut | reinforce | unjustified
   durationMs: integer("duration_ms").notNull().default(0),
   createdAt: timestamp("created_at").defaultNow().notNull(),
-});
+}, (t) => [
+  index("idx_votes_session_id").on(t.sessionId),
+  index("idx_votes_card_id").on(t.cardId),
+  index("idx_votes_card_direction").on(t.cardId, t.direction),
+]);
 
 // === Community aggregates (materialized cache, updated periodically) ===
 export const communityVotes = pgTable("community_votes", {
@@ -93,4 +103,6 @@ export const auditResponses = pgTable("audit_responses", {
   diagnostics: jsonb("diagnostics").notNull(), // Record<string, boolean>
   recommendation: text("recommendation").notNull(), // keep | reduce | externalize | merge | reinforce | delete
   createdAt: timestamp("created_at").defaultNow().notNull(),
-});
+}, (t) => [
+  index("idx_audit_responses_session_id").on(t.sessionId),
+]);

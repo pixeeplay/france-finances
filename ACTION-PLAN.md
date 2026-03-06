@@ -102,13 +102,27 @@ Voir historique dans git log. 38 items livres.
 |---|------|--------|-----|--------|
 | 1 | Lazy load framer-motion sur homepage (next/dynamic) | M | TECH-10 | Done |
 | 2 | Convertir /infos en RSC (supprimer "use client") | S | TECH-09 | Done |
-| 3 | Index DB sur colonnes requetees | S | BACK-11 | Reporte (pas de DB en prod) |
-| 4 | Connection pooling PostgreSQL | S | BACK-12 | Reporte (pas de DB en prod) |
+| 3 | Index DB sur colonnes requetees | S | BACK-11 | Done Sprint 16 |
+| 4 | Connection pooling PostgreSQL | S | BACK-12 | Done Sprint 16 |
 | 5 | pb-safe sur BottomNav et footers (iOS) | XS | UX-29 | Done |
 | 6 | Re-acces au tutoriel depuis Infos/Profil | XS | UX-28 | Done |
 | 7 | Ajouter favicon.ico | XS | SEO-05 | Done |
 
 **Livrable :** SlideToPlay lazy-loaded, /infos RSC, pb-safe iOS, tutoriel replay, favicon.
+
+---
+
+## Sprint 16 -- DB & Migrations
+
+**Objectif :** Index DB, connection pooling, migrations Drizzle trackees.
+
+| # | Item | Effort | Ref | Statut |
+|---|------|--------|-----|--------|
+| 1 | Index DB sur colonnes requetees (9 index) | S | BACK-11 | Done |
+| 2 | Connection pooling PostgreSQL (max 10, idle 20s) | S | BACK-12 | Done |
+| 3 | Drizzle migrations tracees (drizzle/ + migrate.ts) | S | TECH-11 | Done |
+
+**Livrable :** 9 index DB, connection pool configure, migration initiale generee.
 
 ---
 
@@ -121,7 +135,6 @@ Voir historique dans git log. 38 items livres.
 | Leaderboard vitesse | M | UX-30 |
 | API ouverte / export CSV | M | BACK-05 |
 | Analytics Plausible/PostHog | L | BACK-06 |
-| Drizzle migrations tracees | S | TECH-11 |
 | Metadata profil joueur | XS | SEO-03 |
 
 ---
