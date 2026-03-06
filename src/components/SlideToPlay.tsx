@@ -30,7 +30,7 @@ export function SlideToPlay() {
         type: "spring",
         stiffness: 300,
         damping: 30,
-        onComplete: () => router.push("/play"),
+        onComplete: () => router.push("/jeu"),
       });
     } else {
       animate(x, 0, { type: "spring", stiffness: 500, damping: 30 });

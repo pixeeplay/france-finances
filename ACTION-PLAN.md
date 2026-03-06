@@ -112,7 +112,7 @@
 | A11Y-07 | P1 | S | Reduced motion : CardDetail + ResultScreen confettis |
 | UX-32 | P2 | S | Skeletons loading : play page, ranking page (remplacer "Chargement...") |
 | UX-33 | P2 | XS | Reset store dans handleQuitSession avant navigation |
-| UX-34 | P2 | S | Error boundaries par route (/profile, /ranking, /play/[deckId]) |
+| UX-34 | P2 | S | Error boundaries par route (/profile, /ranking, /jeu/[deckId]) |
 
 **Total Sprint 22 : 10 items**
 
@@ -147,7 +147,7 @@
 | PWA-04 | P2 | XS | viewportFit: cover dans viewport metadata (notch support) |
 | PWA-05 | P2 | XS | manifest.json : ajouter screenshots + icons 96/256 |
 | ERR-01 | P2 | S | Fetch timeout (AbortController 10s) dans useCommunityStats + useSync |
-| ERR-02 | P2 | XS | loading.tsx pour /play/[deckId] |
+| ERR-02 | P2 | XS | loading.tsx pour /jeu/[deckId] |
 | ERR-03 | P2 | XS | Logging ameliore : error.message dans API catch blocks |
 | API-01 | P2 | S | Standardiser format reponse API ({ ok, data } partout) |
 | API-02 | P2 | XS | Index analytics_events(ip) pour dashboard unique visitors |
@@ -167,7 +167,7 @@
 | SEC-06 | P3 | S | Valider cardId format + existence dans /api/sessions |
 | SEC-07 | P3 | S | CSRF tokens explicites sur endpoints POST |
 | UX-35 | P3 | S | Typo accents dans metadata play/ranking layouts |
-| UX-36 | P3 | S | OG images dynamiques pour pages /play/[deckId] |
+| UX-36 | P3 | S | OG images dynamiques pour pages /jeu/[deckId] |
 | PWA-06 | P3 | S | Background sync pour sessions offline (Periodic Sync API) |
 | DATA-01 | P3 | XS | Ajouter sourceUrl manquants dans france-europe.json (10 cartes) |
 

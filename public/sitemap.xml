@@ -5,8 +5,12 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://nicoquipaie.pixeeplay.fr/play</loc>
+    <loc>https://nicoquipaie.pixeeplay.fr/jeu</loc>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://nicoquipaie.pixeeplay.fr/a-propos</loc>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://nicoquipaie.pixeeplay.fr/infos</loc>

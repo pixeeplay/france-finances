@@ -43,7 +43,7 @@ function IconInfos({ className }: { className?: string }) {
 }
 
 const navItems = [
-  { label: "Jouer", href: "/play", icon: IconJouer },
+  { label: "Jouer", href: "/jeu", icon: IconJouer },
   { label: "Profil", href: "/profile", icon: IconProfil },
   { label: "Communauté", href: "/ranking", icon: IconRang },
   { label: "Infos", href: "/infos", icon: IconInfos },
@@ -53,12 +53,12 @@ export function BottomNav() {
   const pathname = usePathname();
 
   // Hide on game/swipe, results, and admin pages
-  if (pathname.startsWith("/play/") || pathname === "/results" || pathname.startsWith("/pixee-admin")) {
+  if (pathname.startsWith("/jeu/") || pathname === "/results" || pathname.startsWith("/pixee-admin")) {
     return null;
   }
 
   return (
-    <nav aria-label="Navigation principale" className="sticky bottom-0 bg-card/70 backdrop-blur-xl rounded-t-[32px] border-t border-border/30 px-4 pt-3 pb-4 pb-safe z-50">
+    <nav aria-label="Navigation principale" className="sticky bottom-0 bg-card/70 backdrop-blur-xl border-t border-border/30 px-4 pt-3 pb-4 pb-safe z-50">
       <div className="flex items-center justify-around" role="list">
         {navItems.map((item) => {
           const isActive =

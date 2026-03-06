@@ -34,50 +34,23 @@ export function ResultScreen() {
   const isBudgetMode = session?.gameMode === "budget";
   const budgetTarget = session?.budgetTarget ?? 0;
 
+  const keepCount = stats?.keepCount ?? 0;
+  const cutCount = stats?.cutCount ?? 0;
+  const reinforceCount = stats?.reinforceCount ?? 0;
+  const unjustifiedCount = stats?.unjustifiedCount ?? 0;
+  const keepPercent = Math.round(stats?.keepPercent ?? 0);
+  const cutPercent = Math.round(stats?.cutPercent ?? 0);
+  const reinforcePercent = stats && stats.totalCards > 0 ? Math.round((reinforceCount / stats.totalCards) * 100) : 0;
+  const unjustifiedPercent = stats && stats.totalCards > 0 ? Math.round((unjustifiedCount / stats.totalCards) * 100) : 0;
+
   // Hide confetti after a few seconds
   useEffect(() => {
     const timer = setTimeout(() => setShowConfetti(false), 4000);
     return () => clearTimeout(timer);
   }, []);
 
-  // No session data — redirect to play
-  if (!session || !session.completed || !stats || !archetype) {
-    return (
-      <div className="flex-1 flex flex-col items-center justify-center gap-4 px-6">
-        <p className="text-muted-foreground">Aucune session en cours.</p>
-        <button
-          onClick={() => router.push("/play")}
-          className="rounded-xl py-3 px-6 border-2 border-border text-foreground font-bold hover:bg-card transition-colors"
-        >
-          Jouer
-        </button>
-      </div>
-    );
-  }
-
-  const keepCount = stats.keepCount;
-  const cutCount = stats.cutCount;
-  const reinforceCount = stats.reinforceCount ?? 0;
-  const unjustifiedCount = stats.unjustifiedCount ?? 0;
-  const keepPercent = Math.round(stats.keepPercent);
-  const cutPercent = Math.round(stats.cutPercent);
-  const reinforcePercent = stats.totalCards > 0 ? Math.round((reinforceCount / stats.totalCards) * 100) : 0;
-  const unjustifiedPercent = stats.totalCards > 0 ? Math.round((unjustifiedCount / stats.totalCards) * 100) : 0;
-
-  // Calculate totals by direction in Md€
-  const totalKept = session.cards
-    .filter((c) => session.votes.find((v) => v.cardId === c.id && (v.direction === "keep" || v.direction === "reinforce")))
-    .reduce((sum, c) => sum + c.amountBillions, 0);
-  const totalCut = session.cards
-    .filter((c) => session.votes.find((v) => v.cardId === c.id && (v.direction === "cut" || v.direction === "unjustified")))
-    .reduce((sum, c) => sum + c.amountBillions, 0);
-
-  function handleContinue() {
-    reset();
-    router.push("/play");
-  }
-
   const handleShare = useCallback(async () => {
+    if (!archetype || !stats) return;
     track("share_result", { archetype: archetype.id, platform: "native" });
     const title = `Mon profil budgétaire : ${archetype.name}`;
     const text = `${archetype.tagline} — J'ai tronçonné ${cutPercent}% du budget !`;
@@ -106,6 +79,34 @@ export function ResultScreen() {
       );
     }
   }, [archetype, keepPercent, cutPercent, stats]);
+
+  // No session data — redirect to jeu
+  if (!session || !session.completed || !stats || !archetype) {
+    return (
+      <div className="flex-1 flex flex-col items-center justify-center gap-4 px-6">
+        <p className="text-muted-foreground">Aucune session en cours.</p>
+        <button
+          onClick={() => router.push("/jeu")}
+          className="rounded-xl py-3 px-6 border-2 border-border text-foreground font-bold hover:bg-card transition-colors"
+        >
+          Jouer
+        </button>
+      </div>
+    );
+  }
+
+  // Calculate totals by direction in Md€
+  const totalKept = session.cards
+    .filter((c) => session.votes.find((v) => v.cardId === c.id && (v.direction === "keep" || v.direction === "reinforce")))
+    .reduce((sum, c) => sum + c.amountBillions, 0);
+  const totalCut = session.cards
+    .filter((c) => session.votes.find((v) => v.cardId === c.id && (v.direction === "cut" || v.direction === "unjustified")))
+    .reduce((sum, c) => sum + c.amountBillions, 0);
+
+  function handleContinue() {
+    reset();
+    router.push("/jeu");
+  }
 
   return (
     <div className="flex-1 flex flex-col overflow-y-auto">
@@ -333,7 +334,7 @@ export function ResultScreen() {
       <div className="flex flex-col gap-3 px-4 py-6 mt-2">
         {level === 1 && (
           <button
-            onClick={() => router.push("/play?level=2")}
+            onClick={() => router.push("/jeu?level=2")}
             className="flex items-center justify-center gap-2 w-full rounded-xl py-4 px-6 bg-primary text-white font-bold text-lg shadow-[0_0_20px_rgba(16,185,129,0.3)] active:scale-95 transition-transform"
           >
             Passer au Niveau 2
@@ -342,7 +343,7 @@ export function ResultScreen() {
         )}
         {level === 2 && (
           <button
-            onClick={() => router.push("/play?level=3")}
+            onClick={() => router.push("/jeu?level=3")}
             className="flex items-center justify-center gap-2 w-full rounded-xl py-4 px-6 bg-primary text-white font-bold text-lg shadow-[0_0_20px_rgba(16,185,129,0.3)] active:scale-95 transition-transform"
           >
             Passer au Niveau 3
@@ -350,7 +351,7 @@ export function ResultScreen() {
           </button>
         )}
         <button
-          onClick={() => router.push("/play")}
+          onClick={() => router.push("/jeu")}
           className="flex items-center justify-center w-full rounded-xl py-4 px-6 border-2 border-border text-foreground font-bold hover:bg-card transition-colors"
         >
           {level >= 2 ? `Nouveau deck Niveau ${level}` : "Continuer (nouveau deck)"}

@@ -10,7 +10,17 @@ import { useCommunityStats, type CommunityStats } from "@/hooks/useCommunityStat
 import decksData from "@/data";
 import archetypesJson from "@/data/archetypes.json";
 
-type Tab = "archetypes" | "top" | "semaine";
+type Tab = "archetypes" | "top" | "vitesse" | "semaine";
+
+interface SpeedPlayer {
+  rank: number;
+  userId?: string;
+  username: string;
+  avgMsPerCard: number;
+  totalSessions: number;
+  totalCards: number;
+  isCurrentPlayer?: boolean;
+}
 
 interface LeaderboardPlayer {
   rank: number;
@@ -57,6 +67,7 @@ export default function RankingPage() {
   const [tab, setTab] = useState<Tab>("archetypes");
   const [leaderboard, setLeaderboard] = useState<LeaderboardPlayer[]>([]);
   const [leaderboardFallback, setLeaderboardFallback] = useState(true);
+  const [speedBoard, setSpeedBoard] = useState<SpeedPlayer[]>([]);
   const [myProfile, setMyProfile] = useState<PlayerProfile | null>(null);
   const [myStats, setMyStats] = useState<GlobalStats | null>(null);
   const [radarAxes, setRadarAxes] = useState<{ label: string; playerValue: number; communityValue: number }[]>([]);
@@ -68,8 +79,8 @@ export default function RankingPage() {
     const profile = getPlayerProfile();
     const stats = getGlobalStats();
     const sessions = getSessions();
-    setMyProfile(profile);
-    setMyStats(stats);
+    setMyProfile(profile); // eslint-disable-line react-hooks/set-state-in-effect -- reading localStorage on mount
+    setMyStats(stats);  
 
     // Build community averages from API data for radar
     const communityAverages: Record<string, number> | undefined =
@@ -79,7 +90,7 @@ export default function RankingPage() {
           )
         : undefined;
 
-    setRadarAxes(computeRadarFromHistory(sessions, communityAverages));
+    setRadarAxes(computeRadarFromHistory(sessions, communityAverages));  
   }, [communityStats]);
 
   // Fetch real leaderboard
@@ -100,6 +111,18 @@ export default function RankingPage() {
         if (!cancelled) setLeaderboardFallback(true);
       });
 
+    return () => { cancelled = true; };
+  }, []);
+
+  // Fetch speed leaderboard
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/api/ranking/speed")
+      .then((res) => res.ok ? res.json() : null)
+      .then((json) => {
+        if (!cancelled && json?.players) setSpeedBoard(json.players);
+      })
+      .catch(() => {});
     return () => { cancelled = true; };
   }, []);
 
@@ -144,6 +167,7 @@ export default function RankingPage() {
   const tabs: { value: Tab; label: string }[] = [
     { value: "archetypes", label: "Archetypes" },
     { value: "top", label: "Top XP" },
+    { value: "vitesse", label: "Vitesse" },
     { value: "semaine", label: "Tendances" },
   ];
 
@@ -215,6 +239,7 @@ export default function RankingPage() {
           />
         )}
         {tab === "top" && <TopXPTab players={players} isFallback={leaderboardFallback} />}
+        {tab === "vitesse" && <SpeedTab players={speedBoard} localSessions={getSessions()} localProfile={myProfile} />}
         {tab === "semaine" && <TendancesTab communityStats={communityStats} allCards={allCards} />}
 
         {/* Footer */}
@@ -415,6 +440,127 @@ function TopXPTab({ players, isFallback }: { players: LeaderboardPlayer[]; isFal
                 {player.xp.toLocaleString("fr-FR")}
               </p>
               <p className="text-[10px] text-muted-foreground uppercase font-bold">XP</p>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+function SpeedTab({
+  players,
+  localSessions,
+  localProfile,
+}: {
+  players: SpeedPlayer[];
+  localSessions: { totalDurationMs: number; totalCards: number }[];
+  localProfile: PlayerProfile | null;
+}) {
+  // Merge local player into speed board
+  const merged: SpeedPlayer[] = (() => {
+    // Compute local player speed from sessions with valid duration
+    const validSessions = localSessions.filter((s) => s.totalDurationMs > 0 && s.totalCards > 0);
+    if (validSessions.length < 3 && players.length > 0) {
+      // Not enough sessions — show API list only with note
+      return players.map((p, i) => ({ ...p, rank: i + 1 }));
+    }
+
+    if (validSessions.length >= 3) {
+      const totalMs = validSessions.reduce((s, sess) => s + sess.totalDurationMs, 0);
+      const totalCards = validSessions.reduce((s, sess) => s + sess.totalCards, 0);
+      const avgMs = Math.round(totalMs / totalCards);
+
+      const localPlayer: SpeedPlayer = {
+        rank: 0,
+        username: localProfile?.username || "Toi",
+        avgMsPerCard: avgMs,
+        totalSessions: validSessions.length,
+        totalCards,
+        isCurrentPlayer: true,
+      };
+
+      const all = [...players.filter((p) => !p.isCurrentPlayer), localPlayer]
+        .sort((a, b) => a.avgMsPerCard - b.avgMsPerCard)
+        .map((p, i) => ({ ...p, rank: i + 1 }));
+
+      return all;
+    }
+
+    return players.map((p, i) => ({ ...p, rank: i + 1 }));
+  })();
+
+  const formatSpeed = (ms: number) => {
+    if (ms < 1000) return `${ms}ms`;
+    return `${(ms / 1000).toFixed(1)}s`;
+  };
+
+  return (
+    <div className="px-4 py-2 flex flex-col gap-2">
+      {merged.length > 1 && (
+        <div className="flex items-center justify-center mb-2">
+          <span className="text-[10px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full border border-primary/20">
+            Classement par vitesse (min. 3 sessions)
+          </span>
+        </div>
+      )}
+
+      {merged.length === 0 && (
+        <div className="text-center py-12">
+          <p className="text-muted-foreground text-sm">Aucun joueur classe pour l&apos;instant.</p>
+          <p className="text-muted-foreground text-xs mt-1">Complete au moins 3 sessions pour apparaitre ici !</p>
+        </div>
+      )}
+
+      {merged.map((player) => {
+        const rank = player.rank;
+        const isMe = player.isCurrentPlayer;
+
+        return (
+          <div
+            key={player.userId ?? (isMe ? "speed-current" : player.username)}
+            className={`flex items-center gap-3 rounded-xl p-3 border transition-colors ${
+              isMe
+                ? "bg-primary/10 border-primary/30"
+                : "bg-card border-border"
+            }`}
+          >
+            {/* Rank */}
+            <div
+              className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${
+                rank === 1
+                  ? "bg-yellow-500/20 text-yellow-500"
+                  : rank === 2
+                    ? "bg-muted text-muted-foreground"
+                    : rank === 3
+                      ? "bg-warning/20 text-warning"
+                      : "bg-muted/50 text-muted-foreground"
+              }`}
+            >
+              {rank}
+            </div>
+
+            {/* Avatar */}
+            <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-lg">
+              {rank <= 3 ? ["🥇", "🥈", "🥉"][rank - 1] : "⚡"}
+            </div>
+
+            {/* Info */}
+            <div className="flex-1 min-w-0">
+              <span className={`text-sm font-bold truncate block ${isMe ? "text-primary" : ""}`}>
+                {isMe ? "Toi" : player.username}
+              </span>
+              <p className="text-xs text-muted-foreground">
+                {player.totalCards} cartes · {player.totalSessions} sessions
+              </p>
+            </div>
+
+            {/* Speed */}
+            <div className="text-right shrink-0">
+              <p className={`text-sm font-mono font-bold ${isMe ? "text-primary" : ""}`}>
+                {formatSpeed(player.avgMsPerCard)}
+              </p>
+              <p className="text-[10px] text-muted-foreground uppercase font-bold">/ carte</p>
             </div>
           </div>
         );

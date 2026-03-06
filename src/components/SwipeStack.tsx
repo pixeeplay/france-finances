@@ -52,7 +52,7 @@ export function SwipeStack({
     if (!initialized) {
       startSession(deckId, cards, level, gameMode, budgetTarget);
       track("session_start", { deckId, level, gameMode });
-      setInitialized(true);
+      setInitialized(true); // eslint-disable-line react-hooks/set-state-in-effect -- one-time init guard
     }
   }, [initialized, startSession, deckId, cards, level, gameMode, budgetTarget]);
 
@@ -72,7 +72,7 @@ export function SwipeStack({
         return;
       }
     }
-    router.push("/play");
+    router.push("/jeu");
   }, [session, router]);
 
   const currentIndex = session?.currentIndex ?? 0;
@@ -117,7 +117,7 @@ export function SwipeStack({
 
   useKeyboardSwipe({
     onVote: handleButtonVote,
-    enabled: !!cards[currentIndex] && !isAnimating.current,
+    enabled: !!cards[currentIndex],
     level,
   });
 

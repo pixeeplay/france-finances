@@ -13,7 +13,7 @@ export default function NotFound() {
         </p>
       </div>
       <Link
-        href="/play"
+        href="/jeu"
         className="rounded-xl py-3 px-6 bg-primary text-primary-foreground font-bold hover:bg-primary/90 transition-colors"
       >
         Jouer

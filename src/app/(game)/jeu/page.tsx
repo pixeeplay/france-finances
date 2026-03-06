@@ -56,8 +56,8 @@ function PlayPageContent() {
   const [showChevron, setShowChevron] = useState(false);
 
   useEffect(() => {
-    setPlayedDecks(getPlayedDeckIds());
-    setSessionsCount(getGlobalStats().totalSessions);
+    setPlayedDecks(getPlayedDeckIds()); // eslint-disable-line react-hooks/set-state-in-effect -- reading localStorage on mount
+    setSessionsCount(getGlobalStats().totalSessions);  
   }, []);
 
   // Show chevron if content is scrollable
@@ -109,7 +109,7 @@ function PlayPageContent() {
       params.set("target", String(budgetTarget));
     }
     const qs = params.toString();
-    router.push(`/play/${deckId}${qs ? `?${qs}` : ""}`);
+    router.push(`/jeu/${deckId}${qs ? `?${qs}` : ""}`);
   }
 
   return (

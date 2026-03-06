@@ -35,9 +35,9 @@ export default function ProfilePage() {
   const [sessions, setSessions] = useState<StoredSession[]>([]);
 
   useEffect(() => {
-    setGlobalStats(getGlobalStats());
-    setProfile(getPlayerProfile());
-    setSessions(getSessions());
+    setGlobalStats(getGlobalStats()); // eslint-disable-line react-hooks/set-state-in-effect -- reading localStorage on mount
+    setProfile(getPlayerProfile());  
+    setSessions(getSessions());  
   }, []);
 
   const stats = globalStats ?? {
@@ -575,7 +575,7 @@ export default function ProfilePage() {
                           </p>
                         </div>
                         <button
-                          onClick={() => router.push(`/play/${s.deckId}${levelParam}`)}
+                          onClick={() => router.push(`/jeu/${s.deckId}${levelParam}`)}
                           className="shrink-0 text-[10px] font-bold text-primary bg-primary/10 border border-primary/20 px-2 py-1 rounded-lg hover:bg-primary/20 transition-colors"
                         >
                           Rejouer

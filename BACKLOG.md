@@ -19,10 +19,9 @@
 
 | ID | Priorite | Effort | Description | Statut |
 |----|----------|--------|-------------|--------|
-| BACK-05 | P3 | M | API ouverte / export CSV : endpoint GET /api/export pour telecharger ses sessions et votes en CSV/JSON. | |
-| UX-30 | P3 | M | Leaderboard vitesse : classement par temps moyen de decision par carte (ms/carte). | |
+| UX-30 | P3 | M | Leaderboard vitesse : classement par temps moyen de decision par carte (ms/carte). | Done |
 | UX-31 | P3 | L | Mode Duel : 2 joueurs swipent le meme deck en simultane, comparaison resultats (WebSocket). | |
-| SEO-03 | P3 | XS | Metadata profil joueur : OG tags dynamiques sur /profile. | |
+| SEO-03 | P3 | XS | Metadata profil joueur : OG tags dynamiques sur /profile. | Done |
 
 ---
 
@@ -30,6 +29,6 @@
 
 | Statut | Count |
 |--------|-------|
-| Done | 96 |
-| A faire | 4 |
-| **Total** | **100** |
+| Done | 98 |
+| A faire | 1 |
+| **Total** | **99** |

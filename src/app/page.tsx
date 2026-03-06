@@ -1,168 +1,25 @@
-"use client";
+import { NavbarLanding } from "@/components/landing/NavbarLanding";
+import { HeroSection } from "@/components/landing/HeroSection";
+import { KeyNumbers } from "@/components/landing/KeyNumbers";
+import { HowItWorks } from "@/components/landing/HowItWorks";
+import { CategoriesSection } from "@/components/landing/CategoriesSection";
+import { ParisTeaser } from "@/components/landing/ParisTeaser";
+import { EcosystemSection } from "@/components/landing/EcosystemSection";
+import { SourcesSection } from "@/components/landing/SourcesSection";
+import { Footer } from "@/components/landing/Footer";
 
-import Link from "next/link";
-import { useRef, useEffect, useState } from "react";
-import dynamic from "next/dynamic";
-import { AnimatePresence } from "framer-motion";
-import { ChainsawIcon } from "@/components/ChainsawIcon";
-import { Onboarding, useOnboarding } from "@/components/Onboarding";
-
-const SlideToPlay = dynamic(() => import("@/components/SlideToPlay").then((m) => m.SlideToPlay), {
-  ssr: false,
-  loading: () => (
-    <div className="mt-auto w-full">
-      <div className="h-16 w-full bg-background/60 rounded-2xl border border-border/30 flex items-center overflow-hidden">
-        <div className="relative left-1 w-14 h-[calc(100%-8px)] bg-primary rounded-xl flex items-center justify-center">
-          <span className="text-primary-foreground font-black text-xl">&#8594;</span>
-        </div>
-      </div>
-    </div>
-  ),
-});
-import { getGlobalStats } from "@/lib/stats";
-import decksData from "@/data";
-import type { Deck } from "@/types";
-
-const decks = (decksData.decks as Deck[]).filter((d) => d.type !== "thematic");
-
-export default function HomePage() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const { showOnboarding, dismissOnboarding } = useOnboarding();
-  const [sessionCount, setSessionCount] = useState(0);
-
-  useEffect(() => {
-    setSessionCount(getGlobalStats().totalSessions);
-  }, []);
-
-  // Auto-scroll categories
-  useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-
-    let animId: number;
-    let scrollPos = 0;
-    const speed = 0.3; // px per frame
-    let paused = false;
-    let pauseTimeout: ReturnType<typeof setTimeout>;
-
-    const step = () => {
-      if (!paused && el.scrollWidth > el.clientWidth) {
-        scrollPos += speed;
-        if (scrollPos >= el.scrollWidth - el.clientWidth) {
-          scrollPos = 0;
-        }
-        el.scrollLeft = scrollPos;
-      }
-      animId = requestAnimationFrame(step);
-    };
-
-    const handleTouch = () => {
-      paused = true;
-      clearTimeout(pauseTimeout);
-      pauseTimeout = setTimeout(() => {
-        scrollPos = el.scrollLeft;
-        paused = false;
-      }, 3000);
-    };
-
-    el.addEventListener("touchstart", handleTouch, { passive: true });
-    el.addEventListener("pointerdown", handleTouch);
-    animId = requestAnimationFrame(step);
-
-    return () => {
-      cancelAnimationFrame(animId);
-      clearTimeout(pauseTimeout);
-      el.removeEventListener("touchstart", handleTouch);
-      el.removeEventListener("pointerdown", handleTouch);
-    };
-  }, []);
-
+export default function LandingPage() {
   return (
-    <main className="flex-1 flex flex-col overflow-hidden">
-      {/* Onboarding overlay */}
-      <AnimatePresence>
-        {showOnboarding && <Onboarding onDone={dismissOnboarding} />}
-      </AnimatePresence>
-
-      {/* Header */}
-      <header className="px-6 pt-10 pb-4 flex items-center justify-between z-20">
-        <span className="text-xs font-black tracking-[0.2em] text-foreground uppercase opacity-90">
-          la tronçonneuse de poche
-        </span>
-        {sessionCount > 0 && (
-          <div className="flex items-center gap-1 bg-card/50 px-3 py-1 rounded-full border border-border/30">
-            <span className="text-primary text-sm">&#9889;</span>
-            <span className="text-[10px] font-bold text-muted-foreground">
-              {sessionCount} {sessionCount === 1 ? "SESSION" : "SESSIONS"}
-            </span>
-          </div>
-        )}
-      </header>
-
-      {/* Category chips — auto-scroll + swipeable */}
-      <div className="px-6 mb-6">
-        <div
-          ref={scrollRef}
-          className="flex gap-2 overflow-x-auto hide-scrollbar -mx-6 px-6"
-        >
-          {decks.map((deck) => (
-            <Link
-              key={deck.id}
-              href={`/play/${deck.id}`}
-              className="bg-card/70 backdrop-blur text-muted-foreground px-5 py-2 rounded-full flex items-center gap-2 shrink-0 border border-border/30"
-            >
-              <span className="text-sm">{deck.icon}</span>
-              <span className="text-xs font-bold uppercase tracking-wider">
-                {deck.name}
-              </span>
-            </Link>
-          ))}
-        </div>
-      </div>
-
-      {/* Launcher card */}
-      <div className="flex-1 flex flex-col items-center justify-center px-6">
-        <div className="launcher-card w-full aspect-[4/5] max-h-[500px] rounded-[40px] border border-border/30 p-8 flex flex-col items-center text-center relative overflow-hidden">
-          {/* Glow effect */}
-          <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 blur-3xl -mr-10 -mt-10" />
-
-          {/* Timer hint */}
-          <div className="absolute top-6 left-6 flex items-center gap-2 opacity-50">
-            <span className="text-xs">&#9201;</span>
-            <span className="text-[10px] font-bold uppercase">~3 min</span>
-          </div>
-
-          {/* Chainsaw icon */}
-          <div className="w-20 h-20 bg-card/80 rounded-3xl flex items-center justify-center mb-8 shadow-inner border border-border/30">
-            <ChainsawIcon size={48} />
-          </div>
-
-          {/* Title */}
-          <h2 className="text-3xl font-[900] text-foreground leading-tight mb-3 uppercase tracking-tight">
-            Prêt à trancher ?
-          </h2>
-          <p className="text-muted-foreground text-sm font-medium mb-12 max-w-[200px]">
-            270 cartes, 17 catégories. Swipe pour trancher le budget.
-          </p>
-
-          {/* Slide to play CTA */}
-          <SlideToPlay />
-        </div>
-
-        {/* Stats */}
-        <div className="mt-8 flex items-center gap-6 text-[10px] font-bold text-muted-foreground uppercase tracking-widest">
-          <div className="flex flex-col items-center gap-1">
-            <span className="text-foreground">12 847</span>
-            <span>Sessions</span>
-          </div>
-          <div className="w-px h-4 bg-border" />
-          <div className="flex flex-col items-center gap-1">
-            <span className="text-foreground">154K+</span>
-            <span>Swipes</span>
-          </div>
-        </div>
-      </div>
-    </main>
+    <div className="min-h-dvh bg-white text-slate-900">
+      <NavbarLanding />
+      <HeroSection />
+      <KeyNumbers />
+      <HowItWorks />
+      <CategoriesSection />
+      <ParisTeaser />
+      <EcosystemSection />
+      <SourcesSection />
+      <Footer />
+    </div>
   );
 }
-

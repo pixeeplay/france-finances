@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { BottomNav } from "@/components/BottomNav";
+import { Outfit } from "next/font/google";
 import { AuthProvider } from "@/components/AuthProvider";
 import { AppInit } from "@/components/AppInit";
 import { PageviewTracker } from "@/components/PageviewTracker";
@@ -16,11 +16,16 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const outfit = Outfit({
+  variable: "--font-outfit",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://nicoquipaie.pixeeplay.fr"),
-  title: "La Tronçonneuse de Poche",
+  title: "france-finances.com — Comprendre les finances publiques",
   description:
-    "270 cartes, 17 catégories — Swipe les dépenses publiques et découvre ton profil budgétaire",
+    "Explorez le budget de la France de manière interactive. 330 cartes, 17 catégories — Comprenez où vont vos impôts.",
   manifest: "/manifest.json",
   icons: {
     icon: "/favicon.ico",
@@ -33,20 +38,20 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
-    title: "Tronçonneuse",
+    title: "France Finances",
   },
   openGraph: {
-    title: "La Tronçonneuse de Poche",
+    title: "france-finances.com — Comprendre les finances publiques",
     description:
-      "270 cartes de dépenses publiques. Swipe, tranche, découvre ton profil budgétaire.",
+      "Explorez le budget de la France de manière interactive. 330 cartes de dépenses publiques à découvrir.",
     url: "https://nicoquipaie.pixeeplay.fr",
-    siteName: "La Tronçonneuse de Poche",
+    siteName: "france-finances.com",
     images: [
       {
         url: "/og-default.png",
         width: 1200,
         height: 630,
-        alt: "La Tronçonneuse de Poche",
+        alt: "france-finances.com — Comprendre les finances publiques",
       },
     ],
     locale: "fr_FR",
@@ -54,9 +59,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "La Tronçonneuse de Poche",
+    title: "france-finances.com — Comprendre les finances publiques",
     description:
-      "270 cartes de dépenses publiques. Swipe, tranche, découvre ton profil budgétaire.",
+      "Explorez le budget de la France de manière interactive. 330 cartes de dépenses publiques.",
     images: ["/og-default.png"],
   },
 };
@@ -73,17 +78,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className="dark">
+    <html lang="fr">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-dvh flex items-center justify-center`}
+        className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} antialiased`}
       >
         <AuthProvider>
           <AppInit />
           <PageviewTracker />
-          <div className="mx-auto max-w-md w-full min-h-dvh lg:min-h-0 lg:h-[900px] lg:max-h-[90vh] lg:rounded-3xl lg:border lg:border-border lg:shadow-2xl lg:overflow-hidden flex flex-col relative">
-            {children}
-            <BottomNav />
-          </div>
+          {children}
         </AuthProvider>
       </body>
     </html>
