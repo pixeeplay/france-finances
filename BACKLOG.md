@@ -12,7 +12,7 @@
 
 ## Historique
 
-145 items livres en 24 sprints (Sprints 3-24). Detail dans ACTION-PLAN.md.
+160 items livres en 26 sprints (Sprints 3-26). Detail dans ACTION-PLAN.md.
 
 ---
 
@@ -30,6 +30,6 @@
 
 | Statut    | Count   |
 | --------- | ------- |
-| Done      | 145     |
+| Done      | 160     |
 | A faire   | 1       |
-| **Total** | **146** |
+| **Total** | **161** |

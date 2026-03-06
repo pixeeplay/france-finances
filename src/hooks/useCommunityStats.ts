@@ -49,8 +49,12 @@ export function useCommunityStats(): CommunityStats {
   useEffect(() => {
     let cancelled = false;
 
-    fetch("/api/community/stats")
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 10_000);
+
+    fetch("/api/community/stats", { signal: controller.signal })
       .then((res) => {
+        clearTimeout(timeout);
         if (!res.ok) throw new Error("API error");
         return res.json();
       })
@@ -63,10 +67,15 @@ export function useCommunityStats(): CommunityStats {
         }
       })
       .catch(() => {
+        clearTimeout(timeout);
         if (!cancelled) setData(FALLBACK);
       });
 
-    return () => { cancelled = true; };
+    return () => {
+      cancelled = true;
+      clearTimeout(timeout);
+      controller.abort();
+    };
   }, []);
 
   return data;

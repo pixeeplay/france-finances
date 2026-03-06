@@ -1,7 +1,7 @@
-import { NextResponse } from "next/server";
-import { db, isDbAvailable } from "@/db";
+import { db } from "@/db";
 import { sessions, users } from "@/db/schema";
-import { sql, eq, gt } from "drizzle-orm";
+import { sql, eq } from "drizzle-orm";
+import { withDbCheck, jsonOk, jsonError } from "@/lib/api-utils";
 
 export const dynamic = "force-dynamic";
 
@@ -11,15 +11,11 @@ export const dynamic = "force-dynamic";
  * Only includes players with at least 3 sessions.
  */
 export async function GET() {
-  if (!isDbAvailable() || !db) {
-    return NextResponse.json(
-      { ok: false, error: "Database not configured" },
-      { status: 503 }
-    );
-  }
+  const unavailable = withDbCheck();
+  if (unavailable) return unavailable;
 
   try {
-    const rows = await db
+    const rows = await db!
       .select({
         userId: sessions.userId,
         username: users.name,
@@ -43,19 +39,9 @@ export async function GET() {
       totalCards: r.totalCards,
     }));
 
-    return NextResponse.json(
-      { players },
-      {
-        headers: {
-          "Cache-Control": "public, s-maxage=60, stale-while-revalidate=300",
-        },
-      }
-    );
+    return jsonOk({ players }, 60);
   } catch (error) {
-    console.error("Failed to fetch speed ranking:", error);
-    return NextResponse.json(
-      { ok: false, error: "Database error" },
-      { status: 500 }
-    );
+    console.error("[GET /api/ranking/speed]", error instanceof Error ? error.message : error);
+    return jsonError("Database error");
   }
 }

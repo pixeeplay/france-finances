@@ -1,8 +1,8 @@
-import { NextResponse } from "next/server";
 import { auth } from "@/auth";
-import { db, isDbAvailable } from "@/db";
+import { db } from "@/db";
 import { sessions, votes } from "@/db/schema";
 import { eq, desc, sql } from "drizzle-orm";
+import { withDbCheck, jsonOk, jsonError } from "@/lib/api-utils";
 
 export const dynamic = "force-dynamic";
 
@@ -13,18 +13,17 @@ export const dynamic = "force-dynamic";
 export async function GET() {
   const session = await auth();
   if (!session?.user?.id) {
-    return NextResponse.json({ ok: false, error: "Not authenticated" }, { status: 401 });
+    return jsonError("Not authenticated", 401);
   }
 
-  if (!isDbAvailable() || !db) {
-    return NextResponse.json({ ok: false, error: "Database not configured" }, { status: 503 });
-  }
+  const unavailable = withDbCheck();
+  if (unavailable) return unavailable;
 
   try {
     const userId = session.user.id;
 
     // Get all sessions
-    const sessionRows = await db
+    const sessionRows = await db!
       .select({
         id: sessions.id,
         deckId: sessions.deckId,
@@ -47,12 +46,12 @@ export async function GET() {
       .limit(100);
 
     if (sessionRows.length === 0) {
-      return NextResponse.json({ sessions: [] });
+      return jsonOk({ sessions: [] });
     }
 
     // Get votes for all sessions in one query
     const sessionIds = sessionRows.map((s) => s.id);
-    const voteRows = await db
+    const voteRows = await db!
       .select({
         sessionId: votes.sessionId,
         cardId: votes.cardId,
@@ -89,9 +88,9 @@ export async function GET() {
       })),
     }));
 
-    return NextResponse.json({ sessions: result });
+    return jsonOk({ sessions: result });
   } catch (error) {
-    console.error("Failed to fetch user sessions:", error);
-    return NextResponse.json({ ok: false, error: "Database error" }, { status: 500 });
+    console.error("[GET /api/me/sessions]", error instanceof Error ? error.message : error);
+    return jsonError("Database error");
   }
 }

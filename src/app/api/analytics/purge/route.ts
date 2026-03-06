@@ -1,7 +1,8 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest } from "next/server";
 import { db, isDbAvailable } from "@/db";
 import { analyticsEvents } from "@/db/schema";
 import { lt } from "drizzle-orm";
+import { dbUnavailableResponse, jsonOk, jsonError } from "@/lib/api-utils";
 
 export const dynamic = "force-dynamic";
 
@@ -18,12 +19,12 @@ export async function DELETE(request: NextRequest) {
       request.headers.get("x-analytics-secret") ??
       request.nextUrl.searchParams.get("secret");
     if (provided !== secret) {
-      return NextResponse.json({ ok: false, error: "Unauthorized" }, { status: 401 });
+      return jsonError("Unauthorized", 401);
     }
   }
 
   if (!isDbAvailable() || !db) {
-    return NextResponse.json({ ok: false, error: "Database not configured" }, { status: 503 });
+    return dbUnavailableResponse();
   }
 
   const cutoff = new Date(Date.now() - 90 * 24 * 60 * 60 * 1000);
@@ -36,13 +37,13 @@ export async function DELETE(request: NextRequest) {
 
     const deletedCount = result.length;
 
-    return NextResponse.json({
+    return jsonOk({
       ok: true,
       deleted: deletedCount,
       cutoffDate: cutoff.toISOString(),
     });
   } catch (error) {
-    console.error("Failed to purge analytics events:", error);
-    return NextResponse.json({ ok: false, error: "Database error" }, { status: 500 });
+    console.error("[DELETE /api/analytics/purge]", error instanceof Error ? error.message : error);
+    return jsonError("Database error");
   }
 }

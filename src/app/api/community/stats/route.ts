@@ -1,7 +1,7 @@
-import { NextResponse } from "next/server";
-import { db, isDbAvailable } from "@/db";
+import { db } from "@/db";
 import { sessions, votes } from "@/db/schema";
 import { sql } from "drizzle-orm";
+import { withDbCheck, jsonOk, jsonError } from "@/lib/api-utils";
 
 export const dynamic = "force-dynamic";
 
@@ -15,16 +15,12 @@ export const dynamic = "force-dynamic";
  * - totalSessions: number
  */
 export async function GET() {
-  if (!isDbAvailable() || !db) {
-    return NextResponse.json(
-      { ok: false, error: "Database not configured" },
-      { status: 503 }
-    );
-  }
+  const unavailable = withDbCheck();
+  if (unavailable) return unavailable;
 
   try {
     // Archetype distribution
-    const archetypeRows = await db
+    const archetypeRows = await db!
       .select({
         archetypeId: sessions.archetypeId,
         archetypeName: sessions.archetypeName,
@@ -42,7 +38,7 @@ export async function GET() {
     }));
 
     // Per-category stats (from sessions table)
-    const categoryRows = await db
+    const categoryRows = await db!
       .select({
         deckId: sessions.deckId,
         keepCount: sql<number>`sum(keep_count)::int`,
@@ -61,7 +57,7 @@ export async function GET() {
     }));
 
     // Top cut cards (most "à revoir")
-    const topCutRows = await db
+    const topCutRows = await db!
       .select({
         cardId: votes.cardId,
         total: sql<number>`count(*)::int`,
@@ -80,7 +76,7 @@ export async function GET() {
     }));
 
     // Top protected cards (most "OK")
-    const topProtectedRows = await db
+    const topProtectedRows = await db!
       .select({
         cardId: votes.cardId,
         total: sql<number>`count(*)::int`,
@@ -98,25 +94,15 @@ export async function GET() {
       totalVotes: r.total,
     }));
 
-    return NextResponse.json(
-      {
-        archetypeDistribution,
-        categoryStats,
-        topCut,
-        topProtected,
-        totalSessions,
-      },
-      {
-        headers: {
-          "Cache-Control": "public, s-maxage=60, stale-while-revalidate=300",
-        },
-      }
-    );
+    return jsonOk({
+      archetypeDistribution,
+      categoryStats,
+      topCut,
+      topProtected,
+      totalSessions,
+    }, 60);
   } catch (error) {
-    console.error("Failed to fetch community stats:", error);
-    return NextResponse.json(
-      { ok: false, error: "Database error" },
-      { status: 500 }
-    );
+    console.error("[GET /api/community/stats]", error instanceof Error ? error.message : error);
+    return jsonError("Database error");
   }
 }

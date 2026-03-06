@@ -109,6 +109,7 @@ export const analyticsEvents = pgTable("analytics_events", {
   index("idx_analytics_event").on(t.event),
   index("idx_analytics_created_at").on(t.createdAt),
   index("idx_analytics_page").on(t.page),
+  index("idx_analytics_ip").on(t.ip),
 ]);
 
 // === Audit responses (Level 3) ===

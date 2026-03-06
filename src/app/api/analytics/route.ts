@@ -1,7 +1,7 @@
-import { NextResponse } from "next/server";
 import { z } from "zod";
 import { db, isDbAvailable } from "@/db";
 import { analyticsEvents } from "@/db/schema";
+import { jsonOk, jsonError } from "@/lib/api-utils";
 
 export const dynamic = "force-dynamic";
 
@@ -47,28 +47,29 @@ export async function POST(request: Request) {
   // Filter bots early, before rate limiting
   const ua = request.headers.get("user-agent") ?? "";
   if (BOT_PATTERNS.test(ua)) {
-    return NextResponse.json({ ok: true }); // silently skip bot traffic
+    return jsonOk({ ok: true }); // silently skip bot traffic
   }
 
   const ip = getClientIp(request);
   if (isRateLimited(ip)) {
-    return NextResponse.json({ ok: false, error: "Too many requests" }, { status: 429 });
+    return jsonError("Too many requests", 429);
   }
 
   if (!isDbAvailable() || !db) {
-    return NextResponse.json({ ok: true }); // Silently accept, don't block client
+    return jsonOk({ ok: true }); // Silently accept, don't block client
   }
 
   let rawBody: unknown;
   try {
     rawBody = await request.json();
-  } catch {
-    return NextResponse.json({ ok: false, error: "Invalid JSON" }, { status: 400 });
+  } catch (error) {
+    console.error("[POST /api/analytics] Invalid JSON:", error instanceof Error ? error.message : error);
+    return jsonError("Invalid JSON", 400);
   }
 
   const parsed = batchSchema.safeParse(rawBody);
   if (!parsed.success) {
-    return NextResponse.json({ ok: false, error: "Validation failed" }, { status: 400 });
+    return jsonError("Validation failed", 400);
   }
 
   // RGPD: anonymize IP (zero last octet) and drop raw User-Agent
@@ -90,9 +91,9 @@ export async function POST(request: Request) {
       }))
     );
 
-    return NextResponse.json({ ok: true });
+    return jsonOk({ ok: true });
   } catch (error) {
-    console.error("Failed to save analytics:", error);
-    return NextResponse.json({ ok: true }); // Don't expose errors to client
+    console.error("[POST /api/analytics]", error instanceof Error ? error.message : error);
+    return jsonOk({ ok: true }); // Don't expose errors to client
   }
 }

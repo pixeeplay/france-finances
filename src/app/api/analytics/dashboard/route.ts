@@ -1,8 +1,9 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest } from "next/server";
 import { db, isDbAvailable } from "@/db";
 import { analyticsEvents } from "@/db/schema";
 import { sql, gte, and } from "drizzle-orm";
 import { auth } from "@/auth";
+import { dbUnavailableResponse, jsonOk, jsonError } from "@/lib/api-utils";
 
 export const dynamic = "force-dynamic";
 
@@ -18,18 +19,18 @@ export async function GET(request: NextRequest) {
     // Fallback: ANALYTICS_SECRET header/query param (for cron jobs, programmatic access)
     const secret = process.env.ANALYTICS_SECRET;
     if (!secret) {
-      return NextResponse.json({ ok: false, error: "Unauthorized" }, { status: 401 });
+      return jsonError("Unauthorized", 401);
     }
     const provided =
       request.headers.get("x-analytics-secret") ??
       request.nextUrl.searchParams.get("secret");
     if (provided !== secret) {
-      return NextResponse.json({ ok: false, error: "Unauthorized" }, { status: 401 });
+      return jsonError("Unauthorized", 401);
     }
   }
 
   if (!isDbAvailable() || !db) {
-    return NextResponse.json({ ok: false, error: "Database not configured" }, { status: 503 });
+    return dbUnavailableResponse();
   }
 
   const days = Math.min(
@@ -95,7 +96,7 @@ export async function GET(request: NextRequest) {
       .groupBy(sql`to_char(${analyticsEvents.createdAt}, 'YYYY-MM-DD')`)
       .orderBy(sql`to_char(${analyticsEvents.createdAt}, 'YYYY-MM-DD')`);
 
-    return NextResponse.json({
+    return jsonOk({
       period: { days, since: since.toISOString() },
       totalEvents: totalRow.count,
       uniqueVisitors: visitorsRow.count,
@@ -105,7 +106,7 @@ export async function GET(request: NextRequest) {
       perDay,
     });
   } catch (error) {
-    console.error("Failed to fetch analytics dashboard:", error);
-    return NextResponse.json({ ok: false, error: "Database error" }, { status: 500 });
+    console.error("[GET /api/analytics/dashboard]", error instanceof Error ? error.message : error);
+    return jsonError("Database error");
   }
 }

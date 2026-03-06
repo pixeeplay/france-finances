@@ -1,8 +1,8 @@
-import { NextResponse } from "next/server";
 import { auth } from "@/auth";
-import { db, isDbAvailable } from "@/db";
+import { db } from "@/db";
 import { sessions } from "@/db/schema";
 import { eq, sql } from "drizzle-orm";
+import { withDbCheck, jsonOk, jsonError } from "@/lib/api-utils";
 
 export const dynamic = "force-dynamic";
 
@@ -13,17 +13,16 @@ export const dynamic = "force-dynamic";
 export async function GET() {
   const session = await auth();
   if (!session?.user?.id) {
-    return NextResponse.json({ ok: false, error: "Not authenticated" }, { status: 401 });
+    return jsonError("Not authenticated", 401);
   }
 
-  if (!isDbAvailable() || !db) {
-    return NextResponse.json({ ok: false, error: "Database not configured" }, { status: 503 });
-  }
+  const unavailable = withDbCheck();
+  if (unavailable) return unavailable;
 
   try {
     const userId = session.user.id;
 
-    const [row] = await db
+    const [row] = await db!
       .select({
         totalSessions: sql<number>`count(*)::int`,
         totalCards: sql<number>`coalesce(sum(${sessions.totalCards}), 0)::int`,
@@ -39,7 +38,7 @@ export async function GET() {
       .from(sessions)
       .where(eq(sessions.userId, userId));
 
-    const categoryRows = await db
+    const categoryRows = await db!
       .select({
         deckId: sessions.deckId,
         count: sql<number>`count(*)::int`,
@@ -54,7 +53,7 @@ export async function GET() {
       sessionsPerDeck[r.deckId] = r.count;
     }
 
-    return NextResponse.json({
+    return jsonOk({
       xp: row.xp,
       totalSessions: row.totalSessions,
       totalCards: row.totalCards,
@@ -65,7 +64,7 @@ export async function GET() {
       sessionsPerDeck,
     });
   } catch (error) {
-    console.error("Failed to fetch user stats:", error);
-    return NextResponse.json({ ok: false, error: "Database error" }, { status: 500 });
+    console.error("[GET /api/me/stats]", error instanceof Error ? error.message : error);
+    return jsonError("Database error");
   }
 }

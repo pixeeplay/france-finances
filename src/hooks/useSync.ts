@@ -43,7 +43,10 @@ export function useSync() {
 async function syncData() {
   try {
     // 1. Fetch sessions from DB
-    const res = await fetch("/api/me/sessions");
+    const sessionsController = new AbortController();
+    const sessionsTimeout = setTimeout(() => sessionsController.abort(), 10_000);
+    const res = await fetch("/api/me/sessions", { signal: sessionsController.signal });
+    clearTimeout(sessionsTimeout);
     if (!res.ok) return;
     const { sessions: dbSessions } = await res.json() as {
       sessions: {
@@ -107,6 +110,8 @@ async function syncData() {
     // 4. Sync profile to DB (username + avatar)
     const profile = getPlayerProfile();
     if (profile.username) {
+      const profileController = new AbortController();
+      const profileTimeout = setTimeout(() => profileController.abort(), 10_000);
       fetch("/api/me/profile", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -114,7 +119,8 @@ async function syncData() {
           username: profile.username,
           image: profile.customAvatar,
         }),
-      }).catch(() => {});
+        signal: profileController.signal,
+      }).catch(() => {}).finally(() => clearTimeout(profileTimeout));
     }
 
     localStorage.setItem(SYNC_KEY, String(Date.now()));
@@ -170,6 +176,8 @@ function recomputeStats(sessions: StoredSession[]) {
         profile.archetypeName = last.archetypeName;
       }
       localStorage.setItem("trnc:profile", JSON.stringify(profile));
-    } catch {}
+    } catch (error) {
+      console.error("[useSync] Failed to recompute profile:", error instanceof Error ? error.message : error);
+    }
   }
 }

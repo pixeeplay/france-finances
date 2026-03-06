@@ -1,20 +1,23 @@
-import { NextResponse } from "next/server";
 import { z } from "zod";
 import { auth } from "@/auth";
 import { db, isDbAvailable } from "@/db";
 import { sessions, votes, auditResponses } from "@/db/schema";
+import { dbUnavailableResponse, jsonOk, jsonError } from "@/lib/api-utils";
 
 const VALID_DIRECTIONS = ["keep", "cut", "reinforce", "unjustified"] as const;
 const VALID_RECOMMENDATIONS = ["maintenir", "reduire", "fusionner", "externaliser", "supprimer"] as const;
 
+/** Card IDs follow the pattern: 2-4 lowercase letters, hyphen, 2-3 digits (e.g. "def-01", "fre-10") */
+const CARD_ID_REGEX = /^[a-z]{2,4}-\d{2,3}$/;
+
 const voteSchema = z.object({
-  cardId: z.string().min(1).max(50),
+  cardId: z.string().min(1).max(50).regex(CARD_ID_REGEX, "Invalid cardId format. Expected pattern: xx-00 (e.g. def-01)"),
   direction: z.enum(VALID_DIRECTIONS),
   durationMs: z.number().int().min(0).max(600000),
 });
 
 const auditResponseSchema = z.object({
-  cardId: z.string().min(1).max(50),
+  cardId: z.string().min(1).max(50).regex(CARD_ID_REGEX, "Invalid cardId format"),
   diagnostics: z.record(z.string(), z.boolean()),
   recommendation: z.enum(VALID_RECOMMENDATIONS),
 });
@@ -63,35 +66,24 @@ export async function POST(request: Request) {
   // Rate limiting
   const ip = getClientIp(request);
   if (isRateLimited(ip)) {
-    return NextResponse.json(
-      { ok: false, error: "Too many requests" },
-      { status: 429 }
-    );
+    return jsonError("Too many requests", 429);
   }
 
   if (!isDbAvailable() || !db) {
-    return NextResponse.json(
-      { ok: false, error: "Database not configured" },
-      { status: 503 }
-    );
+    return dbUnavailableResponse();
   }
 
   let rawBody: unknown;
   try {
     rawBody = await request.json();
-  } catch {
-    return NextResponse.json(
-      { ok: false, error: "Invalid JSON" },
-      { status: 400 }
-    );
+  } catch (error) {
+    console.error("[POST /api/sessions] Invalid JSON:", error instanceof Error ? error.message : error);
+    return jsonError("Invalid JSON", 400);
   }
 
   const parsed = sessionSchema.safeParse(rawBody);
   if (!parsed.success) {
-    return NextResponse.json(
-      { ok: false, error: "Validation failed", details: parsed.error.flatten().fieldErrors },
-      { status: 400 }
-    );
+    return jsonError("Validation failed", 400);
   }
 
   const body = parsed.data;
@@ -142,12 +134,9 @@ export async function POST(request: Request) {
       }
     });
 
-    return NextResponse.json({ ok: true });
+    return jsonOk({ ok: true });
   } catch (error) {
-    console.error("Failed to save session:", error);
-    return NextResponse.json(
-      { ok: false, error: "Database error" },
-      { status: 500 }
-    );
+    console.error("[POST /api/sessions]", error instanceof Error ? error.message : error);
+    return jsonError("Database error");
   }
 }

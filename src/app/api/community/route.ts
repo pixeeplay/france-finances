@@ -1,7 +1,7 @@
-import { NextResponse } from "next/server";
-import { db, isDbAvailable } from "@/db";
+import { db } from "@/db";
 import { votes } from "@/db/schema";
 import { sql } from "drizzle-orm";
+import { withDbCheck, jsonOk, jsonError } from "@/lib/api-utils";
 
 export const dynamic = "force-dynamic";
 
@@ -11,15 +11,11 @@ export const dynamic = "force-dynamic";
  * Response: { [cardId]: { keep: N, cut: N, reinforce: N, unjustified: N, total: N } }
  */
 export async function GET() {
-  if (!isDbAvailable() || !db) {
-    return NextResponse.json(
-      { ok: false, error: "Database not configured" },
-      { status: 503 }
-    );
-  }
+  const unavailable = withDbCheck();
+  if (unavailable) return unavailable;
 
   try {
-    const rows = await db
+    const rows = await db!
       .select({
         cardId: votes.cardId,
         direction: votes.direction,
@@ -45,16 +41,9 @@ export async function GET() {
       result[row.cardId].total += row.count;
     }
 
-    return NextResponse.json(result, {
-      headers: {
-        "Cache-Control": "public, s-maxage=60, stale-while-revalidate=300",
-      },
-    });
+    return jsonOk(result, 60);
   } catch (error) {
-    console.error("Failed to fetch community votes:", error);
-    return NextResponse.json(
-      { ok: false, error: "Database error" },
-      { status: 500 }
-    );
+    console.error("[GET /api/community]", error instanceof Error ? error.message : error);
+    return jsonError("Database error");
   }
 }

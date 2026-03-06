@@ -1,7 +1,7 @@
-import { NextResponse } from "next/server";
 import { db, isDbAvailable } from "@/db";
 import { sessions, votes } from "@/db/schema";
 import { sql } from "drizzle-orm";
+import { jsonOk } from "@/lib/api-utils";
 
 export const dynamic = "force-dynamic";
 
@@ -12,14 +12,7 @@ export const dynamic = "force-dynamic";
  */
 export async function GET() {
   if (!isDbAvailable() || !db) {
-    return NextResponse.json(
-      { totalSessions: 0, totalSwipes: 0 },
-      {
-        headers: {
-          "Cache-Control": "public, s-maxage=60, stale-while-revalidate=300",
-        },
-      }
-    );
+    return jsonOk({ totalSessions: 0, totalSwipes: 0 }, 60);
   }
 
   try {
@@ -31,21 +24,12 @@ export async function GET() {
       .select({ count: sql<number>`count(*)::int` })
       .from(votes);
 
-    return NextResponse.json(
-      {
-        totalSessions: sessionRow?.count ?? 0,
-        totalSwipes: voteRow?.count ?? 0,
-      },
-      {
-        headers: {
-          "Cache-Control": "public, s-maxage=60, stale-while-revalidate=300",
-        },
-      }
-    );
-  } catch {
-    return NextResponse.json(
-      { totalSessions: 0, totalSwipes: 0 },
-      { status: 200 }
-    );
+    return jsonOk({
+      totalSessions: sessionRow?.count ?? 0,
+      totalSwipes: voteRow?.count ?? 0,
+    }, 60);
+  } catch (error) {
+    console.error("[GET /api/stats/public]", error instanceof Error ? error.message : error);
+    return jsonOk({ totalSessions: 0, totalSwipes: 0 });
   }
 }

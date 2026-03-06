@@ -1,10 +1,10 @@
 # Plan d'Action -- La Tronconneuse de Poche
 
-**Derniere mise a jour :** 2026-03-06
+**Derniere mise a jour :** 2026-03-07
 
 ---
 
-## Sprints termines (3-24) -- 145 items
+## Sprints termines (3-26) -- 160 items
 
 | Sprint | Objectif                                                           | Items |
 | ------ | ------------------------------------------------------------------ | ----- |
@@ -24,6 +24,8 @@
 | 22     | Securite & SEO (CSP, auth dashboard, canonical, JSON-LD, DB fixes) | 10    |
 | 23     | Accessibilite & UX (skip nav, aria, reduced motion, skeletons)     | 9     |
 | 24     | Performance & Architecture (lazy load, split, cleanup, barrel)     | 9     |
+| 25     | PWA & Resilience (offline, install, SW update, timeouts, API std)  | 10    |
+| 26     | Polish & Tests (75 tests, cardId validation, OG decks, sourceUrls) | 6     |
 
 ---
 
@@ -164,40 +166,40 @@
 
 ---
 
-## Sprint 25 -- PWA & Resilience (MOYENNE)
+## Sprint 25 -- PWA & Resilience (DONE)
 
-| Ref    | Priorite | Effort | Description                                                          |
-| ------ | -------- | ------ | -------------------------------------------------------------------- |
-| PWA-01 | P2       | S      | Page offline fallback (/offline.tsx + detection navigator.onLine)    |
-| PWA-02 | P2       | S      | Hook useInstallPrompt (beforeinstallprompt + UI bouton installer)    |
-| PWA-03 | P2       | S      | Service worker update notification (toast "nouvelle version")        |
-| PWA-04 | P2       | XS     | viewportFit: cover dans viewport metadata (notch support)            |
-| PWA-05 | P2       | XS     | manifest.json : ajouter screenshots + icons 96/256                   |
-| ERR-01 | P2       | S      | Fetch timeout (AbortController 10s) dans useCommunityStats + useSync |
-| ERR-02 | P2       | XS     | loading.tsx pour /jeu/[deckId]                                       |
-| ERR-03 | P2       | XS     | Logging ameliore : error.message dans API catch blocks               |
-| API-01 | P2       | S      | Standardiser format reponse API ({ ok, data } partout)               |
-| API-02 | P2       | XS     | Index analytics_events(ip) pour dashboard unique visitors            |
+| Ref    | Priorite | Effort | Description                                                            | Statut |
+| ------ | -------- | ------ | ---------------------------------------------------------------------- | ------ |
+| PWA-01 | P2       | S      | Page offline fallback (/offline + SW navigation fallback)              | Done   |
+| PWA-02 | P2       | S      | Hook useInstallPrompt (beforeinstallprompt + canInstall/promptInstall) | Done   |
+| PWA-03 | P2       | S      | Service worker update notification (SwUpdateToast)                     | Done   |
+| PWA-04 | P2       | XS     | viewportFit: cover dans viewport metadata (notch support)              | Done   |
+| PWA-05 | P2       | XS     | manifest.json : icons 96/256 + screenshots                             | Done   |
+| ERR-01 | P2       | S      | Fetch timeout (AbortController 10s) dans useCommunityStats + useSync   | Done   |
+| ERR-02 | P2       | XS     | loading.tsx pour /jeu/[deckId]                                         | Done   |
+| ERR-03 | P2       | XS     | Logging ameliore : error.message dans API catch blocks                 | Done   |
+| API-01 | P2       | S      | Standardiser format reponse API (jsonOk/jsonError/withDbCheck)         | Done   |
+| API-02 | P2       | XS     | Index analytics_events(ip) pour dashboard unique visitors              | Done   |
 
-**Total Sprint 25 : 10 items**
+**Total Sprint 25 : 10 items -- DONE**
 
 ---
 
-## Sprint 26 -- Polish & Tests (BASSE)
+## Sprint 26 -- Polish & Tests (DONE)
 
-| Ref     | Priorite | Effort | Description                                                       |
-| ------- | -------- | ------ | ----------------------------------------------------------------- |
-| TEST-04 | P3       | M      | Tests unitaires : archetype.ts, deckUtils.ts, stats.ts, gameStore |
-| TEST-05 | P3       | M      | Tests API : /api/sessions, /api/ranking, /api/health              |
-| TEST-06 | P3       | L      | Tests E2E Playwright : flow complet swipe -> results              |
-| RGPD-04 | P3       | S      | Cookie consent banner (si exige par juridiction)                  |
-| SEC-06  | P3       | S      | Valider cardId format + existence dans /api/sessions              |
-| SEC-07  | P3       | S      | CSRF tokens explicites sur endpoints POST                         |
-| UX-36   | P3       | S      | OG images dynamiques pour pages /jeu/[deckId]                     |
-| PWA-06  | P3       | S      | Background sync pour sessions offline (Periodic Sync API)         |
-| DATA-01 | P3       | XS     | Ajouter sourceUrl manquants dans france-europe.json (10 cartes)   |
+| Ref     | Priorite | Effort | Description                                                         | Statut  |
+| ------- | -------- | ------ | ------------------------------------------------------------------- | ------- |
+| TEST-04 | P3       | M      | Tests unitaires : archetype, deckUtils, stats, gameStore (66 tests) | Done    |
+| TEST-05 | P3       | M      | Tests API : /api/health, /api/sessions, /api/ranking (6 tests)      | Done    |
+| TEST-06 | P3       | L      | Tests E2E Playwright : flow complet swipe -> results                | Deferre |
+| RGPD-04 | P3       | S      | Cookie consent banner (pas requis, analytics sans cookies)          | Deferre |
+| SEC-06  | P3       | S      | Valider cardId format (regex) dans /api/sessions                    | Done    |
+| SEC-07  | P3       | S      | CSRF tokens (deja protege par NextAuth + CORS same-origin)          | Deferre |
+| UX-36   | P3       | S      | OG images dynamiques pour pages /jeu/[deckId]                       | Done    |
+| PWA-06  | P3       | S      | Background sync (Periodic Sync API, support limite)                 | Deferre |
+| DATA-01 | P3       | XS     | sourceUrl ajoutes dans france-europe.json (10 cartes)               | Done    |
 
-**Total Sprint 26 : 10 items**
+**Total Sprint 26 : 5 done, 4 deferes -- DONE**
 
 ---
 

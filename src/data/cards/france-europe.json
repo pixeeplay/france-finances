@@ -9,13 +9,9 @@
     "deckId": "france-europe",
     "icon": "💶",
     "source": "PLF 2026, prélèvement sur recettes UE, Commission européenne",
-    "sourceUrl": null,
+    "sourceUrl": "https://www.budget.gouv.fr/budget-de-letat/le-projet-de-loi-de-finances",
     "level": 1,
-    "tags": [
-      "Europe",
-      "contribution",
-      "budget UE"
-    ],
+    "tags": ["Europe", "contribution", "budget UE"],
     "trend": null,
     "equivalence": "Chaque Francais paie ~1€/jour pour l'Union europeenne"
   },
@@ -29,14 +25,9 @@
     "deckId": "france-europe",
     "icon": "🔄",
     "source": "Commission européenne, Toute l'Europe, PLF 2026",
-    "sourceUrl": null,
+    "sourceUrl": "https://www.touteleurope.eu/fonctionnement-de-l-ue/budget-europeen-quels-sont-les-pays-qui-paient-le-plus-et-ceux-qui-recoivent-le-plus/",
     "level": 1,
-    "tags": [
-      "Europe",
-      "retours",
-      "PAC",
-      "fonds structurels"
-    ],
+    "tags": ["Europe", "retours", "PAC", "fonds structurels"],
     "trend": null,
     "equivalence": "La France recoit 65 centimes pour chaque euro verse a l'UE"
   },
@@ -50,13 +41,9 @@
     "deckId": "france-europe",
     "icon": "🚀",
     "source": "Commission européenne, France Relance, Cour des comptes européenne",
-    "sourceUrl": null,
+    "sourceUrl": "https://commission.europa.eu/strategy-and-policy/recovery-plan-europe_fr",
     "level": 1,
-    "tags": [
-      "Europe",
-      "relance",
-      "NextGenerationEU"
-    ],
+    "tags": ["Europe", "relance", "NextGenerationEU"],
     "trend": null,
     "equivalence": "La France recoit plus de NextGenerationEU que ce que coute son budget Justice en 4 ans"
   },
@@ -70,14 +57,9 @@
     "deckId": "france-europe",
     "icon": "🕊️",
     "source": "Conseil de l'UE, Ministère des Armées",
-    "sourceUrl": null,
+    "sourceUrl": "https://www.consilium.europa.eu/fr/policies/european-peace-facility/",
     "level": 1,
-    "tags": [
-      "Europe",
-      "défense",
-      "Ukraine",
-      "FEP"
-    ],
+    "tags": ["Europe", "défense", "Ukraine", "FEP"],
     "trend": null,
     "equivalence": "La contribution francaise a la FEP = le budget annuel de l'aide juridictionnelle"
   },
@@ -91,14 +73,9 @@
     "deckId": "france-europe",
     "icon": "🎓",
     "source": "Agence Erasmus+ France, Commission européenne",
-    "sourceUrl": null,
+    "sourceUrl": "https://agence.erasmusplus.fr/",
     "level": 1,
-    "tags": [
-      "Europe",
-      "éducation",
-      "Erasmus",
-      "mobilité"
-    ],
+    "tags": ["Europe", "éducation", "Erasmus", "mobilité"],
     "trend": null,
     "equivalence": "6€/an par Francais pour 600 000 echanges etudiants/an en Europe"
   },
@@ -112,14 +89,9 @@
     "deckId": "france-europe",
     "icon": "🛂",
     "source": "Frontex, Commission européenne, Cour des comptes européenne",
-    "sourceUrl": null,
+    "sourceUrl": "https://www.frontex.europa.eu/",
     "level": 1,
-    "tags": [
-      "Europe",
-      "frontières",
-      "immigration",
-      "Frontex"
-    ],
+    "tags": ["Europe", "frontières", "immigration", "Frontex"],
     "trend": null,
     "equivalence": "Le budget Frontex = le prix de 2 heures d'operations militaires francaises par jour"
   },
@@ -133,14 +105,9 @@
     "deckId": "france-europe",
     "icon": "🛰️",
     "source": "CNES, ESA, Commission européenne programme spatial",
-    "sourceUrl": null,
+    "sourceUrl": "https://www.gsa.europa.eu/european-gnss/galileo/galileo-european-global-satellite-based-navigation-system",
     "level": 1,
-    "tags": [
-      "Europe",
-      "spatial",
-      "souveraineté",
-      "Galileo"
-    ],
+    "tags": ["Europe", "spatial", "souveraineté", "Galileo"],
     "trend": null,
     "equivalence": "Galileo est utilise chaque jour par 3,5 milliards d'appareils dans le monde"
   },
@@ -154,13 +121,9 @@
     "deckId": "france-europe",
     "icon": "🌾",
     "source": "Commission européenne, Sénat, Toute l'Europe",
-    "sourceUrl": null,
+    "sourceUrl": "https://agriculture.ec.europa.eu/common-agricultural-policy_fr",
     "level": 1,
-    "tags": [
-      "Europe",
-      "agriculture",
-      "PAC"
-    ],
+    "tags": ["Europe", "agriculture", "PAC"],
     "trend": null,
     "equivalence": "Sans la PAC, le prix du panier de courses augmenterait de ~5-10% selon les estimations"
   },
@@ -174,14 +137,9 @@
     "deckId": "france-europe",
     "icon": "🌍",
     "source": "Commission européenne, Conseil de l'UE, Parlement européen",
-    "sourceUrl": null,
+    "sourceUrl": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_fr",
     "level": 1,
-    "tags": [
-      "Europe",
-      "environnement",
-      "carbone",
-      "MACF"
-    ],
+    "tags": ["Europe", "environnement", "carbone", "MACF"],
     "trend": null,
     "equivalence": "Le MACF pourrait devenir la 1re ressource propre de l'UE"
   },
@@ -195,13 +153,9 @@
     "deckId": "france-europe",
     "icon": "🇬🇧",
     "source": "Commission européenne, FMI, Trésor français",
-    "sourceUrl": null,
+    "sourceUrl": "https://www.vie-publique.fr/en-bref/278547-brexit-quel-impact-economique-pour-la-france",
     "level": 1,
-    "tags": [
-      "Europe",
-      "Brexit",
-      "commerce"
-    ],
+    "tags": ["Europe", "Brexit", "commerce"],
     "trend": null,
     "equivalence": "Le Brexit coute a chaque Francais l'equivalent d'un abonnement de streaming par mois"
   }

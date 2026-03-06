@@ -1,9 +1,9 @@
-import { NextResponse } from "next/server";
 import { z } from "zod";
 import { auth } from "@/auth";
-import { db, isDbAvailable } from "@/db";
+import { db } from "@/db";
 import { users } from "@/db/schema";
 import { eq } from "drizzle-orm";
+import { withDbCheck, jsonOk, jsonError } from "@/lib/api-utils";
 
 export const dynamic = "force-dynamic";
 
@@ -19,15 +19,14 @@ const profileSchema = z.object({
 export async function GET() {
   const session = await auth();
   if (!session?.user?.id) {
-    return NextResponse.json({ ok: false, error: "Not authenticated" }, { status: 401 });
+    return jsonError("Not authenticated", 401);
   }
 
-  if (!isDbAvailable() || !db) {
-    return NextResponse.json({ ok: false, error: "Database not configured" }, { status: 503 });
-  }
+  const unavailable = withDbCheck();
+  if (unavailable) return unavailable;
 
   try {
-    const [user] = await db
+    const [user] = await db!
       .select({
         id: users.id,
         name: users.name,
@@ -39,10 +38,10 @@ export async function GET() {
       .where(eq(users.id, session.user.id));
 
     if (!user) {
-      return NextResponse.json({ ok: false, error: "User not found" }, { status: 404 });
+      return jsonError("User not found", 404);
     }
 
-    return NextResponse.json({
+    return jsonOk({
       id: user.id,
       name: user.name,
       email: user.email,
@@ -50,8 +49,8 @@ export async function GET() {
       username: user.username,
     });
   } catch (error) {
-    console.error("Failed to fetch user profile:", error);
-    return NextResponse.json({ ok: false, error: "Database error" }, { status: 500 });
+    console.error("[GET /api/me/profile]", error instanceof Error ? error.message : error);
+    return jsonError("Database error");
   }
 }
 
@@ -62,26 +61,23 @@ export async function GET() {
 export async function PUT(request: Request) {
   const session = await auth();
   if (!session?.user?.id) {
-    return NextResponse.json({ ok: false, error: "Not authenticated" }, { status: 401 });
+    return jsonError("Not authenticated", 401);
   }
 
-  if (!isDbAvailable() || !db) {
-    return NextResponse.json({ ok: false, error: "Database not configured" }, { status: 503 });
-  }
+  const unavailable = withDbCheck();
+  if (unavailable) return unavailable;
 
   let rawBody: unknown;
   try {
     rawBody = await request.json();
-  } catch {
-    return NextResponse.json({ ok: false, error: "Invalid JSON" }, { status: 400 });
+  } catch (error) {
+    console.error("[PUT /api/me/profile] Invalid JSON:", error instanceof Error ? error.message : error);
+    return jsonError("Invalid JSON", 400);
   }
 
   const parsed = profileSchema.safeParse(rawBody);
   if (!parsed.success) {
-    return NextResponse.json(
-      { ok: false, error: "Validation failed", details: parsed.error.flatten().fieldErrors },
-      { status: 400 }
-    );
+    return jsonError("Validation failed", 400);
   }
 
   try {
@@ -95,12 +91,12 @@ export async function PUT(request: Request) {
     }
 
     if (Object.keys(updates).length > 0) {
-      await db.update(users).set(updates).where(eq(users.id, session.user.id));
+      await db!.update(users).set(updates).where(eq(users.id, session.user.id));
     }
 
-    return NextResponse.json({ ok: true });
+    return jsonOk({ ok: true });
   } catch (error) {
-    console.error("Failed to update user profile:", error);
-    return NextResponse.json({ ok: false, error: "Database error" }, { status: 500 });
+    console.error("[PUT /api/me/profile]", error instanceof Error ? error.message : error);
+    return jsonError("Database error");
   }
 }
