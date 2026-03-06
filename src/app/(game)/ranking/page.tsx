@@ -4,7 +4,8 @@ import { useState, useEffect, useRef } from "react";
 import { ChainsawIcon } from "@/components/ChainsawIcon";
 import { ShieldIcon } from "@/components/ShieldIcon";
 import { getGlobalStats, getPlayerProfile, getSessions, type GlobalStats, type PlayerProfile } from "@/lib/stats";
-import { RadarChart } from "@/components/RadarChart";
+import dynamic from "next/dynamic";
+const RadarChart = dynamic(() => import("@/components/RadarChart").then((m) => m.RadarChart), { ssr: false });
 import { computeRadarFromHistory } from "@/lib/radarData";
 import { useCommunityStats, type CommunityStats } from "@/hooks/useCommunityStats";
 import decksData from "@/data";
@@ -542,7 +543,7 @@ function SpeedTab({
 
             {/* Avatar */}
             <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-lg">
-              {rank <= 3 ? ["🥇", "🥈", "🥉"][rank - 1] : "⚡"}
+              <span aria-hidden="true">{rank <= 3 ? ["🥇", "🥈", "🥉"][rank - 1] : "⚡"}</span>
             </div>
 
             {/* Info */}

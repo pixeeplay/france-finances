@@ -21,10 +21,9 @@ interface SwipeSessionProps {
 export function SwipeSession({ deckId, deckName, cards, level = 1, gameMode = "classic", budgetTarget }: SwipeSessionProps) {
   const router = useRouter();
   const [detailCard, setDetailCard] = useState<Card | null>(null);
-  const { session, recordVote, recordAudit, voteAndAdvance, completeSession } = useGameStore(
+  const { session, recordAudit, voteAndAdvance, completeSession } = useGameStore(
     useShallow((s) => ({
       session: s.session,
-      recordVote: s.recordVote,
       recordAudit: s.recordAudit,
       voteAndAdvance: s.voteAndAdvance,
       completeSession: s.completeSession,

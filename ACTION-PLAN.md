@@ -4,7 +4,7 @@
 
 ---
 
-## Sprints termines (3-22) -- 127 items
+## Sprints termines (3-24) -- 145 items
 
 | Sprint | Objectif                                                           | Items |
 | ------ | ------------------------------------------------------------------ | ----- |
@@ -22,6 +22,8 @@
 | 20     | Landing page polish, SEO ouverture, onboarding fix                 | 10    |
 | 21     | Conformite & Qualite (RGPD, tests, CI, sitemap, archetype fix)     | 9     |
 | 22     | Securite & SEO (CSP, auth dashboard, canonical, JSON-LD, DB fixes) | 10    |
+| 23     | Accessibilite & UX (skip nav, aria, reduced motion, skeletons)     | 9     |
+| 24     | Performance & Architecture (lazy load, split, cleanup, barrel)     | 9     |
 
 ---
 
@@ -122,41 +124,43 @@
 
 ---
 
-## Sprint 23 -- Accessibilite & UX (HAUTE)
+## Sprint 23 -- Accessibilite & UX (DONE)
 
-| Ref     | Priorite | Effort | Description                                                                  |
-| ------- | -------- | ------ | ---------------------------------------------------------------------------- |
-| A11Y-01 | P1       | XS     | Skip navigation link sur toutes les pages avec BottomNav                     |
-| A11Y-02 | P1       | S      | Audit contrastes : rehausser muted text, verifier amber/blue sur fond sombre |
-| A11Y-03 | P1       | XS     | aria-label sur toggles Mode aleatoire / Mode Budget                          |
-| A11Y-04 | P1       | XS     | aria-hidden sur emojis decoratifs (ResultScreen, SwipeStack, ranking)        |
-| A11Y-05 | P1       | XS     | aria-label sur boutons budget target (5, 10, 15, 20, 30)                     |
-| A11Y-06 | P1       | XS     | Share button : aria-label au lieu de title (ResultScreen)                    |
-| A11Y-07 | P1       | S      | Reduced motion : CardDetail + ResultScreen confettis                         |
-| UX-32   | P2       | S      | Skeletons loading : play page, ranking page (remplacer "Chargement...")      |
-| UX-33   | P2       | XS     | Reset store dans handleQuitSession avant navigation                          |
-| UX-34   | P2       | S      | Error boundaries par route (/profile, /ranking, /jeu/[deckId])               |
+**Objectif :** A11Y essentiels, skeletons, error boundaries, store cleanup.
 
-**Total Sprint 23 : 10 items**
+| Ref     | Priorite | Effort | Description                                                                  | Statut  |
+| ------- | -------- | ------ | ---------------------------------------------------------------------------- | ------- |
+| A11Y-01 | P1       | XS     | Skip navigation link sur toutes les pages avec BottomNav                     | Done    |
+| A11Y-02 | P1       | S      | Audit contrastes : rehausser muted text, verifier amber/blue sur fond sombre | Deferre |
+| A11Y-03 | P1       | XS     | aria-label sur toggles Mode aleatoire / Mode Budget                          | Done    |
+| A11Y-04 | P1       | XS     | aria-hidden sur emojis decoratifs (ResultScreen, SwipeStack, ranking)        | Done    |
+| A11Y-05 | P1       | XS     | aria-label sur boutons budget target (5, 10, 15, 20, 30)                     | Done    |
+| A11Y-06 | P1       | XS     | Share button : aria-label au lieu de title (ResultScreen)                    | Done    |
+| A11Y-07 | P1       | S      | Reduced motion : CardDetail + ResultScreen confettis                         | Done    |
+| UX-32   | P2       | S      | Skeletons loading : play page (remplacer "Chargement...")                    | Done    |
+| UX-33   | P2       | XS     | Reset store dans handleQuitSession avant navigation                          | Done    |
+| UX-34   | P2       | S      | Error boundaries par route (/profile, /ranking, /jeu)                        | Done    |
+
+**Total Sprint 23 : 9 items done, 1 deferre -- DONE**
 
 ---
 
-## Sprint 24 -- Performance & Architecture (MOYENNE)
+## Sprint 24 -- Performance & Architecture (DONE)
 
-| Ref     | Priorite | Effort | Description                                                                         |
-| ------- | -------- | ------ | ----------------------------------------------------------------------------------- |
-| PERF-02 | P2       | M      | Homepage hybride : extraire deck grid en Server Component                           |
-| PERF-03 | P2       | S      | Lazy-load RadarChart + dynamic import cards par deckId                              |
-| PERF-04 | P2       | XS     | will-change: transform sur SwipeCard + CardDetail drag                              |
-| PERF-05 | P2       | XS     | next.config optimizePackageImports (framer-motion, lucide-react)                    |
-| ARCH-01 | P2       | M      | Splitter ResultScreen.tsx (613 LOC -> ResultStats + ArchetypeDisplay + ShareButton) |
-| ARCH-02 | P2       | S      | Extraire api-utils.ts (withAuth, withRateLimit, withDbCheck)                        |
-| ARCH-03 | P2       | XS     | Barrel exports pour /hooks et /lib                                                  |
-| ARCH-04 | P2       | XS     | Supprimer dead code : recordVote() et nextCard() du store                           |
-| ARCH-05 | P2       | XS     | useShallow dans ResultScreen et useArchetype (coherence)                            |
-| ARCH-06 | P2       | XS     | Mettre a jour README.md (330 cartes, Next.js 15, DB, Auth)                          |
+| Ref     | Priorite | Effort | Description                                                                          | Statut  |
+| ------- | -------- | ------ | ------------------------------------------------------------------------------------ | ------- |
+| PERF-02 | P2       | XS     | CategoriesSection : suppression "use client" inutile (Server Component)              | Done    |
+| PERF-03 | P2       | S      | Lazy-load RadarChart via next/dynamic (ResultScreen + ranking)                       | Done    |
+| PERF-04 | P2       | XS     | will-change-transform sur SwipeCard + CardDetail drag                                | Done    |
+| PERF-05 | P2       | XS     | optimizePackageImports (incompatible Turbopack)                                      | Skipped |
+| ARCH-01 | P2       | M      | Splitter ResultScreen.tsx (615 -> 428 LOC, StatBar, AuditReport, ShareIcon extraits) | Done    |
+| ARCH-02 | P2       | S      | Extraire api-utils.ts (dbUnavailableResponse, jsonOk, jsonError)                     | Done    |
+| ARCH-03 | P2       | XS     | Barrel exports pour /hooks et /lib                                                   | Done    |
+| ARCH-04 | P2       | XS     | Supprimer dead code : recordVote() et nextCard() du store                            | Done    |
+| ARCH-05 | P2       | XS     | useShallow : deja optimal dans ResultScreen et useArchetype                          | Done    |
+| ARCH-06 | P2       | XS     | Mettre a jour README.md (330 cartes, Next.js 15, DB, Auth)                           | Done    |
 
-**Total Sprint 24 : 10 items**
+**Total Sprint 24 : 9 done, 1 skipped -- DONE**
 
 ---
 

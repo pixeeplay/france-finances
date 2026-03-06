@@ -66,14 +66,17 @@ export function SwipeStack({
     return () => window.removeEventListener("beforeunload", handleBeforeUnload);
   }, [session]);
 
+  const reset = useGameStore((s) => s.reset);
+
   const handleQuitSession = useCallback(() => {
     if (session && !session.completed && session.votes.length > 0) {
       if (!window.confirm("Quitter la session ? Votre progression sera perdue.")) {
         return;
       }
     }
+    reset();
     router.push("/jeu");
-  }, [session, router]);
+  }, [session, router, reset]);
 
   const currentIndex = session?.currentIndex ?? 0;
   const totalCards = cards.length;
@@ -225,10 +228,10 @@ export function SwipeStack({
         {level >= 2 && (
           <>
             <div className="absolute inset-y-0 left-0 flex items-center z-30 pointer-events-none -ml-3">
-              <span className="text-[10px] font-bold text-primary tracking-wider -rotate-90 opacity-60">🛡️ OK</span>
+              <span className="flex items-center gap-0.5 text-[10px] font-bold text-primary tracking-wider -rotate-90 opacity-60" aria-hidden="true"><ShieldIcon size={10} className="text-primary" /> OK</span>
             </div>
             <div className="absolute inset-y-0 right-0 flex items-center z-30 pointer-events-none -mr-3">
-              <span className="text-[10px] font-bold text-warning tracking-wider rotate-90 opacity-60">🪚 RÉDUIRE</span>
+              <span className="flex items-center gap-0.5 text-[10px] font-bold text-warning tracking-wider rotate-90 opacity-60" aria-hidden="true"><ChainsawIcon size={10} /> RÉDUIRE</span>
             </div>
           </>
         )}
@@ -265,7 +268,7 @@ export function SwipeStack({
       {/* Level 2 bottom hint */}
       {level >= 2 && (
         <div className="flex justify-center pb-1 opacity-60">
-          <span className="text-[10px] font-bold text-danger tracking-wider">❌ INJUSTIFIÉ ▼</span>
+          <span className="text-[10px] font-bold text-danger tracking-wider" aria-hidden="true">❌ INJUSTIFIÉ ▼</span>
         </div>
       )}
 

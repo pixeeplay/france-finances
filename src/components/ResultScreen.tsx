@@ -2,15 +2,19 @@
 
 import { useRouter } from "next/navigation";
 import { useEffect, useState, useCallback } from "react";
-import type { ReactNode } from "react";
 import { useGameStore } from "@/stores/gameStore";
 import { useArchetype } from "@/hooks/useArchetype";
 import { ChainsawIcon } from "./ChainsawIcon";
 import { ShieldIcon } from "./ShieldIcon";
 import { track } from "@/lib/analytics";
-import { RadarChart } from "./RadarChart";
+import dynamic from "next/dynamic";
+const RadarChart = dynamic(() => import("./RadarChart").then((m) => m.RadarChart), { ssr: false });
 import { computeRadarFromSession } from "@/lib/radarData";
-import type { Vote, Card, AuditRecommendation } from "@/types";
+import type { Vote, Card } from "@/types";
+import { AuditReport } from "./AuditReport";
+import { StatBar } from "./StatBar";
+import { ShareIcon } from "./ShareIcon";
+import { ChevronIcon } from "./ChevronIcon";
 
 const SITE_URL = "https://nicoquipaie.pixeeplay.fr";
 
@@ -127,16 +131,16 @@ export function ResultScreen() {
       <div className="relative px-4 text-center pb-3 pt-6">
         {showConfetti && (
           <>
-            <span className="confetti-particle absolute top-0 left-10 text-xl">
+            <span className="confetti-particle absolute top-0 left-10 text-xl" aria-hidden="true">
               ✨
             </span>
-            <span className="confetti-particle absolute top-4 right-12 text-2xl">
+            <span className="confetti-particle absolute top-4 right-12 text-2xl" aria-hidden="true">
               🎉
             </span>
-            <span className="confetti-particle absolute top-2 left-1/3 text-lg">
+            <span className="confetti-particle absolute top-2 left-1/3 text-lg" aria-hidden="true">
               🎊
             </span>
-            <span className="confetti-particle absolute top-6 right-1/4 text-sm">
+            <span className="confetti-particle absolute top-6 right-1/4 text-sm" aria-hidden="true">
               ✨
             </span>
           </>
@@ -152,11 +156,11 @@ export function ResultScreen() {
           <button
             onClick={handleShare}
             className="absolute top-4 right-4 h-10 w-10 rounded-full bg-background/50 flex items-center justify-center hover:bg-muted transition-colors text-muted-foreground"
-            title={shareCopied ? "Copié !" : "Partager"}
+            aria-label={shareCopied ? "Copié !" : "Partager les résultats"}
           >
             {shareCopied ? <span className="text-primary text-sm">✓</span> : <ShareIcon />}
           </button>
-          <div className="text-6xl mb-4">{archetype.icon}</div>
+          <div className="text-6xl mb-4" aria-hidden="true">{archetype.icon}</div>
           <p className="text-2xl font-bold leading-tight tracking-tight mb-2">
             {archetype.name}
           </p>
@@ -198,7 +202,7 @@ export function ResultScreen() {
                 glowClass="shadow-[0_0_8px_rgba(245,158,11,0.5)]"
               />
               <StatBar
-                icon={<span className="text-sm">📈</span>}
+                icon={<span className="text-sm" aria-hidden="true">📈</span>}
                 label="Renforcer"
                 count={reinforceCount}
                 percent={reinforcePercent}
@@ -206,7 +210,7 @@ export function ResultScreen() {
                 glowClass="shadow-[0_0_8px_rgba(59,130,246,0.5)]"
               />
               <StatBar
-                icon={<span className="text-sm">❌</span>}
+                icon={<span className="text-sm" aria-hidden="true">❌</span>}
                 label="Injustifié"
                 count={unjustifiedCount}
                 percent={unjustifiedPercent}
@@ -389,8 +393,8 @@ function HistoryItem({ card, vote }: { card: Card; vote: Vote | null }) {
   const iconMap: Record<string, React.ReactNode> = {
     keep: <ShieldIcon size={16} className="text-primary group-hover/item:text-white transition-colors" />,
     cut: <ChainsawIcon size={16} className="chainsaw-hover-white" />,
-    reinforce: <span className="text-sm">📈</span>,
-    unjustified: <span className="text-sm">❌</span>,
+    reinforce: <span className="text-sm" aria-hidden="true">📈</span>,
+    unjustified: <span className="text-sm" aria-hidden="true">❌</span>,
   };
 
   const hoverBgMap: Record<string, string> = {
@@ -422,193 +426,3 @@ function HistoryItem({ card, vote }: { card: Card; vote: Vote | null }) {
   );
 }
 
-function StatBar({ icon, label, count, percent, colorClass, glowClass }: {
-  icon: ReactNode;
-  label: string;
-  count: number;
-  percent: number;
-  colorClass: string;
-  glowClass: string;
-}) {
-  return (
-    <div className="flex flex-col gap-1.5">
-      <div className="flex justify-between text-xs font-bold uppercase tracking-wider text-muted-foreground">
-        <span className="flex items-center gap-1">{icon} {label}</span>
-        <span>{count} carte{count > 1 ? "s" : ""}</span>
-      </div>
-      <div className="w-full bg-muted h-2.5 rounded-full overflow-hidden">
-        <div
-          className={`${colorClass} h-full rounded-full ${glowClass}`}
-          style={{ width: `${percent}%` }}
-        />
-      </div>
-    </div>
-  );
-}
-
-function ShareIcon() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
-      <polyline points="16 6 12 2 8 6" />
-      <line x1="12" y1="2" x2="12" y2="15" />
-    </svg>
-  );
-}
-
-function ChevronIcon() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className="group-open:rotate-180 transition-transform"
-    >
-      <polyline points="6 9 12 15 18 9" />
-    </svg>
-  );
-}
-
-const recommendationLabels: Record<AuditRecommendation, string> = {
-  keep: "Maintenir le budget",
-  reduce: "Reduire de moitie",
-  externalize: "Externaliser",
-  merge: "Fusionner",
-  reinforce: "Renforcer (+15%)",
-  delete: "Suppression totale",
-};
-
-const recommendationColors: Record<AuditRecommendation, string> = {
-  keep: "text-muted-foreground",
-  reduce: "text-warning",
-  externalize: "text-info",
-  merge: "text-info",
-  reinforce: "text-primary",
-  delete: "text-danger",
-};
-
-const recommendationIcons: Record<AuditRecommendation, string> = {
-  keep: "\uD83D\uDEE1\uFE0F",
-  reduce: "\uD83E\uDE9A",
-  externalize: "\uD83D\uDD04",
-  merge: "\uD83D\uDD00",
-  reinforce: "\uD83D\uDCC8",
-  delete: "\u274C",
-};
-
-function AuditReport({ cards, auditResponses }: {
-  cards: Card[];
-  auditResponses: { cardId: string; diagnostics: Record<string, boolean>; recommendation: AuditRecommendation }[];
-}) {
-  // Count by recommendation type
-  const counts: Record<string, number> = {};
-  for (const r of auditResponses) {
-    counts[r.recommendation] = (counts[r.recommendation] || 0) + 1;
-  }
-
-  // Estimate savings
-  let totalSavings = 0;
-  for (const r of auditResponses) {
-    const card = cards.find((c) => c.id === r.cardId);
-    if (!card) continue;
-    if (r.recommendation === "reduce") totalSavings += card.amountBillions * 0.5;
-    else if (r.recommendation === "delete") totalSavings += card.amountBillions;
-    else if (r.recommendation === "reinforce") totalSavings -= card.amountBillions * 0.15;
-  }
-
-  const savingsPerCitizen = Math.round((totalSavings * 1e9) / 68e6);
-
-  const summaryItems = [
-    { label: "reductions", count: (counts["reduce"] || 0), color: "text-warning border-warning/20 bg-warning/10" },
-    { label: "suppressions", count: (counts["delete"] || 0), color: "text-danger border-danger/20 bg-danger/10" },
-    { label: "fusions", count: (counts["merge"] || 0) + (counts["externalize"] || 0), color: "text-info border-info/20 bg-info/10" },
-    { label: "renforcees", count: (counts["reinforce"] || 0) + (counts["keep"] || 0), color: "text-primary border-primary/20 bg-primary/10" },
-  ].filter((s) => s.count > 0);
-
-  return (
-    <div className="px-4 py-2 space-y-4">
-      {/* Summary */}
-      <div className="bg-card border border-border rounded-xl p-5 space-y-4">
-        <h3 className="text-base font-bold">
-          Sur {auditResponses.length} depenses auditees :
-        </h3>
-        <div className="grid grid-cols-2 gap-2 text-sm font-medium">
-          {summaryItems.map((s) => (
-            <span
-              key={s.label}
-              className={`flex items-center justify-center px-2.5 py-1.5 rounded-md border text-center ${s.color}`}
-            >
-              {s.count} {s.label}
-            </span>
-          ))}
-        </div>
-
-        <div className="h-px w-full bg-border" />
-
-        <div className="flex items-start gap-3">
-          <span className="text-2xl">{"\uD83D\uDCB0"}</span>
-          <div className="flex flex-col">
-            <p className="text-sm font-medium text-muted-foreground">Impact estime</p>
-            <p className="text-lg font-bold text-primary font-mono tracking-tight">
-              {totalSavings >= 0 ? "-" : "+"}{Math.abs(totalSavings).toFixed(1)} Md&euro; {totalSavings >= 0 ? "d'economies" : "d'investissement"}
-            </p>
-            <p className="text-sm font-medium text-primary/80">
-              soit ~{Math.abs(savingsPerCitizen)}&euro; / contribuable
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Detail per card */}
-      <div>
-        <h3 className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2 px-1">
-          Détail du rapport
-        </h3>
-        <div className="flex flex-col gap-2">
-          {auditResponses.map((r) => {
-            const card = cards.find((c) => c.id === r.cardId);
-            if (!card) return null;
-            const rec = r.recommendation as AuditRecommendation;
-            return (
-              <div key={r.cardId} className="bg-card border border-border p-3 rounded-xl">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-background text-xl shrink-0">
-                    {card.icon}
-                  </div>
-                  <div className="flex flex-col flex-1 min-w-0">
-                    <p className="text-sm font-semibold leading-tight line-clamp-1">{card.title}</p>
-                    <p className="text-xs text-muted-foreground font-mono">{card.amountBillions} Md&euro;</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-xs font-medium px-2 py-1 rounded bg-background text-muted-foreground">
-                    Prescription:
-                  </span>
-                  <span className={`text-xs font-bold ${recommendationColors[rec]}`}>
-                    {recommendationIcons[rec]} {recommendationLabels[rec]}
-                  </span>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </div>
-  );
-}

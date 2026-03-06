@@ -15,10 +15,6 @@ interface GameState {
   // === Actions ===
   /** Démarrer une nouvelle session */
   startSession: (deckId: string, cards: Card[], level?: 1 | 2 | 3, gameMode?: GameMode, budgetTarget?: number) => void;
-  /** Enregistrer un vote pour la carte courante */
-  recordVote: (cardId: string, direction: VoteDirection) => void;
-  /** Passer à la carte suivante */
-  nextCard: () => void;
   /** Vote + advance atomique. Retourne true si la session est terminée */
   voteAndAdvance: (cardId: string, direction: VoteDirection) => boolean;
   /** Terminer la session et calculer l'archétype */
@@ -60,44 +56,6 @@ export const useGameStore = create<GameState>((set, get) => ({
       },
       cardShownAt: Date.now(),
       _cachedStats: null,
-    });
-  },
-
-  recordVote: (cardId, direction) => {
-    const { session, cardShownAt } = get();
-    if (!session || session.completed) return;
-    if (session.votes.some((v) => v.cardId === cardId)) return; // prevent double vote
-
-    const now = Date.now();
-    const duration = cardShownAt > 0 ? now - cardShownAt : 0;
-
-    const newVote: Vote = {
-      cardId,
-      direction,
-      duration,
-      timestamp: now,
-    };
-
-    set({
-      session: {
-        ...session,
-        votes: [...session.votes, newVote],
-      },
-    });
-  },
-
-  nextCard: () => {
-    const { session } = get();
-    if (!session || session.completed) return;
-    if (session.currentIndex >= session.cards.length - 1) return; // guard bounds
-
-    const nextIndex = session.currentIndex + 1;
-    set({
-      session: {
-        ...session,
-        currentIndex: nextIndex,
-      },
-      cardShownAt: Date.now(),
     });
   },
 

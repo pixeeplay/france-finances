@@ -166,6 +166,7 @@ function PlayPageContent() {
               className="invisible absolute"
               type="checkbox"
               checked={randomMode}
+              aria-label="Mode aléatoire"
               onChange={(e) => {
                 setRandomMode(e.target.checked);
                 if (e.target.checked) {
@@ -182,7 +183,7 @@ function PlayPageContent() {
           <div className="flex items-center gap-4 px-4 py-4 justify-between">
             <div className="flex items-center gap-4">
               <div className="w-10 h-10 rounded-lg bg-warning/15 flex items-center justify-center text-warning shrink-0">
-                <span className="text-lg">&#127919;</span>
+                <span className="text-lg" aria-hidden="true">&#127919;</span>
               </div>
               <div className="flex flex-col">
                 <p className="text-base font-semibold leading-tight">
@@ -204,6 +205,7 @@ function PlayPageContent() {
                 className="invisible absolute"
                 type="checkbox"
                 checked={budgetMode}
+                aria-label="Mode Budget"
                 onChange={(e) => setBudgetMode(e.target.checked)}
               />
             </label>
@@ -218,6 +220,7 @@ function PlayPageContent() {
                   <button
                     key={t}
                     onClick={() => setBudgetTarget(t)}
+                    aria-label={`Objectif ${t} milliards d'euros`}
                     className={`flex-1 py-2 rounded-lg text-sm font-bold transition-colors ${
                       budgetTarget === t
                         ? "bg-warning text-white"
@@ -408,9 +411,36 @@ function DeckCard({
   );
 }
 
+function PlayPageSkeleton() {
+  return (
+    <div className="flex-1 flex flex-col overflow-hidden animate-pulse">
+      <div className="flex items-center p-4 justify-between border-b border-border">
+        <div className="w-10 h-10 rounded-full bg-card" />
+        <div className="h-5 w-40 bg-card rounded" />
+        <div className="w-10" />
+      </div>
+      <div className="flex-1 px-4 py-4 space-y-4">
+        <div className="flex items-center gap-4 py-4 border-b border-border">
+          <div className="w-10 h-10 rounded-lg bg-card" />
+          <div className="flex-1 space-y-2">
+            <div className="h-4 w-32 bg-card rounded" />
+            <div className="h-3 w-48 bg-card rounded" />
+          </div>
+          <div className="w-14 h-8 bg-card rounded-full" />
+        </div>
+        <div className="grid grid-cols-2 gap-3">
+          {Array.from({ length: 6 }).map((_, i) => (
+            <div key={i} className="bg-card rounded-xl p-4 h-28 border-2 border-border" />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function PlayPage() {
   return (
-    <Suspense fallback={<div className="flex-1 flex items-center justify-center text-muted-foreground">Chargement...</div>}>
+    <Suspense fallback={<PlayPageSkeleton />}>
       <PlayPageContent />
     </Suspense>
   );

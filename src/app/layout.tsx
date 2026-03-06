@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     siteName: "france-finances.com",
     images: [
       {
-        url: "/og-default.png",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
         alt: "france-finances.com — Comprendre les finances publiques",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     title: "\uD83C\uDDEB\uD83C\uDDF7 france-finances.com — Comprendre les finances publiques",
     description:
       "Explorez le budget de la France de manière interactive. 370 cartes de dépenses publiques.",
-    images: ["/og-default.png"],
+    images: ["/opengraph-image"],
   },
 };
 

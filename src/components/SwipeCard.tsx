@@ -69,7 +69,7 @@ export const SwipeCard = forwardRef<SwipeCardHandle, SwipeCardProps>(
     <motion.div
       role="article"
       aria-label={`${card.title} \u2014 ${card.amountBillions} Md\u20AC. Swipez pour voter.`}
-      className="absolute inset-0 rounded-[1.5rem] bg-card border border-primary/30 shadow-[0_8px_30px_rgba(0,0,0,0.2)] overflow-hidden cursor-grab active:cursor-grabbing touch-none select-none"
+      className="absolute inset-0 rounded-[1.5rem] bg-card border border-primary/30 shadow-[0_8px_30px_rgba(0,0,0,0.2)] overflow-hidden cursor-grab active:cursor-grabbing touch-none select-none will-change-transform"
       style={{ x, y: level >= 2 ? y : undefined, rotate }}
       drag={level >= 2 ? true : "x"}
       dragConstraints={level >= 2 ? { left: -200, right: 200, top: -200, bottom: 200 } : { left: 0, right: 0 }}
