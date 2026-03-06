@@ -1,67 +1,50 @@
-"use client";
-
 import Link from "next/link";
-import decksData from "@/data";
-import type { Deck } from "@/types";
 
-const mainDecks = (decksData.decks as Deck[]).filter((d) => d.type !== "thematic");
+const categories = [
+  { icon: "🛡️", name: "Défense", stat: "55 Md€/an", deckId: "def" },
+  { icon: "🏥", name: "Santé", stat: "1 Français sur 5 en ALD", deckId: "san" },
+  { icon: "🏠", name: "Logement", stat: "1,4M ménages en attente", deckId: "log" },
+  { icon: "🌍", name: "Immigration", stat: "40% des ADP naturalisés", deckId: "imm" },
+  { icon: "👴", name: "Retraites", stat: "Revenu moyen 1 837 €/m", deckId: "soc" },
+  { icon: "💰", name: "Recettes", stat: "53% du PIB en prélèvements", deckId: "rec" },
+  { icon: "📚", name: "Éducation", stat: "12 élèves/prof", deckId: "edu" },
+  { icon: "🚄", name: "Transports", stat: "15 Md€ de train SNCF", deckId: "ene" },
+];
 
 export function CategoriesSection() {
   return (
     <section id="categories" className="section-padding bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-12">
-          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
-            17 catégories à explorer
-          </h2>
-          <p className="text-slate-600 max-w-2xl mx-auto">
-            Du budget de la Défense aux dépenses sociales, plongez dans chaque secteur
-          </p>
-        </div>
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">
+        <h2 className="font-heading font-bold text-2xl md:text-3xl text-center mb-10 text-landing-primary">
+          Explorer les catégories
+        </h2>
 
-        {/* Mobile: horizontal scroll */}
-        <div className="md:hidden overflow-x-auto hide-scrollbar -mx-4 px-4 pb-4">
-          <div className="flex gap-3" style={{ width: "max-content" }}>
-            {mainDecks.map((deck) => (
-              <CategoryCard key={deck.id} deck={deck} />
-            ))}
-          </div>
-        </div>
-
-        {/* Desktop: grid */}
-        <div className="hidden md:grid grid-cols-3 lg:grid-cols-4 gap-4">
-          {mainDecks.map((deck) => (
-            <CategoryCard key={deck.id} deck={deck} />
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {categories.map((cat) => (
+            <Link
+              key={cat.deckId}
+              href={`/jeu/${cat.deckId}`}
+              className="hover-lift flex flex-col items-center gap-2 bg-white rounded-2xl p-5 border border-slate-200 text-center"
+            >
+              <span className="text-3xl">{cat.icon}</span>
+              <span className="text-sm font-heading font-bold text-slate-900">
+                {cat.name}
+              </span>
+              <span className="text-xs text-slate-500">{cat.stat}</span>
+            </Link>
           ))}
         </div>
 
-        <div className="text-center mt-10">
+        <div className="text-center mt-8">
           <Link
             href="/jeu"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-landing-primary text-white font-semibold hover:bg-landing-primary-light transition-all"
+            className="inline-flex items-center gap-2 text-sm font-heading font-semibold text-landing-primary hover:underline"
           >
-            Explorer toutes les catégories
+            Voir les catégories détaillées
             <span>&#8594;</span>
           </Link>
         </div>
       </div>
     </section>
-  );
-}
-
-function CategoryCard({ deck }: { deck: Deck }) {
-  return (
-    <Link
-      href={`/jeu/${deck.id}`}
-      className="hover-lift flex flex-col items-center gap-2 bg-slate-50 rounded-xl p-5 border border-slate-100 min-w-[140px] md:min-w-0 text-center"
-    >
-      <span className="text-3xl">{deck.icon}</span>
-      <span className="text-sm font-semibold text-slate-900 leading-tight">
-        {deck.name}
-      </span>
-      <span className="text-xs text-slate-500">
-        {deck.cardCount} cartes
-      </span>
-    </Link>
   );
 }

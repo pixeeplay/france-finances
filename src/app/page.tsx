@@ -13,8 +13,8 @@ export default function LandingPage() {
     <div className="min-h-dvh bg-white text-slate-900">
       <NavbarLanding />
       <HeroSection />
-      <KeyNumbers />
       <HowItWorks />
+      <KeyNumbers />
       <CategoriesSection />
       <ParisTeaser />
       <EcosystemSection />

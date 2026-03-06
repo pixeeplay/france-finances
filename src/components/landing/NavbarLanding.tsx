@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export function NavbarLanding() {
   const [scrolled, setScrolled] = useState(false);
@@ -24,7 +25,7 @@ export function NavbarLanding() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2">
-            <span className="text-2xl">&#127467;&#127479;</span>
+            <Image src="/france.svg" alt="France" width={28} height={28} />
             <span className="font-heading text-lg font-bold text-slate-900">
               france-finances
             </span>

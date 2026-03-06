@@ -1,53 +1,69 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { useInView, useMotionValue, useSpring, motion } from "framer-motion";
+import { useEffect, useRef, useState, useCallback } from "react";
+import { useInView } from "framer-motion";
 
 interface AnimatedNumberProps {
   value: number;
   suffix?: string;
-  prefix?: string;
-  decimals?: number;
   className?: string;
+  /** Replay interval in ms (0 = no replay) */
+  replayInterval?: number;
+}
+
+function formatNumber(n: number): string {
+  return n.toLocaleString("fr-FR");
 }
 
 export function AnimatedNumber({
   value,
   suffix = "",
-  prefix = "",
-  decimals = 0,
   className,
+  replayInterval = 0,
 }: AnimatedNumberProps) {
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-  const motionValue = useMotionValue(0);
-  const spring = useSpring(motionValue, {
-    stiffness: 50,
-    damping: 20,
-    duration: 1.5,
-  });
+  const isInView = useInView(ref, { once: false, margin: "-50px" });
+  const [hasAnimated, setHasAnimated] = useState(false);
 
-  useEffect(() => {
-    if (isInView) {
-      motionValue.set(value);
-    }
-  }, [isInView, value, motionValue]);
-
-  useEffect(() => {
-    const unsubscribe = spring.on("change", (latest) => {
-      if (ref.current) {
-        const formatted = decimals > 0
-          ? latest.toFixed(decimals)
-          : Math.round(latest).toLocaleString("fr-FR");
-        ref.current.textContent = `${prefix}${formatted}${suffix}`;
+  const animate = useCallback(() => {
+    const duration = 1500;
+    const steps = 60;
+    const increment = value / steps;
+    let step = 0;
+    const timer = setInterval(() => {
+      step++;
+      if (step >= steps) {
+        if (ref.current) ref.current.textContent = `${formatNumber(value)}${suffix}`;
+        clearInterval(timer);
+      } else {
+        if (ref.current) ref.current.textContent = `${formatNumber(Math.round(increment * step))}${suffix}`;
       }
-    });
-    return unsubscribe;
-  }, [spring, prefix, suffix, decimals]);
+    }, duration / steps);
+    return () => clearInterval(timer);
+  }, [value, suffix]);
+
+  // Initial animation on view
+  useEffect(() => {
+    if (isInView && !hasAnimated) {
+      setHasAnimated(true);  
+      const cleanup = animate();
+      return cleanup;
+    }
+  }, [isInView, hasAnimated, animate]);
+
+  // Replay loop
+  useEffect(() => {
+    if (!hasAnimated || !replayInterval) return;
+    const interval = setInterval(() => {
+      if (ref.current) ref.current.textContent = `0${suffix}`;
+      animate();
+    }, replayInterval);
+    return () => clearInterval(interval);
+  }, [hasAnimated, replayInterval, animate, suffix]);
 
   return (
-    <motion.span ref={ref} className={className}>
-      {prefix}0{suffix}
-    </motion.span>
+    <span ref={ref} className={className}>
+      0{suffix}
+    </span>
   );
 }
