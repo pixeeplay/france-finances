@@ -12,8 +12,8 @@ const RADAR_CATEGORIES: { id: string; label: string }[] = [
   { id: "culture", label: "Culture" },
 ];
 
-/** Mock community average "cut" percentages per category */
-const COMMUNITY_AVERAGES: Record<string, number> = {
+/** Default community average "cut" percentages per category (used as fallback) */
+const DEFAULT_COMMUNITY_AVERAGES: Record<string, number> = {
   defense: 45,
   sante: 22,
   education: 28,
@@ -38,8 +38,10 @@ export interface RadarAxisData {
  */
 export function computeRadarFromSession(
   cards: Card[],
-  votes: Vote[]
+  votes: Vote[],
+  communityAverages?: Record<string, number>
 ): RadarAxisData[] {
+  const averages = communityAverages ?? DEFAULT_COMMUNITY_AVERAGES;
   const perCategory: Record<string, { total: number; cut: number }> = {};
 
   for (const vote of votes) {
@@ -60,7 +62,7 @@ export function computeRadarFromSession(
     axes.push({
       label,
       playerValue: Math.round((data.cut / data.total) * 100),
-      communityValue: COMMUNITY_AVERAGES[id] ?? 40,
+      communityValue: averages[id] ?? DEFAULT_COMMUNITY_AVERAGES[id] ?? 40,
     });
   }
 
@@ -72,8 +74,10 @@ export function computeRadarFromSession(
  * Aggregates across all historical sessions.
  */
 export function computeRadarFromHistory(
-  sessions: { deckId: string; keepCount: number; cutCount: number; totalCards: number }[]
+  sessions: { deckId: string; keepCount: number; cutCount: number; totalCards: number }[],
+  communityAverages?: Record<string, number>
 ): RadarAxisData[] {
+  const averages = communityAverages ?? DEFAULT_COMMUNITY_AVERAGES;
   const perCategory: Record<string, { total: number; cut: number }> = {};
 
   for (const s of sessions) {
@@ -90,7 +94,7 @@ export function computeRadarFromHistory(
     axes.push({
       label,
       playerValue: Math.round((data.cut / data.total) * 100),
-      communityValue: COMMUNITY_AVERAGES[id] ?? 40,
+      communityValue: averages[id] ?? DEFAULT_COMMUNITY_AVERAGES[id] ?? 40,
     });
   }
 
