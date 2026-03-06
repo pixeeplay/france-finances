@@ -60,21 +60,21 @@ export async function generateMetadata(): Promise<Metadata> {
     // Fallback to defaults
   }
 
-  const name = ARCHETYPE_NAMES[archetypeId] ?? "L'Equilibriste";
+  const name = ARCHETYPE_NAMES[archetypeId] ?? "L'Équilibriste";
   const ogImageUrl = `${SITE_URL}/api/og?archetype=${archetypeId}&keepPercent=${keepPercent}&cutPercent=${cutPercent}&totalCards=${totalCards}`;
 
   return {
-    title: `${name} — Profil — La Tronconneuse de Poche`,
-    description: `Archetype : ${name}. ${totalCards} cartes analysees, ${cutPercent}% a revoir. Decouvre ton profil budgetaire !`,
+    title: `${name} — Profil — La Tronçonneuse de Poche`,
+    description: `Archétype : ${name}. ${totalCards} cartes analysées, ${cutPercent}% à revoir. Découvre ton profil budgétaire !`,
     openGraph: {
-      title: `${name} — La Tronconneuse de Poche`,
-      description: `${cutPercent}% du budget a revoir ! Mon archetype : ${name}. Et toi ?`,
+      title: `${name} — La Tronçonneuse de Poche`,
+      description: `${cutPercent}% du budget à revoir ! Mon archétype : ${name}. Et toi ?`,
       images: [{ url: ogImageUrl, width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${name} — La Tronconneuse de Poche`,
-      description: `${cutPercent}% du budget a revoir ! Mon archetype : ${name}. Et toi ?`,
+      title: `${name} — La Tronçonneuse de Poche`,
+      description: `${cutPercent}% du budget à revoir ! Mon archétype : ${name}. Et toi ?`,
       images: [ogImageUrl],
     },
   };

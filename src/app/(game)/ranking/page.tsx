@@ -55,9 +55,9 @@ const FALLBACK_CUT = [
 ];
 
 const FALLBACK_PROTECTED = [
-  { title: "Hopital public", percent: 89 },
-  { title: "Education nationale", percent: 84 },
-  { title: "Securite civile (pompiers)", percent: 82 },
+  { title: "Hôpital public", percent: 89 },
+  { title: "Éducation nationale", percent: 84 },
+  { title: "Sécurité civile (pompiers)", percent: 82 },
 ];
 
 // All cards for lookup by ID
@@ -176,7 +176,7 @@ export default function RankingPage() {
       {/* Header */}
       <header className="flex items-center p-4 pb-2 justify-center bg-background/90 backdrop-blur-md z-10 border-b border-border">
         <h1 className="text-xl font-bold leading-tight tracking-[-0.015em] text-center">
-          Communaute
+          Communaut&eacute;
         </h1>
       </header>
 
