@@ -16,7 +16,7 @@ import { StatBar } from "./StatBar";
 import { ShareIcon } from "./ShareIcon";
 import { ChevronIcon } from "./ChevronIcon";
 
-const SITE_URL = "https://nicoquipaie.pixeeplay.fr";
+const SITE_URL = "https://france-finances.com";
 
 /** Format duration in "Xmin Ys" */
 function formatDuration(ms: number): string {

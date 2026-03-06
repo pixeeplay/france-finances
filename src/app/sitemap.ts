@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import decksData from "@/data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://nicoquipaie.pixeeplay.fr";
+  const baseUrl = "https://france-finances.com";
   const decks = decksData.decks;
 
   return [

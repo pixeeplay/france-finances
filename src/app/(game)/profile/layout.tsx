@@ -4,7 +4,7 @@ import { db, isDbAvailable } from "@/db";
 import { sessions } from "@/db/schema";
 import { eq, desc, sql } from "drizzle-orm";
 
-const SITE_URL = "https://nicoquipaie.pixeeplay.fr";
+const SITE_URL = "https://france-finances.com";
 
 const ARCHETYPE_NAMES: Record<string, string> = {
   austeritaire: "L'Austenitaire",

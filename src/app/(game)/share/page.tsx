@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import type { Metadata } from "next";
 
-const SITE_URL = "https://nicoquipaie.pixeeplay.fr";
+const SITE_URL = "https://france-finances.com";
 
 const ARCHETYPES: Record<string, string> = {
   austeritaire: "L'Austéritaire",

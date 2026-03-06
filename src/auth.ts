@@ -11,6 +11,7 @@ import { users, accounts, authSessions, verificationTokens } from "@/db/schema";
  * Uses Drizzle adapter when DB is available, otherwise falls back to JWT-only.
  */
 export const { handlers, auth, signIn, signOut } = NextAuth({
+  trustHost: true,
   secret: process.env.AUTH_SECRET,
   ...(db
     ? {

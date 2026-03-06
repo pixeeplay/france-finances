@@ -3,15 +3,15 @@ export function JsonLd() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "france-finances.com",
-    url: "https://nicoquipaie.pixeeplay.fr",
-    logo: "https://nicoquipaie.pixeeplay.fr/favicon.ico",
+    url: "https://france-finances.com",
+    logo: "https://france-finances.com/favicon.ico",
   };
 
   const app = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "La Tronçonneuse de Poche",
-    url: "https://nicoquipaie.pixeeplay.fr",
+    url: "https://france-finances.com",
     applicationCategory: "EducationalApplication",
     operatingSystem: "Any",
     description:

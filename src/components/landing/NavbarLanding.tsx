@@ -43,13 +43,13 @@ export function NavbarLanding() {
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#chiffres" className="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors">
+            <a href="/#chiffres" className="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors">
               Chiffres cl&eacute;s
             </a>
-            <a href="#comment-ca-marche" className="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors">
+            <a href="/#comment-ca-marche" className="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors">
               Comment &ccedil;a marche
             </a>
-            <a href="#categories" className="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors">
+            <a href="/#categories" className="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors">
               Cat&eacute;gories
             </a>
             <button
@@ -133,21 +133,21 @@ export function NavbarLanding() {
         <div className="md:hidden bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 shadow-lg">
           <div className="flex flex-col px-4 py-4 gap-3">
             <a
-              href="#chiffres"
+              href="/#chiffres"
               onClick={() => setMobileOpen(false)}
               className="py-2 text-sm font-medium text-slate-600 dark:text-slate-400"
             >
               Chiffres cl&eacute;s
             </a>
             <a
-              href="#comment-ca-marche"
+              href="/#comment-ca-marche"
               onClick={() => setMobileOpen(false)}
               className="py-2 text-sm font-medium text-slate-600 dark:text-slate-400"
             >
               Comment &ccedil;a marche
             </a>
             <a
-              href="#categories"
+              href="/#categories"
               onClick={() => setMobileOpen(false)}
               className="py-2 text-sm font-medium text-slate-600 dark:text-slate-400"
             >

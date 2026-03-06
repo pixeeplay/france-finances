@@ -17,7 +17,7 @@ export default function ConfidentialitePage() {
           <div className="flex flex-col gap-4 rounded-xl border border-border bg-card p-5">
             <h2 className="text-lg font-bold">Introduction</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              La Tronçonneuse de Poche (accessible sur nicoquipaie.pixeeplay.fr)
+              La Tronçonneuse de Poche (accessible sur france-finances.com)
               est un mini-jeu citoyen &eacute;ducatif. Nous attachons une grande
               importance &agrave; la protection de vos donn&eacute;es personnelles.
               Cette politique d&eacute;crit les donn&eacute;es collect&eacute;es,
