@@ -126,6 +126,26 @@ Voir historique dans git log. 38 items livres.
 
 ---
 
+## Sprint 17 -- Communaute Donnees Reelles
+
+**Objectif :** Remplacer toutes les donnees mock de la page communaute par des donnees reelles depuis la DB.
+
+| # | Item | Effort | Ref | Statut |
+|---|------|--------|-----|--------|
+| 1 | Endpoint GET /api/ranking (leaderboard reel depuis sessions) | S | BACK-16 | Done |
+| 2 | Archetype distribution reelle (depuis /api/community/stats) | S | BACK-17 | Done |
+| 3 | Radar communaute reel (categoryStats au lieu de mock) | S | BACK-18 | Done |
+| 4 | Suppression leaderboard.json (20 faux joueurs) | XS | TECH-12 | Done |
+| 5 | Fix tooltip profil (z-index + lisibilite) | XS | BUG-23 | Done |
+| 6 | Fix auto-scroll selection deck /play | XS | BUG-24 | Done |
+| 7 | Fix tracking categories mode random | XS | BUG-25 | Done |
+| 8 | Fix username "username" placeholder | XS | BUG-26 | Done |
+| 9 | Fix OAuth crash sans env vars (providers conditionnels) | S | BUG-27 | Done |
+
+**Livrable :** Communaute 100% donnees reelles (fallback gracieux si DB absente). 5 bugfixes.
+
+---
+
 ## Post-MVP / V2
 
 | Item | Effort | Ref |

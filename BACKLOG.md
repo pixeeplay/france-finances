@@ -1,6 +1,6 @@
 # Backlog -- La Tronconneuse de Poche
 
-**Derniere mise a jour :** 2026-03-05 (Audit Post-Sprint 9)
+**Derniere mise a jour :** 2026-03-06 (Sprint 17)
 
 ## Legende Priorite
 - P0 = Bloquant / bug critique
@@ -50,6 +50,11 @@
 | BUG-20 | P1 | XS | Fix session callback NextAuth pour mode JWT | Done Sprint 11 |
 | BUG-21 | P2 | XS | Quasi-doublon san-04/san-13 (meme montant 37Md) | Done Sprint 14 |
 | BUG-22 | P2 | S | Gap archetypes N1 + 2 nouveaux archetypes (Tranchant, Protecteur) | Done Sprint 11 |
+| BUG-23 | P1 | XS | Fix tooltip profil z-index + lisibilite | Done Sprint 17 |
+| BUG-24 | P1 | XS | Fix auto-scroll selection deck /play | Done Sprint 17 |
+| BUG-25 | P1 | XS | Fix tracking categories mode random | Done Sprint 17 |
+| BUG-26 | P1 | XS | Fix username "username" placeholder | Done Sprint 17 |
+| BUG-27 | P1 | S | Fix OAuth crash sans env vars (providers conditionnels) | Done Sprint 17 |
 
 ---
 
@@ -104,6 +109,9 @@
 | BACK-13 | P2 | S | Error.tsx + global-error.tsx + not-found.tsx + loading.tsx | Done Sprint 12 |
 | BACK-14 | P2 | XS | Healthcheck endpoint /api/health | Done Sprint 12 |
 | BACK-15 | P2 | S | Error responses coherentes API (503/500) | Done Sprint 12 |
+| BACK-16 | P2 | S | Endpoint GET /api/ranking (leaderboard reel) | Done Sprint 17 |
+| BACK-17 | P2 | S | Archetype distribution reelle dans communaute | Done Sprint 17 |
+| BACK-18 | P2 | S | Radar communaute reel (categoryStats API) | Done Sprint 17 |
 
 ---
 
@@ -117,6 +125,7 @@
 | TECH-09 | P2 | S | Convertir /infos en RSC | Done Sprint 15 |
 | TECH-10 | P2 | M | Lazy load framer-motion sur homepage | Done Sprint 15 |
 | TECH-11 | P3 | S | Drizzle migrations tracees | Done Sprint 16 |
+| TECH-12 | P3 | XS | Suppression leaderboard.json (donnees mock) | Done Sprint 17 |
 
 ---
 
@@ -124,6 +133,6 @@
 
 | Statut | Count |
 |--------|-------|
-| Done | 78 |
+| Done | 87 |
 | A faire | 0 |
-| **Total** | **78** |
+| **Total** | **87** |
