@@ -3,9 +3,9 @@
 import { useState, useCallback, useRef, useEffect } from "react";
 import { ACRONYMS } from "@/data/acronyms";
 
-// Build a regex that matches any known acronym as a whole word
+// Build a pattern that matches any known acronym as a whole word
 const acronymKeys = Object.keys(ACRONYMS).sort((a, b) => b.length - a.length);
-const acronymRegex = new RegExp(`\\b(${acronymKeys.join("|")})\\b`, "g");
+const acronymPattern = `\\b(${acronymKeys.join("|")})\\b`;
 
 interface AcronymTextProps {
   text: string;
@@ -40,9 +40,8 @@ export function AcronymText({ text, className }: AcronymTextProps) {
   let lastIndex = 0;
   let match: RegExpExecArray | null;
 
-  // Reset regex
-  acronymRegex.lastIndex = 0;
-  while ((match = acronymRegex.exec(text)) !== null) {
+  const regex = new RegExp(acronymPattern, "g");
+  while ((match = regex.exec(text)) !== null) {
     if (match.index > lastIndex) {
       parts.push({ type: "text", value: text.slice(lastIndex, match.index) });
     }

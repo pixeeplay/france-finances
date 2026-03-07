@@ -11,11 +11,7 @@
     "source": "PLF 2026, Sénat, vie-publique.fr",
     "sourceUrl": "https://www.vie-publique.fr",
     "level": 1,
-    "tags": [
-      "recettes",
-      "TVA",
-      "consommation"
-    ],
+    "tags": ["recettes", "TVA", "consommation"],
     "equivalence": "Chaque Francais paie ~8€ de TVA par jour sans le savoir"
   },
   {
@@ -31,12 +27,8 @@
     "source": "PLF 2026, DGFiP, vie-publique.fr",
     "sourceUrl": "https://www.vie-publique.fr",
     "level": 1,
-    "tags": [
-      "recettes",
-      "IR",
-      "impôt"
-    ],
-    "equivalence": "Un foyer impose paie en moyenne ~3 500€/an d'IR"
+    "tags": ["recettes", "IR", "impôt"],
+    "equivalence": "Un foyer imposé paie en moyenne ~3 500€/an d'IR"
   },
   {
     "id": "rec-03",
@@ -49,11 +41,7 @@
     "icon": "🏢",
     "source": "PLF 2026, DGFiP, Parlement",
     "level": 1,
-    "tags": [
-      "recettes",
-      "IS",
-      "entreprises"
-    ],
+    "tags": ["recettes", "IS", "entreprises"],
     "equivalence": "Les 40 entreprises du CAC40 paient ensemble ~30 Md€ d'IS (la moitie du total)"
   },
   {
@@ -68,11 +56,7 @@
     "source": "LFSS 2026, URSSAF, vie-publique.fr",
     "sourceUrl": "https://www.vie-publique.fr",
     "level": 1,
-    "tags": [
-      "recettes",
-      "CSG",
-      "cotisations"
-    ],
+    "tags": ["recettes", "CSG", "cotisations"],
     "equivalence": "Sur 100€ bruts de salaire, ~7,50€ partent en CSG avant meme l'IR"
   },
   {
@@ -86,11 +70,7 @@
     "icon": "⛽",
     "source": "PLF 2026, Douanes, DGEC",
     "level": 1,
-    "tags": [
-      "recettes",
-      "carburants",
-      "taxe"
-    ],
+    "tags": ["recettes", "carburants", "taxe"],
     "equivalence": "Sur un plein de 60L a 1,80€/L, ~40€ sont des taxes (accises + TVA)"
   },
   {
@@ -104,11 +84,7 @@
     "icon": "📜",
     "source": "DGFiP, CAE, France Stratégie",
     "level": 1,
-    "tags": [
-      "recettes",
-      "succession",
-      "patrimoine"
-    ],
+    "tags": ["recettes", "succession", "patrimoine"],
     "equivalence": "Les Francais transmettent ~300 Md€ par an, l'État en preleve ~7%"
   },
   {
@@ -122,11 +98,7 @@
     "icon": "🏠",
     "source": "DGFiP, DGCL, Observatoire des finances locales",
     "level": 1,
-    "tags": [
-      "recettes",
-      "foncier",
-      "communes"
-    ],
+    "tags": ["recettes", "foncier", "communes"],
     "equivalence": "Un proprietaire francais paie en moyenne ~800€/an de foncier (tres variable)"
   },
   {
@@ -140,11 +112,7 @@
     "icon": "💎",
     "source": "PLF 2026, DGFiP, France Stratégie, IFRAP",
     "level": 1,
-    "tags": [
-      "recettes",
-      "IFI",
-      "fortune"
-    ],
+    "tags": ["recettes", "IFI", "fortune"],
     "equivalence": "Le retour a l'ISF rapporterait ~3,5 Md€ de plus"
   },
   {
@@ -159,11 +127,7 @@
     "source": "PLF 2026, vie-publique.fr, OCDE",
     "sourceUrl": "https://www.vie-publique.fr",
     "level": 1,
-    "tags": [
-      "recettes",
-      "prélèvements",
-      "PIB"
-    ],
+    "tags": ["recettes", "prélèvements", "PIB"],
     "equivalence": "Un salarie au SMIC travaille de janvier a debut juin uniquement pour les prelevements"
   },
   {
@@ -177,11 +141,7 @@
     "icon": "🎰",
     "source": "PLF 2026 Voies et moyens, Sénat",
     "level": 1,
-    "tags": [
-      "recettes",
-      "non fiscal",
-      "dividendes"
-    ],
+    "tags": ["recettes", "non fiscal", "dividendes"],
     "equivalence": "Les amendes radars rapportent ~1,8 Md€/an, soit le budget du ministere de la Culture"
   },
   {
@@ -195,11 +155,7 @@
     "icon": "💰",
     "source": "PLF 2026, DGFiP, OCDE",
     "level": 1,
-    "tags": [
-      "recettes",
-      "GAFAM",
-      "numerique"
-    ],
+    "tags": ["recettes", "GAFAM", "numerique"],
     "equivalence": "Google paie ~200 M/an de taxe GAFAM en France — moins qu'une PME de 500 salaries en IS"
   },
   {
@@ -213,11 +169,7 @@
     "icon": "💰",
     "source": "PLF 2026, DGFiP, AMF",
     "level": 1,
-    "tags": [
-      "recettes",
-      "TTF",
-      "finance"
-    ],
+    "tags": ["recettes", "TTF", "finance"],
     "equivalence": "La TTF rapporte 2 Md/an — autant que le budget du ministere de la Culture"
   },
   {
@@ -231,11 +183,7 @@
     "icon": "💰",
     "source": "URSSAF, LFSS 2026, Senat",
     "level": 1,
-    "tags": [
-      "recettes",
-      "cotisations",
-      "Secu"
-    ],
+    "tags": ["recettes", "cotisations", "Secu"],
     "equivalence": "Pour un salarie paye 2 000 net, l'entreprise verse 3 500 au total (dont 1 500 de cotisations)"
   },
   {
@@ -249,11 +197,7 @@
     "icon": "💰",
     "source": "DGFiP, CCI France, DGCL",
     "level": 1,
-    "tags": [
-      "recettes",
-      "foncier",
-      "entreprises"
-    ],
+    "tags": ["recettes", "foncier", "entreprises"],
     "equivalence": "Un commerce de centre-ville paie 7x plus de foncier au m2 qu'un entrepot Amazon"
   },
   {
@@ -267,11 +211,7 @@
     "icon": "💰",
     "source": "ANJ, FDJ, PLF 2026",
     "level": 1,
-    "tags": [
-      "recettes",
-      "jeux",
-      "FDJ"
-    ],
+    "tags": ["recettes", "jeux", "FDJ"],
     "equivalence": "Les Francais jouent 50 Md/an — davantage que le budget de l'Education nationale"
   },
   {
@@ -285,11 +225,7 @@
     "icon": "💰",
     "source": "ONISR, DGFIP, CNIL, PLF 2026",
     "level": 1,
-    "tags": [
-      "recettes",
-      "amendes",
-      "radars"
-    ],
+    "tags": ["recettes", "amendes", "radars"],
     "equivalence": "1 radar rapporte en moyenne ~170 000/an a l'État"
   },
   {
@@ -303,11 +239,7 @@
     "icon": "💰",
     "source": "DGFiP, DGCL, PLF 2026",
     "level": 1,
-    "tags": [
-      "recettes",
-      "taxe habitation",
-      "secondaire"
-    ],
+    "tags": ["recettes", "taxe habitation", "secondaire"],
     "equivalence": "3,6 millions de residences secondaires = plus que le stock de logements sociaux en attente"
   },
   {
@@ -321,11 +253,7 @@
     "icon": "💰",
     "source": "APE, PLF 2026, Cour des comptes",
     "level": 1,
-    "tags": [
-      "recettes",
-      "APE",
-      "participations"
-    ],
+    "tags": ["recettes", "APE", "participations"],
     "equivalence": "L'État est actionnaire de 83 entreprises valant 160 Md — le plus gros portefeuille d'Europe"
   }
 ]

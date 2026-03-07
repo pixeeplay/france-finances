@@ -94,7 +94,7 @@ export function SwipeSession({ deckId, deckName, cards, level = 1, gameMode = "c
       }
       setDetailCard(null);
     },
-    [detailCard, session, voteAndAdvance, completeSession, cards.length, router, level]
+    [detailCard, session, voteAndAdvance, completeSession, router, level]
   );
 
   // Level 3 audit screen (shown after swipe)

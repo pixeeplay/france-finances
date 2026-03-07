@@ -34,6 +34,11 @@ const CATEGORY_BADGES: Achievement[] = [
   { id: "badge_numerique", icon: "\uD83D\uDE80", title: "Expert Numerique", description: `Jouer ${BADGE_THRESHOLD} sessions Numerique.`, category: "category", check: (s) => deckSessions(s, "numerique") >= BADGE_THRESHOLD, progress: (s) => Math.min(100, Math.round((deckSessions(s, "numerique") / BADGE_THRESHOLD) * 100)) },
   { id: "badge_recettes", icon: "\uD83D\uDCB0", title: "Expert Recettes", description: `Jouer ${BADGE_THRESHOLD} sessions Recettes.`, category: "category", check: (s) => deckSessions(s, "recettes") >= BADGE_THRESHOLD, progress: (s) => Math.min(100, Math.round((deckSessions(s, "recettes") / BADGE_THRESHOLD) * 100)) },
   { id: "badge_emploi", icon: "\uD83C\uDFE2", title: "Expert Emploi", description: `Jouer ${BADGE_THRESHOLD} sessions Emploi.`, category: "category", check: (s) => deckSessions(s, "emploi") >= BADGE_THRESHOLD, progress: (s) => Math.min(100, Math.round((deckSessions(s, "emploi") / BADGE_THRESHOLD) * 100)) },
+  { id: "badge_environnement", icon: "\uD83C\uDF0D", title: "Expert Environnement", description: `Jouer ${BADGE_THRESHOLD} sessions Environnement.`, category: "category", check: (s) => deckSessions(s, "environnement") >= BADGE_THRESHOLD, progress: (s) => Math.min(100, Math.round((deckSessions(s, "environnement") / BADGE_THRESHOLD) * 100)) },
+  { id: "badge_collectivites", icon: "\uD83C\uDFD8\uFE0F", title: "Expert Collectivités", description: `Jouer ${BADGE_THRESHOLD} sessions Collectivités.`, category: "category", check: (s) => deckSessions(s, "collectivites") >= BADGE_THRESHOLD, progress: (s) => Math.min(100, Math.round((deckSessions(s, "collectivites") / BADGE_THRESHOLD) * 100)) },
+  { id: "badge_france_europe", icon: "\uD83C\uDDEA\uD83C\uDDFA", title: "Expert France-Europe", description: `Jouer ${BADGE_THRESHOLD} sessions France-Europe.`, category: "category", check: (s) => deckSessions(s, "france-europe") >= BADGE_THRESHOLD, progress: (s) => Math.min(100, Math.round((deckSessions(s, "france-europe") / BADGE_THRESHOLD) * 100)) },
+  { id: "badge_zombies", icon: "\uD83D\uDC80", title: "Expert Zombies", description: `Jouer ${BADGE_THRESHOLD} sessions Zombies budgétaires.`, category: "category", check: (s) => deckSessions(s, "zombies") >= BADGE_THRESHOLD, progress: (s) => Math.min(100, Math.round((deckSessions(s, "zombies") / BADGE_THRESHOLD) * 100)) },
+  { id: "badge_ukraine", icon: "\uD83C\uDDFA\uD83C\uDDE6", title: "Expert Ukraine", description: `Jouer ${BADGE_THRESHOLD} sessions Ukraine.`, category: "category", check: (s) => deckSessions(s, "ukraine") >= BADGE_THRESHOLD, progress: (s) => Math.min(100, Math.round((deckSessions(s, "ukraine") / BADGE_THRESHOLD) * 100)) },
 ];
 
 /** General (non-category) achievements */
@@ -75,9 +80,9 @@ const GENERAL_ACHIEVEMENTS: Achievement[] = [
     id: "globe_trotter",
     icon: "🗺️",
     title: "Globe-trotter",
-    description: "Explorer toutes les categories (14 decks).",
-    check: (s) => s.categoriesPlayed.length >= 14,
-    progress: (s) => Math.round((s.categoriesPlayed.length / 14) * 100),
+    description: "Explorer toutes les categories (16 decks).",
+    check: (s) => s.categoriesPlayed.length >= 16,
+    progress: (s) => Math.round((s.categoriesPlayed.length / 16) * 100),
   },
   {
     id: "liquidator",

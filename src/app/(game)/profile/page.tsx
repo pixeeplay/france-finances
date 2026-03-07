@@ -14,6 +14,12 @@ import {
   type StoredSession,
 } from "@/lib/stats";
 import { ACHIEVEMENTS, checkAchievements } from "@/lib/achievements";
+import Image from "next/image";
+import decksData from "@/data";
+import type { Deck } from "@/types";
+
+const decks = decksData.decks as Deck[];
+const deckById = Object.fromEntries(decks.map((d) => [d.id, d]));
 
 const tabs = ["Vue d'ensemble", "Mesures Détaillées", "Journal"] as const;
 type Tab = (typeof tabs)[number];
@@ -83,9 +89,11 @@ export default function ProfilePage() {
               className="w-11 h-11 rounded-xl bg-card border border-primary/20 flex items-center justify-center text-xl hover:border-primary/50 transition-colors"
             >
               {authSession?.user?.image ? (
-                <img
+                <Image
                   src={authSession.user.image}
                   alt=""
+                  width={44}
+                  height={44}
                   className="w-full h-full rounded-xl object-cover"
                 />
               ) : (
@@ -358,6 +366,8 @@ export default function ProfilePage() {
                 {categoryBadges.map((a) => {
                   const completed = completedIds.includes(a.id);
                   const prog = completed ? 100 : a.progress(stats, sessions);
+                  const deckId = a.id.replace("badge_", "").replace("_", "-");
+                  const deck = deckById[deckId];
                   return (
                     <div
                       key={a.id}
@@ -367,7 +377,11 @@ export default function ProfilePage() {
                           : "bg-card border-border opacity-50"
                       }`}
                     >
-                      <span className="text-2xl">{a.icon}</span>
+                      {deck?.image ? (
+                        <Image src={deck.image} alt={deck.name} width={32} height={32} className={completed ? "" : "grayscale"} />
+                      ) : (
+                        <span className="text-2xl">{a.icon}</span>
+                      )}
                       <span className="text-[9px] font-bold text-center leading-tight">
                         {a.title.replace("Expert ", "")}
                       </span>
@@ -454,8 +468,8 @@ export default function ProfilePage() {
                         )}
                       </div>
                       {showTip && (
-                        <div className="absolute left-4 right-4 top-full mt-1 z-[100] bg-slate-900 border border-emerald-500/40 rounded-lg p-3 shadow-2xl shadow-black/50">
-                          <p className="text-xs text-slate-100 font-medium leading-snug">
+                        <div className="absolute left-4 right-4 bottom-full mb-2 z-[100] bg-slate-900 border border-primary/40 rounded-xl p-3 shadow-2xl shadow-black/60 pointer-events-none">
+                          <p className="text-sm text-slate-100 font-medium leading-snug">
                             {a.description}
                           </p>
                         </div>
