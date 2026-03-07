@@ -2,7 +2,7 @@ import type { Card, AuditRecommendation } from "@/types";
 
 export const recommendationLabels: Record<AuditRecommendation, string> = {
   keep: "Maintenir le budget",
-  reduce: "Reduire de moitie",
+  reduce: "Réduire de moitié",
   externalize: "Externaliser",
   merge: "Fusionner",
   reinforce: "Renforcer (+15%)",
@@ -50,10 +50,10 @@ export function AuditReport({ cards, auditResponses }: {
   const savingsPerCitizen = Math.round((totalSavings * 1e9) / 68e6);
 
   const summaryItems = [
-    { label: "reductions", count: (counts["reduce"] || 0), color: "text-warning border-warning/20 bg-warning/10" },
+    { label: "réductions", count: (counts["reduce"] || 0), color: "text-warning border-warning/20 bg-warning/10" },
     { label: "suppressions", count: (counts["delete"] || 0), color: "text-danger border-danger/20 bg-danger/10" },
     { label: "fusions", count: (counts["merge"] || 0) + (counts["externalize"] || 0), color: "text-info border-info/20 bg-info/10" },
-    { label: "renforcees", count: (counts["reinforce"] || 0) + (counts["keep"] || 0), color: "text-primary border-primary/20 bg-primary/10" },
+    { label: "renforcées", count: (counts["reinforce"] || 0) + (counts["keep"] || 0), color: "text-primary border-primary/20 bg-primary/10" },
   ].filter((s) => s.count > 0);
 
   return (
@@ -61,7 +61,7 @@ export function AuditReport({ cards, auditResponses }: {
       {/* Summary */}
       <div className="bg-card border border-border rounded-xl p-5 space-y-4">
         <h3 className="text-base font-bold">
-          Sur {auditResponses.length} depenses auditees :
+          Sur {auditResponses.length} dépenses auditées :
         </h3>
         <div className="grid grid-cols-2 gap-2 text-sm font-medium">
           {summaryItems.map((s) => (
@@ -79,9 +79,9 @@ export function AuditReport({ cards, auditResponses }: {
         <div className="flex items-start gap-3">
           <span className="text-2xl">{"\uD83D\uDCB0"}</span>
           <div className="flex flex-col">
-            <p className="text-sm font-medium text-muted-foreground">Impact estime</p>
+            <p className="text-sm font-medium text-muted-foreground">Impact estimé</p>
             <p className="text-lg font-bold text-primary font-mono tracking-tight">
-              {totalSavings >= 0 ? "-" : "+"}{Math.abs(totalSavings).toFixed(1)} Md&euro; {totalSavings >= 0 ? "d'economies" : "d'investissement"}
+              {totalSavings >= 0 ? "-" : "+"}{Math.abs(totalSavings).toFixed(1)} Md&euro; {totalSavings >= 0 ? "d'économies" : "d'investissement"}
             </p>
             <p className="text-sm font-medium text-primary/80">
               soit ~{Math.abs(savingsPerCitizen)}&euro; / contribuable

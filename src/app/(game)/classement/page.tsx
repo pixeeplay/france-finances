@@ -42,16 +42,16 @@ for (const a of archetypesJson.archetypes) {
 
 // Fallback mock data (shown when API unavailable and no real data)
 const FALLBACK_DISTRIBUTION = [
-  { icon: "⚖️", name: "Equilibristes", percent: 34, ids: ["equilibriste"] },
-  { icon: "✂️", name: "Austenitaires", percent: 23, ids: ["austeritaire", "demolisseur", "liquidateur_en_chef", "tranchant"] },
+  { icon: "⚖️", name: "Équilibristes", percent: 34, ids: ["equilibriste"] },
+  { icon: "✂️", name: "Austéritaires", percent: 23, ids: ["austeritaire", "demolisseur", "liquidateur_en_chef", "tranchant"] },
   { icon: "🛡️", name: "Gardiens", percent: 18, ids: ["gardien", "conservateur", "investisseur_public", "protecteur"] },
   { icon: "🎯", name: "Chirurgiens", percent: 15, ids: ["chirurgien", "stratege", "reformateur", "optimisateur"] },
-  { icon: "🔍", name: "Sceptiques", percent: 10, ids: ["sceptique", "auditeur_rigoureux", "speedrunner"] },
+  { icon: "🔍", name: "Analystes", percent: 10, ids: ["sceptique", "auditeur_rigoureux", "speedrunner"] },
 ];
 
 const FALLBACK_CUT = [
   { title: "Retraites fonctionnaires", percent: 78 },
-  { title: "Subventions eolien", percent: 71 },
+  { title: "Subventions éolien", percent: 71 },
   { title: "Audiovisuel public", percent: 69 },
 ];
 
@@ -198,7 +198,7 @@ export default function RankingPage() {
                 </span>
               </div>
               <p className="text-xs text-muted-foreground truncate">
-                {myProfile.archetypeName || "Pas encore d'archetype"} · {myStats.xp.toLocaleString("fr-FR")} XP · {myStats.totalSessions} sessions
+                {myProfile.archetypeName || "Pas encore d'archétype"} · {myStats.xp.toLocaleString("fr-FR")} XP · {myStats.totalSessions} sessions
               </p>
             </div>
             <div className="text-right shrink-0">
@@ -246,7 +246,7 @@ export default function RankingPage() {
         {/* Footer */}
         <div className="px-4 py-4 text-center">
           <p className="text-xs text-muted-foreground">
-            Stats communautaires anonymisees.
+            Stats communautaires anonymisées.
           </p>
         </div>
       </div>
@@ -280,10 +280,10 @@ function ArchetypesTab({
 
     // Group archetypes into families for display
     const families: { name: string; icon: string; ids: string[]; count: number }[] = [
-      { name: "Equilibristes", icon: "⚖️", ids: ["equilibriste"], count: 0 },
+      { name: "Équilibristes", icon: "⚖️", ids: ["equilibriste"], count: 0 },
       { name: "Coupeurs", icon: "✂️", ids: ["austeritaire", "demolisseur", "liquidateur_en_chef", "tranchant"], count: 0 },
       { name: "Gardiens", icon: "🛡️", ids: ["gardien", "conservateur", "investisseur_public", "protecteur"], count: 0 },
-      { name: "Strateges", icon: "🎯", ids: ["chirurgien", "stratege", "reformateur", "optimisateur"], count: 0 },
+      { name: "Stratèges", icon: "🎯", ids: ["chirurgien", "stratege", "reformateur", "optimisateur"], count: 0 },
       { name: "Analystes", icon: "🔍", ids: ["sceptique", "auditeur_rigoureux", "speedrunner"], count: 0 },
     ];
 
@@ -315,18 +315,18 @@ function ArchetypesTab({
       {!communityStats.isFallback && communityStats.totalSessions > 0 && (
         <div className="flex items-center justify-center">
           <span className="text-[10px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full border border-primary/20">
-            Donnees reelles ({communityStats.totalSessions} sessions)
+            Données réelles ({communityStats.totalSessions} sessions)
           </span>
         </div>
       )}
 
-      {/* Radar: Tes choix vs la communaute */}
+      {/* Radar: Tes choix vs la communauté */}
       {radarAxes.length >= 3 && (
         <div className="flex flex-col gap-4 rounded-xl border border-border bg-card p-5">
           <div>
-            <h2 className="text-lg font-bold">Tes choix vs la communaute</h2>
+            <h2 className="text-lg font-bold">Tes choix vs la communauté</h2>
             <p className="text-sm text-muted-foreground mt-1">
-              % de coupes par categorie
+              % de coupes par catégorie
             </p>
           </div>
           <RadarChart axes={radarAxes} size={240} />
@@ -336,9 +336,9 @@ function ArchetypesTab({
       {/* Distribution */}
       <div className="flex flex-col gap-4 rounded-xl border border-border bg-card p-5">
         <div>
-          <h2 className="text-lg font-bold">Distribution de la communaute</h2>
+          <h2 className="text-lg font-bold">Distribution de la communauté</h2>
           <p className="text-sm text-muted-foreground mt-1">
-            L&apos;equilibre des forces budgetaires
+            L&apos;équilibre des forces budgétaires
           </p>
         </div>
         <div className="flex flex-col gap-3">
@@ -374,15 +374,15 @@ function TopXPTab({ players, isFallback }: { players: LeaderboardPlayer[]; isFal
       {!isFallback && players.length > 1 && (
         <div className="flex items-center justify-center mb-2">
           <span className="text-[10px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full border border-primary/20">
-            Classement reel
+            Classement réel
           </span>
         </div>
       )}
 
       {players.length === 0 && (
         <div className="text-center py-12">
-          <p className="text-muted-foreground text-sm">Aucun joueur classe pour l&apos;instant.</p>
-          <p className="text-muted-foreground text-xs mt-1">Joue des sessions pour apparaitre ici !</p>
+          <p className="text-muted-foreground text-sm">Aucun joueur classé pour l&apos;instant.</p>
+          <p className="text-muted-foreground text-xs mt-1">Joue des sessions pour apparaître ici !</p>
         </div>
       )}
 
@@ -508,8 +508,8 @@ function SpeedTab({
 
       {merged.length === 0 && (
         <div className="text-center py-12">
-          <p className="text-muted-foreground text-sm">Aucun joueur classe pour l&apos;instant.</p>
-          <p className="text-muted-foreground text-xs mt-1">Complete au moins 3 sessions pour apparaitre ici !</p>
+          <p className="text-muted-foreground text-sm">Aucun joueur classé pour l&apos;instant.</p>
+          <p className="text-muted-foreground text-xs mt-1">Complète au moins 3 sessions pour apparaître ici !</p>
         </div>
       )}
 
@@ -597,7 +597,7 @@ function TendancesTab({
       {!communityStats.isFallback && (
         <div className="flex items-center justify-center">
           <span className="text-[10px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full border border-primary/20">
-            Donnees reelles ({communityStats.totalSessions} sessions)
+            Données réelles ({communityStats.totalSessions} sessions)
           </span>
         </div>
       )}
@@ -606,7 +606,7 @@ function TendancesTab({
       <div>
         <div className="flex items-center gap-2 mb-3">
           <ChainsawIcon size={20} />
-          <h3 className="text-lg font-bold">Depenses les plus coupees</h3>
+          <h3 className="text-lg font-bold">Dépenses les plus coupées</h3>
         </div>
         <div className="flex flex-col gap-3">
           {cutItems.map((item, i) => (
@@ -627,7 +627,7 @@ function TendancesTab({
               </div>
               <div className="flex-1 min-w-0">
                 <h4 className="font-semibold text-sm truncate">{item.title}</h4>
-                <p className="text-xs text-danger font-medium">{item.percent}% &quot;a revoir&quot;</p>
+                <p className="text-xs text-danger font-medium">{item.percent}% &quot;à revoir&quot;</p>
               </div>
               <div className="w-16 h-2 bg-muted rounded-full overflow-hidden">
                 <div className="h-full bg-danger rounded-full" style={{ width: `${item.percent}%` }} />
@@ -641,7 +641,7 @@ function TendancesTab({
       <div>
         <div className="flex items-center gap-2 mb-3">
           <ShieldIcon size={20} className="text-primary" />
-          <h3 className="text-lg font-bold">Depenses les plus protegees</h3>
+          <h3 className="text-lg font-bold">Dépenses les plus protégées</h3>
         </div>
         <div className="flex flex-col gap-3">
           {protectedItems.map((item, i) => (

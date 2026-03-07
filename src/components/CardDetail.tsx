@@ -281,7 +281,7 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
                 <div className="grid grid-cols-4 gap-2 mb-3">
                   <button
                     onClick={() => handleVote("keep")}
-                    aria-label="Valider cette depense"
+                    aria-label="Valider cette dépense"
                     className="flex flex-col items-center justify-center gap-1 py-3 min-h-[44px] rounded-xl border-2 border-primary/80 text-primary font-bold active:scale-95 transition-all"
                   >
                     <ShieldIcon size={20} />
@@ -289,7 +289,7 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
                   </button>
                   <button
                     onClick={() => handleVote("cut")}
-                    aria-label="Reduire cette depense"
+                    aria-label="Réduire cette dépense"
                     className="flex flex-col items-center justify-center gap-1 py-3 min-h-[44px] rounded-xl border-2 border-warning/80 text-warning font-bold active:scale-95 transition-all"
                   >
                     <ChainsawIcon size={20} />
@@ -297,7 +297,7 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
                   </button>
                   <button
                     onClick={() => handleVote("reinforce")}
-                    aria-label="Renforcer cette depense"
+                    aria-label="Renforcer cette dépense"
                     className="flex flex-col items-center justify-center gap-1 py-3 min-h-[44px] rounded-xl border-2 border-info/80 text-info font-bold active:scale-95 transition-all"
                   >
                     <span className="text-lg" aria-hidden="true">📈</span>
@@ -305,7 +305,7 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
                   </button>
                   <button
                     onClick={() => handleVote("unjustified")}
-                    aria-label="Marquer comme injustifie"
+                    aria-label="Marquer comme injustifié"
                     className="flex flex-col items-center justify-center gap-1 py-3 min-h-[44px] rounded-xl border-2 border-danger/80 text-danger font-bold active:scale-95 transition-all"
                   >
                     <span className="text-lg" aria-hidden="true">❌</span>
@@ -316,7 +316,7 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
                 <div className="grid grid-cols-2 gap-3 mb-3">
                   <button
                     onClick={() => handleVote("keep")}
-                    aria-label="Valider cette depense"
+                    aria-label="Valider cette dépense"
                     className="flex items-center justify-center gap-2 py-3.5 min-h-[44px] rounded-xl border-2 border-primary/80 text-primary font-bold hover:bg-primary hover:text-primary-foreground active:scale-95 transition-all"
                   >
                     <ShieldIcon size={20} />
@@ -324,7 +324,7 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
                   </button>
                   <button
                     onClick={() => handleVote("cut")}
-                    aria-label="Remettre en question cette depense"
+                    aria-label="Remettre en question cette dépense"
                     className="flex items-center justify-center gap-2 py-3.5 min-h-[44px] rounded-xl border-2 border-danger/80 text-danger font-bold hover:bg-danger hover:text-white active:scale-95 transition-all"
                   >
                     <ChainsawIcon size={20} />

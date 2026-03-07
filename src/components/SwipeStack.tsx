@@ -183,7 +183,7 @@ export function SwipeStack({
           <div className="bg-card rounded-xl p-3 border border-border">
             <div className="flex items-center justify-between mb-1.5">
               <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">
-                Objectif economies
+                Objectif économies
               </span>
               <span className={`text-xs font-bold ${targetReached ? "text-primary" : "text-foreground"}`}>
                 {currentSavings.toFixed(1)} / {budgetTarget} Md&euro;
@@ -212,7 +212,7 @@ export function SwipeStack({
       <div className="sr-only" aria-live="polite" aria-atomic="true">
         {currentCard
           ? `Carte ${currentIndex + 1} sur ${totalCards} : ${currentCard.title}, ${currentCard.amountBillions} milliards d'euros.`
-          : "Session terminee."}
+          : "Session terminée."}
       </div>
 
       {/* Direction hints for Level 2 */}
@@ -340,7 +340,7 @@ function Level2Buttons({
         <button
           onClick={() => onVote("keep")}
           disabled={!currentCard}
-          aria-label="Valider cette depense"
+          aria-label="Valider cette dépense"
           className="flex flex-col items-center gap-1.5 py-3 min-h-[44px] rounded-xl bg-card border-2 border-primary transition-transform active:scale-90 disabled:opacity-40"
         >
           <ShieldIcon size={24} className="text-primary" />
@@ -349,7 +349,7 @@ function Level2Buttons({
         <button
           onClick={() => onVote("cut")}
           disabled={!currentCard}
-          aria-label="Reduire cette depense"
+          aria-label="Réduire cette dépense"
           className="flex flex-col items-center gap-1.5 py-3 min-h-[44px] rounded-xl bg-card border-2 border-warning transition-transform active:scale-90 disabled:opacity-40"
         >
           <ChainsawIcon size={24} />
@@ -358,7 +358,7 @@ function Level2Buttons({
         <button
           onClick={() => onVote("reinforce")}
           disabled={!currentCard}
-          aria-label="Renforcer cette depense"
+          aria-label="Renforcer cette dépense"
           className="flex flex-col items-center gap-1.5 py-3 min-h-[44px] rounded-xl bg-card border-2 border-info transition-transform active:scale-90 disabled:opacity-40"
         >
           <span className="text-lg" aria-hidden="true">📈</span>
@@ -367,7 +367,7 @@ function Level2Buttons({
         <button
           onClick={() => onVote("unjustified")}
           disabled={!currentCard}
-          aria-label="Marquer comme injustifie"
+          aria-label="Marquer comme injustifié"
           className="flex flex-col items-center gap-1.5 py-3 min-h-[44px] rounded-xl bg-card border-2 border-danger transition-transform active:scale-90 disabled:opacity-40"
         >
           <span className="text-lg" aria-hidden="true">❌</span>
