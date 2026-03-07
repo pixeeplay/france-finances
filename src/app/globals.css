@@ -311,6 +311,11 @@
     hue-rotate(352deg) brightness(99%) contrast(91%);
   transition: filter 0.15s;
 }
+.chainsaw-icon-orange {
+  filter: brightness(0) saturate(100%) invert(65%) sepia(67%) saturate(1700%)
+    hue-rotate(1deg) brightness(103%) contrast(96%);
+  transition: filter 0.15s;
+}
 .group\/item:hover .chainsaw-hover-white {
   filter: brightness(0) saturate(100%) invert(100%);
 }

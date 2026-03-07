@@ -7,6 +7,8 @@ import { useShallow } from "zustand/react/shallow";
 import { useArchetype } from "@/hooks/useArchetype";
 import { ChainsawIcon } from "./ChainsawIcon";
 import { ShieldIcon } from "./ShieldIcon";
+import { ReinforceIcon } from "./ReinforceIcon";
+import { StopIcon } from "./StopIcon";
 import { track } from "@/lib/analytics";
 import { useReducedMotion } from "framer-motion";
 import dynamic from "next/dynamic";
@@ -210,7 +212,7 @@ export function ResultScreen() {
                 glowClass="shadow-(--shadow-glow-amber)"
               />
               <StatBar
-                icon={<span className="text-sm" aria-hidden="true">📈</span>}
+                icon={<ReinforceIcon size={14} />}
                 label="Renforcer"
                 count={reinforceCount}
                 percent={reinforcePercent}
@@ -218,7 +220,7 @@ export function ResultScreen() {
                 glowClass="shadow-(--shadow-glow-blue)"
               />
               <StatBar
-                icon={<span className="text-sm" aria-hidden="true">❌</span>}
+                icon={<StopIcon size={14} />}
                 label="Injustifié"
                 count={unjustifiedCount}
                 percent={unjustifiedPercent}
@@ -401,8 +403,8 @@ function HistoryItem({ card, vote }: { card: Card; vote: Vote | null }) {
   const iconMap: Record<string, React.ReactNode> = {
     keep: <ShieldIcon size={16} className="text-primary group-hover/item:text-white transition-colors" />,
     cut: <ChainsawIcon size={16} className="chainsaw-hover-white" />,
-    reinforce: <span className="text-sm" aria-hidden="true">📈</span>,
-    unjustified: <span className="text-sm" aria-hidden="true">❌</span>,
+    reinforce: <ReinforceIcon size={16} />,
+    unjustified: <StopIcon size={16} />,
   };
 
   const hoverBgMap: Record<string, string> = {

@@ -4,6 +4,8 @@ import { useRef, useCallback, useEffect } from "react";
 import { motion, AnimatePresence, useDragControls, useReducedMotion } from "framer-motion";
 import { ChainsawIcon } from "./ChainsawIcon";
 import { ShieldIcon } from "./ShieldIcon";
+import { ReinforceIcon } from "./ReinforceIcon";
+import { StopIcon } from "./StopIcon";
 import { AcronymText } from "./AcronymText";
 import type { Card, VoteDirection } from "@/types";
 import { SPRING_SWIPE } from "@/lib/motion-constants";
@@ -279,39 +281,47 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
             {/* Sticky Footer Actions */}
             <div className="absolute bottom-0 left-0 right-0 bg-card/95 backdrop-blur-xl border-t border-border p-5 pt-4 rounded-t-3xl z-30 shadow-[0_-10px_20px_rgba(0,0,0,0.05)]">
               {level >= 2 ? (
-                <div className="grid grid-cols-4 gap-2 mb-3">
-                  <button
-                    onClick={() => handleVote("keep")}
-                    aria-label="Valider cette dépense"
-                    className="flex flex-col items-center justify-center gap-1 py-3 min-h-[44px] rounded-xl border-2 border-primary/80 text-primary font-bold active:scale-95 transition-all"
-                  >
-                    <ShieldIcon size={20} />
-                    <span className="text-[10px] uppercase">OK</span>
-                  </button>
-                  <button
-                    onClick={() => handleVote("cut")}
-                    aria-label="Réduire cette dépense"
-                    className="flex flex-col items-center justify-center gap-1 py-3 min-h-[44px] rounded-xl border-2 border-warning/80 text-warning font-bold active:scale-95 transition-all"
-                  >
-                    <ChainsawIcon size={20} />
-                    <span className="text-[10px] uppercase">Réduire</span>
-                  </button>
-                  <button
-                    onClick={() => handleVote("reinforce")}
-                    aria-label="Renforcer cette dépense"
-                    className="flex flex-col items-center justify-center gap-1 py-3 min-h-[44px] rounded-xl border-2 border-info/80 text-info font-bold active:scale-95 transition-all"
-                  >
-                    <span className="text-lg" aria-hidden="true">📈</span>
-                    <span className="text-[10px] uppercase">Renforcer</span>
-                  </button>
-                  <button
-                    onClick={() => handleVote("unjustified")}
-                    aria-label="Marquer comme injustifié"
-                    className="flex flex-col items-center justify-center gap-1 py-3 min-h-[44px] rounded-xl border-2 border-danger/80 text-danger font-bold active:scale-95 transition-all"
-                  >
-                    <span className="text-lg" aria-hidden="true">❌</span>
-                    <span className="text-[10px] uppercase">Injustifié</span>
-                  </button>
+                <div className="flex items-center justify-evenly mb-3">
+                  <div className="flex flex-col items-center gap-1.5">
+                    <button
+                      onClick={() => handleVote("keep")}
+                      aria-label="Valider cette dépense"
+                      className="w-12 h-12 rounded-full bg-card border-2 border-primary/80 flex items-center justify-center hover:bg-primary active:scale-95 transition-all"
+                    >
+                      <ShieldIcon size={20} className="text-primary hover:text-primary-foreground" />
+                    </button>
+                    <span className="text-[9px] font-bold text-primary uppercase">OK</span>
+                  </div>
+                  <div className="flex flex-col items-center gap-1.5">
+                    <button
+                      onClick={() => handleVote("cut")}
+                      aria-label="Réduire cette dépense"
+                      className="group/item w-12 h-12 rounded-full bg-card border-2 border-warning/80 flex items-center justify-center hover:bg-warning active:scale-95 transition-all"
+                    >
+                      <ChainsawIcon size={20} variant="orange" className="chainsaw-hover-white" />
+                    </button>
+                    <span className="text-[9px] font-bold text-warning uppercase">Réduire</span>
+                  </div>
+                  <div className="flex flex-col items-center gap-1.5">
+                    <button
+                      onClick={() => handleVote("reinforce")}
+                      aria-label="Renforcer cette dépense"
+                      className="w-12 h-12 rounded-full bg-card border-2 border-info/80 flex items-center justify-center hover:bg-info active:scale-95 transition-all"
+                    >
+                      <ReinforceIcon size={20} />
+                    </button>
+                    <span className="text-[9px] font-bold text-info uppercase">Renforcer</span>
+                  </div>
+                  <div className="flex flex-col items-center gap-1.5">
+                    <button
+                      onClick={() => handleVote("unjustified")}
+                      aria-label="Marquer comme injustifié"
+                      className="w-12 h-12 rounded-full bg-card border-2 border-danger/80 flex items-center justify-center hover:bg-danger active:scale-95 transition-all"
+                    >
+                      <StopIcon size={20} />
+                    </button>
+                    <span className="text-[9px] font-bold text-danger uppercase">Injustifié</span>
+                  </div>
                 </div>
               ) : (
                 <div className="grid grid-cols-2 gap-3 mb-3">
@@ -326,9 +336,9 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
                   <button
                     onClick={() => handleVote("cut")}
                     aria-label="Remettre en question cette dépense"
-                    className="flex items-center justify-center gap-2 py-3.5 min-h-[44px] rounded-xl border-2 border-danger/80 text-danger font-bold hover:bg-danger hover:text-white active:scale-95 transition-all"
+                    className="group/item flex items-center justify-center gap-2 py-3.5 min-h-[44px] rounded-xl border-2 border-danger/80 text-danger font-bold hover:bg-danger hover:text-white active:scale-95 transition-all"
                   >
-                    <ChainsawIcon size={20} />
+                    <ChainsawIcon size={20} className="chainsaw-hover-white" />
                     À revoir
                   </button>
                 </div>

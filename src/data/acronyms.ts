@@ -148,6 +148,9 @@ export const ACRONYMS: Record<string, string> = {
   HATVP: "Haute Autorité pour la Transparence de la Vie Publique",
   IRFM: "Indemnité Représentative de Frais de Mandat",
   ANTS: "Agence Nationale des Titres Sécurisés",
+  AMF: "Autorité des Marchés Financiers",
+  ADLC: "Autorité de la Concurrence",
+  ADP: "Aéroports de Paris (Groupe ADP)",
 
   // Europe et international
   UE: "Union Européenne",

@@ -203,22 +203,6 @@
     "equivalence": "1 obus de 155mm coûte ~3 000€ — l'Ukraine en tire 4 000-6 000/jour"
   },
   {
-    "id": "def-14",
-    "title": "Service de sante des armées",
-    "subtitle": "Crise capacitaire du SSA",
-    "description": "Le SSA (8 hôpitaux militaires, 15 000 personnels) traverse une crise d'attractivité. Le Val-de-Grace a ferme en 2016. Le SSA doit pouvoir traiter 700 blesses simultanement, mais les effectifs de chirurgiens militaires sont en forte baisse. Ouverture progressive aux civils.",
-    "amountBillions": 1.8,
-    "costPerCitizen": 26,
-    "deckId": "defense",
-    "icon": "🏥",
-    "trend": 5,
-    "source": "SSA rapport, LPM, Senat",
-    "sourceUrl": "https://www.défense.gouv.fr",
-    "level": 1,
-    "tags": ["sante", "militaire", "hôpital"],
-    "equivalence": "Le fonctionnement de ~10 CHU de taille moyenne"
-  },
-  {
     "id": "def-15",
     "title": "Participation française à l'OTAN",
     "subtitle": "Contribution directe au budget OTAN",

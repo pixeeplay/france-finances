@@ -1,6 +1,7 @@
 import type { Card, AuditRecommendation } from "@/types";
 import { ChainsawIcon } from "./ChainsawIcon";
 import { ShieldIcon } from "./ShieldIcon";
+import { ReinforceIcon } from "./ReinforceIcon";
 
 export const recommendationLabels: Record<AuditRecommendation, string> = {
   keep: "Maintenir le budget",
@@ -25,7 +26,7 @@ export const recommendationIcons: Record<AuditRecommendation, React.ReactNode> =
   reduce: <ChainsawIcon size={14} />,
   externalize: <span className="text-xs text-info" aria-hidden="true">🔄</span>,
   merge: <span className="text-xs text-info" aria-hidden="true">🔀</span>,
-  reinforce: <span className="text-xs text-primary" aria-hidden="true">📈</span>,
+  reinforce: <ReinforceIcon size={14} />,
   delete: <span className="text-xs text-danger" aria-hidden="true">✖</span>,
 };
 

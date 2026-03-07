@@ -402,17 +402,17 @@
   },
   {
     "id": "san-17",
-    "title": "Maternites et perinatalite",
-    "subtitle": "Accouchements + suivi grossesse + neonatologie",
-    "description": "La France a ferme 40% de ses maternites en 20 ans (de 814 en 2000 à 461 en 2024). Certaines femmes font 1h+ de route pour accoucher. La mortalité neonatale française est supérieure à la moyenne européenne (3,7‰ vs 3,1‰). 700 000 accouchements/an, dont 21% par cesarienne. Les sages-femmes ont obtenu des revalorisations salariales après des greves en 2021-2023.",
+    "title": "Maternités et périnatalité",
+    "subtitle": "Accouchements + suivi grossesse + néonatologie",
+    "description": "La France a fermé 40% de ses maternités en 20 ans (de 814 en 2000 à 461 en 2024). Certaines femmes font 1h+ de route pour accoucher. La mortalité néonatale française est supérieure à la moyenne européenne (3,7‰ vs 3,1‰). 700 000 accouchements/an, dont 21% par césarienne. Les sages-femmes ont obtenu des revalorisations salariales après des grèves en 2021-2023.",
     "amountBillions": 4,
     "costPerCitizen": 59,
     "deckId": "sante",
     "icon": "👶",
     "source": "DREES, HAS, CNAM",
     "level": 1,
-    "tags": ["sante", "maternite", "natalite"],
-    "equivalence": "Un accouchement coûte ~5 000€ (voie basse) a 8 000€ (cesarienne) à la Secu"
+    "tags": ["santé", "maternité", "natalité"],
+    "equivalence": "Un accouchement coûte ~5 000€ (voie basse) à 8 000€ (césarienne) à la Sécu"
   },
   {
     "id": "san-18",

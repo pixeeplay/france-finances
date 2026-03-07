@@ -8,6 +8,8 @@ import { useRef, useImperativeHandle, forwardRef } from "react";
 import { motion, animate as fmAnimate, useReducedMotion } from "framer-motion";
 import { useSwipeGesture } from "@/hooks/useSwipeGesture";
 import { ChainsawIcon } from "./ChainsawIcon";
+import { ReinforceIcon } from "./ReinforceIcon";
+import { StopIcon } from "./StopIcon";
 import { ShieldIcon } from "./ShieldIcon";
 import { AcronymText } from "./AcronymText";
 import type { Card, VoteDirection } from "@/types";
@@ -130,7 +132,7 @@ export const SwipeCard = forwardRef<SwipeCardHandle, SwipeCardProps>(
       >
         <div className={`border-4 rounded-lg px-4 py-2 -rotate-12 ${level >= 2 ? "border-warning" : "border-danger"}`}>
           <span className={`font-black text-2xl tracking-wider flex items-center gap-2 ${level >= 2 ? "text-warning" : "text-danger"}`}>
-            <ChainsawIcon size={28} /> {level >= 2 ? "RÉDUIRE" : "À REVOIR"}
+            <ChainsawIcon size={28} variant={level >= 2 ? "orange" : "red"} /> {level >= 2 ? "RÉDUIRE" : "À REVOIR"}
           </span>
         </div>
       </motion.div>
@@ -143,7 +145,7 @@ export const SwipeCard = forwardRef<SwipeCardHandle, SwipeCardProps>(
         >
           <div className="border-4 border-info rounded-lg px-4 py-2">
             <span className="text-info font-black text-xl tracking-wider flex items-center gap-2">
-              📈 RENFORCER
+              <ReinforceIcon size={24} /> RENFORCER
             </span>
           </div>
         </motion.div>
@@ -157,7 +159,7 @@ export const SwipeCard = forwardRef<SwipeCardHandle, SwipeCardProps>(
         >
           <div className="border-4 border-danger rounded-lg px-4 py-2">
             <span className="text-danger font-black text-xl tracking-wider flex items-center gap-2">
-              ❌ INJUSTIFIÉ
+              <StopIcon size={24} /> INJUSTIFIÉ
             </span>
           </div>
         </motion.div>

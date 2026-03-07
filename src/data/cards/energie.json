@@ -323,9 +323,9 @@
   },
   {
     "id": "ene-12",
-    "title": "Dechets nucléaires (Cigeo)",
-    "subtitle": "Stockage geologique profond a Bure",
-    "description": "Cigeo est le projet de stockage des déchets radioactifs les plus dangereux a Bure (Meuse). Chantier prévu vers 2027-2028, exploitation d'un siecle. Les déchets resteront radioactifs pendant 100 000 ans. L'estimation de coût a doublé en 10 ans (de 15 à 25 Md€).",
+    "title": "Déchets nucléaires (Cigeo)",
+    "subtitle": "Stockage géologique profond à Bure",
+    "description": "Cigeo est le projet de stockage des déchets radioactifs les plus dangereux à Bure (Meuse). Chantier prévu vers 2027-2028, exploitation d'un siècle. Les déchets resteront radioactifs pendant 100 000 ans. L'estimation de coût a doublé en 10 ans (de 15 à 25 Md€).",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
     "deckId": "energie",

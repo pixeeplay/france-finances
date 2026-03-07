@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ChainsawIcon } from "./ChainsawIcon";
 import { ShieldIcon } from "./ShieldIcon";
+import { ReinforceIcon } from "./ReinforceIcon";
 import auditData from "@/data/audit-questions.json";
 import type { Card, AuditRecommendation, AuditResponse } from "@/types";
 
@@ -27,7 +28,7 @@ const recommendationIcons: Record<string, React.ReactNode> = {
   reduce: <ChainsawIcon size={16} />,
   externalize: <span className="text-sm" aria-hidden="true">🔄</span>,
   merge: <span className="text-sm" aria-hidden="true">🔀</span>,
-  reinforce: <span className="text-sm" aria-hidden="true">📈</span>,
+  reinforce: <ReinforceIcon size={16} />,
   delete: <span className="text-sm text-danger" aria-hidden="true">✖</span>,
 };
 

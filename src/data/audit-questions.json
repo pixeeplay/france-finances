@@ -3,17 +3,17 @@
     {
       "id": "proportioned",
       "icon": "balance",
-      "text": "Le montant est proportionne ?"
+      "text": "Le montant est proportionné ?"
     },
     {
       "id": "legitimate",
       "icon": "gavel",
-      "text": "La mission est legitime ?"
+      "text": "La mission est légitime ?"
     },
     {
       "id": "alternative",
       "icon": "savings",
-      "text": "Une alternative moins couteuse existe ?"
+      "text": "Une alternative moins coûteuse existe ?"
     }
   ],
   "recommendations": [
@@ -24,7 +24,7 @@
     },
     {
       "id": "reduce",
-      "label": "Reduire de moitie",
+      "label": "Réduire de moitié",
       "color": "warning"
     },
     {

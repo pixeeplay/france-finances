@@ -7,6 +7,8 @@ import { SwipeCard } from "./SwipeCard";
 import type { SwipeCardHandle } from "./SwipeCard";
 import { ChainsawIcon } from "./ChainsawIcon";
 import { ShieldIcon } from "./ShieldIcon";
+import { ReinforceIcon } from "./ReinforceIcon";
+import { StopIcon } from "./StopIcon";
 import { useGameStore } from "@/stores/gameStore";
 import { useShallow } from "zustand/react/shallow";
 import { track } from "@/lib/analytics";
@@ -218,7 +220,7 @@ export function SwipeStack({
       {level >= 2 && (
         <>
           <div className="flex justify-center pt-1 pb-0 opacity-60">
-            <span className="text-[10px] font-bold text-info tracking-wider">▲ RENFORCER</span>
+            <span className="flex items-center gap-1 text-[10px] font-bold text-info tracking-wider">▲ RENFORCER <ReinforceIcon size={10} /></span>
           </div>
         </>
       )}
@@ -228,11 +230,11 @@ export function SwipeStack({
         {/* Level 2 side hints */}
         {level >= 2 && (
           <>
-            <div className="absolute inset-y-0 left-0 flex items-center z-30 pointer-events-none -ml-3">
-              <span className="flex items-center gap-0.5 text-[10px] font-bold text-primary tracking-wider -rotate-90 opacity-60" aria-hidden="true"><ShieldIcon size={10} className="text-primary" /> OK</span>
+            <div className="absolute inset-y-0 -left-5 flex items-center z-30 pointer-events-none">
+              <span className="flex items-center gap-1 text-[10px] font-bold text-primary tracking-wider -rotate-90 whitespace-nowrap opacity-60" aria-hidden="true"><ShieldIcon size={10} className="text-primary" /> OK</span>
             </div>
-            <div className="absolute inset-y-0 right-0 flex items-center z-30 pointer-events-none -mr-3">
-              <span className="flex items-center gap-0.5 text-[10px] font-bold text-warning tracking-wider rotate-90 opacity-60" aria-hidden="true"><ChainsawIcon size={10} /> RÉDUIRE</span>
+            <div className="absolute inset-y-0 -right-9 flex items-center z-30 pointer-events-none">
+              <span className="flex items-center gap-1 text-[10px] font-bold text-warning tracking-wider rotate-90 whitespace-nowrap opacity-60" aria-hidden="true"><ChainsawIcon size={10} variant="orange" /> RÉDUIRE</span>
             </div>
           </>
         )}
@@ -269,7 +271,7 @@ export function SwipeStack({
       {/* Level 2 bottom hint */}
       {level >= 2 && (
         <div className="flex justify-center pb-1 opacity-60">
-          <span className="text-[10px] font-bold text-danger tracking-wider" aria-hidden="true">❌ INJUSTIFIÉ ▼</span>
+          <span className="flex items-center gap-1 text-[10px] font-bold text-danger tracking-wider" aria-hidden="true"><StopIcon size={10} /> INJUSTIFIÉ ▼</span>
         </div>
       )}
 
@@ -335,43 +337,51 @@ function Level2Buttons({
 }) {
   return (
     <div className="px-4 pb-4 pb-safe">
-      <div className="grid grid-cols-4 gap-2">
-        <button
-          onClick={() => onVote("keep")}
-          disabled={!currentCard}
-          aria-label="Valider cette dépense"
-          className="flex flex-col items-center gap-1.5 py-3 min-h-[44px] rounded-xl bg-card border-2 border-primary transition-transform active:scale-90 disabled:opacity-40"
-        >
-          <ShieldIcon size={24} className="text-primary" />
-          <span className="text-[9px] font-bold text-primary uppercase">OK</span>
-        </button>
-        <button
-          onClick={() => onVote("cut")}
-          disabled={!currentCard}
-          aria-label="Réduire cette dépense"
-          className="flex flex-col items-center gap-1.5 py-3 min-h-[44px] rounded-xl bg-card border-2 border-warning transition-transform active:scale-90 disabled:opacity-40"
-        >
-          <ChainsawIcon size={24} />
-          <span className="text-[9px] font-bold text-warning uppercase">Réduire</span>
-        </button>
-        <button
-          onClick={() => onVote("reinforce")}
-          disabled={!currentCard}
-          aria-label="Renforcer cette dépense"
-          className="flex flex-col items-center gap-1.5 py-3 min-h-[44px] rounded-xl bg-card border-2 border-info transition-transform active:scale-90 disabled:opacity-40"
-        >
-          <span className="text-lg" aria-hidden="true">📈</span>
-          <span className="text-[9px] font-bold text-info uppercase">Renforcer</span>
-        </button>
-        <button
-          onClick={() => onVote("unjustified")}
-          disabled={!currentCard}
-          aria-label="Marquer comme injustifié"
-          className="flex flex-col items-center gap-1.5 py-3 min-h-[44px] rounded-xl bg-card border-2 border-danger transition-transform active:scale-90 disabled:opacity-40"
-        >
-          <span className="text-lg" aria-hidden="true">❌</span>
-          <span className="text-[9px] font-bold text-danger uppercase">Injustifié</span>
-        </button>
+      <div className="flex items-center justify-evenly">
+        <div className="flex flex-col items-center gap-2">
+          <button
+            onClick={() => onVote("keep")}
+            disabled={!currentCard}
+            aria-label="Valider cette dépense"
+            className="w-16 h-16 rounded-full bg-card border-[3px] border-primary flex items-center justify-center shadow-lg shadow-primary/30 transition-transform active:scale-90 disabled:opacity-40"
+          >
+            <ShieldIcon size={28} className="text-primary" />
+          </button>
+          <span className="text-[9px] font-bold text-primary uppercase tracking-wider">OK</span>
+        </div>
+        <div className="flex flex-col items-center gap-2">
+          <button
+            onClick={() => onVote("cut")}
+            disabled={!currentCard}
+            aria-label="Réduire cette dépense"
+            className="w-16 h-16 rounded-full bg-card border-[3px] border-warning flex items-center justify-center shadow-lg shadow-warning/30 transition-transform active:scale-90 disabled:opacity-40"
+          >
+            <ChainsawIcon size={28} variant="orange" />
+          </button>
+          <span className="text-[9px] font-bold text-warning uppercase tracking-wider">Réduire</span>
+        </div>
+        <div className="flex flex-col items-center gap-2">
+          <button
+            onClick={() => onVote("reinforce")}
+            disabled={!currentCard}
+            aria-label="Renforcer cette dépense"
+            className="w-16 h-16 rounded-full bg-card border-[3px] border-info flex items-center justify-center shadow-lg shadow-info/30 transition-transform active:scale-90 disabled:opacity-40"
+          >
+            <ReinforceIcon size={28} />
+          </button>
+          <span className="text-[9px] font-bold text-info uppercase tracking-wider">Renforcer</span>
+        </div>
+        <div className="flex flex-col items-center gap-2">
+          <button
+            onClick={() => onVote("unjustified")}
+            disabled={!currentCard}
+            aria-label="Marquer comme injustifié"
+            className="w-16 h-16 rounded-full bg-card border-[3px] border-danger flex items-center justify-center shadow-lg shadow-danger/30 transition-transform active:scale-90 disabled:opacity-40"
+          >
+            <StopIcon size={28} />
+          </button>
+          <span className="text-[9px] font-bold text-danger uppercase tracking-wider">Injustifié</span>
+        </div>
       </div>
     </div>
   );
