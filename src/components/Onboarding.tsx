@@ -78,7 +78,7 @@ export function Onboarding({ onDone }: OnboardingProps) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-[100] bg-background flex flex-col"
+      className="fixed inset-0 z-[100] bg-background flex flex-col max-w-md mx-auto lg:rounded-3xl lg:my-4 lg:shadow-2xl lg:border lg:border-border"
     >
       {/* Skip button */}
       <div className="flex justify-end p-4">

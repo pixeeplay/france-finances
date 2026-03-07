@@ -128,14 +128,14 @@ export default function ConfidentialitePage() {
               Pour toute demande, contactez-nous &agrave; l&apos;adresse :
             </p>
             <a
-              href="mailto:contact@nicoquipaie.co"
+              href="mailto:contact@pixeeplay.fr"
               className="flex items-center gap-2 bg-primary/10 text-primary font-semibold text-sm px-4 py-3 rounded-xl border border-primary/20 hover:bg-primary/20 transition-colors"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <rect width="20" height="16" x="2" y="4" rx="2" />
                 <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
               </svg>
-              contact@nicoquipaie.co
+              contact@pixeeplay.fr
             </a>
           </div>
         </section>
