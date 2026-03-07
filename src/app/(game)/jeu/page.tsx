@@ -36,8 +36,8 @@ const thematicDecks = allDecks.filter((d) => d.type === "thematic");
 const THEMATIC_UNLOCK_CATEGORIES = 3;
 
 const LEVEL_UNLOCK = {
-  2: { sessions: 3, label: "3 sessions au Niveau 1" },
-  3: { sessions: 5, label: "5 sessions au Niveau 2" },
+  2: { sessions: 1, label: "1 session complétée" },
+  3: { sessions: 3, label: "3 sessions complétées" },
 } as const;
 
 const BUDGET_TARGETS = [5, 10, 15, 20, 30] as const;
@@ -85,10 +85,10 @@ function PlayPageContent() {
   ).length;
   const thematicsUnlocked = mainCategoriesPlayed >= THEMATIC_UNLOCK_CATEGORIES;
 
-  const levelOptions: { value: 1 | 2 | 3; label: string; locked: boolean; unlockHint: string }[] = [
-    { value: 1, label: "Niveau 1", locked: false, unlockHint: "" },
-    { value: 2, label: "Niveau 2", locked: !isLevel2Unlocked, unlockHint: LEVEL_UNLOCK[2].label },
-    { value: 3, label: "Niveau 3", locked: !isLevel3Unlocked, unlockHint: LEVEL_UNLOCK[3].label },
+  const levelOptions: { value: 1 | 2 | 3; label: string; locked: boolean; unlockHint: string; progress: string }[] = [
+    { value: 1, label: "Niveau 1", locked: false, unlockHint: "", progress: "" },
+    { value: 2, label: "Niveau 2", locked: !isLevel2Unlocked, unlockHint: LEVEL_UNLOCK[2].label, progress: `${Math.min(sessionsCount, LEVEL_UNLOCK[2].sessions)}/${LEVEL_UNLOCK[2].sessions}` },
+    { value: 3, label: "Niveau 3", locked: !isLevel3Unlocked, unlockHint: LEVEL_UNLOCK[3].label, progress: `${Math.min(sessionsCount, LEVEL_UNLOCK[3].sessions)}/${LEVEL_UNLOCK[3].sessions}` },
   ];
 
   function handleLevelClick(opt: typeof levelOptions[number]) {
@@ -243,6 +243,8 @@ function PlayPageContent() {
                 key={opt.value}
                 type="button"
                 onClick={() => handleLevelClick(opt)}
+                onMouseEnter={() => opt.locked && setTooltip(opt.value as 2 | 3)}
+                onMouseLeave={() => opt.locked && setTooltip(null)}
                 className={`flex h-full grow items-center justify-center rounded-lg px-2 text-sm font-semibold transition-colors ${
                   !opt.locked && level === opt.value
                     ? "bg-primary text-primary-foreground"
@@ -253,20 +255,37 @@ function PlayPageContent() {
               >
                 <span className="flex items-center gap-1">
                   {opt.label}
-                  {opt.locked && <span className="text-xs">&#128274;</span>}
+                  {opt.locked && <span className="text-xs">&#128683;</span>}
                 </span>
               </button>
             ))}
           </div>
           {/* Tooltip */}
-          {tooltip && (
-            <div className="absolute left-1/2 -translate-x-1/2 top-full -mt-1 z-20">
-              <div className="bg-card border border-border rounded-lg px-3 py-2 shadow-xl text-xs text-muted-foreground whitespace-nowrap">
-                <span className="text-warning font-bold">&#128274;</span>{" "}
-                Déblocage : {levelOptions.find((o) => o.value === tooltip)?.unlockHint}
+          {tooltip && (() => {
+            const opt = levelOptions.find((o) => o.value === tooltip);
+            if (!opt) return null;
+            return (
+              <div className="absolute left-1/2 -translate-x-1/2 top-full -mt-1 z-20 pointer-events-none">
+                <div className="bg-slate-900 border border-primary/40 rounded-xl px-4 py-3 shadow-2xl shadow-black/60 text-center min-w-[200px]">
+                  <p className="text-sm font-bold text-slate-100 mb-1">
+                    &#128683; {opt.label} verrouillé
+                  </p>
+                  <p className="text-xs text-slate-400 mb-2">
+                    Déblocage : {opt.unlockHint}
+                  </p>
+                  <div className="flex items-center gap-2">
+                    <div className="flex-1 h-1.5 bg-slate-700 rounded-full overflow-hidden">
+                      <div
+                        className="h-full bg-primary rounded-full transition-all"
+                        style={{ width: `${Math.min(100, (sessionsCount / LEVEL_UNLOCK[opt.value as 2 | 3].sessions) * 100)}%` }}
+                      />
+                    </div>
+                    <span className="text-[10px] font-mono font-bold text-primary">{opt.progress}</span>
+                  </div>
+                </div>
               </div>
-            </div>
-          )}
+            );
+          })()}
         </div>
 
         {/* Categories Grid */}
