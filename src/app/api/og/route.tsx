@@ -28,9 +28,14 @@ const ARCHETYPES: Record<string, { icon: string; name: string }> = {
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const archetype = searchParams.get("archetype") ?? "balanced";
-  const keepPercent = searchParams.get("keepPercent") ?? "50";
-  const cutPercent = searchParams.get("cutPercent") ?? "50";
-  const totalCards = searchParams.get("totalCards") ?? "10";
+  const keepRaw = parseInt(searchParams.get("keepPercent") ?? "50", 10);
+  const cutRaw = parseInt(searchParams.get("cutPercent") ?? "50", 10);
+  const cardsRaw = parseInt(searchParams.get("totalCards") ?? "10", 10);
+
+  // Clamp numeric values to valid ranges
+  const keepPercent = String(Math.max(0, Math.min(100, isNaN(keepRaw) ? 50 : keepRaw)));
+  const cutPercent = String(Math.max(0, Math.min(100, isNaN(cutRaw) ? 50 : cutRaw)));
+  const totalCards = String(Math.max(0, Math.min(999, isNaN(cardsRaw) ? 10 : cardsRaw)));
 
   const arch = ARCHETYPES[archetype] ?? ARCHETYPES.equilibriste;
 

@@ -1,27 +1,32 @@
 import { NextRequest } from "next/server";
+import { z } from "zod";
 import { db, isDbAvailable } from "@/db";
 import { waitlist } from "@/db/schema";
 import { and, eq } from "drizzle-orm";
 import { dbUnavailableResponse, jsonOk, jsonError } from "@/lib/api-utils";
 
-const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const waitlistSchema = z.object({
+  email: z.string().email(),
+  city: z.string().max(100).optional(),
+});
 
 export async function POST(req: NextRequest) {
   if (!isDbAvailable() || !db) return dbUnavailableResponse();
 
-  let body: { email?: string; city?: string };
+  let body: unknown;
   try {
     body = await req.json();
   } catch {
     return jsonError("Invalid JSON", 400);
   }
 
-  const email = body.email?.trim().toLowerCase();
-  const city = body.city?.trim().toLowerCase() || "paris";
-
-  if (!email || !EMAIL_REGEX.test(email)) {
+  const parsed = waitlistSchema.safeParse(body);
+  if (!parsed.success) {
     return jsonError("Email invalide", 400);
   }
+
+  const email = parsed.data.email.trim().toLowerCase();
+  const city = parsed.data.city?.trim().toLowerCase() || "paris";
 
   try {
     // Check for duplicate

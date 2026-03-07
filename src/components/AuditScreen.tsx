@@ -17,18 +17,18 @@ interface AuditScreenProps {
 }
 
 const questionIcons: Record<string, string> = {
-  balance: "\u2696\uFE0F",
-  gavel: "\u2696\uFE0F",
-  savings: "\uD83D\uDCB0",
+  balance: "⚖️",
+  gavel: "⚖️",
+  savings: "💰",
 };
 
 const recommendationIcons: Record<string, React.ReactNode> = {
   keep: <ShieldIcon size={16} className="text-primary" />,
   reduce: <ChainsawIcon size={16} />,
-  externalize: <span className="text-sm">\uD83D\uDD04</span>,
-  merge: <span className="text-sm">\uD83D\uDD00</span>,
-  reinforce: <span className="text-sm">\uD83D\uDCC8</span>,
-  delete: <span className="text-sm text-danger">\u2716</span>,
+  externalize: <span className="text-sm" aria-hidden="true">🔄</span>,
+  merge: <span className="text-sm" aria-hidden="true">🔀</span>,
+  reinforce: <span className="text-sm" aria-hidden="true">📈</span>,
+  delete: <span className="text-sm text-danger" aria-hidden="true">✖</span>,
 };
 
 export function AuditScreen({
@@ -72,7 +72,8 @@ export function AuditScreen({
       <header className="flex items-center justify-between p-4 pb-2 sticky top-0 z-10 bg-background/80 backdrop-blur-md">
         <button
           onClick={onBack}
-          className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-card transition-colors"
+          aria-label="Retour"
+          className="flex items-center justify-center w-10 h-10 min-h-[44px] rounded-full hover:bg-card transition-colors"
         >
           <span className="text-muted-foreground text-lg">&larr;</span>
         </button>
@@ -82,7 +83,13 @@ export function AuditScreen({
           </span>
           <span className="text-sm font-bold">Audit</span>
         </div>
-        <div className="w-10 h-10" />
+        <button
+          onClick={onBack}
+          aria-label="Fermer l'audit"
+          className="w-10 h-10 min-h-[44px] rounded-full bg-card flex items-center justify-center text-muted-foreground hover:bg-danger hover:text-white transition-colors"
+        >
+          ✕
+        </button>
       </header>
 
       {/* Progress bar */}
@@ -96,7 +103,7 @@ export function AuditScreen({
       </div>
 
       {/* Main scrollable content */}
-      <main className="flex-1 overflow-y-auto px-4 pb-28 flex flex-col gap-6">
+      <main className="flex-1 overflow-y-auto scrollbar-hide px-4 pb-28 flex flex-col gap-6">
         {/* Card summary */}
         <div className="flex items-center justify-between bg-card p-4 rounded-xl border border-border">
           <div className="flex items-center gap-3">
@@ -184,7 +191,7 @@ export function AuditScreen({
       </main>
 
       {/* Submit button */}
-      <footer className="fixed bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-background via-background to-transparent pt-8 pb-6 z-40 flex justify-center">
+      <footer className="fixed bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-background via-background to-transparent pt-8 pb-6 pb-safe z-40 flex justify-center">
         <div className="w-full max-w-md">
           <button
             onClick={handleSubmit}

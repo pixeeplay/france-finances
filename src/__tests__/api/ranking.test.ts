@@ -15,7 +15,8 @@ vi.mock("@/db/schema", () => ({
 describe("GET /api/ranking", () => {
   it("returns 503 when database is not available", async () => {
     const { GET } = await import("@/app/api/ranking/route");
-    const response = await GET();
+    const request = new Request("http://localhost:3000/api/ranking");
+    const response = await GET(request as import("next/server").NextRequest);
     const data = await response.json();
 
     expect(response.status).toBe(503);

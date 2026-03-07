@@ -55,6 +55,8 @@ describe("gameStore", () => {
     vi.resetModules();
     const mod = await import("@/stores/gameStore");
     useGameStore = mod.useGameStore;
+    // Ensure clean state even if module cache persists
+    useGameStore.getState().reset();
   });
 
   describe("startSession", () => {

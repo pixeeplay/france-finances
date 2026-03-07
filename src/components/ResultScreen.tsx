@@ -8,7 +8,10 @@ import { ChainsawIcon } from "./ChainsawIcon";
 import { ShieldIcon } from "./ShieldIcon";
 import { track } from "@/lib/analytics";
 import dynamic from "next/dynamic";
-const RadarChart = dynamic(() => import("./RadarChart").then((m) => m.RadarChart), { ssr: false });
+const RadarChart = dynamic(() => import("./RadarChart").then((m) => m.RadarChart), {
+  ssr: false,
+  loading: () => <div className="w-[240px] h-[240px] mx-auto rounded-full bg-muted/30 animate-pulse" />,
+});
 import { computeRadarFromSession } from "@/lib/radarData";
 import type { Vote, Card } from "@/types";
 import { AuditReport } from "./AuditReport";

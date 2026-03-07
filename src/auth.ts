@@ -37,6 +37,11 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         })]
       : []),
   ],
+  logger: {
+    warn: (message) => {
+      console.warn("[NextAuth]", message);
+    },
+  },
   session: {
     strategy: db ? "database" : "jwt",
   },
@@ -58,3 +63,8 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     },
   },
 });
+
+// Warn at startup if no OAuth providers are configured
+if (!process.env.GOOGLE_CLIENT_ID && !process.env.GITHUB_ID) {
+  console.warn("[auth] No OAuth providers configured (GOOGLE_CLIENT_ID / GITHUB_ID missing). Auth will not work.");
+}

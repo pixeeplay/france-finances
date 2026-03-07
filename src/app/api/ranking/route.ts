@@ -1,7 +1,8 @@
+import type { NextRequest } from "next/server";
 import { db } from "@/db";
 import { sessions, users } from "@/db/schema";
 import { sql, eq, desc } from "drizzle-orm";
-import { withDbCheck, jsonOk, jsonError } from "@/lib/api-utils";
+import { withDbCheck, jsonOk, jsonError, rateLimit } from "@/lib/api-utils";
 
 export const dynamic = "force-dynamic";
 
@@ -10,7 +11,10 @@ export const dynamic = "force-dynamic";
  * Returns top players ranked by XP computed from their sessions.
  * XP formula: per session = (totalCards * 10) + 50 + (level3 ? 100 : 0) + (speedrunner ? 100 : 0)
  */
-export async function GET() {
+export async function GET(request: NextRequest) {
+  const limited = rateLimit(request, "ranking", 30);
+  if (limited) return limited;
+
   const unavailable = withDbCheck();
   if (unavailable) return unavailable;
 

@@ -19,12 +19,12 @@ export const recommendationColors: Record<AuditRecommendation, string> = {
 };
 
 export const recommendationIcons: Record<AuditRecommendation, string> = {
-  keep: "\uD83D\uDEE1\uFE0F",
-  reduce: "\uD83E\uDE9A",
-  externalize: "\uD83D\uDD04",
-  merge: "\uD83D\uDD00",
-  reinforce: "\uD83D\uDCC8",
-  delete: "\u274C",
+  keep: "🛡️",
+  reduce: "🪚",
+  externalize: "🔄",
+  merge: "🔀",
+  reinforce: "📈",
+  delete: "❌",
 };
 
 export function AuditReport({ cards, auditResponses }: {
@@ -77,7 +77,7 @@ export function AuditReport({ cards, auditResponses }: {
         <div className="h-px w-full bg-border" />
 
         <div className="flex items-start gap-3">
-          <span className="text-2xl">{"\uD83D\uDCB0"}</span>
+          <span className="text-2xl" aria-hidden="true">💰</span>
           <div className="flex flex-col">
             <p className="text-sm font-medium text-muted-foreground">Impact estimé</p>
             <p className="text-lg font-bold text-primary font-mono tracking-tight">
@@ -116,7 +116,7 @@ export function AuditReport({ cards, auditResponses }: {
                     Prescription:
                   </span>
                   <span className={`text-xs font-bold ${recommendationColors[rec]}`}>
-                    {recommendationIcons[rec]} {recommendationLabels[rec]}
+                    <span aria-hidden="true">{recommendationIcons[rec]}</span> {recommendationLabels[rec]}
                   </span>
                 </div>
               </div>

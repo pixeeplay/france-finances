@@ -1,7 +1,8 @@
+import type { NextRequest } from "next/server";
 import { db } from "@/db";
 import { sessions, votes } from "@/db/schema";
 import { sql } from "drizzle-orm";
-import { withDbCheck, jsonOk, jsonError } from "@/lib/api-utils";
+import { withDbCheck, jsonOk, jsonError, rateLimit } from "@/lib/api-utils";
 
 export const dynamic = "force-dynamic";
 
@@ -14,7 +15,10 @@ export const dynamic = "force-dynamic";
  * - topProtected: { cardId, keepPercent }[]
  * - totalSessions: number
  */
-export async function GET() {
+export async function GET(request: NextRequest) {
+  const limited = rateLimit(request, "community-stats", 30);
+  if (limited) return limited;
+
   const unavailable = withDbCheck();
   if (unavailable) return unavailable;
 

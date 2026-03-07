@@ -15,7 +15,7 @@ DNS : Cloudflare (DNS only, pas de proxy)
 
 - **370 cartes** reparties en **19 decks** (16 categories + 3 thematiques)
 - **16 archetypes** budgetaires (6 L1, 6 L2, 4 L3)
-- **14 badges** de categorie + **12 achievements** generaux
+- **19 badges** de categorie + **12 achievements** generaux
 
 ## Stack technique
 
@@ -26,7 +26,7 @@ DNS : Cloudflare (DNS only, pas de proxy)
 - **Auth** : NextAuth.js v5 (Google + GitHub), trustHost: true
 - **DB** : PostgreSQL + Drizzle ORM (graceful degradation sans DB)
 - **PWA** : serwist (service worker, offline fallback)
-- **Tests** : Vitest + Testing Library (75 tests)
+- **Tests** : Vitest + Testing Library (86 tests, coverage >60%)
 - **CI** : GitHub Actions (lint + type-check + build + test + docker), Husky + lint-staged
 - **Deploy** : Docker (output: standalone) via Coolify
 

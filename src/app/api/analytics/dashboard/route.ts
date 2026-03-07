@@ -1,4 +1,5 @@
 import { NextRequest } from "next/server";
+import { timingSafeEqual } from "crypto";
 import { db, isDbAvailable } from "@/db";
 import { analyticsEvents } from "@/db/schema";
 import { sql, gte, and } from "drizzle-orm";
@@ -19,12 +20,17 @@ export async function GET(request: NextRequest) {
     // Fallback: ANALYTICS_SECRET header/query param (for cron jobs, programmatic access)
     const secret = process.env.ANALYTICS_SECRET;
     if (!secret) {
+      console.warn("[analytics/dashboard] ANALYTICS_SECRET is not set — dashboard inaccessible without auth session");
       return jsonError("Unauthorized", 401);
     }
     const provided =
       request.headers.get("x-analytics-secret") ??
       request.nextUrl.searchParams.get("secret");
-    if (provided !== secret) {
+    if (
+      !provided ||
+      provided.length !== secret.length ||
+      !timingSafeEqual(Buffer.from(provided), Buffer.from(secret))
+    ) {
       return jsonError("Unauthorized", 401);
     }
   }

@@ -49,7 +49,7 @@ export async function generateMetadata(): Promise<Metadata> {
         .limit(1);
 
       if (row && row.totalCards > 0) {
-        archetypeId = row.archetypeId;
+        archetypeId = row.archetypeId in ARCHETYPE_NAMES ? row.archetypeId : "equilibriste";
         totalCards = String(row.totalCards);
         const total = row.keepCount + row.cutCount;
         keepPercent = String(Math.round((row.keepCount / total) * 100));

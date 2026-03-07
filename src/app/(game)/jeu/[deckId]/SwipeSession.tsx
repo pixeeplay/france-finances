@@ -97,10 +97,30 @@ export function SwipeSession({ deckId, deckName, cards, level = 1, gameMode = "c
     [detailCard, session, voteAndAdvance, completeSession, router, level]
   );
 
-  // Level 3 audit screen (shown after swipe)
-  if (auditCard) {
-    return (
-      <main className="flex-1 flex flex-col min-h-0">
+  return (
+    <main className="flex-1 flex flex-col min-h-0">
+      {/* Keep SwipeStack mounted but hidden during audit to preserve session state */}
+      <div className={`flex-1 flex flex-col min-h-0 ${auditCard ? "hidden" : ""}`}>
+        <SwipeStack
+          cards={cards}
+          deckId={deckId}
+          deckName={deckName}
+          level={level}
+          gameMode={gameMode}
+          budgetTarget={budgetTarget}
+          onCardTap={handleCardTap}
+          onSwipeComplete={level === 3 ? handleSwipeComplete : undefined}
+        />
+        <CardDetail
+          card={detailCard}
+          level={level}
+          onClose={() => setDetailCard(null)}
+          onVote={handleDetailVote}
+        />
+      </div>
+
+      {/* Level 3 audit screen */}
+      {auditCard && (
         <AuditScreen
           card={auditCard.card}
           cardIndex={session?.currentIndex ?? 0}
@@ -109,28 +129,7 @@ export function SwipeSession({ deckId, deckName, cards, level = 1, gameMode = "c
           onSubmit={handleAuditSubmit}
           onBack={handleAuditBack}
         />
-      </main>
-    );
-  }
-
-  return (
-    <main className="flex-1 flex flex-col min-h-0">
-      <SwipeStack
-        cards={cards}
-        deckId={deckId}
-        deckName={deckName}
-        level={level}
-        gameMode={gameMode}
-        budgetTarget={budgetTarget}
-        onCardTap={handleCardTap}
-        onSwipeComplete={level === 3 ? handleSwipeComplete : undefined}
-      />
-      <CardDetail
-        card={detailCard}
-        level={level}
-        onClose={() => setDetailCard(null)}
-        onVote={handleDetailVote}
-      />
+      )}
     </main>
   );
 }

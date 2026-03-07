@@ -56,8 +56,8 @@ export function AcronymText({ text, className }: AcronymTextProps) {
   const parts: Array<{ type: "text" | "acronym"; value: string }> = [];
   let lastIndex = 0;
   let match: RegExpExecArray | null;
-
   const regex = new RegExp(acronymPattern, "g");
+
   while ((match = regex.exec(text)) !== null) {
     if (match.index > lastIndex) {
       parts.push({ type: "text", value: text.slice(lastIndex, match.index) });

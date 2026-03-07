@@ -64,10 +64,10 @@ export default async function CategoryPage({ params }: Props) {
 
           <div className="flex flex-wrap gap-6 mt-8">
             <Stat label="Cartes" value={String(cards.length)} />
-            <Stat label="Budget total" value={`${totalBillions.toFixed(1)} Md\u20AC`} />
+            <Stat label="Budget total" value={`${totalBillions.toFixed(1)} Md€`} />
             <Stat
-              label="Co\u00FBt moyen/citoyen"
-              value={`${Math.round(cards.reduce((s, c) => s + c.costPerCitizen, 0) / cards.length)} \u20AC`}
+              label="Coût moyen/citoyen"
+              value={`${Math.round(cards.reduce((s, c) => s + c.costPerCitizen, 0) / cards.length)} €`}
             />
           </div>
 

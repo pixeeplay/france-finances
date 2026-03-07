@@ -1,7 +1,8 @@
+import type { NextRequest } from "next/server";
 import { db, isDbAvailable } from "@/db";
 import { sessions, votes } from "@/db/schema";
 import { sql } from "drizzle-orm";
-import { jsonOk } from "@/lib/api-utils";
+import { jsonOk, rateLimit } from "@/lib/api-utils";
 
 export const dynamic = "force-dynamic";
 
@@ -10,7 +11,10 @@ export const dynamic = "force-dynamic";
  * Returns public stats for the landing page (no auth required).
  * Gracefully degrades if DB is unavailable.
  */
-export async function GET() {
+export async function GET(request: NextRequest) {
+  const limited = rateLimit(request, "stats-public", 60);
+  if (limited) return limited;
+
   if (!isDbAvailable() || !db) {
     return jsonOk({ totalSessions: 0, totalSwipes: 0 }, 60);
   }

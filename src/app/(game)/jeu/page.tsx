@@ -59,6 +59,7 @@ function PlayPageContent() {
   const [budgetMode, setBudgetMode] = useState(false);
   const [budgetTarget, setBudgetTarget] = useState<number>(15);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const bottomRef = useRef<HTMLDivElement>(null);
   const [showChevron, setShowChevron] = useState(false);
 
   useEffect(() => {
@@ -180,7 +181,7 @@ function PlayPageContent() {
                 setRandomMode(e.target.checked);
                 if (e.target.checked) {
                   setSelectedDeck(null);
-                  scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
+                  setTimeout(() => bottomRef.current?.scrollIntoView({ behavior: "smooth", block: "end" }), 100);
                 }
               }}
             />
@@ -323,7 +324,7 @@ function PlayPageContent() {
                 const newSelection = selectedDeck === deck.id ? null : deck.id;
                 setSelectedDeck(newSelection);
                 if (newSelection) {
-                  setTimeout(() => scrollRef.current?.scrollTo({ top: scrollRef.current!.scrollHeight, behavior: "smooth" }), 100);
+                  setTimeout(() => bottomRef.current?.scrollIntoView({ behavior: "smooth", block: "end" }), 100);
                 }
               }}
             />
@@ -360,7 +361,7 @@ function PlayPageContent() {
                     const newSelection = selectedDeck === deck.id ? null : deck.id;
                     setSelectedDeck(newSelection);
                     if (newSelection) {
-                      setTimeout(() => scrollRef.current?.scrollTo({ top: scrollRef.current!.scrollHeight, behavior: "smooth" }), 100);
+                      setTimeout(() => bottomRef.current?.scrollIntoView({ behavior: "smooth", block: "end" }), 100);
                     }
                   }}
                 />
@@ -368,6 +369,7 @@ function PlayPageContent() {
             </div>
           </>
         )}
+        <div ref={bottomRef} />
       </div>
 
       {/* Scroll chevron indicator */}
