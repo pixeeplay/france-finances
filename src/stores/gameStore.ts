@@ -166,6 +166,7 @@ export const useGameStore = create<GameState>()(
 }),
     {
       name: "trnc:game-session",
+      version: 1,
       storage: createJSONStorage(() =>
         typeof window !== "undefined" ? sessionStorage : {
           getItem: () => null,
@@ -177,6 +178,15 @@ export const useGameStore = create<GameState>()(
         session: state.session,
         _cachedStats: state._cachedStats,
       }),
+      migrate: (persisted: unknown, version: number) => {
+        // Version 0 -> 1: initial schema, no migration needed
+        // Future migrations can be chained here:
+        // if (version < 2) { ... }
+        if (version < 1) {
+          return persisted as GameState;
+        }
+        return persisted as GameState;
+      },
     },
   ),
 );

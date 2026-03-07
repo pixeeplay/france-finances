@@ -183,8 +183,8 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
                 </section>
               )}
 
-              {/* Subtitle / Détail */}
-              {card.subtitle && (
+              {/* Subtitle / Détail (masqué si contenu dans l'équivalence) */}
+              {card.subtitle && !(card.equivalence && card.equivalence.includes(card.subtitle)) && (
                 <section className="mb-8">
                   <h3 className="text-lg font-bold text-foreground mb-3 flex items-center gap-2 tracking-tight">
                     <span className="text-primary text-xl" aria-hidden="true">📋</span>

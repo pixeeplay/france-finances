@@ -15,7 +15,7 @@ export default function Error({
           Oups, quelque chose a plante
         </h2>
         <p className="text-muted-foreground text-sm">
-          {error.message || "Une erreur inattendue s'est produite."}
+          {error.digest ? `Erreur ${error.digest}` : "Une erreur inattendue s'est produite."}
         </p>
       </div>
       <button

@@ -73,7 +73,7 @@ export const sessions = pgTable("sessions", {
 // === Votes (individual card votes for community aggregation) ===
 export const votes = pgTable("votes", {
   id: uuid("id").defaultRandom().primaryKey(),
-  sessionId: uuid("session_id").references(() => sessions.id).notNull(),
+  sessionId: uuid("session_id").references(() => sessions.id, { onDelete: "cascade" }).notNull(),
   cardId: text("card_id").notNull(),
   direction: text("direction").notNull(), // keep | cut | reinforce | unjustified
   durationMs: integer("duration_ms").notNull().default(0),
@@ -125,7 +125,7 @@ export const waitlist = pgTable("waitlist", {
 // === Audit responses (Level 3) ===
 export const auditResponses = pgTable("audit_responses", {
   id: uuid("id").defaultRandom().primaryKey(),
-  sessionId: uuid("session_id").references(() => sessions.id).notNull(),
+  sessionId: uuid("session_id").references(() => sessions.id, { onDelete: "cascade" }).notNull(),
   cardId: text("card_id").notNull(),
   diagnostics: jsonb("diagnostics").notNull(), // Record<string, boolean>
   recommendation: text("recommendation").notNull(), // keep | reduce | externalize | merge | reinforce | delete

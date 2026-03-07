@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nicoquipaie.pixeeplay.fr/sitemap.xml
+Sitemap: https://france-finances.com/sitemap.xml

@@ -11,8 +11,16 @@ const sql = connectionString
       idle_timeout: 20,
       connect_timeout: 10,
       connection: { statement_timeout: 30 },
+      onnotice: () => {}, // suppress NOTICE messages
     })
   : null;
+
+// Log connection-level errors gracefully (prevent unhandled crashes)
+if (sql) {
+  sql.unsafe("SELECT 1").catch((err: unknown) => {
+    console.error("[DB] Initial connection check failed:", err instanceof Error ? err.message : err);
+  });
+}
 
 export const db = sql ? drizzle(sql, { schema }) : null;
 

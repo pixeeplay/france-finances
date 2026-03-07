@@ -1,4 +1,6 @@
 import type { Card, AuditRecommendation } from "@/types";
+import { ChainsawIcon } from "./ChainsawIcon";
+import { ShieldIcon } from "./ShieldIcon";
 
 export const recommendationLabels: Record<AuditRecommendation, string> = {
   keep: "Maintenir le budget",
@@ -18,13 +20,13 @@ export const recommendationColors: Record<AuditRecommendation, string> = {
   delete: "text-danger",
 };
 
-export const recommendationIcons: Record<AuditRecommendation, string> = {
-  keep: "🛡️",
-  reduce: "🪚",
-  externalize: "🔄",
-  merge: "🔀",
-  reinforce: "📈",
-  delete: "❌",
+export const recommendationIcons: Record<AuditRecommendation, React.ReactNode> = {
+  keep: <ShieldIcon size={14} className="text-muted-foreground" />,
+  reduce: <ChainsawIcon size={14} />,
+  externalize: <span className="text-xs text-info" aria-hidden="true">🔄</span>,
+  merge: <span className="text-xs text-info" aria-hidden="true">🔀</span>,
+  reinforce: <span className="text-xs text-primary" aria-hidden="true">📈</span>,
+  delete: <span className="text-xs text-danger" aria-hidden="true">✖</span>,
 };
 
 export function AuditReport({ cards, auditResponses }: {

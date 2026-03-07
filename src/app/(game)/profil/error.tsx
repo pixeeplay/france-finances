@@ -12,7 +12,7 @@ export default function ProfileError({
       <p className="text-4xl">😵</p>
       <h2 className="text-lg font-bold">Impossible de charger le profil</h2>
       <p className="text-sm text-muted-foreground text-center">
-        {error.message || "Une erreur inattendue est survenue."}
+        {error.digest ? `Erreur ${error.digest}` : "Une erreur inattendue est survenue."}
       </p>
       <button
         onClick={reset}

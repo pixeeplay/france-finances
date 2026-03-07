@@ -1,4 +1,5 @@
 import { NextRequest } from "next/server";
+import { timingSafeEqual } from "crypto";
 import { db, isDbAvailable } from "@/db";
 import { analyticsEvents } from "@/db/schema";
 import { lt } from "drizzle-orm";
@@ -18,7 +19,11 @@ export async function DELETE(request: NextRequest) {
     const provided =
       request.headers.get("x-analytics-secret") ??
       request.nextUrl.searchParams.get("secret");
-    if (provided !== secret) {
+    if (
+      !provided ||
+      provided.length !== secret.length ||
+      !timingSafeEqual(Buffer.from(provided), Buffer.from(secret))
+    ) {
       return jsonError("Unauthorized", 401);
     }
   }

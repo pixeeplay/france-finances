@@ -1,3 +1,8 @@
+// PERF-09: This component must remain "use client" because:
+// - usePublicStats() is a client hook (useState + useEffect + fetch)
+// - framer-motion <motion.div> requires client-side JS for animations
+// To make this a Server Component, stats would need to be fetched server-side
+// and animations replaced with CSS transitions or a separate client wrapper.
 "use client";
 
 import Link from "next/link";

@@ -6,8 +6,15 @@ export const alt = "france-finances.com — Deck";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
+/** SEC-20: Strip HTML/script tags and limit length to prevent injection in OG image params. */
+function sanitizeParam(value: unknown): string {
+  if (typeof value !== "string") return "";
+  return value.replace(/<[^>]*>/g, "").slice(0, 200);
+}
+
 export default function OgImage({ params }: { params: { deckId: string } }) {
-  const deck = decksMeta.decks.find((d) => d.id === params.deckId);
+  const deckId = sanitizeParam(params.deckId);
+  const deck = decksMeta.decks.find((d) => d.id === deckId);
   const name = deck?.name ?? "Deck inconnu";
   const description = deck?.description ?? "";
   const icon = deck?.icon ?? "🎴";

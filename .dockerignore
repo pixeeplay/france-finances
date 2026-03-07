@@ -1,6 +1,9 @@
 node_modules
 .next
 .git
+.env*
+.github
+.husky
 Maquettes
 Visuels-source
 Briefs

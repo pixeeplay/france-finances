@@ -25,12 +25,8 @@ export function AcronymText({ text, className }: AcronymTextProps) {
   } | null>(null);
   const tooltipRef = useRef<HTMLSpanElement>(null);
 
-  const handleClick = useCallback(
-    (key: string, btn: HTMLButtonElement) => {
-      if (active?.key === key) {
-        setActive(null);
-        return;
-      }
+  const show = useCallback(
+    (key: string, btn: HTMLElement) => {
       const rect = btn.getBoundingClientRect();
       setActive({
         key,
@@ -38,7 +34,18 @@ export function AcronymText({ text, className }: AcronymTextProps) {
         left: rect.left + rect.width / 2,
       });
     },
-    [active?.key],
+    [],
+  );
+
+  const handleClick = useCallback(
+    (key: string, btn: HTMLButtonElement) => {
+      if (active?.key === key) {
+        setActive(null);
+        return;
+      }
+      show(key, btn);
+    },
+    [active?.key, show],
   );
 
   // Close tooltip on outside click
@@ -101,6 +108,17 @@ export function AcronymText({ text, className }: AcronymTextProps) {
               e.stopPropagation();
               e.preventDefault();
               handleClick(key, e.currentTarget);
+            }}
+            onMouseEnter={(e) => {
+              // Hover only on devices with a fine pointer (desktop)
+              if (window.matchMedia("(pointer: fine)").matches) {
+                show(key, e.currentTarget);
+              }
+            }}
+            onMouseLeave={() => {
+              if (window.matchMedia("(pointer: fine)").matches) {
+                setActive(null);
+              }
             }}
             className="text-primary font-semibold border-b border-dashed border-primary/40 hover:border-primary transition-colors cursor-help"
           >

@@ -39,8 +39,22 @@ const nextConfig: NextConfig = {
           },
           {
             key: "Content-Security-Policy",
-            value:
-              "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self' https:; frame-ancestors 'none'; base-uri 'self'; form-action 'self';",
+            // SEC-22: 'unsafe-inline' in script-src is required by Next.js for inline scripts
+            // (hydration, next/script). This is a known risk (XSS via inline injection).
+            // TODO: Migrate to nonce-based CSP in a future sprint once Next.js middleware
+            // supports per-request nonce injection (track: https://github.com/vercel/next.js/discussions/54907).
+            // SEC-23: connect-src tightened from broad `https:` to specific allowed origins.
+            value: [
+              "default-src 'self'",
+              "script-src 'self' 'unsafe-inline'",
+              "style-src 'self' 'unsafe-inline'",
+              "img-src 'self' data: blob: https:",
+              "font-src 'self' data:",
+              "connect-src 'self' https://france-finances.com https://*.france-finances.com https://accounts.google.com https://github.com https://api.github.com",
+              "frame-ancestors 'none'",
+              "base-uri 'self'",
+              "form-action 'self'",
+            ].join("; ") + ";",
           },
         ],
       },
