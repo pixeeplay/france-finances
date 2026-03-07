@@ -5,6 +5,7 @@ import { motion, animate as fmAnimate, useReducedMotion } from "framer-motion";
 import { useSwipeGesture } from "@/hooks/useSwipeGesture";
 import { ChainsawIcon } from "./ChainsawIcon";
 import { ShieldIcon } from "./ShieldIcon";
+import { AcronymText } from "./AcronymText";
 import type { Card, VoteDirection } from "@/types";
 
 export interface SwipeCardHandle {
@@ -223,9 +224,10 @@ function CardContent({
           </div>
         </div>
 
-        <p className="text-sm leading-relaxed text-muted-foreground font-medium line-clamp-3 sm:line-clamp-5 lg:line-clamp-none">
-          {card.description}
-        </p>
+        <AcronymText
+          text={card.description}
+          className="text-sm leading-relaxed text-muted-foreground font-medium line-clamp-3 sm:line-clamp-5 lg:line-clamp-none"
+        />
 
         {card.equivalence && (
           <div className="flex items-center gap-3 py-2 px-3 rounded-xl bg-white/[0.04] backdrop-blur-sm border border-white/5">
@@ -236,9 +238,10 @@ function CardContent({
               <span className="text-[9px] font-bold text-warning uppercase tracking-wider mb-0.5">
                 Équivalence
               </span>
-              <p className="text-xs font-bold text-foreground/90 leading-snug line-clamp-2 lg:line-clamp-none">
-                {card.equivalence}
-              </p>
+              <AcronymText
+                text={card.equivalence}
+                className="text-xs font-bold text-foreground/90 leading-snug line-clamp-2 lg:line-clamp-none"
+              />
             </div>
           </div>
         )}
