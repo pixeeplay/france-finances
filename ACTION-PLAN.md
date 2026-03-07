@@ -70,9 +70,9 @@
 | ~~PERF-08~~ | Perf     | framer-motion: documente LazyMotion/domAnimation TODO | Fait    |
 | ~~DEP-04~~  | Deps     | zod: ajoute dans dependencies                         | Fait    |
 
-### P1 -- Haute priorite (33 items -- 30 resolus Sprint 31-32, 3 restants)
+### P1 -- Haute priorite (33 items -- 31 resolus Sprint 31-33, 2 restants)
 
-#### Securite & Erreurs (8 items -- 6 resolus)
+#### Securite & Erreurs (8 items -- 7 resolus)
 
 | Ref        | Description                                             | Statut  |
 | ---------- | ------------------------------------------------------- | ------- |
@@ -81,7 +81,7 @@
 | ~~SEC-22~~ | CSP: risque unsafe-inline documente dans next.config.ts | Fait    |
 | ~~SEC-23~~ | CSP connect-src: whitelist domaines specifiques         | Fait    |
 | ~~ERR-02~~ | error.tsx ajoute sur 4 routes dynamiques                | Fait    |
-| ERR-03     | Integrer monitoring erreurs (Sentry ou Logtail)         | Reste   |
+| ~~ERR-03~~ | Sentry integre (client+server+edge, error boundaries)   | Fait    |
 | ~~DB-03~~  | PostgreSQL: error handler + connection check au boot    | Fait    |
 | DB-05      | Configurer backup automatise PostgreSQL (pg_dump cron)  | Reste   |
 
@@ -173,7 +173,7 @@
 | ~~PERF-11~~ | tw-animate-css supprime (~50KB economises)                   | Fait    |
 | ~~PWA-07~~  | Manifest: icons 192+512 corriges, purpose split              | Fait    |
 | ~~PWA-08~~  | InstallBanner avec useInstallPrompt dans layout              | Fait    |
-| ~~DEP-02~~  | Supprimer shadcn CLI (dependance morte)                      | Fait    |
+| ~~DEP-02~~  | shadcn: garde (requis pour tailwind.css import)              | Deja OK |
 | ~~DEP-02~~  | Supprimer lucide-react inutilise (~150KB gzipped)            | Fait    |
 
 #### Tests & DB (10 items)

@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { withSentryConfig } from "@sentry/nextjs";
 import withSerwistInit from "@serwist/next";
 
 const withSerwist = withSerwistInit({
@@ -50,7 +51,7 @@ const nextConfig: NextConfig = {
               "style-src 'self' 'unsafe-inline'",
               "img-src 'self' data: blob: https:",
               "font-src 'self' data:",
-              "connect-src 'self' https://france-finances.com https://*.france-finances.com https://accounts.google.com https://github.com https://api.github.com",
+              "connect-src 'self' https://france-finances.com https://*.france-finances.com https://accounts.google.com https://github.com https://api.github.com https://*.ingest.de.sentry.io",
               "frame-ancestors 'none'",
               "base-uri 'self'",
               "form-action 'self'",
@@ -62,4 +63,11 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default withSerwist(nextConfig);
+export default withSentryConfig(withSerwist(nextConfig), {
+  org: process.env.SENTRY_ORG,
+  project: process.env.SENTRY_PROJECT,
+  silent: !process.env.CI,
+  widenClientFileUpload: true,
+  disableLogger: true,
+  automaticVercelMonitors: false,
+});

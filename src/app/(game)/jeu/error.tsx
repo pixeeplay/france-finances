@@ -1,5 +1,6 @@
 "use client";
 
+import * as Sentry from "@sentry/nextjs";
 import { useEffect } from "react";
 
 export default function JeuError({
@@ -10,6 +11,7 @@ export default function JeuError({
   reset: () => void;
 }) {
   useEffect(() => {
+    Sentry.captureException(error);
     console.error("[ErrorBoundary]", {
       digest: error.digest,
       path: window.location.pathname,

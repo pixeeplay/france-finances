@@ -1,5 +1,6 @@
 "use client";
 
+import * as Sentry from "@sentry/nextjs";
 import { useEffect } from "react";
 
 export default function CategoryError({
@@ -10,6 +11,7 @@ export default function CategoryError({
   reset: () => void;
 }) {
   useEffect(() => {
+    Sentry.captureException(error);
     console.error("[ErrorBoundary]", {
       digest: error.digest,
       path: window.location.pathname,
