@@ -17,7 +17,7 @@ export function CategoriesSection() {
         </p>
 
         {/* Mobile: horizontal scroll */}
-        <div className="md:hidden overflow-x-auto hide-scrollbar -mx-4 px-4 pb-4">
+        <div className="md:hidden overflow-x-auto scrollbar-hide -mx-4 px-4 pb-4">
           <div className="flex gap-3" style={{ width: "max-content" }}>
             {mainDecks.map((deck) => (
               <CategoryCard key={deck.id} deck={deck} />

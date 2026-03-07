@@ -6,6 +6,7 @@ import { ChainsawIcon } from "./ChainsawIcon";
 import { ShieldIcon } from "./ShieldIcon";
 import { AcronymText } from "./AcronymText";
 import type { Card, VoteDirection } from "@/types";
+import { SPRING_SWIPE } from "@/lib/motion-constants";
 
 interface CardDetailProps {
   card: Card | null;
@@ -97,7 +98,7 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
             initial={reducedMotion ? { opacity: 0 } : { y: "100%" }}
             animate={reducedMotion ? { opacity: 1 } : { y: 0 }}
             exit={reducedMotion ? { opacity: 0 } : { y: "100%" }}
-            transition={reducedMotion ? { duration: 0 } : { type: "spring", damping: 30, stiffness: 300 }}
+            transition={reducedMotion ? { duration: 0 } : SPRING_SWIPE}
             drag="y"
             dragConstraints={{ top: 0, bottom: 0 }}
             dragElastic={{ top: 0, bottom: 0.6 }}
@@ -109,7 +110,7 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
             dragControls={dragControls}
             role="dialog"
             aria-label={`Détail : ${card.title}`}
-            className="fixed bottom-0 left-0 right-0 z-50 flex flex-col bg-card rounded-t-[32px] max-h-[92vh] shadow-[0_-10px_40px_rgba(0,0,0,0.3)] max-w-md mx-auto will-change-transform"
+            className="fixed bottom-0 left-0 right-0 z-50 flex flex-col bg-card rounded-t-3xl max-h-[92vh] shadow-[0_-10px_40px_rgba(0,0,0,0.3)] max-w-md mx-auto will-change-transform"
           >
             {/* Drag Handle & Close */}
             <div className="flex flex-col items-center pt-3 pb-2 relative shrink-0">
@@ -135,7 +136,7 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
                 <h2 className="text-sm font-bold text-muted-foreground tracking-widest uppercase mb-1">
                   {card.icon} {card.deckId.toUpperCase()}
                 </h2>
-                <h1 className="text-[28px] leading-tight font-bold text-foreground tracking-tight mb-5">
+                <h1 className="text-3xl leading-tight font-bold text-foreground tracking-tight mb-5">
                   <AcronymText text={card.title} />
                 </h1>
               </div>

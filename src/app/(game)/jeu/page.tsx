@@ -386,7 +386,7 @@ function PlayPageContent() {
         <button
           onClick={handleLaunch}
           disabled={!selectedDeck && !randomMode}
-          className="relative w-full bg-primary hover:bg-primary/90 text-white font-bold text-lg py-4 rounded-xl shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all active:scale-95 flex items-center justify-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed"
+          className="relative w-full bg-primary hover:bg-primary/90 text-white font-bold text-lg py-4 rounded-xl shadow-(--shadow-glow-green) transition-all active:scale-95 flex items-center justify-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed"
         >
           <CardsIcon size={24} />
           {budgetMode ? `Lancer le défi (${budgetTarget} Md\u20AC)` : `Lancer la session ${level > 1 ? `(N${level})` : ""}`}
@@ -414,7 +414,7 @@ function DeckCard({
       onClick={onSelect}
       className={`bg-card rounded-xl p-4 flex flex-col gap-3 text-left border-2 relative overflow-hidden group transition-all duration-200 ${
         isSelected
-          ? "border-primary shadow-[0_0_12px_rgba(16,185,129,0.3)]"
+          ? "border-primary shadow-(--shadow-glow-green)"
           : "border-border hover:border-primary/50"
       }`}
       style={isSelected ? { transform: "scale(0.97)" } : undefined}

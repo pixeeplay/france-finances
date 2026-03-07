@@ -3,6 +3,7 @@
 import { useRef, useEffect, useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import { SPRING_SWIPE, SPRING_SNAP } from "@/lib/motion-constants";
 
 /** Draggable slide-to-play button */
 export function SlideToPlay() {
@@ -27,13 +28,11 @@ export function SlideToPlay() {
     if (currentX > maxDrag * 0.7) {
       setTriggered(true);
       animate(x, maxDrag, {
-        type: "spring",
-        stiffness: 300,
-        damping: 30,
+        ...SPRING_SWIPE,
         onComplete: () => router.push("/jeu"),
       });
     } else {
-      animate(x, 0, { type: "spring", stiffness: 500, damping: 30 });
+      animate(x, 0, SPRING_SNAP);
     }
   }, [x, maxDrag, triggered, router]);
 

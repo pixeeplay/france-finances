@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect } from "react";
+
 export default function CategoryError({
   error,
   reset,
@@ -7,6 +9,14 @@ export default function CategoryError({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
+  useEffect(() => {
+    console.error("[ErrorBoundary]", {
+      digest: error.digest,
+      path: window.location.pathname,
+      timestamp: new Date().toISOString(),
+    });
+  }, [error]);
+
   return (
     <div className="flex-1 flex flex-col items-center justify-center gap-4 px-6">
       <p className="text-4xl" aria-hidden="true">😵</p>

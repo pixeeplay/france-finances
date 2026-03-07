@@ -178,6 +178,23 @@ export const useGameStore = create<GameState>()(
         session: state.session,
         _cachedStats: state._cachedStats,
       }),
+      merge: (persisted, current) => {
+        const state = persisted as Partial<GameState> | undefined;
+        // Validate rehydrated session shape — reset to initial if corrupted
+        if (state?.session != null) {
+          const s = state.session;
+          const isValid =
+            typeof s.deckId === "string" &&
+            Array.isArray(s.cards) &&
+            Array.isArray(s.votes) &&
+            typeof s.currentIndex === "number" &&
+            Number.isFinite(s.currentIndex);
+          if (!isValid) {
+            return { ...current, session: null, _cachedStats: null };
+          }
+        }
+        return { ...current, ...state };
+      },
       migrate: (persisted: unknown, version: number) => {
         // Version 0 -> 1: initial schema, no migration needed
         // Future migrations can be chained here:

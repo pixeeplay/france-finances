@@ -10,7 +10,7 @@ async function swipeCard(page: Page, direction: "keep" | "cut") {
       ? "Valider cette dépense"
       : "Remettre en question cette dépense";
 
-  const progressSpan = page.locator("text=/\\d+\\/10/").first();
+  const progressSpan = page.getByTestId("progress-counter");
   const beforeText = await progressSpan.textContent();
   const isLast = beforeText === "10/10";
 
@@ -58,7 +58,7 @@ const L2_LABELS: Record<L2Direction, string> = {
  */
 async function swipeCardL2(page: Page, direction: L2Direction) {
   const label = L2_LABELS[direction];
-  const progressSpan = page.locator("text=/\\d+\\/10/").first();
+  const progressSpan = page.getByTestId("progress-counter");
   const beforeText = await progressSpan.textContent();
   const isLast = beforeText === "10/10";
 
@@ -100,7 +100,7 @@ async function swipeCardL3(
   recommendation: string = "Maintenir le budget"
 ) {
   const label = L2_LABELS[direction];
-  const progressSpan = page.locator("text=/\\d+\\/10/").first();
+  const progressSpan = page.getByTestId("progress-counter");
   const beforeText = await progressSpan.textContent();
   const isLast = beforeText === "10/10";
 
@@ -176,7 +176,7 @@ test.describe("Swipe -> Results flow", () => {
     await launchButton.click();
 
     await expect(page).toHaveURL(/\/jeu\/.+/);
-    await expect(page.getByText(/1\/10/)).toBeVisible({ timeout: 10_000 });
+    await expect(page.getByTestId("progress-counter")).toBeVisible({ timeout: 10_000 });
 
     // Swipe all 10 cards
     for (let i = 0; i < 10; i++) {
@@ -185,7 +185,7 @@ test.describe("Swipe -> Results flow", () => {
 
     // Should be on results page with archetype and stats
     await expect(page).toHaveURL("/resultats", { timeout: 5_000 });
-    await expect(page.getByText(/%/).first()).toBeVisible({ timeout: 5_000 });
+    await expect(page.getByTestId("result-stats")).toBeVisible({ timeout: 5_000 });
   });
 
   test("L1 random mode: toggle random, swipe all, see results", async ({
@@ -210,14 +210,14 @@ test.describe("Swipe -> Results flow", () => {
     await launchButton.click();
 
     await expect(page).toHaveURL(/\/jeu\/random/);
-    await expect(page.getByText(/1\/10/)).toBeVisible({ timeout: 10_000 });
+    await expect(page.getByTestId("progress-counter")).toBeVisible({ timeout: 10_000 });
 
     for (let i = 0; i < 10; i++) {
       await swipeCard(page, i % 2 === 0 ? "keep" : "cut");
     }
 
     await expect(page).toHaveURL("/resultats", { timeout: 5_000 });
-    await expect(page.getByText(/%/).first()).toBeVisible();
+    await expect(page.getByTestId("result-stats")).toBeVisible();
   });
 
   test("navigation: quit session returns to /jeu", async ({ page }) => {
@@ -233,7 +233,7 @@ test.describe("Swipe -> Results flow", () => {
     await deckButtons.first().click();
     await page.getByRole("button", { name: /Lancer la session/i }).click();
     await expect(page).toHaveURL(/\/jeu\/.+/);
-    await expect(page.getByText(/1\/10/)).toBeVisible({ timeout: 10_000 });
+    await expect(page.getByTestId("progress-counter")).toBeVisible({ timeout: 10_000 });
 
     // Swipe one card so quit dialog appears
     await swipeCard(page, "keep");
@@ -286,7 +286,7 @@ test.describe("L2 (4 directions) flow", () => {
 
     // Should navigate to /jeu/{deckId}?level=2
     await expect(page).toHaveURL(/\/jeu\/.+\?level=2/);
-    await expect(page.getByText(/1\/10/)).toBeVisible({ timeout: 10_000 });
+    await expect(page.getByTestId("progress-counter")).toBeVisible({ timeout: 10_000 });
 
     // Verify L2 buttons are visible (4-direction layout)
     await expect(
@@ -315,7 +315,7 @@ test.describe("L2 (4 directions) flow", () => {
 
     // Should be on results page with archetype and stats
     await expect(page).toHaveURL("/resultats", { timeout: 5_000 });
-    await expect(page.getByText(/%/).first()).toBeVisible({ timeout: 5_000 });
+    await expect(page.getByTestId("result-stats")).toBeVisible({ timeout: 5_000 });
   });
 });
 
@@ -357,7 +357,7 @@ test.describe("L3 (micro-audit) flow", () => {
 
     // Should navigate to /jeu/{deckId}?level=3
     await expect(page).toHaveURL(/\/jeu\/.+\?level=3/);
-    await expect(page.getByText(/1\/10/)).toBeVisible({ timeout: 10_000 });
+    await expect(page.getByTestId("progress-counter")).toBeVisible({ timeout: 10_000 });
 
     // Swipe all 10 cards with audit flow
     // Cycle through directions and recommendations for variety
@@ -386,7 +386,7 @@ test.describe("L3 (micro-audit) flow", () => {
 
     // Should be on results page with archetype and stats
     await expect(page).toHaveURL("/resultats", { timeout: 5_000 });
-    await expect(page.getByText(/%/).first()).toBeVisible({ timeout: 5_000 });
+    await expect(page.getByTestId("result-stats")).toBeVisible({ timeout: 5_000 });
   });
 
   test("L3: audit back button returns to swipe without recording vote", async ({
@@ -409,7 +409,7 @@ test.describe("L3 (micro-audit) flow", () => {
     await page.getByRole("button", { name: /Lancer la session/i }).click();
 
     await expect(page).toHaveURL(/\/jeu\/.+\?level=3/);
-    await expect(page.getByText(/1\/10/)).toBeVisible({ timeout: 10_000 });
+    await expect(page.getByTestId("progress-counter")).toBeVisible({ timeout: 10_000 });
 
     // Click a vote button to trigger audit screen
     await page
@@ -419,6 +419,6 @@ test.describe("L3 (micro-audit) flow", () => {
 
     // Click back button — should return to swipe with same card (1/10)
     await page.getByRole("button", { name: "Retour" }).click();
-    await expect(page.getByText(/1\/10/)).toBeVisible({ timeout: 3_000 });
+    await expect(page.getByTestId("progress-counter")).toHaveText("1/10", { timeout: 3_000 });
   });
 });

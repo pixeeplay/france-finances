@@ -3,6 +3,7 @@
 import { useMotionValue, useTransform, animate } from "framer-motion";
 import { useCallback } from "react";
 import type { VoteDirection } from "@/types";
+import { SPRING_SWIPE, SPRING_SNAP } from "@/lib/motion-constants";
 
 const SWIPE_THRESHOLD = 100;
 const EXIT_DISTANCE = 500;
@@ -66,19 +67,19 @@ export function useSwipeGesture({ onSwipe, level = 1 }: UseSwipeGestureOptions) 
         const direction: VoteDirection = info.offset.y < 0 ? "reinforce" : "unjustified";
         const exitY = info.offset.y < 0 ? -EXIT_DISTANCE : EXIT_DISTANCE;
         animate(y, exitY, {
-          type: "spring", stiffness: 300, damping: 30,
+          ...SPRING_SWIPE,
           onComplete: () => onSwipe(direction),
         });
       } else if (isHorizontal && absX > SWIPE_THRESHOLD) {
         const direction: VoteDirection = info.offset.x < 0 ? "keep" : "cut";
         const exitX = info.offset.x < 0 ? -EXIT_DISTANCE : EXIT_DISTANCE;
         animate(x, exitX, {
-          type: "spring", stiffness: 300, damping: 30,
+          ...SPRING_SWIPE,
           onComplete: () => onSwipe(direction),
         });
       } else {
-        animate(x, 0, { type: "spring", stiffness: 500, damping: 30 });
-        if (level >= 2) animate(y, 0, { type: "spring", stiffness: 500, damping: 30 });
+        animate(x, 0, SPRING_SNAP);
+        if (level >= 2) animate(y, 0, SPRING_SNAP);
       }
     },
     [x, y, onSwipe, level]

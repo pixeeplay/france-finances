@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useState, useCallback } from "react";
 import { useGameStore } from "@/stores/gameStore";
+import { useShallow } from "zustand/react/shallow";
 import { useArchetype } from "@/hooks/useArchetype";
 import { ChainsawIcon } from "./ChainsawIcon";
 import { ShieldIcon } from "./ShieldIcon";
@@ -33,8 +34,10 @@ function formatDuration(ms: number): string {
 
 export function ResultScreen() {
   const router = useRouter();
-  const session = useGameStore((s) => s.session);
-  const reset = useGameStore((s) => s.reset);
+  const { session, reset } = useGameStore(useShallow((s) => ({
+    session: s.session,
+    reset: s.reset,
+  })));
   const { archetype, stats } = useArchetype();
   const prefersReducedMotion = useReducedMotion();
   const [showConfetti, setShowConfetti] = useState(!prefersReducedMotion);
@@ -182,7 +185,7 @@ export function ResultScreen() {
           {formatDuration(session.totalDuration ?? 0)}
         </p>
 
-        <div className="bg-card rounded-2xl p-5 border border-border">
+        <div className="bg-card rounded-2xl p-5 border border-border" data-testid="result-stats">
           <p className="text-base font-bold mb-4 text-center">
             Répartition des choix
           </p>
@@ -196,7 +199,7 @@ export function ResultScreen() {
                 count={keepCount}
                 percent={keepPercent}
                 colorClass="bg-primary"
-                glowClass="shadow-[0_0_8px_rgba(16,185,129,0.5)]"
+                glowClass="shadow-(--shadow-glow-green-sm)"
               />
               <StatBar
                 icon={<ChainsawIcon size={14} />}
@@ -204,7 +207,7 @@ export function ResultScreen() {
                 count={cutCount}
                 percent={cutPercent}
                 colorClass="bg-warning"
-                glowClass="shadow-[0_0_8px_rgba(245,158,11,0.5)]"
+                glowClass="shadow-(--shadow-glow-amber)"
               />
               <StatBar
                 icon={<span className="text-sm" aria-hidden="true">📈</span>}
@@ -212,7 +215,7 @@ export function ResultScreen() {
                 count={reinforceCount}
                 percent={reinforcePercent}
                 colorClass="bg-info"
-                glowClass="shadow-[0_0_8px_rgba(59,130,246,0.5)]"
+                glowClass="shadow-(--shadow-glow-blue)"
               />
               <StatBar
                 icon={<span className="text-sm" aria-hidden="true">❌</span>}
@@ -220,7 +223,7 @@ export function ResultScreen() {
                 count={unjustifiedCount}
                 percent={unjustifiedPercent}
                 colorClass="bg-danger"
-                glowClass="shadow-[0_0_8px_rgba(239,68,68,0.5)]"
+                glowClass="shadow-(--shadow-glow-red)"
               />
             </div>
           ) : (
@@ -344,7 +347,7 @@ export function ResultScreen() {
         {level === 1 && (
           <button
             onClick={() => router.push("/jeu?level=2")}
-            className="flex items-center justify-center gap-2 w-full rounded-xl py-4 px-6 bg-primary text-white font-bold text-lg shadow-[0_0_20px_rgba(16,185,129,0.3)] active:scale-95 transition-transform"
+            className="flex items-center justify-center gap-2 w-full rounded-xl py-4 px-6 bg-primary text-white font-bold text-lg shadow-(--shadow-glow-green) active:scale-95 transition-transform"
           >
             Passer au Niveau 2
             <span className="text-base">&#8594;</span>
@@ -353,7 +356,7 @@ export function ResultScreen() {
         {level === 2 && (
           <button
             onClick={() => router.push("/jeu?level=3")}
-            className="flex items-center justify-center gap-2 w-full rounded-xl py-4 px-6 bg-primary text-white font-bold text-lg shadow-[0_0_20px_rgba(16,185,129,0.3)] active:scale-95 transition-transform"
+            className="flex items-center justify-center gap-2 w-full rounded-xl py-4 px-6 bg-primary text-white font-bold text-lg shadow-(--shadow-glow-green) active:scale-95 transition-transform"
           >
             Passer au Niveau 3
             <span className="text-base">&#8594;</span>

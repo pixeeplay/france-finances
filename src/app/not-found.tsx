@@ -24,7 +24,7 @@ export default function NotFound() {
         </div>
         <Link
           href="/jeu"
-          className="rounded-xl py-3.5 px-8 bg-primary text-white font-bold text-lg shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:bg-primary/90 active:scale-95 transition-all"
+          className="rounded-xl py-3.5 px-8 bg-primary text-white font-bold text-lg shadow-(--shadow-glow-green) hover:bg-primary/90 active:scale-95 transition-all"
         >
           Retour au jeu
         </Link>

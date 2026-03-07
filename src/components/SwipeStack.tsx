@@ -36,13 +36,14 @@ export function SwipeStack({
   onSwipeComplete,
 }: SwipeStackProps) {
   const router = useRouter();
-  const { session, cardShownAt, startSession, voteAndAdvance, completeSession } =
+  const { session, cardShownAt, startSession, voteAndAdvance, completeSession, reset } =
     useGameStore(useShallow((s) => ({
       session: s.session,
       cardShownAt: s.cardShownAt,
       startSession: s.startSession,
       voteAndAdvance: s.voteAndAdvance,
       completeSession: s.completeSession,
+      reset: s.reset,
     })));
   const [initialized, setInitialized] = useState(false);
   const cardRef = useRef<SwipeCardHandle>(null);
@@ -65,8 +66,6 @@ export function SwipeStack({
     window.addEventListener("beforeunload", handleBeforeUnload);
     return () => window.removeEventListener("beforeunload", handleBeforeUnload);
   }, [session]);
-
-  const reset = useGameStore((s) => s.reset);
 
   const handleQuitSession = useCallback(() => {
     if (session && !session.completed && session.votes.length > 0) {
@@ -164,7 +163,7 @@ export function SwipeStack({
               />
             ))}
           </div>
-          <span className="text-[10px] font-semibold text-muted-foreground shrink-0">
+          <span className="text-[10px] font-semibold text-muted-foreground shrink-0" data-testid="progress-counter">
             {currentIndex + 1}/{totalCards}
           </span>
         </div>
@@ -193,8 +192,8 @@ export function SwipeStack({
               <div
                 className={`h-full rounded-full transition-all duration-500 ${
                   targetReached
-                    ? "bg-primary shadow-[0_0_8px_rgba(16,185,129,0.5)]"
-                    : "bg-warning shadow-[0_0_8px_rgba(245,158,11,0.3)]"
+                    ? "bg-primary shadow-(--shadow-glow-green-sm)"
+                    : "bg-warning shadow-(--shadow-glow-amber)"
                 }`}
                 style={{ width: `${savingsProgress * 100}%` }}
               />

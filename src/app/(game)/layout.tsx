@@ -1,5 +1,6 @@
 import { BottomNav } from "@/components/BottomNav";
 import { SwUpdateToast } from "@/components/SwUpdateToast";
+import { InstallBanner } from "@/components/InstallBanner";
 
 export default function GameLayout({
   children,
@@ -19,6 +20,7 @@ export default function GameLayout({
           {children}
         </main>
         <BottomNav />
+        <InstallBanner />
         <SwUpdateToast />
       </div>
     </div>

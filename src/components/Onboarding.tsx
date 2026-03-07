@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChainsawIcon } from "./ChainsawIcon";
 import { ShieldIcon } from "./ShieldIcon";
 import { track } from "@/lib/analytics";
+import { SPRING_SWIPE } from "@/lib/motion-constants";
 
 const ONBOARDED_KEY = "trnc:onboarded";
 
@@ -103,7 +104,7 @@ export function Onboarding({ onDone }: OnboardingProps) {
             initial={{ x: direction * 200, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: direction * -200, opacity: 0 }}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            transition={SPRING_SWIPE}
             className="flex flex-col items-center text-center w-full"
             role="group"
             aria-roledescription="diapositive"

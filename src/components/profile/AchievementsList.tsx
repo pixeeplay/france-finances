@@ -74,7 +74,7 @@ export function AchievementsList({
                     {a.description}
                   </p>
                 ) : showTip ? (
-                  <p className="mt-1 text-[10px] text-primary font-medium leading-tight animate-in fade-in duration-200">
+                  <p className="mt-1 text-[10px] text-primary font-medium leading-tight animate-fade-in">
                     {a.description}
                   </p>
                 ) : (

@@ -1,6 +1,6 @@
 # Plan d'Action -- La Tronconneuse de Poche
 
-**Derniere mise a jour :** 2026-03-07 (Sprint 32)
+**Derniere mise a jour :** 2026-03-07 (Sprint 33)
 
 ---
 
@@ -13,10 +13,10 @@
 | Archetypes            | 16 (6 L1 + 6 L2 + 4 L3)                      |
 | Badges categorie      | 19 (1 par deck)                              |
 | Achievements generaux | 12                                           |
-| Tests                 | 248 unit + 8 E2E (Vitest + Playwright)       |
+| Tests                 | 273 unit + 8 E2E (Vitest + Playwright)       |
 | Coverage              | 87% lines (v8, scope: lib/stores/hooks/data) |
-| Sprints               | 32 (251 items completes)                     |
-| Audit multi-agents    | 136 findings -- 57 resolus Sprint 31-32      |
+| Sprints               | 33 (274 items completes)                     |
+| Audit multi-agents    | 136 findings -- 80 resolus Sprint 31-33      |
 
 ---
 
@@ -49,6 +49,7 @@
 | 31     | Sprint P0+P1: securite, a11y, perf, DB, tests, CI, UX (7 agents)  | 36    |
 | 31b    | Coverage 75% + 123 tests lib/hooks + E2E L2/L3 (3 agents)         | 4     |
 | 32     | P2 batch: a11y, UX, landing RSC, SEO, DB, deps, tests (6 agents)  | 17    |
+| 33     | P2 finalise: CI, CSS, PWA, state, tests (5 agents)                | 23    |
 
 ---
 
@@ -129,16 +130,16 @@
 
 #### Securite & CI (8 items)
 
-| Ref         | Description                                              | Effort |
-| ----------- | -------------------------------------------------------- | ------ |
-| SEC-24      | .dockerignore: ajouter .env\* (secrets potentiels)       | XS     |
-| CI-05       | CI: ajouter security scan (npm audit ou Dependabot)      | S      |
-| CI-06       | CI: ajouter bundle size monitoring (size-limit)          | S      |
-| CI-07       | CI: ajouter bloc permissions explicites                  | XS     |
-| ~~CI-09~~   | Coverage: augmenter seuils de 60% a 75%                  | Fait   |
-| ~~TEST-13~~ | Coverage: elargir scope lib/stores/hooks/data            | Fait   |
-| ~~TEST-14~~ | Tests: augmenter seuils coverage a 75%                   | Fait   |
-| ERR-04      | Error boundaries: logger erreurs vers console/monitoring | S      |
+| Ref         | Description                                             | Effort  |
+| ----------- | ------------------------------------------------------- | ------- |
+| ~~SEC-24~~  | .dockerignore: .env\* deja present                      | Deja OK |
+| ~~CI-05~~   | CI: npm audit + dependabot.yml (npm + actions weekly)   | Fait    |
+| ~~CI-06~~   | CI: bundle size report (du -sh .next/static)            | Fait    |
+| ~~CI-07~~   | CI: permissions: contents: read                         | Fait    |
+| ~~CI-09~~   | Coverage: augmenter seuils de 60% a 75%                 | Fait    |
+| ~~TEST-13~~ | Coverage: elargir scope lib/stores/hooks/data           | Fait    |
+| ~~TEST-14~~ | Tests: augmenter seuils coverage a 75%                  | Fait    |
+| ~~ERR-04~~  | Error boundaries: console.error structure (digest/path) | Fait    |
 
 #### Accessibilite & UX (12 items)
 
@@ -151,7 +152,7 @@
 | ~~A11Y-09~~ | jeu/page.tsx: sr-only texte alternatif lock emoji | Fait    |
 | ~~A11Y-08~~ | Confetti: useReducedMotion skip animation         | Fait    |
 | ~~UX-35~~   | Profile: loading.tsx skeleton (animate-pulse)     | Fait    |
-| UX-36       | CardDetail desktop: ajouter lg:rounded-3xl        | Reste   |
+| ~~UX-36~~   | CardDetail desktop: lg:rounded-3xl ajoute         | Fait    |
 | ~~UX-37~~   | Avatar picker: max-w-[90vw] mobile < 384px        | Fait    |
 | ~~UX-38~~   | HeroSection: role=presentation image decorative   | Fait    |
 | ~~SEO-08~~  | Canonical URLs sur 3 pages dynamiques             | Fait    |
@@ -159,36 +160,36 @@
 
 #### CSS/Tailwind (11 items)
 
-| Ref        | Description                                                | Effort |
-| ---------- | ---------------------------------------------------------- | ------ |
-| CSS-01     | Creer shadow tokens Tailwind (shadow-card, shadow-glow-\*) | S      |
-| CSS-02     | ResultScreen: extraire glow colors en tokens               | S      |
-| CSS-03     | Remplacer rounded-[1.5rem]/rounded-[32px] par tokens       | XS     |
-| CSS-04     | Standardiser text-[Xpx] vers echelle Tailwind              | S      |
-| CSS-05     | Evaluer suppression tw-animate-css (peu utilise)           | S      |
-| CSS-06     | Harmoniser HSL/hex dans variables couleur                  | S      |
-| CSS-07     | Consolider .hide-scrollbar et .scrollbar-hide              | XS     |
-| CSS-08     | Extraire magic values framer-motion en constantes          | S      |
-| PERF-11    | tw-animate-css: supprimer si inutile (~50KB)               | S      |
-| PWA-07     | Manifest: corriger tailles icons declarees                 | XS     |
-| PWA-08     | Utiliser useInstallPrompt dans un composant UI             | S      |
-| ~~DEP-02~~ | Supprimer shadcn CLI (dependance morte)                    | Fait   |
-| ~~DEP-02~~ | Supprimer lucide-react inutilise (~150KB gzipped)          | Fait   |
+| Ref         | Description                                                  | Effort  |
+| ----------- | ------------------------------------------------------------ | ------- |
+| ~~CSS-01~~  | Shadow tokens: shadow-card, shadow-glow-green/red/amber/blue | Fait    |
+| ~~CSS-02~~  | ResultScreen: glow colors extraites en tokens                | Fait    |
+| ~~CSS-03~~  | rounded-[1.5rem] → rounded-3xl partout                       | Fait    |
+| ~~CSS-04~~  | text-[28px] → text-3xl (reste: XS intentionnels)             | Fait    |
+| ~~CSS-05~~  | tw-animate-css supprime, keyframes inline (2 classes)        | Fait    |
+| ~~CSS-06~~  | HSL/hex: split logique confirme (pas de changement)          | Deja OK |
+| ~~CSS-07~~  | .hide-scrollbar consolide en .scrollbar-hide                 | Fait    |
+| ~~CSS-08~~  | motion-constants.ts: SPRING_SWIPE/SNAP, TWEEN_INSTANT        | Fait    |
+| ~~PERF-11~~ | tw-animate-css supprime (~50KB economises)                   | Fait    |
+| ~~PWA-07~~  | Manifest: icons 192+512 corriges, purpose split              | Fait    |
+| ~~PWA-08~~  | InstallBanner avec useInstallPrompt dans layout              | Fait    |
+| ~~DEP-02~~  | Supprimer shadcn CLI (dependance morte)                      | Fait    |
+| ~~DEP-02~~  | Supprimer lucide-react inutilise (~150KB gzipped)            | Fait    |
 
 #### Tests & DB (10 items)
 
-| Ref         | Description                                              | Effort |
-| ----------- | -------------------------------------------------------- | ------ |
-| TEST-16     | E2E: remplacer selecteurs text regex par data-testid     | M      |
-| ~~TEST-17~~ | Tests: mocks framer-motion ameliores (drag props)        | Fait   |
-| TEST-18     | Tests: couvrir XP bonus (speedrunner, L3, budget)        | S      |
-| TEST-20     | Tests: couvrir routes API (analytics, me/_, community/_) | L      |
-| STATE-02    | ResultScreen: optimiser selectors Zustand (useShallow)   | S      |
-| STATE-03    | sessionStorage: valider schema au chargement             | S      |
-| STATE-04    | SwipeStack: deplacer side effect hors du render          | S      |
-| ~~DB-06~~   | PostgreSQL: maintenance.sql autovacuum config            | Fait   |
-| ~~DB-07~~   | Connection pool: slow query logging (500ms threshold)    | Fait   |
-| ~~ERR-05~~  | API routes: validationError/authError/serverError        | Fait   |
+| Ref          | Description                                             | Effort |
+| ------------ | ------------------------------------------------------- | ------ |
+| ~~TEST-16~~  | E2E: data-testid progress-counter + result-stats        | Fait   |
+| ~~TEST-17~~  | Tests: mocks framer-motion ameliores (drag props)       | Fait   |
+| ~~TEST-18~~  | Tests: 9 tests XP bonus (speedrunner, L3, budget)       | Fait   |
+| ~~TEST-20~~  | Tests: 16 tests API (analytics, me/sessions, community) | Fait   |
+| ~~STATE-02~~ | ResultScreen: useShallow selector optimise              | Fait   |
+| ~~STATE-03~~ | sessionStorage: validation schema on rehydrate          | Fait   |
+| ~~STATE-04~~ | SwipeStack: subscription consolidee (1 useShallow)      | Fait   |
+| ~~DB-06~~    | PostgreSQL: maintenance.sql autovacuum config           | Fait   |
+| ~~DB-07~~    | Connection pool: slow query logging (500ms threshold)   | Fait   |
+| ~~ERR-05~~   | API routes: validationError/authError/serverError       | Fait   |
 
 ### P3 -- Basse priorite (39 items)
 
@@ -273,4 +274,4 @@ Detail complet dans [AUDIT-REPORT.md](AUDIT-REPORT.md).
 
 ---
 
-_Rapport genere le 2026-03-07 -- Sprints 3 a 32, 251 items completes, P0 100% resolus, P1 91% resolus_
+_Rapport genere le 2026-03-07 -- Sprints 3 a 33, 274 items completes, P0 100% resolus, P1 91% resolus, P2 ~85% resolus_

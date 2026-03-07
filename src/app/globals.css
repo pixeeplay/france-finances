@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
 @custom-variant dark (&:is(.dark *));
@@ -56,6 +55,12 @@
   --color-landing-primary-light: hsl(224 100% 40%);
   --color-landing-success: hsl(160 64% 40%);
   --color-landing-expense: hsl(0 84% 60%);
+  --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.2);
+  --shadow-glow-green: 0 0 20px rgba(16, 185, 129, 0.3);
+  --shadow-glow-red: 0 0 8px rgba(239, 68, 68, 0.5);
+  --shadow-glow-green-sm: 0 0 8px rgba(16, 185, 129, 0.5);
+  --shadow-glow-amber: 0 0 8px rgba(245, 158, 11, 0.5);
+  --shadow-glow-blue: 0 0 8px rgba(59, 130, 246, 0.5);
 }
 
 /* Light mode: default (landing page) */
@@ -207,11 +212,9 @@
 }
 
 /* Hide scrollbar utility */
-.hide-scrollbar::-webkit-scrollbar,
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
-.hide-scrollbar,
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -285,4 +288,33 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Lightweight animate-in replacements (replaces tw-animate-css) */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-from-bottom {
+  from {
+    transform: translateY(1rem);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 200ms ease-out both;
+}
+
+.animate-slide-in-bottom {
+  animation:
+    slide-in-from-bottom 300ms ease-out both,
+    fade-in 300ms ease-out both;
 }

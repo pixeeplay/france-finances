@@ -28,7 +28,7 @@ export function SwUpdateToast() {
   return (
     <div
       role="alert"
-      className="fixed bottom-20 left-4 right-4 z-[200] mx-auto max-w-sm animate-in slide-in-from-bottom-4 fade-in duration-300"
+      className="fixed bottom-20 left-4 right-4 z-[200] mx-auto max-w-sm animate-slide-in-bottom"
     >
       <div className="flex items-center justify-between gap-3 rounded-xl border border-border bg-card px-4 py-3 shadow-2xl">
         <p className="text-sm font-medium text-foreground">

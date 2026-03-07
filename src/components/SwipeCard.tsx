@@ -11,6 +11,7 @@ import { ChainsawIcon } from "./ChainsawIcon";
 import { ShieldIcon } from "./ShieldIcon";
 import { AcronymText } from "./AcronymText";
 import type { Card, VoteDirection } from "@/types";
+import { SPRING_SWIPE, TWEEN_INSTANT } from "@/lib/motion-constants";
 
 export interface SwipeCardHandle {
   triggerSwipe: (direction: VoteDirection) => void;
@@ -38,9 +39,7 @@ export const SwipeCard = forwardRef<SwipeCardHandle, SwipeCardProps>(
 
   useImperativeHandle(ref, () => ({
     triggerSwipe(direction: VoteDirection) {
-      const springConfig = prefersReducedMotion
-        ? { type: "tween" as const, duration: 0 }
-        : { type: "spring" as const, stiffness: 300, damping: 30 };
+      const springConfig = prefersReducedMotion ? TWEEN_INSTANT : SPRING_SWIPE;
       const isVertical = direction === "reinforce" || direction === "unjustified";
       if (isVertical) {
         const exitY = direction === "reinforce" ? -500 : 500;
@@ -61,7 +60,7 @@ export const SwipeCard = forwardRef<SwipeCardHandle, SwipeCardProps>(
   if (!isTop) {
     return (
       <motion.div
-        className="absolute inset-0 rounded-[1.5rem] bg-card border border-border shadow-xl overflow-hidden"
+        className="absolute inset-0 rounded-3xl bg-card border border-border shadow-xl overflow-hidden"
         style={{ scale: 0.95, opacity: 0.7, y: 16 }}
         aria-hidden="true"
       >
@@ -74,7 +73,7 @@ export const SwipeCard = forwardRef<SwipeCardHandle, SwipeCardProps>(
     <motion.div
       role="article"
       aria-label={`${card.title} \u2014 ${card.amountBillions} Md\u20AC. Swipez pour voter.`}
-      className="absolute inset-0 rounded-[1.5rem] bg-card border border-primary/30 shadow-[0_8px_30px_rgba(0,0,0,0.2)] overflow-hidden cursor-grab active:cursor-grabbing touch-none select-none will-change-transform"
+      className="absolute inset-0 rounded-3xl bg-card border border-primary/30 shadow-(--shadow-card) overflow-hidden cursor-grab active:cursor-grabbing touch-none select-none will-change-transform"
       style={{ x, y: level >= 2 ? y : undefined, rotate }}
       drag={level >= 2 ? true : "x"}
       dragConstraints={level >= 2 ? { left: -200, right: 200, top: -200, bottom: 200 } : { left: 0, right: 0 }}
@@ -89,25 +88,25 @@ export const SwipeCard = forwardRef<SwipeCardHandle, SwipeCardProps>(
     >
       {/* Green tint (keep/left) */}
       <motion.div
-        className="absolute inset-0 z-10 pointer-events-none rounded-[1.5rem]"
+        className="absolute inset-0 z-10 pointer-events-none rounded-3xl"
         style={{ backgroundColor: greenTint }}
       />
       {/* Orange/Red tint (cut/right) */}
       <motion.div
-        className="absolute inset-0 z-10 pointer-events-none rounded-[1.5rem]"
+        className="absolute inset-0 z-10 pointer-events-none rounded-3xl"
         style={{ backgroundColor: redTint }}
       />
       {/* Blue tint (reinforce/up) — Level 2+ */}
       {level >= 2 && (
         <motion.div
-          className="absolute inset-0 z-10 pointer-events-none rounded-[1.5rem]"
+          className="absolute inset-0 z-10 pointer-events-none rounded-3xl"
           style={{ backgroundColor: blueTint }}
         />
       )}
       {/* Red tint (unjustified/down) — Level 2+ */}
       {level >= 2 && (
         <motion.div
-          className="absolute inset-0 z-10 pointer-events-none rounded-[1.5rem]"
+          className="absolute inset-0 z-10 pointer-events-none rounded-3xl"
           style={{ backgroundColor: redBottomTint }}
         />
       )}
