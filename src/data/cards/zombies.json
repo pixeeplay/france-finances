@@ -77,7 +77,7 @@
     "level": 1,
     "tags": ["zombie", "fiscalité", "taxe d'habitation"],
     "trend": null,
-    "equivalence": "La suppression a ete compensee a l'euro pres — le contribuable paie toujours, mais autrement"
+    "equivalence": "La suppression a ete compensee à l'euro pres — le contribuable paie toujours, mais autrement"
   },
   {
     "id": "zom-06",
@@ -93,13 +93,13 @@
     "level": 1,
     "tags": ["zombie", "institution", "CESE"],
     "trend": null,
-    "equivalence": "45 M€ = le prix de 3 ecoles neuves par an"
+    "equivalence": "45 M€ = le prix de 3 écoles neuves par an"
   },
   {
     "id": "zom-07",
     "title": "Opérateurs de l'État (le mille-feuille)",
     "subtitle": "438 opérateurs = plus que le nombre de députés (577) — chacun avec son DG, son CA et ses locaux",
-    "description": "L'État finance 438 « opérateurs » : agences, offices, instituts, autorités, centres. Certains comptent 20 000 agents (Pôle Emploi/France Travail), d'autres moins de 10. La Cour des comptes identifie régulièrement des doublons, chevauchements de missions et frais de structure disproportionnés. Exemples : l'ADEME et l'OFB sur l'environnement, l'ANCT et l'ANRU sur les territoires, le CEREMA et l'IGN sur la géographie. Chaque tentative de fusion échoue face aux résistances corporatistes.",
+    "description": "L'État financé 438 « opérateurs » : agences, offices, instituts, autorités, centres. Certains comptent 20 000 agents (Pôle Emploi/France Travail), d'autres moins de 10. La Cour des comptes identifie régulièrement des doublons, chevauchements de missions et frais de structure disproportionnés. Exemples : l'ADEME et l'OFB sur l'environnement, l'ANCT et l'ANRU sur les territoires, le CEREMA et l'IGN sur la géographie. Chaque tentative de fusion échoue face aux résistances corporatistes.",
     "amountBillions": 80,
     "costPerCitizen": 1176,
     "deckId": "zombies",
@@ -109,7 +109,7 @@
     "level": 1,
     "tags": ["zombie", "opérateurs", "mille-feuille", "administration"],
     "trend": null,
-    "equivalence": "438 operateurs = plus que le nombre de deputes (577) — chacun avec son DG, son CA et ses locaux"
+    "equivalence": "438 opérateurs = plus que le nombre de députés (577) — chacun avec son DG, son CA et ses locaux"
   },
   {
     "id": "zom-08",

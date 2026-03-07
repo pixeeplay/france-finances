@@ -17,7 +17,7 @@
     "id": "env-02",
     "title": "ADEME",
     "subtitle": "Agence de la transition écologique",
-    "description": "L'ADEME est l'opérateur central de la transition écologique en France, avec 3,4 Md€ de budget dont 92% redistribués sous forme d'aides aux collectivités, entreprises et particuliers. Cible régulière du RN qui souhaite la supprimer, elle finance la rénovation énergétique, l'économie circulaire et la mobilité durable.",
+    "description": "L'ADEME est l'opérateur central de la transition écologique en France, avec 3,4 Md€ de budget dont 92% redistribués sous forme d'aides aux collectivités, entreprises et particuliers. Cible régulière du RN qui souhaite la supprimer, elle financé la rénovation énergétique, l'économie circulaire et la mobilité durable.",
     "amountBillions": 3.4,
     "costPerCitizen": 50,
     "deckId": "environnement",
@@ -45,7 +45,7 @@
     "id": "env-04",
     "title": "Fonds vert",
     "subtitle": "Transition écologique des collectivités",
-    "description": "Le Fonds vert finance la transition écologique des collectivités territoriales : rénovation des bâtiments publics, mobilités, adaptation climatique. Créé à 2,5 Md€ en 2023, il a chuté à 650 M€ dans le PLF 2026 — une coupe de 75% en deux ans qui fragilise la planification écologique locale.",
+    "description": "Le Fonds vert financé la transition écologique des collectivités territoriales : rénovation des bâtiments publics, mobilités, adaptation climatique. Créé à 2,5 Md€ en 2023, il a chuté à 650 M€ dans le PLF 2026 — une coupe de 75% en deux ans qui fragilise la planification écologique locale.",
     "amountBillions": 0.65,
     "costPerCitizen": 10,
     "deckId": "environnement",
@@ -73,7 +73,7 @@
     "id": "env-06",
     "title": "Catastrophes naturelles et fonds Barnier",
     "subtitle": "Prévention et indemnisation des catastrophes naturelles",
-    "description": "Le fonds Barnier finance la prévention des risques naturels : inondations, submersions, feux de forêt. Avec 1 Md€, il doit couvrir un territoire où les coûts des catastrophes ont doublé en 10 ans. Le passage du cyclone sur Mayotte ou les inondations récentes illustrent l'accélération des sinistres climatiques.",
+    "description": "Le fonds Barnier financé la prévention des risques naturels : inondations, submersions, feux de forêt. Avec 1 Md€, il doit couvrir un territoire où les coûts des catastrophes ont doublé en 10 ans. Le passage du cyclone sur Mayotte ou les inondations récentes illustrent l'accélération des sinistres climatiques.",
     "amountBillions": 1,
     "costPerCitizen": 15,
     "deckId": "environnement",
@@ -109,7 +109,7 @@
     "source": "PNF, OFB, Stratégie nationale biodiversité 2030",
     "level": 1,
     "tags": ["biodiversite", "parcs", "protection"],
-    "equivalence": "Un parc national a le budget d'un gros collège — pour protéger des milliers de km²"
+    "equivalence": "Un parc national à le budget d'un gros collège — pour protéger des milliers de km²"
   },
   {
     "id": "env-09",
@@ -129,7 +129,7 @@
     "id": "env-10",
     "title": "Planification écologique (SGPE)",
     "subtitle": "Budget vert et neutralité carbone 2050",
-    "description": "Le Secrétariat général à la planification écologique coordonne 22 chantiers pour atteindre la neutralité carbone en 2050. Le budget vert du PLF identifie 33 Md€ de dépenses favorables à l'environnement, mais aussi 10 Md€ de dépenses « brunes » néfastes. La France finance simultanément la solution et le problème.",
+    "description": "Le Secrétariat général à la planification écologique coordonne 22 chantiers pour atteindre la neutralité carbone en 2050. Le budget vert du PLF identifie 33 Md€ de dépenses favorables à l'environnement, mais aussi 10 Md€ de dépenses « brunes » néfastes. La France financé simultanément la solution et le problème.",
     "amountBillions": 33,
     "costPerCitizen": 485,
     "deckId": "environnement",
@@ -137,7 +137,7 @@
     "source": "SGPE, budget vert PLF 2026, Haut Conseil pour le Climat",
     "level": 1,
     "tags": ["planification", "climat", "budget"],
-    "equivalence": "La France dépense 33 Md€ « verts » mais aussi 10 Md€ « bruns » chaque année — elle finance la solution ET le problème"
+    "equivalence": "La France dépense 33 Md€ « verts » mais aussi 10 Md€ « bruns » chaque année — elle financé la solution ET le problème"
   },
   {
     "id": "env-11",
@@ -171,7 +171,7 @@
     "id": "env-13",
     "title": "Fonds chaleur renouvelable",
     "subtitle": "Aide à la chaleur biomasse et géothermie",
-    "description": "Le Fonds chaleur de l'ADEME finance les installations de chaleur renouvelable : biomasse, géothermie, solaire thermique. Avec 820 M€, c'est le dispositif au meilleur effet levier de la transition : 1€ de fonds public déclenche 3 à 4€ d'investissement privé.",
+    "description": "Le Fonds chaleur de l'ADEME financé les installations de chaleur renouvelable : biomasse, géothermie, solaire thermique. Avec 820 M€, c'est le dispositif au meilleur effet levier de la transition : 1€ de fonds public déclenche 3 à 4€ d'investissement privé.",
     "amountBillions": 0.82,
     "costPerCitizen": 12,
     "deckId": "environnement",

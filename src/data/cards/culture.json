@@ -42,7 +42,7 @@
     "source": "SNCF Réseau, ART, Sénat, Cour des comptes",
     "level": 1,
     "tags": ["transports", "rail", "SNCF"],
-    "equivalence": "Remettre en état tout le réseau ferre coûterait ~100 Md€ sur 20 ans"
+    "equivalence": "Remettre en état tout le réseau ferré coûterait ~100 Md€ sur 20 ans"
   },
   {
     "id": "cul-04",
@@ -98,7 +98,7 @@
     "source": "Ministère de la Culture, DGMIC, Sénat",
     "level": 1,
     "tags": ["culture", "presse", "médias"],
-    "equivalence": "Les aides a la presse = le budget annuel de 3 grandes bibliotheques nationales"
+    "equivalence": "Les aides à la presse = le budget annuel de 3 grandes bibliotheques nationales"
   },
   {
     "id": "cul-08",
@@ -112,7 +112,7 @@
     "source": "Ministère de la Culture, Fondation du patrimoine, CMN",
     "level": 1,
     "tags": ["culture", "patrimoine", "monuments"],
-    "equivalence": "Restaurer 1 cathedrale = le prix de 10 creches"
+    "equivalence": "Restaurer 1 cathedrale = le prix de 10 crèches"
   },
   {
     "id": "cul-09",
@@ -127,7 +127,7 @@
     "sourceUrl": "https://www.budget.gouv.fr",
     "level": 1,
     "tags": ["transports", "aérien", "DGAC"],
-    "equivalence": "La detaxe du kerosene = le budget annuel de la Culture"
+    "equivalence": "La détaxe du kerosene = le budget annuel de la Culture"
   },
   {
     "id": "cul-10",
@@ -148,7 +148,7 @@
     "id": "cul-11",
     "title": "CNC et industrie du cinema",
     "subtitle": "Autofinance par la taxe TSA",
-    "description": "Le CNC s'autofinance via la taxe sur les entrees en salle, la taxe TV et la taxe VOD. Budget ~800 M EUR sans subvention de l'État. Netflix et Disney+ contribuent ~100 M EUR/an. La France est le 1er producteur de films en Europe.",
+    "description": "Le CNC s'autofinance via la taxe sur les entrees en salle, la taxe TV et la taxe VOD. Budget ~800 M€ sans subvention de l'État. Netflix et Disney+ contribuent ~100 M€/an. La France est le 1er producteur de films en Europe.",
     "amountBillions": 0.8,
     "costPerCitizen": 12,
     "deckId": "culture",
@@ -163,8 +163,8 @@
   {
     "id": "cul-12",
     "title": "Velo et mobilites douces",
-    "subtitle": "Plan velo : 2 Md EUR sur 4 ans",
-    "description": "Le Plan velo finance pistes cyclables, stationnements securises, aides a l'achat. La France est passee de 3% a 5% de part modale velo en 5 ans (vs 27% aux Pays-Bas). Les vols de velos restent un frein majeur (~400 000/an). 1 km de piste cyclable coûte ~200 000 EUR.",
+    "subtitle": "Plan velo : 2 Md€ sur 4 ans",
+    "description": "Le Plan velo financé pistes cyclables, stationnements sécurisés, aides à l'achat. La France est passee de 3% a 5% de part modale velo en 5 ans (vs 27% aux Pays-Bas). Les vols de velos restent un frein majeur (~400 000€/an). 1 km de piste cyclable coûte ~200 000€.",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
     "deckId": "culture",
@@ -180,7 +180,7 @@
     "id": "cul-13",
     "title": "Grand Paris Express",
     "subtitle": "200 km de metro automatique, 68 gares",
-    "description": "Plus grand projet de transport en Europe : 44 Md EUR au total. Les lignes 15 Sud et 16 en chantier avance. Le coût a depasse les previsions initiales de 35 Md EUR. Finance par des taxes franciliennes. Polemique : un projet parisien finance par des taxes nationales.",
+    "description": "Plus grand projet de transport en Europe : 44 Md€ au total. Les lignes 15 Sud et 16 en chantier avance. Le coût a dépasse les prévisions initiales de 35 Md€. Finance par des taxes franciliennes. Polemique : un projet parisien financé par des taxes nationales.",
     "amountBillions": 44,
     "costPerCitizen": 647,
     "deckId": "culture",
@@ -196,7 +196,7 @@
     "id": "cul-14",
     "title": "Tourisme (politique et recettes)",
     "subtitle": "1ere destination mondiale, 3e en recettes",
-    "description": "100 millions de visiteurs/an mais seulement 3e en recettes (derriere les Etats-Unis et l'Espagne). Le tourisme represente 8% du PIB et 2 millions d'emplois. 1 EUR public investi genere ~30 EUR de recettes — meilleur ROI de toutes les politiques publiques.",
+    "description": "100 millions de visiteurs/an mais seulement 3e en recettes (derriere les États-Unis et l'Espagne). Le tourisme représente 8% du PIB et 2 millions d'emplois. 1€ public investi génère ~30€ de recettes — meilleur ROI de toutes les politiques publiques.",
     "amountBillions": 2,
     "costPerCitizen": 29,
     "deckId": "culture",
@@ -206,13 +206,13 @@
     "sourceUrl": "https://www.atout-france.fr",
     "level": 1,
     "tags": ["tourisme", "recettes", "attractivite"],
-    "equivalence": "1€ public investi dans le tourisme genere ~30€ de recettes — meilleur ROI de toutes les politiques publiques"
+    "equivalence": "1€ public investi dans le tourisme génère ~30€ de recettes — meilleur ROI de toutes les politiques publiques"
   },
   {
     "id": "cul-15",
     "title": "Taxe aerien et quotas carbone",
     "subtitle": "Taxe de solidarite Chirac + ETS",
-    "description": "Taxe de solidarite sur les billets d'avion (1,13 EUR en eco, 45 EUR en business) qui finance UNITAID. Depuis 2024, les compagnies doivent acheter des quotas carbone. L'interdiction des vols courts (<2h30 si alternative TGV) ne concerne que 3 lignes.",
+    "description": "Taxe de solidarite sur les billets d'avion (1,13€ en eco, 45€ en business) qui financé UNITAID. Depuis 2024, les compagnies doivent acheter des quotas carbone. L'interdiction des vols courts (<2h30 si alternative TGV) ne concerne que 3 lignes.",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
     "deckId": "culture",
@@ -222,13 +222,13 @@
     "sourceUrl": "https://www.écologie.gouv.fr",
     "level": 1,
     "tags": ["aerien", "taxe", "carbone"],
-    "equivalence": "Un aller-retour Paris-New York genere ~1,7 tonne de CO2 par passager, taxe ~45€ en classe eco"
+    "equivalence": "Un aller-retour Paris-New York génère ~1,7 tonne de CO2 par passager, taxe ~45€ en classe eco"
   },
   {
     "id": "cul-16",
     "title": "Musees nationaux",
-    "subtitle": "Louvre, Orsay, Versailles et grands musees",
-    "description": "Le Louvre est le musee le plus visite au monde (8,9 millions de visiteurs en 2024). Ses recettes propres couvrent 60% de son budget (~280 M€). L'État subventionne les 40% restants. Versailles est quasi autonome financierement. Les 1 200 musees de France forment un réseau sans équivalent mondial. Debat : la gratuite pour les -26 ans attire-t-elle de nouveaux publics ou subventionne-t-elle les touristes étrangers ?",
+    "subtitle": "Louvre, Orsay, Versailles et grands musées",
+    "description": "Le Louvre est le musée le plus visité au monde (8,9 millions de visiteurs en 2024). Ses recettes propres couvrent 60% de son budget (~280 M€). L'État subventionne les 40% restants. Versailles est quasi autonome financièrement. Les 1 200 musées de France forment un réseau sans équivalent mondial. Debat : la gratuité pour les -26 ans attire-t-elle de nouveaux publics ou subventionne-t-elle les touristes étrangers ?",
     "amountBillions": 1.5,
     "costPerCitizen": 22,
     "deckId": "culture",
@@ -236,13 +236,13 @@
     "source": "Musees de France, PLF 2026 programme 175, Cour des comptes",
     "level": 1,
     "tags": ["culture", "musees", "patrimoine"],
-    "equivalence": "Le Louvre genere plus de recettes touristiques que le PIB de certains pays africains"
+    "equivalence": "Le Louvre génère plus de recettes touristiques que le PIB de certains pays africains"
   },
   {
     "id": "cul-17",
     "title": "Fret ferroviaire",
     "subtitle": "Aides + subventions + investissement réseau fret",
-    "description": "Le fret ferroviaire ne transporte que 9% des marchandises en France (vs 19% en Allemagne, 30% en Suisse). La part modale a ete divisee par 2 en 20 ans. Fret SNCF a accumule 5 Md€ de dette. L'UE impose l'ouverture a la concurrence. Le gouvernement vise un doublement du fret ferroviaire d'ici 2030. Chaque tonne transportee par train emet 9x moins de CO2 que par camion.",
+    "description": "Le fret ferroviaire ne transporte que 9% des marchandises en France (vs 19% en Allemagne, 30% en Suisse). La part modale a ete divisée par 2 en 20 ans. Fret SNCF a accumule 5 Md€ de dette. L'UE impose l'ouverture à la concurrence. Le gouvernement vise un doublement du fret ferroviaire d'ici 2030. Chaque tonne transportee par train émet 9x moins de CO2 que par camion.",
     "amountBillions": 1,
     "costPerCitizen": 15,
     "deckId": "culture",
@@ -270,7 +270,7 @@
     "id": "cul-19",
     "title": "Bibliotheques publiques",
     "subtitle": "16 500 bibliotheques + BnF",
-    "description": "16 500 bibliotheques publiques maillent le territoire (1er réseau culturel de France). 28% des Français sont inscrits en bibliotheque. La BnF conserve 40 millions de documents. Gallica donne acces a 10 millions de documents gratuits en ligne. Les bibliotheques deviennent des tiers-lieux (coworking, formation numerique, aide aux demarches).",
+    "description": "16 500 bibliotheques publiques maillent le territoire (1er réseau culturel de France). 28% des Français sont inscrits en bibliotheque. La BnF conserve 40 millions de documents. Gallica donne acces a 10 millions de documents gratuits en ligne. Les bibliotheques deviennent des tiers-lieux (coworking, formation numérique, aide aux démarches).",
     "amountBillions": 2,
     "costPerCitizen": 29,
     "deckId": "culture",
@@ -292,6 +292,6 @@
     "source": "INRAP, Ministere de la Culture, PLF 2026",
     "level": 1,
     "tags": ["culture", "archeologie", "patrimoine"],
-    "equivalence": "0,60€/m2 de construction pour proteger 2 000 ans de patrimoine enfoui"
+    "equivalence": "0,60€/m2 de construction pour protéger 2 000 ans de patrimoine enfoui"
   }
 ]

@@ -181,7 +181,7 @@
     "id": "cre-03",
     "title": "Remise sur les carburants",
     "subtitle": "8,5 Md€ = le double du budget annuel du ministère de la Culture",
-    "description": "En 2022, l'État a financé une remise de 18 centimes/litre (avril-août) puis 30 centimes/litre (sept-oct) sur tous les carburants. Mesure critiquée : elle bénéficiait davantage aux gros rouleurs et SUV qu'aux ménages modestes. Une aide ciblée sur les revenus aurait coûté 3x moins pour le même effet sur les plus fragiles. La remise a été remplacée par une indemnité carburant en 2023 (100€ pour 10M de ménages).",
+    "description": "En 2022, l'État a financé une remise de 18 centimes/litre (avril-août) puis 30 centimes/litre (sept-oct) sur tous les carburants. Mesure critiquée : elle bénéficiait davantage aux gros rouleurs et SUV qu'aux ménages modestes. Une aide ciblée sur les revenus aurait coûté 3x moins pour le même effet sur les plus fragiles. La remise a été remplacée par une indemnité carburant en 2023 (100€ pour 10 M€ de ménages).",
     "amountBillions": 8.5,
     "costPerCitizen": 125,
     "deckId": "energie",
@@ -255,7 +255,7 @@
     "level": 1,
     "tags": ["énergie", "entreprises", "industrie"],
     "trend": null,
-    "equivalence": "La France a dépense 3x moins que l'Allemagne pour proteger ses entreprises"
+    "equivalence": "La France a dépense 3x moins que l'Allemagne pour protéger ses entreprises"
   },
   {
     "id": "cre-08",
@@ -271,7 +271,7 @@
     "level": 1,
     "tags": ["énergie", "renouvelables", "recettes"],
     "trend": null,
-    "equivalence": "Les eoliennes ont rembourse l'équivalent de 2 ans de cheques énergie"
+    "equivalence": "Les éoliennes ont rembourse l'équivalent de 2 ans de cheques énergie"
   },
   {
     "id": "cre-09",
@@ -287,7 +287,7 @@
     "level": 1,
     "tags": ["énergie", "importations", "hydrocarbures"],
     "trend": null,
-    "equivalence": "La France envoie chaque année l'équivalent du budget de l'Education nationale a l'etranger pour ses hydrocarbures"
+    "equivalence": "La France envoie chaque année l'équivalent du budget de l'Éducation nationale à l'étranger pour ses hydrocarbures"
   },
   {
     "id": "cre-10",
@@ -308,8 +308,8 @@
   {
     "id": "ene-11",
     "title": "Strategie nationale hydrogene",
-    "subtitle": "9 Md EUR sur 2020-2030",
-    "description": "L'hydrogene vert est le pari industriel français pour decarboner l'industrie lourde et les transports lourds. La France vise 6,5 GW d'electrolyseurs en 2030. Critique : le prix de l'hydrogene vert reste 3x supérieur a l'hydrogene gris. La rentabilite depend du prix du carbone.",
+    "subtitle": "9 Md€ sur 2020-2030",
+    "description": "L'hydrogene vert est le pari industriel français pour decarboner l'industrie lourde et les transports lourds. La France vise 6,5 GW d'electrolyseurs en 2030. Critique : le prix de l'hydrogene vert reste 3x supérieur à l'hydrogene gris. La rentabilite depend du prix du carbone.",
     "amountBillions": 0.9,
     "costPerCitizen": 13,
     "deckId": "energie",
@@ -325,7 +325,7 @@
     "id": "ene-12",
     "title": "Dechets nucléaires (Cigeo)",
     "subtitle": "Stockage geologique profond a Bure",
-    "description": "Cigeo est le projet de stockage des dechets radioactifs les plus dangereux a Bure (Meuse). Chantier prevu vers 2027-2028, exploitation d'un siecle. Les dechets resteront radioactifs pendant 100 000 ans. L'estimation de coût a double en 10 ans (de 15 a 25 Md EUR).",
+    "description": "Cigeo est le projet de stockage des déchets radioactifs les plus dangereux a Bure (Meuse). Chantier prévu vers 2027-2028, exploitation d'un siecle. Les déchets resteront radioactifs pendant 100 000 ans. L'estimation de coût a double en 10 ans (de 15 a 25 Md€).",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
     "deckId": "energie",
@@ -339,9 +339,9 @@
   },
   {
     "id": "ene-13",
-    "title": "Precarite energetique",
+    "title": "Precarite énergétique",
     "subtitle": "Cheque énergie pour 5,6 millions de foyers",
-    "description": "5,2 millions de menages (12% des foyers) sont en précarité energetique. Le cheque énergie (150-277 EUR/an) est distribue a 5,6 millions de foyers. Insuffisant : un foyer precaire dépense en moyenne 1 800 EUR/an en énergie. La vraie solution est la renovation thermique.",
+    "description": "5,2 millions de ménages (12% des foyers) sont en précarité énergétique. Le cheque énergie (150-277€/an) est distribue a 5,6 millions de foyers. Insuffisant : un foyer précaire dépense en moyenne 1 800€/an en énergie. La vraie solution est la rénovation thermique.",
     "amountBillions": 0.8,
     "costPerCitizen": 12,
     "deckId": "energie",
@@ -355,9 +355,9 @@
   },
   {
     "id": "ene-14",
-    "title": "Bornes de recharge vehicules electriques",
+    "title": "Bornes de recharge vehicules électriques",
     "subtitle": "Objectif 400 000 bornes en 2030",
-    "description": "La France compte ~150 000 bornes publiques. Le programme ADVENIR subventionne l'installation. Les prix varient de 0,25 EUR/kWh a domicile a 0,80 EUR/kWh sur autoroute. L'interdiction des vehicules thermiques neufs en 2035 rend cet investissement incontournable.",
+    "description": "La France compte ~150 000 bornes publiques. Le programme ADVENIR subventionne l'installation. Les prix varient de 0,25€/kWh a domicile a 0,80€/kWh sur autoroute. L'interdiction des vehicules thermiques neufs en 2035 rend cet investissement incontournable.",
     "amountBillions": 0.7,
     "costPerCitizen": 10,
     "deckId": "energie",
@@ -373,7 +373,7 @@
     "id": "ene-15",
     "title": "Accise sur l'électricité",
     "subtitle": "Taxe post-bouclier tarifaire",
-    "description": "L'accise sur l'électricité (ex-CSPE) est revenue a 33,70 EUR/MWh en 2025, representant ~20% de la facture d'électricité. Elle finance les énergies renouvelables et la perequation tarifaire. Le consommateur paie moins cher l'électricité brute, mais davantage de taxes.",
+    "description": "L'accise sur l'électricité (ex-CSPE) est revenue a 33,70€/MWh en 2025, representant ~20% de la facture d'électricité. Elle financé les énergies renouvelables et la perequation tarifaire. Le consommateur paie moins cher l'électricité brute, mais davantage de taxes.",
     "amountBillions": 10,
     "costPerCitizen": 147,
     "deckId": "energie",
@@ -389,7 +389,7 @@
     "id": "ene-16",
     "title": "Dette d'EDF et restructuration",
     "subtitle": "Dette nette EDF post-nationalisation",
-    "description": "EDF, detenu a 100% par l'État depuis 2023, porte une dette de 54 Md€ (en baisse vs 65 Md€ en 2022), accumulee par le bouclier tarifaire, l'ARENH, les retards EPR Flamanville (+12 Md€ de surcout). Les investissements nécessaires sont massifs : 6 EPR2 (~60 Md€), 70 Md€ de grand carenage, developpement des ENR. EDF a besoin de ~25 Md€/an d'investissement.",
+    "description": "EDF, détenu a 100% par l'État depuis 2023, porte une dette de 54 Md€ (en baisse vs 65 Md€ en 2022), accumulee par le bouclier tarifaire, l'ARENH, les retards EPR Flamanville (+12 Md€ de surcout). Les investissements nécessaires sont massifs : 6 EPR2 (~60 Md€), 70 Md€ de grand carenage, développement des ENR. EDF a besoin de ~25 Md€/an d'investissement.",
     "amountBillions": 54,
     "costPerCitizen": 794,
     "deckId": "energie",
@@ -403,7 +403,7 @@
     "id": "ene-17",
     "title": "Hydroelectricite (barrages)",
     "subtitle": "Concessions hydroelectriques",
-    "description": "L'hydroelectricite est la 1re source d'énergie renouvelable française : ~12% de la production electrique, 2 500 ouvrages dont 400 grands barrages. La France est le 2e producteur europeen. La mise en concurrence des concessions (exigee par l'UE depuis 2006) est bloquee par la France. La valeur patrimoniale des barrages est estimee a 40-50 Md€. Le changement climatique reduit la disponibilite en eau.",
+    "description": "L'hydroelectricite est la 1re source d'énergie renouvelable française : ~12% de la production électrique, 2 500 ouvrages dont 400 grands barrages. La France est le 2e producteur europeen. La mise en concurrence des concessions (exigee par l'UE depuis 2006) est bloquee par la France. La valeur patrimoniale des barrages est estimee a 40-50 Md€. Le changement climatique réduit la disponibilite en eau.",
     "amountBillions": 2,
     "costPerCitizen": 29,
     "deckId": "energie",
@@ -411,13 +411,13 @@
     "source": "EDF, CRE, Commission européenne",
     "level": 1,
     "tags": ["énergie", "hydro", "barrages"],
-    "equivalence": "Les barrages français stockent l'équivalent de 6 heures de consommation nationale — une batterie geante gratuite"
+    "equivalence": "Les barrages français stockent l'équivalent de 6 heures de consommation nationale — une batterie geante gratuité"
   },
   {
     "id": "ene-18",
     "title": "Pompes a chaleur (aides)",
     "subtitle": "MaPrimeRenov' PAC + CEE + TVA reduite",
-    "description": "La France vise 1 million de pompes a chaleur installees/an d'ici 2027 (contre ~500 000 en 2024). Les aides cumulees peuvent couvrir 60-80% du coût d'installation (~12 000€ en moyenne). Le marche a chute de 15% en 2024. La France est le 1er marche europeen de PAC. Problème : la filiere française est faible (Daikin, Mitsubishi dominent) — la France subventionne l'industrie japonaise.",
+    "description": "La France vise 1 million de pompes a chaleur installees/an d'ici 2027 (contre ~500 000 en 2024). Les aides cumulees peuvent couvrir 60-80% du coût d'installation (~12 000€ en moyenne). Le marche a chuté de 15% en 2024. La France est le 1er marche europeen de PAC. Problème : la filiere française est faible (Daikin, Mitsubishi dominent) — la France subventionne l'industrie japonaise.",
     "amountBillions": 1.5,
     "costPerCitizen": 22,
     "deckId": "energie",
@@ -426,13 +426,13 @@
     "source": "ADEME, Uniclima, MaPrimeRenov', France 2030",
     "level": 1,
     "tags": ["énergie", "pac", "renovation"],
-    "equivalence": "1 pompe a chaleur divise par 3 la facture de chauffage, mais les aides financent surtout des marques japonaises"
+    "equivalence": "1 pompe a chaleur divisé par 3 la facture de chauffage, mais les aides financent surtout des marques japonaises"
   },
   {
     "id": "ene-19",
     "title": "Biogaz et biomethane",
     "subtitle": "Tarif d'achat garanti biomethane",
-    "description": "Le biomethane (methane produit par methanisation de dechets agricoles et alimentaires) est injecte dans le réseau de gaz. La France vise 10% de gaz renouvelable en 2030. Environ 700 methaniseurs sont en fonctionnement. Le tarif d'achat garanti (~95€/MWh, vs ~30€ pour le gaz fossile) est critique pour son coût. Les agriculteurs y voient un complement de revenu vital (~50 000€/an par exploitation).",
+    "description": "Le biomethane (methane produit par methanisation de déchets agricoles et alimentaires) est injecte dans le réseau de gaz. La France vise 10% de gaz renouvelable en 2030. Environ 700 methaniseurs sont en fonctionnement. Le tarif d'achat garanti (~95€/MWh, vs ~30€ pour le gaz fossile) est critique pour son coût. Les agriculteurs y voient un complement de revenu vital (~50 000€/an par exploitation).",
     "amountBillions": 1.5,
     "costPerCitizen": 22,
     "deckId": "energie",
@@ -440,13 +440,13 @@
     "source": "GRDF, ADEME, CRE, PLF 2026",
     "level": 1,
     "tags": ["énergie", "biogaz", "methanisation"],
-    "equivalence": "1 methaniseur produit le gaz de ~2 000 foyers a partir de dechets agricoles"
+    "equivalence": "1 méthaniseur produit le gaz de ~2 000 foyers a partir de déchets agricoles"
   },
   {
     "id": "ene-20",
     "title": "Geothermie profonde",
     "subtitle": "ADEME + Fonds chaleur + France 2030",
-    "description": "La France a le 1er réseau de chaleur geothermique d'Europe (Ile-de-France : 40 installations, 350 000 logements chauffes). La geothermie profonde (2-3 km, 60-90°C) est une énergie renouvelable disponible 24h/24, sans intermittence. Le plan vise un triplement d'ici 2030. Cout d'un forage : 5-15 M€, avec un risque geologique (1 forage sur 5 est sec).",
+    "description": "La France à le 1er réseau de chaleur géothermique d'Europe (Ile-de-France : 40 installations, 350 000 logements chauffes). La géothermie profonde (2-3 km, 60-90°C) est une énergie renouvelable disponible 24h/24, sans intermittence. Le plan vise un triplement d'ici 2030. Cout d'un forage : 5-15 M€, avec un risque geologique (1 forage sur 5 est sec).",
     "amountBillions": 0.2,
     "costPerCitizen": 3,
     "deckId": "energie",
@@ -454,6 +454,6 @@
     "source": "ADEME, BRGM, AFPG",
     "level": 1,
     "tags": ["énergie", "geothermie", "renouvelable"],
-    "equivalence": "1 installation geothermique chauffe 10 000 logements pendant 30 ans — quasi zero CO2"
+    "equivalence": "1 installation géothermique chauffe 10 000 logements pendant 30 ans — quasi zero CO2"
   }
 ]

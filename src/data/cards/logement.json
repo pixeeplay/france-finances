@@ -3,7 +3,7 @@
     "id": "log-01",
     "title": "Logement social",
     "subtitle": "Financement global — aides à la pierre + fiscalité + APL bailleurs",
-    "description": "~5,2 millions de logements sociaux abritant 10 millions de personnes. ~2,4 millions de ménages en attente (délai : 2-3 ans, jusqu'à 10 ans en Île-de-France). La production neuve est en chute : moins de 80 000 agréments en 2024, loin de l'objectif de 120 000.",
+    "description": "~5,2 millions de logements sociaux abritant 10 millions de personnes. ~2,4 millions de ménages en attente (délai : 2-3 ans, jusqu'à 10 ans en Île-de-France). La production neuve est en chuté : moins de 80 000 agréments en 2024, loin de l'objectif de 120 000.",
     "amountBillions": 17,
     "costPerCitizen": 250,
     "deckId": "logement",
@@ -45,7 +45,7 @@
     "id": "log-04",
     "title": "Prêt à taux zéro (PTZ)",
     "subtitle": "Aide aux primo-accédants",
-    "description": "Le PTZ aide les primo-accédants sans intérêts bancaires (l'État compense les banques). 40 000 à 60 000 PTZ/an, en baisse. Recentré sur le neuf en zones tendues et l'ancien avec travaux. Prolongé jusqu'en 2027. Critique : il alimente la hausse des prix immobiliers.",
+    "description": "Le PTZ aide les primo-accédants sans intérêts bancaires (l'État compensé les banques). 40 000 à 60 000 PTZ/an, en baisse. Recentré sur le neuf en zones tendues et l'ancien avec travaux. Prolongé jusqu'en 2027. Critique : il alimente la hausse des prix immobiliers.",
     "amountBillions": 2,
     "costPerCitizen": 29,
     "deckId": "logement",
@@ -54,7 +54,7 @@
     "sourceUrl": "https://www.vie-publique.fr",
     "level": 1,
     "tags": ["logement", "PTZ", "accession"],
-    "equivalence": "~40 000€ de subvention implicite par menage bénéficiaire"
+    "equivalence": "~40 000€ de subvention implicite par ménage bénéficiaire"
   },
   {
     "id": "log-05",
@@ -112,13 +112,13 @@
     "source": "Cour des comptes, PLF 2026",
     "level": 1,
     "tags": ["logement", "fiscalité", "investissement locatif"],
-    "equivalence": "Les niches fiscales = le budget combine Défense + Justice + Interieur"
+    "equivalence": "Les niches fiscales = le budget combine Défense + Justice + Intérieur"
   },
   {
     "id": "log-09",
     "title": "Action Logement (1% patronal)",
     "subtitle": "PEEC — participation des employeurs",
-    "description": "Action Logement collecte 0,45% de la masse salariale et redistribue : aide a la mobilite, garantie Visale (caution gratuite), prets accession, financement HLM et renovation urbaine (ANRU). 2e financeur du logement social. L'État ponctionne regulierement ses reserves (~300 M en 2025).",
+    "description": "Action Logement collecte 0,45% de la masse salariale et redistribue : aide à la mobilité, garantie Visale (caution gratuité), prets accession, financement HLM et rénovation urbaine (ANRU). 2e financeur du logement social. L'État ponctionne régulièrement ses réserves (~300 M€ en 2025).",
     "amountBillions": 5,
     "costPerCitizen": 0,
     "deckId": "logement",
@@ -130,9 +130,9 @@
   },
   {
     "id": "log-10",
-    "title": "Coproprietes degradees et habitat indigne",
+    "title": "Coproprietes dégradées et habitat indigne",
     "subtitle": "ANAH + Plan Initiative Coproprietes",
-    "description": "100 000 coproprietes fragiles en France, dont 15 000 en grande difficulte. L'habitat indigne touche 420 000 logements. L'effondrement de la rue d'Aubagne a Marseille (8 morts, 2018) a declenche l'evacuation de 10 000 personnes et un plan d'urgence de 3 Md.",
+    "description": "100 000 coproprietes fragiles en France, dont 15 000 en grande difficulté. L'habitat indigne touche 420 000 logements. L'effondrement de la rue d'Aubagne a Marseille (8 morts, 2018) a declenche l'evacuation de 10 000 personnes et un plan d'urgence de 3 Md€.",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
     "deckId": "logement",
@@ -154,13 +154,13 @@
     "source": "Banque des Territoires, CDC, USH",
     "level": 1,
     "tags": ["logement", "intermediaire", "classes moyennes"],
-    "equivalence": "Un loyer intermediaire a Paris = ~20/m2 (vs 25-30 dans le prive, vs 7-12 en HLM)"
+    "equivalence": "Un loyer intermediaire a Paris = ~20€/m2 (vs 25-30 dans le privé, vs 7-12 en HLM)"
   },
   {
     "id": "log-12",
     "title": "RLS : la ponction sur les HLM",
     "subtitle": "Reduction de loyer de solidarite",
-    "description": "En 2018, l'État a baisse les APL de 5/mois et compense en imposant aux bailleurs HLM une RLS du meme montant. Depuis 2017, 16 Md ponctionnes aux organismes HLM, reduisant leur capacite a construire et renover. L'USH qualifie ce mecanisme de toxique.",
+    "description": "En 2018, l'État a baisse les APL de 5/mois et compensé en imposant aux bailleurs HLM une RLS du meme montant. Depuis 2017, 16 Md€ ponctionnes aux organismes HLM, reduisant leur capacite a construire et renover. L'USH qualifie ce mécanisme de toxique.",
     "amountBillions": 1.3,
     "costPerCitizen": 15,
     "deckId": "logement",
@@ -168,13 +168,13 @@
     "source": "USH, PLF 2026, Public Senat",
     "level": 1,
     "tags": ["logement", "HLM", "RLS"],
-    "equivalence": "16 Md ponctionnes en 7 ans = 200 000 logements sociaux qui auraient pu etre construits"
+    "equivalence": "16 Md€ ponctionnes en 7 ans = 200 000 logements sociaux qui auraient pu etre construits"
   },
   {
     "id": "log-13",
     "title": "Airbnb et meubles touristiques",
-    "subtitle": "800 000 annonces — regulation",
-    "description": "La France compte ~800 000 annonces Airbnb (1re destination mondiale). A Paris, 25 000 logements entiers retires du marche locatif. La loi Le Meur (2024) reduit la niche fiscale des meubles touristiques. Impact : +5 a 15% sur les loyers dans les zones touristiques tendues.",
+    "subtitle": "800 000 annonces — régulation",
+    "description": "La France compte ~800 000 annonces Airbnb (1re destination mondiale). A Paris, 25 000 logements entiers retirés du marche locatif. La loi Le Meur (2024) réduit la niche fiscale des meubles touristiques. Impact : +5 a 15% sur les loyers dans les zones touristiques tendues.",
     "amountBillions": 0.3,
     "costPerCitizen": 0,
     "deckId": "logement",
@@ -182,13 +182,13 @@
     "source": "DGFIP, Observatoire Airbnb, loi Le Meur, APUR",
     "level": 1,
     "tags": ["logement", "Airbnb", "tourisme"],
-    "equivalence": "25 000 logements Airbnb retires du marche a Paris = 10 ans de construction de logements sociaux parisiens"
+    "equivalence": "25 000 logements Airbnb retirés du marche a Paris = 10 ans de construction de logements sociaux parisiens"
   },
   {
     "id": "log-14",
     "title": "Passoires thermiques et DPE",
     "subtitle": "5,2 millions de logements classes F ou G",
-    "description": "Depuis janvier 2025, les logements G ne peuvent plus etre loues. Les F interdits en 2028, les E en 2034. MaPrimeRenov finance une partie (5-20 000/logement) mais le reste a charge est prohibitif pour les proprietaires modestes. Risque social : retrait du marche locatif.",
+    "description": "Depuis janvier 2025, les logements G ne peuvent plus etre loues. Les F interdits en 2028, les E en 2034. MaPrimeRenov financé une partie (5-20 000/logement) mais le reste a charge est prohibitif pour les propriétaires modestes. Risque social : retrait du marche locatif.",
     "amountBillions": 150,
     "costPerCitizen": 30000,
     "deckId": "logement",
@@ -196,13 +196,13 @@
     "source": "ADEME, Observatoire DPE, CNR Logement, loi Climat Resilience",
     "level": 1,
     "tags": ["logement", "DPE", "renovation"],
-    "equivalence": "5,2 millions de passoires = 1 logement sur 5 bientot interdit a la location"
+    "equivalence": "5,2 millions de passoires = 1 logement sur 5 bientot interdit à la location"
   },
   {
     "id": "log-15",
     "title": "Loi SRU et obligation de 25% HLM",
-    "subtitle": "1 113 communes deficitaires",
-    "description": "La loi SRU impose 25% de logements sociaux. 280 communes sont carencees et paient une penalite majoree. Neuilly-sur-Seine paie ~8 M/an de penalite et continue de ne pas construire. L'objectif de 25% reporte a 2031 par la loi 3DS (2022).",
+    "subtitle": "1 113 communes déficitaires",
+    "description": "La loi SRU impose 25% de logements sociaux. 280 communes sont carencées et paient une pénalité majorée. Neuilly-sur-Seine paie ~8 M€/an de pénalité et continue de ne pas construire. L'objectif de 25% reporte a 2031 par la loi 3DS (2022).",
     "amountBillions": 0.2,
     "costPerCitizen": 3,
     "deckId": "logement",
@@ -210,13 +210,13 @@
     "source": "DHUP, Fondation Abbe Pierre, PLF 2026",
     "level": 1,
     "tags": ["logement", "SRU", "HLM"],
-    "equivalence": "Neuilly prefere payer 8 M/an d'amende plutot que construire des HLM — la loi sans les dents"
+    "equivalence": "Neuilly préfère payer 8 M€/an d'amende plutôt que construire des HLM — la loi sans les dents"
   },
   {
     "id": "log-16",
     "title": "Mal-logement (rapport Fondation Abbe Pierre)",
     "subtitle": "4,2 millions de personnes mal logees",
-    "description": "330 000 sans domicile (record, +130% en 10 ans), 900 000 en hebergement contraint, 2,4 millions en surpeuplement. Le mal-logement aggrave tout : echec scolaire (+3 points), problèmes de sante (+30%), chomage. C'est le multiplicateur invisible des autres dépenses sociales.",
+    "description": "330 000 sans domicile (record, +130% en 10 ans), 900 000 en hébergement contraint, 2,4 millions en surpeuplement. Le mal-logement aggrave tout : echec scolaire (+3 points), problèmes de sante (+30%), chomage. C'est le multiplicateur invisible des autres dépenses sociales.",
     "amountBillions": 6.5,
     "costPerCitizen": 0,
     "deckId": "logement",
@@ -228,9 +228,9 @@
   },
   {
     "id": "log-17",
-    "title": "Accession a la propriete",
+    "title": "Accession à la propriété",
     "subtitle": "Taux et pouvoir d'achat immobilier",
-    "description": "Taux de proprietaires en France : 58% (stable, vs 65% en moyenne UE). La crise du credit (taux de 1% a 4%) a fait chuter les primo-accedants de 35%. Il faut en moyenne 7 années de salaire pour acheter un logement moyen. A Paris, 15 ans.",
+    "description": "Taux de propriétaires en France : 58% (stable, vs 65% en moyenne UE). La crise du credit (taux de 1% a 4%) a fait chuter les primo-accedants de 35%. Il faut en moyenne 7 années de salaire pour acheter un logement moyen. A Paris, 15 ans.",
     "amountBillions": 5,
     "costPerCitizen": 74,
     "deckId": "logement",

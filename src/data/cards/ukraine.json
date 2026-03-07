@@ -29,12 +29,12 @@
     "level": 1,
     "tags": ["Ukraine", "FEP", "Europe", "défense"],
     "trend": null,
-    "equivalence": "La contribution française a la FEP = le budget annuel de la DGSI"
+    "equivalence": "La contribution française à la FEP = le budget annuel de la DGSI"
   },
   {
     "id": "ukr-03",
     "title": "Fonds spécial bilatéral Ukraine",
-    "subtitle": "Chaque euro du fonds finance un emploi industriel de défense en France",
+    "subtitle": "Chaque euro du fonds financé un emploi industriel de défense en France",
     "description": "Créé en octobre 2022, ce fonds permet à l'Ukraine d'acheter directement du matériel auprès de l'industrie de défense française (Nexter, Arquus, Thales, MBDA). C'est un investissement dual : il aide l'Ukraine ET stimule la BITD française (base industrielle et technologique de défense). Les commandes ukrainiennes contribuent à maintenir les chaînes de production ouvertes et à financer la montée en cadence industrielle. Réabondé en 2023 à 200 M€ supplémentaires.",
     "amountBillions": 0.4,
     "costPerCitizen": 6,
@@ -45,7 +45,7 @@
     "level": 1,
     "tags": ["Ukraine", "industrie défense", "bilatéral"],
     "trend": null,
-    "equivalence": "Chaque euro du fonds finance un emploi industriel de défense en France"
+    "equivalence": "Chaque euro du fonds financé un emploi industriel de défense en France"
   },
   {
     "id": "ukr-04",
@@ -77,7 +77,7 @@
     "level": 1,
     "tags": ["Ukraine", "humanitaire", "réfugiés"],
     "trend": null,
-    "equivalence": "Les 100 000 refugies ukrainiens en France coutent ~500 M€/an (logement, sante, education)"
+    "equivalence": "Les 100 000 refugies ukrainiens en France coûtent ~500 M€/an (logement, sante, education)"
   },
   {
     "id": "ukr-06",
@@ -93,7 +93,7 @@
     "level": 1,
     "tags": ["Ukraine", "énergie", "surcoût"],
     "trend": null,
-    "equivalence": "Le surcout energetique du conflit = la moitié du budget annuel de la Défense, chaque année pendant 2 ans"
+    "equivalence": "Le surcout énergétique du conflit = la moitié du budget annuel de la Défense, chaque année pendant 2 ans"
   },
   {
     "id": "ukr-07",
@@ -141,13 +141,13 @@
     "level": 1,
     "tags": ["Ukraine", "bilan", "aide totale"],
     "trend": null,
-    "equivalence": "L'aide française a l'Ukraine = le prix de 2 cafés par Français et par mois pendant 4 ans"
+    "equivalence": "L'aide française à l'Ukraine = le prix de 2 cafés par Français et par mois pendant 4 ans"
   },
   {
     "id": "ukr-10",
     "title": "Conséquences économiques globales du conflit",
     "subtitle": "La guerre a coûté à la France 10x plus en croissance perdue qu'en aide militaire",
-    "description": "Au-delà des aides directes, le conflit a coûté à la France entre 0,5 et 1 point de PIB/an en croissance perdue : inflation importée, perturbation des chaînes d'approvisionnement, hausse des taux d'intérêt (la BCE a relevé ses taux pour combattre l'inflation liée à l'énergie), chute de la confiance des ménages. Le FMI estimé l'impact cumulé à 2-3 points de PIB pour la zone euro sur 2022-2024. La facture totale (directe + indirecte) est sans commune mesure avec les 12 Md€ d'aide.",
+    "description": "Au-delà des aides directes, le conflit a coûté à la France entre 0,5 et 1 point de PIB/an en croissance perdue : inflation importée, perturbation des chaînes d'approvisionnement, hausse des taux d'intérêt (la BCE a relevé ses taux pour combattre l'inflation liée à l'énergie), chuté de la confiance des ménages. Le FMI estimé l'impact cumulé à 2-3 points de PIB pour la zone euro sur 2022-2024. La facture totale (directe + indirecte) est sans commune mesure avec les 12 Md€ d'aide.",
     "amountBillions": 0.75,
     "costPerCitizen": 600,
     "deckId": "ukraine",
@@ -157,6 +157,6 @@
     "level": 1,
     "tags": ["Ukraine", "économie", "croissance", "inflation"],
     "trend": null,
-    "equivalence": "La guerre a coûte a la France 10x plus en croissance perdue qu'en aide militaire"
+    "equivalence": "La guerre a coûte à la France 10x plus en croissance perdue qu'en aide militaire"
   }
 ]

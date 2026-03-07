@@ -29,13 +29,13 @@
     "level": 1,
     "tags": ["Europe", "retours", "PAC", "fonds structurels"],
     "trend": null,
-    "equivalence": "La France recoit 65 centimes pour chaque euro verse a l'UE"
+    "equivalence": "La France reçoit 65 centimes pour chaque euro verse à l'UE"
   },
   {
     "id": "fre-03",
     "title": "Plan de relance européen (NextGenerationEU)",
     "subtitle": "La France reçoit plus de NextGenerationEU que ce que coûte son budget Justice en 4 ans",
-    "description": "NextGenerationEU est un emprunt commun inédit de 750 Md€. La France reçoit 40,3 Md€ en subventions (4e bénéficiaire). L'argent finance la rénovation énergétique, le numérique, la santé, les transports. C'est la première dette commune européenne — un tabou brisé par le COVID. Le remboursement (2028-2058) sera assuré par de nouvelles ressources propres de l'UE (taxe carbone aux frontières, taxe GAFAM). Les eurosceptiques y voient un engrenage fédéraliste.",
+    "description": "NextGenerationEU est un emprunt commun inédit de 750 Md€. La France reçoit 40,3 Md€ en subventions (4e bénéficiaire). L'argent financé la rénovation énergétique, le numérique, la santé, les transports. C'est la première dette commune européenne — un tabou brisé par le COVID. Le remboursement (2028-2058) sera assuré par de nouvelles ressources propres de l'UE (taxe carbone aux frontières, taxe GAFAM). Les eurosceptiques y voient un engrenage fédéraliste.",
     "amountBillions": 40.3,
     "costPerCitizen": 593,
     "deckId": "france-europe",
@@ -45,7 +45,7 @@
     "level": 1,
     "tags": ["Europe", "relance", "NextGenerationEU"],
     "trend": null,
-    "equivalence": "La France recoit plus de NextGenerationEU que ce que coûte son budget Justice en 4 ans"
+    "equivalence": "La France reçoit plus de NextGenerationEU que ce que coûte son budget Justice en 4 ans"
   },
   {
     "id": "fre-04",
@@ -61,13 +61,13 @@
     "level": 1,
     "tags": ["Europe", "défense", "Ukraine", "FEP"],
     "trend": null,
-    "equivalence": "La contribution française a la FEP = le budget annuel de l'aide juridictionnelle"
+    "equivalence": "La contribution française à la FEP = le budget annuel de l'aide juridictionnelle"
   },
   {
     "id": "fre-05",
     "title": "Erasmus+",
     "subtitle": "6€/an par Français pour 600 000 échanges étudiants/an en Europe",
-    "description": "Erasmus+ finance la mobilité de ~600 000 Européens/an (étudiants, apprentis, enseignants). La France est le 1er pays d'envoi et le 2e pays d'accueil. 20% des étudiants Erasmus restent dans le pays d'accueil après leurs études. Le programme a un taux de satisfaction de 98%. Budget doublé pour 2021-2027 (26,2 Md€ sur 7 ans). Critique : Erasmus profite surtout aux classes moyennes-supérieures, malgré les bourses complémentaires pour les étudiants modestes.",
+    "description": "Erasmus+ financé la mobilité de ~600 000 Européens/an (étudiants, apprentis, enseignants). La France est le 1er pays d'envoi et le 2e pays d'accueil. 20% des étudiants Erasmus restent dans le pays d'accueil après leurs études. Le programme à un taux de satisfaction de 98%. Budget doublé pour 2021-2027 (26,2 Md€ sur 7 ans). Critique : Erasmus profite surtout aux classes moyennes-supérieures, malgré les bourses complémentaires pour les étudiants modestes.",
     "amountBillions": 4.3,
     "costPerCitizen": 6,
     "deckId": "france-europe",
@@ -93,7 +93,7 @@
     "level": 1,
     "tags": ["Europe", "frontières", "immigration", "Frontex"],
     "trend": null,
-    "equivalence": "Le budget Frontex = le prix de 2 heures d'operations militaires françaises par jour"
+    "equivalence": "Le budget Frontex = le prix de 2 heures d'opérations militaires françaises par jour"
   },
   {
     "id": "fre-07",
@@ -147,7 +147,7 @@
     "id": "fre-10",
     "title": "Coût du Brexit pour la France et l'UE",
     "subtitle": "Le Brexit coûte à chaque Français l'équivalent d'un abonnement de streaming par mois",
-    "description": "Le départ du Royaume-Uni (2020) a privé l'UE de son 2e contributeur net. Les 27 restants ont dû combler le trou : la contribution française a augmenté de ~4-5 Md€/an. Côté britannique, le Brexit a coûté 4% de PIB selon le FMI. Les échanges commerciaux franco-britanniques ont baissé de 15-20% (barrières douanières). La pêche française a perdu 25% de ses quotas dans les eaux britanniques. La City reste dominante en finance, mais Amsterdam et Paris gagnent du terrain.",
+    "description": "Le départ du Royaume-Uni (2020) a privé l'UE de son 2e contributeur net. Les 27 restants ont dû combler le trou : la contribution française a augmenté de ~4-5 Md€/an. Côté britannique, le Brexit a coûté 4% de PIB selon le FMI. Les échanges commerciaux franco-britanniques ont baissé de 15-20% (barrières douanières). La pêche française a perdu 25% de ses quotas dans les eaux britanniques. La City reste dominante en financé, mais Amsterdam et Paris gagnent du terrain.",
     "amountBillions": 13.5,
     "costPerCitizen": 35,
     "deckId": "france-europe",

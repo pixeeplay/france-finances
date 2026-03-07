@@ -12,7 +12,7 @@
     "source": "PLF 2026, Sénat, Public Sénat",
     "level": 1,
     "tags": ["immigration", "asile", "budget"],
-    "equivalence": "Le budget annuel du ministère de la Culture (4,4 Md€) divise par 2"
+    "equivalence": "Le budget annuel du ministère de la Culture (4,4 Md€) divisé par 2"
   },
   {
     "id": "imm-02",
@@ -42,7 +42,7 @@
     "sourceUrl": "https://www.vie-publique.fr",
     "level": 1,
     "tags": ["immigration", "coût global", "budget"],
-    "equivalence": "La mission Immigration ne represente que 22% du coût total"
+    "equivalence": "La mission Immigration ne représente que 22% du coût total"
   },
   {
     "id": "imm-04",
@@ -100,13 +100,13 @@
     "source": "PLF 2026, OFII, ASH",
     "level": 1,
     "tags": ["immigration", "intégration", "français"],
-    "equivalence": "~1 500€ par parcours d'integration (contrat CIR de 4 ans)"
+    "equivalence": "~1 500€ par parcours d'intégration (contrat CIR de 4 ans)"
   },
   {
     "id": "imm-08",
     "title": "Mineurs non accompagnés (MNA)",
     "subtitle": "~30 000 à 40 000 jeunes étrangers isolés",
-    "description": "Charge sur les départements : coût moyen ~50 000€/mineur/an (hébergement, éducation, santé). L'État ne compense que ~5 500€ par évaluation + ~90€/jour pendant 14 jours. Le reste est à la charge des départements qui dénoncent un transfert massif non compensé.",
+    "description": "Charge sur les départements : coût moyen ~50 000€/mineur/an (hébergement, éducation, santé). L'État ne compensé que ~5 500€ par évaluation + ~90€/jour pendant 14 jours. Le reste est à la charge des départements qui dénoncent un transfert massif non compensé.",
     "amountBillions": 2,
     "costPerCitizen": 29,
     "deckId": "immigration",
@@ -120,7 +120,7 @@
     "id": "imm-09",
     "title": "OFPRA et delais d'instruction asile",
     "subtitle": "130 000 demandes/an",
-    "description": "L'OFPRA traite ~130 000 demandes d'asile/an. Delai moyen ramene a ~9 mois. Taux de protection ~35% en premiere instance. La CNDA est la juridiction qui rend le plus de decisions en France (~70 000/an). Les deboutes (65%) doivent quitter le territoire mais le taux d'execution des OQTF reste ~7%.",
+    "description": "L'OFPRA traite ~130 000 demandes d'asile/an. Delai moyen ramene a ~9 mois. Taux de protection ~35% en premiere instance. La CNDA est la juridiction qui rend le plus de décisions en France (~70 000€/an). Les deboutes (65%) doivent quitter le territoire mais le taux d'execution des OQTF reste ~7%.",
     "amountBillions": 0.1,
     "costPerCitizen": 1.5,
     "deckId": "immigration",
@@ -128,13 +128,13 @@
     "source": "OFPRA rapport 2024, CNDA, PLF 2026",
     "level": 1,
     "tags": ["immigration", "asile", "OFPRA"],
-    "equivalence": "130 000 dossiers d'asile/an pour 100 M = ~770 de coût d'instruction par demande"
+    "equivalence": "130 000 dossiers d'asile/an pour 100 M = ~770€ de coût d'instruction par demande"
   },
   {
     "id": "imm-10",
-    "title": "Titres de sejour et visas (recettes)",
+    "title": "Titres de séjour et visas (recettes)",
     "subtitle": "600 M/an de taxes",
-    "description": "Titres de sejour payants : 200-300 pour un premier titre. La France delivre ~3,5 millions de visas/an (1re au monde) et ~270 000 premiers titres de sejour. Ces taxes financent partiellement l'OFII et les consulats. La dematerialisation (ANEF) reduit les files d'attente mais exclut les personnes sans acces numerique.",
+    "description": "Titres de séjour payants : 200-300 pour un premier titre. La France delivre ~3,5 millions de visas/an (1re au monde) et ~270 000 premiers titres de séjour. Ces taxes financent partiellement l'OFII et les consulats. La dématérialisation (ANEF) réduit les files d'attente mais exclut les personnes sans acces numérique.",
     "amountBillions": 0.6,
     "costPerCitizen": 9,
     "deckId": "immigration",
@@ -142,13 +142,13 @@
     "source": "PLF 2026, DGEF, ASH",
     "level": 1,
     "tags": ["immigration", "visas", "recettes"],
-    "equivalence": "Les étrangers financent ~600 M/an en taxes de sejour — ca couvre le tiers du budget Immigration"
+    "equivalence": "Les étrangers financent ~600 M€/an en taxes de séjour — ça couvre le tiers du budget Immigration"
   },
   {
     "id": "imm-11",
     "title": "Regularisations et sans-papiers",
     "subtitle": "600 000-900 000 personnes en situation irreguliere",
-    "description": "~30 000 regularisations/an. Les sans-papiers travaillent massivement dans le BTP, la restauration, l'aide a domicile. Ils cotisent a la Secu sans pouvoir beneficier de la retraite. Le coût net est un sujet de guerre de chiffres entre think tanks.",
+    "description": "~30 000 regularisations/an. Les sans-papiers travaillent massivement dans le BTP, la restauration, l'aide a domicile. Ils cotisent à la Secu sans pouvoir beneficier de la retraite. Le coût net est un sujet de guerre de chiffres entre think tanks.",
     "amountBillions": 4,
     "costPerCitizen": 60,
     "deckId": "immigration",
@@ -156,7 +156,7 @@
     "source": "DGEF, IGAS, Cour des comptes, estimations INSEE/INED",
     "level": 1,
     "tags": ["immigration", "sans-papiers", "regularisation"],
-    "equivalence": "30 000 regularisations/an sur 600 000-900 000 sans-papiers = un stock qui se renouvelle plus vite qu'il ne se resorbe"
+    "equivalence": "30 000 regularisations/an sur 600 000-900 000 sans-papiers = un stock qui se renouvelle plus vite qu'il ne se résorbe"
   },
   {
     "id": "imm-12",
@@ -170,12 +170,12 @@
     "source": "DGEF, OFII, PLF 2026, Eurostat",
     "level": 1,
     "tags": ["immigration", "Ukraine", "refugies"],
-    "equivalence": "Accueillir 100 000 Ukrainiens coûte ~5 000/personne/an, soit le prix d'un semestre d'universite"
+    "equivalence": "Accueillir 100 000 Ukrainiens coûte ~5 000/personne/an, soit le prix d'un semestre d'université"
   },
   {
     "id": "imm-13",
     "title": "Scolarisation des enfants étrangers",
-    "subtitle": "70 000 eleves allophones/an en UPE2A",
+    "subtitle": "70 000 élèves allophones/an en UPE2A",
     "description": "Obligation constitutionnelle de scolariser tous les enfants de 3 a 16 ans, quelle que soit la situation administrative. Le coût par élève allophone est 30-50% supérieur (FLE, accompagnement). 95% des enfants allophones atteignent le niveau B1 en français apres 2 ans.",
     "amountBillions": 1.5,
     "costPerCitizen": 22,
@@ -184,13 +184,13 @@
     "source": "DEPP, Ministere Education nationale, DESCO",
     "level": 1,
     "tags": ["immigration", "education", "integration"],
-    "equivalence": "Un enfant allophone atteint le niveau B1 en français en 2 ans — le meilleur investissement d'integration"
+    "equivalence": "Un enfant allophone atteint le niveau B1 en français en 2 ans — le meilleur investissement d'intégration"
   },
   {
     "id": "imm-14",
     "title": "Diaspora et transferts de fonds",
     "subtitle": "12 Md/an envoyes vers les pays d'origine",
-    "description": "Les travailleurs immigres envoient ~12 Md/an vers leurs pays d'origine (Maghreb, Afrique, Turquie, Asie). C'est 3x l'aide publique au developpement française. Les frais de transfert restent eleves (~5-7%). Pour les pays recepteurs, ces remises representent 10-20% du PIB.",
+    "description": "Les travailleurs immigres envoient ~12 Md€/an vers leurs pays d'origine (Maghreb, Afrique, Turquie, Asie). C'est 3x l'aide publique au développement française. Les frais de transfert restent élèves (~5-7%). Pour les pays recepteurs, ces remises representent 10-20% du PIB.",
     "amountBillions": 12,
     "costPerCitizen": 0,
     "deckId": "immigration",
@@ -198,7 +198,7 @@
     "source": "Banque mondiale, Banque de France, AFD",
     "level": 1,
     "tags": ["immigration", "transferts", "developpement"],
-    "equivalence": "Les transferts prives des immigres (12 Md) = 3x l'aide publique au developpement française"
+    "equivalence": "Les transferts privés des immigres (12 Md€) = 3x l'aide publique au développement française"
   },
   {
     "id": "imm-15",
@@ -216,23 +216,23 @@
   },
   {
     "id": "imm-16",
-    "title": "Immigration de travail et metiers en tension",
-    "subtitle": "40 000 titres de sejour économiques/an",
-    "description": "60% des entreprises declarent des difficultes de recrutement. Le Passeport Talent vise les profils qualifies : 15 000 delivres/an. Debat : immigration choisie (Canada, Australie) plutot que subie (regroupement familial = 90 000 titres/an) ?",
+    "title": "Immigration de travail et métiers en tension",
+    "subtitle": "40 000 titres de séjour économiques/an",
+    "description": "60% des entreprises declarent des difficultés de recrutement. Le Passeport Talent vise les profils qualifies : 15 000 delivres/an. Debat : immigration choisie (Canada, Australie) plutôt que subie (regroupement familial = 90 000 titres/an) ?",
     "amountBillions": 0,
     "costPerCitizen": 0,
     "deckId": "immigration",
     "icon": "🛂",
     "source": "DGEF, DARES, France Strategie",
     "level": 1,
-    "tags": ["immigration", "travail", "metiers en tension"],
+    "tags": ["immigration", "travail", "métiers en tension"],
     "equivalence": "Les immigres occupent 40% des emplois d'aide a domicile, 30% du BTP et 25% de la restauration"
   },
   {
     "id": "imm-17",
     "title": "Deboutes d'asile (ni regularises, ni expulses)",
     "subtitle": "Le stock des ni-ni",
-    "description": "65% des demandeurs d'asile sont deboutes. Beaucoup restent en France dans un statut de ni-ni : ni regularisables, ni expulsables. Ils basculent dans l'hebergement d'urgence, le travail informel et l'AME. Stock estimé : 100 000-300 000 personnes.",
+    "description": "65% des demandeurs d'asile sont deboutes. Beaucoup restent en France dans un statut de ni-ni : ni regularisables, ni expulsables. Ils basculent dans l'hébergement d'urgence, le travail informel et l'AME. Stock estimé : 100 000-300 000 personnes.",
     "amountBillions": 1.5,
     "costPerCitizen": 22,
     "deckId": "immigration",
@@ -246,7 +246,7 @@
     "id": "imm-18",
     "title": "Naturalisation et acquisition de la nationalite",
     "subtitle": "120 000 nouveaux Français/an",
-    "description": "~50 000 par decret, ~30 000 par mariage, ~30 000 par declaration. Delai moyen 12-18 mois. Conditions : 5 ans de residence, niveau B1, assimilation. La France est le pays europeen qui naturalise le plus en valeur absolue. Taux de refus ~15%.",
+    "description": "~50 000 par decret, ~30 000 par mariage, ~30 000 par declaration. Delai moyen 12-18 mois. Conditions : 5 ans de résidence, niveau B1, assimilation. La France est le pays europeen qui naturalise le plus en valeur absolue. Taux de refus ~15%.",
     "amountBillions": 0.1,
     "costPerCitizen": 1.5,
     "deckId": "immigration",

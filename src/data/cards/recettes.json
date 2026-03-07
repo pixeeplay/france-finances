@@ -3,7 +3,7 @@
     "id": "rec-01",
     "title": "TVA",
     "subtitle": "Taxe sur la valeur ajoutée — 1ère recette fiscale",
-    "description": "Taux : 20% (normal), 10% (restauration), 5,5% (alimentation, énergie), 2,1% (médicaments, presse). Plus de la moitié transférée aux collectivités et à la Sécu. La France a le taux normal le plus élevé d'Europe après la Scandinavie.",
+    "description": "Taux : 20% (normal), 10% (restauration), 5,5% (alimentation, énergie), 2,1% (médicaments, presse). Plus de la moitié transférée aux collectivités et à la Sécu. La France à le taux normal le plus élevé d'Europe après la Scandinavie.",
     "amountBillions": 200,
     "costPerCitizen": 2940,
     "deckId": "recettes",
@@ -113,7 +113,7 @@
     "source": "PLF 2026, DGFiP, France Stratégie, IFRAP",
     "level": 1,
     "tags": ["recettes", "IFI", "fortune"],
-    "equivalence": "Le retour a l'ISF rapporterait ~3,5 Md€ de plus"
+    "equivalence": "Le retour à l'ISF rapporterait ~3,5 Md€ de plus"
   },
   {
     "id": "rec-09",
@@ -148,7 +148,7 @@
     "id": "rec-11",
     "title": "Taxe GAFAM (services numeriques)",
     "subtitle": "3% du CA en France",
-    "description": "Taxe de 3% sur le CA realise en France par les geants du numerique. Les Etats-Unis ont menace de représailles commerciales. La taxe devait etre temporaire (accord OCDE Pilier 1 en retard), mais elle est reconduite chaque année. La France est le seul grand pays a l'avoir maintenue.",
+    "description": "Taxe de 3% sur le CA realise en France par les geants du numérique. Les États-Unis ont menace de représailles commerciales. La taxe devait etre temporaire (accord OCDE Pilier 1 en retard), mais elle est reconduite chaque année. La France est le seul grand pays à l'avoir maintenue.",
     "amountBillions": 0.7,
     "costPerCitizen": 10,
     "deckId": "recettes",
@@ -156,13 +156,13 @@
     "source": "PLF 2026, DGFiP, OCDE",
     "level": 1,
     "tags": ["recettes", "GAFAM", "numerique"],
-    "equivalence": "Google paie ~200 M/an de taxe GAFAM en France — moins qu'une PME de 500 salariés en IS"
+    "equivalence": "Google paie ~200 M€/an de taxe GAFAM en France — moins qu'une PME de 500 salariés en IS"
   },
   {
     "id": "rec-12",
     "title": "Taxe sur les transactions financieres (TTF)",
     "subtitle": "0,3% sur les achats d'actions",
-    "description": "La TTF rapporte ~2 Md/an. Creee en 2012, affectee au budget général et a l'aide au developpement. La taxe Tobin européenne est bloquee depuis 20 ans. La France applique seule la taxe la plus élevée d'Europe, penalisant la Place de Paris face a Amsterdam et Francfort.",
+    "description": "La TTF rapporte ~2 Md€/an. Créée en 2012, affectée au budget général et à l'aide au développement. La taxe Tobin européenne est bloquee depuis 20 ans. La France applique seule la taxe la plus élevée d'Europe, pénalisant la Place de Paris face a Amsterdam et Francfort.",
     "amountBillions": 2,
     "costPerCitizen": 29,
     "deckId": "recettes",
@@ -170,7 +170,7 @@
     "source": "PLF 2026, DGFiP, AMF",
     "level": 1,
     "tags": ["recettes", "TTF", "finance"],
-    "equivalence": "La TTF rapporte 2 Md/an — autant que le budget du ministère de la Culture"
+    "equivalence": "La TTF rapporte 2 Md€/an — autant que le budget du ministère de la Culture"
   },
   {
     "id": "rec-13",
@@ -189,8 +189,8 @@
   {
     "id": "rec-14",
     "title": "Taxe fonciere entreprises et CFE",
-    "subtitle": "15 Md/an — impots de production",
-    "description": "Les entreprises paient ~15 Md de taxe fonciere et CFE. Le commerce physique paie plein pot alors que le e-commerce (entrepôts en peripherie) est peu taxe. Amazon paie ~4/m2 de CFE pour ses entrepôts ruraux, quand un petit commerce paie ~30/m2.",
+    "subtitle": "15 Md/an — impôts de production",
+    "description": "Les entreprises paient ~15 Md€ de taxe fonciere et CFE. Le commerce physique paie plein pot alors que le e-commerce (entrepôts en périphérie) est peu taxe. Amazon paie ~4€/m2 de CFE pour ses entrepôts ruraux, quand un petit commerce paie ~30€/m2.",
     "amountBillions": 15,
     "costPerCitizen": 0,
     "deckId": "recettes",
@@ -204,7 +204,7 @@
     "id": "rec-15",
     "title": "Jeux d'argent (FDJ, PMU, paris)",
     "subtitle": "50 Md/an de mises, 6 Md de recettes fiscales",
-    "description": "Les Français misent ~50 Md/an. L'État prélève ~12%. La FDJ reverse ~3,5 Md/an a l'État. Les paris sportifs en ligne explosent (+25%/an). L'addiction aux jeux touche ~600 000 personnes. Les sites illegaux offshore proliferent.",
+    "description": "Les Français misent ~50 Md€/an. L'État prélève ~12%. La FDJ reverse ~3,5 Md€/an à l'État. Les paris sportifs en ligne explosent (+25%/an). L'addiction aux jeux touche ~600 000 personnes. Les sites illégaux offshore prolifèrent.",
     "amountBillions": 6,
     "costPerCitizen": 88,
     "deckId": "recettes",
@@ -212,13 +212,13 @@
     "source": "ANJ, FDJ, PLF 2026",
     "level": 1,
     "tags": ["recettes", "jeux", "FDJ"],
-    "equivalence": "Les Français jouent 50 Md/an — davantage que le budget de l'Education nationale"
+    "equivalence": "Les Français jouent 50 Md€/an — davantage que le budget de l'Éducation nationale"
   },
   {
     "id": "rec-16",
     "title": "Amendes et sanctions administratives",
     "subtitle": "Radars + PV + sanctions CNIL",
-    "description": "Radars (~800 M), PV stationnement (~1,5 Md pour les communes), amendes penales (~800 M), sanctions CNIL/AMF/ADLC (~400 M). 48% des Français estiment que les radars servent davantage a remplir les caisses qu'a sauver des vies.",
+    "description": "Radars (~800 M€), PV stationnement (~1,5 Md€ pour les communes), amendes pénales (~800 M€), sanctions CNIL/AMF/ADLC (~400 M€). 48% des Français estiment que les radars servent davantage a remplir les caisses qu'a sauver des vies.",
     "amountBillions": 3.5,
     "costPerCitizen": 51,
     "deckId": "recettes",
@@ -226,13 +226,13 @@
     "source": "ONISR, DGFIP, CNIL, PLF 2026",
     "level": 1,
     "tags": ["recettes", "amendes", "radars"],
-    "equivalence": "1 radar rapporte en moyenne ~170 000/an a l'État"
+    "equivalence": "1 radar rapporte en moyenne ~170 000€/an à l'État"
   },
   {
     "id": "rec-17",
-    "title": "Taxe d'habitation residences secondaires",
-    "subtitle": "3,6 millions de residences secondaires",
-    "description": "Maintenue sur les residences secondaires, peut etre majoree de 5 a 60% en zones tendues. Paris applique +60%. Vise a inciter les proprietaires a remettre leurs logements sur le marche locatif. Recettes en hausse (+15%) depuis la suppression de la TH residences principales.",
+    "title": "Taxe d'habitation résidences secondaires",
+    "subtitle": "3,6 millions de résidences secondaires",
+    "description": "Maintenue sur les résidences secondaires, peut etre majorée de 5 a 60% en zones tendues. Paris applique +60%. Vise a inciter les propriétaires a remettre leurs logements sur le marche locatif. Recettes en hausse (+15%) depuis la suppression de la TH résidences principales.",
     "amountBillions": 2.5,
     "costPerCitizen": 0,
     "deckId": "recettes",
@@ -240,13 +240,13 @@
     "source": "DGFiP, DGCL, PLF 2026",
     "level": 1,
     "tags": ["recettes", "taxe habitation", "secondaire"],
-    "equivalence": "3,6 millions de residences secondaires = plus que le stock de logements sociaux en attente"
+    "equivalence": "3,6 millions de résidences secondaires = plus que le stock de logements sociaux en attente"
   },
   {
     "id": "rec-18",
     "title": "Dividendes et participations de l'État (APE)",
     "subtitle": "83 entreprises, 160 Md de portefeuille",
-    "description": "L'APE gere un portefeuille de ~160 Md (EDF, La Poste, Engie, Orange, Thales, Airbus, Renault, ADP, FDJ). Dividendes de 3 a 6 Md/an. L'État actionnaire est critique pour gerer ses participations comme un fonds de pension plutot que comme un stratege industriel.",
+    "description": "L'APE gère un portefeuille de ~160 Md€ (EDF, La Poste, Engie, Orange, Thales, Airbus, Renault, ADP, FDJ). Dividendes de 3 a 6 Md€/an. L'État actionnaire est critique pour gérer ses participations comme un fonds de pension plutôt que comme un stratege industriel.",
     "amountBillions": 4.5,
     "costPerCitizen": 66,
     "deckId": "recettes",
@@ -254,6 +254,6 @@
     "source": "APE, PLF 2026, Cour des comptes",
     "level": 1,
     "tags": ["recettes", "APE", "participations"],
-    "equivalence": "L'État est actionnaire de 83 entreprises valant 160 Md — le plus gros portefeuille d'Europe"
+    "equivalence": "L'État est actionnaire de 83 entreprises valant 160 Md€ — le plus gros portefeuille d'Europe"
   }
 ]

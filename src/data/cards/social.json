@@ -72,7 +72,7 @@
     "sourceUrl": "https://www.vie-publique.fr",
     "level": 1,
     "tags": ["social", "famille", "natalité"],
-    "equivalence": "59,5 Md€ = le budget combine de la Justice + Interieur + Culture"
+    "equivalence": "59,5 Md€ = le budget combine de la Justice + Intérieur + Culture"
   },
   {
     "id": "soc-06",
@@ -117,7 +117,7 @@
     "source": "LFSS 2025, Cour des comptes, OFCE",
     "level": 1,
     "tags": ["social", "emploi", "cotisations"],
-    "equivalence": "Les 80 Md€ d'exonerations = plus que le budget de l'Education nationale"
+    "equivalence": "Les 80 Md€ d'exonérations = plus que le budget de l'Éducation nationale"
   },
   {
     "id": "soc-09",
@@ -161,7 +161,7 @@
     "source": "France Compétences, Cour des comptes, DARES",
     "level": 1,
     "tags": ["social", "apprentissage", "formation"],
-    "equivalence": "Les aides a l'apprentissage ont ete multipliees par 4 en 6 ans"
+    "equivalence": "Les aides à l'apprentissage ont ete multipliees par 4 en 6 ans"
   },
   {
     "id": "soc-12",
@@ -191,7 +191,7 @@
     "level": 1,
     "tags": ["retraites", "régime général", "privé"],
     "trend": null,
-    "equivalence": "Pour 1 retraite du prive, 1,7 actif cotise (contre 4 en 1960)"
+    "equivalence": "Pour 1 retraite du privé, 1,7 actif cotise (contre 4 en 1960)"
   },
   {
     "id": "ret-02",
@@ -207,7 +207,7 @@
     "level": 1,
     "tags": ["retraites", "Agirc-Arrco", "complémentaire"],
     "trend": null,
-    "equivalence": "Les reserves Agirc-Arrco (70 Md€) = le budget du ministère de l'Education nationale"
+    "equivalence": "Les réserves Agirc-Arrco (70 Md€) = le budget du ministère de l'Éducation nationale"
   },
   {
     "id": "ret-03",
@@ -223,7 +223,7 @@
     "level": 1,
     "tags": ["retraites", "fonctionnaires", "État"],
     "trend": null,
-    "equivalence": "La pension moyenne d'un fonctionnaire d'État = ~2 200€/mois brut (vs ~1 500€ regime général)"
+    "equivalence": "La pension moyenne d'un fonctionnaire d'État = ~2 200€/mois brut (vs ~1 500€ régime général)"
   },
   {
     "id": "ret-04",
@@ -255,7 +255,7 @@
     "level": 1,
     "tags": ["retraites", "minimum vieillesse", "ASPA", "solidarité"],
     "trend": null,
-    "equivalence": "300 000 retraites eligibles ne demandent pas l'ASPA, par meconnaissance ou par peur de la recuperation sur succession"
+    "equivalence": "300 000 retraites eligibles ne demandent pas l'ASPA, par méconnaissance ou par peur de la récupération sur succession"
   },
   {
     "id": "ret-06",
@@ -335,13 +335,13 @@
     "level": 1,
     "tags": ["retraites", "comparaison", "OCDE", "international"],
     "trend": null,
-    "equivalence": "Un Français passe ~42% de sa vie adulte au travail et ~33% a la retraite"
+    "equivalence": "Un Français passe ~42% de sa vie adulte au travail et ~33% à la retraite"
   },
   {
     "id": "soc-13",
     "title": "Allocation adultes handicapes (AAH)",
-    "subtitle": "1 033 EUR/mois pour 1,4 million de personnes",
-    "description": "L'AAH garantit un revenu minimum a 1,4 million de personnes handicapees. Deconjugalisee depuis 2023. Montant en dessous du seuil de pauvrete (~1 200 EUR). La France consacre au total 52 Md EUR/an au handicap (2% du PIB). Delai moyen MDPH : 4 a 8 mois.",
+    "subtitle": "1 033€/mois pour 1,4 million de personnes",
+    "description": "L'AAH garantit un revenu minimum a 1,4 million de personnes handicapees. Deconjugalisee depuis 2023. Montant en dessous du seuil de pauvreté (~1 200€). La France consacre au total 52 Md€/an au handicap (2% du PIB). Delai moyen MDPH : 4 a 8 mois.",
     "amountBillions": 13,
     "costPerCitizen": 191,
     "deckId": "social",
@@ -351,13 +351,13 @@
     "sourceUrl": "https://www.caf.fr",
     "level": 1,
     "tags": ["handicap", "AAH", "social"],
-    "equivalence": "L'AAH (1 033€) est inferieure au seuil de pauvrete (1 200€) — un handicape est pauvre par defaut"
+    "equivalence": "L'AAH (1 033€) est inferieure au seuil de pauvreté (1 200€) — un handicape est pauvre par defaut"
   },
   {
     "id": "soc-14",
-    "title": "Accueil petite enfance (creches)",
+    "title": "Accueil petite enfance (crèches)",
     "subtitle": "22% des enfants obtiennent une place",
-    "description": "La France dispose de ~480 000 places en creche pour ~2,2 millions d'enfants de 0-3 ans. Le SPPE vise 200 000 places supplementaires d'ici 2030. Cout moyen d'une place : ~15 000 EUR/an. Inegalites enormes : 1 place pour 3 enfants en Ile-de-France, 1 pour 8 en Seine-Saint-Denis.",
+    "description": "La France dispose de ~480 000 places en crèche pour ~2,2 millions d'enfants de 0-3 ans. Le SPPE vise 200 000 places supplementaires d'ici 2030. Cout moyen d'une place : ~15 000€/an. Inegalites enormes : 1 place pour 3 enfants en Ile-de-France, 1 pour 8 en Seine-Saint-Denis.",
     "amountBillions": 8,
     "costPerCitizen": 118,
     "deckId": "social",
@@ -367,13 +367,13 @@
     "sourceUrl": "https://www.caf.fr",
     "level": 1,
     "tags": ["creches", "petite enfance", "famille"],
-    "equivalence": "1 place en creche coûte autant qu'1 an d'universite"
+    "equivalence": "1 place en crèche coûte autant qu'1 an d'université"
   },
   {
     "id": "soc-15",
     "title": "Branche autonomie (5e branche Secu)",
-    "subtitle": "40 Md EUR pour la dependance",
-    "description": "La 5e branche de la Sécurité sociale gere la perte d'autonomie des personnes agees et handicapees : APA, PCH, financement des EHPAD. Le vieillissement doublera les besoins d'ici 2050. La loi grand age promise depuis 2019 n'a jamais ete votee.",
+    "subtitle": "40 Md€ pour la dépendance",
+    "description": "La 5e branche de la Sécurité sociale gère la perte d'autonomie des personnes agees et handicapees : APA, PCH, financement des EHPAD. Le vieillissement doublera les besoins d'ici 2050. La loi grand age promise depuis 2019 n'a jamais ete votee.",
     "amountBillions": 40,
     "costPerCitizen": 588,
     "deckId": "social",
@@ -388,8 +388,8 @@
   {
     "id": "soc-16",
     "title": "Accidents du travail (AT-MP)",
-    "subtitle": "Branche excedentaire mais siphonnee",
-    "description": "La branche AT-MP indemnise ~650 000 accidents du travail et ~50 000 maladies professionnelles par an. Financee par les cotisations employeurs. Structurellement excedentaire (~1-2 Md EUR/an), l'État la pontionne regulierement pour financer les branches deficitaires.",
+    "subtitle": "Branche excédentaire mais siphonnee",
+    "description": "La branche AT-MP indemnise ~650 000 accidents du travail et ~50 000 maladies professionnelles par an. Financee par les cotisations employeurs. Structurellement excédentaire (~1-2 Md€/an), l'État la pontionne régulièrement pour financer les branches déficitaires.",
     "amountBillions": 14,
     "costPerCitizen": 206,
     "deckId": "social",
@@ -399,13 +399,13 @@
     "sourceUrl": "https://www.ameli.fr",
     "level": 1,
     "tags": ["travail", "accidents", "cotisations"],
-    "equivalence": "La branche AT-MP est excedentaire mais l'État siphonne ses reserves pour boucher les trous de la Secu"
+    "equivalence": "La branche AT-MP est excédentaire mais l'État siphonne ses réserves pour boucher les trous de la Secu"
   },
   {
     "id": "soc-17",
     "title": "Pauvrete des enfants",
-    "subtitle": "3 millions d'enfants sous le seuil de pauvrete",
-    "description": "21% des moins de 18 ans vivent sous le seuil de pauvrete. L'ASE prend en charge ~370 000 enfants dont ~180 000 places. Un placement en foyer coûte ~50 000 EUR/an. 1 EUR investi dans un enfant de 0-5 ans rapporte 7-13 EUR a la société sur 40 ans (Heckman).",
+    "subtitle": "3 millions d'enfants sous le seuil de pauvreté",
+    "description": "21% des moins de 18 ans vivent sous le seuil de pauvreté. L'ASE prend en charge ~370 000 enfants dont ~180 000 places. Un placement en foyer coûte ~50 000€/an. 1€ investi dans un enfant de 0-5 ans rapporte 7-13€ à la société sur 40 ans (Heckman).",
     "amountBillions": 10,
     "costPerCitizen": 147,
     "deckId": "social",
@@ -415,13 +415,13 @@
     "sourceUrl": "https://www.inegalites.fr",
     "level": 1,
     "tags": ["pauvrete", "enfants", "ASE"],
-    "equivalence": "1€ investi dans un enfant de 0-5 ans pauvre rapporte 7-13€ a la société sur 40 ans"
+    "equivalence": "1€ investi dans un enfant de 0-5 ans pauvre rapporte 7-13€ à la société sur 40 ans"
   },
   {
     "id": "soc-18",
     "title": "Conge parental (PreParE)",
     "subtitle": "Prestation partagee d'education de l'enfant",
-    "description": "La PreParE rémunéré le parent qui reduit ou arrete son activité : 428€/mois a taux plein. Le nombre de bénéficiaires a chute de 50% en 10 ans (de 500 000 a 250 000) : le montant est trop faible pour compenser la perte de salaire. Les pays nordiques offrent 80% du salaire pendant 12-18 mois. La reforme annoncee en 2024 (conge de naissance) est reportee.",
+    "description": "La PreParE rémunéré le parent qui réduit ou arrete son activité : 428€/mois a taux plein. Le nombre de bénéficiaires a chuté de 50% en 10 ans (de 500 000 a 250 000) : le montant est trop faible pour compenser la perte de salaire. Les pays nordiques offrent 80% du salaire pendant 12-18 mois. La réforme annoncee en 2024 (conge de naissance) est reportee.",
     "amountBillions": 1.5,
     "costPerCitizen": 22,
     "deckId": "social",
@@ -429,13 +429,13 @@
     "source": "CNAF, HCFEA, PLF 2026",
     "level": 1,
     "tags": ["social", "conge-parental", "famille"],
-    "equivalence": "428€/mois = 30% du SMIC — aucun menage ne peut vivre avec ca"
+    "equivalence": "428€/mois = 30% du SMIC — aucun ménage ne peut vivre avec ça"
   },
   {
     "id": "soc-19",
     "title": "Aide alimentaire",
     "subtitle": "Restos du coeur, Banques alimentaires, Secours populaire",
-    "description": "5,5 millions de personnes recourent a l'aide alimentaire en France. Le nombre de bénéficiaires a augmente de 30% depuis le COVID. L'État finance ~45% via le programme europeen FEAD. Les Restos du coeur ont failli arreter en 2023 (déficit de 35 M€). Le gaspillage alimentaire en France represente 10 millions de tonnes/an, dont une fraction seulement est recuperee par l'aide alimentaire.",
+    "description": "5,5 millions de personnes recourent à l'aide alimentaire en France. Le nombre de bénéficiaires a augmente de 30% depuis le COVID. L'État financé ~45% via le programme europeen FEAD. Les Restos du coeur ont failli arreter en 2023 (déficit de 35 M€). Le gaspillage alimentaire en France représente 10 millions de tonnes/an, dont une fraction seulement est recuperee par l'aide alimentaire.",
     "amountBillions": 1.5,
     "costPerCitizen": 22,
     "deckId": "social",
@@ -449,7 +449,7 @@
     "id": "soc-20",
     "title": "Pensions alimentaires impayees (ARIPA)",
     "subtitle": "Agence de recouvrement des impayes",
-    "description": "L'ARIPA intervient quand un parent ne paie pas la pension alimentaire fixee par le juge. 30-40% des pensions alimentaires sont partiellement ou totalement impayees. 700 000 familles monoparentales sont touchees. Le taux de recouvrement effectif reste faible (~40%). Les familles monoparentales (85% de femmes) sont les plus exposees a la pauvrete.",
+    "description": "L'ARIPA intervient quand un parent ne paie pas la pension alimentaire fixee par le juge. 30-40% des pensions alimentaires sont partiellement ou totalement impayees. 700 000 familles monoparentales sont touchees. Le taux de recouvrement effectif reste faible (~40%). Les familles monoparentales (85% de femmes) sont les plus exposees à la pauvreté.",
     "amountBillions": 0.3,
     "costPerCitizen": 4,
     "deckId": "social",
@@ -457,13 +457,13 @@
     "source": "ARIPA/CAF, INSEE, DREES",
     "level": 1,
     "tags": ["social", "pensions", "famille"],
-    "equivalence": "1 pension alimentaire sur 3 n'est pas payee — 1re cause de pauvrete des meres isolees"
+    "equivalence": "1 pension alimentaire sur 3 n'est pas payee — 1re cause de pauvreté des meres isolees"
   },
   {
     "id": "soc-21",
     "title": "Protection de l'enfance (ASE)",
-    "subtitle": "Aide sociale a l'enfance",
-    "description": "L'ASE protege ~370 000 enfants : 180 000 places (familles d'accueil ou foyers) et 190 000 suivis a domicile. Cout moyen d'un placement en foyer : 50 000€/an. Les familles d'accueil sont en crise d'attractivite. 23% des personnes sans domicile ont ete placees enfant. La loi Taquet (2022) renforce les droits des enfants places mais les departements manquent de moyens.",
+    "subtitle": "Aide sociale à l'enfance",
+    "description": "L'ASE protégé ~370 000 enfants : 180 000 places (familles d'accueil ou foyers) et 190 000 suivis a domicile. Cout moyen d'un placement en foyer : 50 000€/an. Les familles d'accueil sont en crise d'attractivite. 23% des personnes sans domicile ont ete placees enfant. La loi Taquet (2022) renforce les droits des enfants places mais les departements manquent de moyens.",
     "amountBillions": 9,
     "costPerCitizen": 132,
     "deckId": "social",
