@@ -4,7 +4,7 @@
 
 ---
 
-## Sprints termines (3-26) -- 160 items
+## Sprints termines (3-27) -- 165 items
 
 | Sprint | Objectif                                                           | Items |
 | ------ | ------------------------------------------------------------------ | ----- |
@@ -26,18 +26,58 @@
 | 24     | Performance & Architecture (lazy load, split, cleanup, barrel)     | 9     |
 | 25     | PWA & Resilience (offline, install, SW update, timeouts, API std)  | 10    |
 | 26     | Polish & Tests (75 tests, cardId validation, OG decks, sourceUrls) | 6     |
+| 27     | Accents & Tooltips (200+ accents, createPortal tooltips, share)    | 5     |
+
+---
+
+## Audit Mars 2026 -- Resultats consolides
+
+### CRITIQUE (a faire en priorite)
+
+| Ref    | Composant      | Description                                                          |
+| ------ | -------------- | -------------------------------------------------------------------- |
+| SEC-09 | next.config.ts | CSP: retirer `unsafe-inline` et `unsafe-eval` (XSS mitigation nulle) |
+
+### HAUTE PRIORITE
+
+| Ref     | Composant                 | Description                                                  |
+| ------- | ------------------------- | ------------------------------------------------------------ |
+| SEC-10  | api/og/route.tsx          | Valider params numeriques (keepPercent, cutPercent) avec Zod |
+| SEC-11  | api/ranking, community... | Rate limiting manquant sur endpoints publics GET (DoS)       |
+| SEC-12  | api/analytics/dashboard   | Verifier ANALYTICS_SECRET toujours set (bypass si absent)    |
+| SEC-13  | api/me/profile            | Contrainte UNIQUE username manquante en DB                   |
+| PERF-01 | AcronymText.tsx           | Regex recree a chaque render -> useMemo                      |
+
+### MOYENNE PRIORITE
+
+| Ref     | Composant         | Description                                                         |
+| ------- | ----------------- | ------------------------------------------------------------------- |
+| SEC-14  | Rate limit Map    | Nettoyage entries anciennes (risque memory leak si >10k IPs)        |
+| SEC-15  | api/waitlist      | Email regex trop permissive -> z.string().email()                   |
+| SEC-16  | profil/layout.tsx | Valider archetypeId vs liste connue avant rendu metadata            |
+| PERF-02 | ResultScreen.tsx  | RadarChart dynamic import sans loading fallback -> Skeleton         |
+| PERF-03 | auth.ts           | Log warning si OAuth providers non configures                       |
+| A11Y-02 | Global            | Audit contrastes : rehausser muted text, amber/blue sur fond sombre |
+
+### BASSE PRIORITE
+
+| Ref     | Composant             | Description                                            |
+| ------- | --------------------- | ------------------------------------------------------ |
+| PERF-04 | analytics.ts          | localStorage setItem sans try/catch QuotaExceededError |
+| PERF-05 | jeu/[deckId]/page.tsx | console.error/warn en production -> gater par NODE_ENV |
+| PERF-06 | profil/page.tsx       | Image OAuth sans prop `sizes="44px"`                   |
+| SEC-17  | auth.ts               | Cleanup old sessions (>30j) pour privacy               |
 
 ---
 
 ## Items deferes
 
-| Ref     | Description                                                         |
-| ------- | ------------------------------------------------------------------- |
-| A11Y-02 | Audit contrastes : rehausser muted text, amber/blue sur fond sombre |
-| TEST-06 | Tests E2E Playwright : flow complet swipe -> results                |
-| RGPD-04 | Cookie consent banner (pas requis, analytics sans cookies)          |
-| SEC-07  | CSRF tokens (deja protege par NextAuth + CORS same-origin)          |
-| PWA-06  | Background sync (Periodic Sync API, support limite)                 |
+| Ref     | Description                                                |
+| ------- | ---------------------------------------------------------- |
+| TEST-06 | Tests E2E Playwright : flow complet swipe -> results       |
+| RGPD-04 | Cookie consent banner (pas requis, analytics sans cookies) |
+| SEC-07  | CSRF tokens (deja protege par NextAuth + CORS same-origin) |
+| PWA-06  | Background sync (Periodic Sync API, support limite)        |
 
 ---
 
