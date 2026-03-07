@@ -200,7 +200,7 @@
     "id": "agr-15",
     "title": "Irrigation et gestion de l'eau agricole",
     "subtitle": "Mega-bassines et adaptation climatique",
-    "description": "6% de la surface agricole française est irriguee (vs 30% en Espagne). Les mega-bassines cristallisent un conflit majeur (Sainte-Soline, 2023 : 200 blesses). Le BRGM estimé que les nappes phreatiques baisseront de 10-25% d'ici 2050. Cout d'une mega-bassine = 5-10 M.",
+    "description": "6% de la surface agricole française est irriguee (vs 30% en Espagne). Les mega-bassines cristallisent un conflit majeur (Sainte-Soline, 2023 : 200 blesses). Le BRGM estime que les nappes phreatiques baisseront de 10-25% d'ici 2050. Cout d'une mega-bassine = 5-10 M.",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
     "deckId": "agriculture",

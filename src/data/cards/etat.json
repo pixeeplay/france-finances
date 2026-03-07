@@ -261,7 +261,7 @@
     "id": "eta-18",
     "title": "Cour des comptes et inspections generales",
     "subtitle": "Cour des comptes + CRC + IGF + IGAS + IGA",
-    "description": "La Cour des comptes (700 magistrats et rapporteurs) certifie les comptes de l'État, evalue les politiques publiques et produit ~200 rapports/an. Les CRC controlent les collectivites. Ces corps identifient chaque année des milliards d'economies possibles... rarement suivies d'effet. La Cour estimé que si ses recommandations avaient ete appliquees, l'État economiserait 15-20 Md€/an.",
+    "description": "La Cour des comptes (700 magistrats et rapporteurs) certifie les comptes de l'État, evalue les politiques publiques et produit ~200 rapports/an. Les CRC controlent les collectivites. Ces corps identifient chaque année des milliards d'economies possibles... rarement suivies d'effet. La Cour estime que si ses recommandations avaient ete appliquees, l'État economiserait 15-20 Md€/an.",
     "amountBillions": 0.3,
     "costPerCitizen": 4,
     "deckId": "etat",
