@@ -12,7 +12,7 @@
     "sourceUrl": "https://www.vie-publique.fr",
     "level": 1,
     "tags": ["recettes", "TVA", "consommation"],
-    "equivalence": "Chaque Francais paie ~8€ de TVA par jour sans le savoir"
+    "equivalence": "Chaque Français paie ~8€ de TVA par jour sans le savoir"
   },
   {
     "id": "rec-02",
@@ -42,7 +42,7 @@
     "source": "PLF 2026, DGFiP, Parlement",
     "level": 1,
     "tags": ["recettes", "IS", "entreprises"],
-    "equivalence": "Les 40 entreprises du CAC40 paient ensemble ~30 Md€ d'IS (la moitie du total)"
+    "equivalence": "Les 40 entreprises du CAC40 paient ensemble ~30 Md€ d'IS (la moitié du total)"
   },
   {
     "id": "rec-04",
@@ -85,7 +85,7 @@
     "source": "DGFiP, CAE, France Stratégie",
     "level": 1,
     "tags": ["recettes", "succession", "patrimoine"],
-    "equivalence": "Les Francais transmettent ~300 Md€ par an, l'État en preleve ~7%"
+    "equivalence": "Les Français transmettent ~300 Md€ par an, l'État en prélève ~7%"
   },
   {
     "id": "rec-07",
@@ -99,7 +99,7 @@
     "source": "DGFiP, DGCL, Observatoire des finances locales",
     "level": 1,
     "tags": ["recettes", "foncier", "communes"],
-    "equivalence": "Un proprietaire francais paie en moyenne ~800€/an de foncier (tres variable)"
+    "equivalence": "Un proprietaire français paie en moyenne ~800€/an de foncier (tres variable)"
   },
   {
     "id": "rec-08",
@@ -128,7 +128,7 @@
     "sourceUrl": "https://www.vie-publique.fr",
     "level": 1,
     "tags": ["recettes", "prélèvements", "PIB"],
-    "equivalence": "Un salarie au SMIC travaille de janvier a debut juin uniquement pour les prelevements"
+    "equivalence": "Un salarié au SMIC travaille de janvier a debut juin uniquement pour les prélèvements"
   },
   {
     "id": "rec-10",
@@ -142,13 +142,13 @@
     "source": "PLF 2026 Voies et moyens, Sénat",
     "level": 1,
     "tags": ["recettes", "non fiscal", "dividendes"],
-    "equivalence": "Les amendes radars rapportent ~1,8 Md€/an, soit le budget du ministere de la Culture"
+    "equivalence": "Les amendes radars rapportent ~1,8 Md€/an, soit le budget du ministère de la Culture"
   },
   {
     "id": "rec-11",
     "title": "Taxe GAFAM (services numeriques)",
     "subtitle": "3% du CA en France",
-    "description": "Taxe de 3% sur le CA realise en France par les geants du numerique. Les Etats-Unis ont menace de represailles commerciales. La taxe devait etre temporaire (accord OCDE Pilier 1 en retard), mais elle est reconduite chaque annee. La France est le seul grand pays a l'avoir maintenue.",
+    "description": "Taxe de 3% sur le CA realise en France par les geants du numerique. Les Etats-Unis ont menace de représailles commerciales. La taxe devait etre temporaire (accord OCDE Pilier 1 en retard), mais elle est reconduite chaque année. La France est le seul grand pays a l'avoir maintenue.",
     "amountBillions": 0.7,
     "costPerCitizen": 10,
     "deckId": "recettes",
@@ -156,13 +156,13 @@
     "source": "PLF 2026, DGFiP, OCDE",
     "level": 1,
     "tags": ["recettes", "GAFAM", "numerique"],
-    "equivalence": "Google paie ~200 M/an de taxe GAFAM en France — moins qu'une PME de 500 salaries en IS"
+    "equivalence": "Google paie ~200 M/an de taxe GAFAM en France — moins qu'une PME de 500 salariés en IS"
   },
   {
     "id": "rec-12",
     "title": "Taxe sur les transactions financieres (TTF)",
     "subtitle": "0,3% sur les achats d'actions",
-    "description": "La TTF rapporte ~2 Md/an. Creee en 2012, affectee au budget général et a l'aide au developpement. La taxe Tobin europeenne est bloquee depuis 20 ans. La France applique seule la taxe la plus elevee d'Europe, penalisant la Place de Paris face a Amsterdam et Francfort.",
+    "description": "La TTF rapporte ~2 Md/an. Creee en 2012, affectee au budget général et a l'aide au developpement. La taxe Tobin européenne est bloquee depuis 20 ans. La France applique seule la taxe la plus élevée d'Europe, penalisant la Place de Paris face a Amsterdam et Francfort.",
     "amountBillions": 2,
     "costPerCitizen": 29,
     "deckId": "recettes",
@@ -170,13 +170,13 @@
     "source": "PLF 2026, DGFiP, AMF",
     "level": 1,
     "tags": ["recettes", "TTF", "finance"],
-    "equivalence": "La TTF rapporte 2 Md/an — autant que le budget du ministere de la Culture"
+    "equivalence": "La TTF rapporte 2 Md/an — autant que le budget du ministère de la Culture"
   },
   {
     "id": "rec-13",
     "title": "Cotisations sociales (detail)",
-    "subtitle": "480 Md/an — le 1er prelevement obligatoire",
-    "description": "Sur 100 de salaire brut, ~22 partent en cotisations salariales et ~32 en cotisations patronales. Le cout du travail francais est le 2e plus eleve de la zone euro. Les allegements sur les bas salaires creent une trappe a bas salaires au-dela de 1,6 SMIC.",
+    "subtitle": "480 Md/an — le 1er prélèvement obligatoire",
+    "description": "Sur 100 de salaire brut, ~22 partent en cotisations salariales et ~32 en cotisations patronales. Le coût du travail français est le 2e plus élève de la zone euro. Les allegements sur les bas salaires creent une trappe a bas salaires au-dela de 1,6 SMIC.",
     "amountBillions": 480,
     "costPerCitizen": 7060,
     "deckId": "recettes",
@@ -184,13 +184,13 @@
     "source": "URSSAF, LFSS 2026, Senat",
     "level": 1,
     "tags": ["recettes", "cotisations", "Secu"],
-    "equivalence": "Pour un salarie paye 2 000 net, l'entreprise verse 3 500 au total (dont 1 500 de cotisations)"
+    "equivalence": "Pour un salarié paye 2 000 net, l'entreprise verse 3 500 au total (dont 1 500 de cotisations)"
   },
   {
     "id": "rec-14",
     "title": "Taxe fonciere entreprises et CFE",
     "subtitle": "15 Md/an — impots de production",
-    "description": "Les entreprises paient ~15 Md de taxe fonciere et CFE. Le commerce physique paie plein pot alors que le e-commerce (entrepots en peripherie) est peu taxe. Amazon paie ~4/m2 de CFE pour ses entrepots ruraux, quand un petit commerce paie ~30/m2.",
+    "description": "Les entreprises paient ~15 Md de taxe fonciere et CFE. Le commerce physique paie plein pot alors que le e-commerce (entrepôts en peripherie) est peu taxe. Amazon paie ~4/m2 de CFE pour ses entrepôts ruraux, quand un petit commerce paie ~30/m2.",
     "amountBillions": 15,
     "costPerCitizen": 0,
     "deckId": "recettes",
@@ -198,13 +198,13 @@
     "source": "DGFiP, CCI France, DGCL",
     "level": 1,
     "tags": ["recettes", "foncier", "entreprises"],
-    "equivalence": "Un commerce de centre-ville paie 7x plus de foncier au m2 qu'un entrepot Amazon"
+    "equivalence": "Un commerce de centre-ville paie 7x plus de foncier au m2 qu'un entrepôt Amazon"
   },
   {
     "id": "rec-15",
     "title": "Jeux d'argent (FDJ, PMU, paris)",
     "subtitle": "50 Md/an de mises, 6 Md de recettes fiscales",
-    "description": "Les Francais misent ~50 Md/an. L'État preleve ~12%. La FDJ reverse ~3,5 Md/an a l'État. Les paris sportifs en ligne explosent (+25%/an). L'addiction aux jeux touche ~600 000 personnes. Les sites illegaux offshore proliferent.",
+    "description": "Les Français misent ~50 Md/an. L'État prélève ~12%. La FDJ reverse ~3,5 Md/an a l'État. Les paris sportifs en ligne explosent (+25%/an). L'addiction aux jeux touche ~600 000 personnes. Les sites illegaux offshore proliferent.",
     "amountBillions": 6,
     "costPerCitizen": 88,
     "deckId": "recettes",
@@ -212,13 +212,13 @@
     "source": "ANJ, FDJ, PLF 2026",
     "level": 1,
     "tags": ["recettes", "jeux", "FDJ"],
-    "equivalence": "Les Francais jouent 50 Md/an — davantage que le budget de l'Education nationale"
+    "equivalence": "Les Français jouent 50 Md/an — davantage que le budget de l'Education nationale"
   },
   {
     "id": "rec-16",
     "title": "Amendes et sanctions administratives",
     "subtitle": "Radars + PV + sanctions CNIL",
-    "description": "Radars (~800 M), PV stationnement (~1,5 Md pour les communes), amendes penales (~800 M), sanctions CNIL/AMF/ADLC (~400 M). 48% des Francais estiment que les radars servent davantage a remplir les caisses qu'a sauver des vies.",
+    "description": "Radars (~800 M), PV stationnement (~1,5 Md pour les communes), amendes penales (~800 M), sanctions CNIL/AMF/ADLC (~400 M). 48% des Français estiment que les radars servent davantage a remplir les caisses qu'a sauver des vies.",
     "amountBillions": 3.5,
     "costPerCitizen": 51,
     "deckId": "recettes",

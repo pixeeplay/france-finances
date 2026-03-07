@@ -11,11 +11,7 @@
     "source": "DREES, LFSS 2026, Vie-publique.fr",
     "sourceUrl": "https://www.vie-publique.fr",
     "level": 1,
-    "tags": [
-      "social",
-      "retraites",
-      "pensions"
-    ],
+    "tags": ["social", "retraites", "pensions"],
     "equivalence": "370 Md€ de retraites = 7x le budget de la Défense"
   },
   {
@@ -30,12 +26,8 @@
     "source": "COR rapport annuel 2024, LFSS 2026, Vie-publique.fr",
     "sourceUrl": "https://www.vie-publique.fr",
     "level": 1,
-    "tags": [
-      "social",
-      "réforme",
-      "retraites"
-    ],
-    "equivalence": "Chaque annee de recul de l'age legal = ~7 Md€ d'economies"
+    "tags": ["social", "réforme", "retraites"],
+    "equivalence": "Chaque année de recul de l'age legal = ~7 Md€ d'economies"
   },
   {
     "id": "soc-03",
@@ -49,11 +41,7 @@
     "source": "Budget.gouv.fr CAS Pensions 2025, LFSS 2025, Sénat",
     "sourceUrl": "https://www.budget.gouv.fr",
     "level": 1,
-    "tags": [
-      "social",
-      "retraites",
-      "fonctionnaires"
-    ],
+    "tags": ["social", "retraites", "fonctionnaires"],
     "equivalence": "Le CAS Pensions = le 3e budget de l'État, devant la Défense"
   },
   {
@@ -68,12 +56,8 @@
     "source": "Unédic bilan 2024, France Travail, Vie-publique.fr",
     "sourceUrl": "https://www.vie-publique.fr",
     "level": 1,
-    "tags": [
-      "social",
-      "chômage",
-      "emploi"
-    ],
-    "equivalence": "La dette de l'Unedic (50 Md€) = le cout de 3 EPR2 nucleaires"
+    "tags": ["social", "chômage", "emploi"],
+    "equivalence": "La dette de l'Unedic (50 Md€) = le coût de 3 EPR2 nucléaires"
   },
   {
     "id": "soc-05",
@@ -87,11 +71,7 @@
     "source": "CNAF, LFSS 2025 et 2026, Vie-publique.fr",
     "sourceUrl": "https://www.vie-publique.fr",
     "level": 1,
-    "tags": [
-      "social",
-      "famille",
-      "natalité"
-    ],
+    "tags": ["social", "famille", "natalité"],
     "equivalence": "59,5 Md€ = le budget combine de la Justice + Interieur + Culture"
   },
   {
@@ -106,11 +86,7 @@
     "source": "DREES, CNAF, Vie-publique.fr",
     "sourceUrl": "https://www.vie-publique.fr",
     "level": 1,
-    "tags": [
-      "social",
-      "solidarité",
-      "minima sociaux"
-    ],
+    "tags": ["social", "solidarité", "minima sociaux"],
     "equivalence": "Les 30 Md€ de minima sociaux = 6% du budget total de l'État"
   },
   {
@@ -126,12 +102,8 @@
     "source": "CNAF, Cour des comptes, budget.gouv.fr",
     "sourceUrl": "https://www.budget.gouv.fr",
     "level": 1,
-    "tags": [
-      "social",
-      "logement",
-      "APL"
-    ],
-    "equivalence": "16,5 Md€ d'APL = le cout de construction de ~80 000 logements sociaux/an"
+    "tags": ["social", "logement", "APL"],
+    "equivalence": "16,5 Md€ d'APL = le coût de construction de ~80 000 logements sociaux/an"
   },
   {
     "id": "soc-08",
@@ -144,11 +116,7 @@
     "icon": "🏭",
     "source": "LFSS 2025, Cour des comptes, OFCE",
     "level": 1,
-    "tags": [
-      "social",
-      "emploi",
-      "cotisations"
-    ],
+    "tags": ["social", "emploi", "cotisations"],
     "equivalence": "Les 80 Md€ d'exonerations = plus que le budget de l'Education nationale"
   },
   {
@@ -162,12 +130,8 @@
     "icon": "✈️",
     "source": "Cour des comptes, Sénat",
     "level": 1,
-    "tags": [
-      "social",
-      "fraude",
-      "retraites"
-    ],
-    "equivalence": "5,9 Md€ = le budget annuel du ministere de la Culture"
+    "tags": ["social", "fraude", "retraites"],
+    "equivalence": "5,9 Md€ = le budget annuel du ministère de la Culture"
   },
   {
     "id": "soc-10",
@@ -181,12 +145,8 @@
     "trend": 44,
     "source": "Cour des comptes, LFSS 2026, HCFP",
     "level": 1,
-    "tags": [
-      "social",
-      "déficit",
-      "sécurité sociale"
-    ],
-    "equivalence": "Le deficit annuel de la Secu = 2x le budget de la Justice"
+    "tags": ["social", "déficit", "sécurité sociale"],
+    "equivalence": "Le déficit annuel de la Secu = 2x le budget de la Justice"
   },
   {
     "id": "soc-11",
@@ -200,11 +160,7 @@
     "trend": 25,
     "source": "France Compétences, Cour des comptes, DARES",
     "level": 1,
-    "tags": [
-      "social",
-      "apprentissage",
-      "formation"
-    ],
+    "tags": ["social", "apprentissage", "formation"],
     "equivalence": "Les aides a l'apprentissage ont ete multipliees par 4 en 6 ans"
   },
   {
@@ -218,12 +174,8 @@
     "icon": "🛡️",
     "source": "DREES, Eurostat",
     "level": 1,
-    "tags": [
-      "social",
-      "protection sociale",
-      "modèle français"
-    ],
-    "equivalence": "La protection sociale francaise = le PIB total de la Suisse"
+    "tags": ["social", "protection sociale", "modèle français"],
+    "equivalence": "La protection sociale française = le PIB total de la Suisse"
   },
   {
     "id": "ret-01",
@@ -237,11 +189,7 @@
     "source": "CNAV, Agirc-Arrco, COR",
     "sourceUrl": null,
     "level": 1,
-    "tags": [
-      "retraites",
-      "régime général",
-      "privé"
-    ],
+    "tags": ["retraites", "régime général", "privé"],
     "trend": null,
     "equivalence": "Pour 1 retraite du prive, 1,7 actif cotise (contre 4 en 1960)"
   },
@@ -257,13 +205,9 @@
     "source": "Agirc-Arrco rapport annuel 2024, COR",
     "sourceUrl": null,
     "level": 1,
-    "tags": [
-      "retraites",
-      "Agirc-Arrco",
-      "complémentaire"
-    ],
+    "tags": ["retraites", "Agirc-Arrco", "complémentaire"],
     "trend": null,
-    "equivalence": "Les reserves Agirc-Arrco (70 Md€) = le budget du ministere de l'Education nationale"
+    "equivalence": "Les reserves Agirc-Arrco (70 Md€) = le budget du ministère de l'Education nationale"
   },
   {
     "id": "ret-03",
@@ -277,11 +221,7 @@
     "source": "CAS Pensions, DGAFP, COR",
     "sourceUrl": null,
     "level": 1,
-    "tags": [
-      "retraites",
-      "fonctionnaires",
-      "État"
-    ],
+    "tags": ["retraites", "fonctionnaires", "État"],
     "trend": null,
     "equivalence": "La pension moyenne d'un fonctionnaire d'État = ~2 200€/mois brut (vs ~1 500€ regime général)"
   },
@@ -297,12 +237,7 @@
     "source": "COR, Cour des comptes rapport régimes spéciaux, PLF 2026",
     "sourceUrl": null,
     "level": 1,
-    "tags": [
-      "retraites",
-      "régimes spéciaux",
-      "SNCF",
-      "RATP"
-    ],
+    "tags": ["retraites", "régimes spéciaux", "SNCF", "RATP"],
     "trend": null,
     "equivalence": "L'État subventionne ~75% des pensions SNCF/RATP (les cotisants ne financent que 25%)"
   },
@@ -318,12 +253,7 @@
     "source": "DREES, CNAV, Fondation Abbé Pierre",
     "sourceUrl": null,
     "level": 1,
-    "tags": [
-      "retraites",
-      "minimum vieillesse",
-      "ASPA",
-      "solidarité"
-    ],
+    "tags": ["retraites", "minimum vieillesse", "ASPA", "solidarité"],
     "trend": null,
     "equivalence": "300 000 retraites eligibles ne demandent pas l'ASPA, par meconnaissance ou par peur de la recuperation sur succession"
   },
@@ -339,11 +269,7 @@
     "source": "COR projections 2024, Sénat, DREES",
     "sourceUrl": null,
     "level": 1,
-    "tags": [
-      "retraites",
-      "réforme",
-      "âge légal"
-    ],
+    "tags": ["retraites", "réforme", "âge légal"],
     "trend": null,
     "equivalence": "18 Md€ d'economies sur 7 ans = moins d'1 an de charge de la dette"
   },
@@ -359,11 +285,7 @@
     "source": "DREES, CNAV, COR",
     "sourceUrl": null,
     "level": 1,
-    "tags": [
-      "retraites",
-      "pénibilité",
-      "carrières longues"
-    ],
+    "tags": ["retraites", "pénibilité", "carrières longues"],
     "trend": null,
     "equivalence": "Un ouvrier vit en moyenne 6 ans de moins qu'un cadre, mais part seulement 2 ans plus tot"
   },
@@ -379,11 +301,7 @@
     "source": "DREES, COR, CNAV",
     "sourceUrl": null,
     "level": 1,
-    "tags": [
-      "retraites",
-      "réversion",
-      "veuvage"
-    ],
+    "tags": ["retraites", "réversion", "veuvage"],
     "trend": null,
     "equivalence": "La reversion moyenne = ~600€/mois, souvent insuffisante pour une veuve agee"
   },
@@ -399,13 +317,9 @@
     "source": "MSA, SSI, DREES, COR",
     "sourceUrl": null,
     "level": 1,
-    "tags": [
-      "retraites",
-      "indépendants",
-      "agriculteurs"
-    ],
+    "tags": ["retraites", "indépendants", "agriculteurs"],
     "trend": null,
-    "equivalence": "Un agriculteur retraite gagne moitie moins qu'un fonctionnaire retraite, apres une carriere souvent plus longue"
+    "equivalence": "Un agriculteur retraite gagne moitié moins qu'un fonctionnaire retraite, apres une carriere souvent plus longue"
   },
   {
     "id": "ret-10",
@@ -419,14 +333,9 @@
     "source": "OCDE Pensions at a Glance 2025, COR, Eurostat",
     "sourceUrl": null,
     "level": 1,
-    "tags": [
-      "retraites",
-      "comparaison",
-      "OCDE",
-      "international"
-    ],
+    "tags": ["retraites", "comparaison", "OCDE", "international"],
     "trend": null,
-    "equivalence": "Un Francais passe ~42% de sa vie adulte au travail et ~33% a la retraite"
+    "equivalence": "Un Français passe ~42% de sa vie adulte au travail et ~33% a la retraite"
   },
   {
     "id": "soc-13",
@@ -441,11 +350,7 @@
     "source": "CNAF, MDPH, PLF 2026",
     "sourceUrl": "https://www.caf.fr",
     "level": 1,
-    "tags": [
-      "handicap",
-      "AAH",
-      "social"
-    ],
+    "tags": ["handicap", "AAH", "social"],
     "equivalence": "L'AAH (1 033€) est inferieure au seuil de pauvrete (1 200€) — un handicape est pauvre par defaut"
   },
   {
@@ -461,12 +366,8 @@
     "source": "CNAF, HCFEA, PLF 2026",
     "sourceUrl": "https://www.caf.fr",
     "level": 1,
-    "tags": [
-      "creches",
-      "petite enfance",
-      "famille"
-    ],
-    "equivalence": "1 place en creche coute autant qu'1 an d'universite"
+    "tags": ["creches", "petite enfance", "famille"],
+    "equivalence": "1 place en creche coûte autant qu'1 an d'universite"
   },
   {
     "id": "soc-15",
@@ -481,11 +382,7 @@
     "source": "CNSA, DREES, PLF 2026",
     "sourceUrl": "https://www.cnsa.fr",
     "level": 1,
-    "tags": [
-      "autonomie",
-      "dependance",
-      "EHPAD"
-    ],
+    "tags": ["autonomie", "dependance", "EHPAD"],
     "equivalence": "La France comptera 4,8 millions de personnes de 85+ ans en 2050 (vs 2,2 millions aujourd'hui)"
   },
   {
@@ -501,18 +398,14 @@
     "source": "CNAM AT-MP, DREES, LFSS 2026",
     "sourceUrl": "https://www.ameli.fr",
     "level": 1,
-    "tags": [
-      "travail",
-      "accidents",
-      "cotisations"
-    ],
+    "tags": ["travail", "accidents", "cotisations"],
     "equivalence": "La branche AT-MP est excedentaire mais l'État siphonne ses reserves pour boucher les trous de la Secu"
   },
   {
     "id": "soc-17",
     "title": "Pauvrete des enfants",
     "subtitle": "3 millions d'enfants sous le seuil de pauvrete",
-    "description": "21% des moins de 18 ans vivent sous le seuil de pauvrete. L'ASE prend en charge ~370 000 enfants dont ~180 000 places. Un placement en foyer coute ~50 000 EUR/an. 1 EUR investi dans un enfant de 0-5 ans rapporte 7-13 EUR a la société sur 40 ans (Heckman).",
+    "description": "21% des moins de 18 ans vivent sous le seuil de pauvrete. L'ASE prend en charge ~370 000 enfants dont ~180 000 places. Un placement en foyer coûte ~50 000 EUR/an. 1 EUR investi dans un enfant de 0-5 ans rapporte 7-13 EUR a la société sur 40 ans (Heckman).",
     "amountBillions": 10,
     "costPerCitizen": 147,
     "deckId": "social",
@@ -521,48 +414,36 @@
     "source": "DREES, Observatoire des inegalites, UNICEF France",
     "sourceUrl": "https://www.inegalites.fr",
     "level": 1,
-    "tags": [
-      "pauvrete",
-      "enfants",
-      "ASE"
-    ],
+    "tags": ["pauvrete", "enfants", "ASE"],
     "equivalence": "1€ investi dans un enfant de 0-5 ans pauvre rapporte 7-13€ a la société sur 40 ans"
   },
   {
     "id": "soc-18",
     "title": "Conge parental (PreParE)",
     "subtitle": "Prestation partagee d'education de l'enfant",
-    "description": "La PreParE remunere le parent qui reduit ou arrete son activite : 428€/mois a taux plein. Le nombre de beneficiaires a chute de 50% en 10 ans (de 500 000 a 250 000) : le montant est trop faible pour compenser la perte de salaire. Les pays nordiques offrent 80% du salaire pendant 12-18 mois. La reforme annoncee en 2024 (conge de naissance) est reportee.",
+    "description": "La PreParE rémunéré le parent qui reduit ou arrete son activité : 428€/mois a taux plein. Le nombre de bénéficiaires a chute de 50% en 10 ans (de 500 000 a 250 000) : le montant est trop faible pour compenser la perte de salaire. Les pays nordiques offrent 80% du salaire pendant 12-18 mois. La reforme annoncee en 2024 (conge de naissance) est reportee.",
     "amountBillions": 1.5,
     "costPerCitizen": 22,
     "deckId": "social",
     "icon": "👨‍👩‍👧",
     "source": "CNAF, HCFEA, PLF 2026",
     "level": 1,
-    "tags": [
-      "social",
-      "conge-parental",
-      "famille"
-    ],
+    "tags": ["social", "conge-parental", "famille"],
     "equivalence": "428€/mois = 30% du SMIC — aucun menage ne peut vivre avec ca"
   },
   {
     "id": "soc-19",
     "title": "Aide alimentaire",
     "subtitle": "Restos du coeur, Banques alimentaires, Secours populaire",
-    "description": "5,5 millions de personnes recourent a l'aide alimentaire en France. Le nombre de beneficiaires a augmente de 30% depuis le COVID. L'État finance ~45% via le programme europeen FEAD. Les Restos du coeur ont failli arreter en 2023 (deficit de 35 M€). Le gaspillage alimentaire en France represente 10 millions de tonnes/an, dont une fraction seulement est recuperee par l'aide alimentaire.",
+    "description": "5,5 millions de personnes recourent a l'aide alimentaire en France. Le nombre de bénéficiaires a augmente de 30% depuis le COVID. L'État finance ~45% via le programme europeen FEAD. Les Restos du coeur ont failli arreter en 2023 (déficit de 35 M€). Le gaspillage alimentaire en France represente 10 millions de tonnes/an, dont une fraction seulement est recuperee par l'aide alimentaire.",
     "amountBillions": 1.5,
     "costPerCitizen": 22,
     "deckId": "social",
     "icon": "🍞",
     "source": "Restos du coeur, Banques alimentaires, DGCS, FEAD",
     "level": 1,
-    "tags": [
-      "social",
-      "aide-alimentaire",
-      "pauvrete"
-    ],
-    "equivalence": "La France gaspille en nourriture 10x plus que ce que coute l'aide alimentaire"
+    "tags": ["social", "aide-alimentaire", "pauvrete"],
+    "equivalence": "La France gaspille en nourriture 10x plus que ce que coûte l'aide alimentaire"
   },
   {
     "id": "soc-20",
@@ -575,11 +456,7 @@
     "icon": "💔",
     "source": "ARIPA/CAF, INSEE, DREES",
     "level": 1,
-    "tags": [
-      "social",
-      "pensions",
-      "famille"
-    ],
+    "tags": ["social", "pensions", "famille"],
     "equivalence": "1 pension alimentaire sur 3 n'est pas payee — 1re cause de pauvrete des meres isolees"
   },
   {
@@ -593,12 +470,8 @@
     "icon": "👦",
     "source": "DREES, ONPE, departements de France, Fondation Abbe Pierre",
     "level": 1,
-    "tags": [
-      "social",
-      "enfance",
-      "ase"
-    ],
-    "equivalence": "Un enfant place en foyer coute 137€/jour — et 23% des SDF en France sont d'anciens enfants de l'ASE"
+    "tags": ["social", "enfance", "ase"],
+    "equivalence": "Un enfant place en foyer coûte 137€/jour — et 23% des SDF en France sont d'anciens enfants de l'ASE"
   },
   {
     "id": "soc-22",
@@ -611,11 +484,7 @@
     "icon": "🔍",
     "source": "Cour des comptes rapport fraude, CNAF, CNAM, Unedic",
     "level": 1,
-    "tags": [
-      "social",
-      "fraude",
-      "prestations"
-    ],
+    "tags": ["social", "fraude", "prestations"],
     "equivalence": "La fraude sociale (~7 Md€) = 6% de la fraude fiscale (~120 Md€), mais occupe 60% du debat public"
   }
 ]

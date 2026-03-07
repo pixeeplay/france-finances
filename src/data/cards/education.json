@@ -11,11 +11,7 @@
     "trend": 0.2,
     "source": "Sénat PLF 2025, DEPP 2025",
     "level": 1,
-    "tags": [
-      "éducation",
-      "budget",
-      "enseignement"
-    ],
+    "tags": ["éducation", "budget", "enseignement"],
     "equivalence": "Le budget de l'EN = les recettes fiscales de la TVA sur l'alimentation"
   },
   {
@@ -29,12 +25,8 @@
     "icon": "🎓",
     "source": "PLF 2025, EducPros, Sénat",
     "level": 1,
-    "tags": [
-      "éducation",
-      "supérieur",
-      "universités"
-    ],
-    "equivalence": "Le budget recherche + superieur = la moitie du budget Défense"
+    "tags": ["éducation", "supérieur", "universités"],
+    "equivalence": "Le budget recherche + supérieur = la moitié du budget Défense"
   },
   {
     "id": "edu-03",
@@ -47,12 +39,8 @@
     "icon": "👩‍🏫",
     "source": "DEPP 2025, OCDE, Sénat",
     "level": 1,
-    "tags": [
-      "éducation",
-      "salaires",
-      "enseignants"
-    ],
-    "equivalence": "Augmenter tous les enseignants de 300€/mois couterait ~3 Md€/an"
+    "tags": ["éducation", "salaires", "enseignants"],
+    "equivalence": "Augmenter tous les enseignants de 300€/mois coûterait ~3 Md€/an"
   },
   {
     "id": "edu-04",
@@ -65,12 +53,8 @@
     "icon": "🏗️",
     "source": "Rapport Demarcq, EduRénov, Oxfam France",
     "level": 1,
-    "tags": [
-      "éducation",
-      "infrastructure",
-      "rénovation"
-    ],
-    "equivalence": "Les 40 Md€ necessaires = le cout de 6 EPR2 nucleaires"
+    "tags": ["éducation", "infrastructure", "rénovation"],
+    "equivalence": "Les 40 Md€ nécessaires = le coût de 6 EPR2 nucléaires"
   },
   {
     "id": "edu-05",
@@ -83,12 +67,8 @@
     "icon": "♿",
     "source": "Sénat PLF 2025, SUD Éducation, DEPP",
     "level": 1,
-    "tags": [
-      "éducation",
-      "handicap",
-      "inclusion"
-    ],
-    "equivalence": "Le budget ecole inclusive = le prix de 2 sous-marins nucleaires"
+    "tags": ["éducation", "handicap", "inclusion"],
+    "equivalence": "Le budget école inclusive = le prix de 2 sous-marins nucléaires"
   },
   {
     "id": "edu-06",
@@ -101,11 +81,7 @@
     "icon": "🔬",
     "source": "MESRI, HCERES, OCDE",
     "level": 1,
-    "tags": [
-      "éducation",
-      "recherche",
-      "CNRS"
-    ],
+    "tags": ["éducation", "recherche", "CNRS"],
     "equivalence": "Le budget recherche publique = 1/5e de ce que les USA y consacrent (a population comparable)"
   },
   {
@@ -119,12 +95,8 @@
     "icon": "📝",
     "source": "CNOUS, DGESIP, Observatoire de la vie étudiante",
     "level": 1,
-    "tags": [
-      "éducation",
-      "bourses",
-      "étudiants"
-    ],
-    "equivalence": "Doubler les bourses couterait ~2,4 Md€/an, soit moins que le CIR"
+    "tags": ["éducation", "bourses", "étudiants"],
+    "equivalence": "Doubler les bourses coûterait ~2,4 Md€/an, soit moins que le CIR"
   },
   {
     "id": "edu-08",
@@ -137,11 +109,7 @@
     "icon": "💡",
     "source": "MESRI, Cour des comptes, France Stratégie",
     "level": 1,
-    "tags": [
-      "éducation",
-      "fiscalité",
-      "R&D"
-    ],
+    "tags": ["éducation", "fiscalité", "R&D"],
     "equivalence": "7 Md€ de CIR = le budget annuel de la recherche publique au CNRS"
   },
   {
@@ -155,12 +123,8 @@
     "icon": "🎖️",
     "source": "Rapport Sénat 2024, INJEP, Ministère des Armées",
     "level": 1,
-    "tags": [
-      "éducation",
-      "citoyenneté",
-      "jeunesse"
-    ],
-    "equivalence": "Generaliser le SNU couterait autant que l'ensemble des bourses + CROUS + ecole inclusive"
+    "tags": ["éducation", "citoyenneté", "jeunesse"],
+    "equivalence": "Generaliser le SNU coûterait autant que l'ensemble des bourses + CROUS + école inclusive"
   },
   {
     "id": "edu-10",
@@ -173,18 +137,14 @@
     "icon": "🏫",
     "source": "PLF 2025, Rapport Vannier-Weissberg 2024",
     "level": 1,
-    "tags": [
-      "éducation",
-      "privé",
-      "mixité sociale"
-    ],
-    "equivalence": "13 Md€ = le budget annuel du ministere de la Justice"
+    "tags": ["éducation", "privé", "mixité sociale"],
+    "equivalence": "13 Md€ = le budget annuel du ministère de la Justice"
   },
   {
     "id": "edu-11",
     "title": "Education prioritaire (REP/REP+)",
     "subtitle": "1,7 million d'eleves en zone prioritaire",
-    "description": "1 093 reseaux REP et 364 REP+ scolarisent 1,7 million d'eleves. Classes dedoublees en CP-CE1 (12 eleves au lieu de 24), primes enseignants jusqu'a 5 000 EUR/an en REP+. Amelioration de +15% en francais et maths en CP-CE1, mais l'ecart persiste au college.",
+    "description": "1 093 reseaux REP et 364 REP+ scolarisent 1,7 million d'eleves. Classes dedoublees en CP-CE1 (12 eleves au lieu de 24), primes enseignants jusqu'a 5 000 EUR/an en REP+. Amelioration de +15% en français et maths en CP-CE1, mais l'ecart persiste au college.",
     "amountBillions": 2,
     "costPerCitizen": 29,
     "deckId": "education",
@@ -193,18 +153,14 @@
     "source": "DEPP, Ministere de l'Education nationale",
     "sourceUrl": "https://www.education.gouv.fr",
     "level": 1,
-    "tags": [
-      "REP",
-      "prioritaire",
-      "egalite"
-    ],
-    "equivalence": "Un eleve en REP+ coute ~30% de plus qu'un eleve hors education prioritaire"
+    "tags": ["REP", "prioritaire", "egalite"],
+    "equivalence": "Un élève en REP+ coûte ~30% de plus qu'un élève hors education prioritaire"
   },
   {
     "id": "edu-12",
     "title": "Cantine scolaire",
     "subtitle": "8 millions d'eleves a la cantine chaque jour",
-    "description": "Le repas coute 8-10 EUR a produire, dont 3-4 EUR a la charge des familles. La loi EGalim impose 50% de produits durables et 20% de bio, objectifs atteints a 30% seulement. La cantine est souvent le seul repas equilibre pour les enfants defavorises.",
+    "description": "Le repas coûte 8-10 EUR a produire, dont 3-4 EUR a la charge des familles. La loi EGalim impose 50% de produits durables et 20% de bio, objectifs atteints a 30% seulement. La cantine est souvent le seul repas equilibre pour les enfants defavorises.",
     "amountBillions": 7,
     "costPerCitizen": 103,
     "deckId": "education",
@@ -213,12 +169,8 @@
     "source": "CNFCE, ADEME, Ministere de l'Education nationale",
     "sourceUrl": "https://www.education.gouv.fr",
     "level": 1,
-    "tags": [
-      "cantine",
-      "alimentation",
-      "ecole"
-    ],
-    "equivalence": "Nourrir un enfant a l'ecole coute 2€/jour au contribuable, soit le prix d'un cafe"
+    "tags": ["cantine", "alimentation", "école"],
+    "equivalence": "Nourrir un enfant a l'école coûte 2€/jour au contribuable, soit le prix d'un café"
   },
   {
     "id": "edu-13",
@@ -233,18 +185,14 @@
     "source": "DEPP, Ministere de l'Education nationale, CEREQ",
     "sourceUrl": "https://www.education.gouv.fr",
     "level": 1,
-    "tags": [
-      "lycee pro",
-      "formation",
-      "apprentissage"
-    ],
-    "equivalence": "Un lyceen professionnel coute ~11 000€/an a l'État (vs ~9 000€ en voie générale, stages inclus)"
+    "tags": ["lycee pro", "formation", "apprentissage"],
+    "equivalence": "Un lycéen professionnel coûte ~11 000€/an a l'État (vs ~9 000€ en voie générale, stages inclus)"
   },
   {
     "id": "edu-14",
-    "title": "AEFE (lycees francais a l'etranger)",
+    "title": "AEFE (lycees français a l'etranger)",
     "subtitle": "580 etablissements dans 139 pays",
-    "description": "L'AEFE gere ou homologue 580 etablissements scolarisant 392 000 eleves (dont 40% de Francais). Les frais de scolarite varient de 3 000 a 30 000 EUR/an. C'est le 1er reseau scolaire mondial a l'etranger et un outil majeur de soft power.",
+    "description": "L'AEFE gere ou homologue 580 etablissements scolarisant 392 000 eleves (dont 40% de Français). Les frais de scolarite varient de 3 000 a 30 000 EUR/an. C'est le 1er réseau scolaire mondial a l'etranger et un outil majeur de soft power.",
     "amountBillions": 1.2,
     "costPerCitizen": 6,
     "deckId": "education",
@@ -253,18 +201,14 @@
     "source": "AEFE, PLF 2026 Action exterieure, Senat",
     "sourceUrl": "https://www.aefe.fr",
     "level": 1,
-    "tags": [
-      "AEFE",
-      "etranger",
-      "soft power"
-    ],
-    "equivalence": "580 lycees francais dans 139 pays — plus que McDonald's dans certains continents"
+    "tags": ["AEFE", "etranger", "soft power"],
+    "equivalence": "580 lycees français dans 139 pays — plus que McDonald's dans certains continents"
   },
   {
     "id": "edu-15",
     "title": "Recherche spatiale et ESA",
-    "subtitle": "1er contributeur de l'Agence spatiale europeenne",
-    "description": "Le programme 193 finance la contribution francaise a l'ESA (~25% du budget). Missions scientifiques, lanceurs Ariane 6, observation de la Terre. La concurrence de SpaceX menace Ariane : cout de lancement 2x superieur. L'ESA investit dans un demonstrateur reutilisable.",
+    "subtitle": "1er contributeur de l'Agence spatiale européenne",
+    "description": "Le programme 193 finance la contribution française a l'ESA (~25% du budget). Missions scientifiques, lanceurs Ariane 6, observation de la Terre. La concurrence de SpaceX menace Ariane : coût de lancement 2x supérieur. L'ESA investit dans un demonstrateur reutilisable.",
     "amountBillions": 1.7,
     "costPerCitizen": 25,
     "deckId": "education",
@@ -273,48 +217,36 @@
     "source": "PLF 2026, CNES, ESA",
     "sourceUrl": "https://www.esa.int",
     "level": 1,
-    "tags": [
-      "espace",
-      "ESA",
-      "recherche"
-    ],
-    "equivalence": "25€/Francais/an pour comprendre le climat, lancer des satellites et maintenir l'Europe dans l'espace"
+    "tags": ["espace", "ESA", "recherche"],
+    "equivalence": "25€/Français/an pour comprendre le climat, lancer des satellites et maintenir l'Europe dans l'espace"
   },
   {
     "id": "edu-16",
     "title": "Numerique educatif",
     "subtitle": "Tablettes, ENT, logiciels scolaires",
-    "description": "Le plan numerique educatif finance les tablettes, les espaces numeriques de travail (ENT), les manuels numeriques et la formation des enseignants. Les collectivites supportent 70% du cout materiel. Le bilan est mitige : 65% des classes sont equipees mais l'usage pedagogique reel reste superficiel. La France interdit les smartphones au college et en debat pour le lycee.",
+    "description": "Le plan numerique educatif finance les tablettes, les espaces numeriques de travail (ENT), les manuels numeriques et la formation des enseignants. Les collectivites supportent 70% du coût materiel. Le bilan est mitige : 65% des classes sont equipees mais l'usage pedagogique reel reste superficiel. La France interdit les smartphones au college et en debat pour le lycee.",
     "amountBillions": 1,
     "costPerCitizen": 15,
     "deckId": "education",
     "icon": "💻",
     "source": "DNE, DEPP, Cour des comptes rapport numerique educatif",
     "level": 1,
-    "tags": [
-      "education",
-      "numerique",
-      "tablettes"
-    ],
+    "tags": ["education", "numerique", "tablettes"],
     "equivalence": "1 Md€/an de numerique educatif mais 25% des enseignants declarent ne jamais utiliser le materiel"
   },
   {
     "id": "edu-17",
     "title": "CROUS et vie etudiante",
     "subtitle": "Residences universitaires + restaurants + accompagnement social",
-    "description": "Les 26 CROUS gerent 175 000 logements universitaires (pour 2,9 millions d'etudiants — taux de couverture : 6%). Le repas au restaurant universitaire coute 3,30€ (1€ pour les boursiers). Plan 60 000 logements lance en 2018, a peine 30 000 livres en 2025. 20% des etudiants vivent sous le seuil de pauvrete.",
+    "description": "Les 26 CROUS gerent 175 000 logements universitaires (pour 2,9 millions d'étudiants — taux de couverture : 6%). Le repas au restaurant universitaire coûte 3,30€ (1€ pour les boursiers). Plan 60 000 logements lance en 2018, a peine 30 000 livres en 2025. 20% des étudiants vivent sous le seuil de pauvrete.",
     "amountBillions": 2,
     "costPerCitizen": 29,
     "deckId": "education",
     "icon": "🏫",
     "source": "CNOUS, OVE, Cour des comptes",
     "level": 1,
-    "tags": [
-      "education",
-      "etudiants",
-      "crous"
-    ],
-    "equivalence": "6% des etudiants ont un logement CROUS — 94% se debrouillent seuls, souvent en precarite"
+    "tags": ["education", "étudiants", "crous"],
+    "equivalence": "6% des étudiants ont un logement CROUS — 94% se débrouillent seuls, souvent en précarité"
   },
   {
     "id": "edu-18",
@@ -327,47 +259,35 @@
     "icon": "🎯",
     "source": "MESRI, Cour des comptes rapport Parcoursup, ONISEP",
     "level": 1,
-    "tags": [
-      "education",
-      "parcoursup",
-      "orientation"
-    ],
-    "equivalence": "Parcoursup decide du destin de 900 000 jeunes/an pour un budget equivalent a 5 centimes par candidat"
+    "tags": ["education", "parcoursup", "orientation"],
+    "equivalence": "Parcoursup décide du destin de 900 000 jeunes/an pour un budget équivalent a 5 centimes par candidat"
   },
   {
     "id": "edu-19",
     "title": "Harcelement scolaire",
     "subtitle": "Plan de lutte pHARe + formations + numero 3018",
-    "description": "700 000 a 1 million d'eleves sont victimes de harcelement scolaire chaque annee. Le cyberharcelement touche 20% des adolescents. Le plan pHARe forme les adultes-referents et systematise le signalement. Depuis 2023, le harcelement est un delit penal. Le changement d'etablissement concerne desormais le harceleur (et non plus la victime). Budget faible au regard de l'ampleur du problème.",
+    "description": "700 000 a 1 million d'eleves sont victimes de harcelement scolaire chaque année. Le cyberharcelement touche 20% des adolescents. Le plan pHARe forme les adultes-referents et systematise le signalement. Depuis 2023, le harcelement est un delit penal. Le changement d'etablissement concerne desormais le harceleur (et non plus la victime). Budget faible au regard de l'ampleur du problème.",
     "amountBillions": 0.1,
     "costPerCitizen": 2,
     "deckId": "education",
     "icon": "🚫",
     "source": "Ministere de l'Education nationale, programme pHARe, 3018",
     "level": 1,
-    "tags": [
-      "education",
-      "harcelement",
-      "jeunesse"
-    ],
+    "tags": ["education", "harcelement", "jeunesse"],
     "equivalence": "100 M€ pour proteger 700 000 enfants harceles = 143€ par enfant victime et par an"
   },
   {
     "id": "edu-20",
     "title": "Formation continue des enseignants",
     "subtitle": "Formation professionnelle Education nationale",
-    "description": "Les enseignants francais recoivent en moyenne 3 jours de formation continue par an (contre 8 en Finlande, 12 au Japon). Le budget formation est le premier coupe en periode d'austerite. Seuls 40% des enseignants jugent leur formation utile. Le recrutement est en crise : le concours n'attire que 0,8 candidat par poste en maths. En 2024, des contractuels recrutes en 4 jours ont ete mis devant des classes sans aucune formation.",
+    "description": "Les enseignants français recoivent en moyenne 3 jours de formation continue par an (contre 8 en Finlande, 12 au Japon). Le budget formation est le premier coupe en periode d'austerite. Seuls 40% des enseignants jugent leur formation utile. Le recrutement est en crise : le concours n'attire que 0,8 candidat par poste en maths. En 2024, des contractuels recrutes en 4 jours ont ete mis devant des classes sans aucune formation.",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
     "deckId": "education",
     "icon": "👩‍🏫",
     "source": "DEPP, OCDE TALIS, Cour des comptes",
     "level": 1,
-    "tags": [
-      "education",
-      "enseignants",
-      "formation"
-    ],
-    "equivalence": "Un enseignant francais est forme 3 jours/an (vs 12 au Japon) — et on s'etonne du niveau PISA"
+    "tags": ["education", "enseignants", "formation"],
+    "equivalence": "Un enseignant français est formé 3 jours/an (vs 12 au Japon) — et on s'étonne du niveau PISA"
   }
 ]

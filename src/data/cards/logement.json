@@ -10,12 +10,8 @@
     "icon": "🏘️",
     "source": "Fondation Abbé Pierre, USH, Cour des comptes, PLF 2026",
     "level": 1,
-    "tags": [
-      "logement",
-      "social",
-      "HLM"
-    ],
-    "equivalence": "Chaque logement social neuf coute environ 150 000€ en aides publiques"
+    "tags": ["logement", "social", "HLM"],
+    "equivalence": "Chaque logement social neuf coûte environ 150 000€ en aides publiques"
   },
   {
     "id": "log-02",
@@ -28,11 +24,7 @@
     "icon": "🛏️",
     "source": "PLF 2026 Cohésion des territoires, Cour des comptes, Fondation Abbé Pierre",
     "level": 1,
-    "tags": [
-      "logement",
-      "urgence",
-      "sans-abri"
-    ],
+    "tags": ["logement", "urgence", "sans-abri"],
     "equivalence": "~42€ par nuit et par personne hebergee (dont beaucoup en hotel)"
   },
   {
@@ -46,11 +38,7 @@
     "icon": "🏗️",
     "source": "ANRU, PLF 2026, Cour des comptes",
     "level": 1,
-    "tags": [
-      "logement",
-      "rénovation urbaine",
-      "quartiers"
-    ],
+    "tags": ["logement", "rénovation urbaine", "quartiers"],
     "equivalence": "450 quartiers renoves, soit ~27 M€ par quartier en moyenne"
   },
   {
@@ -65,12 +53,8 @@
     "source": "SGFGAS, vie-publique.fr, Cour des comptes",
     "sourceUrl": "https://www.vie-publique.fr",
     "level": 1,
-    "tags": [
-      "logement",
-      "PTZ",
-      "accession"
-    ],
-    "equivalence": "~40 000€ de subvention implicite par menage beneficiaire"
+    "tags": ["logement", "PTZ", "accession"],
+    "equivalence": "~40 000€ de subvention implicite par menage bénéficiaire"
   },
   {
     "id": "log-05",
@@ -83,11 +67,7 @@
     "icon": "🤝",
     "source": "PLF 2026, ANCT, Observatoire national de la politique de la ville",
     "level": 1,
-    "tags": [
-      "logement",
-      "politique de la ville",
-      "QPV"
-    ],
+    "tags": ["logement", "politique de la ville", "QPV"],
     "equivalence": "~110€ par habitant de quartier prioritaire et par an"
   },
   {
@@ -101,12 +81,8 @@
     "icon": "🌐",
     "source": "ARCEP, ANCT, France THD",
     "level": 1,
-    "tags": [
-      "logement",
-      "numérique",
-      "fibre"
-    ],
-    "equivalence": "Le budget de 6 CNRS chaque annee pendant 5 ans"
+    "tags": ["logement", "numérique", "fibre"],
+    "equivalence": "Le budget de 6 CNRS chaque année pendant 5 ans"
   },
   {
     "id": "log-07",
@@ -121,11 +97,7 @@
     "source": "PLF 2026, vie-publique.fr",
     "sourceUrl": "https://www.vie-publique.fr",
     "level": 1,
-    "tags": [
-      "logement",
-      "budget",
-      "cohésion"
-    ],
+    "tags": ["logement", "budget", "cohésion"],
     "equivalence": "Plus que le budget de la Défense (hors pensions)"
   },
   {
@@ -139,11 +111,7 @@
     "icon": "🏷️",
     "source": "Cour des comptes, PLF 2026",
     "level": 1,
-    "tags": [
-      "logement",
-      "fiscalité",
-      "investissement locatif"
-    ],
+    "tags": ["logement", "fiscalité", "investissement locatif"],
     "equivalence": "Les niches fiscales = le budget combine Défense + Justice + Interieur"
   },
   {
@@ -157,11 +125,7 @@
     "icon": "🏠",
     "source": "Action Logement, PLF 2026, Cour des comptes",
     "level": 1,
-    "tags": [
-      "logement",
-      "action logement",
-      "patronal"
-    ],
+    "tags": ["logement", "action logement", "patronal"],
     "equivalence": "Visale a garanti 1,2 million de baux depuis 2016 — 1er dispositif anti-galere locative des jeunes actifs"
   },
   {
@@ -175,29 +139,21 @@
     "icon": "🏠",
     "source": "ANAH, Fondation Abbe Pierre rapport 2025, PLF 2026",
     "level": 1,
-    "tags": [
-      "logement",
-      "coproprietes",
-      "habitat indigne"
-    ],
+    "tags": ["logement", "coproprietes", "habitat indigne"],
     "equivalence": "420 000 logements indignes en France, 6e puissance mondiale — un paradoxe national"
   },
   {
     "id": "log-11",
     "title": "Logement intermediaire (classes moyennes)",
     "subtitle": "Banque des Territoires — loyers sous le marche",
-    "description": "Le logement intermediaire (loyers 15-20% sous le marche) cible les classes moyennes coincees. 155 000 logements intermediaires crees en 10 ans. La crise du credit immobilier (taux passes de 1% a 4%) a fait exploser la demande en locatif intermediaire.",
+    "description": "Le logement intermediaire (loyers 15-20% sous le marche) cible les classes moyennes coincees. 155 000 logements intermediaires créés en 10 ans. La crise du credit immobilier (taux passes de 1% a 4%) a fait exploser la demande en locatif intermediaire.",
     "amountBillions": 10,
     "costPerCitizen": 0,
     "deckId": "logement",
     "icon": "🏠",
     "source": "Banque des Territoires, CDC, USH",
     "level": 1,
-    "tags": [
-      "logement",
-      "intermediaire",
-      "classes moyennes"
-    ],
+    "tags": ["logement", "intermediaire", "classes moyennes"],
     "equivalence": "Un loyer intermediaire a Paris = ~20/m2 (vs 25-30 dans le prive, vs 7-12 en HLM)"
   },
   {
@@ -211,11 +167,7 @@
     "icon": "🏠",
     "source": "USH, PLF 2026, Public Senat",
     "level": 1,
-    "tags": [
-      "logement",
-      "HLM",
-      "RLS"
-    ],
+    "tags": ["logement", "HLM", "RLS"],
     "equivalence": "16 Md ponctionnes en 7 ans = 200 000 logements sociaux qui auraient pu etre construits"
   },
   {
@@ -229,11 +181,7 @@
     "icon": "🏠",
     "source": "DGFIP, Observatoire Airbnb, loi Le Meur, APUR",
     "level": 1,
-    "tags": [
-      "logement",
-      "Airbnb",
-      "tourisme"
-    ],
+    "tags": ["logement", "Airbnb", "tourisme"],
     "equivalence": "25 000 logements Airbnb retires du marche a Paris = 10 ans de construction de logements sociaux parisiens"
   },
   {
@@ -247,11 +195,7 @@
     "icon": "🏠",
     "source": "ADEME, Observatoire DPE, CNR Logement, loi Climat Resilience",
     "level": 1,
-    "tags": [
-      "logement",
-      "DPE",
-      "renovation"
-    ],
+    "tags": ["logement", "DPE", "renovation"],
     "equivalence": "5,2 millions de passoires = 1 logement sur 5 bientot interdit a la location"
   },
   {
@@ -265,11 +209,7 @@
     "icon": "🏠",
     "source": "DHUP, Fondation Abbe Pierre, PLF 2026",
     "level": 1,
-    "tags": [
-      "logement",
-      "SRU",
-      "HLM"
-    ],
+    "tags": ["logement", "SRU", "HLM"],
     "equivalence": "Neuilly prefere payer 8 M/an d'amende plutot que construire des HLM — la loi sans les dents"
   },
   {
@@ -283,47 +223,35 @@
     "icon": "🏠",
     "source": "Fondation Abbe Pierre rapport 2025, INSEE, DREES",
     "level": 1,
-    "tags": [
-      "logement",
-      "mal-logement",
-      "social"
-    ],
+    "tags": ["logement", "mal-logement", "social"],
     "equivalence": "330 000 personnes sans domicile en France = la population de Nice"
   },
   {
     "id": "log-17",
     "title": "Accession a la propriete",
     "subtitle": "Taux et pouvoir d'achat immobilier",
-    "description": "Taux de proprietaires en France : 58% (stable, vs 65% en moyenne UE). La crise du credit (taux de 1% a 4%) a fait chuter les primo-accedants de 35%. Il faut en moyenne 7 annees de salaire pour acheter un logement moyen. A Paris, 15 ans.",
+    "description": "Taux de proprietaires en France : 58% (stable, vs 65% en moyenne UE). La crise du credit (taux de 1% a 4%) a fait chuter les primo-accedants de 35%. Il faut en moyenne 7 années de salaire pour acheter un logement moyen. A Paris, 15 ans.",
     "amountBillions": 5,
     "costPerCitizen": 74,
     "deckId": "logement",
     "icon": "🏠",
     "source": "Notaires de France, CGEDD, SGFGAS",
     "level": 1,
-    "tags": [
-      "logement",
-      "accession",
-      "credit"
-    ],
+    "tags": ["logement", "accession", "credit"],
     "equivalence": "A Paris, il faut epargner 15 ans de salaire pour acheter un appartement — c'etait 5 ans en 1998"
   },
   {
     "id": "log-18",
     "title": "Amenagement commercial et friches",
     "subtitle": "170 000 hectares a recycler",
-    "description": "170 000 hectares de friches en France. L'objectif ZAN (zero artificialisation nette) d'ici 2050 impose de recycler ces friches. Le fonds friches a permis 1 400 projets. 50 000 locaux commerciaux vacants en centre-ville. La reconversion d'une friche coute 2-5x plus qu'un terrain vierge.",
+    "description": "170 000 hectares de friches en France. L'objectif ZAN (zero artificialisation nette) d'ici 2050 impose de recycler ces friches. Le fonds friches a permis 1 400 projets. 50 000 locaux commerciaux vacants en centre-ville. La reconversion d'une friche coûte 2-5x plus qu'un terrain vierge.",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
     "deckId": "logement",
     "icon": "🏠",
     "source": "CEREMA, ANCT, fonds friches, loi Climat Resilience",
     "level": 1,
-    "tags": [
-      "logement",
-      "friches",
-      "ZAN"
-    ],
+    "tags": ["logement", "friches", "ZAN"],
     "equivalence": "Recycler 170 000 ha de friches = eviter l'artificialisation de 2x la surface de Paris intra-muros"
   }
 ]

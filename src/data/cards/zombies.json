@@ -11,14 +11,9 @@
     "source": "Cour des comptes, France Compétences rapport, PLF 2026",
     "sourceUrl": null,
     "level": 1,
-    "tags": [
-      "zombie",
-      "formation",
-      "CPF",
-      "déficit"
-    ],
+    "tags": ["zombie", "formation", "CPF", "déficit"],
     "trend": null,
-    "equivalence": "Le deficit de France Competences = 2x le budget du ministere de la Culture"
+    "equivalence": "Le déficit de France Competences = 2x le budget du ministère de la Culture"
   },
   {
     "id": "zom-02",
@@ -32,12 +27,7 @@
     "source": "BPI France, Banque de France, Cour des comptes rapport PGE",
     "sourceUrl": null,
     "level": 1,
-    "tags": [
-      "zombie",
-      "COVID",
-      "PGE",
-      "dette"
-    ],
+    "tags": ["zombie", "COVID", "PGE", "dette"],
     "trend": null,
     "equivalence": "Les PGE = un pret de 200 000€ en moyenne par entreprise, garanti par vous"
   },
@@ -53,14 +43,9 @@
     "source": "CRE, Cour des comptes, EDF",
     "sourceUrl": null,
     "level": 1,
-    "tags": [
-      "zombie",
-      "ARENH",
-      "énergie",
-      "EDF"
-    ],
+    "tags": ["zombie", "ARENH", "énergie", "EDF"],
     "trend": null,
-    "equivalence": "EDF a vendu son electricite a perte pendant 15 ans sur ordre de l'État, pour creer de la concurrence"
+    "equivalence": "EDF a vendu son électricité a perte pendant 15 ans sur ordre de l'État, pour creer de la concurrence"
   },
   {
     "id": "zom-04",
@@ -74,11 +59,7 @@
     "source": "Cour des comptes, IGAS, PLF annexe opérateurs",
     "sourceUrl": null,
     "level": 1,
-    "tags": [
-      "zombie",
-      "indemnisation",
-      "mille-feuille"
-    ],
+    "tags": ["zombie", "indemnisation", "mille-feuille"],
     "trend": null,
     "equivalence": "20+ fonds d'indemnisation la ou 3-4 suffiraient"
   },
@@ -94,11 +75,7 @@
     "source": "DGCL, DGFiP, Cour des comptes",
     "sourceUrl": null,
     "level": 1,
-    "tags": [
-      "zombie",
-      "fiscalité",
-      "taxe d'habitation"
-    ],
+    "tags": ["zombie", "fiscalité", "taxe d'habitation"],
     "trend": null,
     "equivalence": "La suppression a ete compensee a l'euro pres — le contribuable paie toujours, mais autrement"
   },
@@ -114,11 +91,7 @@
     "source": "PLF 2026, CESE rapport d'activité, Cour des comptes",
     "sourceUrl": null,
     "level": 1,
-    "tags": [
-      "zombie",
-      "institution",
-      "CESE"
-    ],
+    "tags": ["zombie", "institution", "CESE"],
     "trend": null,
     "equivalence": "45 M€ = le prix de 3 ecoles neuves par an"
   },
@@ -134,12 +107,7 @@
     "source": "PLF 2026 annexe opérateurs, Cour des comptes, Fondation IFRAP",
     "sourceUrl": null,
     "level": 1,
-    "tags": [
-      "zombie",
-      "opérateurs",
-      "mille-feuille",
-      "administration"
-    ],
+    "tags": ["zombie", "opérateurs", "mille-feuille", "administration"],
     "trend": null,
     "equivalence": "438 operateurs = plus que le nombre de deputes (577) — chacun avec son DG, son CA et ses locaux"
   },
@@ -155,13 +123,9 @@
     "source": "DARES, IGAS, Cour des comptes",
     "sourceUrl": null,
     "level": 1,
-    "tags": [
-      "zombie",
-      "emploi",
-      "revitalisation"
-    ],
+    "tags": ["zombie", "emploi", "revitalisation"],
     "trend": null,
-    "equivalence": "~50 000€ par emploi cree, dont une partie enrichit les consultants"
+    "equivalence": "~50 000€ par emploi créé, dont une partie enrichit les consultants"
   },
   {
     "id": "zom-09",
@@ -175,12 +139,7 @@
     "source": "IGAS rapport ARS, PLF 2026, Cour des comptes",
     "sourceUrl": null,
     "level": 1,
-    "tags": [
-      "zombie",
-      "santé",
-      "ARS",
-      "bureaucratie"
-    ],
+    "tags": ["zombie", "santé", "ARS", "bureaucratie"],
     "trend": null,
     "equivalence": "18 ARS avec 18 DG, 18 sieges, 18 comites, pour un pays de la taille du Texas"
   },
@@ -196,13 +155,8 @@
     "source": "FRR rapport annuel, COR, Cour des comptes",
     "sourceUrl": null,
     "level": 1,
-    "tags": [
-      "zombie",
-      "retraites",
-      "FRR",
-      "réserves"
-    ],
+    "tags": ["zombie", "retraites", "FRR", "réserves"],
     "trend": null,
-    "equivalence": "21 Md€ dormants = 4 mois de deficit de la Sécurité sociale"
+    "equivalence": "21 Md€ dormants = 4 mois de déficit de la Sécurité sociale"
   }
 ]

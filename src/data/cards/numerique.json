@@ -10,12 +10,8 @@
     "icon": "🚀",
     "source": "SGPI France 2030, PLF 2026, IFRAP",
     "level": 1,
-    "tags": [
-      "numérique",
-      "investissement",
-      "France 2030"
-    ],
-    "equivalence": "Le budget de 6 CNRS chaque annee pendant 5 ans"
+    "tags": ["numérique", "investissement", "France 2030"],
+    "equivalence": "Le budget de 6 CNRS chaque année pendant 5 ans"
   },
   {
     "id": "num-02",
@@ -28,12 +24,8 @@
     "icon": "🛰️",
     "source": "CNES, PLF 2026, ESA",
     "level": 1,
-    "tags": [
-      "numérique",
-      "spatial",
-      "CNES"
-    ],
-    "equivalence": "1 lancement Ariane 6 coute ~150 M€ (vs ~67 M$ pour un Falcon 9 SpaceX)"
+    "tags": ["numérique", "spatial", "CNES"],
+    "equivalence": "1 lancement Ariane 6 coûte ~150 M€ (vs ~67 M$ pour un Falcon 9 SpaceX)"
   },
   {
     "id": "num-03",
@@ -46,12 +38,8 @@
     "icon": "🤖",
     "source": "SGPI, France 2030, INRIA",
     "level": 1,
-    "tags": [
-      "numérique",
-      "IA",
-      "recherche"
-    ],
-    "equivalence": "Le budget IA francais = ce que Google ou Microsoft investit en IA en ~1 semaine"
+    "tags": ["numérique", "IA", "recherche"],
+    "equivalence": "Le budget IA français = ce que Google ou Microsoft investit en IA en ~1 semaine"
   },
   {
     "id": "num-04",
@@ -64,11 +52,7 @@
     "icon": "⚛️",
     "source": "SGPI, Plan quantique, CNRS",
     "level": 1,
-    "tags": [
-      "numérique",
-      "quantique",
-      "recherche"
-    ],
+    "tags": ["numérique", "quantique", "recherche"],
     "equivalence": "Le budget annuel de 4 lycees pour preparer la prochaine revolution informatique"
   },
   {
@@ -82,11 +66,7 @@
     "icon": "💻",
     "source": "DINUM, PLF 2026, Défenseur des droits",
     "level": 1,
-    "tags": [
-      "numérique",
-      "État",
-      "administration"
-    ],
+    "tags": ["numérique", "État", "administration"],
     "equivalence": "0,4 centime par demarche en ligne (plus de 500 millions/an)"
   },
   {
@@ -100,11 +80,7 @@
     "icon": "🔌",
     "source": "PLF 2026, European Chips Act, France 2030",
     "level": 1,
-    "tags": [
-      "numérique",
-      "semiconducteurs",
-      "industrie"
-    ],
+    "tags": ["numérique", "semiconducteurs", "industrie"],
     "equivalence": "1 usine de puces = 5-10 Md€ d'investissement (~le budget annuel de la Justice)"
   },
   {
@@ -118,11 +94,7 @@
     "icon": "🔐",
     "source": "ANSSI, Campus Cyber, France 2030",
     "level": 1,
-    "tags": [
-      "numérique",
-      "cybersécurité",
-      "ANSSI"
-    ],
+    "tags": ["numérique", "cybersécurité", "ANSSI"],
     "equivalence": "6€ de prevention par citoyen vs 2 Md€ de degats annuels"
   },
   {
@@ -136,12 +108,8 @@
     "icon": "💼",
     "source": "France Travail, PLF 2026, Cour des comptes",
     "level": 1,
-    "tags": [
-      "numérique",
-      "emploi",
-      "France Travail"
-    ],
-    "equivalence": "~1 800€ de cout d'accompagnement par demandeur d'emploi et par an"
+    "tags": ["numérique", "emploi", "France Travail"],
+    "equivalence": "~1 800€ de coût d'accompagnement par demandeur d'emploi et par an"
   },
   {
     "id": "num-09",
@@ -154,12 +122,8 @@
     "icon": "🚀",
     "source": "Bpifrance rapport annuel, PLF 2026, Cour des comptes",
     "level": 1,
-    "tags": [
-      "numerique",
-      "Bpifrance",
-      "innovation"
-    ],
-    "equivalence": "Bpifrance mobilise chaque jour l'equivalent du budget annuel de 4 lycees"
+    "tags": ["numerique", "Bpifrance", "innovation"],
+    "equivalence": "Bpifrance mobilise chaque jour l'équivalent du budget annuel de 4 lycees"
   },
   {
     "id": "num-10",
@@ -172,12 +136,8 @@
     "icon": "🚀",
     "source": "Mission French Tech, DGE, France Digitale",
     "level": 1,
-    "tags": [
-      "numerique",
-      "startups",
-      "French Tech"
-    ],
-    "equivalence": "4/an par Francais pour un ecosysteme qui leve 8 Md de capital prive — effet de levier x25"
+    "tags": ["numerique", "startups", "French Tech"],
+    "equivalence": "4/an par Français pour un ecosysteme qui leve 8 Md de capital prive — effet de levier x25"
   },
   {
     "id": "num-11",
@@ -190,12 +150,8 @@
     "icon": "🚀",
     "source": "ANSSI, SGDSN, Alcatel Submarine Networks, ARCEP",
     "level": 1,
-    "tags": [
-      "numerique",
-      "cables",
-      "souverainete"
-    ],
-    "equivalence": "1 cable sous-marin transatlantique coute ~300 M et transporte toute la bibliotheque du Congres en 1 seconde"
+    "tags": ["numerique", "cables", "souverainete"],
+    "equivalence": "1 cable sous-marin transatlantique coûte ~300 M et transporte toute la bibliotheque du Congres en 1 seconde"
   },
   {
     "id": "num-12",
@@ -208,48 +164,36 @@
     "icon": "🚀",
     "source": "ANSSI, DINUM, Health Data Hub, ARCEP",
     "level": 1,
-    "tags": [
-      "numerique",
-      "cloud",
-      "souverainete"
-    ],
-    "equivalence": "Les donnees de sante de 67 millions de Francais etaient hebergees chez Microsoft jusqu'en 2024"
+    "tags": ["numerique", "cloud", "souverainete"],
+    "equivalence": "Les donnees de sante de 67 millions de Français etaient hebergees chez Microsoft jusqu'en 2024"
   },
   {
     "id": "num-13",
-    "title": "IA generative et investissements francais",
+    "title": "IA generative et investissements français",
     "subtitle": "Mistral AI, Hugging Face, Jean Zay",
-    "description": "Mistral AI (valorisation ~6 Md en 2024) est le champion francais. Hugging Face est le GitHub de l'IA. L'État investit 500 M dans les compute credits. Mais les Etats-Unis investissent 100x plus. Le risque : la France forme les chercheurs, les GAFAM les embauchent.",
+    "description": "Mistral AI (valorisation ~6 Md en 2024) est le champion français. Hugging Face est le GitHub de l'IA. L'État investit 500 M dans les compute credits. Mais les Etats-Unis investissent 100x plus. Le risque : la France formé les chercheurs, les GAFAM les embauchent.",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
     "deckId": "numerique",
     "icon": "🚀",
     "source": "France 2030, SGPI, Station F, Mistral AI",
     "level": 1,
-    "tags": [
-      "numerique",
-      "IA",
-      "Mistral"
-    ],
+    "tags": ["numerique", "IA", "Mistral"],
     "equivalence": "Le budget IA de la France = ce que Google dépense en IA en 2 semaines"
   },
   {
     "id": "num-14",
     "title": "Illectronisme et fracture numerique",
-    "subtitle": "13 millions de Francais en difficulte",
-    "description": "20% des Francais en difficulte avec le numerique. L'État dematerialise massivement les demarches tout en creant une barriere pour 1 Francais sur 5. Le Defenseur des droits recoit 30 000 reclamations/an. 4 000 conseillers numeriques France Services deployes.",
+    "subtitle": "13 millions de Français en difficulte",
+    "description": "20% des Français en difficulte avec le numerique. L'État dematerialise massivement les demarches tout en creant une barriere pour 1 Français sur 5. Le Defenseur des droits recoit 30 000 reclamations/an. 4 000 conseillers numeriques France Services deployes.",
     "amountBillions": 0.3,
     "costPerCitizen": 4,
     "deckId": "numerique",
     "icon": "🚀",
     "source": "Defenseur des droits, ANCT, INSEE, France Services",
     "level": 1,
-    "tags": [
-      "numerique",
-      "illectronisme",
-      "inclusion"
-    ],
-    "equivalence": "L'État a dematerialise 100% des demarches mais 20% des Francais ne savent pas cliquer"
+    "tags": ["numerique", "illectronisme", "inclusion"],
+    "equivalence": "L'État a dematerialise 100% des demarches mais 20% des Français ne savent pas cliquer"
   },
   {
     "id": "num-15",
@@ -260,67 +204,51 @@
     "costPerCitizen": 1.5,
     "deckId": "numerique",
     "icon": "🚀",
-    "source": "CNIL, ARCOM, Commission europeenne",
+    "source": "CNIL, ARCOM, Commission européenne",
     "level": 1,
-    "tags": [
-      "numerique",
-      "regulation",
-      "CNIL"
-    ],
-    "equivalence": "1,50/an par Francais pour reguler des plateformes qui pesent 10 000 Md$ de capitalisation"
+    "tags": ["numerique", "regulation", "CNIL"],
+    "equivalence": "1,50/an par Français pour reguler des plateformes qui pesent 10 000 Md$ de capitalisation"
   },
   {
     "id": "num-16",
     "title": "Datacenters et consommation energetique",
     "subtitle": "3% de la consommation electrique nationale",
-    "description": "La France est le 4e marche europeen de datacenters. L'IA fait exploser les besoins : consommation pourrait doubler d'ici 2030. Avantage : l'electricite nucleaire bas carbone attire les hyperscalers. Inconvenient : chaque datacenter consomme autant qu'une ville de 50 000 habitants.",
+    "description": "La France est le 4e marche europeen de datacenters. L'IA fait exploser les besoins : consommation pourrait doubler d'ici 2030. Avantage : l'électricité nucléaire bas carbone attire les hyperscalers. Inconvenient : chaque datacenter consomme autant qu'une ville de 50 000 habitants.",
     "amountBillions": 3.5,
     "costPerCitizen": 0,
     "deckId": "numerique",
     "icon": "🚀",
     "source": "ARCEP, RTE, France Datacenter, ADEME",
     "level": 1,
-    "tags": [
-      "numerique",
-      "datacenters",
-      "énergie"
-    ],
-    "equivalence": "1 datacenter d'IA consomme autant d'electricite qu'une ville de 50 000 habitants"
+    "tags": ["numerique", "datacenters", "énergie"],
+    "equivalence": "1 datacenter d'IA consomme autant d'électricité qu'une ville de 50 000 habitants"
   },
   {
     "id": "num-17",
     "title": "Identite numerique (France Identite)",
     "subtitle": "Carte d'identite sur smartphone",
-    "description": "L'application France Identite permet de dematerialiser la carte d'identite. Socle de FranceConnect+ pour les demarches sensibles. 8 millions de Francais l'ont adoptee fin 2025. La France est en avance sur l'UE (portefeuille d'identite europeen prevu 2026-2027).",
+    "description": "L'application France Identite permet de dematerialiser la carte d'identite. Socle de FranceConnect+ pour les demarches sensibles. 8 millions de Français l'ont adoptee fin 2025. La France est en avance sur l'UE (portefeuille d'identite europeen prevu 2026-2027).",
     "amountBillions": 0.1,
     "costPerCitizen": 1.5,
     "deckId": "numerique",
     "icon": "🚀",
-    "source": "ANTS, France Identite, Commission europeenne eIDAS2",
+    "source": "ANTS, France Identite, Commission européenne eIDAS2",
     "level": 1,
-    "tags": [
-      "numerique",
-      "identite",
-      "FranceConnect"
-    ],
+    "tags": ["numerique", "identite", "FranceConnect"],
     "equivalence": "France Identite = votre carte d'identite dans votre poche, acceptee partout (en theorie)"
   },
   {
     "id": "num-18",
     "title": "Open data et donnees publiques",
     "subtitle": "data.gouv.fr — 45 000 jeux de donnees",
-    "description": "La France est classee 1re en Europe et 2e mondiale pour l'open data. 40 000 developpeurs utilisent les API publiques. L'ouverture des donnees de sante et des algorithmes (Parcoursup) fait debat. Cout microscopique pour un impact économique estime a 1-3 Md/an.",
+    "description": "La France est classee 1re en Europe et 2e mondiale pour l'open data. 40 000 developpeurs utilisent les API publiques. L'ouverture des donnees de sante et des algorithmes (Parcoursup) fait debat. Cout microscopique pour un impact économique estimé a 1-3 Md/an.",
     "amountBillions": 0.03,
     "costPerCitizen": 0.45,
     "deckId": "numerique",
     "icon": "🚀",
-    "source": "Etalab, OCDE OUR Data Index, Commission europeenne",
+    "source": "Etalab, OCDE OUR Data Index, Commission européenne",
     "level": 1,
-    "tags": [
-      "numerique",
-      "open data",
-      "transparence"
-    ],
-    "equivalence": "0,45/an par Francais pour l'open data, genere 1-3 Md de valeur économique — ratio x3000"
+    "tags": ["numerique", "open data", "transparence"],
+    "equivalence": "0,45/an par Français pour l'open data, genere 1-3 Md de valeur économique — ratio x3000"
   }
 ]

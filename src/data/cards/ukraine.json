@@ -11,13 +11,9 @@
     "source": "Ministère des Armées (liste mai 2024), Institut Kiel",
     "sourceUrl": "https://www.défense.gouv.fr",
     "level": 1,
-    "tags": [
-      "Ukraine",
-      "aide militaire",
-      "défense"
-    ],
+    "tags": ["Ukraine", "aide militaire", "défense"],
     "trend": null,
-    "equivalence": "La France a donne l'equivalent en materiel de ~2,5% du budget annuel de la Défense"
+    "equivalence": "La France a donne l'équivalent en materiel de ~2,5% du budget annuel de la Défense"
   },
   {
     "id": "ukr-02",
@@ -31,14 +27,9 @@
     "source": "Ministère des Armées, Conseil de l'UE",
     "sourceUrl": "https://www.défense.gouv.fr",
     "level": 1,
-    "tags": [
-      "Ukraine",
-      "FEP",
-      "Europe",
-      "défense"
-    ],
+    "tags": ["Ukraine", "FEP", "Europe", "défense"],
     "trend": null,
-    "equivalence": "La contribution francaise a la FEP = le budget annuel de la DGSI"
+    "equivalence": "La contribution française a la FEP = le budget annuel de la DGSI"
   },
   {
     "id": "ukr-03",
@@ -52,11 +43,7 @@
     "source": "Ministère des Armées, info.gouv.fr",
     "sourceUrl": "https://www.défense.gouv.fr",
     "level": 1,
-    "tags": [
-      "Ukraine",
-      "industrie défense",
-      "bilatéral"
-    ],
+    "tags": ["Ukraine", "industrie défense", "bilatéral"],
     "trend": null,
     "equivalence": "Chaque euro du fonds finance un emploi industriel de défense en France"
   },
@@ -64,7 +51,7 @@
     "id": "ukr-04",
     "title": "Formation des soldats ukrainiens",
     "subtitle": "Former 1 soldat ukrainien = ~15 000€ (vs ~100 000€ pour un soldat français)",
-    "description": "La France forme des soldats ukrainiens en Pologne et sur le sol français (entraînement au combat, artillerie CAESAR, maintenance, déminage, pilotage de chasse). Environ 2 000 soldats formés en 2024 par la France seule, dans le cadre de la mission EUMAM. L'armée française déploie ~150 instructeurs permanents. La formation de pilotes de chasse (Rafale ou avions OTAN) a été annoncée en 2023 pour des livraisons en 2024-2025.",
+    "description": "La France formé des soldats ukrainiens en Pologne et sur le sol français (entraînement au combat, artillerie CAESAR, maintenance, déminage, pilotage de chasse). Environ 2 000 soldats formés en 2024 par la France seule, dans le cadre de la mission EUMAM. L'armée française déploie ~150 instructeurs permanents. La formation de pilotes de chasse (Rafale ou avions OTAN) a été annoncée en 2023 pour des livraisons en 2024-2025.",
     "amountBillions": 0.175,
     "costPerCitizen": 3,
     "deckId": "ukraine",
@@ -72,13 +59,9 @@
     "source": "Ministère des Armées, EUMAM, info.gouv.fr",
     "sourceUrl": "https://www.défense.gouv.fr",
     "level": 1,
-    "tags": [
-      "Ukraine",
-      "formation",
-      "militaire"
-    ],
+    "tags": ["Ukraine", "formation", "militaire"],
     "trend": null,
-    "equivalence": "Former 1 soldat ukrainien = ~15 000€ (vs ~100 000€ pour un soldat francais)"
+    "equivalence": "Former 1 soldat ukrainien = ~15 000€ (vs ~100 000€ pour un soldat français)"
   },
   {
     "id": "ukr-05",
@@ -92,11 +75,7 @@
     "source": "MEAE, conférence Paris déc. 2022, HCR",
     "sourceUrl": null,
     "level": 1,
-    "tags": [
-      "Ukraine",
-      "humanitaire",
-      "réfugiés"
-    ],
+    "tags": ["Ukraine", "humanitaire", "réfugiés"],
     "trend": null,
     "equivalence": "Les 100 000 refugies ukrainiens en France coutent ~500 M€/an (logement, sante, education)"
   },
@@ -112,13 +91,9 @@
     "source": "INSEE, Banque de France, RTE",
     "sourceUrl": null,
     "level": 1,
-    "tags": [
-      "Ukraine",
-      "énergie",
-      "surcoût"
-    ],
+    "tags": ["Ukraine", "énergie", "surcoût"],
     "trend": null,
-    "equivalence": "Le surcout energetique du conflit = la moitie du budget annuel de la Défense, chaque annee pendant 2 ans"
+    "equivalence": "Le surcout energetique du conflit = la moitié du budget annuel de la Défense, chaque année pendant 2 ans"
   },
   {
     "id": "ukr-07",
@@ -132,12 +107,7 @@
     "source": "LPM 2024-2030, PLF 2026, Ministère des Armées",
     "sourceUrl": "https://www.défense.gouv.fr",
     "level": 1,
-    "tags": [
-      "Ukraine",
-      "défense",
-      "LPM",
-      "budget"
-    ],
+    "tags": ["Ukraine", "défense", "LPM", "budget"],
     "trend": null,
     "equivalence": "La hausse annuelle du budget Défense (+3,3 Md€) = le budget du SNU x 3"
   },
@@ -153,13 +123,9 @@
     "source": "Conseil de l'UE, Trésor français, Commission européenne",
     "sourceUrl": null,
     "level": 1,
-    "tags": [
-      "Ukraine",
-      "sanctions",
-      "avoirs russes"
-    ],
+    "tags": ["Ukraine", "sanctions", "avoirs russes"],
     "trend": null,
-    "equivalence": "Les avoirs russes geles en France = le budget annuel du ministere de la Culture x 5"
+    "equivalence": "Les avoirs russes geles en France = le budget annuel du ministère de la Culture x 5"
   },
   {
     "id": "ukr-09",
@@ -173,19 +139,15 @@
     "source": "Ministère des Armées, Institut Kiel, lesfrancais.press",
     "sourceUrl": "https://www.défense.gouv.fr",
     "level": 1,
-    "tags": [
-      "Ukraine",
-      "bilan",
-      "aide totale"
-    ],
+    "tags": ["Ukraine", "bilan", "aide totale"],
     "trend": null,
-    "equivalence": "L'aide francaise a l'Ukraine = le prix de 2 cafes par Francais et par mois pendant 4 ans"
+    "equivalence": "L'aide française a l'Ukraine = le prix de 2 cafés par Français et par mois pendant 4 ans"
   },
   {
     "id": "ukr-10",
     "title": "Conséquences économiques globales du conflit",
     "subtitle": "La guerre a coûté à la France 10x plus en croissance perdue qu'en aide militaire",
-    "description": "Au-delà des aides directes, le conflit a coûté à la France entre 0,5 et 1 point de PIB/an en croissance perdue : inflation importée, perturbation des chaînes d'approvisionnement, hausse des taux d'intérêt (la BCE a relevé ses taux pour combattre l'inflation liée à l'énergie), chute de la confiance des ménages. Le FMI estime l'impact cumulé à 2-3 points de PIB pour la zone euro sur 2022-2024. La facture totale (directe + indirecte) est sans commune mesure avec les 12 Md€ d'aide.",
+    "description": "Au-delà des aides directes, le conflit a coûté à la France entre 0,5 et 1 point de PIB/an en croissance perdue : inflation importée, perturbation des chaînes d'approvisionnement, hausse des taux d'intérêt (la BCE a relevé ses taux pour combattre l'inflation liée à l'énergie), chute de la confiance des ménages. Le FMI estimé l'impact cumulé à 2-3 points de PIB pour la zone euro sur 2022-2024. La facture totale (directe + indirecte) est sans commune mesure avec les 12 Md€ d'aide.",
     "amountBillions": 0.75,
     "costPerCitizen": 600,
     "deckId": "ukraine",
@@ -193,13 +155,8 @@
     "source": "FMI, Banque de France, INSEE, OFCE",
     "sourceUrl": null,
     "level": 1,
-    "tags": [
-      "Ukraine",
-      "économie",
-      "croissance",
-      "inflation"
-    ],
+    "tags": ["Ukraine", "économie", "croissance", "inflation"],
     "trend": null,
-    "equivalence": "La guerre a coute a la France 10x plus en croissance perdue qu'en aide militaire"
+    "equivalence": "La guerre a coûte a la France 10x plus en croissance perdue qu'en aide militaire"
   }
 ]

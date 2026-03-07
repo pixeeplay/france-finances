@@ -11,12 +11,8 @@
     "trend": 3.8,
     "source": "PLF 2026, Sénat, Public Sénat",
     "level": 1,
-    "tags": [
-      "immigration",
-      "asile",
-      "budget"
-    ],
-    "equivalence": "Le budget annuel du ministere de la Culture (4,4 Md€) divise par 2"
+    "tags": ["immigration", "asile", "budget"],
+    "equivalence": "Le budget annuel du ministère de la Culture (4,4 Md€) divise par 2"
   },
   {
     "id": "imm-02",
@@ -30,18 +26,14 @@
     "source": "PLF 2026, IGAS, vie-publique.fr",
     "sourceUrl": "https://www.vie-publique.fr",
     "level": 1,
-    "tags": [
-      "immigration",
-      "santé",
-      "AME"
-    ],
-    "equivalence": "~3 000€ de dépense annuelle par beneficiaire (vs ~3 900€/personne pour l'Assurance maladie classique)"
+    "tags": ["immigration", "santé", "AME"],
+    "equivalence": "~3 000€ de dépense annuelle par bénéficiaire (vs ~3 900€/personne pour l'Assurance maladie classique)"
   },
   {
     "id": "imm-03",
     "title": "Coût global politique migratoire",
     "subtitle": "Estimation large — 19 programmes, 12 missions",
-    "description": "Au-delà de la mission dédiée (2,16 Md€), la politique migratoire mobilise des crédits dans 12 missions : hébergement, scolarisation, aide juridictionnelle, soins, rétention, police aux frontières. Le Sénat estime le coût global à 7,82 Md€ en 2026.",
+    "description": "Au-delà de la mission dédiée (2,16 Md€), la politique migratoire mobilise des crédits dans 12 missions : hébergement, scolarisation, aide juridictionnelle, soins, rétention, police aux frontières. Le Sénat estimé le coût global à 7,82 Md€ en 2026.",
     "amountBillions": 7.8,
     "costPerCitizen": 115,
     "deckId": "immigration",
@@ -49,12 +41,8 @@
     "source": "Sénat PLF 2026, vie-publique.fr",
     "sourceUrl": "https://www.vie-publique.fr",
     "level": 1,
-    "tags": [
-      "immigration",
-      "coût global",
-      "budget"
-    ],
-    "equivalence": "La mission Immigration ne represente que 22% du cout total"
+    "tags": ["immigration", "coût global", "budget"],
+    "equivalence": "La mission Immigration ne represente que 22% du coût total"
   },
   {
     "id": "imm-04",
@@ -68,12 +56,8 @@
     "trend": 87,
     "source": "Sénat PLF 2026, Contrôleur général des lieux de privation de liberté",
     "level": 1,
-    "tags": [
-      "immigration",
-      "rétention",
-      "OQTF"
-    ],
-    "equivalence": "~150 000€ de cout de construction par place de CRA"
+    "tags": ["immigration", "rétention", "OQTF"],
+    "equivalence": "~150 000€ de coût de construction par place de CRA"
   },
   {
     "id": "imm-05",
@@ -87,11 +71,7 @@
     "trend": -10,
     "source": "PLF 2026, Forum Réfugiés, OFII",
     "level": 1,
-    "tags": [
-      "immigration",
-      "asile",
-      "allocation"
-    ],
+    "tags": ["immigration", "asile", "allocation"],
     "equivalence": "L'ADA (204€/mois) = 38% du montant du RSA (607€/mois)"
   },
   {
@@ -105,11 +85,7 @@
     "icon": "🏠",
     "source": "PLF 2026, OFII, Forum Réfugiés",
     "level": 1,
-    "tags": [
-      "immigration",
-      "hébergement",
-      "asile"
-    ],
+    "tags": ["immigration", "hébergement", "asile"],
     "equivalence": "~32€ par nuit et par place en centre d'accueil"
   },
   {
@@ -123,11 +99,7 @@
     "icon": "📚",
     "source": "PLF 2026, OFII, ASH",
     "level": 1,
-    "tags": [
-      "immigration",
-      "intégration",
-      "français"
-    ],
+    "tags": ["immigration", "intégration", "français"],
     "equivalence": "~1 500€ par parcours d'integration (contrat CIR de 4 ans)"
   },
   {
@@ -141,12 +113,8 @@
     "icon": "👦",
     "source": "Départements de France, IGAS, Sénat",
     "level": 1,
-    "tags": [
-      "immigration",
-      "mineurs",
-      "départements"
-    ],
-    "equivalence": "~140€/jour par MNA pris en charge, comparable au cout d'une nuit d'hotel a Paris"
+    "tags": ["immigration", "mineurs", "départements"],
+    "equivalence": "~140€/jour par MNA pris en charge, comparable au coût d'une nuit d'hotel a Paris"
   },
   {
     "id": "imm-09",
@@ -159,12 +127,8 @@
     "icon": "🛂",
     "source": "OFPRA rapport 2024, CNDA, PLF 2026",
     "level": 1,
-    "tags": [
-      "immigration",
-      "asile",
-      "OFPRA"
-    ],
-    "equivalence": "130 000 dossiers d'asile/an pour 100 M = ~770 de cout d'instruction par demande"
+    "tags": ["immigration", "asile", "OFPRA"],
+    "equivalence": "130 000 dossiers d'asile/an pour 100 M = ~770 de coût d'instruction par demande"
   },
   {
     "id": "imm-10",
@@ -177,101 +141,77 @@
     "icon": "🛂",
     "source": "PLF 2026, DGEF, ASH",
     "level": 1,
-    "tags": [
-      "immigration",
-      "visas",
-      "recettes"
-    ],
-    "equivalence": "Les etrangers financent ~600 M/an en taxes de sejour — ca couvre le tiers du budget Immigration"
+    "tags": ["immigration", "visas", "recettes"],
+    "equivalence": "Les étrangers financent ~600 M/an en taxes de sejour — ca couvre le tiers du budget Immigration"
   },
   {
     "id": "imm-11",
     "title": "Regularisations et sans-papiers",
     "subtitle": "600 000-900 000 personnes en situation irreguliere",
-    "description": "~30 000 regularisations/an. Les sans-papiers travaillent massivement dans le BTP, la restauration, l'aide a domicile. Ils cotisent a la Secu sans pouvoir beneficier de la retraite. Le cout net est un sujet de guerre de chiffres entre think tanks.",
+    "description": "~30 000 regularisations/an. Les sans-papiers travaillent massivement dans le BTP, la restauration, l'aide a domicile. Ils cotisent a la Secu sans pouvoir beneficier de la retraite. Le coût net est un sujet de guerre de chiffres entre think tanks.",
     "amountBillions": 4,
     "costPerCitizen": 60,
     "deckId": "immigration",
     "icon": "🛂",
     "source": "DGEF, IGAS, Cour des comptes, estimations INSEE/INED",
     "level": 1,
-    "tags": [
-      "immigration",
-      "sans-papiers",
-      "regularisation"
-    ],
+    "tags": ["immigration", "sans-papiers", "regularisation"],
     "equivalence": "30 000 regularisations/an sur 600 000-900 000 sans-papiers = un stock qui se renouvelle plus vite qu'il ne se resorbe"
   },
   {
     "id": "imm-12",
     "title": "Accueil refugies ukrainiens",
     "subtitle": "Protection temporaire UE",
-    "description": "~100 000 Ukrainiens beneficient de la protection temporaire en France. Droit au travail immediat, ADA, scolarisation. Dispositif distinct de l'asile classique. 65% sont des femmes et enfants. Le taux d'emploi atteint ~30% apres 2 ans (superieur aux autres flux).",
+    "description": "~100 000 Ukrainiens bénéficient de la protection temporaire en France. Droit au travail immediat, ADA, scolarisation. Dispositif distinct de l'asile classique. 65% sont des femmes et enfants. Le taux d'emploi atteint ~30% apres 2 ans (supérieur aux autres flux).",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
     "deckId": "immigration",
     "icon": "🛂",
     "source": "DGEF, OFII, PLF 2026, Eurostat",
     "level": 1,
-    "tags": [
-      "immigration",
-      "Ukraine",
-      "refugies"
-    ],
-    "equivalence": "Accueillir 100 000 Ukrainiens coute ~5 000/personne/an, soit le prix d'un semestre d'universite"
+    "tags": ["immigration", "Ukraine", "refugies"],
+    "equivalence": "Accueillir 100 000 Ukrainiens coûte ~5 000/personne/an, soit le prix d'un semestre d'universite"
   },
   {
     "id": "imm-13",
-    "title": "Scolarisation des enfants etrangers",
+    "title": "Scolarisation des enfants étrangers",
     "subtitle": "70 000 eleves allophones/an en UPE2A",
-    "description": "Obligation constitutionnelle de scolariser tous les enfants de 3 a 16 ans, quelle que soit la situation administrative. Le cout par eleve allophone est 30-50% superieur (FLE, accompagnement). 95% des enfants allophones atteignent le niveau B1 en francais apres 2 ans.",
+    "description": "Obligation constitutionnelle de scolariser tous les enfants de 3 a 16 ans, quelle que soit la situation administrative. Le coût par élève allophone est 30-50% supérieur (FLE, accompagnement). 95% des enfants allophones atteignent le niveau B1 en français apres 2 ans.",
     "amountBillions": 1.5,
     "costPerCitizen": 22,
     "deckId": "immigration",
     "icon": "🛂",
     "source": "DEPP, Ministere Education nationale, DESCO",
     "level": 1,
-    "tags": [
-      "immigration",
-      "education",
-      "integration"
-    ],
-    "equivalence": "Un enfant allophone atteint le niveau B1 en francais en 2 ans — le meilleur investissement d'integration"
+    "tags": ["immigration", "education", "integration"],
+    "equivalence": "Un enfant allophone atteint le niveau B1 en français en 2 ans — le meilleur investissement d'integration"
   },
   {
     "id": "imm-14",
     "title": "Diaspora et transferts de fonds",
     "subtitle": "12 Md/an envoyes vers les pays d'origine",
-    "description": "Les travailleurs immigres envoient ~12 Md/an vers leurs pays d'origine (Maghreb, Afrique, Turquie, Asie). C'est 3x l'aide publique au developpement francaise. Les frais de transfert restent eleves (~5-7%). Pour les pays recepteurs, ces remises representent 10-20% du PIB.",
+    "description": "Les travailleurs immigres envoient ~12 Md/an vers leurs pays d'origine (Maghreb, Afrique, Turquie, Asie). C'est 3x l'aide publique au developpement française. Les frais de transfert restent eleves (~5-7%). Pour les pays recepteurs, ces remises representent 10-20% du PIB.",
     "amountBillions": 12,
     "costPerCitizen": 0,
     "deckId": "immigration",
     "icon": "🛂",
     "source": "Banque mondiale, Banque de France, AFD",
     "level": 1,
-    "tags": [
-      "immigration",
-      "transferts",
-      "developpement"
-    ],
-    "equivalence": "Les transferts prives des immigres (12 Md) = 3x l'aide publique au developpement francaise"
+    "tags": ["immigration", "transferts", "developpement"],
+    "equivalence": "Les transferts prives des immigres (12 Md) = 3x l'aide publique au developpement française"
   },
   {
     "id": "imm-15",
     "title": "Eloignement et OQTF (execution)",
     "subtitle": "140 000 OQTF/an, 7% executees",
-    "description": "~140 000 OQTF prononcees chaque annee, ~7% executees. Un eloignement force coute ~10 000-15 000. Obstacles : laissez-passer consulaires non delivres, absence de cooperation (Algerie, Maroc, Tunisie), recours suspensifs. L'aide au retour volontaire (2 500/personne) est 5x moins chere.",
+    "description": "~140 000 OQTF prononcees chaque année, ~7% executees. Un eloignement force coûte ~10 000-15 000. Obstacles : laissez-passer consulaires non delivres, absence de cooperation (Algerie, Maroc, Tunisie), recours suspensifs. L'aide au retour volontaire (2 500/personne) est 5x moins chere.",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
     "deckId": "immigration",
     "icon": "🛂",
     "source": "DGEF, Ministere Interieur, Cour des comptes",
     "level": 1,
-    "tags": [
-      "immigration",
-      "OQTF",
-      "eloignement"
-    ],
+    "tags": ["immigration", "OQTF", "eloignement"],
     "equivalence": "Sur 100 OQTF prononcees, 93 ne sont jamais executees"
   },
   {
@@ -285,35 +225,27 @@
     "icon": "🛂",
     "source": "DGEF, DARES, France Strategie",
     "level": 1,
-    "tags": [
-      "immigration",
-      "travail",
-      "metiers en tension"
-    ],
+    "tags": ["immigration", "travail", "metiers en tension"],
     "equivalence": "Les immigres occupent 40% des emplois d'aide a domicile, 30% du BTP et 25% de la restauration"
   },
   {
     "id": "imm-17",
     "title": "Deboutes d'asile (ni regularises, ni expulses)",
     "subtitle": "Le stock des ni-ni",
-    "description": "65% des demandeurs d'asile sont deboutes. Beaucoup restent en France dans un statut de ni-ni : ni regularisables, ni expulsables. Ils basculent dans l'hebergement d'urgence, le travail informel et l'AME. Stock estime : 100 000-300 000 personnes.",
+    "description": "65% des demandeurs d'asile sont deboutes. Beaucoup restent en France dans un statut de ni-ni : ni regularisables, ni expulsables. Ils basculent dans l'hebergement d'urgence, le travail informel et l'AME. Stock estimé : 100 000-300 000 personnes.",
     "amountBillions": 1.5,
     "costPerCitizen": 22,
     "deckId": "immigration",
     "icon": "🛂",
     "source": "Forum Refugies, DGEF, Cour des comptes",
     "level": 1,
-    "tags": [
-      "immigration",
-      "asile",
-      "deboutes"
-    ],
-    "equivalence": "Le stock de deboutes non expulses grandit chaque annee de ~80 000 personnes"
+    "tags": ["immigration", "asile", "deboutes"],
+    "equivalence": "Le stock de deboutes non expulses grandit chaque année de ~80 000 personnes"
   },
   {
     "id": "imm-18",
     "title": "Naturalisation et acquisition de la nationalite",
-    "subtitle": "120 000 nouveaux Francais/an",
+    "subtitle": "120 000 nouveaux Français/an",
     "description": "~50 000 par decret, ~30 000 par mariage, ~30 000 par declaration. Delai moyen 12-18 mois. Conditions : 5 ans de residence, niveau B1, assimilation. La France est le pays europeen qui naturalise le plus en valeur absolue. Taux de refus ~15%.",
     "amountBillions": 0.1,
     "costPerCitizen": 1.5,
@@ -321,11 +253,7 @@
     "icon": "🛂",
     "source": "DGEF, Ministere Interieur, vie-publique.fr",
     "level": 1,
-    "tags": [
-      "immigration",
-      "naturalisation",
-      "nationalite"
-    ],
-    "equivalence": "120 000 nouveaux Francais/an = la population d'une ville comme Amiens"
+    "tags": ["immigration", "naturalisation", "nationalite"],
+    "equivalence": "120 000 nouveaux Français/an = la population d'une ville comme Amiens"
   }
 ]

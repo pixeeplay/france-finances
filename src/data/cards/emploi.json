@@ -10,11 +10,7 @@
     "icon": "📖",
     "source": "DARES, France Compétences, Cour des comptes",
     "level": 1,
-    "tags": [
-      "emploi",
-      "formation",
-      "CPF"
-    ],
+    "tags": ["emploi", "formation", "CPF"],
     "equivalence": "~1 200€ de dépense formation par actif et par an"
   },
   {
@@ -28,11 +24,7 @@
     "icon": "🏠",
     "source": "PLF 2026, DGFiP, DARES",
     "level": 1,
-    "tags": [
-      "emploi",
-      "fiscalité",
-      "services à la personne"
-    ],
+    "tags": ["emploi", "fiscalité", "services à la personne"],
     "equivalence": "2e plus grosse niche fiscale, juste derriere le CIR (7 Md€)"
   },
   {
@@ -46,12 +38,8 @@
     "icon": "🏝️",
     "source": "PLF 2026, IEDOM, Cour des comptes",
     "level": 1,
-    "tags": [
-      "emploi",
-      "outre-mer",
-      "exonérations"
-    ],
-    "equivalence": "Le transfert net par ultramarin est ~3x superieur a la moyenne des transferts par metropolitain"
+    "tags": ["emploi", "outre-mer", "exonérations"],
+    "equivalence": "Le transfert net par ultramarin est ~3x supérieur a la moyenne des transferts par metropolitain"
   },
   {
     "id": "emp-04",
@@ -65,12 +53,8 @@
     "trend": -25,
     "source": "PLF 2026, DGFiP, CCI France",
     "level": 1,
-    "tags": [
-      "emploi",
-      "compétitivité",
-      "impôt de production"
-    ],
-    "equivalence": "La suppression complete de la CVAE coutera ~10 Md€ a terme a l'État"
+    "tags": ["emploi", "compétitivité", "impôt de production"],
+    "equivalence": "La suppression complète de la CVAE coûtera ~10 Md€ a terme a l'État"
   },
   {
     "id": "emp-05",
@@ -83,11 +67,7 @@
     "icon": "⏱️",
     "source": "DARES, PLF 2026, Unédic",
     "level": 1,
-    "tags": [
-      "emploi",
-      "chômage partiel",
-      "crise"
-    ],
+    "tags": ["emploi", "chômage partiel", "crise"],
     "equivalence": "Le pic COVID (35 Md€) = 2,5x le budget annuel de la Justice"
   },
   {
@@ -101,12 +81,8 @@
     "icon": "💶",
     "source": "CNAF, DREES, PLF 2026",
     "level": 1,
-    "tags": [
-      "emploi",
-      "prime d'activité",
-      "travailleurs pauvres"
-    ],
-    "equivalence": "La prime d'activite coute plus que le RSA (~10,5 Md€ vs ~10 Md€)"
+    "tags": ["emploi", "prime d'activité", "travailleurs pauvres"],
+    "equivalence": "La prime d'activité coûte plus que le RSA (~10,5 Md€ vs ~10 Md€)"
   },
   {
     "id": "emp-07",
@@ -119,11 +95,7 @@
     "icon": "🎯",
     "source": "France Travail, DARES, PLF 2026",
     "level": 1,
-    "tags": [
-      "emploi",
-      "jeunes",
-      "insertion"
-    ],
+    "tags": ["emploi", "jeunes", "insertion"],
     "equivalence": "~5 000€ par jeune accompagne sur un parcours complet"
   },
   {
@@ -137,12 +109,8 @@
     "icon": "📉",
     "source": "France Stratégie, Cour des comptes, INSEE",
     "level": 1,
-    "tags": [
-      "emploi",
-      "CICE",
-      "cotisations"
-    ],
-    "equivalence": "Si 200 000 emplois crees, chaque emploi coute ~125 000€/an au contribuable"
+    "tags": ["emploi", "CICE", "cotisations"],
+    "equivalence": "Si 200 000 emplois créés, chaque emploi coûte ~125 000€/an au contribuable"
   },
   {
     "id": "emp-09",
@@ -155,30 +123,22 @@
     "icon": "🏢",
     "source": "Caisse des depots, Cour des comptes, France Competences",
     "level": 1,
-    "tags": [
-      "emploi",
-      "CPF",
-      "fraude"
-    ],
+    "tags": ["emploi", "CPF", "fraude"],
     "equivalence": "Le CPF distribue 2 Md/an en formation, dont 40% jugees inutiles par la Cour des comptes"
   },
   {
     "id": "emp-10",
     "title": "Zones franches et ZRR (ruralite)",
     "subtitle": "Exonerations fiscales et sociales",
-    "description": "Les ZFU (~100 quartiers) et ZRR (~18 000 communes) offrent des exonerations pour attirer les entreprises. Les ZRR remplacees par les France Ruralites Revitalisation (FRR) en 2024. Effet positif modere sur l'emploi local (+5-10%) mais cout eleve par emploi cree (~30 000/an).",
+    "description": "Les ZFU (~100 quartiers) et ZRR (~18 000 communes) offrent des exonerations pour attirer les entreprises. Les ZRR remplacees par les France Ruralites Revitalisation (FRR) en 2024. Effet positif modere sur l'emploi local (+5-10%) mais coût élève par emploi créé (~30 000/an).",
     "amountBillions": 0.7,
     "costPerCitizen": 10,
     "deckId": "emploi",
     "icon": "🏢",
     "source": "DGCL, ANCT, Cour des comptes, PLF 2026",
     "level": 1,
-    "tags": [
-      "emploi",
-      "zones franches",
-      "ruralite"
-    ],
-    "equivalence": "18 000 communes en ZRR = la moitie des communes francaises beneficient d'avantages fiscaux"
+    "tags": ["emploi", "zones franches", "ruralite"],
+    "equivalence": "18 000 communes en ZRR = la moitié des communes françaises bénéficient d'avantages fiscaux"
   },
   {
     "id": "emp-11",
@@ -191,119 +151,91 @@
     "icon": "🏢",
     "source": "AGFPN, DARES, DREES",
     "level": 1,
-    "tags": [
-      "emploi",
-      "syndicats",
-      "dialogue social"
-    ],
-    "equivalence": "2/an par Francais pour financer un dialogue social avec 8% de syndiques — le plus bas taux d'Europe"
+    "tags": ["emploi", "syndicats", "dialogue social"],
+    "equivalence": "2/an par Français pour financer un dialogue social avec 8% de syndiqués — le plus bas taux d'Europe"
   },
   {
     "id": "emp-12",
-    "title": "Travail detache (travailleurs europeens)",
+    "title": "Travail détaché (travailleurs europeens)",
     "subtitle": "300 000 travailleurs declares + fraude",
-    "description": "300 000 travailleurs detaches declares en France (BTP, agriculture, transport). Payes aux conditions francaises mais cotisant dans leur pays d'origine. La fraude au detachement est estimee a 200 000-500 000 travailleurs supplementaires. Un travailleur detache coute 20-30% de moins qu'un salarie francais.",
+    "description": "300 000 travailleurs detaches declares en France (BTP, agriculture, transport). Payes aux conditions françaises mais cotisant dans leur pays d'origine. La fraude au detachement est estimee a 200 000-500 000 travailleurs supplementaires. Un travailleur détaché coûte 20-30% de moins qu'un salarié français.",
     "amountBillions": 2.5,
     "costPerCitizen": 35,
     "deckId": "emploi",
     "icon": "🏢",
-    "source": "DGT, Commission europeenne, Cour des comptes",
+    "source": "DGT, Commission européenne, Cour des comptes",
     "level": 1,
-    "tags": [
-      "emploi",
-      "detachement",
-      "Europe"
-    ],
-    "equivalence": "1 travailleur detache coute 20-30% de moins qu'un salarie francais a poste equivalent"
+    "tags": ["emploi", "detachement", "Europe"],
+    "equivalence": "1 travailleur détaché coûte 20-30% de moins qu'un salarié français a poste équivalent"
   },
   {
     "id": "emp-13",
     "title": "Inspection du travail",
-    "subtitle": "2 000 inspecteurs pour 20 millions de salaries",
-    "description": "1 inspecteur pour 10 000 salaries (OIT recommande 1 pour 8 000). 450 000 interventions/an, 25 000 PV. 200 agressions declarees/an. Le travail dissimule est estime a 6-8% du PIB (~180 Md), dont l'essentiel echappe aux contrôles.",
+    "subtitle": "2 000 inspecteurs pour 20 millions de salariés",
+    "description": "1 inspecteur pour 10 000 salariés (OIT recommande 1 pour 8 000). 450 000 interventions/an, 25 000 PV. 200 agressions declarees/an. Le travail dissimule est estimé a 6-8% du PIB (~180 Md), dont l'essentiel echappe aux contrôles.",
     "amountBillions": 0.6,
     "costPerCitizen": 9,
     "deckId": "emploi",
     "icon": "🏢",
     "source": "DGT, OIT, PLF 2026",
     "level": 1,
-    "tags": [
-      "emploi",
-      "inspection",
-      "travail"
-    ],
-    "equivalence": "1 inspecteur du travail pour 10 000 salaries — 1 policier pour 300 habitants"
+    "tags": ["emploi", "inspection", "travail"],
+    "equivalence": "1 inspecteur du travail pour 10 000 salariés — 1 policier pour 300 habitants"
   },
   {
     "id": "emp-14",
     "title": "Travail illegal et économie souterraine",
     "subtitle": "6-8% du PIB soit 170-220 Md/an",
-    "description": "L'économie souterraine est moins elevee qu'en Italie (~20%) ou Grece (~25%), mais superieure a l'Allemagne (~4%). Les cotisations eludees : 20-25 Md/an. Secteurs touches : BTP (25%), restauration (20%), services a la personne (30%). La task force recouvre ~1 Md/an, soit 5% du manque a gagner.",
+    "description": "L'économie souterraine est moins élevée qu'en Italie (~20%) ou Grece (~25%), mais superieure a l'Allemagne (~4%). Les cotisations eludees : 20-25 Md/an. Secteurs touches : BTP (25%), restauration (20%), services a la personne (30%). La task force recouvre ~1 Md/an, soit 5% du manque a gagner.",
     "amountBillions": 200,
     "costPerCitizen": 2900,
     "deckId": "emploi",
     "icon": "🏢",
     "source": "ACOSS/URSSAF, INSEE, CNLTI, Cour des comptes",
     "level": 1,
-    "tags": [
-      "emploi",
-      "travail illegal",
-      "économie souterraine"
-    ],
+    "tags": ["emploi", "travail illegal", "économie souterraine"],
     "equivalence": "Le travail au noir represente 2x le budget de la Défense en cotisations perdues"
   },
   {
     "id": "emp-15",
     "title": "Temps de travail et 35 heures",
     "subtitle": "Cout et debat depuis 25 ans",
-    "description": "Les 35 heures compensees par des allegements de ~12 Md/an. Les Francais travaillent 1 607h/an (vs 1 800 en Allemagne). Mais la duree effective des salaries a temps complet est de 39,1h/semaine. Les etudes divergent : 300 000 emplois crees (DARES) vs 0 emploi net (IFRAP).",
+    "description": "Les 35 heures compensees par des allegements de ~12 Md/an. Les Français travaillent 1 607h/an (vs 1 800 en Allemagne). Mais la duree effective des salariés a temps complet est de 39,1h/semaine. Les etudes divergent : 300 000 emplois créés (DARES) vs 0 emploi net (IFRAP).",
     "amountBillions": 12,
     "costPerCitizen": 176,
     "deckId": "emploi",
     "icon": "🏢",
     "source": "DARES, INSEE, Cour des comptes",
     "level": 1,
-    "tags": [
-      "emploi",
-      "35 heures",
-      "temps de travail"
-    ],
-    "equivalence": "Les Francais travaillent officiellement 35h mais effectivement 39h — debat depuis 25 ans"
+    "tags": ["emploi", "35 heures", "temps de travail"],
+    "equivalence": "Les Français travaillent officiellement 35h mais effectivement 39h — debat depuis 25 ans"
   },
   {
     "id": "emp-16",
     "title": "RSE et index egalite professionnelle",
     "subtitle": "Score moyen 88/100 mais ecart reel 16%",
-    "description": "L'index d'egalite professionnelle oblige les entreprises de +50 salaries a publier un score sur 100. Ecart salarial H/F toutes choses egales : ~5-7%. La CSRD europeenne (2024) impose un reporting extra-financier. Cout de conformite : ~100 000/an pour une ETI.",
+    "description": "L'index d'egalite professionnelle oblige les entreprises de +50 salariés a publier un score sur 100. Ecart salarial H/F toutes choses egales : ~5-7%. La CSRD européenne (2024) impose un reporting extra-financier. Cout de conformite : ~100 000/an pour une ETI.",
     "amountBillions": 0.2,
     "costPerCitizen": 0,
     "deckId": "emploi",
     "icon": "🏢",
-    "source": "Ministere Travail, DARES, Commission europeenne CSRD",
+    "source": "Ministere Travail, DARES, Commission européenne CSRD",
     "level": 1,
-    "tags": [
-      "emploi",
-      "RSE",
-      "egalite"
-    ],
+    "tags": ["emploi", "RSE", "egalite"],
     "equivalence": "Score moyen 88/100 mais ecart salarial reel de 16% — l'index mesure mal ce qu'il est cense corriger"
   },
   {
     "id": "emp-17",
     "title": "Accidents du travail mortels",
     "subtitle": "2 morts par jour — pire bilan d'Europe de l'Ouest",
-    "description": "~650 000 accidents/an dont ~700 mortels. Taux de mortalite 2x superieur a l'Allemagne et 3x aux Pays-Bas. Le BTP concentre 20% des accidents mortels pour 8% des emplois. Un interimaire a 2x plus de risques qu'un CDI.",
+    "description": "~650 000 accidents/an dont ~700 mortels. Taux de mortalite 2x supérieur a l'Allemagne et 3x aux Pays-Bas. Le BTP concentre 20% des accidents mortels pour 8% des emplois. Un interimaire a 2x plus de risques qu'un CDI.",
     "amountBillions": 50,
     "costPerCitizen": 735,
     "deckId": "emploi",
     "icon": "🏢",
     "source": "CNAM AT-MP, Eurostat, DARES, ANACT",
     "level": 1,
-    "tags": [
-      "emploi",
-      "accidents",
-      "sécurité"
-    ],
+    "tags": ["emploi", "accidents", "sécurité"],
     "equivalence": "2 morts au travail par jour en France — 3x plus qu'aux Pays-Bas, et personne n'en parle"
   },
   {
@@ -317,11 +249,7 @@
     "icon": "🏢",
     "source": "DARES, France Strategie, COR, INSEE",
     "level": 1,
-    "tags": [
-      "emploi",
-      "seniors",
-      "retraite"
-    ],
+    "tags": ["emploi", "seniors", "retraite"],
     "equivalence": "Repousser la retraite a 64 ans sans emploi pour les seniors = transformer le chomage en RSA"
   }
 ]

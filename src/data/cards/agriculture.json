@@ -10,11 +10,7 @@
     "icon": "🌾",
     "source": "Ministère de l'Agriculture, La France Agricole, Sénat PLF 2026",
     "level": 1,
-    "tags": [
-      "agriculture",
-      "PAC",
-      "Europe"
-    ],
+    "tags": ["agriculture", "PAC", "Europe"],
     "equivalence": "Sans la PAC, le prix du panier de courses augmenterait de ~5-10% selon les estimations"
   },
   {
@@ -29,12 +25,8 @@
     "trend": -4.5,
     "source": "Sénat PLF 2026, Public Sénat",
     "level": 1,
-    "tags": [
-      "agriculture",
-      "budget",
-      "ministère"
-    ],
-    "equivalence": "Moins de la moitie du budget d'un seul porte-avions (1,2 Md€/an)"
+    "tags": ["agriculture", "budget", "ministère"],
+    "equivalence": "Moins de la moitié du budget d'un seul porte-avions (1,2 Md€/an)"
   },
   {
     "id": "agr-03",
@@ -47,11 +39,7 @@
     "icon": "💧",
     "source": "Sénat, OFB, Agences de l'eau",
     "level": 1,
-    "tags": [
-      "agriculture",
-      "eau",
-      "environnement"
-    ],
+    "tags": ["agriculture", "eau", "environnement"],
     "equivalence": "1 km de metro du Grand Paris Express (~200 M€) pour chaque agence"
   },
   {
@@ -65,12 +53,8 @@
     "icon": "🌲",
     "source": "PLF 2026, ONF, Cour des comptes",
     "level": 1,
-    "tags": [
-      "agriculture",
-      "forêts",
-      "ONF"
-    ],
-    "equivalence": "Moins d'1€ par hectare de foret publique et par mois"
+    "tags": ["agriculture", "forêts", "ONF"],
+    "equivalence": "Moins d'1€ par hectare de forêt publique et par mois"
   },
   {
     "id": "agr-05",
@@ -83,12 +67,8 @@
     "icon": "🥬",
     "source": "Sénat PLF 2026, Agence Bio, Public Sénat",
     "level": 1,
-    "tags": [
-      "agriculture",
-      "bio",
-      "environnement"
-    ],
-    "equivalence": "Le prix de 2 cafes par Francais et par an pour financer le bio"
+    "tags": ["agriculture", "bio", "environnement"],
+    "equivalence": "Le prix de 2 cafés par Français et par an pour financer le bio"
   },
   {
     "id": "agr-06",
@@ -101,11 +81,7 @@
     "icon": "🔬",
     "source": "ANSES, PLF 2026, DGAL",
     "level": 1,
-    "tags": [
-      "agriculture",
-      "sécurité alimentaire",
-      "contrôle"
-    ],
+    "tags": ["agriculture", "sécurité alimentaire", "contrôle"],
     "equivalence": "2 centimes par repas pour garantir la sécurité de ce qu'on mange"
   },
   {
@@ -119,12 +95,8 @@
     "icon": "🌧️",
     "source": "PLF 2026, FNGRA, Réussir.fr",
     "level": 1,
-    "tags": [
-      "agriculture",
-      "calamités",
-      "assurance"
-    ],
-    "equivalence": "Le prix d'un ticket de metro par Francais et par an contre les crises agricoles"
+    "tags": ["agriculture", "calamités", "assurance"],
+    "equivalence": "Le prix d'un ticket de metro par Français et par an contre les crises agricoles"
   },
   {
     "id": "agr-08",
@@ -137,29 +109,21 @@
     "icon": "📊",
     "source": "Sénat PLF 2026, Ministère de l'Agriculture",
     "level": 1,
-    "tags": [
-      "agriculture",
-      "total",
-      "vue d'ensemble"
-    ],
+    "tags": ["agriculture", "total", "vue d'ensemble"],
     "equivalence": "~63 000€ de soutien public par exploitation agricole et par an"
   },
   {
     "id": "agr-09",
     "title": "Peche et aquaculture",
     "subtitle": "FEAMPA europeen + budget national",
-    "description": "La peche francaise emploie ~15 000 marins sur ~4 000 navires. La France a perdu 25% de ses quotas post-Brexit. Le FEAMPA finance la modernisation de la flotte et la transition ecologique. L'exoneration de gazole pour les pecheurs coute ~100 M/an. L'aquaculture pese 800 M de CA mais reste sous-developpee.",
+    "description": "La peche française emploie ~15 000 marins sur ~4 000 navires. La France a perdu 25% de ses quotas post-Brexit. Le FEAMPA finance la modernisation de la flotte et la transition ecologique. L'exoneration de gazole pour les pecheurs coûte ~100 M/an. L'aquaculture pese 800 M de CA mais reste sous-developpee.",
     "amountBillions": 0.4,
     "costPerCitizen": 6,
     "deckId": "agriculture",
     "icon": "🌾",
     "source": "FEAMPA, FranceAgriMer, DPMA",
     "level": 1,
-    "tags": [
-      "agriculture",
-      "peche",
-      "aquaculture"
-    ],
+    "tags": ["agriculture", "peche", "aquaculture"],
     "equivalence": "La France a le 2e domaine maritime mondial mais importe 70% de sa consommation de poisson"
   },
   {
@@ -171,14 +135,10 @@
     "costPerCitizen": 2,
     "deckId": "agriculture",
     "icon": "🌾",
-    "source": "DGAL, ANSES, L214, Commission europeenne",
+    "source": "DGAL, ANSES, L214, Commission européenne",
     "level": 1,
-    "tags": [
-      "agriculture",
-      "abattoirs",
-      "bien-etre animal"
-    ],
-    "equivalence": "2 par Francais par an pour controler les conditions d'abattage de 1 milliard d'animaux"
+    "tags": ["agriculture", "abattoirs", "bien-etre animal"],
+    "equivalence": "2 par Français par an pour controler les conditions d'abattage de 1 milliard d'animaux"
   },
   {
     "id": "agr-11",
@@ -191,173 +151,133 @@
     "icon": "🌾",
     "source": "FranceAgriMer, Douanes, OIV, Cour des comptes",
     "level": 1,
-    "tags": [
-      "agriculture",
-      "vin",
-      "fiscalite"
-    ],
-    "equivalence": "Le vin rapporte 4 Md de taxes et 13 Md d'export, mais l'alcool coute 120 Md/an a la société"
+    "tags": ["agriculture", "vin", "fiscalite"],
+    "equivalence": "Le vin rapporte 4 Md de taxes et 13 Md d'export, mais l'alcool coûte 120 Md/an a la société"
   },
   {
     "id": "agr-12",
     "title": "Gaspillage alimentaire et loi AGEC",
     "subtitle": "10 millions de tonnes perdues/an",
-    "description": "10 millions de tonnes de nourriture gaspillees chaque annee en France. La loi AGEC (2020) interdit la destruction des invendus alimentaires. Le gaspillage en grande distribution a baisse de 20% depuis la loi Garot (2016). Les menages gaspillent encore ~30 kg/personne/an. Objectif : diviser par 2 d'ici 2030.",
+    "description": "10 millions de tonnes de nourriture gaspillees chaque année en France. La loi AGEC (2020) interdit la destruction des invendus alimentaires. Le gaspillage en grande distribution a baisse de 20% depuis la loi Garot (2016). Les menages gaspillent encore ~30 kg/personne/an. Objectif : diviser par 2 d'ici 2030.",
     "amountBillions": 16,
     "costPerCitizen": 235,
     "deckId": "agriculture",
     "icon": "🌾",
-    "source": "ADEME, ministere de la Transition ecologique, loi AGEC",
+    "source": "ADEME, ministère de la Transition ecologique, loi AGEC",
     "level": 1,
-    "tags": [
-      "agriculture",
-      "gaspillage",
-      "AGEC"
-    ],
-    "equivalence": "Chaque Francais jette 1 de nourriture par jour a la poubelle"
+    "tags": ["agriculture", "gaspillage", "AGEC"],
+    "equivalence": "Chaque Français jette 1 de nourriture par jour a la poubelle"
   },
   {
     "id": "agr-13",
     "title": "Crise agricole et plans d'urgence",
     "subtitle": "800 M/an de mesures d'urgence recurrentes",
-    "description": "Chaque annee depuis 2014, plans d'urgence : gel du vignoble, secheresse, effondrement des prix du lait, grippe aviaire. En 2024, le blocage des autoroutes a declenche un plan de 400 M. Ces plans exceptionnels reviennent si regulierement qu'ils sont devenus structurels. Le revenu agricole moyen reste a ~26 000/an.",
+    "description": "Chaque année depuis 2014, plans d'urgence : gel du vignoble, secheresse, effondrement des prix du lait, grippe aviaire. En 2024, le blocage des autoroutes a declenche un plan de 400 M. Ces plans exceptionnels reviennent si regulierement qu'ils sont devenus structurels. Le revenu agricole moyen reste a ~26 000/an.",
     "amountBillions": 0.8,
     "costPerCitizen": 12,
     "deckId": "agriculture",
     "icon": "🌾",
     "source": "Ministere Agriculture, MSA, FNSEA",
     "level": 1,
-    "tags": [
-      "agriculture",
-      "crise",
-      "urgence"
-    ],
+    "tags": ["agriculture", "crise", "urgence"],
     "equivalence": "La France decrete une crise agricole en moyenne tous les 8 mois depuis 10 ans"
   },
   {
     "id": "agr-14",
     "title": "Enseignement agricole",
     "subtitle": "220 etablissements publics + 600 prives",
-    "description": "170 000 eleves dans 800 etablissements. Taux d'insertion professionnelle : 87% (le meilleur de l'enseignement professionnel francais). Les lycees agricoles gerent des exploitations pedagogiques. Paradoxe : le reseau est excellent mais meconnu.",
+    "description": "170 000 eleves dans 800 etablissements. Taux d'insertion professionnelle : 87% (le meilleur de l'enseignement professionnel français). Les lycees agricoles gerent des exploitations pedagogiques. Paradoxe : le réseau est excellent mais meconnu.",
     "amountBillions": 1.5,
     "costPerCitizen": 22,
     "deckId": "agriculture",
     "icon": "🌾",
     "source": "DGER, Ministere Agriculture, CEREQ",
     "level": 1,
-    "tags": [
-      "agriculture",
-      "enseignement",
-      "formation"
-    ],
-    "equivalence": "87% d'insertion professionnelle — le meilleur taux de tout l'enseignement francais"
+    "tags": ["agriculture", "enseignement", "formation"],
+    "equivalence": "87% d'insertion professionnelle — le meilleur taux de tout l'enseignement français"
   },
   {
     "id": "agr-15",
     "title": "Irrigation et gestion de l'eau agricole",
     "subtitle": "Mega-bassines et adaptation climatique",
-    "description": "6% de la surface agricole francaise est irriguee (vs 30% en Espagne). Les mega-bassines cristallisent un conflit majeur (Sainte-Soline, 2023 : 200 blesses). Le BRGM estime que les nappes phreatiques baisseront de 10-25% d'ici 2050. Cout d'une mega-bassine = 5-10 M.",
+    "description": "6% de la surface agricole française est irriguee (vs 30% en Espagne). Les mega-bassines cristallisent un conflit majeur (Sainte-Soline, 2023 : 200 blesses). Le BRGM estimé que les nappes phreatiques baisseront de 10-25% d'ici 2050. Cout d'une mega-bassine = 5-10 M.",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
     "deckId": "agriculture",
     "icon": "🌾",
     "source": "BRGM, OFB, Ministere Transition ecologique",
     "level": 1,
-    "tags": [
-      "agriculture",
-      "eau",
-      "irrigation"
-    ],
+    "tags": ["agriculture", "eau", "irrigation"],
     "equivalence": "L'agriculture utilise 45% de l'eau douce consommee en France, mais n'irrigue que 6% des terres"
   },
   {
     "id": "agr-16",
     "title": "Pesticides et plan Ecophyto",
     "subtitle": "Objectif -50% en 10 ans... resultat +15%",
-    "description": "Le plan Ecophyto visait a diviser par 2 l'usage des pesticides en 10 ans. Bilan 2024 : +15%. Le plan a ete mis en pause en 2024. Le glyphosate re-autorise dans l'UE pour 10 ans. Le cout sanitaire des pesticides est estime a 1-3 Md/an. La redevance pour pollution diffuse rapporte ~150 M/an.",
+    "description": "Le plan Ecophyto visait a diviser par 2 l'usage des pesticides en 10 ans. Bilan 2024 : +15%. Le plan a ete mis en pause en 2024. Le glyphosate re-autorise dans l'UE pour 10 ans. Le coût sanitaire des pesticides est estimé a 1-3 Md/an. La redevance pour pollution diffuse rapporte ~150 M/an.",
     "amountBillions": 0.3,
     "costPerCitizen": 4,
     "deckId": "agriculture",
     "icon": "🌾",
     "source": "Plan Ecophyto, ANSES, Inserm, OFB",
     "level": 1,
-    "tags": [
-      "agriculture",
-      "pesticides",
-      "sante"
-    ],
+    "tags": ["agriculture", "pesticides", "sante"],
     "equivalence": "Objectif : -50% de pesticides en 10 ans. Resultat : +15%. Et le plan a ete suspendu"
   },
   {
     "id": "agr-17",
     "title": "Souverainete alimentaire",
     "subtitle": "Dependance aux importations",
-    "description": "La France est excedentaire en cereales, vin, produits laitiers, mais dependante en fruits (60% importes), legumes (40%), poisson (70%). La France nourrirait 80 millions de personnes avec sa production... mais pas avec les memes produits que ceux que les Francais mangent.",
+    "description": "La France est excedentaire en cereales, vin, produits laitiers, mais dependante en fruits (60% importes), legumes (40%), poisson (70%). La France nourrirait 80 millions de personnes avec sa production... mais pas avec les memes produits que ceux que les Français mangent.",
     "amountBillions": 50,
     "costPerCitizen": 735,
     "deckId": "agriculture",
     "icon": "🌾",
     "source": "Douanes, FranceAgriMer, Ministere Agriculture",
     "level": 1,
-    "tags": [
-      "agriculture",
-      "souverainete",
-      "importations"
-    ],
+    "tags": ["agriculture", "souverainete", "importations"],
     "equivalence": "La France exporte 1 Md de fromage/an et importe 1 Md d'avocats et mangues"
   },
   {
     "id": "agr-18",
     "title": "Cantines publiques et restauration collective",
     "subtitle": "3,5 milliards de repas/an",
-    "description": "La restauration collective publique sert 3,5 milliards de repas/an. La loi EGalim impose 50% de produits durables et 20% de bio — objectif atteint a ~30%. Un repas de cantine scolaire coute 8-10 a produire. Un repas d'hôpital coute 3-5. Le gaspillage en restauration collective = 120g/repas.",
+    "description": "La restauration collective publique sert 3,5 milliards de repas/an. La loi EGalim impose 50% de produits durables et 20% de bio — objectif atteint a ~30%. Un repas de cantine scolaire coûte 8-10 a produire. Un repas d'hôpital coûte 3-5. Le gaspillage en restauration collective = 120g/repas.",
     "amountBillions": 4,
     "costPerCitizen": 59,
     "deckId": "agriculture",
     "icon": "🌾",
     "source": "CNRC, ADEME, loi EGalim, DGAL",
     "level": 1,
-    "tags": [
-      "agriculture",
-      "cantines",
-      "EGalim"
-    ],
-    "equivalence": "Un repas d'hôpital coute moins qu'un cafe au comptoir — et ca se goute"
+    "tags": ["agriculture", "cantines", "EGalim"],
+    "equivalence": "Un repas d'hôpital coûte moins qu'un café au comptoir — et ca se goûte"
   },
   {
     "id": "agr-19",
     "title": "Grippe aviaire et crises sanitaires animales",
     "subtitle": "50 millions de volailles abattues en 4 ans",
-    "description": "La grippe aviaire H5N1 a frappe la France 4 hivers consecutifs (2020-2024). Cout : 600 M d'indemnisations + 400 M de pertes de marche + 500 M de prophylaxie. La vaccination obligatoire depuis 2023 coute 100 M/an mais n'est pas acceptee par tous les partenaires commerciaux.",
+    "description": "La grippe aviaire H5N1 a frappe la France 4 hivers consecutifs (2020-2024). Cout : 600 M d'indemnisations + 400 M de pertes de marche + 500 M de prophylaxie. La vaccination obligatoire depuis 2023 coûte 100 M/an mais n'est pas acceptee par tous les partenaires commerciaux.",
     "amountBillions": 1.5,
     "costPerCitizen": 5,
     "deckId": "agriculture",
     "icon": "🌾",
     "source": "DGAL, Ministere Agriculture, ANSES",
     "level": 1,
-    "tags": [
-      "agriculture",
-      "grippe aviaire",
-      "sanitaire"
-    ],
-    "equivalence": "50 millions de volailles abattues en 4 ans = plus que la population francaise en poulets"
+    "tags": ["agriculture", "grippe aviaire", "sanitaire"],
+    "equivalence": "50 millions de volailles abattues en 4 ans = plus que la population française en poulets"
   },
   {
     "id": "agr-20",
-    "title": "Foret francaise et bois-énergie",
+    "title": "Foret française et bois-énergie",
     "subtitle": "ONF + reboisement + filiere bois",
-    "description": "La foret francaise couvre 17 millions d'hectares (31% du territoire). Menacee par les scolytes, secheresses et incendies (+50% de surfaces brulees en 2022). Plan de reboisement France 2030 : 1 milliard d'arbres en 10 ans. Le bois-énergie represente 40% de la production d'énergie renouvelable.",
+    "description": "La forêt française couvre 17 millions d'hectares (31% du territoire). Menacee par les scolytes, secheresses et incendies (+50% de surfaces brulees en 2022). Plan de reboisement France 2030 : 1 milliard d'arbres en 10 ans. Le bois-énergie represente 40% de la production d'énergie renouvelable.",
     "amountBillions": 1.2,
     "costPerCitizen": 18,
     "deckId": "agriculture",
     "icon": "🌾",
     "source": "ONF, IGN, France 2030, ADEME",
     "level": 1,
-    "tags": [
-      "agriculture",
-      "foret",
-      "bois"
-    ],
-    "equivalence": "La France exporte des grumes vers la Chine et importe des meubles chinois en bois francais"
+    "tags": ["agriculture", "forêt", "bois"],
+    "equivalence": "La France exporte des grumes vers la Chine et importe des meubles chinois en bois français"
   }
 ]

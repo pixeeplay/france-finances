@@ -12,11 +12,7 @@
     "source": "Budget.gouv.fr, Ministère de la Culture",
     "sourceUrl": "https://www.budget.gouv.fr",
     "level": 1,
-    "tags": [
-      "culture",
-      "patrimoine",
-      "musées"
-    ],
+    "tags": ["culture", "patrimoine", "musées"],
     "equivalence": "Le budget Culture = 1/20e du budget Défense"
   },
   {
@@ -31,12 +27,8 @@
     "source": "Budget.gouv.fr, ARCOM, Sénat",
     "sourceUrl": "https://www.budget.gouv.fr",
     "level": 1,
-    "tags": [
-      "culture",
-      "audiovisuel",
-      "médias"
-    ],
-    "equivalence": "L'audiovisuel public coute autant que la DGSI + l'aide juridictionnelle"
+    "tags": ["culture", "audiovisuel", "médias"],
+    "equivalence": "L'audiovisuel public coûte autant que la DGSI + l'aide juridictionnelle"
   },
   {
     "id": "cul-03",
@@ -49,12 +41,8 @@
     "icon": "🚄",
     "source": "SNCF Réseau, ART, Sénat, Cour des comptes",
     "level": 1,
-    "tags": [
-      "transports",
-      "rail",
-      "SNCF"
-    ],
-    "equivalence": "Remettre en état tout le reseau ferre couterait ~100 Md€ sur 20 ans"
+    "tags": ["transports", "rail", "SNCF"],
+    "equivalence": "Remettre en état tout le réseau ferre coûterait ~100 Md€ sur 20 ans"
   },
   {
     "id": "cul-04",
@@ -67,12 +55,8 @@
     "icon": "🛣️",
     "source": "ART, Cour des comptes, Sénat",
     "level": 1,
-    "tags": [
-      "transports",
-      "routes",
-      "autoroutes"
-    ],
-    "equivalence": "Les autoroutes privees rapportent chaque annee autant que le budget Culture + Sport reunis"
+    "tags": ["transports", "routes", "autoroutes"],
+    "equivalence": "Les autoroutes privées rapportent chaque année autant que le budget Culture + Sport réunis"
   },
   {
     "id": "cul-05",
@@ -85,12 +69,8 @@
     "icon": "🚇",
     "source": "IDFM, Société du Grand Paris, GART",
     "level": 1,
-    "tags": [
-      "transports",
-      "urbain",
-      "Grand Paris"
-    ],
-    "equivalence": "Le Grand Paris Express coutera autant que 6 EPR2 nucleaires"
+    "tags": ["transports", "urbain", "Grand Paris"],
+    "equivalence": "Le Grand Paris Express coûtera autant que 6 EPR2 nucléaires"
   },
   {
     "id": "cul-06",
@@ -103,11 +83,7 @@
     "icon": "⚽",
     "source": "Ministère des Sports, ANS, Cour des comptes",
     "level": 1,
-    "tags": [
-      "sport",
-      "JOP",
-      "clubs"
-    ],
+    "tags": ["sport", "JOP", "clubs"],
     "equivalence": "1,5 Md€ = le prix de 3 stades de 60 000 places"
   },
   {
@@ -121,11 +97,7 @@
     "icon": "📰",
     "source": "Ministère de la Culture, DGMIC, Sénat",
     "level": 1,
-    "tags": [
-      "culture",
-      "presse",
-      "médias"
-    ],
+    "tags": ["culture", "presse", "médias"],
     "equivalence": "Les aides a la presse = le budget annuel de 3 grandes bibliotheques nationales"
   },
   {
@@ -139,11 +111,7 @@
     "icon": "🏰",
     "source": "Ministère de la Culture, Fondation du patrimoine, CMN",
     "level": 1,
-    "tags": [
-      "culture",
-      "patrimoine",
-      "monuments"
-    ],
+    "tags": ["culture", "patrimoine", "monuments"],
     "equivalence": "Restaurer 1 cathedrale = le prix de 10 creches"
   },
   {
@@ -158,11 +126,7 @@
     "source": "DGAC, budget.gouv.fr, Réseau Action Climat",
     "sourceUrl": "https://www.budget.gouv.fr",
     "level": 1,
-    "tags": [
-      "transports",
-      "aérien",
-      "DGAC"
-    ],
+    "tags": ["transports", "aérien", "DGAC"],
     "equivalence": "La detaxe du kerosene = le budget annuel de la Culture"
   },
   {
@@ -177,12 +141,8 @@
     "source": "Budget.gouv.fr, OFB, SGPE",
     "sourceUrl": "https://www.budget.gouv.fr",
     "level": 1,
-    "tags": [
-      "environnement",
-      "biodiversité",
-      "écologie"
-    ],
-    "equivalence": "Le budget biodiversite francais = 1/10e du budget annuel de la PAC europeenne"
+    "tags": ["environnement", "biodiversité", "écologie"],
+    "equivalence": "Le budget biodiversite français = 1/10e du budget annuel de la PAC européenne"
   },
   {
     "id": "cul-11",
@@ -197,18 +157,14 @@
     "source": "CNC, PLF 2026",
     "sourceUrl": "https://www.cnc.fr",
     "level": 1,
-    "tags": [
-      "cinema",
-      "CNC",
-      "culture"
-    ],
-    "equivalence": "Netflix contribue ~100 M€/an au cinema francais via la taxe VOD"
+    "tags": ["cinema", "CNC", "culture"],
+    "equivalence": "Netflix contribue ~100 M€/an au cinema français via la taxe VOD"
   },
   {
     "id": "cul-12",
     "title": "Velo et mobilites douces",
     "subtitle": "Plan velo : 2 Md EUR sur 4 ans",
-    "description": "Le Plan velo finance pistes cyclables, stationnements securises, aides a l'achat. La France est passee de 3% a 5% de part modale velo en 5 ans (vs 27% aux Pays-Bas). Les vols de velos restent un frein majeur (~400 000/an). 1 km de piste cyclable coute ~200 000 EUR.",
+    "description": "Le Plan velo finance pistes cyclables, stationnements securises, aides a l'achat. La France est passee de 3% a 5% de part modale velo en 5 ans (vs 27% aux Pays-Bas). Les vols de velos restent un frein majeur (~400 000/an). 1 km de piste cyclable coûte ~200 000 EUR.",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
     "deckId": "culture",
@@ -217,18 +173,14 @@
     "source": "Plan velo, ADEME, Velo & Territoires",
     "sourceUrl": "https://www.écologie.gouv.fr",
     "level": 1,
-    "tags": [
-      "velo",
-      "mobilite",
-      "transport"
-    ],
-    "equivalence": "1 km de piste cyclable coute ~200 000€ (vs ~10 M€ pour 1 km de tramway)"
+    "tags": ["velo", "mobilite", "transport"],
+    "equivalence": "1 km de piste cyclable coûte ~200 000€ (vs ~10 M€ pour 1 km de tramway)"
   },
   {
     "id": "cul-13",
     "title": "Grand Paris Express",
     "subtitle": "200 km de metro automatique, 68 gares",
-    "description": "Plus grand projet de transport en Europe : 44 Md EUR au total. Les lignes 15 Sud et 16 en chantier avance. Le cout a depasse les previsions initiales de 35 Md EUR. Finance par des taxes franciliennes. Polemique : un projet parisien finance par des taxes nationales.",
+    "description": "Plus grand projet de transport en Europe : 44 Md EUR au total. Les lignes 15 Sud et 16 en chantier avance. Le coût a depasse les previsions initiales de 35 Md EUR. Finance par des taxes franciliennes. Polemique : un projet parisien finance par des taxes nationales.",
     "amountBillions": 44,
     "costPerCitizen": 647,
     "deckId": "culture",
@@ -237,12 +189,8 @@
     "source": "Société du Grand Paris, Cour des comptes",
     "sourceUrl": "https://www.societedugrandparis.fr",
     "level": 1,
-    "tags": [
-      "metro",
-      "transport",
-      "infrastructure"
-    ],
-    "equivalence": "Le Grand Paris Express coute plus que 3 porte-avions nucleaires neufs"
+    "tags": ["metro", "transport", "infrastructure"],
+    "equivalence": "Le Grand Paris Express coûte plus que 3 porte-avions nucléaires neufs"
   },
   {
     "id": "cul-14",
@@ -257,11 +205,7 @@
     "source": "Atout France, DGE, OMT",
     "sourceUrl": "https://www.atout-france.fr",
     "level": 1,
-    "tags": [
-      "tourisme",
-      "recettes",
-      "attractivite"
-    ],
+    "tags": ["tourisme", "recettes", "attractivite"],
     "equivalence": "1€ public investi dans le tourisme genere ~30€ de recettes — meilleur ROI de toutes les politiques publiques"
   },
   {
@@ -277,47 +221,35 @@
     "source": "DGAC, PLF 2026, UNITAID",
     "sourceUrl": "https://www.écologie.gouv.fr",
     "level": 1,
-    "tags": [
-      "aerien",
-      "taxe",
-      "carbone"
-    ],
+    "tags": ["aerien", "taxe", "carbone"],
     "equivalence": "Un aller-retour Paris-New York genere ~1,7 tonne de CO2 par passager, taxe ~45€ en classe eco"
   },
   {
     "id": "cul-16",
     "title": "Musees nationaux",
     "subtitle": "Louvre, Orsay, Versailles et grands musees",
-    "description": "Le Louvre est le musee le plus visite au monde (8,9 millions de visiteurs en 2024). Ses recettes propres couvrent 60% de son budget (~280 M€). L'État subventionne les 40% restants. Versailles est quasi autonome financierement. Les 1 200 musees de France forment un reseau sans equivalent mondial. Debat : la gratuite pour les -26 ans attire-t-elle de nouveaux publics ou subventionne-t-elle les touristes etrangers ?",
+    "description": "Le Louvre est le musee le plus visite au monde (8,9 millions de visiteurs en 2024). Ses recettes propres couvrent 60% de son budget (~280 M€). L'État subventionne les 40% restants. Versailles est quasi autonome financierement. Les 1 200 musees de France forment un réseau sans équivalent mondial. Debat : la gratuite pour les -26 ans attire-t-elle de nouveaux publics ou subventionne-t-elle les touristes étrangers ?",
     "amountBillions": 1.5,
     "costPerCitizen": 22,
     "deckId": "culture",
     "icon": "🏛️",
     "source": "Musees de France, PLF 2026 programme 175, Cour des comptes",
     "level": 1,
-    "tags": [
-      "culture",
-      "musees",
-      "patrimoine"
-    ],
+    "tags": ["culture", "musees", "patrimoine"],
     "equivalence": "Le Louvre genere plus de recettes touristiques que le PIB de certains pays africains"
   },
   {
     "id": "cul-17",
     "title": "Fret ferroviaire",
-    "subtitle": "Aides + subventions + investissement reseau fret",
+    "subtitle": "Aides + subventions + investissement réseau fret",
     "description": "Le fret ferroviaire ne transporte que 9% des marchandises en France (vs 19% en Allemagne, 30% en Suisse). La part modale a ete divisee par 2 en 20 ans. Fret SNCF a accumule 5 Md€ de dette. L'UE impose l'ouverture a la concurrence. Le gouvernement vise un doublement du fret ferroviaire d'ici 2030. Chaque tonne transportee par train emet 9x moins de CO2 que par camion.",
     "amountBillions": 1,
     "costPerCitizen": 15,
     "deckId": "culture",
     "icon": "🚂",
-    "source": "SNCF Reseau, DGITM, Commission europeenne",
+    "source": "SNCF Reseau, DGITM, Commission européenne",
     "level": 1,
-    "tags": [
-      "transport",
-      "fret",
-      "ferroviaire"
-    ],
+    "tags": ["transport", "fret", "ferroviaire"],
     "equivalence": "Transferer 1% de marchandises de la route vers le rail = -500 000 camions/an sur les autoroutes"
   },
   {
@@ -331,29 +263,21 @@
     "icon": "⛴️",
     "source": "DGITM, ports autonomes, Senat",
     "level": 1,
-    "tags": [
-      "transport",
-      "ports",
-      "maritime"
-    ],
+    "tags": ["transport", "ports", "maritime"],
     "equivalence": "Rotterdam traite 5x plus de conteneurs que Le Havre, avec un territoire 40x plus petit"
   },
   {
     "id": "cul-19",
     "title": "Bibliotheques publiques",
     "subtitle": "16 500 bibliotheques + BnF",
-    "description": "16 500 bibliotheques publiques maillent le territoire (1er reseau culturel de France). 28% des Francais sont inscrits en bibliotheque. La BnF conserve 40 millions de documents. Gallica donne acces a 10 millions de documents gratuits en ligne. Les bibliotheques deviennent des tiers-lieux (coworking, formation numerique, aide aux demarches).",
+    "description": "16 500 bibliotheques publiques maillent le territoire (1er réseau culturel de France). 28% des Français sont inscrits en bibliotheque. La BnF conserve 40 millions de documents. Gallica donne acces a 10 millions de documents gratuits en ligne. Les bibliotheques deviennent des tiers-lieux (coworking, formation numerique, aide aux demarches).",
     "amountBillions": 2,
     "costPerCitizen": 29,
     "deckId": "culture",
     "icon": "📚",
     "source": "Ministere de la Culture, SLL, BnF",
     "level": 1,
-    "tags": [
-      "culture",
-      "bibliotheques",
-      "lecture"
-    ],
+    "tags": ["culture", "bibliotheques", "lecture"],
     "equivalence": "16 500 bibliotheques = plus que le nombre de boulangeries (32 000) rapporte au budget"
   },
   {
@@ -367,11 +291,7 @@
     "icon": "⛏️",
     "source": "INRAP, Ministere de la Culture, PLF 2026",
     "level": 1,
-    "tags": [
-      "culture",
-      "archeologie",
-      "patrimoine"
-    ],
+    "tags": ["culture", "archeologie", "patrimoine"],
     "equivalence": "0,60€/m2 de construction pour proteger 2 000 ans de patrimoine enfoui"
   }
 ]

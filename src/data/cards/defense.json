@@ -12,11 +12,7 @@
     "source": "Vie-publique.fr, LPM 2024-2030, Sénat",
     "sourceUrl": "https://www.vie-publique.fr",
     "level": 1,
-    "tags": [
-      "militaire",
-      "nucléaire",
-      "souveraineté"
-    ],
+    "tags": ["militaire", "nucléaire", "souveraineté"],
     "equivalence": "Le budget cumule des ministeres de la Justice ET de la Culture"
   },
   {
@@ -31,11 +27,7 @@
     "source": "Ministère des Armées PLF 2025, LPM 2024-2030",
     "sourceUrl": "https://www.défense.gouv.fr",
     "level": 1,
-    "tags": [
-      "militaire",
-      "marine",
-      "équipement"
-    ],
+    "tags": ["militaire", "marine", "équipement"],
     "equivalence": "Le salaire annuel de ~30 000 infirmieres hospitalieres"
   },
   {
@@ -50,11 +42,7 @@
     "source": "Vie-publique.fr, Cour des comptes, FOB",
     "sourceUrl": "https://www.vie-publique.fr",
     "level": 1,
-    "tags": [
-      "militaire",
-      "opérations",
-      "OTAN"
-    ],
+    "tags": ["militaire", "opérations", "OTAN"],
     "equivalence": "Le budget annuel complet de la Gendarmerie nationale"
   },
   {
@@ -70,12 +58,8 @@
     "source": "Ministère des Armées PLF 2025",
     "sourceUrl": "https://www.défense.gouv.fr",
     "level": 1,
-    "tags": [
-      "militaire",
-      "cyber",
-      "technologie"
-    ],
-    "equivalence": "Le cout de 3 satellites militaires d'observation"
+    "tags": ["militaire", "cyber", "technologie"],
+    "equivalence": "Le coût de 3 satellites militaires d'observation"
   },
   {
     "id": "def-05",
@@ -90,11 +74,7 @@
     "source": "Ministère des Armées PLF 2025, Sénat",
     "sourceUrl": "https://www.défense.gouv.fr",
     "level": 1,
-    "tags": [
-      "militaire",
-      "renseignement",
-      "souveraineté"
-    ],
+    "tags": ["militaire", "renseignement", "souveraineté"],
     "equivalence": "~2x le budget annuel de l'Opera national de Paris"
   },
   {
@@ -109,11 +89,7 @@
     "source": "Ministère des Armées PLF 2025",
     "sourceUrl": "https://www.défense.gouv.fr",
     "level": 1,
-    "tags": [
-      "militaire",
-      "santé",
-      "hôpitaux"
-    ],
+    "tags": ["militaire", "santé", "hôpitaux"],
     "equivalence": "Le fonctionnement de ~10 CHU de taille moyenne"
   },
   {
@@ -129,11 +105,7 @@
     "source": "Ministère des Armées PLF 2025, LPM 2024-2030",
     "sourceUrl": "https://www.défense.gouv.fr",
     "level": 1,
-    "tags": [
-      "militaire",
-      "espace",
-      "technologie"
-    ],
+    "tags": ["militaire", "espace", "technologie"],
     "equivalence": "~2 missions de la sonde Rosetta (ESA)"
   },
   {
@@ -149,11 +121,7 @@
     "source": "Ministère des Armées PLF 2025",
     "sourceUrl": "https://www.défense.gouv.fr",
     "level": 1,
-    "tags": [
-      "militaire",
-      "infrastructure",
-      "logement"
-    ],
+    "tags": ["militaire", "infrastructure", "logement"],
     "equivalence": "La construction de ~24 000 logements sociaux / an"
   },
   {
@@ -168,11 +136,7 @@
     "source": "Ministère des Armées PLF 2025, LPM 2024-2030",
     "sourceUrl": "https://www.défense.gouv.fr",
     "level": 1,
-    "tags": [
-      "militaire",
-      "innovation",
-      "technologie"
-    ],
+    "tags": ["militaire", "innovation", "technologie"],
     "equivalence": "4x le budget annuel du CNRS en sciences informatiques"
   },
   {
@@ -187,11 +151,7 @@
     "source": "Vie-publique.fr, IFRAP, Sénat",
     "sourceUrl": "https://www.vie-publique.fr",
     "level": 1,
-    "tags": [
-      "militaire",
-      "OTAN",
-      "trajectoire"
-    ],
+    "tags": ["militaire", "OTAN", "trajectoire"],
     "equivalence": "Les +40 Md€ recherches = le budget total de l'Education nationale hors salaires"
   },
   {
@@ -207,18 +167,14 @@
     "source": "Rapport au Parlement sur les exportations d'armement 2025, DGA",
     "sourceUrl": "https://www.défense.gouv.fr",
     "level": 1,
-    "tags": [
-      "armement",
-      "exportation",
-      "industrie"
-    ],
+    "tags": ["armement", "exportation", "industrie"],
     "equivalence": "Les exportations d'armes rapportent plus que le tourisme a Paris"
   },
   {
     "id": "def-12",
     "title": "Reserve militaire et Garde nationale",
     "subtitle": "80 000 reservistes operationnels",
-    "description": "La Garde nationale regroupe les reservistes des armees, de la gendarmerie et de la police. Actives pour Sentinelle, les JOP 2024, les catastrophes naturelles. Un reserviste est paye ~80EUR/jour. La LPM 2024-2030 double le budget de la reserve.",
+    "description": "La Garde nationale regroupe les reservistes des armees, de la gendarmerie et de la police. Actives pour Sentinelle, les JOP 2024, les catastrophes naturelles. Un réserviste est paye ~80EUR/jour. La LPM 2024-2030 double le budget de la reserve.",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
     "deckId": "defense",
@@ -227,18 +183,14 @@
     "source": "LPM 2024-2030, Ministere des Armees",
     "sourceUrl": "https://www.défense.gouv.fr",
     "level": 1,
-    "tags": [
-      "reserve",
-      "garde nationale",
-      "défense"
-    ],
-    "equivalence": "Un reserviste coute 5x moins qu'un militaire d'active pour une mission similaire"
+    "tags": ["reserve", "garde nationale", "défense"],
+    "equivalence": "Un réserviste coûte 5x moins qu'un militaire d'active pour une mission similaire"
   },
   {
     "id": "def-13",
     "title": "Stocks de munitions et reconstitution",
     "subtitle": "Montee en cadence post-Ukraine",
-    "description": "Les livraisons a l'Ukraine ont revele la faiblesse des stocks francais. La France produisait 2 000 obus de 155mm/mois en 2022, objectif 3 000/mois en 2025. La reconstitution complete prendra 5-7 ans. KNDS monte de nouvelles lignes a Bourges et Tarbes.",
+    "description": "Les livraisons a l'Ukraine ont revele la faiblesse des stocks français. La France produisait 2 000 obus de 155mm/mois en 2022, objectif 3 000/mois en 2025. La reconstitution complète prendra 5-7 ans. KNDS monte de nouvelles lignes a Bourges et Tarbes.",
     "amountBillions": 3,
     "costPerCitizen": 44,
     "deckId": "defense",
@@ -247,12 +199,8 @@
     "source": "LPM, KNDS, Senat commission défense",
     "sourceUrl": "https://www.senat.fr",
     "level": 1,
-    "tags": [
-      "munitions",
-      "industrie",
-      "défense"
-    ],
-    "equivalence": "1 obus de 155mm coute ~3 000€ — l'Ukraine en tire 4 000-6 000/jour"
+    "tags": ["munitions", "industrie", "défense"],
+    "equivalence": "1 obus de 155mm coûte ~3 000€ — l'Ukraine en tire 4 000-6 000/jour"
   },
   {
     "id": "def-14",
@@ -267,16 +215,12 @@
     "source": "SSA rapport, LPM, Senat",
     "sourceUrl": "https://www.défense.gouv.fr",
     "level": 1,
-    "tags": [
-      "sante",
-      "militaire",
-      "hôpital"
-    ],
+    "tags": ["sante", "militaire", "hôpital"],
     "equivalence": "Le fonctionnement de ~10 CHU de taille moyenne"
   },
   {
     "id": "def-15",
-    "title": "Participation francaise a l'OTAN",
+    "title": "Participation française a l'OTAN",
     "subtitle": "Contribution directe au budget OTAN",
     "description": "La France contribue ~11% du budget commun de l'OTAN. Elle deploie ~10 000 militaires sous commandement OTAN (Estonie, Roumanie, Mediterranee). Le debat s'est deplace vers 3-3,5% du PIB suite aux declarations Trump et a la guerre en Ukraine.",
     "amountBillions": 0.35,
@@ -287,18 +231,14 @@
     "source": "OTAN, Ministere des Armees, LPM",
     "sourceUrl": "https://www.nato.int",
     "level": 1,
-    "tags": [
-      "OTAN",
-      "alliance",
-      "défense"
-    ],
+    "tags": ["OTAN", "alliance", "défense"],
     "equivalence": "Passer de 2% a 3,5% du PIB pour la défense = +40 Md€/an, soit 2x le budget de la Justice"
   },
   {
     "id": "def-16",
     "title": "Operation Sentinelle",
     "subtitle": "Sécurité interieure militaire",
-    "description": "Depuis les attentats de 2015, l'armee deploie en permanence ~7 000 a 10 000 soldats sur le territoire national : gares, sites touristiques, lieux de culte, evenements. Le surcout annuel est de ~250 M€ (prime opex, hebergement, transport). Sentinelle monopolise 15-20% des effectifs de l'armee de Terre, au detriment de l'entrainement. Le dispositif devait etre temporaire — il dure depuis 10 ans.",
+    "description": "Depuis les attentats de 2015, l'armée deploie en permanence ~7 000 a 10 000 soldats sur le territoire national : gares, sites touristiques, lieux de culte, evenements. Le surcout annuel est de ~250 M€ (prime opex, hebergement, transport). Sentinelle monopolise 15-20% des effectifs de l'armée de Terre, au detriment de l'entrainement. Le dispositif devait etre temporaire — il dure depuis 10 ans.",
     "amountBillions": 0.25,
     "costPerCitizen": 4,
     "deckId": "defense",
@@ -306,18 +246,14 @@
     "trend": -5,
     "source": "Ministere des Armees, Senat rapport OPINT, PLF 2026",
     "level": 1,
-    "tags": [
-      "défense",
-      "sécurité-interieure",
-      "sentinelle"
-    ],
+    "tags": ["défense", "sécurité-interieure", "sentinelle"],
     "equivalence": "10 000 soldats en patrouille permanente = l'effectif d'une brigade blindee entiere, immobilisee"
   },
   {
     "id": "def-17",
     "title": "Anciens combattants et memoire",
     "subtitle": "Mission Monde combattant, memoire et liens avec la Nation",
-    "description": "Pensions militaires d'invalidite (~620 M€), allocation de reconnaissance du combattant (~835€/an pour les anciens combattants de 65+ ans), institution nationale des Invalides, politique de memoire. Le budget baisse naturellement de ~6%/an car les anciens combattants d'Algerie ont 80-90 ans. Le point de PMI n'est pas revalorise en 2026 malgre l'inflation.",
+    "description": "Pensions militaires d'invalidite (~620 M€), allocation de reconnaissance du combattant (~835€/an pour les anciens combattants de 65+ ans), institution nationale des Invalides, politique de memoire. Le budget baisse naturellement de ~6%/an car les anciens combattants d'Algerie ont 80-90 ans. Le point de PMI n'est pas revalorisé en 2026 malgre l'inflation.",
     "amountBillions": 1.7,
     "costPerCitizen": 25,
     "deckId": "defense",
@@ -325,36 +261,28 @@
     "trend": -6,
     "source": "PLF 2026 mission Monde combattant, Senat, ONACVG",
     "level": 1,
-    "tags": [
-      "défense",
-      "veterans",
-      "memoire"
-    ],
+    "tags": ["défense", "veterans", "memoire"],
     "equivalence": "Le budget baisse de 1 Md€ en 10 ans — les veterans decedent, le budget fond avec eux"
   },
   {
     "id": "def-18",
     "title": "Forces speciales (COS)",
     "subtitle": "Commandement des operations speciales",
-    "description": "Le COS regroupe ~5 000 operateurs d'elite (1er RPIMa, commandos marine, 13e RDP, CPA 10). La France est la seule nation europeenne avec le Royaume-Uni a maintenir des capacites de forces speciales projetables au niveau mondial. Les FS ont mene plus de 60% des operations francaises au Sahel. Le surcout est estime a ~200 000€/an par operateur (vs ~50 000€ pour un soldat classique).",
+    "description": "Le COS regroupe ~5 000 operateurs d'elite (1er RPIMa, commandos marine, 13e RDP, CPA 10). La France est la seule nation européenne avec le Royaume-Uni a maintenir des capacites de forces speciales projetables au niveau mondial. Les FS ont mene plus de 60% des operations françaises au Sahel. Le surcout est estimé a ~200 000€/an par opérateur (vs ~50 000€ pour un soldat classique).",
     "amountBillions": 1,
     "costPerCitizen": 15,
     "deckId": "defense",
     "icon": "🎯",
     "source": "Senat commission défense, LPM 2024-2030",
     "level": 1,
-    "tags": [
-      "défense",
-      "forces-speciales",
-      "cos"
-    ],
-    "equivalence": "1 operateur des forces speciales coute 4x plus qu'un soldat conventionnel mais vaut 10x plus en impact operationnel"
+    "tags": ["défense", "forces-speciales", "cos"],
+    "equivalence": "1 opérateur des forces speciales coûte 4x plus qu'un soldat conventionnel mais vaut 10x plus en impact opérationnel"
   },
   {
     "id": "def-19",
     "title": "DGA et acquisition d'armement",
     "subtitle": "Direction générale de l'armement — titre 5 equipement des forces",
-    "description": "La DGA pilote les programmes d'armement : Rafale, SCAF (avion 6e generation), MGCS (char du futur), sous-marins Barracuda, fregates FDI, satellites, drones. Le titre 5 passe de 18 a 22 Md€ entre 2024 et 2026. Les retards et surcouts sont endemiques : le programme Scorpion derive de 30% en cout. La cooperation franco-allemande (SCAF, MGCS) est paralysee par les desaccords industriels.",
+    "description": "La DGA pilote les programmes d'armement : Rafale, SCAF (avion 6e generation), MGCS (char du futur), sous-marins Barracuda, fregates FDI, satellites, drones. Le titre 5 passe de 18 a 22 Md€ entre 2024 et 2026. Les retards et surcoûts sont endemiques : le programme Scorpion derive de 30% en coût. La cooperation franco-allemande (SCAF, MGCS) est paralysee par les desaccords industriels.",
     "amountBillions": 22,
     "costPerCitizen": 324,
     "deckId": "defense",
@@ -362,12 +290,8 @@
     "trend": 22,
     "source": "DGA rapport, PLF 2026 mission Défense, Senat",
     "level": 1,
-    "tags": [
-      "défense",
-      "armement",
-      "dga"
-    ],
-    "equivalence": "1 Rafale coute ~120 M€ — la France commande 42 Rafale F5 d'ici 2030"
+    "tags": ["défense", "armement", "dga"],
+    "equivalence": "1 Rafale coûte ~120 M€ — la France commande 42 Rafale F5 d'ici 2030"
   },
   {
     "id": "def-20",
@@ -380,11 +304,7 @@
     "icon": "🌍",
     "source": "Ministere des Armees, LPM, Senat",
     "level": 1,
-    "tags": [
-      "défense",
-      "outre-mer",
-      "bases"
-    ],
+    "tags": ["défense", "outre-mer", "bases"],
     "equivalence": "La France est le seul pays europeen present militairement sur tous les continents"
   }
 ]

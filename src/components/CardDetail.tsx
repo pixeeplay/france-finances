@@ -238,18 +238,20 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
                       rel="noopener noreferrer"
                       className="flex items-center justify-between p-3.5 rounded-xl bg-background/40 border border-border hover:bg-muted transition-all group"
                     >
-                      <span className="text-foreground font-medium text-[15px]">
-                        {card.source}
-                      </span>
+                      <AcronymText
+                        text={card.source}
+                        className="text-foreground font-medium text-[15px]"
+                      />
                       <span className="text-muted-foreground text-lg group-hover:text-primary transition-colors">
                         ↗
                       </span>
                     </a>
                   ) : (
                     <div className="p-3.5 rounded-xl bg-background/40 border border-border">
-                      <span className="text-foreground font-medium text-[15px]">
-                        {card.source}
-                      </span>
+                      <AcronymText
+                        text={card.source}
+                        className="text-foreground font-medium text-[15px]"
+                      />
                     </div>
                   )}
                 </div>

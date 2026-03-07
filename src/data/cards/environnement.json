@@ -220,7 +220,7 @@
     "icon": "🔥",
     "source": "DGSCGC, ONF, Ministère Intérieur, Prométhée",
     "level": 1,
-    "tags": ["foret", "incendies", "prevention"],
+    "tags": ["forêt", "incendies", "prevention"],
     "equivalence": "Les incendies de 2022 ont brûlé l'équivalent de la surface de Singapour en forêt française"
   },
   {
@@ -276,7 +276,7 @@
     "icon": "⏳",
     "source": "France Stratégie, Haut Conseil pour le Climat, ADEME",
     "level": 1,
-    "tags": ["climat", "prospective", "cout"],
+    "tags": ["climat", "prospective", "coût"],
     "equivalence": "Ne rien faire coûte 4 à 5× plus cher qu'agir — mais agir demande du courage politique aujourd'hui"
   }
 ]

@@ -6,16 +6,12 @@
     "description": "Sécurité publique, police judiciaire, renseignement, CRS, PAF. 87% du budget = salaires. Les JOP 2024 ont coûté ~1,1 Md€ en sécurité. 23 millions d'heures supplémentaires impayées s'accumulent (~270 M€).",
     "amountBillions": 13.4,
     "costPerCitizen": 197,
-    "deckId": "securite",
+    "deckId": "sécurité",
     "icon": "👮",
     "trend": 3.4,
     "source": "Sénat PLF 2025, LOPMI, AEF Info",
     "level": 1,
-    "tags": [
-      "sécurité",
-      "police",
-      "LOPMI"
-    ],
+    "tags": ["sécurité", "police", "LOPMI"],
     "equivalence": "13,4 Md€ = le budget cumule de l'Outre-mer + de la Culture"
   },
   {
@@ -25,18 +21,14 @@
     "description": "Couvre 95% du territoire national (zones rurales et périurbaines). 80 nouvelles brigades créées (sur 239 prévues par la LOPMI). L'immobilier est le point noir : casernes souvent vétustes. La réserve opérationnelle est un atout unique en Europe.",
     "amountBillions": 10.9,
     "costPerCitizen": 160,
-    "deckId": "securite",
+    "deckId": "sécurité",
     "icon": "🛡️",
     "trend": 5.2,
     "source": "Sénat PLF 2025-2026, LOPMI, budget.gouv.fr",
     "sourceUrl": "https://www.budget.gouv.fr",
     "level": 1,
-    "tags": [
-      "sécurité",
-      "gendarmerie",
-      "territoires"
-    ],
-    "equivalence": "Le budget gendarmerie = la moitie du budget de la recherche publique"
+    "tags": ["sécurité", "gendarmerie", "territoires"],
+    "equivalence": "Le budget gendarmerie = la moitié du budget de la recherche publique"
   },
   {
     "id": "sec-03",
@@ -45,16 +37,12 @@
     "description": "Juridictions, administration pénitentiaire, PJJ, accès au droit. Budget +60% entre 2017 et 2027. 10 000 emplois supplémentaires prévus d'ici 2027. Mais la France reste parmi les moins bien dotés en magistrats (11 pour 100 000, contre 21 en Allemagne).",
     "amountBillions": 10.7,
     "costPerCitizen": 157,
-    "deckId": "securite",
+    "deckId": "sécurité",
     "icon": "⚖️",
     "trend": 8,
     "source": "Ministère de la Justice, Sénat, CEPEJ",
     "level": 1,
-    "tags": [
-      "justice",
-      "magistrats",
-      "budget"
-    ],
+    "tags": ["justice", "magistrats", "budget"],
     "equivalence": "Le budget Justice = 1/6e du budget Défense"
   },
   {
@@ -64,15 +52,11 @@
     "description": "~78 000 détenus pour ~62 000 places (taux d'occupation : ~125%). La France a été condamnée 9 fois par la CEDH pour « traitements inhumains ». Le programme « 15 000 places » a livré ~4 000 places à mi-2025. Coût d'une place neuve : ~170 000€.",
     "amountBillions": 3.9,
     "costPerCitizen": 57,
-    "deckId": "securite",
+    "deckId": "sécurité",
     "icon": "🔒",
     "source": "Ministère de la Justice, Contrôleur général des lieux de privation de liberté",
     "level": 1,
-    "tags": [
-      "justice",
-      "prisons",
-      "surpopulation"
-    ],
+    "tags": ["justice", "prisons", "surpopulation"],
     "equivalence": "Construire les 15 000 places manquantes = ~2,6 Md€, soit 1 EPR2"
   },
   {
@@ -82,16 +66,12 @@
     "description": "~250 000 sapeurs-pompiers (80% volontaires), ~5 millions d'interventions/an. Le changement climatique augmente les feux de forêt : 72 000 ha brûlés en 2022. Le volontariat baisse de ~2%/an. La flotte aérienne (Canadair, Dash) est vieillissante.",
     "amountBillions": 7,
     "costPerCitizen": 103,
-    "deckId": "securite",
+    "deckId": "sécurité",
     "icon": "🚒",
     "source": "DGSCGC, SDIS, Sénat",
     "level": 1,
-    "tags": [
-      "sécurité",
-      "pompiers",
-      "crises"
-    ],
-    "equivalence": "1 Canadair neuf = ~55 M€, la flotte francaise en compte 12 (les plus vieux d'Europe)"
+    "tags": ["sécurité", "pompiers", "crises"],
+    "equivalence": "1 Canadair neuf = ~55 M€, la flotte française en compte 12 (les plus vieux d'Europe)"
   },
   {
     "id": "sec-06",
@@ -100,15 +80,11 @@
     "description": "~4 500 agents, budget partiellement classifié. Depuis 2015, effectifs doublés. La menace terroriste reste « élevée ». Surveille aussi les ingérences étrangères et la radicalisation en ligne. Débat sur les moyens de surveillance vs libertés individuelles.",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
-    "deckId": "securite",
+    "deckId": "sécurité",
     "icon": "🕵️",
     "source": "Rapport parlementaire renseignement 2024, DGSI",
     "level": 1,
-    "tags": [
-      "sécurité",
-      "renseignement",
-      "terrorisme"
-    ],
+    "tags": ["sécurité", "renseignement", "terrorisme"],
     "equivalence": "Le budget DGSI = 1/1 200e du budget de l'État"
   },
   {
@@ -118,16 +94,12 @@
     "description": "~1 million de bénéficiaires/an, plafond : ~1 393€/mois. L'avocat commis d'office est rémunéré ~300-500€ par dossier pénal, 5 à 10× moins qu'au tarif libre. 30% des Français sont éligibles. La numérisation a réduit les délais de traitement de 50%.",
     "amountBillions": 0.7,
     "costPerCitizen": 10,
-    "deckId": "securite",
+    "deckId": "sécurité",
     "icon": "📜",
     "source": "Ministère de la Justice, CNB",
     "level": 1,
-    "tags": [
-      "justice",
-      "accès au droit",
-      "avocats"
-    ],
-    "equivalence": "700 M€ d'AJ = le cout de 2 jours d'indemnites journalieres maladie"
+    "tags": ["justice", "accès au droit", "avocats"],
+    "equivalence": "700 M€ d'AJ = le coût de 2 jours d'indemnites journalieres maladie"
   },
   {
     "id": "sec-08",
@@ -136,55 +108,43 @@
     "description": "~600 agents ANSSI + cybercommandement. Les cyberattaques contre hôpitaux et collectivités multipliées par 4 depuis 2020. La France se classe 6e mondiale en cybersécurité. Le plan « Cyber Campus » regroupe 200 acteurs publics et privés.",
     "amountBillions": 1,
     "costPerCitizen": 15,
-    "deckId": "securite",
+    "deckId": "sécurité",
     "icon": "💻",
     "source": "ANSSI rapport annuel 2024, LPM 2024-2030, Sénat",
     "level": 1,
-    "tags": [
-      "sécurité",
-      "cybersécurité",
-      "ANSSI"
-    ],
-    "equivalence": "Le cout moyen d'une cyberattaque reussie contre un hôpital : 1-10 M€"
+    "tags": ["sécurité", "cybersécurité", "ANSSI"],
+    "equivalence": "Le coût moyen d'une cyberattaque reussie contre un hôpital : 1-10 M€"
   },
   {
     "id": "sec-09",
     "title": "Lutte contre le narcotrafic",
     "subtitle": "Marche de la drogue : 3-4 Md EUR/an",
-    "description": "La France est le 1er consommateur europeen de cannabis. La repression mobilise ~40% de l'activite des brigades de surete urbaine. Malgre la politique la plus repressive d'Europe, la France est le plus gros consommateur. La loi narcotrafic 2025 renforce les peines.",
+    "description": "La France est le 1er consommateur europeen de cannabis. La repression mobilise ~40% de l'activité des brigades de surete urbaine. Malgre la politique la plus repressive d'Europe, la France est le plus gros consommateur. La loi narcotrafic 2025 renforce les peines.",
     "amountBillions": 1.5,
     "costPerCitizen": 22,
-    "deckId": "securite",
+    "deckId": "sécurité",
     "icon": "🚔",
     "trend": 10,
     "source": "OFDT, MILDECA, Ministere de l'Interieur",
     "sourceUrl": "https://www.interieur.gouv.fr",
     "level": 1,
-    "tags": [
-      "narcotrafic",
-      "drogue",
-      "repression"
-    ],
+    "tags": ["narcotrafic", "drogue", "repression"],
     "equivalence": "On dépense ~1,5 Md€/an pour reprimer un marche de 3-4 Md€ — le trafic est 2x plus rentable que la repression"
   },
   {
     "id": "sec-10",
     "title": "Sécurité routiere",
     "subtitle": "3 200 morts/an, stagnation depuis 10 ans",
-    "description": "4 700 radars rapportent ~800 M EUR/an. Le cout social des accidents est estime a ~50 Md EUR/an. Les amendes rapportent 3,5 Md EUR mais les accidents coutent 50 Md EUR. Les PV de stationnement decentralises generent des recettes pour les communes.",
+    "description": "4 700 radars rapportent ~800 M EUR/an. Le coût social des accidents est estimé a ~50 Md EUR/an. Les amendes rapportent 3,5 Md EUR mais les accidents coutent 50 Md EUR. Les PV de stationnement decentralises generent des recettes pour les communes.",
     "amountBillions": 3.5,
     "costPerCitizen": 51,
-    "deckId": "securite",
+    "deckId": "sécurité",
     "icon": "🚦",
     "trend": 0,
     "source": "ONISR, DSCR, PLF 2026, Cour des comptes",
     "sourceUrl": "https://www.onisr.sécurité-routiere.gouv.fr",
     "level": 1,
-    "tags": [
-      "routiere",
-      "radars",
-      "amendes"
-    ],
+    "tags": ["routiere", "radars", "amendes"],
     "equivalence": "Les amendes rapportent 3,5 Md€ mais les accidents coutent 50 Md€ — le bilan est 15x negatif"
   },
   {
@@ -194,18 +154,14 @@
     "description": "La PJJ encadre ~160 000 mineurs. Elle gere les centres educatifs fermes (52 etablissements, ~600 places). Cout d'un CEF : ~700 EUR/jour par mineur. Le code de la justice penale des mineurs privilegie l'educatif sur le repressif. La recidive baisse de 40% vs la prison.",
     "amountBillions": 1,
     "costPerCitizen": 15,
-    "deckId": "securite",
+    "deckId": "sécurité",
     "icon": "👦",
     "trend": 5,
     "source": "PJJ, PLF 2026 mission Justice, Senat",
     "sourceUrl": "https://www.justice.gouv.fr",
     "level": 1,
-    "tags": [
-      "mineurs",
-      "justice",
-      "PJJ"
-    ],
-    "equivalence": "Un mineur en CEF coute 255 000€/an, mais la recidive baisse de 40% vs la prison"
+    "tags": ["mineurs", "justice", "PJJ"],
+    "equivalence": "Un mineur en CEF coûte 255 000€/an, mais la recidive baisse de 40% vs la prison"
   },
   {
     "id": "sec-12",
@@ -214,74 +170,58 @@
     "description": "Budget entierement a la charge des collectivites. Depuis la loi Sécurité globale (2021), pouvoirs elargis. Inegalite territoriale massive : Nice dépense ~200 EUR/habitant/an en police municipale, quand une commune rurale dépense 0 EUR.",
     "amountBillions": 5,
     "costPerCitizen": 74,
-    "deckId": "securite",
+    "deckId": "sécurité",
     "icon": "🏛️",
     "trend": 8,
     "source": "CNFPT, DGCL, Senat",
     "sourceUrl": "https://www.senat.fr",
     "level": 1,
-    "tags": [
-      "police municipale",
-      "collectivites",
-      "sécurité"
-    ],
+    "tags": ["police municipale", "collectivites", "sécurité"],
     "equivalence": "Nice dépense ~200€/habitant/an en police municipale, quand une commune rurale dépense 0€"
   },
   {
     "id": "sec-13",
     "title": "Victimes et indemnisation",
     "subtitle": "FGTI : 150 000 victimes indemnisees/an",
-    "description": "Le FGTI indemnise agressions, viols, vols avec violence, terrorisme. Finance par une taxe de 5,90 EUR sur chaque contrat d'assurance. Les indemnisations des attentats 2015-2016 ont depasse 1,5 Md EUR. Le système francais est considere comme le plus genereux au monde.",
+    "description": "Le FGTI indemnise agressions, viols, vols avec violence, terrorisme. Finance par une taxe de 5,90 EUR sur chaque contrat d'assurance. Les indemnisations des attentats 2015-2016 ont depasse 1,5 Md EUR. Le système français est considere comme le plus genereux au monde.",
     "amountBillions": 0.7,
     "costPerCitizen": 10,
-    "deckId": "securite",
+    "deckId": "sécurité",
     "icon": "🤝",
     "trend": 3,
     "source": "FGTI, PLF 2026, Cour des comptes",
     "sourceUrl": "https://www.fondsdegarantie.fr",
     "level": 1,
-    "tags": [
-      "victimes",
-      "indemnisation",
-      "terrorisme"
-    ],
+    "tags": ["victimes", "indemnisation", "terrorisme"],
     "equivalence": "Chaque contrat d'assurance contribue 5,90€/an pour indemniser toutes les victimes de France"
   },
   {
     "id": "sec-14",
     "title": "Violences conjugales et feminicides",
     "subtitle": "Plan interministeriel 2024-2027",
-    "description": "94 femmes tuees par leur conjoint ou ex-conjoint en 2024. 230 000 femmes victimes de violences conjugales/an. Le telephone grave danger est attribue a ~5 000 femmes. Les bracelets anti-rapprochement sont en service (~1 000 portes). Le 3919 recoit 100 000 appels/an. Places d'hebergement specialise : 11 000 (en hausse mais insuffisant).",
+    "description": "94 femmes tuees par leur conjoint ou ex-conjoint en 2024. 230 000 femmes victimes de violences conjugales/an. Le telephone grave danger est attribue a ~5 000 femmes. Les bracelets anti-rapprochement sont en service (~1 000 portes). Le 3919 recoit 100 000 appels/an. Places d'hebergement spécialisé : 11 000 (en hausse mais insuffisant).",
     "amountBillions": 0.36,
     "costPerCitizen": 5,
-    "deckId": "securite",
+    "deckId": "sécurité",
     "icon": "🛡️",
     "source": "Ministere de l'Interieur, MIPROF, PLF 2026",
     "level": 1,
-    "tags": [
-      "justice",
-      "violences",
-      "feminicides"
-    ],
-    "equivalence": "5€/an par Francais pour lutter contre un feminicide tous les 4 jours"
+    "tags": ["justice", "violences", "feminicides"],
+    "equivalence": "5€/an par Français pour lutter contre un feminicide tous les 4 jours"
   },
   {
     "id": "sec-15",
     "title": "Bracelet electronique et alternatives",
     "subtitle": "PSE + TIG + semi-liberte + sursis probatoire",
-    "description": "~14 000 personnes portent un bracelet electronique : cout ~15€/jour vs ~150€/jour de prison. 25 000 TIG prononces/an. La France a 78 000 detenus pour 62 000 places (taux d'occupation : 126%). Les alternatives sont moins couteuses et le taux de recidive est 2x plus faible (PSE : 30% vs prison : 60%).",
+    "description": "~14 000 personnes portent un bracelet electronique : coût ~15€/jour vs ~150€/jour de prison. 25 000 TIG prononces/an. La France a 78 000 detenus pour 62 000 places (taux d'occupation : 126%). Les alternatives sont moins couteuses et le taux de recidive est 2x plus faible (PSE : 30% vs prison : 60%).",
     "amountBillions": 0.2,
     "costPerCitizen": 3,
-    "deckId": "securite",
+    "deckId": "sécurité",
     "icon": "📟",
     "source": "DAP, Ministere de la Justice, Cour des comptes",
     "level": 1,
-    "tags": [
-      "justice",
-      "prison",
-      "alternatives"
-    ],
-    "equivalence": "Le bracelet coute 10x moins que la prison et reduit la recidive de moitie"
+    "tags": ["justice", "prison", "alternatives"],
+    "equivalence": "Le bracelet coûte 10x moins que la prison et reduit la recidive de moitié"
   },
   {
     "id": "sec-16",
@@ -290,33 +230,25 @@
     "description": "La France compte ~100 000 cameras de videoprotection sur voie publique. La loi JOP 2024 a autorise experimentalement la videosurveillance algorithmique (detection de comportements suspects par IA). L'experimentation est en debat de prolongation. La CNIL et la Defenseure des droits alertent sur les risques de surveillance de masse.",
     "amountBillions": 0.3,
     "costPerCitizen": 4,
-    "deckId": "securite",
+    "deckId": "sécurité",
     "icon": "📹",
     "source": "CNIL, AN rapport VSA JOP, Senat",
     "level": 1,
-    "tags": [
-      "sécurité",
-      "video",
-      "surveillance"
-    ],
+    "tags": ["sécurité", "video", "surveillance"],
     "equivalence": "Nice a 1 camera pour 80 habitants — l'une des densites les plus elevees d'Europe"
   },
   {
     "id": "sec-17",
     "title": "Juridictions commerciales et prud'homales",
     "subtitle": "Tribunaux de commerce + conseils de prud'hommes",
-    "description": "134 tribunaux de commerce traitent ~200 000 affaires/an. Les juges consulaires sont des chefs d'entreprise benevoles. Les 210 conseils de prud'hommes traitent 100 000 litiges employeur/salarie par an, avec un delai moyen de 15 mois. Le taux de conciliation est tombe a 5% (vs 50% il y a 30 ans). La France est le pays d'Europe ou les litiges du travail sont les plus longs.",
+    "description": "134 tribunaux de commerce traitent ~200 000 affaires/an. Les juges consulaires sont des chefs d'entreprise benevoles. Les 210 conseils de prud'hommes traitent 100 000 litiges employeur/salarié par an, avec un delai moyen de 15 mois. Le taux de conciliation est tombe a 5% (vs 50% il y a 30 ans). La France est le pays d'Europe ou les litiges du travail sont les plus longs.",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
-    "deckId": "securite",
+    "deckId": "sécurité",
     "icon": "⚖️",
     "source": "Ministere de la Justice, Senat, CEPEJ rapport europeen",
     "level": 1,
-    "tags": [
-      "justice",
-      "prudhommes",
-      "tribunaux"
-    ],
+    "tags": ["justice", "prudhommes", "tribunaux"],
     "equivalence": "Un litige aux prud'hommes dure 15 mois en moyenne"
   },
   {
@@ -326,15 +258,11 @@
     "description": "La France surveille ~5 000 individus radicalises inscrits au FSPRT. 500 detenus sont incarceres pour terrorisme islamiste. Le renseignement penitentiaire (SNRP, 400 agents) detecte la radicalisation en prison. Les QER accueillent les detenus a evaluer pendant 4 mois. 5 attentats dejoues en 2024, mais les loups solitaires restent indetectables.",
     "amountBillions": 0.1,
     "costPerCitizen": 2,
-    "deckId": "securite",
+    "deckId": "sécurité",
     "icon": "🔎",
     "source": "CIPDR, DGSI, DAP, PLF 2026",
     "level": 1,
-    "tags": [
-      "sécurité",
-      "radicalisation",
-      "terrorisme"
-    ],
-    "equivalence": "1,50€/an par Francais pour surveiller 5 000 individus radicalises + prevenir la radicalisation"
+    "tags": ["sécurité", "radicalisation", "terrorisme"],
+    "equivalence": "1,50€/an par Français pour surveiller 5 000 individus radicalises + prevenir la radicalisation"
   }
 ]

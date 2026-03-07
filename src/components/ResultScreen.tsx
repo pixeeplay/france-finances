@@ -113,7 +113,7 @@ export function ResultScreen() {
   }
 
   return (
-    <div className="flex-1 flex flex-col overflow-y-auto">
+    <div className="flex-1 flex flex-col overflow-y-auto scrollbar-hide">
       {/* Header */}
       <div className="flex items-center justify-between p-4 pb-2">
         <h2 className="text-lg font-bold leading-tight tracking-[-0.015em]">

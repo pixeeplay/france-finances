@@ -13,7 +13,7 @@
     "level": 1,
     "tags": ["Europe", "contribution", "budget UE"],
     "trend": null,
-    "equivalence": "Chaque Francais paie ~1€/jour pour l'Union europeenne"
+    "equivalence": "Chaque Français paie ~1€/jour pour l'Union européenne"
   },
   {
     "id": "fre-02",
@@ -45,7 +45,7 @@
     "level": 1,
     "tags": ["Europe", "relance", "NextGenerationEU"],
     "trend": null,
-    "equivalence": "La France recoit plus de NextGenerationEU que ce que coute son budget Justice en 4 ans"
+    "equivalence": "La France recoit plus de NextGenerationEU que ce que coûte son budget Justice en 4 ans"
   },
   {
     "id": "fre-04",
@@ -61,7 +61,7 @@
     "level": 1,
     "tags": ["Europe", "défense", "Ukraine", "FEP"],
     "trend": null,
-    "equivalence": "La contribution francaise a la FEP = le budget annuel de l'aide juridictionnelle"
+    "equivalence": "La contribution française a la FEP = le budget annuel de l'aide juridictionnelle"
   },
   {
     "id": "fre-05",
@@ -77,7 +77,7 @@
     "level": 1,
     "tags": ["Europe", "éducation", "Erasmus", "mobilité"],
     "trend": null,
-    "equivalence": "6€/an par Francais pour 600 000 echanges etudiants/an en Europe"
+    "equivalence": "6€/an par Français pour 600 000 echanges étudiants/an en Europe"
   },
   {
     "id": "fre-06",
@@ -93,7 +93,7 @@
     "level": 1,
     "tags": ["Europe", "frontières", "immigration", "Frontex"],
     "trend": null,
-    "equivalence": "Le budget Frontex = le prix de 2 heures d'operations militaires francaises par jour"
+    "equivalence": "Le budget Frontex = le prix de 2 heures d'operations militaires françaises par jour"
   },
   {
     "id": "fre-07",
@@ -157,6 +157,6 @@
     "level": 1,
     "tags": ["Europe", "Brexit", "commerce"],
     "trend": null,
-    "equivalence": "Le Brexit coute a chaque Francais l'equivalent d'un abonnement de streaming par mois"
+    "equivalence": "Le Brexit coûte a chaque Français l'équivalent d'un abonnement de streaming par mois"
   }
 ]

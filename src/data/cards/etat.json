@@ -12,11 +12,7 @@
     "source": "Agence France Trésor, budget.gouv.fr, Cour des comptes",
     "sourceUrl": "https://www.budget.gouv.fr",
     "level": 1,
-    "tags": [
-      "état",
-      "dette",
-      "intérêts"
-    ],
+    "tags": ["état", "dette", "intérêts"],
     "equivalence": "Les 55 Md€ d'intérêts = le budget complet de la Défense"
   },
   {
@@ -31,11 +27,7 @@
     "source": "Budget.gouv.fr, DGAFP",
     "sourceUrl": "https://www.budget.gouv.fr",
     "level": 1,
-    "tags": [
-      "état",
-      "fonctionnaires",
-      "salaires"
-    ],
+    "tags": ["état", "fonctionnaires", "salaires"],
     "equivalence": "Les 5,7 millions de fonctionnaires = 20% de l'emploi total"
   },
   {
@@ -50,12 +42,8 @@
     "source": "Budget.gouv.fr, AMF, Cour des comptes",
     "sourceUrl": "https://www.budget.gouv.fr",
     "level": 1,
-    "tags": [
-      "état",
-      "collectivités",
-      "décentralisation"
-    ],
-    "equivalence": "Les 36 000 communes francaises = plus que tous les pays de l'UE reunis"
+    "tags": ["état", "collectivités", "décentralisation"],
+    "equivalence": "Les 36 000 communes françaises = plus que tous les pays de l'UE réunis"
   },
   {
     "id": "eta-04",
@@ -68,12 +56,8 @@
     "icon": "🕳️",
     "source": "Solidaires Finances Publiques, Sénat, Cour des comptes",
     "level": 1,
-    "tags": [
-      "état",
-      "fraude",
-      "recettes"
-    ],
-    "equivalence": "Si la fraude fiscale etait recuperee integralement, elle solderait le deficit public"
+    "tags": ["état", "fraude", "recettes"],
+    "equivalence": "Si la fraude fiscale etait recuperee integralement, elle solderait le déficit public"
   },
   {
     "id": "eta-05",
@@ -86,11 +70,7 @@
     "icon": "🏷️",
     "source": "CPO, Cour des comptes, PLF 2025",
     "level": 1,
-    "tags": [
-      "état",
-      "fiscalité",
-      "niches"
-    ],
+    "tags": ["état", "fiscalité", "niches"],
     "equivalence": "Les niches fiscales = le budget combine Défense + Justice + Interieur"
   },
   {
@@ -106,11 +86,7 @@
     "source": "OCDE DAC, budget.gouv.fr, AFD",
     "sourceUrl": "https://www.budget.gouv.fr",
     "level": 1,
-    "tags": [
-      "état",
-      "international",
-      "aide"
-    ],
+    "tags": ["état", "international", "aide"],
     "equivalence": "Les 15 Md€ d'APD = le budget annuel des APL (aides au logement)"
   },
   {
@@ -124,11 +100,7 @@
     "icon": "🏢",
     "source": "CAE, IPP, France Stratégie",
     "level": 1,
-    "tags": [
-      "état",
-      "entreprises",
-      "subventions"
-    ],
+    "tags": ["état", "entreprises", "subventions"],
     "equivalence": "Les aides totales aux entreprises = les prestations sociales versees aux menages modestes"
   },
   {
@@ -143,12 +115,8 @@
     "source": "Budget.gouv.fr, IEDOM/IEOM, Cour des comptes",
     "sourceUrl": "https://www.budget.gouv.fr",
     "level": 1,
-    "tags": [
-      "état",
-      "outre-mer",
-      "territoires"
-    ],
-    "equivalence": "Le transfert net par ultramarin est ~3x superieur a la moyenne des transferts par metropolitain"
+    "tags": ["état", "outre-mer", "territoires"],
+    "equivalence": "Le transfert net par ultramarin est ~3x supérieur a la moyenne des transferts par metropolitain"
   },
   {
     "id": "eta-09",
@@ -163,11 +131,7 @@
     "source": "Budget.gouv.fr PLF 2025, MEAE, AEFE",
     "sourceUrl": "https://www.budget.gouv.fr",
     "level": 1,
-    "tags": [
-      "état",
-      "diplomatie",
-      "affaires étrangères"
-    ],
+    "tags": ["état", "diplomatie", "affaires étrangères"],
     "equivalence": "Le budget du Quai d'Orsay = 1/10e de celui de la Défense"
   },
   {
@@ -182,18 +146,14 @@
     "trend": 6.1,
     "source": "INSEE, Cour des comptes, Agence France Trésor",
     "level": 1,
-    "tags": [
-      "état",
-      "déficit",
-      "dette"
-    ],
-    "equivalence": "La dette francaise (3 300 Md€) = le PIB de l'Inde"
+    "tags": ["état", "déficit", "dette"],
+    "equivalence": "La dette française (3 300 Md€) = le PIB de l'Inde"
   },
   {
     "id": "eta-11",
     "title": "Presidence, Matignon, cabinets",
     "subtitle": "Elysee ~115 M EUR, Matignon ~130 M EUR",
-    "description": "Le budget de l'Elysee est de ~115 M EUR/an (dont 72 M EUR de masse salariale, ~830 agents). Les cabinets ministeriels comptent ~500 conseillers. L'Elysee coute ~1,70 EUR par Francais par an, soit un croissant tous les 6 mois.",
+    "description": "Le budget de l'Elysee est de ~115 M EUR/an (dont 72 M EUR de masse salariale, ~830 agents). Les cabinets ministeriels comptent ~500 conseillers. L'Elysee coûte ~1,70 EUR par Français par an, soit un croissant tous les 6 mois.",
     "amountBillions": 0.4,
     "costPerCitizen": 6,
     "deckId": "etat",
@@ -202,18 +162,14 @@
     "source": "PLF 2026, Cour des comptes, Assemblee nationale",
     "sourceUrl": "https://www.elysee.fr",
     "level": 1,
-    "tags": [
-      "presidence",
-      "cabinets",
-      "executif"
-    ],
-    "equivalence": "L'Elysee coute ~1,70€ par Francais par an, soit un croissant tous les 6 mois"
+    "tags": ["presidence", "cabinets", "executif"],
+    "equivalence": "L'Elysee coûte ~1,70€ par Français par an, soit un croissant tous les 6 mois"
   },
   {
     "id": "eta-12",
     "title": "Parlement (AN + Senat)",
     "subtitle": "577 deputes + 348 senateurs",
-    "description": "L'Assemblee coute ~600 M EUR/an, le Senat ~350 M EUR. Un depute gagne ~7 500 EUR brut/mois + IRFM de ~5 645 EUR pour ses frais. Les deux chambres jouissent d'une autonomie budgetaire sans contrôle de la Cour des comptes.",
+    "description": "L'Assemblee coûte ~600 M EUR/an, le Senat ~350 M EUR. Un depute gagne ~7 500 EUR brut/mois + IRFM de ~5 645 EUR pour ses frais. Les deux chambres jouissent d'une autonomie budgetaire sans contrôle de la Cour des comptes.",
     "amountBillions": 1,
     "costPerCitizen": 15,
     "deckId": "etat",
@@ -222,18 +178,14 @@
     "source": "AN budget, Senat budget, HATVP",
     "sourceUrl": "https://www.assemblee-nationale.fr",
     "level": 1,
-    "tags": [
-      "parlement",
-      "deputes",
-      "senateurs"
-    ],
-    "equivalence": "Un depute coute ~1 M€/an tout compris (remuneration + collaborateurs + fonctionnement)"
+    "tags": ["parlement", "deputes", "senateurs"],
+    "equivalence": "Un depute coûte ~1 M€/an tout compris (remuneration + collaborateurs + fonctionnement)"
   },
   {
     "id": "eta-13",
     "title": "Immobilier de l'État",
     "subtitle": "190 millions de m2 de batiments publics",
-    "description": "L'État possede ~190 millions de m2 (ministeres, prefectures, casernes, universites). Patrimoine estime a ~65 Md EUR. Le teletravail post-COVID a libere 10-15% des surfaces. Les batiments universitaires sont les plus degrades (40 Md EUR de travaux necessaires).",
+    "description": "L'État possede ~190 millions de m2 (ministeres, préfectures, casernes, universites). Patrimoine estimé a ~65 Md EUR. Le teletravail post-COVID a libere 10-15% des surfaces. Les batiments universitaires sont les plus degrades (40 Md EUR de travaux nécessaires).",
     "amountBillions": 8,
     "costPerCitizen": 118,
     "deckId": "etat",
@@ -242,18 +194,14 @@
     "source": "DIE, PLF 2026, Cour des comptes",
     "sourceUrl": "https://www.budget.gouv.fr",
     "level": 1,
-    "tags": [
-      "immobilier",
-      "patrimoine",
-      "batiments"
-    ],
+    "tags": ["immobilier", "patrimoine", "batiments"],
     "equivalence": "L'État est le plus gros proprietaire immobilier de France — 190 millions de m2, dont beaucoup sous-occupes"
   },
   {
     "id": "eta-14",
     "title": "Systèmes d'information (IT public)",
     "subtitle": "60% des applications critiques ont plus de 15 ans",
-    "description": "Les ministeres depensent ~10 Md EUR/an en informatique. Grands echecs : Louvois (500 M EUR de surcout), Operateur national de paie (abandonne apres 300 M EUR). La DINUM tente de rationaliser mais chaque ministere garde ses propres systèmes.",
+    "description": "Les ministeres depensent ~10 Md EUR/an en informatique. Grands echecs : Louvois (500 M EUR de surcout), Operateur national de paie (abandonne apres 300 M EUR). La DINUM tente de rationaliser mais chaque ministère garde ses propres systèmes.",
     "amountBillions": 10,
     "costPerCitizen": 147,
     "deckId": "etat",
@@ -262,18 +210,14 @@
     "source": "DINUM, PLF 2026, Cour des comptes",
     "sourceUrl": "https://www.numerique.gouv.fr",
     "level": 1,
-    "tags": [
-      "informatique",
-      "numerique",
-      "modernisation"
-    ],
+    "tags": ["informatique", "numerique", "modernisation"],
     "equivalence": "L'État dépense autant en IT que le budget du Senegal, avec des resultats souvent mediocres"
   },
   {
     "id": "eta-15",
-    "title": "Jours feries (cout pour l'économie)",
+    "title": "Jours feries (coût pour l'économie)",
     "subtitle": "11 jours feries, ~3-4 Md EUR perdus chacun",
-    "description": "La France compte 11 jours feries legaux (dont 6 religieux). Chaque jour ferie coute ~0,15% de PIB. La journee de solidarite rapporte ~2,4 Md EUR/an. Supprimer 1 jour ferie = financer le budget de la Culture (4,4 Md EUR). Politiquement suicidaire.",
+    "description": "La France compte 11 jours feries legaux (dont 6 religieux). Chaque jour ferie coûte ~0,15% de PIB. La journee de solidarite rapporte ~2,4 Md EUR/an. Supprimer 1 jour ferie = financer le budget de la Culture (4,4 Md EUR). Politiquement suicidaire.",
     "amountBillions": 3.5,
     "costPerCitizen": 550,
     "deckId": "etat",
@@ -282,101 +226,77 @@
     "source": "INSEE, Tresor, OFCE",
     "sourceUrl": "https://www.insee.fr",
     "level": 1,
-    "tags": [
-      "jours feries",
-      "économie",
-      "productivite"
-    ],
+    "tags": ["jours feries", "économie", "productivite"],
     "equivalence": "Supprimer 1 jour ferie = financer le budget de la Culture (4,4 Md€), mais aucun politique n'osera"
   },
   {
     "id": "eta-16",
-    "title": "Prefectures et sous-prefectures",
+    "title": "Prefectures et sous-préfectures",
     "subtitle": "Administration territoriale de l'État (programme 354)",
-    "description": "101 prefectures et 233 sous-prefectures maillent le territoire. La dematerialisation des titres a supprime le guichet pour 80% des demarches, provoquant une fracture numerique (13M de Francais en difficulte). 5 sous-prefectures ont ferme depuis 2020. La reforme France Services a transforme d'anciennes sous-prefectures en maisons de services publics multifonctions.",
+    "description": "101 préfectures et 233 sous-préfectures maillent le territoire. La dematerialisation des titres a supprime le guichet pour 80% des demarches, provoquant une fracture numerique (13M de Français en difficulte). 5 sous-préfectures ont ferme depuis 2020. La reforme France Services a transforme d'anciennes sous-préfectures en maisons de services publics multifonctions.",
     "amountBillions": 2.5,
     "costPerCitizen": 37,
     "deckId": "etat",
     "icon": "🏛️",
     "source": "PLF 2026, Cour des comptes, DGAFP",
     "level": 1,
-    "tags": [
-      "état",
-      "prefectures",
-      "administration"
-    ],
-    "equivalence": "233 sous-prefectures pour 35 000 communes — 1 sous-prefet pour 150 communes en moyenne"
+    "tags": ["état", "préfectures", "administration"],
+    "equivalence": "233 sous-préfectures pour 35 000 communes — 1 sous-prefet pour 150 communes en moyenne"
   },
   {
     "id": "eta-17",
     "title": "INSP (ex-ENA) et hauts fonctionnaires",
     "subtitle": "Formation des administrateurs de l'État",
-    "description": "L'INSP (ex-ENA depuis 2022) forme ~80 hauts fonctionnaires/an apres un concours ultra-selectif. Cout de formation par eleve : ~120 000€ sur 2 ans. Les 5 IRA forment 700 attaches/an. La reforme visait a diversifier le recrutement. Bilan mitige : 40% des admis sont encore enfants de cadres superieurs, les classes preparatoires Talents n'ont attire que 200 candidats.",
+    "description": "L'INSP (ex-ENA depuis 2022) forme ~80 hauts fonctionnaires/an apres un concours ultra-selectif. Cout de formation par élève : ~120 000€ sur 2 ans. Les 5 IRA forment 700 attaches/an. La reforme visait a diversifier le recrutement. Bilan mitige : 40% des admis sont encore enfants de cadres superieurs, les classes preparatoires Talents n'ont attire que 200 candidats.",
     "amountBillions": 0.1,
     "costPerCitizen": 2,
     "deckId": "etat",
     "icon": "🎓",
     "source": "INSP, PLF 2026, Cour des comptes",
     "level": 1,
-    "tags": [
-      "état",
-      "ena",
-      "formation"
-    ],
-    "equivalence": "Former 1 haut fonctionnaire coute 120 000€ — il restera en poste 35 ans, c'est un bon investissement"
+    "tags": ["état", "ena", "formation"],
+    "equivalence": "Former 1 haut fonctionnaire coûte 120 000€ — il restera en poste 35 ans, c'est un bon investissement"
   },
   {
     "id": "eta-18",
     "title": "Cour des comptes et inspections generales",
     "subtitle": "Cour des comptes + CRC + IGF + IGAS + IGA",
-    "description": "La Cour des comptes (700 magistrats et rapporteurs) certifie les comptes de l'État, evalue les politiques publiques et produit ~200 rapports/an. Les CRC controlent les collectivites. Ces corps identifient chaque annee des milliards d'economies possibles... rarement suivies d'effet. La Cour estime que si ses recommandations avaient ete appliquees, l'État economiserait 15-20 Md€/an.",
+    "description": "La Cour des comptes (700 magistrats et rapporteurs) certifie les comptes de l'État, evalue les politiques publiques et produit ~200 rapports/an. Les CRC controlent les collectivites. Ces corps identifient chaque année des milliards d'economies possibles... rarement suivies d'effet. La Cour estimé que si ses recommandations avaient ete appliquees, l'État economiserait 15-20 Md€/an.",
     "amountBillions": 0.3,
     "costPerCitizen": 4,
     "deckId": "etat",
     "icon": "🔍",
     "source": "Cour des comptes rapport annuel, PLF 2026, IGAS",
     "level": 1,
-    "tags": [
-      "état",
-      "audit",
-      "contrôle"
-    ],
+    "tags": ["état", "audit", "contrôle"],
     "equivalence": "4€ de contrôle pour identifier 15-20 Md€ d'economies potentielles — meilleur ROI de la Republique"
   },
   {
     "id": "eta-19",
     "title": "Conseil d'État et juridictions administratives",
     "subtitle": "Conseil d'État + 42 TA + 9 CAA",
-    "description": "Les juridictions administratives traitent ~250 000 recours/an. Le contentieux des etrangers (OQTF, asile, visas) represente ~50% des affaires des tribunaux administratifs (saturation). Le delai moyen est de 9 mois en TA, 12 mois en appel. Les membres du Conseil d'État sont les fonctionnaires les mieux payes de France (~8 000-15 000€ nets/mois).",
+    "description": "Les juridictions administratives traitent ~250 000 recours/an. Le contentieux des étrangers (OQTF, asile, visas) represente ~50% des affaires des tribunaux administratifs (saturation). Le delai moyen est de 9 mois en TA, 12 mois en appel. Les membres du Conseil d'État sont les fonctionnaires les mieux payes de France (~8 000-15 000€ nets/mois).",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
     "deckId": "etat",
     "icon": "⚖️",
     "source": "Conseil d'État rapport annuel, PLF 2026",
     "level": 1,
-    "tags": [
-      "état",
-      "justice-admin",
-      "contentieux"
-    ],
-    "equivalence": "50% du contentieux administratif = droit des etrangers — un tribunal sur deux ne fait plus que ca"
+    "tags": ["état", "justice-admin", "contentieux"],
+    "equivalence": "50% du contentieux administratif = droit des étrangers — un tribunal sur deux ne fait plus que ca"
   },
   {
     "id": "eta-20",
     "title": "Vehicules de l'État",
     "subtitle": "Parc automobile des administrations",
-    "description": "L'État possede ~65 000 vehicules (hors armee et police). La loi impose 50% de vehicules electriques dans les renouvellements depuis 2026. Le parc vieillit (age moyen : 7 ans). Voitures de fonction avec chauffeur : ~2 000 pour les ministres, directeurs d'administration et prefets (cout : ~50 000€/an par vehicule avec chauffeur).",
+    "description": "L'État possede ~65 000 vehicules (hors armée et police). La loi impose 50% de vehicules electriques dans les renouvellements depuis 2026. Le parc vieillit (age moyen : 7 ans). Voitures de fonction avec chauffeur : ~2 000 pour les ministres, directeurs d'administration et prefets (coût : ~50 000€/an par vehicule avec chauffeur).",
     "amountBillions": 1.5,
     "costPerCitizen": 22,
     "deckId": "etat",
     "icon": "🚗",
     "source": "DIE, UGAP, PLF 2026",
     "level": 1,
-    "tags": [
-      "état",
-      "vehicules",
-      "logistique"
-    ],
-    "equivalence": "65 000 vehicules = la flotte d'une grande entreprise de location, pour un cout de ~23 000€/vehicule/an"
+    "tags": ["état", "vehicules", "logistique"],
+    "equivalence": "65 000 vehicules = la flotte d'une grande entreprise de location, pour un coût de ~23 000€/vehicule/an"
   }
 ]

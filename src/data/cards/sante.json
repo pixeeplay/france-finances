@@ -12,11 +12,7 @@
     "source": "Vie-publique.fr LFSS 2025, Cour des comptes",
     "sourceUrl": "https://www.vie-publique.fr",
     "level": 1,
-    "tags": [
-      "santé",
-      "ONDAM",
-      "assurance maladie"
-    ],
+    "tags": ["santé", "ONDAM", "assurance maladie"],
     "equivalence": "L'ONDAM = 5x le budget de la Défense"
   },
   {
@@ -31,11 +27,7 @@
     "trend": 3.8,
     "source": "Ministère de la Santé, Académie de médecine, Sénat",
     "level": 1,
-    "tags": [
-      "santé",
-      "hôpital",
-      "déficit"
-    ],
+    "tags": ["santé", "hôpital", "déficit"],
     "equivalence": "Le budget hospitalier annuel = 2x celui de l'ensemble des collectivites locales en investissement"
   },
   {
@@ -49,12 +41,8 @@
     "icon": "👨‍⚕️",
     "source": "PLFSS 2025, CNAM, Cour des comptes",
     "level": 1,
-    "tags": [
-      "santé",
-      "médecine",
-      "soins de ville"
-    ],
-    "equivalence": "Les soins de ville coutent plus que tout le budget de la Défense + de l'Education nationale reunis"
+    "tags": ["santé", "médecine", "soins de ville"],
+    "equivalence": "Les soins de ville coutent plus que tout le budget de la Défense + de l'Education nationale réunis"
   },
   {
     "id": "san-04",
@@ -67,11 +55,7 @@
     "icon": "💊",
     "source": "CNAM, LFSS 2025, IFRAP",
     "level": 1,
-    "tags": [
-      "santé",
-      "médicaments",
-      "pharmacie"
-    ],
+    "tags": ["santé", "médicaments", "pharmacie"],
     "equivalence": "37 Md€ = le PIB annuel du Luxembourg"
   },
   {
@@ -85,12 +69,8 @@
     "icon": "👴",
     "source": "LFSS 2026, DREES, Cour des comptes",
     "level": 1,
-    "tags": [
-      "santé",
-      "dépendance",
-      "personnes âgées"
-    ],
-    "equivalence": "Le cout de la dependance augmentera de +50% d'ici 2050 selon la DREES"
+    "tags": ["santé", "dépendance", "personnes âgées"],
+    "equivalence": "Le coût de la dependance augmentera de +50% d'ici 2050 selon la DREES"
   },
   {
     "id": "san-06",
@@ -103,11 +83,7 @@
     "icon": "🧠",
     "source": "Ministère de la Santé 2025, LFSS 2025, IRDES",
     "level": 1,
-    "tags": [
-      "santé",
-      "psychiatrie",
-      "santé mentale"
-    ],
+    "tags": ["santé", "psychiatrie", "santé mentale"],
     "equivalence": "Les troubles psychiques coutent ~109 Md€/an a la société selon l'OMS"
   },
   {
@@ -122,11 +98,7 @@
     "trend": 6.5,
     "source": "CNAM, LFSS 2025, Comité d'alerte ONDAM",
     "level": 1,
-    "tags": [
-      "santé",
-      "arrêts maladie",
-      "indemnités"
-    ],
+    "tags": ["santé", "arrêts maladie", "indemnités"],
     "equivalence": "16 Md€ d'IJ = le double du budget annuel de la Justice"
   },
   {
@@ -140,11 +112,7 @@
     "icon": "🔍",
     "source": "Cour des comptes, CNAM rapport fraudes 2024",
     "level": 1,
-    "tags": [
-      "santé",
-      "fraude",
-      "contrôle"
-    ],
+    "tags": ["santé", "fraude", "contrôle"],
     "equivalence": "La fraude estimee a la Secu (5-8 Md€) = le budget annuel de la recherche publique"
   },
   {
@@ -158,12 +126,8 @@
     "icon": "🗺️",
     "source": "DREES, ARS, LFSS 2025",
     "level": 1,
-    "tags": [
-      "santé",
-      "accès aux soins",
-      "territoires"
-    ],
-    "equivalence": "Former un medecin coute ~200 000€ a l'État sur 9 a 12 ans d'etudes"
+    "tags": ["santé", "accès aux soins", "territoires"],
+    "equivalence": "Former un medecin coûte ~200 000€ a l'État sur 9 a 12 ans d'etudes"
   },
   {
     "id": "san-10",
@@ -178,12 +142,8 @@
     "source": "DREES comptes de la santé 2024, Vie-publique.fr",
     "sourceUrl": "https://www.vie-publique.fr",
     "level": 1,
-    "tags": [
-      "santé",
-      "reste à charge",
-      "mutuelles"
-    ],
-    "equivalence": "Les Francais payent ~2x moins de leur poche que les Allemands pour se soigner"
+    "tags": ["santé", "reste à charge", "mutuelles"],
+    "equivalence": "Les Français payent ~2x moins de leur poche que les Allemands pour se soigner"
   },
   {
     "id": "hop-01",
@@ -197,13 +157,9 @@
     "source": "DREES, DGOS, Cour des comptes rapport hospitalier",
     "sourceUrl": null,
     "level": 1,
-    "tags": [
-      "santé",
-      "hôpital",
-      "budget"
-    ],
+    "tags": ["santé", "hôpital", "budget"],
     "trend": null,
-    "equivalence": "Chaque Francais dépense 135€/mois pour l'hôpital public, soit un abonnement Netflix x 10"
+    "equivalence": "Chaque Français dépense 135€/mois pour l'hôpital public, soit un abonnement Netflix x 10"
   },
   {
     "id": "hop-02",
@@ -217,11 +173,7 @@
     "source": "DGOS, Cour des comptes, FHF",
     "sourceUrl": null,
     "level": 1,
-    "tags": [
-      "santé",
-      "hôpital",
-      "salaires"
-    ],
+    "tags": ["santé", "hôpital", "salaires"],
     "trend": null,
     "equivalence": "Un infirmier hospitalier gagne ~2 100€ nets/mois (apres Segur), vs ~2 800€ dans le prive ou en interim"
   },
@@ -237,12 +189,7 @@
     "source": "Sénat, IGAS rapport T2A, FHF",
     "sourceUrl": null,
     "level": 1,
-    "tags": [
-      "santé",
-      "hôpital",
-      "T2A",
-      "financement"
-    ],
+    "tags": ["santé", "hôpital", "T2A", "financement"],
     "trend": null,
     "equivalence": "Une appendicectomie est remboursee ~2 500€ a l'hôpital, quel que soit le temps reel passe"
   },
@@ -258,13 +205,9 @@
     "source": "DREES, SFMU, Cour des comptes",
     "sourceUrl": null,
     "level": 1,
-    "tags": [
-      "santé",
-      "urgences",
-      "hôpital"
-    ],
+    "tags": ["santé", "urgences", "hôpital"],
     "trend": null,
-    "equivalence": "Un passage aux urgences coute ~240€ en moyenne, vs ~25€ chez le generaliste"
+    "equivalence": "Un passage aux urgences coûte ~240€ en moyenne, vs ~25€ chez le generaliste"
   },
   {
     "id": "hop-05",
@@ -278,14 +221,9 @@
     "source": "FHF, Cour des comptes, DGOS",
     "sourceUrl": null,
     "level": 1,
-    "tags": [
-      "santé",
-      "hôpital",
-      "dette",
-      "investissement"
-    ],
+    "tags": ["santé", "hôpital", "dette", "investissement"],
     "trend": null,
-    "equivalence": "La dette de l'hôpital = 3x le budget annuel du ministere de la Justice"
+    "equivalence": "La dette de l'hôpital = 3x le budget annuel du ministère de la Justice"
   },
   {
     "id": "hop-06",
@@ -299,11 +237,7 @@
     "source": "DREES, ARS, Cour des comptes rapport psychiatrie",
     "sourceUrl": null,
     "level": 1,
-    "tags": [
-      "santé",
-      "psychiatrie",
-      "santé mentale"
-    ],
+    "tags": ["santé", "psychiatrie", "santé mentale"],
     "trend": null,
     "equivalence": "Les troubles psychiques coutent ~109 Md€/an a la société selon l'OMS"
   },
@@ -319,14 +253,9 @@
     "source": "DGOS, FHF, ARS",
     "sourceUrl": null,
     "level": 1,
-    "tags": [
-      "santé",
-      "hôpital",
-      "proximité",
-      "rural"
-    ],
+    "tags": ["santé", "hôpital", "proximité", "rural"],
     "trend": null,
-    "equivalence": "Un hôpital de proximite coute ~27 M€/an pour desservir ~30 000 habitants"
+    "equivalence": "Un hôpital de proximite coûte ~27 M€/an pour desservir ~30 000 habitants"
   },
   {
     "id": "hop-08",
@@ -340,12 +269,7 @@
     "source": "Conférence des DG de CHU, AP-HP, DGOS",
     "sourceUrl": null,
     "level": 1,
-    "tags": [
-      "santé",
-      "CHU",
-      "recherche",
-      "formation"
-    ],
+    "tags": ["santé", "CHU", "recherche", "formation"],
     "trend": null,
     "equivalence": "L'AP-HP = le PIB du Tchad (8 Md€), pour 10 millions de patients/an"
   },
@@ -361,13 +285,9 @@
     "source": "IGAS, Cour des comptes, FHF rapport intérim",
     "sourceUrl": null,
     "level": 1,
-    "tags": [
-      "santé",
-      "intérim",
-      "hôpital"
-    ],
+    "tags": ["santé", "intérim", "hôpital"],
     "trend": null,
-    "equivalence": "1 medecin interimaire coute autant que 2-3 medecins titulaires"
+    "equivalence": "1 medecin interimaire coûte autant que 2-3 medecins titulaires"
   },
   {
     "id": "hop-10",
@@ -381,11 +301,7 @@
     "source": "HAS, ANAP, Cour des comptes rapport ambulatoire",
     "sourceUrl": null,
     "level": 1,
-    "tags": [
-      "santé",
-      "ambulatoire",
-      "économies"
-    ],
+    "tags": ["santé", "ambulatoire", "économies"],
     "trend": null,
     "equivalence": "Chaque point de chirurgie ambulatoire gagne = ~500 M€ d'economies"
   },
@@ -393,7 +309,7 @@
     "id": "san-11",
     "title": "Prevention et vaccination",
     "subtitle": "La France lanterne rouge de la prevention",
-    "description": "Les dépenses de prevention representent ~2% des dépenses totales de sante (vs 5% en Finlande). Le calendrier vaccinal couvre 13 vaccins obligatoires. La vaccination COVID a coute ~6 Md EUR mais a evite un cout hospitalier estime a 20 Md EUR.",
+    "description": "Les dépenses de prevention representent ~2% des dépenses totales de sante (vs 5% en Finlande). Le calendrier vaccinal couvre 13 vaccins obligatoires. La vaccination COVID a coûte ~6 Md EUR mais a evite un coût hospitalier estimé a 20 Md EUR.",
     "amountBillions": 2.5,
     "costPerCitizen": 37,
     "deckId": "sante",
@@ -402,18 +318,14 @@
     "source": "DREES, Sante publique France, Cour des comptes",
     "sourceUrl": "https://www.santepubliquefrance.fr",
     "level": 1,
-    "tags": [
-      "prevention",
-      "vaccination",
-      "sante"
-    ],
+    "tags": ["prevention", "vaccination", "sante"],
     "equivalence": "1€ investi en prevention economise 4-7€ en soins curatifs selon l'OMS"
   },
   {
     "id": "san-12",
     "title": "100% Sante (optique, dentaire, audio)",
     "subtitle": "Zero reste a charge",
-    "description": "La reforme 100% Sante a supprime le reste a charge sur un panier de lunettes, protheses dentaires et audioprotheses. ~5 millions de Francais en beneficient. Succes en audioprotheses (appareillages x2), plus mitige en optique. Le renoncement aux soins a baisse de 30%.",
+    "description": "La reforme 100% Sante a supprime le reste a charge sur un panier de lunettes, protheses dentaires et audioprotheses. ~5 millions de Français en bénéficient. Succes en audioprotheses (appareillages x2), plus mitige en optique. Le renoncement aux soins a baisse de 30%.",
     "amountBillions": 3,
     "costPerCitizen": 44,
     "deckId": "sante",
@@ -422,11 +334,7 @@
     "source": "DREES, Secu bilan 100% Sante, HCAAM",
     "sourceUrl": "https://www.ameli.fr",
     "level": 1,
-    "tags": [
-      "optique",
-      "dentaire",
-      "reforme"
-    ],
+    "tags": ["optique", "dentaire", "reforme"],
     "equivalence": "Une paire de lunettes 100% Sante = 0€ de reste a charge (vs 200-400€ avant)"
   },
   {
@@ -442,18 +350,14 @@
     "source": "ANSM, CEPS, France 2030",
     "sourceUrl": "https://ansm.sante.fr",
     "level": 1,
-    "tags": [
-      "medicaments",
-      "industrie",
-      "penuries"
-    ],
+    "tags": ["medicaments", "industrie", "penuries"],
     "equivalence": "80% des principes actifs viennent d'Inde et de Chine — un comprime de paracetamol parcourt 30 000 km"
   },
   {
     "id": "san-14",
     "title": "Addictions (tabac, alcool, drogues)",
     "subtitle": "Cout social : 250 Md EUR/an",
-    "description": "Le tabac tue 73 000 Francais/an, l'alcool 41 000. Le cout social total depasse 250 Md EUR/an. En face : les taxes rapportent ~20 Md EUR. Le solde est massivement negatif. Chaque hausse de 10% du prix du tabac reduit la consommation de 4%.",
+    "description": "Le tabac tue 73 000 Français/an, l'alcool 41 000. Le coût social total depasse 250 Md EUR/an. En face : les taxes rapportent ~20 Md EUR. Le solde est massivement negatif. Chaque hausse de 10% du prix du tabac reduit la consommation de 4%.",
     "amountBillions": 15,
     "costPerCitizen": 220,
     "deckId": "sante",
@@ -462,18 +366,14 @@
     "source": "OFDT, Sante publique France, CAE",
     "sourceUrl": "https://www.ofdt.fr",
     "level": 1,
-    "tags": [
-      "addictions",
-      "tabac",
-      "alcool"
-    ],
-    "equivalence": "Le tabac rapporte 16 Md€ de taxes mais coute 120 Md€ a la société — solde negatif : -104 Md€"
+    "tags": ["addictions", "tabac", "alcool"],
+    "equivalence": "Le tabac rapporte 16 Md€ de taxes mais coûte 120 Md€ a la société — solde negatif : -104 Md€"
   },
   {
     "id": "san-15",
     "title": "SAMU et transports sanitaires",
     "subtitle": "2e poste de croissance des dépenses de sante",
-    "description": "Les transports sanitaires representent +5%/an depuis 10 ans. Le SAMU recoit ~30 millions d'appels/an. 15-20% des transports sont juges non pertinents. Un transport en ambulance coute en moyenne ~200 EUR a la Secu, un taxi conventionne ~50 EUR.",
+    "description": "Les transports sanitaires representent +5%/an depuis 10 ans. Le SAMU recoit ~30 millions d'appels/an. 15-20% des transports sont juges non pertinents. Un transport en ambulance coûte en moyenne ~200 EUR a la Secu, un taxi conventionne ~50 EUR.",
     "amountBillions": 6,
     "costPerCitizen": 88,
     "deckId": "sante",
@@ -482,18 +382,14 @@
     "source": "CNAM, DREES, Cour des comptes",
     "sourceUrl": "https://www.ameli.fr",
     "level": 1,
-    "tags": [
-      "SAMU",
-      "transport",
-      "urgences"
-    ],
-    "equivalence": "Un transport en ambulance coute en moyenne ~200€ a la Secu, un taxi conventionne ~50€"
+    "tags": ["SAMU", "transport", "urgences"],
+    "equivalence": "Un transport en ambulance coûte en moyenne ~200€ a la Secu, un taxi conventionne ~50€"
   },
   {
     "id": "san-16",
     "title": "Affections de longue duree (ALD)",
     "subtitle": "Prise en charge a 100% des ALD",
-    "description": "12,5 millions de Francais (19%) sont en ALD (cancer, diabete, insuffisance cardiaque, VIH, maladies psychiatriques graves). Leurs soins sont rembourses a 100% par la Secu. Les ALD concentrent 66% des dépenses de l'Assurance maladie. Le nombre d'ALD augmente de 3%/an. 4 ALD concentrent 50% des dépenses : cancers, diabete, maladies psychiatriques, maladies cardiovasculaires.",
+    "description": "12,5 millions de Français (19%) sont en ALD (cancer, diabete, insuffisance cardiaque, VIH, maladies psychiatriques graves). Leurs soins sont rembourses a 100% par la Secu. Les ALD concentrent 66% des dépenses de l'Assurance maladie. Le nombre d'ALD augmente de 3%/an. 4 ALD concentrent 50% des dépenses : cancers, diabete, maladies psychiatriques, maladies cardiovasculaires.",
     "amountBillions": 110,
     "costPerCitizen": 1620,
     "deckId": "sante",
@@ -501,83 +397,63 @@
     "trend": 3,
     "source": "CNAM, DREES, HCAAM",
     "level": 1,
-    "tags": [
-      "sante",
-      "ald",
-      "assurance-maladie"
-    ],
-    "equivalence": "1 Francais sur 5 est en ALD — et concentre les 2/3 des dépenses de soins"
+    "tags": ["sante", "ald", "assurance-maladie"],
+    "equivalence": "1 Français sur 5 est en ALD — et concentre les 2/3 des dépenses de soins"
   },
   {
     "id": "san-17",
     "title": "Maternites et perinatalite",
     "subtitle": "Accouchements + suivi grossesse + neonatologie",
-    "description": "La France a ferme 40% de ses maternites en 20 ans (de 814 en 2000 a 461 en 2024). Certaines femmes font 1h+ de route pour accoucher. La mortalite neonatale francaise est superieure a la moyenne europeenne (3,7‰ vs 3,1‰). 700 000 accouchements/an, dont 21% par cesarienne. Les sages-femmes ont obtenu des revalorisations salariales apres des greves en 2021-2023.",
+    "description": "La France a ferme 40% de ses maternites en 20 ans (de 814 en 2000 a 461 en 2024). Certaines femmes font 1h+ de route pour accoucher. La mortalite neonatale française est superieure a la moyenne européenne (3,7‰ vs 3,1‰). 700 000 accouchements/an, dont 21% par cesarienne. Les sages-femmes ont obtenu des revalorisations salariales apres des greves en 2021-2023.",
     "amountBillions": 4,
     "costPerCitizen": 59,
     "deckId": "sante",
     "icon": "👶",
     "source": "DREES, HAS, CNAM",
     "level": 1,
-    "tags": [
-      "sante",
-      "maternite",
-      "natalite"
-    ],
-    "equivalence": "Un accouchement coute ~5 000€ (voie basse) a 8 000€ (cesarienne) a la Secu"
+    "tags": ["sante", "maternite", "natalite"],
+    "equivalence": "Un accouchement coûte ~5 000€ (voie basse) a 8 000€ (cesarienne) a la Secu"
   },
   {
     "id": "san-18",
     "title": "Obesite et maladies metaboliques",
     "subtitle": "Cout sanitaire direct et indirect de l'obesite",
-    "description": "17% des Francais adultes sont obeses, 47% en surpoids. L'obesite est le 1er facteur de risque de diabete de type 2 (4 millions de diabetiques). Le cout sanitaire direct est estime a 10-12 Md€/an ; le cout indirect a 5-8 Md€/an. Les nouveaux medicaments GLP-1 (Ozempic, Mounjaro) coutent 300€/mois et pourraient revolutionner le traitement — mais leur remboursement generalise couterait 5-10 Md€/an supplementaires.",
+    "description": "17% des Français adultes sont obeses, 47% en surpoids. L'obesite est le 1er facteur de risque de diabete de type 2 (4 millions de diabetiques). Le coût sanitaire direct est estimé a 10-12 Md€/an ; le coût indirect a 5-8 Md€/an. Les nouveaux medicaments GLP-1 (Ozempic, Mounjaro) coutent 300€/mois et pourraient revolutionner le traitement — mais leur remboursement generalise coûterait 5-10 Md€/an supplementaires.",
     "amountBillions": 17.5,
     "costPerCitizen": 250,
     "deckId": "sante",
     "icon": "⚖️",
     "source": "Inserm, Obesite 2024, CNAM, HAS",
     "level": 1,
-    "tags": [
-      "sante",
-      "obesite",
-      "metabolique"
-    ],
-    "equivalence": "L'obesite coute autant a la Secu que le tabac, mais sans recettes fiscales en contrepartie"
+    "tags": ["sante", "obesite", "metabolique"],
+    "equivalence": "L'obesite coûte autant a la Secu que le tabac, mais sans recettes fiscales en contrepartie"
   },
   {
     "id": "san-19",
-    "title": "Medecins etrangers (PADHUE)",
+    "title": "Medecins étrangers (PADHUE)",
     "subtitle": "Medecins a diplome hors UE",
-    "description": "Environ 12 000 medecins a diplome hors UE exercent en France, principalement a l'hôpital public dans les specialites en tension. Ils representent ~5% des medecins en activite mais 25% des urgentistes hospitaliers. Paradoxe : la France forme 10 000 medecins/an mais n'en retient pas assez, et fait appel a des medecins formes dans des pays qui en manquent cruellement eux-memes.",
+    "description": "Environ 12 000 medecins a diplome hors UE exercent en France, principalement a l'hôpital public dans les specialites en tension. Ils representent ~5% des medecins en activité mais 25% des urgentistes hospitaliers. Paradoxe : la France formé 10 000 medecins/an mais n'en retient pas assez, et fait appel a des medecins formes dans des pays qui en manquent cruellement eux-memes.",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
     "deckId": "sante",
     "icon": "👨‍⚕️",
     "source": "CNOM Atlas 2024, IGAS, Ministere de la Sante",
     "level": 1,
-    "tags": [
-      "sante",
-      "medecins",
-      "padhue"
-    ],
+    "tags": ["sante", "medecins", "padhue"],
     "equivalence": "Sans les PADHUE, 20% des services d'urgence fermeraient faute de medecins"
   },
   {
     "id": "san-20",
     "title": "Telemedecine et numerique en sante",
     "subtitle": "Segur numerique + Mon espace sante + teleconsultations",
-    "description": "Le Segur du numerique investit 2 Md€ pour moderniser les systèmes d'information hospitaliers, deployer Mon espace sante (75 millions de comptes crees mais usage faible) et generaliser les ordonnances electroniques. Les teleconsultations representent 5% des consultations. La France a 10 ans de retard sur l'Estonie et le Danemark. L'interoperabilite entre systèmes hospitaliers reste un cauchemar.",
+    "description": "Le Segur du numerique investit 2 Md€ pour moderniser les systèmes d'information hospitaliers, deployer Mon espace sante (75 millions de comptes créés mais usage faible) et generaliser les ordonnances electroniques. Les teleconsultations representent 5% des consultations. La France a 10 ans de retard sur l'Estonie et le Danemark. L'interoperabilite entre systèmes hospitaliers reste un cauchemar.",
     "amountBillions": 2,
     "costPerCitizen": 29,
     "deckId": "sante",
     "icon": "💻",
     "source": "ANS, Ministere de la Sante, Segur numerique",
     "level": 1,
-    "tags": [
-      "sante",
-      "numerique",
-      "telemedecine"
-    ],
-    "equivalence": "2 Md€ investis mais 60% des hôpitaux utilisent encore des systèmes informatiques des annees 2000"
+    "tags": ["sante", "numerique", "telemedecine"],
+    "equivalence": "2 Md€ investis mais 60% des hôpitaux utilisent encore des systèmes informatiques des années 2000"
   }
 ]
