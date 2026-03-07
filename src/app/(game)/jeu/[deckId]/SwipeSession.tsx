@@ -39,7 +39,7 @@ export function SwipeSession({ deckId, deckName, cards, level = 1, gameMode = "c
     // voteAndAdvance already advanced the index, so we just need to check and complete
     if (isLast) {
       completeSession();
-      setTimeout(() => router.push("/results"), 300);
+      setTimeout(() => router.push("/resultats"), 300);
     }
   }, [session, completeSession, cards.length, router]);
 
@@ -65,7 +65,7 @@ export function SwipeSession({ deckId, deckName, cards, level = 1, gameMode = "c
       setAuditCard(null);
       if (isLast) {
         completeSession();
-        setTimeout(() => router.push("/results"), 300);
+        setTimeout(() => router.push("/resultats"), 300);
       }
     },
     [auditCard, voteAndAdvance, recordAudit, completeSession, router]
@@ -90,7 +90,7 @@ export function SwipeSession({ deckId, deckName, cards, level = 1, gameMode = "c
       const isLast = voteAndAdvance(detailCard.id, direction);
       if (isLast) {
         completeSession();
-        setTimeout(() => router.push("/results"), 300);
+        setTimeout(() => router.push("/resultats"), 300);
       }
       setDetailCard(null);
     },

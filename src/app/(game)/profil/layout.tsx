@@ -67,7 +67,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: `${name} — Profil — La Tronçonneuse de Poche`,
     description: `Archétype : ${name}. ${totalCards} cartes analysées, ${cutPercent}% à revoir. Découvre ton profil budgétaire !`,
     alternates: {
-      canonical: "/profile",
+      canonical: "/profil",
     },
     openGraph: {
       title: `${name} — La Tronçonneuse de Poche`,

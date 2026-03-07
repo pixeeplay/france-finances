@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { persist, createJSONStorage } from "zustand/middleware";
 import type { Card, Vote, VoteDirection, Session, SessionStats, AuditResponse, GameMode } from "@/types";
 import { computeStats, determineArchetype } from "@/lib/archetype";
 import { saveCompletedSession } from "@/lib/stats";
@@ -35,7 +36,9 @@ interface GameState {
   sessionStats: () => SessionStats | null;
 }
 
-export const useGameStore = create<GameState>((set, get) => ({
+export const useGameStore = create<GameState>()(
+  persist(
+    (set, get) => ({
   session: null,
   cardShownAt: 0,
   _cachedStats: null,
@@ -160,4 +163,20 @@ export const useGameStore = create<GameState>((set, get) => ({
     const archetype = determineArchetype(rawStats, session.level);
     return { ...rawStats, archetype };
   },
-}));
+}),
+    {
+      name: "trnc:game-session",
+      storage: createJSONStorage(() =>
+        typeof window !== "undefined" ? sessionStorage : {
+          getItem: () => null,
+          setItem: () => {},
+          removeItem: () => {},
+        }
+      ),
+      partialize: (state) => ({
+        session: state.session,
+        _cachedStats: state._cachedStats,
+      }),
+    },
+  ),
+);

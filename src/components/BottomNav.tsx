@@ -44,8 +44,8 @@ function IconInfos({ className }: { className?: string }) {
 
 const navItems = [
   { label: "Jouer", href: "/jeu", icon: IconJouer },
-  { label: "Profil", href: "/profile", icon: IconProfil },
-  { label: "Communauté", href: "/ranking", icon: IconRang },
+  { label: "Profil", href: "/profil", icon: IconProfil },
+  { label: "Communauté", href: "/classement", icon: IconRang },
   { label: "Infos", href: "/infos", icon: IconInfos },
 ];
 
@@ -53,7 +53,7 @@ export function BottomNav() {
   const pathname = usePathname();
 
   // Hide on game/swipe, results, and admin pages
-  if (pathname.startsWith("/jeu/") || pathname === "/results" || pathname.startsWith("/pixee-admin")) {
+  if (pathname.startsWith("/jeu/") || pathname === "/resultats" || pathname.startsWith("/pixee-admin")) {
     return null;
   }
 

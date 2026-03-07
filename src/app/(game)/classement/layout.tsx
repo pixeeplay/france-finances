@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Communauté — La Tronçonneuse de Poche",
   description: "Découvre les statistiques de la communauté des joueurs.",
   alternates: {
-    canonical: "/ranking",
+    canonical: "/classement",
   },
 };
 

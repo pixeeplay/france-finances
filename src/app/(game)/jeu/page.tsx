@@ -5,7 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import decksData from "@/data";
-import { getPlayedDeckIds, getGlobalStats } from "@/lib/stats";
+import { getPlayedDeckIds, getGlobalStats, getSessions } from "@/lib/stats";
 import { track } from "@/lib/analytics";
 import { useOnboarding, Onboarding } from "@/components/Onboarding";
 import type { Deck } from "@/types";
@@ -36,8 +36,8 @@ const thematicDecks = allDecks.filter((d) => d.type === "thematic");
 const THEMATIC_UNLOCK_CATEGORIES = 3;
 
 const LEVEL_UNLOCK = {
-  2: { sessions: 1, label: "1 session complétée" },
-  3: { sessions: 3, label: "3 sessions complétées" },
+  2: { sessions: 1, label: "1 session N1 complétée" },
+  3: { sessions: 2, label: "2 sessions N2 complétées" },
 } as const;
 
 const BUDGET_TARGETS = [5, 10, 15, 20, 30] as const;
@@ -54,6 +54,8 @@ function PlayPageContent() {
   const [level, setLevel] = useState<1 | 2 | 3>(initialLevel);
   const [tooltip, setTooltip] = useState<2 | 3 | null>(null);
   const [sessionsCount, setSessionsCount] = useState(0);
+  const [n1Sessions, setN1Sessions] = useState(0);
+  const [n2Sessions, setN2Sessions] = useState(0);
   const [budgetMode, setBudgetMode] = useState(false);
   const [budgetTarget, setBudgetTarget] = useState<number>(15);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -61,10 +63,13 @@ function PlayPageContent() {
 
   useEffect(() => {
     const stats = getGlobalStats();
+    const sessions = getSessions();
     // eslint-disable-next-line react-hooks/set-state-in-effect -- hydrating from localStorage on mount
     setPlayedDecks(getPlayedDeckIds());
     setSessionsCount(stats.totalSessions);
     setSessionsPerDeck(stats.sessionsPerDeck ?? {});
+    setN1Sessions(sessions.filter((s) => s.level === 1).length);
+    setN2Sessions(sessions.filter((s) => s.level === 2).length);
   }, []);
 
   // Show chevron if content is scrollable
@@ -81,8 +86,8 @@ function PlayPageContent() {
     return () => el.removeEventListener("scroll", check);
   }, []);
 
-  const isLevel2Unlocked = sessionsCount >= LEVEL_UNLOCK[2].sessions || initialLevel >= 2;
-  const isLevel3Unlocked = sessionsCount >= LEVEL_UNLOCK[3].sessions || initialLevel >= 3;
+  const isLevel2Unlocked = n1Sessions >= LEVEL_UNLOCK[2].sessions || initialLevel >= 2;
+  const isLevel3Unlocked = n2Sessions >= LEVEL_UNLOCK[3].sessions || initialLevel >= 3;
 
   const mainCategoriesPlayed = playedDecks.filter((id) =>
     mainDecks.some((d) => d.id === id)
@@ -91,8 +96,8 @@ function PlayPageContent() {
 
   const levelOptions: { value: 1 | 2 | 3; label: string; locked: boolean; unlockHint: string; progress: string }[] = [
     { value: 1, label: "Niveau 1", locked: false, unlockHint: "", progress: "" },
-    { value: 2, label: "Niveau 2", locked: !isLevel2Unlocked, unlockHint: LEVEL_UNLOCK[2].label, progress: `${Math.min(sessionsCount, LEVEL_UNLOCK[2].sessions)}/${LEVEL_UNLOCK[2].sessions}` },
-    { value: 3, label: "Niveau 3", locked: !isLevel3Unlocked, unlockHint: LEVEL_UNLOCK[3].label, progress: `${Math.min(sessionsCount, LEVEL_UNLOCK[3].sessions)}/${LEVEL_UNLOCK[3].sessions}` },
+    { value: 2, label: "Niveau 2", locked: !isLevel2Unlocked, unlockHint: LEVEL_UNLOCK[2].label, progress: `${Math.min(n1Sessions, LEVEL_UNLOCK[2].sessions)}/${LEVEL_UNLOCK[2].sessions}` },
+    { value: 3, label: "Niveau 3", locked: !isLevel3Unlocked, unlockHint: LEVEL_UNLOCK[3].label, progress: `${Math.min(n2Sessions, LEVEL_UNLOCK[3].sessions)}/${LEVEL_UNLOCK[3].sessions}` },
   ];
 
   function handleLevelClick(opt: typeof levelOptions[number]) {

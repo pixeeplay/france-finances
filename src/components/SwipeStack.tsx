@@ -99,7 +99,7 @@ export function SwipeStack({
       const isLast = voteAndAdvance(card.id, direction);
       if (isLast) {
         completeSession();
-        setTimeout(() => router.push("/results"), 300);
+        setTimeout(() => router.push("/resultats"), 300);
       }
       // Reset after a short delay to let AnimatePresence finish exit
       setTimeout(() => { isAnimating.current = false; }, 200);
