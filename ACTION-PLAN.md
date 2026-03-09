@@ -1,6 +1,6 @@
 # Plan d'Action -- La Tronconneuse de Poche
 
-**Derniere mise a jour :** 2026-03-07 (Sprint 35)
+**Derniere mise a jour :** 2026-03-08 (Sprint 35)
 
 ---
 
@@ -15,47 +15,47 @@
 | Achievements generaux | 12                                                              |
 | Tests                 | 273 unit + 8 E2E (Vitest + Playwright)                          |
 | Coverage              | 87% lines (v8, scope: lib/stores/hooks/data)                    |
-| Sprints               | 35 (301 items completes)                                        |
+| Sprints               | 35 (305 items completes)                                        |
 | Audits multi-agents   | 2 (Sprint 30 + Sprint 34)                                       |
 | Pages                 | /jeu, /profil, /classement, /categories, /contribuer, /a-propos |
 
 ---
 
-## Sprints termines (3-35) -- 301 items
+## Sprints termines (3-35) -- 305 items
 
 <details>
 <summary>Historique complet (cliquer pour deployer)</summary>
 
-| Sprint | Objectif                                                          | Items |
-| ------ | ----------------------------------------------------------------- | ----- |
-| 3-9    | Core game, auth, community, 330 cartes                            | 38    |
-| 10     | Refacto data (split decks.json)                                   | 1     |
-| 11     | Hotfixes critiques (store atomique, archetypes, guards)           | 10    |
-| 12     | Securite (headers, Zod, rate limiting, error boundaries)          | 8     |
-| 13     | Accessibilite WCAG 2.1 AA (clavier, focus, reduced motion)        | 9     |
-| 14     | Contenu & progression (badges, achievements, localStorage v2)     | 6     |
-| 15     | Performance & DX (lazy load, RSC, favicon, tutoriel)              | 7     |
-| 16     | DB & migrations (9 index, connection pool, Drizzle migrations)    | 3     |
-| 17     | Communaute donnees reelles + 5 bugfixes                           | 9     |
-| 18     | Sync multi-device + Analytics self-hosted + fix liens infos       | 8     |
-| 19     | SEO-03 OG dynamique profil + UX-30 Leaderboard vitesse            | 2     |
-| 20     | Landing page polish, SEO ouverture, onboarding fix                | 10    |
-| 21     | Conformite & Qualite (RGPD, tests, CI, sitemap, archetype fix)    | 9     |
-| 22     | Securite & SEO (CSP, auth dashboard, canonical, JSON-LD, DB)      | 10    |
-| 23     | Accessibilite & UX (skip nav, aria, reduced motion, skeletons)    | 9     |
-| 24     | Performance & Architecture (lazy load, split, cleanup, barrel)    | 9     |
-| 25     | PWA & Resilience (offline, install, SW update, timeouts, API std) | 10    |
-| 26     | Polish & Tests (75 tests, cardId validation, OG decks, sources)   | 6     |
-| 27     | Accents & Tooltips (200+ accents, createPortal tooltips, share)   | 5     |
-| 28     | Audit secu/perf/tests + 7 bugfixes                                | 22    |
-| 29     | Refacto archi + perf/secu/seo backlog + fix CI                    | 6     |
-| 30     | Tests E2E Playwright + audit multi-agents 15 domaines             | 4     |
-| 31     | Sprint P0+P1: securite, a11y, perf, DB, tests, CI, UX             | 36    |
-| 31b    | Coverage 75% + 123 tests lib/hooks + E2E L2/L3                    | 4     |
-| 32     | P2 batch: a11y, UX, landing RSC, SEO, DB, deps, tests             | 17    |
-| 33     | P2 finalise: CI, CSS, PWA, state, tests + L2 UX overhaul          | 23    |
-| 34     | Audit multi-agents #2: accents, SEO, a11y, perf, code quality     | 23    |
-| 35     | PERF-16 m+LazyMotion, a11y audit, page /contribuer                | 4     |
+| Sprint | Objectif                                                           | Items |
+| ------ | ------------------------------------------------------------------ | ----- |
+| 3-9    | Core game, auth, community, 330 cartes                             | 38    |
+| 10     | Refacto data (split decks.json)                                    | 1     |
+| 11     | Hotfixes critiques (store atomique, archetypes, guards)            | 10    |
+| 12     | Securite (headers, Zod, rate limiting, error boundaries)           | 8     |
+| 13     | Accessibilite WCAG 2.1 AA (clavier, focus, reduced motion)         | 9     |
+| 14     | Contenu & progression (badges, achievements, localStorage v2)      | 6     |
+| 15     | Performance & DX (lazy load, RSC, favicon, tutoriel)               | 7     |
+| 16     | DB & migrations (9 index, connection pool, Drizzle migrations)     | 3     |
+| 17     | Communaute donnees reelles + 5 bugfixes                            | 9     |
+| 18     | Sync multi-device + Analytics self-hosted + fix liens infos        | 8     |
+| 19     | SEO-03 OG dynamique profil + UX-30 Leaderboard vitesse             | 2     |
+| 20     | Landing page polish, SEO ouverture, onboarding fix                 | 10    |
+| 21     | Conformite & Qualite (RGPD, tests, CI, sitemap, archetype fix)     | 9     |
+| 22     | Securite & SEO (CSP, auth dashboard, canonical, JSON-LD, DB)       | 10    |
+| 23     | Accessibilite & UX (skip nav, aria, reduced motion, skeletons)     | 9     |
+| 24     | Performance & Architecture (lazy load, split, cleanup, barrel)     | 9     |
+| 25     | PWA & Resilience (offline, install, SW update, timeouts, API std)  | 10    |
+| 26     | Polish & Tests (75 tests, cardId validation, OG decks, sources)    | 6     |
+| 27     | Accents & Tooltips (200+ accents, createPortal tooltips, share)    | 5     |
+| 28     | Audit secu/perf/tests + 7 bugfixes                                 | 22    |
+| 29     | Refacto archi + perf/secu/seo backlog + fix CI                     | 6     |
+| 30     | Tests E2E Playwright + audit multi-agents 15 domaines              | 4     |
+| 31     | Sprint P0+P1: securite, a11y, perf, DB, tests, CI, UX              | 36    |
+| 31b    | Coverage 75% + 123 tests lib/hooks + E2E L2/L3                     | 4     |
+| 32     | P2 batch: a11y, UX, landing RSC, SEO, DB, deps, tests              | 17    |
+| 33     | P2 finalise: CI, CSS, PWA, state, tests + L2 UX overhaul           | 23    |
+| 34     | Audit multi-agents #2: accents, SEO, a11y, perf, code quality      | 23    |
+| 35     | PERF-16 LazyMotion, a11y, /contribuer, xl: breakpoints, commitlint | 8     |
 
 </details>
 
@@ -115,36 +115,32 @@
 
 ## Backlog restant
 
-### P2 -- Moyenne priorite (2 items)
+### P2 -- Moyenne priorite (1 item)
 
-| Ref   | Domaine | Description                                            | Effort |
-| ----- | ------- | ------------------------------------------------------ | ------ |
-| DB-05 | Infra   | Configurer backup automatise PostgreSQL (pg_dump cron) | S      |
-| CI-02 | Infra   | CI: pusher Docker image vers ghcr.io sur push main     | S      |
+| Ref   | Domaine | Description                                        | Effort |
+| ----- | ------- | -------------------------------------------------- | ------ |
+| CI-02 | Infra   | CI: pusher Docker image vers ghcr.io sur push main | S      |
 
-### P3 -- Basse priorite (9 items)
+### P3 -- Basse priorite (5 items)
 
-| Ref      | Description                                             | Effort |
-| -------- | ------------------------------------------------------- | ------ |
-| SEC-25   | CSP: retirer blob: de img-src si non utilise            | XS     |
-| SEO-10   | Ajouter hreflang (mineur, site monolingue FR)           | XS     |
-| PWA-09   | Manifest: ajouter screenshot mobile (narrow)            | XS     |
-| PWA-10   | Customiser runtimeCaching explicitement                 | S      |
-| UX-39    | Landing: ajouter breakpoints xl: (tablet)               | S      |
-| CSS-10   | Refactorer .launcher-card (peu reutilise)               | XS     |
-| CI-10    | CI: notifications Slack/email sur failure               | S      |
-| CI-11    | Ajouter commitlint (conventional commits)               | S      |
-| STATE-05 | HeroSection: remplacer stats hardcodees par API ou null | XS     |
+| Ref    | Description                                   | Effort |
+| ------ | --------------------------------------------- | ------ |
+| SEC-25 | CSP: retirer blob: de img-src si non utilise  | XS     |
+| SEO-10 | Ajouter hreflang (mineur, site monolingue FR) | XS     |
+| PWA-09 | Manifest: ajouter screenshot mobile (narrow)  | XS     |
+| PWA-10 | Customiser runtimeCaching explicitement       | S      |
+| CI-10  | CI: notifications Slack/email sur failure     | S      |
 
 ---
 
 ## Deferes (ne pas traiter a court terme)
 
-| Ref     | Description                         | Raison                              |
-| ------- | ----------------------------------- | ----------------------------------- |
-| RGPD-04 | Cookie consent banner               | Pas requis (analytics sans cookies) |
-| SEC-07  | CSRF tokens                         | Deja protege (NextAuth + CORS)      |
-| PWA-06  | Background sync (Periodic Sync API) | Support navigateur limite           |
+| Ref     | Description                         | Raison                                  |
+| ------- | ----------------------------------- | --------------------------------------- |
+| RGPD-04 | Cookie consent banner               | Pas requis (analytics sans cookies)     |
+| SEC-07  | CSRF tokens                         | Deja protege (NextAuth + CORS)          |
+| PWA-06  | Background sync (Periodic Sync API) | Support navigateur limite               |
+| DB-05   | Backup PostgreSQL (pg_dump cron)    | BDD quasi vide, serveur en daily backup |
 
 ---
 
@@ -168,4 +164,4 @@
 
 ---
 
-_Rapport genere le 2026-03-07 -- 35 sprints, 301 items completes. Backlog: 2 P2 + 9 P3 = 11 items restants._
+_Rapport genere le 2026-03-08 -- 35 sprints, 305 items completes. Backlog: 1 P2 + 5 P3 = 6 items restants._

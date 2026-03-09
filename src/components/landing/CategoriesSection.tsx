@@ -27,7 +27,7 @@ export function CategoriesSection() {
         </div>
 
         {/* Desktop: grid */}
-        <div className="hidden md:grid grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="hidden md:grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
           {mainDecks.map((deck) => (
             <CategoryCard key={deck.id} deck={deck} />
           ))}

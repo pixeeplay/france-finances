@@ -286,16 +286,6 @@
   animation-delay: 0.9s;
 }
 
-/* Launcher card (home page) */
-.launcher-card {
-  background: linear-gradient(
-    135deg,
-    rgba(30, 41, 59, 0.8) 0%,
-    rgba(15, 23, 42, 0.9) 100%
-  );
-  box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.5);
-}
-
 /* Hide scrollbar utility */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
@@ -329,6 +319,12 @@
 .section-padding {
   padding-top: 5rem;
   padding-bottom: 5rem;
+}
+@media (min-width: 1280px) {
+  .section-padding {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
 }
 
 .hover-lift {

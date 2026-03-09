@@ -17,13 +17,13 @@ export function KeyNumbers() {
           Les chiffres clés
         </h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 xl:gap-10">
           {numbers.map((n, i) => (
             <div
               key={i}
               className="text-center p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover-lift transition-all"
             >
-              <div className={`font-heading font-extrabold text-3xl md:text-4xl ${n.color}`}>
+              <div className={`font-heading font-extrabold text-3xl md:text-4xl xl:text-5xl ${n.color}`}>
                 <AnimatedNumber
                   value={n.value}
                   suffix={n.suffix ? ` ${n.suffix.trim()}` : ""}

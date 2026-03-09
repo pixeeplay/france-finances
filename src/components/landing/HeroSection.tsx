@@ -15,14 +15,14 @@ export function HeroSection() {
 
   return (
     <LazyMotion features={domAnimation}>
-      <section id="hero" className="section-padding pt-28 md:pt-36 text-center">
+      <section id="hero" className="section-padding pt-28 md:pt-36 xl:pt-44 text-center">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <m.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
         >
-          <h1 className="font-heading font-[900] text-4xl md:text-6xl lg:text-7xl tracking-tight leading-[1.1] mb-6">
+          <h1 className="font-heading font-[900] text-4xl md:text-6xl xl:text-7xl tracking-tight leading-[1.1] mb-6">
             <span className="text-gradient-primary">O&ugrave; va l&apos;argent public ?</span>
           </h1>
 
