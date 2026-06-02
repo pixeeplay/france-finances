@@ -55,8 +55,8 @@ Le serveur de dev demarre sur http://localhost:3000.
 ## Build Docker
 
 ```bash
-docker build -t tronconneuse .
-docker run -p 3000:3000 tronconneuse
+docker build -t france-finances .
+docker run -p 3000:3000 france-finances
 ```
 
 ## Structure

@@ -7,7 +7,7 @@ Le joueur swipe des cartes de depenses budgetaires francaises : gauche = garder,
 3 niveaux de profondeur : Niv.1 (2 directions), Niv.2 (4 directions), Niv.3 (micro-audit).
 A la fin d'une session (10-12 cartes), le joueur obtient un archetype budgetaire et ses stats.
 
-Repo : https://github.com/pixeeplay/tronconneuse/
+Repo : https://github.com/pixeeplay/france-finances/
 Deploy : france-finances.com (Coolify, Docker, VPS OVH)
 DNS : Cloudflare (DNS only, pas de proxy)
 

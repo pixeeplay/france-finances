@@ -68,4 +68,4 @@ jobs:
     needs: quality
     steps:
       - uses: actions/checkout@v4
-      - run: docker build -t tronconneuse .
+      - run: docker build -t france-finances .
