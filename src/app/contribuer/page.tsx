@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { DEFAULT_OG_IMAGE } from "@/lib/ogMeta";
 import Link from "next/link";
 import { Footer } from "@/components/landing/Footer";
 import { NavbarLanding } from "@/components/landing/NavbarLanding";
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     description:
       "Proposez des cartes de dépenses publiques pour Budget Swipe. Ouvert à tous.",
     url: "https://france-finances.com/contribuer",
+    images: [DEFAULT_OG_IMAGE],
   },
 };
 

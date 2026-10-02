@@ -169,7 +169,7 @@
       "name": "L'Auditeur rigoureux",
       "icon": "📋",
       "tagline": "Chaque euro rend des comptes.",
-      "description": "Tu as varie les prescriptions et analyse chaque depense individuellement. Un vrai travail d'audit citoyen.",
+      "description": "Tu as varié les prescriptions et analysé chaque dépense individuellement. Un vrai travail d'audit citoyen.",
       "level": 3,
       "condition": {
         "minCutPercent": 15,
@@ -180,8 +180,8 @@
       "id": "liquidateur_en_chef",
       "name": "Le Liquidateur en chef",
       "icon": "💀",
-      "tagline": "L'Etat doit etre degraisse en profondeur.",
-      "description": "Plus de 50% de suppressions ou reductions. Ton audit est radical : tu veux un Etat minimal.",
+      "tagline": "L'État doit être dégraissé en profondeur.",
+      "description": "Plus de 50% de suppressions ou réductions. Ton audit est radical : tu veux un État minimal.",
       "level": 3,
       "condition": {
         "minCutPercent": 50
@@ -191,8 +191,8 @@
       "id": "investisseur_public",
       "name": "L'Investisseur public",
       "icon": "📈",
-      "tagline": "Depenser plus, mais depenser mieux.",
-      "description": "Majorite de renforcements et maintiens. Tu crois en la puissance publique et tu veux l'amplifier.",
+      "tagline": "Dépenser plus, mais dépenser mieux.",
+      "description": "Majorité de renforcements et maintiens. Tu crois en la puissance publique et tu veux l'amplifier.",
       "level": 3,
       "condition": {
         "minKeepPercent": 50
@@ -203,7 +203,7 @@
       "name": "L'Optimisateur",
       "icon": "🔧",
       "tagline": "Ni trop, ni trop peu. Juste ce qu'il faut.",
-      "description": "Mix equilibre de reductions, fusions et externalisations. Tu cherches l'efficience maximale.",
+      "description": "Mix équilibré de réductions, fusions et externalisations. Tu cherches l'efficience maximale.",
       "level": 3,
       "condition": {
         "minCutPercent": 20,
