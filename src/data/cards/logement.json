@@ -3,7 +3,7 @@
     "id": "log-01",
     "title": "Logement social",
     "subtitle": "Financement global — aides à la pierre + fiscalité + APL bailleurs",
-    "description": "~5,2 millions de logements sociaux abritant 10 millions de personnes. ~2,4 millions de ménages en attente (délai : 2-3 ans, jusqu'à 10 ans en Île-de-France). La production neuve est en chuté : moins de 80 000 agréments en 2024, loin de l'objectif de 120 000.",
+    "description": "Environ 5,2 millions de logements sociaux abritent près de 10 millions de personnes. Le nombre de demandeurs en attente atteint 2,8 millions, avec des délais très longs en zone tendue. La production s'est établie autour de 85 000 logements sociaux en 2024 ; la Banque des Territoires estime qu'à politique inchangée, le secteur ne pourra en construire qu'environ 90 000 par an d'ici 2038.",
     "amountBillions": 17,
     "costPerCitizen": 250,
     "deckId": "logement",
@@ -14,13 +14,13 @@
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["logement", "social", "HLM"],
-    "equivalence": "Chaque logement social neuf coûte environ 150 000€ en aides publiques"
+    "equivalence": "2,8 millions de demandeurs pour environ 85 000 logements sociaux produits en 2024"
   },
   {
     "id": "log-02",
     "title": "Hébergement d'urgence",
     "subtitle": "CHRS, hôtels, centres d'accueil",
-    "description": "~200 000 personnes hébergées chaque nuit. L'État réquisitionne ~67 000 nuits d'hôtel quotidiennes. Le 115 ne peut pas répondre à toutes les demandes en période hivernale. La Cour des comptes pointe un coût hôtelier très élevé pour un service de mauvaise qualité.",
+    "description": "Le parc d'hébergement d'urgence (centres d'hébergement, CHRS, nuitées hôtelières) compte environ 203 000 places, un niveau stabilisé depuis 2021 ; près de 52 000 places ont été créées depuis 2017. Le programme 177 est doté de 3,1 Md€ en 2026 (+110 M€), une budgétisation jugée plus sincère par le Sénat. Le 115 ne peut pas répondre à toutes les demandes, en particulier en hiver.",
     "amountBillions": 3.1,
     "costPerCitizen": 46,
     "deckId": "logement",
@@ -31,7 +31,7 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["logement", "urgence", "sans-abri"],
-    "equivalence": "~42€ par nuit et par personne hébergée (dont beaucoup en hôtel)"
+    "equivalence": "Environ 42 € par place et par nuit (crédits rapportés aux 203 000 places)"
   },
   {
     "id": "log-03",
@@ -54,7 +54,7 @@
     "id": "log-04",
     "title": "Prêt à taux zéro (PTZ)",
     "subtitle": "Aide aux primo-accédants",
-    "description": "Le PTZ aide les primo-accédants sans intérêts bancaires (l'État compensé les banques). 40 000 à 60 000 PTZ/an, en baisse. Recentré sur le neuf en zones tendues et l'ancien avec travaux. Prolongé jusqu'en 2027. Critique : il alimente la hausse des prix immobiliers.",
+    "description": "Le prêt à taux zéro aide les primo-accédants sous conditions de ressources : l'État compense aux banques les intérêts non perçus. Après avoir été recentré sur l'ancien avec travaux et certaines zones, il a été de nouveau ouvert à tous les logements neufs sur l'ensemble du territoire par la loi de finances pour 2025. Certaines évaluations soulignent son effet possible sur les prix.",
     "amountBillions": 2,
     "costPerCitizen": 29,
     "deckId": "logement",
@@ -64,7 +64,7 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["logement", "PTZ", "accession"],
-    "equivalence": "~40 000€ de subvention implicite par ménage bénéficiaire"
+    "equivalence": "PTZ de nouveau ouvert à tous les logements neufs depuis 2025"
   },
   {
     "id": "log-05",
@@ -87,7 +87,7 @@
     "id": "log-06",
     "title": "Plan France Très Haut Débit",
     "subtitle": "Aménagement numérique — fibre optique pour tous",
-    "description": "3,3 Md€ d'investissement public depuis 2013 pour fibrer les zones rurales non rentables. Fin 2025, ~85% des locaux éligibles à la fibre. Les derniers raccordements coûtent beaucoup plus cher au km. Objectif repoussé à 2026-2027 pour les zones les plus rurales.",
+    "description": "Depuis 2013, l'État cofinance le déploiement de la fibre optique dans les zones rurales non rentables (réseaux d'initiative publique). La grande majorité des locaux sont désormais éligibles à la fibre ; les derniers raccordements, plus complexes, sont plus coûteux. Selon le Sénat, une partie des crédits reportés d'année en année n'a pas été consommée et 0,5 Md€ ont été annulés en avril 2025.",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
     "deckId": "logement",
@@ -97,13 +97,13 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["logement", "numérique", "fibre"],
-    "equivalence": "Le budget de 6 CNRS chaque année pendant 5 ans"
+    "equivalence": "0,5 Md€ de crédits non consommés annulés en avril 2025"
   },
   {
     "id": "log-07",
     "title": "Mission Cohésion des territoires",
     "subtitle": "Budget global — APL incluses",
-    "description": "Regroupe APL (~16,5 Md€), hébergement d'urgence (~3,1 Md€), politique de la ville, urbanisme. 3e plus grosse mission budgétaire de l'État. Budget 2026 recule de 900 M€. Paradoxe : un budget considérable mais une crise du logement persistante.",
+    "description": "Regroupe les aides personnelles au logement (APL, 16,1 Md€), l'hébergement d'urgence (3,1 Md€), la politique de la ville et l'urbanisme. Ses crédits de paiement passent de 23,1 Md€ en 2025 à 22,2 Md€ dans le PLF 2026, sous l'effet du gel des APL et de la hausse de la réduction de loyer de solidarité. S'y ajoutent 11,7 Md€ de dépenses fiscales rattachées.",
     "amountBillions": 22.2,
     "costPerCitizen": 326,
     "deckId": "logement",
@@ -115,13 +115,13 @@
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["logement", "budget", "cohésion"],
-    "equivalence": "Plus que le budget de la Défense (hors pensions)"
+    "equivalence": "22,2 Md€ de crédits et 11,7 Md€ de dépenses fiscales rattachées"
   },
   {
     "id": "log-08",
     "title": "Niches fiscales immobilières",
     "subtitle": "Pinel, Denormandie et autres dispositifs",
-    "description": "Le Pinel a pris fin fin 2024 après 10 ans. Son coût cumulé reste élevé (avantages sur 6-12 ans). La Cour des comptes a critiqué : effet inflationniste, qualité médiocre, effet d'aubaine. Pourtant, la suppression fait chuter la construction neuve.",
+    "description": "Le dispositif Pinel a pris fin fin 2024 après dix ans ; son coût se poursuit sur la durée des engagements (6 à 12 ans). La Cour des comptes a critiqué son efficacité : effets d'aubaine, effet sur les prix, qualité inégale des logements. Sa fin coïncide avec un recul de l'investissement locatif dans le neuf.",
     "amountBillions": 2.5,
     "costPerCitizen": 37,
     "deckId": "logement",
@@ -132,13 +132,13 @@
     "sourceDate": "2023-12-18",
     "level": 2,
     "tags": ["logement", "fiscalité", "investissement locatif"],
-    "equivalence": "Les niches fiscales = le budget combine Défense + Justice + Intérieur"
+    "equivalence": "Un coût qui se poursuit jusqu'à 12 ans après l'investissement"
   },
   {
     "id": "log-09",
     "title": "Action Logement (1% patronal)",
     "subtitle": "PEEC — participation des employeurs",
-    "description": "Action Logement collecte 0,45% de la masse salariale et redistribué : aide à la mobilité, garantie Visale (caution gratuité), prêts accession, financement HLM et rénovation urbaine (ANRU). 2e financeur du logement social. L'État ponctionne régulièrement ses réserves (~300 M€ en 2025).",
+    "description": "Action Logement collecte la participation des employeurs à l'effort de construction (0,45 % de la masse salariale des entreprises de 50 salariés et plus) et la redistribue : aide à la mobilité, garantie Visale, prêts, financement du logement social et de la rénovation urbaine. L'État sollicite régulièrement ses ressources pour financer des politiques publiques du logement.",
     "amountBillions": 5,
     "costPerCitizen": 0,
     "deckId": "logement",
@@ -149,13 +149,13 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["logement", "action logement", "patronal"],
-    "equivalence": "Visale a garanti 1,2 million de baux depuis 2016 — 1er dispositif anti-galere locative des jeunes actifs"
+    "equivalence": "Visale : une garantie locative gratuite pour les jeunes et salariés précaires"
   },
   {
     "id": "log-10",
     "title": "Coproprietes dégradées et habitat indigne",
     "subtitle": "ANAH + Plan Initiative Coproprietes",
-    "description": "100 000 coproprietes fragiles en France, dont 15 000 en grande difficulté. L'habitat indigne touche 420 000 logements. L'effondrement de la rue d'Aubagne a Marseille (8 morts, 2018) a déclenché l'evacuation de 10 000 personnes et un plan d'urgence de 3 Md€.",
+    "description": "Plusieurs dizaines de milliers de copropriétés sont fragiles, dont une partie en grande difficulté, et environ 400 000 logements du parc privé sont considérés comme potentiellement indignes. L'effondrement d'immeubles rue d'Aubagne à Marseille en 2018 (8 morts) a conduit à renforcer la lutte contre l'habitat indigne. L'Anah finance le redressement des copropriétés et la résorption de l'habitat dégradé.",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
     "deckId": "logement",
@@ -166,7 +166,7 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["logement", "coproprietes", "habitat indigne"],
-    "equivalence": "420 000 logements indignes en France, 6e puissance mondiale — un paradoxe national"
+    "equivalence": "Environ 400 000 logements privés potentiellement indignes"
   },
   {
     "id": "log-11",
@@ -205,7 +205,7 @@
     "id": "log-13",
     "title": "Airbnb et meubles touristiques",
     "subtitle": "800 000 annonces — régulation",
-    "description": "La France compte ~800 000 annonces Airbnb (1re destination mondiale). A Paris, 25 000 logements entiers retirés du marché locatif. La loi Le Meur (2024) réduit la niche fiscale des meubles touristiques. Impact : +5 à 15% sur les loyers dans les zones touristiques tendues.",
+    "description": "Les locations meublées de tourisme se sont fortement développées dans les grandes villes et les zones touristiques, au détriment de l'offre de location longue durée selon plusieurs collectivités. La loi Le Meur du 19 novembre 2024 réduit l'avantage fiscal des meublés de tourisme et renforce les outils de régulation des communes.",
     "amountBillions": 0.3,
     "costPerCitizen": 0,
     "deckId": "logement",
@@ -215,7 +215,7 @@
     "sourceDate": "2024-11-19",
     "level": 3,
     "tags": ["logement", "Airbnb", "tourisme"],
-    "equivalence": "25 000 logements Airbnb retirés du marché a Paris = 10 ans de construction de logements sociaux parisiens"
+    "equivalence": "Loi Le Meur du 19 novembre 2024"
   },
   {
     "id": "log-14",
@@ -236,8 +236,8 @@
   {
     "id": "log-15",
     "title": "Loi SRU et obligation de 25% HLM",
-    "subtitle": "1 113 communes déficitaires",
-    "description": "La loi SRU impose 25% de logements sociaux. 280 communes sont carencées et paient une pénalité majorée. Neuilly-sur-Seine paie ~8 M€/an de pénalité et continue de ne pas construire. L'objectif de 25% reporté à 2031 par la loi 3DS (2022).",
+    "subtitle": "25 % de logements sociaux exigés dans les communes concernées",
+    "description": "L'article 55 de la loi SRU impose aux communes de plus de 3 500 habitants (1 500 en Île-de-France) situées dans les agglomérations concernées de disposer de 25 % de logements sociaux, ou 20 % dans les territoires moins tendus. Les communes déficitaires paient un prélèvement annuel proportionnel à leur retard ; celles qui ne respectent pas leurs objectifs de rattrapage peuvent être déclarées carencées, avec une majoration du prélèvement. La loi 3DS (2022) a pérennisé le dispositif au-delà de 2025.",
     "amountBillions": 0.2,
     "costPerCitizen": 3,
     "deckId": "logement",
@@ -247,7 +247,7 @@
     "year": 2026,
     "level": 3,
     "tags": ["logement", "SRU", "HLM"],
-    "equivalence": "Neuilly préfère payer 8 M€/an d'amende plutôt que construire des HLM — la loi sans les dents"
+    "equivalence": "Un prélèvement annuel pour les communes déficitaires"
   },
   {
     "id": "log-16",
@@ -269,7 +269,7 @@
     "id": "log-17",
     "title": "Accession à la propriété",
     "subtitle": "Taux et pouvoir d'achat immobilier",
-    "description": "Taux de propriétaires en France : 58% (stable, vs 65% en moyenne UE). La crise du credit (taux de 1% a 4%) a fait chuter les primo-accédants de 35%. Il faut en moyenne 7 années de salaire pour acheter un logement moyen. A Paris, 15 ans.",
+    "description": "Un peu moins de six ménages sur dix sont propriétaires de leur résidence principale, une proportion inférieure à la moyenne de l'Union européenne. La remontée des taux d'intérêt à partir de 2022 a fortement réduit le nombre de primo-accédants. L'État soutient l'accession par le prêt à taux zéro et le bail réel solidaire.",
     "amountBillions": 5,
     "costPerCitizen": 74,
     "deckId": "logement",
@@ -279,13 +279,13 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["logement", "accession", "credit"],
-    "equivalence": "A Paris, il faut epargner 15 ans de salaire pour acheter un appartement — c'etait 5 ans en 1998"
+    "equivalence": "Environ 58 % de ménages propriétaires"
   },
   {
     "id": "log-18",
     "title": "Aménagement commercial et friches",
     "subtitle": "170 000 hectares a recycler",
-    "description": "170 000 hectares de friches en France. L'objectif ZAN (zero artificialisation nette) d'ici 2050 impose de recycler ces friches. Le fonds friches a permis 1 400 projets. 50 000 locaux commerciaux vacants en centre-ville. La reconversion d'une friche coûte 2-5x plus qu'un terrain vierge.",
+    "description": "Les friches (industrielles, commerciales, urbaines) représentent un gisement foncier important pour atteindre l'objectif de zéro artificialisation nette en 2050. Le fonds friches, créé en 2021, a soutenu de nombreux projets de reconversion, généralement plus coûteux que l'aménagement de terrains vierges. La vacance commerciale en centre-ville est traitée par des programmes comme Action cœur de ville.",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
     "deckId": "logement",
@@ -295,6 +295,6 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["logement", "friches", "ZAN"],
-    "equivalence": "Recycler 170 000 ha de friches = éviter l'artificialisation de 2x la surface de Paris intra-muros"
+    "equivalence": "Un fonds friches créé en 2021"
   }
 ]
