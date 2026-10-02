@@ -17,7 +17,7 @@ describe("Simulator live announcement", () => {
       />,
     );
 
-    const section = screen.getByRole("heading", { name: "Estimation annuelle" }).closest("section");
+    const section = screen.getByRole("heading", { name: "Estimation par an" }).closest("section");
     expect(section).not.toHaveAttribute("aria-live");
 
     const live = section!.querySelector("[aria-live='polite']");
@@ -61,5 +61,17 @@ describe("DailySquares", () => {
     expect(new Set(paths).size).toBe(3);
     // Injustifié uses the danger colour, like the game legend
     expect(container.querySelectorAll(".bg-danger")).toHaveLength(2);
+  });
+});
+
+describe("Simulator — vue mensuelle", () => {
+  it("convertit la saisie et les résultats en montants mensuels", () => {
+    render(<Simulator initialInput={{ annualGross: 36_000, isSingle: true, nbChildren: 0 }} budgetItems={[]} />);
+    fireEvent.click(screen.getByRole("button", { name: "Par mois" }));
+    expect(screen.getByRole("heading", { name: "Estimation par mois" })).toBeTruthy();
+    const input = screen.getByLabelText("Salaire mensuel brut") as HTMLInputElement;
+    expect(input.value).toBe("3000");
+    fireEvent.change(input, { target: { value: "2500" } });
+    expect(screen.getByText(/Soit 30\s000\s€ brut par an\./)).toBeTruthy();
   });
 });

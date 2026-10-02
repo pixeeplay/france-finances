@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://france-finances.com"),
   title: "france-finances.com — Comprendre les finances publiques",
   description:
-    "Explorez le budget de la France de manière interactive. 370 cartes, 16 catégories — Comprenez où vont vos impôts.",
+    "Explorez le budget de la France de manière interactive. 369 cartes, 16 catégories — Comprenez où vont vos impôts.",
   manifest: "/manifest.json",
   icons: {
     icon: "/favicon.ico",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "france-finances.com — Comprendre les finances publiques",
     description:
-      "Explorez le budget de la France de manière interactive. 370 cartes de dépenses publiques à découvrir.",
+      "Explorez le budget de la France de manière interactive. 369 cartes de dépenses publiques à découvrir.",
     url: "https://france-finances.com",
     siteName: "france-finances.com",
     images: [
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "france-finances.com — Comprendre les finances publiques",
     description:
-      "Explorez le budget de la France de manière interactive. 370 cartes de dépenses publiques.",
+      "Explorez le budget de la France de manière interactive. 369 cartes de dépenses publiques.",
     images: ["/opengraph-image"],
   },
 };

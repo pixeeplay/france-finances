@@ -270,11 +270,20 @@ export function parseSimulatorParams(params: Record<string, ParamValue>): Simula
   };
 }
 
-export function serializeSimulatorParams(input: SimulatorInput): string {
+/** Vue d'affichage des montants du simulateur */
+export type SimulatorPeriod = "an" | "mois";
+
+/** Lit la vue (`?vue=mois`) ; annuelle par défaut. */
+export function parseSimulatorPeriod(params: Record<string, ParamValue>): SimulatorPeriod {
+  return first(params.vue) === "mois" ? "mois" : "an";
+}
+
+export function serializeSimulatorParams(input: SimulatorInput, period: SimulatorPeriod = "an"): string {
   const params = new URLSearchParams({
     brut: String(Math.round(input.annualGross)),
     situation: input.isSingle ? "seul" : "couple",
     enfants: String(input.nbChildren),
   });
+  if (period === "mois") params.set("vue", "mois");
   return params.toString();
 }

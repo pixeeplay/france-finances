@@ -49,7 +49,18 @@ export function AmountQuiz({ card, onAnswer, onContinue }: AmountQuizProps) {
       className="absolute inset-0 z-50 flex flex-col overflow-y-auto overscroll-contain rounded-3xl border border-warning/40 bg-card p-5 shadow-(--shadow-card)"
       data-testid="amount-quiz"
     >
-      <p className="self-start kicker rounded-full bg-warning/15 px-3 py-1 text-warning">Mini-quiz</p>
+      <div className="flex items-center justify-between gap-3">
+        <p className="kicker rounded-full bg-warning/15 px-3 py-1 text-warning">Mini-quiz · avant de voir la carte</p>
+        {!answered && (
+          <button
+            type="button"
+            onClick={onContinue}
+            className="min-h-[44px] shrink-0 rounded-full px-3 text-sm font-semibold text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
+          >
+            Passer
+          </button>
+        )}
+      </div>
       <h2
         id="amount-quiz-title"
         ref={titleRef}
@@ -58,6 +69,9 @@ export function AmountQuiz({ card, onAnswer, onContinue }: AmountQuizProps) {
       >
         À ton avis, combien ?
       </h2>
+      <p className="mt-1 text-sm text-muted-foreground leading-snug">
+        Devine le montant de la prochaine dépense, puis découvre sa carte.
+      </p>
       <p className="mt-3 text-base font-bold leading-snug">{card.title}</p>
       {card.subtitle && <p className="text-xs text-muted-foreground">{card.subtitle}</p>}
       <p className="mt-2 kicker text-muted-foreground">Montant annuel</p>

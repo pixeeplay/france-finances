@@ -4,7 +4,7 @@ import { PageShell } from "@/components/PageShell";
 import { Simulator } from "@/components/simulateur/Simulator";
 import { STATE_MISSIONS_2026 } from "@/data/chiffres";
 import { FISCAL_SOURCES, IR_INCOME_YEAR, IR_YEAR } from "@/data/fiscal-2026";
-import { parseSimulatorParams } from "@/lib/taxCalculator";
+import { parseSimulatorParams, parseSimulatorPeriod } from "@/lib/taxCalculator";
 
 const TITLE = "Simulateur : impôts et cotisations sur un salaire";
 const DESCRIPTION =
@@ -28,7 +28,9 @@ export default async function SimulateurPage({
 }: {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
-  const initialInput = parseSimulatorParams(await searchParams);
+  const params = await searchParams;
+  const initialInput = parseSimulatorParams(params);
+  const initialPeriod = parseSimulatorPeriod(params);
 
   return (
     <PageShell>
@@ -54,7 +56,7 @@ export default async function SimulateurPage({
         </p>
       </header>
 
-      <Simulator initialInput={initialInput} budgetItems={STATE_MISSIONS_2026.items} />
+      <Simulator initialInput={initialInput} initialPeriod={initialPeriod} budgetItems={STATE_MISSIONS_2026.items} />
 
       <section aria-labelledby="sim-method-title" className="mt-10 rounded-3xl bg-section border border-border p-5 sm:p-6">
         <div className="lg:grid lg:grid-cols-2 lg:gap-10">

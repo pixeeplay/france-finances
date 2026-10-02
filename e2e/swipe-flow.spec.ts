@@ -7,7 +7,7 @@ import { test, expect, type Page } from "@playwright/test";
 async function answerQuizIfPresent(page: Page) {
   const quiz = page.getByRole("region", { name: "À ton avis, combien ?" });
   if (!(await quiz.isVisible())) return;
-  await quiz.getByRole("button").first().click();
+  await quiz.getByRole("button").filter({ hasNotText: "Passer" }).first().click();
   await quiz.getByRole("button", { name: "Voir la carte" }).click();
   await expect(quiz).toBeHidden();
 }

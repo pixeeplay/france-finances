@@ -9,6 +9,7 @@ import {
   runFullSimulation,
   serializeSimulatorParams,
   type BudgetItem,
+  type SimulatorPeriod,
 } from "@/lib/taxCalculator";
 import type { SimulatorInput } from "@/types/simulator";
 
@@ -17,8 +18,12 @@ const SLIDER_STEP = 500;
 /** Délai avant d'annoncer la synthèse aux lecteurs d'écran (évite les annonces en rafale pendant le glissement du curseur) */
 const ANNOUNCE_DELAY_MS = 400;
 
+/** Curseur en vue mensuelle : jusqu'à 12 500 € par mois, pas de 50 € */
+const SLIDER_STEP_MONTHLY = 50;
+
 interface SimulatorProps {
   initialInput: SimulatorInput;
+  initialPeriod?: SimulatorPeriod;
   budgetItems: readonly BudgetItem[];
 }
 
@@ -31,8 +36,13 @@ function Row({ label, value, strong }: { label: string; value: string; strong?: 
   );
 }
 
-export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
+export function Simulator({ initialInput, initialPeriod = "an", budgetItems }: SimulatorProps) {
   const [input, setInput] = useState<SimulatorInput>(initialInput);
+  const [period, setPeriod] = useState<SimulatorPeriod>(initialPeriod);
+  const monthly = period === "mois";
+  /** Montant annuel ramené à la vue choisie (par mois ou par an) */
+  const p = (annual: number) => (monthly ? annual / 12 : annual);
+  const perLabel = monthly ? "par mois" : "par an";
   const [copied, setCopied] = useState(false);
   const grossId = useId();
   const sliderId = useId();
@@ -44,7 +54,7 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
   // sur tout le bloc qui serait relu à chaque cran du curseur.
   const [announcement, setAnnouncement] = useState("");
   const isFirstRender = useRef(true);
-  const summaryText = `Prélèvements estimés ${formatEuros(result.totalPrelevements)}, taux global ${formatRatio(result.tauxEffectifGlobal)}`;
+  const summaryText = `Prélèvements estimés ${formatEuros(p(result.totalPrelevements))} ${perLabel}, taux global ${formatRatio(result.tauxEffectifGlobal)}`;
   useEffect(() => {
     if (isFirstRender.current) {
       isFirstRender.current = false;
@@ -57,11 +67,11 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
   // Garde l'URL partageable synchronisée avec la saisie, sans recharger la page.
   useEffect(() => {
     const handle = window.setTimeout(() => {
-      const qs = serializeSimulatorParams(input);
+      const qs = serializeSimulatorParams(input, period);
       window.history.replaceState(null, "", `${window.location.pathname}?${qs}`);
     }, 300);
     return () => window.clearTimeout(handle);
-  }, [input]);
+  }, [input, period]);
 
   const update = (patch: Partial<SimulatorInput>) => {
     setCopied(false);
@@ -69,7 +79,8 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
   };
 
   const setGross = (raw: string) => {
-    const value = Number.parseInt(raw.replace(/\s/g, ""), 10);
+    const parsed = Number.parseInt(raw.replace(/\s/g, ""), 10);
+    const value = monthly ? parsed * 12 : parsed;
     update({
       annualGross: Number.isFinite(value)
         ? Math.min(SIMULATOR_LIMITS.maxGross, Math.max(SIMULATOR_LIMITS.minGross, value))
@@ -110,8 +121,25 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
           Votre situation
         </h2>
 
+        <fieldset className="mb-5">
+          <legend className="text-sm font-medium text-foreground">Afficher les montants</legend>
+          <div className="mt-2 flex gap-1 rounded-xl bg-muted p-1">
+            {(["mois", "an"] as const).map((v) => (
+              <button
+                key={v}
+                type="button"
+                aria-pressed={period === v}
+                onClick={() => setPeriod(v)}
+                className={`${toggleBase} ${period === v ? toggleOn : toggleOff}`}
+              >
+                {v === "mois" ? "Par mois" : "Par an"}
+              </button>
+            ))}
+          </div>
+        </fieldset>
+
         <label htmlFor={grossId} className="block text-sm font-medium text-foreground">
-          Salaire annuel brut
+          {monthly ? "Salaire mensuel brut" : "Salaire annuel brut"}
         </label>
         <div className="relative mt-2">
           <input
@@ -120,8 +148,8 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
             inputMode="numeric"
             min={SIMULATOR_LIMITS.minGross}
             max={SIMULATOR_LIMITS.maxGross}
-            step={100}
-            value={input.annualGross}
+            step={monthly ? 10 : 100}
+            value={monthly ? Math.round(input.annualGross / 12) : input.annualGross}
             onChange={(e) => setGross(e.target.value)}
             className="w-full min-h-[44px] rounded-xl border border-border bg-background pl-3 pr-14 numeral text-lg text-foreground"
           />
@@ -129,22 +157,24 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
             className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 kicker text-muted-foreground"
             aria-hidden="true"
           >
-            €/an
+            {monthly ? "€/mois" : "€/an"}
           </span>
         </div>
         <p className="mt-1 text-xs text-muted-foreground">
-          Soit {formatEuros(input.annualGross / 12)} brut par mois.
+          {monthly
+            ? `Soit ${formatEuros(input.annualGross)} brut par an.`
+            : `Soit ${formatEuros(input.annualGross / 12)} brut par mois.`}
         </p>
         <label htmlFor={sliderId} className="sr-only">
-          Ajuster le salaire annuel brut
+          {monthly ? "Ajuster le salaire mensuel brut" : "Ajuster le salaire annuel brut"}
         </label>
         <input
           id={sliderId}
           type="range"
           min={0}
-          max={SLIDER_MAX}
-          step={SLIDER_STEP}
-          value={Math.min(input.annualGross, SLIDER_MAX)}
+          max={monthly ? SLIDER_MAX / 12 : SLIDER_MAX}
+          step={monthly ? SLIDER_STEP_MONTHLY : SLIDER_STEP}
+          value={monthly ? Math.min(Math.round(input.annualGross / 12), SLIDER_MAX / 12) : Math.min(input.annualGross, SLIDER_MAX)}
           onChange={(e) => setGross(e.target.value)}
           className="mt-3 w-full min-h-[44px] accent-[var(--brand-fg)]"
         />
@@ -163,7 +193,7 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
                 input.annualGross === preset.value ? "bg-brand text-white" : "bg-muted text-foreground hover:bg-muted/70"
               }`}
             >
-              {preset.label} ({formatEuros(preset.value)})
+              {preset.label} ({formatEuros(p(preset.value))})
             </button>
           ))}
         </div>
@@ -228,7 +258,7 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
       <section aria-labelledby="sim-summary-title" className="lg:col-span-7 lg:col-start-6">
         <p className="kicker text-danger mb-1">Synthèse</p>
         <h2 id="sim-summary-title" className="text-2xl font-extrabold text-foreground mb-4">
-          Estimation annuelle
+          {monthly ? "Estimation par mois" : "Estimation par an"}
         </h2>
         <p className="sr-only" aria-live="polite" aria-atomic="true">
           {announcement}
@@ -237,7 +267,7 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
           <SimTile
             tone="danger"
             label="Prélèvements estimés"
-            value={formatEuros(result.totalPrelevements)}
+            value={formatEuros(p(result.totalPrelevements))}
             detail="cotisations, CSG/CRDS, impôt sur le revenu et TVA"
           />
           <SimTile
@@ -246,8 +276,8 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
             value={formatRatio(result.tauxEffectifGlobal)}
             detail="du salaire brut"
           />
-          <SimTile tone="info" label="Impôt sur le revenu" value={formatEuros(ir.irTotal)} detail={`taux moyen ${formatRatio(ir.effectiveRate)}`} />
-          <SimTile tone="primary" label="Net après impôt" value={formatEuros(result.netApresIR)} detail={`${formatEuros(result.netApresIR / 12)} par mois`} />
+          <SimTile tone="info" label="Impôt sur le revenu" value={formatEuros(p(ir.irTotal))} detail={`taux moyen ${formatRatio(ir.effectiveRate)}`} />
+          <SimTile tone="primary" label="Net après impôt" value={formatEuros(p(result.netApresIR))} detail={monthly ? `${formatEuros(result.netApresIR)} par an` : `${formatEuros(result.netApresIR / 12)} par mois`} />
         </div>
       </section>
 
@@ -256,21 +286,23 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
         aria-labelledby="sim-detail-title"
         className="rounded-3xl border border-border bg-card p-5 sm:p-6 lg:col-span-7 lg:col-start-6"
       >
-        <h2 id="sim-detail-title" className="text-2xl font-extrabold text-foreground mb-2">Détail du calcul</h2>
+        <h2 id="sim-detail-title" className="text-2xl font-extrabold text-foreground mb-2">
+          Détail du calcul <span className="text-base font-semibold text-muted-foreground">({perLabel})</span>
+        </h2>
         <dl className="divide-y divide-border">
-          <Row label="Salaire brut" value={formatEuros(input.annualGross)} strong />
-          <Row label="CSG, contribution sociale généralisée (9,2 %)" value={`− ${formatEuros(cotisations.csg)}`} />
-          <Row label="CRDS, remboursement de la dette sociale (0,5 %)" value={`− ${formatEuros(cotisations.crds)}`} />
-          <Row label="Retraite de base" value={`− ${formatEuros(cotisations.retraiteBase)}`} />
-          <Row label="Retraite complémentaire (Agirc-Arrco)" value={`− ${formatEuros(cotisations.retraiteComplementaire)}`} />
-          <Row label="Salaire net avant impôt" value={formatEuros(result.netAvantIR)} strong />
-          <Row label="Revenu imposable (net moins 10 % pour frais professionnels)" value={formatEuros(result.netImposable)} />
-          <Row label={`Impôt avant décote (${formatPartsLabel(ir.nbParts)})`} value={formatEuros(ir.irBrut)} />
-          {ir.decote > 0 ? <Row label="Décote (réduction pour revenus modestes)" value={`− ${formatEuros(ir.decote)}`} /> : null}
-          <Row label="Impôt sur le revenu" value={`− ${formatEuros(ir.irTotal)}`} />
+          <Row label="Salaire brut" value={formatEuros(p(input.annualGross))} strong />
+          <Row label="CSG, contribution sociale généralisée (9,2 %)" value={`− ${formatEuros(p(cotisations.csg))}`} />
+          <Row label="CRDS, remboursement de la dette sociale (0,5 %)" value={`− ${formatEuros(p(cotisations.crds))}`} />
+          <Row label="Retraite de base" value={`− ${formatEuros(p(cotisations.retraiteBase))}`} />
+          <Row label="Retraite complémentaire (Agirc-Arrco)" value={`− ${formatEuros(p(cotisations.retraiteComplementaire))}`} />
+          <Row label="Salaire net avant impôt" value={formatEuros(p(result.netAvantIR))} strong />
+          <Row label="Revenu imposable (net moins 10 % pour frais professionnels)" value={formatEuros(p(result.netImposable))} />
+          <Row label={`Impôt avant décote (${formatPartsLabel(ir.nbParts)})`} value={formatEuros(p(ir.irBrut))} />
+          {ir.decote > 0 ? <Row label="Décote (réduction pour revenus modestes)" value={`− ${formatEuros(p(ir.decote))}`} /> : null}
+          <Row label="Impôt sur le revenu" value={`− ${formatEuros(p(ir.irTotal))}`} />
           <Row label="Taux de votre tranche la plus haute (tranche marginale)" value={formatRatio(ir.marginalRate, 0)} />
-          <Row label="Salaire net après impôt" value={formatEuros(result.netApresIR)} strong />
-          <Row label="TVA estimée sur votre consommation" value={formatEuros(tva.estimatedTVA)} />
+          <Row label="Salaire net après impôt" value={formatEuros(p(result.netApresIR))} strong />
+          <Row label="TVA estimée sur votre consommation" value={formatEuros(p(tva.estimatedTVA))} />
         </dl>
         {ir.qfCapped ? (
           <p className="mt-3 text-xs text-muted-foreground">
@@ -288,7 +320,7 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
           Si votre impôt sur le revenu et votre TVA suivaient le budget de l&apos;État
         </h2>
         <p className="mb-4 text-sm text-muted-foreground leading-relaxed">
-          Répartition indicative de {formatEuros(ir.irTotal + tva.estimatedTVA)} au prorata des
+          Répartition indicative de {formatEuros(p(ir.irTotal + tva.estimatedTVA))} {perLabel} au prorata des
           dépenses prévues pour chaque grand poste du budget de l&apos;État en 2026. En réalité, les recettes ne sont pas affectées
           à une dépense précise, et une partie de la TVA finance la Sécurité sociale et les
           collectivités. Vos cotisations financent la Sécurité sociale.
@@ -298,7 +330,7 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
           items={result.budgetAllocation.map((s) => ({
             label: s.label,
             value: s.amount,
-            display: `${formatEuros(s.amount)} · ${formatRatio(s.percentage / 100, 0)}`,
+            display: `${formatEuros(p(s.amount))} · ${formatRatio(s.percentage / 100, 0)}`,
           }))}
         />
       </section>

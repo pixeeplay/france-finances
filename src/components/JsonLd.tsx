@@ -41,7 +41,7 @@ export function JsonLd() {
     applicationCategory: "EducationalApplication",
     operatingSystem: "Any",
     description:
-      "Explorez le budget de la France de manière interactive. 370 cartes de dépenses publiques à découvrir.",
+      "Explorez le budget de la France de manière interactive. 369 cartes de dépenses publiques à découvrir.",
     inLanguage: "fr",
     offers: {
       "@type": "Offer",

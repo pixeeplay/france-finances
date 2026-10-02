@@ -12,6 +12,7 @@ import {
   runFullSimulation,
   serializeSimulatorParams,
   DEFAULT_SIMULATOR_INPUT,
+  parseSimulatorPeriod,
 } from "@/lib/taxCalculator";
 import { IR_BRACKETS, PASS_2026, REFERENCE_SALARIES } from "@/data/fiscal-2026";
 import { STATE_MISSIONS_2026 } from "@/data/chiffres";
@@ -277,5 +278,20 @@ describe("paramètres d'URL", () => {
     const input = { annualGross: 41_000, isSingle: false, nbChildren: 3 };
     const qs = new URLSearchParams(serializeSimulatorParams(input));
     expect(parseSimulatorParams(Object.fromEntries(qs))).toEqual(input);
+  });
+});
+
+describe("vue mensuelle / annuelle", () => {
+  it("lit ?vue=mois, annuel par défaut", () => {
+    expect(parseSimulatorPeriod({ vue: "mois" })).toBe("mois");
+    expect(parseSimulatorPeriod({ vue: "an" })).toBe("an");
+    expect(parseSimulatorPeriod({})).toBe("an");
+    expect(parseSimulatorPeriod({ vue: "n'importe" })).toBe("an");
+  });
+
+  it("n'ajoute vue=mois à l'URL qu'en vue mensuelle", () => {
+    const input = { annualGross: 30_000, isSingle: true, nbChildren: 0 };
+    expect(serializeSimulatorParams(input)).not.toContain("vue=");
+    expect(serializeSimulatorParams(input, "mois")).toContain("vue=mois");
   });
 });

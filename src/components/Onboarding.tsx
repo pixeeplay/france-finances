@@ -26,8 +26,8 @@ const slides = [
   {
     id: "go",
     title: "C'est parti !",
-    subtitle: "370 cartes, 16 catégories",
-    description: "Choisis un thème ou lance le mode aléatoire. 10 cartes, 3 minutes max.",
+    subtitle: "369 cartes, 16 catégories",
+    description: "Choisis un thème ou lance le mode aléatoire. 10 cartes, 3 minutes max. Parfois, devine d'abord le montant d'une dépense avant de découvrir sa carte.",
   },
 ] as const;
 
