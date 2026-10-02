@@ -5,7 +5,11 @@
 Mini-jeu mobile-first "Tinder des depenses publiques" — france-finances.com
 Le joueur swipe des cartes de depenses budgetaires francaises : gauche = garder, droite = a revoir.
 3 niveaux de profondeur : Niv.1 (2 directions), Niv.2 (4 directions), Niv.3 (micro-audit).
-A la fin d'une session (10-12 cartes), le joueur obtient un archetype budgetaire et ses stats.
+Les niveaux se debloquent en jouant (2 sessions N1 -> N2, 2 sessions N2 -> N3, `src/lib/progression.ts`), plus par `?level=`.
+A la fin d'une session (10-12 cartes), le joueur obtient un archetype budgetaire (calcule sur les categories et montants coupes) et ses stats.
+Apres chaque swipe : retour (avis de la communaute, fait marquant, montant cumule). Mini-quiz « a ton avis, combien ? » avant certains montants.
+Modes : deck du jour `/jeu/quotidien` (meme tirage pour tous, seed = date Paris, serie de jours, partage facon Wordle) et defi « Trouve 50 Md€ » (mode budget).
+Outils : `/chiffres` (les finances publiques en chiffres) et `/simulateur` (simulateur fiscal IR/cotisations/TVA, 100 % client), portes depuis nos contributions a nicoquipaie.
 
 Repo : https://github.com/pixeeplay/france-finances/
 Deploy : france-finances.com (Coolify, Docker, VPS OVH)
@@ -13,9 +17,9 @@ DNS : Cloudflare (DNS only, pas de proxy)
 
 ## Contenu
 
-- **369 cartes** reparties en **19 decks** (16 categories + 3 thematiques)
-- **16 archetypes** budgetaires (6 L1, 6 L2, 4 L3)
-- **19 badges** de categorie + **12 achievements** generaux
+- **369 cartes** reparties en **19 decks** (16 categories + 3 thematiques), niveaux L1=130, L2=130, L3=109
+- **18 archetypes** budgetaires (8 L1, 6 L2, 4 L3) dans `src/data/archetypes.json`
+- **19 badges** de categorie + **3 badges** de comprehension (quiz) + **12 achievements** generaux (`src/lib/achievements.ts`)
 
 ## Stack technique
 
@@ -27,7 +31,7 @@ DNS : Cloudflare (DNS only, pas de proxy)
 - **DB** : PostgreSQL + Drizzle ORM (graceful degradation sans DB)
 - **PWA** : serwist (service worker, offline fallback). Plugin webpack : le build prod tourne en `next build --webpack`, serwist est desactive en dev (Turbopack)
 - **Monitoring** : Sentry (`src/instrumentation.ts` serveur/edge, `src/instrumentation-client.ts` client)
-- **Tests** : Vitest + Testing Library (294 tests, coverage lignes ~89%) + E2E Playwright
+- **Tests** : Vitest + Testing Library (485 tests) + E2E Playwright (14 tests, `e2e/`, `E2E_PROD=1` pour tester un build de prod)
 - **CI** : GitHub Actions (lint + type-check + test --coverage + build + E2E + docker), Husky + lint-staged + commitlint
 - **Deploy** : Docker (output: standalone) via Coolify
 
@@ -44,6 +48,8 @@ DNS : Cloudflare (DNS only, pas de proxy)
 - Mobile-first : designer pour 375px d'abord, responsive ensuite
 - Dark theme par defaut
 - TOUJOURS utiliser ChainsawIcon et ShieldIcon (pas d'emoji) pour cut/keep
+- Pas d'emoji d'interface : pictogrammes SVG `CategoryIcon` (par categorie) et `UiIcon` (`src/components/icons/`)
+- Formatage des montants : uniquement via `src/lib/format.ts` (`formatBillions`, `formatEuros`, `formatPercent` ; `formatBillionsExact`, `formatRatio`, `formatNumber` pour les tableaux)
 - Desktop containment : `lg:h-[900px] lg:max-h-[90vh] lg:rounded-3xl`
 - pb-safe sur BottomNav et footers pour iOS safe area
 - aria-hidden sur SVGs et emojis decoratifs
@@ -51,17 +57,34 @@ DNS : Cloudflare (DNS only, pas de proxy)
 - API responses standardisees : jsonOk(), jsonError(), withDbCheck()
 - Admin (`/pixee-admin`, `/api/analytics/dashboard`, `/api/analytics/purge`) : controle via `isAdmin(session)` (`src/lib/admin.ts`, env `ADMIN_EMAILS`). Non-admin -> `notFound()` cote page, 401/403 cote API. Toute nouvelle route admin DOIT utiliser ce helper. `src/lib/admin.ts` importe `crypto` : ne pas l'ajouter au barrel `src/lib/index.ts` (importe cote client)
 
-## Palette de couleurs
+## Direction artistique et design tokens
 
-- Fond principal : #0F172A (slate-950)
-- Cards : #1E293B (slate-800)
-- Garder/OK : #10B981 (emerald-500)
-- Couper/A revoir : #EF4444 (red-500)
-- Renforcer : #3B82F6 (blue-500)
-- Injustifie : #F59E0B (amber-500)
-- Texte principal : #F8FAFC (slate-50)
-- Texte secondaire : #94A3B8 (slate-400)
-- Accent neon (hover/CTA) : #34D399 (emerald-400)
+Direction « data-journalisme » : typographie editoriale, grille sobre, couleur reservee au sens. Pas de degrades de texte, d'ombres neon (« glow ») ni de flous decoratifs.
+
+Tokens dans `src/app/globals.css` (`@theme inline`), toujours passer par eux (`bg-background`, `bg-card`, `text-muted-foreground`, `text-primary-foreground`, `text-danger`...), jamais de `slate-*` ou `text-white` en dur sur fond colore.
+Theme sombre par defaut (classe `dark` sur `<html>`), theme clair disponible (`localStorage.theme`, `meta theme-color` synchronisee par `src/lib/theme.ts`).
+
+| Token                       | Sombre  | Clair   | Sens                  |
+| --------------------------- | ------- | ------- | --------------------- |
+| `--background`              | #0F172A | #FAFAF7 | Fond                  |
+| `--card`                    | #1E293B | #FFFFFF | Cartes                |
+| `--foreground`              | #F8FAFC | #0F172A | Texte principal       |
+| `--muted-foreground`        | #CBD5E1 | #475569 | Texte secondaire      |
+| `--primary` (`keep`)        | #10B981 | #047857 | Garder / OK           |
+| `--danger` (`cut`)          | #F87171 | #DC2626 | Couper / A revoir     |
+| `--info` (`reinforce`)      | #60A5FA | #2563EB | Renforcer             |
+| `--warning` (`unjustified`) | #F59E0B | #B45309 | Injustifie (token)    |
+| `--community`               | #94A3B8 | #64748B | Avis de la communaute |
+
+Rayon de base `--radius: 0.375rem` (preferer `rounded-md`).
+Attention : en jeu au niveau 2, « Reduire » est en amber et « Injustifie » en rouge (decision ouverte, voir PLAN-REFONTE.md).
+
+Polices (`next/font/google`, `src/app/layout.tsx`) :
+
+- Titres et chiffres : Source Serif 4 (`--ff-serif`, graisse 600 seule), classes `font-heading` / `font-serif`, h1-h3 par defaut
+- Texte : Schibsted Grotesk (`--ff-grotesk`, `font-sans`)
+- Etiquettes, sources : IBM Plex Mono (`--ff-mono`, 400/500, `preload: false`)
+- Utilitaires : `kicker` (surtitre mono capitales) et `numeral` (chiffres serif tabulaires)
 
 ## Structure des fichiers
 
@@ -69,7 +92,9 @@ DNS : Cloudflare (DNS only, pas de proxy)
 src/
   app/              # Pages (App Router, route group (game))
     api/            # API routes (health, sessions, ranking, community, me, stats, analytics, og)
-    (game)/         # Game pages (jeu, profil, classement, resultats, infos, partage)
+    (game)/         # Game pages (jeu, jeu/[deckId] dont jeu/quotidien, profil, classement, resultats, infos, partage)
+    chiffres/       # Les finances publiques en chiffres (donnees : src/data/chiffres.ts)
+    simulateur/     # Simulateur fiscal (calculs : src/lib/taxCalculator.ts, baremes : src/data/fiscal-2026.ts)
     categories/     # Category pages
     contribuer/     # Contributor guide page
     a-propos/       # About page
@@ -77,7 +102,10 @@ src/
     pixee-admin/    # Dashboard analytics (admins ADMIN_EMAILS uniquement)
     offline/        # Offline fallback
   components/
-    landing/        # Landing page components (Hero, Navbar, Footer, Categories, Sources, etc.)
+    landing/        # Landing page components (Hero, Navbar, Footer, Categories, Sources, ToolsSection, etc.)
+    icons/          # CategoryIcon, UiIcon (pictogrammes SVG)
+    chiffres/       # DataBlocks (/chiffres)
+    simulateur/     # Simulator (/simulateur)
     classement/     # Onglets du classement
     profile/        # Onglets et badges du profil
     SwipeCard.tsx   # Carte swipable
@@ -88,14 +116,17 @@ src/
   data/
     decks-meta.json # 19 decks definitions
     cards/*.json    # Cartes par categorie (split)
+    archetypes.json # 18 archetypes
+    data-check-exceptions.json # Exceptions documentees cout/habitant
     index.ts        # Barrel export
   db/
     schema.ts       # Tables: users, accounts, authSessions, verificationTokens, sessions, votes, communityVotes, analyticsEvents, auditResponses
     index.ts        # Drizzle client + pool
   stores/
-    gameStore.ts    # Zustand (voteAndAdvance, useShallow)
+    gameStore.ts    # Zustand (voteAndAdvance, useShallow, gameMode budget)
+    dailyStore.ts   # Deck du jour (serie, resultats)
   hooks/            # useSwipeGesture, useArchetype, useInstallPrompt, useSync, etc.
-  lib/              # deckUtils, archetype, stats, achievements, api-utils, admin
+  lib/              # deckUtils, archetype, stats, achievements, api-utils, admin, format, progression, daily, budgetChallenge, quiz, sessionFeedback, taxCalculator, theme
   types/
 ```
 
@@ -105,17 +136,18 @@ src/
 - `npm run build` -- build production (`next build --webpack`, requis par serwist)
 - `npm run lint` -- ESLint
 - `npm run test` -- Vitest
+- `npm run test:e2e` -- Playwright (`E2E_PROD=1 E2E_PORT=xxxx` apres `npm run build` pour tester le build de prod)
 - `npm run type-check` -- tsc --noEmit
 - `npm run data:check` -- Controle des cartes (schema Zod, doublons, URL, cout/habitant, niveaux), lance en CI. Regles : `src/data/README.md`
 - `npm run db:generate` -- Generer une migration Drizzle (dossier `drizzle/`)
-- `npm run db:migrate` -- Migrations Drizzle
+- `npm run db:migrate` -- Migrations Drizzle (manuel ; avant 0002_drop_waitlist, exporter la table waitlist en prod, voir PLAN-REFONTE.md)
 
 ## Donnees
 
 369 cartes, 19 decks (16 categories + 3 thematiques).
 Donnees factuelles, sourcees, neutres. Pas de ton militant.
-Montants en milliards d'euros, cout par citoyen base sur ~68M habitants.
-Sources : PLF/LFSS 2025-2026, Cour des comptes, Senat, ministeres, vie-publique.fr.
+Montants en milliards d'euros, cout par citoyen base sur ~68M habitants (`data:check` ; `/chiffres` utilise 69,1 M Insee 2026, a harmoniser).
+Sources : PLF/LFSS 2025-2026 (PLF/PLFSS 2027 presentes le 1er octobre 2026, pas encore integres), Cour des comptes, Senat, ministeres, vie-publique.fr.
 Chaque `sourceUrl` pointe vers un document precis (jamais une page d'accueil), en https et sans domaine accentue.
 Champ `level` des cartes : 1 grand poste, 2 dispositif, 3 niche/micro-audit (critere dans `src/data/README.md`).
 
