@@ -61,7 +61,8 @@ export const ACRONYMS: Record<string, string> = {
   CNAM: "Caisse Nationale de l'Assurance Maladie",
   CNAV: "Caisse Nationale d'Assurance Vieillesse",
   ALD: "Affection de Longue Durée",
-  DREES: "Direction de la Recherche, des Études, de l'Évaluation et des Statistiques",
+  DREES:
+    "Direction de la Recherche, des Études, de l'Évaluation et des Statistiques",
   DGOS: "Direction Générale de l'Offre de Soins",
   ANSM: "Agence Nationale de Sécurité du Médicament",
   CEPS: "Comité Économique des Produits de Santé",
@@ -89,12 +90,16 @@ export const ACRONYMS: Record<string, string> = {
   AESH: "Accompagnant d'Élèves en Situation de Handicap",
   DGER: "Direction Générale de l'Enseignement et de la Recherche",
   DEPP: "Direction de l'Évaluation, de la Prospective et de la Performance",
-  MESRI: "Ministère de l'Enseignement Supérieur, de la Recherche et de l'Innovation",
-  HCERES: "Haut Conseil de l'Évaluation de la Recherche et de l'Enseignement Supérieur",
-  DGESIP: "Direction Générale de l'Enseignement Supérieur et de l'Insertion Professionnelle",
+  MESRI:
+    "Ministère de l'Enseignement Supérieur, de la Recherche et de l'Innovation",
+  HCERES:
+    "Haut Conseil de l'Évaluation de la Recherche et de l'Enseignement Supérieur",
+  DGESIP:
+    "Direction Générale de l'Enseignement Supérieur et de l'Insertion Professionnelle",
   CPF: "Compte Personnel de Formation",
   SNU: "Service National Universel",
-  ONISEP: "Office National d'Information sur les Enseignements et les Professions",
+  ONISEP:
+    "Office National d'Information sur les Enseignements et les Professions",
   IPS: "Indice de Position Sociale",
 
   // Défense et sécurité
@@ -117,7 +122,7 @@ export const ACRONYMS: Record<string, string> = {
 
   // Énergie
   EDF: "Électricité de France",
-  CSPE: "Contribution au Service Public de l'Électricité",
+  CSPE: "Contribution au Service Public de l'Électricité (ancienne taxe) ou Charges de Service Public de l'Énergie",
   ARENH: "Accès Régulé à l'Électricité Nucléaire Historique",
   CEA: "Commissariat à l'Énergie Atomique",
   MaPrimeRénov: "Aide à la rénovation énergétique des logements",
@@ -164,7 +169,8 @@ export const ACRONYMS: Record<string, string> = {
   AFD: "Agence Française de Développement",
   APD: "Aide Publique au Développement",
   MEAE: "Ministère de l'Europe et des Affaires Étrangères",
-  FEAMPA: "Fonds Européen pour les Affaires Maritimes, la Pêche et l'Aquaculture",
+  FEAMPA:
+    "Fonds Européen pour les Affaires Maritimes, la Pêche et l'Aquaculture",
   DSA: "Digital Services Act (Règlement sur les Services Numériques)",
   DMA: "Digital Markets Act (Règlement sur les Marchés Numériques)",
   CEDH: "Cour Européenne des Droits de l'Homme",
@@ -189,18 +195,21 @@ export const ACRONYMS: Record<string, string> = {
   ANRU: "Agence Nationale pour la Rénovation Urbaine",
   NPNRU: "Nouveau Programme National de Renouvellement Urbain",
   ZAN: "Zéro Artificialisation Nette",
-  "3DS": "Différenciation, Décentralisation, Déconcentration et Simplification (loi)",
+  "3DS":
+    "Différenciation, Décentralisation, Déconcentration et Simplification (loi)",
 
   // Numérique et innovation
   IA: "Intelligence Artificielle",
   ANSSI: "Agence Nationale de la Sécurité des Systèmes d'Information",
   CNIL: "Commission Nationale de l'Informatique et des Libertés",
-  ARCEP: "Autorité de Régulation des Communications Électroniques et des Postes",
+  ARCEP:
+    "Autorité de Régulation des Communications Électroniques et des Postes",
   SGPI: "Secrétariat Général pour l'Investissement (France 2030)",
 
   // Emploi
   SMIC: "Salaire Minimum Interprofessionnel de Croissance",
-  DARES: "Direction de l'Animation de la Recherche, des Études et des Statistiques",
+  DARES:
+    "Direction de l'Animation de la Recherche, des Études et des Statistiques",
   URSSAF: "Unions de Recouvrement des Cotisations de Sécurité Sociale",
   ACOSS: "Agence Centrale des Organismes de Sécurité Sociale",
   OIT: "Organisation Internationale du Travail",
@@ -218,8 +227,10 @@ export const ACRONYMS: Record<string, string> = {
   FGAO: "Fonds de Garantie des Assurances Obligatoires",
   ONIAM: "Office National d'Indemnisation des Accidents Médicaux",
   FIVA: "Fonds d'Indemnisation des Victimes de l'Amiante",
-  FSPRT: "Fichier des Signalements pour la Prévention de la Radicalisation à Caractère Terroriste",
-  CIPDR: "Comité Interministériel de Prévention de la Délinquance et de la Radicalisation",
+  FSPRT:
+    "Fichier des Signalements pour la Prévention de la Radicalisation à Caractère Terroriste",
+  CIPDR:
+    "Comité Interministériel de Prévention de la Délinquance et de la Radicalisation",
   DAP: "Direction de l'Administration Pénitentiaire",
   CNB: "Conseil National des Barreaux",
   ONISR: "Observatoire National Interministériel de la Sécurité Routière",
@@ -234,7 +245,8 @@ export const ACRONYMS: Record<string, string> = {
   HLM: "Habitation à Loyer Modéré",
   USH: "Union Sociale pour l'Habitat",
   DHUP: "Direction de l'Habitat, de l'Urbanisme et des Paysages",
-  SGFGAS: "Société de Gestion des Financements et de la Garantie de l'Accession Sociale",
+  SGFGAS:
+    "Société de Gestion des Financements et de la Garantie de l'Accession Sociale",
   LODEOM: "Loi pour le Développement Économique de l'Outre-Mer",
 
   // Agriculture
@@ -259,7 +271,8 @@ export const ACRONYMS: Record<string, string> = {
   // Culture et médias
   CNC: "Centre National du Cinéma et de l'Image Animée",
   CMN: "Centre des Monuments Nationaux",
-  ARCOM: "Autorité de Régulation de la Communication Audiovisuelle et Numérique",
+  ARCOM:
+    "Autorité de Régulation de la Communication Audiovisuelle et Numérique",
   INA: "Institut National de l'Audiovisuel",
   DGMIC: "Direction Générale des Médias et des Industries Culturelles",
 
@@ -277,13 +290,15 @@ export const ACRONYMS: Record<string, string> = {
   ZFE: "Zone à Faibles Émissions",
 
   // Divers
-  CAC40: "Cotation Assistée en Continu (indice boursier des 40 plus grandes entreprises)",
+  CAC40:
+    "Cotation Assistée en Continu (indice boursier des 40 plus grandes entreprises)",
   GAFAM: "Google, Apple, Facebook, Amazon, Microsoft",
   PME: "Petite et Moyenne Entreprise",
   ETI: "Entreprise de Taille Intermédiaire",
   BTP: "Bâtiment et Travaux Publics",
   ROI: "Return on Investment (Retour sur investissement)",
-  UNESCO: "Organisation des Nations Unies pour l'Éducation, la Science et la Culture",
+  UNESCO:
+    "Organisation des Nations Unies pour l'Éducation, la Science et la Culture",
   UNICEF: "Fonds des Nations Unies pour l'Enfance",
 
   GPS: "Global Positioning System",
@@ -294,7 +309,8 @@ export const ACRONYMS: Record<string, string> = {
   FDJ: "Française des Jeux",
   APE: "Agence des Participations de l'État",
   DGFiP: "Direction Générale des Finances Publiques",
-  IFRAP: "Institut Français pour la Recherche sur les Administrations et les Politiques Publiques",
+  IFRAP:
+    "Institut Français pour la Recherche sur les Administrations et les Politiques Publiques",
   FEAD: "Fonds Européen d'Aide aux plus Démunis",
   CADA: "Centre d'Accueil de Demandeurs d'Asile",
   HUDA: "Hébergement d'Urgence pour Demandeurs d'Asile",
@@ -335,16 +351,21 @@ export const ACRONYMS: Record<string, string> = {
   APUL: "Administrations Publiques Locales (collectivités et leurs organismes)",
   ASSO: "Administrations de Sécurité Sociale",
   ODAC: "Organismes Divers d'Administration Centrale (agences nationales de l'État)",
-  COFOG: "Classification internationale des dépenses publiques par fonction (santé, éducation, défense…)",
+  COFOG:
+    "Classification internationale des dépenses publiques par fonction (santé, éducation, défense…)",
   CAS: "Compte d'Affectation Spéciale (compte à part du budget de l'État, ex. pensions)",
   PSR: "Prélèvement Sur Recettes (somme retirée des recettes de l'État et reversée, ex. à l'UE ou aux collectivités)",
-  "PSR-UE": "Prélèvement Sur Recettes au profit de l'Union Européenne (contribution de la France au budget européen)",
+  "PSR-UE":
+    "Prélèvement Sur Recettes au profit de l'Union Européenne (contribution de la France au budget européen)",
   LFR: "Loi de Finances Rectificative (budget modifié en cours d'année)",
   PLFR: "Projet de Loi de Finances Rectificative",
   ETPT: "Équivalent Temps Plein Travaillé (nombre d'emplois ramené à des temps pleins sur l'année)",
-  AAFAR: "Agriculture, Alimentation, Forêt et Affaires Rurales (mission budgétaire)",
-  BACEA: "Budget Annexe Contrôle et Exploitation Aériens (budget à part de l'aviation civile)",
-  MISSINT: "Missions Intérieures (déploiements militaires sur le territoire national)",
+  AAFAR:
+    "Agriculture, Alimentation, Forêt et Affaires Rurales (mission budgétaire)",
+  BACEA:
+    "Budget Annexe Contrôle et Exploitation Aériens (budget à part de l'aviation civile)",
+  MISSINT:
+    "Missions Intérieures (déploiements militaires sur le territoire national)",
   DILICO: "Dispositif de Lissage Conjoncturel des recettes des collectivités",
   FEAGA: "Fonds Européen Agricole de Garantie (aides directes de la PAC)",
   PEEC: "Participation des Employeurs à l'Effort de Construction (« 1 % logement »)",
@@ -358,7 +379,8 @@ export const ACRONYMS: Record<string, string> = {
   CHR: "Centre Hospitalier Régional",
   "AP-HP": "Assistance Publique – Hôpitaux de Paris",
   ENT: "Espace Numérique de Travail",
-  UPE2A: "Unité Pédagogique pour Élèves Allophones Arrivants (classe d'accueil en français)",
+  UPE2A:
+    "Unité Pédagogique pour Élèves Allophones Arrivants (classe d'accueil en français)",
   SNRP: "Service National du Renseignement Pénitentiaire",
   PSE: "Placement sous Surveillance Électronique (bracelet électronique)",
   TA: "Tribunal Administratif",
@@ -376,28 +398,36 @@ export const ACRONYMS: Record<string, string> = {
   TGV: "Train à Grande Vitesse",
   TSA: "Taxe sur les Services Audiovisuels (taxe affectée au CNC)",
   RGPD: "Règlement Général sur la Protection des Données",
-  INRAE: "Institut National de Recherche pour l'Agriculture, l'Alimentation et l'Environnement",
+  INRAE:
+    "Institut National de Recherche pour l'Agriculture, l'Alimentation et l'Environnement",
   OFGL: "Observatoire des Finances et de la Gestion publique Locales",
   ONG: "Organisation Non Gouvernementale",
   DOM: "Département d'Outre-Mer",
   TOM: "Territoire d'Outre-Mer",
-  EGNOS: "European Geostationary Navigation Overlay Service (complément européen du GPS)",
+  EGNOS:
+    "European Geostationary Navigation Overlay Service (complément européen du GPS)",
   PIIEC: "Projet Important d'Intérêt Européen Commun",
   JO: "Jeux Olympiques",
 
   // Sigles écrits en minuscules dans les textes (noms d'organismes et de dispositifs)
-  "Agirc-Arrco": "Régime de retraite complémentaire obligatoire des salariés du privé",
-  Unédic: "Organisme qui gère l'assurance chômage, piloté par les syndicats et le patronat",
-  "Afit France": "Agence de Financement des Infrastructures de Transport de France",
-  PreParE: "Prestation Partagée d'Éducation de l'Enfant (congé parental indemnisé)",
+  "Agirc-Arrco":
+    "Régime de retraite complémentaire obligatoire des salariés du privé",
+  Unédic:
+    "Organisme qui gère l'assurance chômage, piloté par les syndicats et le patronat",
+  "Afit France":
+    "Agence de Financement des Infrastructures de Transport de France",
+  PreParE:
+    "Prestation Partagée d'Éducation de l'Enfant (congé parental indemnisé)",
   RPIMa: "Régiment de Parachutistes d'Infanterie de Marine",
 
   // Défense : matériels et unités cités dans les cartes
-  "ASMP-A": "Air-Sol Moyenne Portée Amélioré (missile nucléaire tiré depuis un avion)",
+  "ASMP-A":
+    "Air-Sol Moyenne Portée Amélioré (missile nucléaire tiré depuis un avion)",
   "PA-NG": "Porte-Avions de Nouvelle Génération",
   "AMX-10 RC": "Blindé léger de reconnaissance à roues de l'armée de Terre",
   "Crotale NG": "Système de défense antiaérienne de courte portée",
-  "SAMP/T": "Système de défense antiaérienne et antimissile de moyenne portée (franco-italien)",
+  "SAMP/T":
+    "Système de défense antiaérienne et antimissile de moyenne portée (franco-italien)",
   CSO: "Composante Spatiale Optique (satellites militaires d'observation)",
   RDP: "Régiment de Dragons Parachutistes",
   CPA: "Commando Parachutiste de l'Air",
@@ -409,18 +439,22 @@ export const ACRONYMS: Record<string, string> = {
   "AP-HM": "Assistance Publique – Hôpitaux de Marseille",
   CE1: "Cours Élémentaire 1re année (2e année de l'école élémentaire)",
   CP: "Cours Préparatoire (1re année de l'école élémentaire)",
-  CEPEJ: "Commission Européenne pour l'Efficacité de la Justice (Conseil de l'Europe)",
-  COVID: "Coronavirus Disease : maladie due au coronavirus, épidémie apparue fin 2019",
+  CEPEJ:
+    "Commission Européenne pour l'Efficacité de la Justice (Conseil de l'Europe)",
+  COVID:
+    "Coronavirus Disease : maladie due au coronavirus, épidémie apparue fin 2019",
   "CO₂": "Dioxyde de carbone, principal gaz à effet de serre",
   ETS2: "Second marché européen du carbone, étendu au chauffage des bâtiments et aux carburants",
-  "GLP-1": "Hormone imitée par de nouveaux médicaments contre le diabète et l'obésité",
+  "GLP-1":
+    "Hormone imitée par de nouveaux médicaments contre le diabète et l'obésité",
   GW: "Gigawatt : un milliard de watts (unité de puissance électrique)",
   H5N1: "Virus de la grippe aviaire hautement pathogène",
   NGFS: "Network for Greening the Financial System : réseau des banques centrales pour le climat",
   ORE: "Orientation et Réussite des Étudiants (loi de 2018 créant Parcoursup)",
   RER: "Réseau Express Régional",
   SOGEFOM: "Société de Gestion des Fonds de Garantie d'Outre-Mer",
-  TALIS: "Teaching and Learning International Survey : enquête de l'OCDE sur les enseignants",
+  TALIS:
+    "Teaching and Learning International Survey : enquête de l'OCDE sur les enseignants",
 
   // Organismes et documents cités comme sources
   AN: "Assemblée Nationale",
@@ -435,7 +469,8 @@ export const ACRONYMS: Record<string, string> = {
   CCI: "Chambre de Commerce et d'Industrie",
   CCR: "Caisse Centrale de Réassurance (assureur public des catastrophes naturelles)",
   CDC: "Caisse des Dépôts et Consignations",
-  CEREMA: "Centre d'Études et d'Expertise sur les Risques, l'Environnement, la Mobilité et l'Aménagement",
+  CEREMA:
+    "Centre d'Études et d'Expertise sur les Risques, l'Environnement, la Mobilité et l'Aménagement",
   CEREQ: "Centre d'Études et de Recherches sur les Qualifications",
   CFL: "Comité des Finances Locales",
   CGEDD: "Conseil Général de l'Environnement et du Développement Durable",
@@ -446,8 +481,10 @@ export const ACRONYMS: Record<string, string> = {
   DGCS: "Direction Générale de la Cohésion Sociale",
   DGE: "Direction Générale des Entreprises",
   DGEC: "Direction Générale de l'Énergie et du Climat",
-  DGITM: "Direction Générale des Infrastructures, des Transports et des Mobilités",
-  DGSCGC: "Direction Générale de la Sécurité Civile et de la Gestion des Crises",
+  DGITM:
+    "Direction Générale des Infrastructures, des Transports et des Mobilités",
+  DGSCGC:
+    "Direction Générale de la Sécurité Civile et de la Gestion des Crises",
   DIE: "Direction de l'Immobilier de l'État",
   DNE: "Direction du Numérique pour l'Éducation",
   DPMA: "Direction des Pêches Maritimes et de l'Aquaculture",
@@ -461,22 +498,27 @@ export const ACRONYMS: Record<string, string> = {
   IGN: "Institut national de l'Information Géographique et forestière",
   INED: "Institut National d'Études Démographiques",
   IRDES: "Institut de Recherche et Documentation en Économie de la Santé",
-  MILDECA: "Mission Interministérielle de Lutte contre les Drogues et les Conduites Addictives",
-  MIPROF: "Mission Interministérielle pour la Protection des Femmes contre les violences",
+  MILDECA:
+    "Mission Interministérielle de Lutte contre les Drogues et les Conduites Addictives",
+  MIPROF:
+    "Mission Interministérielle pour la Protection des Femmes contre les violences",
   NEB: "Note d'Exécution Budgétaire (analyse annuelle de la Cour des comptes)",
   OIV: "Organisation Internationale de la Vigne et du Vin",
   OMT: "Organisation Mondiale du Tourisme",
   ONACVG: "Office National des Combattants et des Victimes de Guerre",
   ONERC: "Observatoire National sur les Effets du Réchauffement Climatique",
   ONRE: "Observatoire National de la Rénovation Énergétique",
-  OPECST: "Office Parlementaire d'Évaluation des Choix Scientifiques et Technologiques",
+  OPECST:
+    "Office Parlementaire d'Évaluation des Choix Scientifiques et Technologiques",
   OUR: "Open, Useful, Reusable : indice de l'OCDE sur l'ouverture des données publiques",
   OVE: "Observatoire national de la Vie Étudiante",
   PNF: "Parcs Nationaux de France",
-  RALFSS: "Rapport de la Cour des comptes sur l'Application des Lois de Financement de la Sécurité Sociale",
+  RALFSS:
+    "Rapport de la Cour des comptes sur l'Application des Lois de Financement de la Sécurité Sociale",
   SDES: "Service des Données et Études Statistiques (ministère de la Transition écologique)",
   SFMU: "Société Française de Médecine d'Urgence",
-  SISPEA: "Système d'Information sur les Services Publics d'Eau et d'Assainissement",
+  SISPEA:
+    "Système d'Information sur les Services Publics d'Eau et d'Assainissement",
   SLL: "Service du Livre et de la Lecture (ministère de la Culture)",
   SSI: "Sécurité Sociale des Indépendants",
   UTP: "Union des Transports Publics et ferroviaires",

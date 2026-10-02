@@ -19,7 +19,7 @@ export interface LexiconSource {
 /** Termes du jargon budgétaire (sans sigle). Clé = entrée affichée dans le lexique. */
 export const TERMS: Record<string, string> = {
   "Allègements généraux":
-    "Réductions de cotisations sociales payées par les employeurs sur les salaires proches du SMIC. L'État compense ce manque à gagner à la Sécurité sociale.",
+    "Réductions de cotisations sociales payées par les employeurs sur les bas et moyens salaires. L'État compense ce manque à gagner à la Sécurité sociale.",
   "Autorisation d'engagement":
     "Montant maximal que l'État peut s'engager à payer dans l'année (contrats, subventions), même si les paiements s'étalent ensuite sur plusieurs années. Sur ce site : « engagements autorisés ».",
   "Bloc communal": "Ensemble formé par les communes et les intercommunalités.",
@@ -27,16 +27,18 @@ export const TERMS: Record<string, string> = {
     "Chacune des grandes parties de la Sécurité sociale : maladie, vieillesse (retraites), famille, accidents du travail et maladies professionnelles, autonomie.",
   "Concours financiers de l'État":
     "Ensemble des versements de l'État aux collectivités locales : dotations, compensations d'impôts supprimés, subventions.",
-  "Contributeur net": "Pays qui verse au budget européen davantage qu'il n'en reçoit.",
+  "Contributeur net":
+    "Pays qui verse au budget européen davantage qu'il n'en reçoit.",
   "Crédits de paiement":
     "Sommes que l'État peut effectivement payer pendant l'année. Sur ce site : « dépenses prévues pour l'année ».",
-  "Dégrèvement":
+  Dégrèvement:
     "Réduction ou annulation d'un impôt déjà calculé. Pour les impôts locaux, c'est souvent l'État qui en paie le coût à la place du contribuable.",
   "Déficit public":
     "Écart, sur une année, entre les dépenses et les recettes de l'ensemble des administrations publiques (État, Sécurité sociale, collectivités locales).",
   "Dette publique":
     "Total des emprunts des administrations publiques qui ne sont pas encore remboursés, selon la définition européenne dite « de Maastricht ».",
-  Dotation: "Somme versée chaque année par l'État à une collectivité ou à un organisme public pour financer son fonctionnement ou ses investissements.",
+  Dotation:
+    "Somme versée chaque année par l'État à une collectivité ou à un organisme public pour financer son fonctionnement ou ses investissements.",
   "Loi de finances":
     "Loi votée chaque année par le Parlement qui autorise les recettes et les dépenses de l'État : c'est le « budget de l'État ».",
   "Loi de programmation":
@@ -47,10 +49,10 @@ export const TERMS: Record<string, string> = {
     "Réduction, crédit ou exonération d'impôt accordé à certains contribuables ou à certaines activités. Les documents budgétaires parlent de « dépense fiscale », car l'État renonce à une recette.",
   "Opérateur de l'État":
     "Organisme public distinct de l'État (agence, établissement public : France Travail, universités, CNRS…) qui exerce une mission de service public et qu'il finance en grande partie.",
-  "Péréquation":
+  Péréquation:
     "Redistribution de ressources entre collectivités locales pour réduire les écarts de richesse entre territoires.",
   "Plafond d'emplois":
-    "Nombre maximal d'agents, comptés en équivalents temps plein, qu'un ministère ou un organisme public peut rémunérer dans l'année.",
+    "Nombre maximal d'agents, comptés en équivalents temps plein travaillé (ETPT), qu'un ministère ou un organisme public peut rémunérer dans l'année.",
   "Point d'indice":
     "Valeur de référence qui sert à calculer le salaire de base des fonctionnaires. Quand il augmente, tous les salaires publics augmentent.",
   "Prélèvement sur recettes":
@@ -62,7 +64,7 @@ export const TERMS: Record<string, string> = {
   "Régime spécial de retraite":
     "Régime de retraite propre à une entreprise ou à une profession (SNCF, RATP, industries électriques et gazières, marins…), distinct du régime général des salariés.",
   "Report de charges":
-    "Dépenses dues en fin d'année mais dont le paiement est repoussé à l'année suivante, faute de budget disponible.",
+    "Dépenses dues en fin d'année mais pas encore payées, dont le paiement est repoussé à l'année suivante : factures en attente ou impayées faute de budget disponible.",
   "Sincérité budgétaire":
     "Principe selon lequel le budget doit présenter honnêtement les recettes et les dépenses prévisibles, sans les sous-estimer ni les surestimer.",
   "Taxe affectée":
@@ -73,9 +75,10 @@ export const TERMS: Record<string, string> = {
 export const DEFINITIONS: Record<string, string> = {
   // Budget et finances publiques
   PLF: "Le projet de budget de l'État présenté chaque automne par le gouvernement au Parlement, qui le modifie puis le vote.",
-  PLFSS: "Le projet de budget de la Sécurité sociale présenté chaque automne par le gouvernement au Parlement.",
+  PLFSS:
+    "Le projet de budget de la Sécurité sociale présenté chaque automne par le gouvernement au Parlement.",
   LFSS: "Le budget de la Sécurité sociale voté par le Parlement pour l'année : il fixe notamment l'objectif de dépenses d'assurance maladie.",
-  LFI: "Le budget de l'État voté par le Parlement en fin d'année pour l'année suivante. Sur ce site : « budget voté ».",
+  LFI: "Le budget de l'État voté par le Parlement, normalement avant le 1er janvier, pour l'année suivante (celui de 2026 a été voté en février 2026). Sur ce site : « budget voté ».",
   LFR: "Loi qui modifie en cours d'année le budget voté, par exemple pour ajouter ou annuler des dépenses.",
   PLFR: "Projet de loi qui modifie en cours d'année le budget voté.",
   LOLF: "Loi de 2001 qui fixe les règles de présentation et de vote du budget de l'État.",
@@ -88,17 +91,21 @@ export const DEFINITIONS: Record<string, string> = {
   APUL: "Les collectivités locales (communes, départements, régions) et leurs organismes.",
   ASSO: "La Sécurité sociale, l'assurance chômage, les retraites complémentaires et les hôpitaux publics.",
   ODAC: "Agences et établissements publics nationaux financés par l'État (universités, CNRS, France Travail…).",
-  COFOG: "Classement international des dépenses publiques par grande fonction (santé, éducation, défense…), utilisé pour comparer les pays.",
+  COFOG:
+    "Classement international des dépenses publiques par grande fonction (santé, éducation, défense…), utilisé pour comparer les pays.",
   CAS: "Compte tenu à part dans le budget de l'État, dont les recettes sont réservées à une dépense précise (par exemple le compte « Pensions » pour les retraites des fonctionnaires).",
   PSR: "Somme retirée directement des recettes de l'État et reversée aux collectivités locales ou à l'Union européenne.",
-  "PSR-UE": "La contribution de la France au budget de l'Union européenne, prise directement sur les recettes de l'État.",
+  "PSR-UE":
+    "La contribution de la France au budget de l'Union européenne, prise directement sur les recettes de l'État.",
   ETP: "Nombre d'emplois ramené à des postes à temps plein : deux personnes à mi-temps comptent pour un ETP.",
   ETPT: "Nombre d'emplois ramené à des temps pleins et à la durée travaillée dans l'année : un agent à temps plein présent six mois compte pour 0,5.",
-  DILICO: "Mécanisme qui retient une partie des recettes des collectivités une année, puis la leur reverse en trois fois les années suivantes.",
-  PGE: "Prêts bancaires aux entreprises garantis par l'État pendant la crise sanitaire : l'État rembourse la banque si l'entreprise ne peut pas payer.",
+  DILICO:
+    "Mécanisme qui retient une partie des recettes des collectivités une année, puis la leur reverse les années suivantes (en trois fois pour le dispositif de 2025).",
+  PGE: "Prêts bancaires aux entreprises garantis par l'État pendant la crise sanitaire : si l'entreprise ne peut pas payer, l'État rembourse à la banque la plus grande partie du prêt (70 à 90 %).",
   APE: "Service de l'État qui gère ses participations dans les entreprises (EDF, SNCF, Renault, Airbus…).",
-  CADES: "Caisse publique chargée de rembourser la dette accumulée par la Sécurité sociale, financée surtout par la CRDS et une part de la CSG.",
-  FRR: "Fonds public créé en 2001 pour financer les retraites futures, qui verse aujourd'hui chaque année une somme à la CADES.",
+  CADES:
+    "Caisse publique chargée de rembourser la dette accumulée par la Sécurité sociale, financée surtout par la CRDS et une part de la CSG.",
+  FRR: "Fonds public créé en 1999 pour financer les retraites futures, qui verse aujourd'hui chaque année une somme à la CADES.",
   FSV: "Fonds de la Sécurité sociale qui finance les prestations de retraite non contributives, comme le minimum vieillesse.",
 
   // Impôts et prélèvements
@@ -112,13 +119,15 @@ export const DEFINITIONS: Record<string, string> = {
   CVAE: "Impôt local payé par les entreprises sur la richesse qu'elles produisent, en cours de suppression.",
   CFE: "Impôt local payé par les entreprises sur la valeur des locaux qu'elles utilisent.",
   DMTO: "Taxes payées lors de l'achat d'un bien immobilier (l'essentiel des « frais de notaire »), qui financent surtout les départements.",
-  TICPE: "Taxe sur les carburants et les combustibles (essence, gazole, fioul).",
+  TICPE:
+    "Taxe sur les carburants et les combustibles (essence, gazole, fioul).",
   CICE: "Crédit d'impôt accordé aux entreprises de 2013 à 2018, transformé en 2019 en baisse de cotisations patronales.",
-  CIR: "Réduction d'impôt pour les entreprises qui font de la recherche et développement.",
-  CSPE: "Taxe sur la consommation d'électricité, appelée aujourd'hui accise sur l'électricité.",
+  CIR: "Crédit d'impôt pour les entreprises qui font de la recherche et développement : il diminue leur impôt, et l'excédent peut leur être remboursé.",
+  CSPE: "Deux sens. D'abord une ancienne taxe sur la consommation d'électricité (contribution au service public de l'électricité), devenue l'accise sur l'électricité. Aujourd'hui, le sigle désigne aussi les charges de service public de l'énergie : le soutien de l'État aux énergies renouvelables et aux territoires non reliés au réseau.",
 
   // Social et santé
-  ONDAM: "Plafond de dépenses d'assurance maladie (soins de ville, hôpitaux, établissements médico-sociaux) voté chaque année par le Parlement.",
+  ONDAM:
+    "Plafond de dépenses d'assurance maladie (soins de ville, hôpitaux, établissements médico-sociaux) voté chaque année par le Parlement.",
   RSA: "Revenu minimum versé aux personnes sans ressources ou à faibles revenus, financé par les départements.",
   APL: "Aide versée aux locataires modestes pour réduire leur loyer.",
   AAH: "Revenu minimum versé aux adultes en situation de handicap qui ne peuvent pas ou peu travailler.",
@@ -129,16 +138,20 @@ export const DEFINITIONS: Record<string, string> = {
   ASE: "Service des départements qui protège les enfants en danger ou en difficulté (placements, aides aux familles).",
   ALD: "Maladie grave ou chronique (diabète, cancer…) dont les soins sont remboursés à 100 % par l'Assurance maladie.",
   IJ: "Revenu de remplacement versé par la Sécurité sociale pendant un arrêt maladie, un congé maternité ou après un accident du travail.",
-  "AT-MP": "La branche de la Sécurité sociale qui indemnise les accidents du travail et les maladies professionnelles, financée par les employeurs.",
+  "AT-MP":
+    "La branche de la Sécurité sociale qui indemnise les accidents du travail et les maladies professionnelles, financée par les employeurs.",
   T2A: "Mode de financement des hôpitaux selon le nombre et le type de soins réalisés.",
   EHPAD: "Maison de retraite médicalisée pour les personnes âgées dépendantes.",
   CHU: "Hôpital qui associe soins, enseignement de la médecine et recherche.",
   CNAM: "La caisse nationale qui gère l'Assurance maladie.",
   CNAF: "La caisse nationale qui gère les allocations familiales et les aides au logement.",
   CAF: "Caisse locale qui verse les allocations familiales, les aides au logement et le RSA.",
-  URSSAF: "Organismes qui collectent les cotisations sociales et la CSG pour financer la Sécurité sociale.",
-  "Agirc-Arrco": "Régime géré par les syndicats et le patronat qui verse une retraite complémentaire aux anciens salariés du privé, en plus de la retraite de base.",
-  "Unédic": "Association gérée par les syndicats et le patronat qui pilote l'assurance chômage ; France Travail verse les allocations pour son compte.",
+  URSSAF:
+    "Organismes qui collectent les cotisations sociales et la CSG pour financer la Sécurité sociale.",
+  "Agirc-Arrco":
+    "Régime géré par les syndicats et le patronat qui verse une retraite complémentaire aux anciens salariés du privé, en plus de la retraite de base.",
+  Unédic:
+    "Association gérée par les syndicats et le patronat qui pilote l'assurance chômage ; France Travail verse les allocations pour son compte.",
   PUMA: "Droit à la prise en charge des frais de santé pour toute personne qui travaille ou réside en France de façon stable et régulière.",
   CMU: "Ancienne couverture maladie des personnes sans droits, remplacée par la PUMA (2016) et la complémentaire santé solidaire (2019).",
 
@@ -153,23 +166,27 @@ export const DEFINITIONS: Record<string, string> = {
 
   // Défense et sécurité
   LPM: "Loi qui fixe pour plusieurs années la trajectoire du budget des armées et leurs grands équipements.",
-  LOPMI: "Loi qui fixe pour 2023-2027 la trajectoire du budget du ministère de l'Intérieur (police, gendarmerie, sécurité civile).",
+  LOPMI:
+    "Loi qui fixe pour 2023-2027 la trajectoire du budget du ministère de l'Intérieur (police, gendarmerie, sécurité civile).",
   OPEX: "Interventions de l'armée française hors du territoire national.",
   SNLE: "Sous-marin à propulsion nucléaire qui porte les missiles de la dissuasion nucléaire.",
   OQTF: "Décision administrative qui ordonne à un étranger en situation irrégulière de quitter la France.",
 
   // Europe et international
   UE: "Union de 27 pays européens dotée d'un budget commun financé en partie par les contributions des États.",
-  PAC: "Politique européenne de soutien aux agriculteurs et au monde rural, premier poste du budget européen.",
-  FEAGA: "Fonds européen qui verse les aides directes de la PAC aux agriculteurs.",
+  PAC: "Politique européenne de soutien aux agriculteurs et au monde rural, l'un des deux premiers postes du budget européen avec la politique de cohésion.",
+  FEAGA:
+    "Fonds européen qui verse les aides directes de la PAC aux agriculteurs.",
   APD: "Aide financière des pays riches aux pays en développement (dons, prêts aidés).",
   OTAN: "Alliance militaire entre l'Amérique du Nord et des pays européens, dont la France.",
   OCDE: "Organisation internationale qui réunit 38 pays développés et publie des comparaisons économiques.",
 
   // Énergie, logement, environnement
-  ARENH: "Dispositif qui obligeait EDF à vendre une partie de son électricité nucléaire à prix fixe à ses concurrents, jusqu'à fin 2025.",
+  ARENH:
+    "Dispositif qui obligeait EDF à vendre une partie de son électricité nucléaire à prix fixe à ses concurrents, jusqu'à fin 2025.",
   CEE: "Obligation faite aux fournisseurs d'énergie de financer des économies d'énergie chez leurs clients (isolation, chauffage).",
-  MaPrimeRénov: "Aide de l'État, gérée par l'Anah, pour financer les travaux de rénovation énergétique des logements.",
+  MaPrimeRénov:
+    "Aide de l'État, gérée par l'Anah, pour financer les travaux de rénovation énergétique des logements.",
   DPE: "Étiquette de A à G qui mesure la performance énergétique d'un logement.",
   RLS: "Baisse de loyer que les bailleurs sociaux doivent accorder à leurs locataires qui touchent l'APL ; l'État réduit d'autant l'APL.",
   PTZ: "Prêt sans intérêts, aidé par l'État, pour l'achat d'un premier logement.",
@@ -208,7 +225,7 @@ export const ALIASES: Record<string, string> = {
   "prélèvement sur recettes": "Prélèvement sur recettes",
   "prélèvements obligatoires": "Prélèvements obligatoires",
   "report de charges": "Report de charges",
-  "péréquation": "Péréquation",
+  péréquation: "Péréquation",
   "point d'indice": "Point d'indice",
   "régime spécial": "Régime spécial de retraite",
   "régimes spéciaux": "Régime spécial de retraite",
@@ -227,23 +244,28 @@ export const ALIASES: Record<string, string> = {
 /** Documents officiels qui fondent certaines définitions. */
 export const LEXICON_SOURCES: Record<string, LexiconSource> = {
   "Niche fiscale": {
-    label: "Cour des comptes, note d'analyse de l'exécution budgétaire 2025 : les dépenses fiscales",
+    label:
+      "Cour des comptes, note d'analyse de l'exécution budgétaire 2025 : les dépenses fiscales",
     url: "https://www.ccomptes.fr/sites/default/files/2026-04/NEB-2026-Depenses-fiscales.pdf",
   },
   "Report de charges": {
-    label: "Sénat, rapport sur le projet de loi de finances pour 2026 (Défense)",
+    label:
+      "Sénat, rapport sur le projet de loi de finances pour 2026 (Défense)",
     url: "https://www.senat.fr/rap/l25-139-38/l25-139-38_mono.html",
   },
   "Prélèvement sur recettes": {
-    label: "Sénat, rapport sur le projet de loi de finances pour 2026 (participation de la France au budget de l'UE)",
+    label:
+      "Sénat, rapport sur le projet de loi de finances pour 2026 (participation de la France au budget de l'UE)",
     url: "https://www.senat.fr/rap/l25-139-22/l25-139-22_mono.html",
   },
   DILICO: {
-    label: "Sénat, rapport sur le projet de loi de finances pour 2026 (Relations avec les collectivités territoriales)",
+    label:
+      "Sénat, rapport sur le projet de loi de finances pour 2026 (Relations avec les collectivités territoriales)",
     url: "https://www.senat.fr/rap/l25-139-325/l25-139-325_mono.html",
   },
   "Concours financiers de l'État": {
-    label: "Sénat, rapport sur le projet de loi de finances pour 2026 (Relations avec les collectivités territoriales)",
+    label:
+      "Sénat, rapport sur le projet de loi de finances pour 2026 (Relations avec les collectivités territoriales)",
     url: "https://www.senat.fr/rap/l25-139-325/l25-139-325_mono.html",
   },
 };
