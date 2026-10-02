@@ -290,7 +290,8 @@
     "sourceDate": "2014-05-13",
     "level": 3,
     "tags": ["défense", "forces-speciales", "cos"],
-    "equivalence": "Un objectif de 4 000 militaires fixé en 2014, contre 3 000 auparavant"
+    "equivalence": "Un objectif de 4 000 militaires fixé en 2014, contre 3 000 auparavant",
+    "playable": false
   },
   {
     "id": "def-19",

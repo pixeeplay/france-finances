@@ -158,7 +158,8 @@
     "sourceDate": "2022-03",
     "level": 3,
     "tags": ["Ukraine", "économie", "croissance", "inflation"],
-    "equivalence": "Croissance prévue en 2022 : 3,4 % ou 2,8 % selon le scénario"
+    "equivalence": "Croissance prévue en 2022 : 3,4 % ou 2,8 % selon le scénario",
+    "playable": false
   },
   {
     "id": "ukr-11",

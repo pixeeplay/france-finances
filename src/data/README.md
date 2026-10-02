@@ -58,7 +58,7 @@ ne le permet pas, on déplace la carte la plus proche du seuil. Cartes déplacé
 
 Répartition obtenue : 135 cartes L1, 132 L2, 102 L3. Après la correction des montants lors du fact-check (octobre 2026),
 les niveaux ont été réalignés sur le critère de montant : 130 cartes L1, 130 L2, 109 L3.
-Après la reprise des sources et l'ajout de 10 cartes (octobre 2026) : 379 cartes, 130 L1, 133 L2, 116 L3.
+Après la reprise des sources et l'ajout de 10 cartes (octobre 2026) : 368 cartes jouables (130 L1, 133 L2, 105 L3), num-10 et num-18 supprimées (sans source chiffrée), 9 cartes sans montant officiel conservées hors jeu (`playable: false`, filtrées dans `src/data/index.ts`). Le minimum de 2 cartes par niveau et par deck est un avertissement, pas une erreur.
 
 Des cartes peuvent afficher un montant de 0 quand aucune source officielle ne chiffre le sujet : la description le dit
 explicitement (« pas de chiffrage officiel »). Le nombre total de cartes affiché dans l'interface est calculé

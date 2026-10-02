@@ -150,20 +150,6 @@
     "equivalence": "Prêts, garanties, fonds propres et aides à l'innovation"
   },
   {
-    "id": "num-10",
-    "title": "French Tech et écosystème startup",
-    "subtitle": "Une trentaine de licornes françaises",
-    "description": "La French Tech regroupe plusieurs dizaines de milliers de start-up et une trentaine de licornes (Doctolib, BlaBlaCar, Mistral AI). Les levées de fonds ont atteint un pic en 2022 avant de reculer. L'État soutient l'écosystème via la Mission French Tech, Bpifrance et France 2030.",
-    "amountBillions": 0.3,
-    "costPerCitizen": 4,
-    "deckId": "numerique",
-    "icon": "🚀",
-    "source": "Mission French Tech, DGE, France Digitale",
-    "level": 3,
-    "tags": ["numerique", "startups", "French Tech"],
-    "equivalence": "Une trentaine de licornes françaises"
-  },
-  {
     "id": "num-11",
     "title": "Câbles sous-marins : l'État rachète Alcatel Submarine Networks",
     "subtitle": "Souveraineté numérique et infrastructures critiques",
@@ -274,20 +260,6 @@
     "level": 3,
     "tags": ["numerique", "identite", "FranceConnect"],
     "equivalence": "La carte d'identité sur smartphone"
-  },
-  {
-    "id": "num-18",
-    "title": "Open data et données publiques",
-    "subtitle": "data.gouv.fr et accès ouverts aux données publiques (API)",
-    "description": "La France figure parmi les pays les mieux classés en Europe pour l'ouverture des données publiques (data.gouv.fr, API publiques). L'ouverture des données de santé et des algorithmes publics (Parcoursup) fait débat. Le coût de la politique d'open data est faible au regard des usages qu'elle permet.",
-    "amountBillions": 0.03,
-    "costPerCitizen": 0.4,
-    "deckId": "numerique",
-    "icon": "🚀",
-    "source": "Etalab, OCDE OUR Data Index, Commission européenne",
-    "level": 3,
-    "tags": ["numerique", "open data", "transparence"],
-    "equivalence": "Un coût public très faible"
   },
   {
     "id": "num-19",

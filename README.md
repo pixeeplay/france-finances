@@ -9,7 +9,7 @@ Le joueur swipe des cartes de depenses budgetaires francaises :
 
 ## Contenu
 
-- **379 cartes** reparties en **19 decks** (16 categories + 3 thematiques), niveaux L1=130, L2=133, L3=116
+- **368 cartes jouables** (+ 9 hors jeu `playable: false`, sans montant officiel) reparties en **19 decks** (16 categories + 3 thematiques), niveaux L1=130, L2=133, L3=105
 - **18 archetypes** budgetaires (8 L1, 6 L2, 4 L3)
 - **19 badges** de categorie + **12 achievements** generaux + **3 badges** de comprehension (quiz)
 
@@ -120,7 +120,7 @@ src/
 
 ## Donnees
 
-379 cartes, 19 decks (16 categories + 3 thematiques). Montants en milliards d'euros (Md EUR), sources officielles (PLF/LFSS 2025-2026, Cour des comptes, Senat, DREES). 377 cartes ont une `sourceUrl` precise. Dans l'interface, les compteurs sont calcules a partir des donnees (`TOTAL_CARD_COUNT`, `CATEGORY_COUNT` dans `src/lib/deckMeta.ts`). Regles et controles : `src/data/README.md` et `npm run data:check`.
+368 cartes jouables, 19 decks (16 categories + 3 thematiques). Montants en milliards d'euros (Md EUR), sources officielles (PLF/LFSS 2025-2026, Cour des comptes, Senat, DREES). Toutes les cartes jouables ont une `sourceUrl` precise. Dans l'interface, les compteurs sont calcules a partir des donnees (`TOTAL_CARD_COUNT`, `CATEGORY_COUNT` dans `src/lib/deckMeta.ts`). Regles et controles : `src/data/README.md` et `npm run data:check`.
 
 Le PLF / PLFSS 2027 (presente le 1er octobre 2026) n'est pas encore integre.
 

@@ -45,9 +45,13 @@ const allCards: Card[] = [
   ...ukraineCards,
 ] as Card[];
 
+/** Cartes conservées dans les données mais retirées du jeu (`playable: false`). */
+export const offPlayCards: Card[] = allCards.filter((card) => card.playable === false);
+
 const decksData: { decks: Deck[]; cards: Card[] } = {
   decks: decksMeta.decks as Deck[],
-  cards: allCards,
+  // Seules les cartes jouables alimentent le jeu, les pages et les compteurs.
+  cards: allCards.filter((card) => card.playable !== false),
 };
 
 export default decksData;

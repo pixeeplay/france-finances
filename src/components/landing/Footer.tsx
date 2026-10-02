@@ -60,7 +60,7 @@ export function Footer() {
 
         <div className="mt-4 text-center text-xs text-muted-foreground">
           <p>
-            Fait avec rigueur et un peu de tronçonneuse par{" "}
+            Fait avec rigueur par{" "}
             <a
               href="https://pixeeplay.fr"
               target="_blank"

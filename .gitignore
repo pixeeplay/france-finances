@@ -51,3 +51,6 @@ public/swe-worker-*.js
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Claude Code (worktrees des agents)
+.claude/

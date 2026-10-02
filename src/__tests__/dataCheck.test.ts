@@ -148,7 +148,7 @@ describe("checkData", () => {
     expect(report.errors.some((e) => e.includes("cards/sante.json introuvable"))).toBe(true);
     expect(report.errors.some((e) => e.includes("rangée dans cards/defense.json"))).toBe(true);
     expect(report.errors.some((e) => e.includes("cardCount=6 mais 5"))).toBe(true);
-    expect(report.errors.some((e) => e.includes("niveau 2"))).toBe(true);
+    expect(report.warnings.some((w) => w.includes("niveau 2"))).toBe(true);
   });
 
   it("signale les sources manquantes ou en page d'accueil en avertissement", () => {
@@ -184,5 +184,17 @@ describe("données réelles (src/data)", () => {
     });
     expect(report.errors).toEqual([]);
     expect(report.stats.cards).toBeGreaterThan(300);
+  });
+});
+
+describe("cartes hors jeu", () => {
+  it("les cartes playable:false sont gardées dans les données mais absentes du jeu", async () => {
+    const { default: data, offPlayCards } = await import("@/data");
+    expect(offPlayCards.length).toBeGreaterThan(0);
+    for (const card of offPlayCards) {
+      expect(card.amountBillions).toBe(0);
+      expect(data.cards.some((c) => c.id === card.id)).toBe(false);
+    }
+    expect(data.cards.every((c) => c.playable !== false)).toBe(true);
   });
 });

@@ -494,6 +494,7 @@
     "sourceDate": "2023-02",
     "level": 3,
     "tags": ["énergie", "geothermie", "renouvelable"],
-    "equivalence": "58 des 78 installations de géothermie profonde se trouvent en Île-de-France"
+    "equivalence": "58 des 78 installations de géothermie profonde se trouvent en Île-de-France",
+    "playable": false
   }
 ]

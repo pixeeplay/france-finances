@@ -1,6 +1,6 @@
 {
-  "name": "La Tronçonneuse de Poche",
-  "short_name": "Tronçonneuse",
+  "name": "Budget Swipe — france-finances.com",
+  "short_name": "Budget Swipe",
   "description": "Le Tinder des dépenses publiques — Swipe pour décider du budget de la France",
   "start_url": "/",
   "display": "standalone",

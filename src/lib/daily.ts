@@ -176,7 +176,7 @@ export function buildDailyShareText(params: {
 }): string {
   const { result, streak, url } = params;
   const lines = [
-    `La Tronçonneuse de Poche, deck du jour n°${getDailyNumber(result.dateKey)}`,
+    `Budget Swipe, deck du jour n°${getDailyNumber(result.dateKey)}`,
     directionsToSquares(result.directions),
     `Remis en question : ${shareNumber.format(result.cutBillions)} Md€ sur ${shareNumber.format(result.totalBillions)} Md€`,
   ];

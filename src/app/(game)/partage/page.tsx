@@ -30,13 +30,13 @@ export async function generateMetadata({
   })}`;
 
   return {
-    title: `${name} — La Tronçonneuse de Poche`,
+    title: `${name} — france-finances.com`,
     description: `J'ai tronçonné ${cutPercent}% du budget ! Mon archétype : ${name}. Et toi, quel serait le tien ?`,
     openGraph: {
-      title: `${name} — La Tronçonneuse de Poche`,
+      title: `${name} — france-finances.com`,
       description: `J'ai tronçonné ${cutPercent}% du budget sur ${totalCards} dépenses. Et toi ?`,
       url: SITE_URL,
-      siteName: "La Tronçonneuse de Poche",
+      siteName: "france-finances.com",
       images: [
         {
           url: ogImageUrl,
@@ -50,7 +50,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: `${name} — La Tronçonneuse de Poche`,
+      title: `${name} — france-finances.com`,
       description: `J'ai tronçonné ${cutPercent}% du budget ! Et toi ?`,
       images: [ogImageUrl],
     },

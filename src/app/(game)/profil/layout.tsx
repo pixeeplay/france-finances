@@ -50,19 +50,19 @@ export async function generateMetadata(): Promise<Metadata> {
   const ogImage = hasPlayed ? { url: ogImageUrl, width: 1200, height: 630 } : DEFAULT_OG_IMAGE;
 
   return {
-    title: `${name} — Profil — La Tronçonneuse de Poche`,
+    title: `${name} — Profil — france-finances.com`,
     description: `Archétype : ${name}. ${totalCards} cartes analysées, ${cutPercent}% à revoir. Découvre ton profil budgétaire !`,
     alternates: {
       canonical: "/profil",
     },
     openGraph: {
-      title: `${name} — La Tronçonneuse de Poche`,
+      title: `${name} — france-finances.com`,
       description: `${cutPercent}% du budget à revoir ! Mon archétype : ${name}. Et toi ?`,
       images: [ogImage],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${name} — La Tronçonneuse de Poche`,
+      title: `${name} — france-finances.com`,
       description: `${cutPercent}% du budget à revoir ! Mon archétype : ${name}. Et toi ?`,
       images: [ogImage.url],
     },

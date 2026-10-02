@@ -144,7 +144,7 @@ export function ResultScreen() {
           {cutPercent >= 50 ? <ChainsawIcon size={44} /> : <ShieldIcon size={44} />}
         </span>
         <div className="flex items-start justify-center gap-3">
-          <p className="kicker text-primary">Votre profil budgétaire</p>
+          <p className="kicker text-primary">Ton profil budgétaire</p>
           <button
             onClick={handleShare}
             className="absolute top-3 right-3 min-h-[44px] min-w-[44px] rounded-full flex items-center justify-center bg-background/60 hover:bg-muted transition-colors text-muted-foreground"

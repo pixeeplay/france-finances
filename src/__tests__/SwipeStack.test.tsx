@@ -202,7 +202,7 @@ describe("SwipeStack", () => {
       fireEvent.click(quitButton);
 
       expect(confirmSpy).toHaveBeenCalledWith(
-        "Quitter la session ? Votre progression sera perdue."
+        "Quitter la session ? Ta progression sera perdue."
       );
       // User cancelled, should NOT navigate
       expect(mockPush).not.toHaveBeenCalled();

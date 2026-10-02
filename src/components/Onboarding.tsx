@@ -15,7 +15,7 @@ const slides = [
   {
     id: "welcome",
     title: "Bienvenue",
-    subtitle: "La Tronçonneuse de Poche",
+    subtitle: "Budget Swipe",
     description: "Swipe les dépenses publiques françaises et découvre ton profil budgétaire.",
   },
   {

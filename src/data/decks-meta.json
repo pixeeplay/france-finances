@@ -6,7 +6,7 @@
       "description": "Budget des armées, renseignement, gendarmerie",
       "icon": "⚔️",
       "color": "#3B82F6",
-      "cardCount": 20,
+      "cardCount": 19,
       "image": "/categories/defense.svg",
       "type": "main"
     },
@@ -16,7 +16,7 @@
       "description": "Nucléaire, renouvelables, hydrogène, crise énergétique, précarité",
       "icon": "⚡",
       "color": "#F59E0B",
-      "cardCount": 30,
+      "cardCount": 29,
       "image": "/categories/energie.svg",
       "type": "main"
     },
@@ -66,7 +66,7 @@
       "description": "Administration, dette, collectivités, diplomatie",
       "icon": "🏛️",
       "color": "#64748B",
-      "cardCount": 20,
+      "cardCount": 19,
       "image": "/categories/etat.svg",
       "type": "main"
     },
@@ -96,7 +96,7 @@
       "description": "Logement social, hébergement, rénovation urbaine",
       "icon": "🏠",
       "color": "#F97316",
-      "cardCount": 18,
+      "cardCount": 16,
       "image": "/categories/logement.svg",
       "type": "main"
     },
@@ -116,7 +116,7 @@
       "description": "France 2030, spatial, IA, quantique",
       "icon": "🚀",
       "color": "#A855F7",
-      "cardCount": 20,
+      "cardCount": 18,
       "image": "/categories/numerique.svg",
       "type": "main"
     },
@@ -136,7 +136,7 @@
       "description": "Formation, primes, aides à l'emploi",
       "icon": "🏢",
       "color": "#0EA5E9",
-      "cardCount": 19,
+      "cardCount": 17,
       "image": "/categories/emploi.svg",
       "type": "main"
     },
@@ -166,7 +166,7 @@
       "description": "Combien coûte l'Europe ? Combien rapporte-t-elle ?",
       "icon": "🇪🇺",
       "color": "#3B82F6",
-      "cardCount": 11,
+      "cardCount": 10,
       "type": "thematic"
     },
     {
@@ -184,7 +184,7 @@
       "description": "Le coût du conflit pour la France depuis février 2022",
       "icon": "🇺🇦",
       "color": "#0EA5E9",
-      "cardCount": 11,
+      "cardCount": 10,
       "type": "thematic"
     }
   ]

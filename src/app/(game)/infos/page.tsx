@@ -23,7 +23,7 @@ export default function InfosPage() {
                 <ChainsawIcon size={28} />
               </div>
               <div>
-                <h2 className="text-lg font-bold">La Tronçonneuse de Poche</h2>
+                <h2 className="text-lg font-bold">Budget Swipe</h2>
                 <p className="text-xs text-muted-foreground">
                   par{" "}
                   <a href="https://pixeeplay.fr" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">pixeeplay</a>
@@ -198,7 +198,7 @@ export default function InfosPage() {
             Politique de confidentialit&eacute;
           </Link>
           <p className="text-xs text-muted-foreground">
-            Fait avec rigueur (et un peu de tronçonneuse).
+            Fait avec rigueur, à partir de sources officielles.
           </p>
         </div>
       </div>

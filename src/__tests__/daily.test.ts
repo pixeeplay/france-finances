@@ -155,7 +155,7 @@ describe("share text", () => {
       url: "https://france-finances.com/jeu/quotidien",
     });
     expect(text.split("\n")).toEqual([
-      "La Tronçonneuse de Poche, deck du jour n°2",
+      "Budget Swipe, deck du jour n°2",
       "🟥🟩🟥",
       "Remis en question : 34,3 Md€ sur 120 Md€",
       "Série : 3 jours",

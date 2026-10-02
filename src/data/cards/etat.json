@@ -338,6 +338,7 @@
     "sourceDate": "2023-02-02",
     "level": 3,
     "tags": ["état", "vehicules", "logistique"],
-    "equivalence": "74 % de véhicules électriques ou hybrides rechargeables parmi les achats de 2021"
+    "equivalence": "74 % de véhicules électriques ou hybrides rechargeables parmi les achats de 2021",
+    "playable": false
   }
 ]

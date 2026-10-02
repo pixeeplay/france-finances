@@ -215,7 +215,8 @@
     "sourceDate": "2024-11-19",
     "level": 3,
     "tags": ["logement", "Airbnb", "tourisme"],
-    "equivalence": "Loi Le Meur du 19 novembre 2024"
+    "equivalence": "Loi Le Meur du 19 novembre 2024",
+    "playable": false
   },
   {
     "id": "log-14",
@@ -263,7 +264,8 @@
     "sourceDate": "2026-02-03",
     "level": 3,
     "tags": ["logement", "mal-logement", "social"],
-    "equivalence": "350 000 personnes sans domicile (estimation de la Fondation, 2024)"
+    "equivalence": "350 000 personnes sans domicile (estimation de la Fondation, 2024)",
+    "playable": false
   },
   {
     "id": "log-17",

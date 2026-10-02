@@ -4,7 +4,7 @@ import { auth } from "@/auth";
 import { isAdmin } from "@/lib/admin";
 
 export const metadata: Metadata = {
-  title: "Admin — La Tronçonneuse de Poche",
+  title: "Admin — france-finances.com",
   robots: { index: false, follow: false },
 };
 

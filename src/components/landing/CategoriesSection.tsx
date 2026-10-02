@@ -13,7 +13,7 @@ export function CategoriesSection() {
           Explorer les catégories
         </h2>
         <p className="text-center text-muted-foreground mb-10 text-sm md:text-base">
-          {mainDecks.length} catégories de dépenses publiques à passer à la tronçonneuse
+          {mainDecks.length} catégories de dépenses publiques à explorer
         </p>
 
         {/* Mobile : défilement horizontal */}

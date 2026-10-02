@@ -158,7 +158,8 @@
     "sourceDate": "2023-06",
     "level": 3,
     "tags": ["Europe", "Brexit", "commerce"],
-    "equivalence": "Part de la France dans le financement de l'UE : 16,75 % en 2019, 18,52 % en 2023"
+    "equivalence": "Part de la France dans le financement de l'UE : 16,75 % en 2019, 18,52 % en 2023",
+    "playable": false
   },
   {
     "id": "fre-11",

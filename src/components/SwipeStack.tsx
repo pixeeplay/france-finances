@@ -81,7 +81,7 @@ export function SwipeStack({
 
   const handleQuitSession = useCallback(() => {
     if (session && !session.completed && session.votes.length > 0) {
-      if (!window.confirm("Quitter la session ? Votre progression sera perdue.")) {
+      if (!window.confirm("Quitter la session ? Ta progression sera perdue.")) {
         return;
       }
     }

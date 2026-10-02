@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Politique de confidentialité — La Tronçonneuse de Poche",
+  title: "Politique de confidentialité — france-finances.com",
   description: "Politique de confidentialité et protection des données personnelles.",
   alternates: {
     canonical: "/infos/confidentialite",

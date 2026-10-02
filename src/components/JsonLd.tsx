@@ -24,7 +24,7 @@ export function JsonLd() {
   const game = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    name: "La Tronçonneuse de Poche",
+    name: "Budget Swipe",
     url: "https://france-finances.com/jeu",
     description:
       "Mini-jeu interactif pour explorer les dépenses publiques françaises. Swipez pour garder ou remettre en question chaque poste budgétaire.",
@@ -38,7 +38,7 @@ export function JsonLd() {
   const app = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    name: "La Tronçonneuse de Poche",
+    name: "Budget Swipe",
     url: "https://france-finances.com",
     applicationCategory: "EducationalApplication",
     operatingSystem: "Any",

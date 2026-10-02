@@ -110,7 +110,7 @@ Phase 3  (plus tard) Feed / dossiers éditoriaux
 **B. Données** (en parallèle de A et C)
 
 - [x] Correction des 22 domaines accentués.
-- [ ] Une `sourceUrl` précise pour chaque carte : 377/379 faites (branche `refonte/cartes-sources`, 30 cartes reprises, montants alignés sur la source ou ramenés à 0 sans chiffrage officiel). Restent num-10 (French Tech) et num-18 (open data), sans source officielle chiffrée : suppression proposée.
+- [x] Une `sourceUrl` précise pour chaque carte jouable ; num-10 et num-18 supprimées, 9 cartes à 0 € passées hors jeu (`playable: false`) le 2026-10-02.
 - [x] 10 nouvelles cartes sourcées (379 au total) ; compteurs de cartes calculés dans le code (`TOTAL_CARD_COUNT`).
 - [x] Champs `year` et `sourceDate` ajoutés au schéma (182 cartes avec `year`).
 - [ ] Mise à jour PLF 2027 / PLFSS 2027 (présentés le 1er octobre 2026) : cartes `year: 2026`, `src/data/chiffres.ts`, `src/data/fiscal-2026.ts`.

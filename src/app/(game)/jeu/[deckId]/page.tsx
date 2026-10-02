@@ -27,7 +27,7 @@ export async function generateMetadata({
 
   if (deckId === DAILY_DECK_ID) {
     return {
-      title: "Deck du jour — La Tronçonneuse de Poche",
+      title: "Deck du jour — france-finances.com",
       description:
         "Les mêmes 10 dépenses publiques pour tout le monde, chaque jour. Garde ou remets en question, puis compare ton résultat.",
       alternates: {
@@ -38,7 +38,7 @@ export async function generateMetadata({
 
   if (!deck) {
     return {
-      title: "Mode aléatoire — La Tronçonneuse de Poche",
+      title: "Mode aléatoire — france-finances.com",
       description:
         "Swipe des dépenses publiques piochées au hasard : garde ou remet en question chaque poste budgétaire.",
       alternates: {
@@ -52,7 +52,7 @@ export async function generateMetadata({
     : `Swipe les dépenses ${deck.name.toLowerCase()} : garde ou remet en question chaque poste budgétaire.`;
 
   return {
-    title: `${deck.name} — La Tronçonneuse de Poche`,
+    title: `${deck.name} — france-finances.com`,
     description,
     alternates: {
       canonical: `/jeu/${deckId}`,

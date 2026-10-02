@@ -197,7 +197,8 @@
     "sourceDate": "2019-02",
     "level": 3,
     "tags": ["emploi", "detachement", "Europe"],
-    "equivalence": "516 000 salariés détachés déclarés en 2017"
+    "equivalence": "516 000 salariés détachés déclarés en 2017",
+    "playable": false
   },
   {
     "id": "emp-13",
@@ -263,7 +264,8 @@
     "sourceDate": "2026-09-10",
     "level": 3,
     "tags": ["emploi", "RSE", "egalite"],
-    "equivalence": "3,6 % d'écart de salaire à poste comparable dans le privé (2024)"
+    "equivalence": "3,6 % d'écart de salaire à poste comparable dans le privé (2024)",
+    "playable": false
   },
   {
     "id": "emp-17",

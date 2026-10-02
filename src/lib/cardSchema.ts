@@ -77,6 +77,8 @@ export const cardSchema = z.strictObject({
   level: z.union([z.literal(1), z.literal(2), z.literal(3)]),
   tags: z.array(nonEmpty).optional(),
   equivalence: z.string().optional(),
+  /** `false` : carte hors jeu (gardée dans les données, sans montant officiel). */
+  playable: z.literal(false).optional(),
 });
 
 export const deckSchema = z.strictObject({

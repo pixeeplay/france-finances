@@ -35,6 +35,11 @@ export interface Card {
   tags?: string[];
   /** Equivalence parlante (comparaison budgetaire) */
   equivalence?: string;
+  /**
+   * `false` : carte conservée dans les données mais retirée du jeu (pas de
+   * montant officiel chiffré). Absent = jouable.
+   */
+  playable?: false;
 }
 
 // === DECK ===
