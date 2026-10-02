@@ -8,8 +8,12 @@
  */
 import { z } from "zod";
 
-/** Population de référence pour le coût par habitant (INSEE, ~68 M). */
-export const POPULATION_REFERENCE = 68_000_000;
+/**
+ * Population de référence unique du site (coût par habitant des cartes, accroche
+ * de l'accueil, page /chiffres) : population au 1er janvier 2026, France entière
+ * (Insee, bilan démographique 2025).
+ */
+export const POPULATION_REFERENCE = 69_100_000;
 
 /** Coût par habitant attendu (en euros) pour un montant en milliards d'euros. */
 export function expectedCostPerCitizen(amountBillions: number): number {

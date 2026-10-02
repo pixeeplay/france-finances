@@ -146,7 +146,7 @@ src/
 
 369 cartes, 19 decks (16 categories + 3 thematiques).
 Donnees factuelles, sourcees, neutres. Pas de ton militant.
-Montants en milliards d'euros, cout par citoyen base sur ~68M habitants (`data:check` ; `/chiffres` utilise 69,1 M Insee 2026, a harmoniser).
+Montants en milliards d'euros, cout par habitant base sur 69,1 M habitants (Insee, 1er janvier 2026) : population unique `POPULATION_REFERENCE` (src/lib/cardSchema.ts), reprise par `data:check`, l'accueil et `/chiffres`.
 Sources : PLF/LFSS 2025-2026 (PLF/PLFSS 2027 presentes le 1er octobre 2026, pas encore integres), Cour des comptes, Senat, ministeres, vie-publique.fr.
 Chaque `sourceUrl` pointe vers un document precis (jamais une page d'accueil), en https et sans domaine accentue.
 Champ `level` des cartes : 1 grand poste, 2 dispositif, 3 niche/micro-audit (critere dans `src/data/README.md`).

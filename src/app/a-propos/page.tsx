@@ -28,7 +28,7 @@ export default function AProposPage() {
             Notre mission
           </h2>
           <p>
-            Le budget de la France représente environ 1 670 milliards d&apos;euros de dépenses publiques par an (2024).
+            Le budget de la France représente 1 671 milliards d&apos;euros de dépenses publiques par an (2024, Insee).
             Pourtant, peu de citoyens savent précisément où va cet argent.
             Notre objectif est de démocratiser l&apos;accès à cette information
             grâce à un format interactif et ludique.
@@ -42,7 +42,7 @@ export default function AProposPage() {
             Projet de Loi de Finances (PLF), Loi de Financement de la Sécurité Sociale (LFSS),
             rapports de la Cour des comptes, du Sénat et des ministères.
             Les montants sont exprimés en milliards d&apos;euros et le coût par citoyen
-            est calculé sur la base de 68 millions d&apos;habitants.
+            est calculé sur la base de 69,1 millions d&apos;habitants (Insee, population au 1er janvier 2026).
           </p>
 
           <h2 className="text-2xl font-extrabold text-foreground mt-8 mb-3">

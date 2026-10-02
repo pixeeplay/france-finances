@@ -10,7 +10,7 @@ import {
   type CardData,
 } from "./cardSchema";
 
-/** Écart toléré entre costPerCitizen et montant / 68 M : 1 € ou 5 %. */
+/** Écart toléré entre costPerCitizen et montant / 69,1 M : 1 € ou 5 %. */
 export const COST_TOLERANCE_ABSOLUTE = 1;
 export const COST_TOLERANCE_RELATIVE = 0.05;
 
@@ -164,7 +164,7 @@ export function checkData({ decksMeta, cardFiles, costExceptions = {} }: DataChe
       } else {
         const expected = expectedCostPerCitizen(card.amountBillions);
         errors.push(
-          `Carte ${card.id} : costPerCitizen=${card.costPerCitizen} incohérent avec ${card.amountBillions} Md€ / 68 M hab. (attendu ≈ ${expected.toFixed(1)})`,
+          `Carte ${card.id} : costPerCitizen=${card.costPerCitizen} incohérent avec ${card.amountBillions} Md€ / 69,1 M hab. (attendu ≈ ${expected.toFixed(1)})`,
         );
       }
     }

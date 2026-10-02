@@ -9,7 +9,7 @@ export interface Card {
   description: string;
   /** Montant en milliards d'euros */
   amountBillions: number;
-  /** Coût annuel par citoyen (basé sur ~68M habitants) */
+  /** Coût annuel par citoyen (population de référence : 69,1 M habitants) */
   costPerCitizen: number;
   /** Catégorie/deck d'appartenance */
   deckId: string;

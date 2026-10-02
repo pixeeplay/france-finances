@@ -5,6 +5,7 @@ import { ReinforceIcon } from "./ReinforceIcon";
 import { CategoryBadge } from "./icons/CategoryBadge";
 import { UiIcon } from "./icons/UiIcon";
 import { formatBillions } from "@/lib/format";
+import { POPULATION_REFERENCE } from "@/lib/cardSchema";
 
 export const recommendationLabels: Record<AuditRecommendation, string> = {
   keep: "Maintenir le budget",
@@ -53,7 +54,7 @@ export function AuditReport({ cards, auditResponses }: {
     else if (r.recommendation === "reinforce") totalSavings -= card.amountBillions * 0.15;
   }
 
-  const savingsPerCitizen = Math.round((totalSavings * 1e9) / 68e6);
+  const savingsPerCitizen = Math.round((totalSavings * 1e9) / POPULATION_REFERENCE);
 
   const summaryItems = [
     { label: "réductions", count: (counts["reduce"] || 0), color: "text-warning border-warning/20 bg-warning/10" },

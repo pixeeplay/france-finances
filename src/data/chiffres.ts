@@ -14,6 +14,7 @@
  */
 
 import type { DataSource } from "@/types/simulator";
+import { POPULATION_REFERENCE } from "@/lib/cardSchema";
 
 export interface ChiffresDataset<T> {
   /** Année (ou période) à laquelle se rapportent les montants */
@@ -49,7 +50,7 @@ export interface EuCountry {
 // === POPULATION ===
 
 /** Population au 1er janvier 2026 (France entière, Insee, bilan démographique 2025). */
-export const POPULATION_2026 = 69_100_000;
+export const POPULATION_2026 = POPULATION_REFERENCE;
 
 export const POPULATION_SOURCE: DataSource = {
   label: "Insee Première n° 2087 — Bilan démographique 2025",

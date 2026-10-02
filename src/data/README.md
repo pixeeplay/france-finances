@@ -7,17 +7,17 @@
 
 ## Champs d'une carte
 
-| Champ            | Obligatoire | Règle                                                                                                 |
-| ---------------- | ----------- | ----------------------------------------------------------------------------------------------------- |
-| `id`             | oui         | `xxx-00`, unique                                                                                      |
-| `title`          | oui         | unique (comparaison sans casse, accents ni ponctuation)                                               |
-| `amountBillions` | oui         | milliards d'euros, ≥ 0                                                                                |
-| `costPerCitizen` | oui         | euros par habitant ≈ `amountBillions × 1e9 / 68e6` (tolérance 1 € ou 5 %), sinon exception documentée |
-| `source`         | oui         | institutions citées, dont celle de `sourceUrl`                                                        |
-| `sourceUrl`      | non         | `https://`, domaine ASCII (pas de `défense.gouv.fr`), document ou page précise                        |
-| `year`           | non         | année budgétaire du montant (ex. `2026` pour la LFI 2026)                                             |
-| `sourceDate`     | non         | date de publication de la source : `AAAA`, `AAAA-MM` ou `AAAA-MM-JJ`                                  |
-| `level`          | oui         | 1, 2 ou 3 (voir ci-dessous)                                                                           |
+| Champ            | Obligatoire | Règle                                                                                                   |
+| ---------------- | ----------- | ------------------------------------------------------------------------------------------------------- |
+| `id`             | oui         | `xxx-00`, unique                                                                                        |
+| `title`          | oui         | unique (comparaison sans casse, accents ni ponctuation)                                                 |
+| `amountBillions` | oui         | milliards d'euros, ≥ 0                                                                                  |
+| `costPerCitizen` | oui         | euros par habitant ≈ `amountBillions × 1e9 / 69,1e6` (tolérance 1 € ou 5 %), sinon exception documentée |
+| `source`         | oui         | institutions citées, dont celle de `sourceUrl`                                                          |
+| `sourceUrl`      | non         | `https://`, domaine ASCII (pas de `défense.gouv.fr`), document ou page précise                          |
+| `year`           | non         | année budgétaire du montant (ex. `2026` pour la LFI 2026)                                               |
+| `sourceDate`     | non         | date de publication de la source : `AAAA`, `AAAA-MM` ou `AAAA-MM-JJ`                                    |
+| `level`          | oui         | 1, 2 ou 3 (voir ci-dessous)                                                                             |
 
 Les champs optionnels sont absents plutôt que `null`. Toute clé non prévue par le schéma est une erreur.
 
@@ -64,12 +64,12 @@ Pour un futur filtrage par niveau de jeu, tirer les cartes de niveau ≤ au nive
 
 ## Coût par habitant
 
-Le coût par habitant est dérivé du montant (population de référence : 68 millions).
+Le coût par habitant est dérivé du montant (population de référence : 69,1 millions, Insee au 1er janvier 2026).
 Les écarts sont admis seulement s'ils sont listés dans `data-check-exceptions.json` avec leur raison :
 
 - « non budgétaire » : le montant n'est pas une dépense publique (flux privés, avoirs gelés, investissement privé…) ;
 - « budget européen » : le montant est un budget de l'UE ; le coût par habitant est la part française du financement
-  (clé de contribution de la France), rapportée à 68 millions d'habitants ;
+  (clé de contribution de la France), rapportée à 69,1 millions d'habitants ;
 - « à vérifier » : montant et coût par habitant ne portent pas sur la même grandeur ; à trancher lors du fact-check.
 
 `data:check` signale aussi une exception devenue inutile.

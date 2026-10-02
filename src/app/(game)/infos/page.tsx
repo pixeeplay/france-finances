@@ -97,7 +97,7 @@ export default function InfosPage() {
             <p className="text-sm text-muted-foreground leading-relaxed">
               Toutes les données sont factuelles, sourcées et neutres.
               Pas de ton militant. Les montants sont en milliards d&apos;euros,
-              le coût par citoyen est basé sur ~68M d&apos;habitants.
+              le coût par habitant est calculé sur 69,1 millions d&apos;habitants (Insee, 1er janvier 2026).
             </p>
             <div className="flex flex-col gap-2">
               {[

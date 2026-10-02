@@ -78,11 +78,11 @@ describe("sourceUrlSchema", () => {
 });
 
 describe("helpers", () => {
-  it("calcule le coût par habitant sur 68 M d'habitants", () => {
-    expect(expectedCostPerCitizen(6.8)).toBeCloseTo(100);
-    expect(isCostCoherent(6.8, 100)).toBe(true);
-    expect(isCostCoherent(6.8, 104)).toBe(true); // tolérance 5 %
-    expect(isCostCoherent(6.8, 120)).toBe(false);
+  it("calcule le coût par habitant sur 69,1 M d'habitants", () => {
+    expect(expectedCostPerCitizen(6.91)).toBeCloseTo(100);
+    expect(isCostCoherent(6.91, 100)).toBe(true);
+    expect(isCostCoherent(6.91, 104)).toBe(true); // tolérance 5 %
+    expect(isCostCoherent(6.91, 120)).toBe(false);
     expect(isCostCoherent(0.03, 1)).toBe(true); // tolérance 1 €
   });
 

@@ -1,16 +1,21 @@
 /**
  * Chiffre d'ouverture de la landing (« un chiffre fort »).
- * Dépense publique totale (APU : État, Sécurité sociale, collectivités).
- * À vérifier/actualiser à chaque publication des comptes nationaux INSEE.
+ * Dépense publique totale (APU : État, Sécurité sociale, collectivités),
+ * reprise de la même série que la page /chiffres (dépense par fonction, COFOG)
+ * et rapportée à la même population : un seul chiffre sur tout le site.
  */
+import { POPULATION_2026, PUBLIC_SPENDING_BY_FUNCTION } from "./chiffres";
+
+const total = PUBLIC_SPENDING_BY_FUNCTION.items.reduce((sum, item) => sum + item.amountBn, 0);
+
 export const HEADLINE_FIGURE = {
   /** Montant en milliards d'euros */
-  amountBillions: 1670,
+  amountBillions: Math.round(total),
   /** Année des comptes */
-  year: 2024,
-  /** Population de référence du jeu (coût par habitant) */
-  population: 68_000_000,
-  source: "INSEE, comptes nationaux des administrations publiques 2024",
+  year: Number(PUBLIC_SPENDING_BY_FUNCTION.period),
+  /** Population de référence du site (coût par habitant) */
+  population: POPULATION_2026,
+  source: "Insee, dépenses publiques par fonction en 2024",
 } as const;
 
 /** Coût par habitant arrondi à la centaine d'euros. */

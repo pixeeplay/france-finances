@@ -13,14 +13,14 @@ const sources = [
 
 export function SourcesSection() {
   return (
-    <section id="sources" aria-labelledby="sources-title" className="section-padding">
+    <section id="sources" aria-labelledby="sources-title" className="section-padding section-deep">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
         <h2 id="sources-title" className="text-3xl md:text-4xl text-brand-fg dark:text-foreground mb-4">
           Toutes nos données sont sourcées.
         </h2>
         <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-8">
           Chaque carte cite ses sources officielles. Montants en milliards d&apos;euros par an, coût par
-          habitant calculé sur environ 68&nbsp;millions d&apos;habitants. Le jeu ne dit pas ce qu&apos;il
+          habitant calculé sur 69,1&nbsp;millions d&apos;habitants (Insee, 1er janvier 2026). Le jeu ne dit pas ce qu&apos;il
           faut couper&nbsp;: il montre ce que coûte chaque politique publique.
         </p>
 
@@ -32,8 +32,9 @@ export function SourcesSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 title={s.title}
-                className="inline-flex items-center min-h-[44px] px-5 rounded-xl bg-card border border-border text-sm font-medium text-muted-foreground hover:border-brand-fg/50 hover:text-foreground transition-colors"
+                className="inline-flex items-center gap-2 min-h-[44px] px-4 rounded-xl bg-card border border-border text-sm font-semibold text-foreground hover:border-brand-fg/60 transition-colors"
               >
+                <span className="h-2 w-2 rounded-full bg-brand-fg" aria-hidden="true" />
                 {s.name}
                 <span className="sr-only"> (nouvel onglet)</span>
               </a>
