@@ -73,9 +73,9 @@ export function ArchetypesTab({
 
       {/* Radar: Tes choix vs la communauté */}
       {radarAxes.length >= 3 && (
-        <div className="flex flex-col gap-4 border-t-2 border-foreground pt-3">
+        <div className="flex flex-col gap-4 border-t border-border pt-3">
           <div>
-            <h2 className="text-xl font-semibold">Tes choix vs la communauté</h2>
+            <h2 className="text-xl font-extrabold">Tes choix vs la communauté</h2>
             <p className="text-sm text-muted-foreground mt-1">
               % de coupes par catégorie
             </p>
@@ -85,9 +85,9 @@ export function ArchetypesTab({
       )}
 
       {/* Distribution */}
-      <div className="flex flex-col gap-4 border-t-2 border-foreground pt-3">
+      <div className="flex flex-col gap-4 border-t border-border pt-3">
         <div>
-          <h2 className="text-xl font-semibold">Distribution de la communauté</h2>
+          <h2 className="text-xl font-extrabold">Distribution de la communauté</h2>
           <p className="text-sm text-muted-foreground mt-1">
             L&apos;équilibre des forces budgétaires
           </p>
@@ -96,18 +96,18 @@ export function ArchetypesTab({
           {distribution.map((a) => {
             const isPlayer = !!(playerArchetypeId && a.ids.includes(playerArchetypeId));
             return (
-              <div key={a.name} className={`flex flex-col gap-1.5 rounded-md px-2 py-1.5 -mx-2 transition-colors ${isPlayer ? "bg-muted/60" : ""}`}>
+              <div key={a.name} className={`flex flex-col gap-1.5 rounded-xl px-2 py-1.5 -mx-2 transition-colors ${isPlayer ? "bg-muted/60" : ""}`}>
                 <div className="flex justify-between items-baseline text-sm font-medium">
                   <span className="flex items-center gap-2">
                     <span aria-hidden="true" className="shrink-0"><FamilyIcon icon={a.icon} /></span>
                     {a.name}
-                    {isPlayer && <span className="kicker text-primary border border-primary/50 px-1.5 rounded-sm">Toi</span>}
+                    {isPlayer && <span className="kicker text-primary border border-primary/50 px-1.5 rounded-full">Toi</span>}
                   </span>
-                  <span className="numeral text-base font-semibold">{a.percent}&nbsp;%</span>
+                  <span className="numeral text-base">{a.percent}&nbsp;%</span>
                 </div>
-                <div className="w-full h-2.5 bg-muted rounded-[1px] overflow-hidden" aria-hidden="true">
+                <div className="w-full h-2.5 bg-muted rounded-full overflow-hidden" aria-hidden="true">
                   <div
-                    className="h-full bg-foreground/70 rounded-[1px]"
+                    className="h-full bg-primary rounded-full"
                     style={{ width: `${a.percent}%` }}
                   />
                 </div>

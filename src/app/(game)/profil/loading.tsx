@@ -19,7 +19,7 @@ export default function ProfilLoading() {
         {/* Tabs */}
         <div className="flex w-full gap-1 p-1 bg-card/50 rounded-lg mb-3">
           {[1, 2, 3].map((i) => (
-            <div key={i} className="flex-1 h-8 rounded-md bg-muted" />
+            <div key={i} className="flex-1 h-8 rounded-xl bg-muted" />
           ))}
         </div>
       </header>

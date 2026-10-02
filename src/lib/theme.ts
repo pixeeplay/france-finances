@@ -1,7 +1,7 @@
 /** Couleur de la barre système (meta theme-color) selon le thème, alignée sur --background. */
 export const THEME_COLORS = {
   dark: "#0F172A",
-  light: "#FAFAF7",
+  light: "#FFFFFF",
 } as const;
 
 /**

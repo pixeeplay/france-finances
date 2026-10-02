@@ -4,95 +4,99 @@ import { ChainsawIcon } from "@/components/ChainsawIcon";
 import { ReinforceIcon } from "@/components/ReinforceIcon";
 import { StopIcon } from "@/components/StopIcon";
 
-interface Direction {
-  gesture: string;
-  arrow: string;
-  label: string;
-  meaning: string;
-  icon: ReactNode;
-  /** Couleur de sens (pastille) */
-  swatch: string;
-  level: string;
+function IconProfile() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="12" cy="8" r="4" />
+      <path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1" />
+      <path d="m16.5 3.5 1.5-1.5M19 6h2" />
+    </svg>
+  );
 }
 
-// Reflète les couleurs réellement utilisées en jeu (SwipeCard, SwipeStack).
-const DIRECTIONS: Direction[] = [
+function IconChart() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M3 21h18" />
+      <rect x="5" y="11" width="3" height="7" rx="1" />
+      <rect x="10.5" y="6" width="3" height="12" rx="1" />
+      <rect x="16" y="3" width="3" height="15" rx="1" />
+    </svg>
+  );
+}
+
+interface Step {
+  title: string;
+  description: string;
+  icon: ReactNode;
+  /** Pastille colorée (fond teinté + couleur du pictogramme) */
+  chip: string;
+}
+
+const STEPS: Step[] = [
   {
-    gesture: "la gauche",
-    arrow: "\u2190",
-    label: "OK",
-    meaning: "La dépense vous paraît justifiée.",
-    icon: <ShieldIcon size={18} className="text-primary" />,
-    swatch: "bg-primary",
-    level: "Tous niveaux",
+    title: "Swipez",
+    description: "Chaque carte = une dépense publique réelle. Gardez-la ou remettez-la en question.",
+    icon: <ChainsawIcon size={30} />,
+    chip: "bg-danger/15",
   },
   {
-    gesture: "la droite",
-    arrow: "\u2192",
-    label: "À revoir",
-    meaning: "Elle mérite d\u2019être réexaminée.",
-    icon: <ChainsawIcon size={18} />,
-    swatch: "bg-danger",
-    level: "Niveau 1",
+    title: "Découvrez",
+    description: "Votre profil budgétaire et comment vous vous situez par rapport aux autres joueurs.",
+    icon: <IconProfile />,
+    chip: "bg-info/15 text-info",
   },
   {
-    gesture: "la droite",
-    arrow: "\u2192",
-    label: "Réduire",
-    meaning: "Son montant pourrait baisser.",
-    icon: <ChainsawIcon size={18} variant="orange" />,
-    swatch: "bg-warning",
-    level: "Niveau 2",
-  },
-  {
-    gesture: "le haut",
-    arrow: "\u2191",
-    label: "Renforcer",
-    meaning: "Il faudrait y consacrer davantage.",
-    icon: <ReinforceIcon size={18} />,
-    swatch: "bg-info",
-    level: "Niveau 2",
-  },
-  {
-    gesture: "le bas",
-    arrow: "\u2193",
-    label: "Injustifié",
-    meaning: "Elle ne devrait pas exister sous cette forme.",
-    icon: <StopIcon size={18} />,
-    swatch: "bg-danger",
-    level: "Niveau 2",
+    title: "Approfondissez",
+    description: "Explorez les chiffres officiels, simulez votre contribution, passez au niveau supérieur.",
+    icon: <IconChart />,
+    chip: "bg-warning/15 text-warning",
   },
 ];
 
-/** Mode d'emploi : la légende des couleurs est aussi celle du jeu. */
+const GESTURES = [
+  { label: "OK", hint: "vers la gauche", icon: <ShieldIcon size={16} />, className: "text-primary bg-primary/12 border-primary/30" },
+  { label: "À revoir", hint: "vers la droite", icon: <ChainsawIcon size={16} />, className: "text-danger bg-danger/12 border-danger/30" },
+  { label: "Renforcer", hint: "vers le haut (niv. 2)", icon: <ReinforceIcon size={16} />, className: "text-info bg-info/12 border-info/30" },
+  { label: "Injustifié", hint: "vers le bas (niv. 2)", icon: <StopIcon size={16} />, className: "text-danger bg-danger/12 border-danger/30" },
+];
+
 export function HowItWorks() {
   return (
-    <section id="comment-ca-marche" aria-labelledby="howto-title" className="border-b border-border">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 md:py-16 grid gap-8 lg:grid-cols-12">
-        <header className="lg:col-span-4">
-          <p className="kicker text-muted-foreground mb-3">Mode d&apos;emploi</p>
-          <h2 id="howto-title" className="text-3xl md:text-4xl font-semibold leading-tight">
-            Une carte, une dépense, un geste
-          </h2>
-          <p className="mt-4 text-muted-foreground leading-relaxed">
-            Chaque partie compte dix à douze cartes. À la fin, vous obtenez votre profil
-            budgétaire et la comparaison avec les autres joueurs. Le niveau&nbsp;3 ajoute
-            un micro-audit de chaque dépense.
-          </p>
-        </header>
+    <section id="comment-ca-marche" aria-labelledby="howto-title" className="section-padding bg-section">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">
+        <h2 id="howto-title" className="text-3xl md:text-4xl text-center mb-12 text-brand-fg dark:text-foreground">
+          Comment ça marche&nbsp;?
+        </h2>
 
-        <dl className="lg:col-span-8 grid sm:grid-cols-2 sm:gap-x-8 border-t border-border">
-          {DIRECTIONS.map((d) => (
-            <div key={d.label} className="py-4 border-b border-border">
-              <dt className="flex items-center gap-2">
-                <span className={`mr-2 h-3 w-3 shrink-0 rounded-[2px] ${d.swatch}`} aria-hidden="true" />
-                {d.icon}
-                <span className="font-serif text-xl font-semibold">{d.label}</span>
+        <ol className="grid md:grid-cols-3 gap-10 md:gap-8">
+          {STEPS.map((step, i) => (
+            <li key={step.title} className="text-center">
+              <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5 ${step.chip}`} aria-hidden="true">
+                {step.icon}
+              </div>
+              <p className="kicker text-muted-foreground mb-2">Étape {i + 1}</p>
+              <h3 className="text-xl mb-2 text-foreground">{step.title}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed max-w-xs mx-auto">{step.description}</p>
+            </li>
+          ))}
+        </ol>
+
+        <h3 className="sr-only">Les gestes du jeu</h3>
+        <dl className="mt-12 flex flex-wrap items-center justify-center gap-2">
+          {GESTURES.map((g) => (
+            <div
+              key={g.label}
+              className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm font-semibold ${g.className}`}
+            >
+              <dt className="inline-flex items-center gap-1.5">
+                <span aria-hidden="true" className="inline-flex">{g.icon}</span>
+                {g.label}
               </dt>
-              <dd className="mt-1 pl-7 text-sm text-muted-foreground">{d.meaning}</dd>
-              <dd className="mt-2 pl-7 kicker text-muted-foreground">
-                <span aria-hidden="true">{d.arrow} </span>
-                Glisser vers {d.gesture} · {d.level}
+              <dd className="font-normal text-muted-foreground">
+                <span className="sr-only">: glisser </span>
+                <span aria-hidden="true">· </span>
+                {g.hint}
               </dd>
             </div>
           ))}

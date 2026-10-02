@@ -68,7 +68,7 @@ export function SessionFeedbackBar({ lastVote, counts, cutBillions, budgetTarget
   const visible = lastVote !== null && dismissedAt !== lastVote.at;
 
   return (
-    <div className="relative mx-4 mb-2 flex h-11 items-center gap-3 border-y border-border">
+    <div className="relative mx-4 mb-2 flex h-12 items-center gap-3 overflow-hidden rounded-2xl bg-card border border-border pl-3 pr-2">
       <div className="min-w-0 flex-1" aria-hidden="true">
         {visible && lastVote ? <FeedbackLines lastVote={lastVote} counts={counts} /> : null}
       </div>
@@ -76,17 +76,17 @@ export function SessionFeedbackBar({ lastVote, counts, cutBillions, budgetTarget
         <BudgetCounter cutBillions={cutBillions} target={budgetTarget} />
       ) : (
         <p
-          className="shrink-0 flex flex-col items-end leading-none"
+          className="shrink-0 flex flex-col items-end leading-none rounded-xl bg-danger/12 px-2.5 py-1.5"
           data-testid="session-cut-counter"
         >
-          <span className="kicker flex items-center gap-1 text-muted-foreground">
+          <span className="kicker text-[10px] leading-3 flex items-center gap-1 text-danger">
             <span aria-hidden="true" className="shrink-0">
               <ChainsawIcon size={11} />
             </span>
             Tronçonné
           </span>
           <span className="sr-only"> cette session : </span>
-          <span className="numeral mt-0.5 text-base font-semibold text-danger">{formatBillions(cutBillions)}</span>
+          <span className="numeral text-base leading-5 text-danger">{formatBillions(cutBillions)}</span>
         </p>
       )}
     </div>
@@ -99,15 +99,15 @@ function BudgetCounter({ cutBillions, target }: { cutBillions: number; target: n
   const progress = Math.min(cutBillions / target, 1) * 100;
   return (
     <>
-      <p className="shrink-0 flex flex-col items-end leading-none" data-testid="budget-counter">
-        <span className={`kicker ${reached ? "text-primary" : "text-muted-foreground"}`}>
+      <p className="shrink-0 flex flex-col items-end leading-none rounded-xl bg-warning/12 px-2.5 py-1.5" data-testid="budget-counter">
+        <span className={`kicker text-[10px] leading-3 ${reached ? "text-primary" : "text-warning"}`}>
           {reached ? "Objectif atteint" : "Objectif économies"}
         </span>
-        <span className={`numeral mt-0.5 text-base font-semibold ${reached ? "text-primary" : "text-foreground"}`}>
+        <span className={`numeral text-base leading-5 ${reached ? "text-primary" : "text-foreground"}`}>
           {cutBillions.toFixed(1)} / {target}&nbsp;Md€
         </span>
       </p>
-      <span className="absolute inset-x-0 -bottom-px h-0.5 bg-muted" aria-hidden="true">
+      <span className="absolute inset-x-0 bottom-0 h-1 bg-muted" aria-hidden="true">
         <span
           className={`block h-full transition-[width] duration-500 ${reached ? "bg-primary" : "bg-warning"}`}
           style={{ width: `${progress}%` }}
@@ -124,13 +124,13 @@ function FeedbackLines({ lastVote, counts }: { lastVote: LastVote; counts: Commu
 
   return (
     <div className="animate-fade-in" data-testid="swipe-feedback">
-      <p className="flex items-center gap-1.5 text-xs font-medium leading-4 text-foreground">
+      <p className="flex items-center gap-1.5 text-xs font-bold leading-4 text-foreground">
         {side === "cut" ? (
-          <span className="shrink-0">
+          <span className="shrink-0 flex h-5 w-5 items-center justify-center rounded-full bg-danger/15">
             <ChainsawIcon size={12} />
           </span>
         ) : (
-          <span className="shrink-0 text-primary">
+          <span className="shrink-0 flex h-5 w-5 items-center justify-center rounded-full bg-primary/15 text-primary">
             <ShieldIcon size={12} />
           </span>
         )}

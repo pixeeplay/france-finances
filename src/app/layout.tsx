@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Source_Serif_4, Schibsted_Grotesk, IBM_Plex_Mono } from "next/font/google";
+import { Outfit, Geist, Geist_Mono } from "next/font/google";
 import { AuthProvider } from "@/components/AuthProvider";
 import { AppInit } from "@/components/AppInit";
 import { PageviewTracker } from "@/components/PageviewTracker";
@@ -7,29 +7,27 @@ import { JsonLd } from "@/components/JsonLd";
 import { THEME_COLORS } from "@/lib/theme";
 import "./globals.css";
 
-// Serif éditoriale : titres et chiffres forts, toujours en semibold.
-// Une seule graisse statique, sans l'axe optique : bien plus léger à
-// précharger que le fichier variable complet (graisses 200-900 + opsz).
-const serif = Source_Serif_4({
-  variable: "--ff-serif",
+// Police d'affichage ronde et très grasse : titres et chiffres-clés.
+// Seules les graisses utilisées : 700 (bold), 800 (titres), 900 (hero).
+const display = Outfit({
+  variable: "--ff-display",
   subsets: ["latin"],
-  weight: ["600"],
+  weight: ["700", "800", "900"],
   display: "swap",
 });
 
-// Grotesk : texte courant et interface
-const grotesk = Schibsted_Grotesk({
-  variable: "--ff-grotesk",
+// Texte courant et interface (un seul fichier variable).
+const sans = Geist({
+  variable: "--ff-sans",
   subsets: ["latin"],
   display: "swap",
 });
 
-// Mono : étiquettes, axes, sources. Non préchargée : elle ne sert qu'aux
-// petits textes (kicker), le repli système suffit le temps du chargement.
-const mono = IBM_Plex_Mono({
+// Mono : rares usages (sources, tableaux). Non préchargée : le repli
+// système suffit le temps du chargement.
+const mono = Geist_Mono({
   variable: "--ff-mono",
   subsets: ["latin"],
-  weight: ["400", "500"],
   display: "swap",
   preload: false,
 });
@@ -106,7 +104,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${serif.variable} ${grotesk.variable} ${mono.variable} antialiased`}
+        className={`${display.variable} ${sans.variable} ${mono.variable} antialiased`}
       >
         <AuthProvider>
           <AppInit />

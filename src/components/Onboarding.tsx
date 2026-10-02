@@ -111,7 +111,7 @@ export function Onboarding({ onDone }: OnboardingProps) {
           >
             {/* Slide-specific illustration */}
             {slide.id === "welcome" && (
-              <div className="w-24 h-24 bg-card rounded-md flex items-center justify-center mb-8 border border-border" aria-hidden="true">
+              <div className="w-24 h-24 bg-card rounded-3xl flex items-center justify-center mb-8 border border-border shadow-(--shadow-card)" aria-hidden="true">
                 <ChainsawIcon size={56} />
               </div>
             )}
@@ -119,14 +119,14 @@ export function Onboarding({ onDone }: OnboardingProps) {
             {slide.id === "howto" && (
               <div className="flex items-center gap-6 mb-8" aria-hidden="true">
                 <div className="flex flex-col items-center gap-2">
-                  <div className="w-16 h-16 rounded-full border-2 border-primary flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-primary/15 border-[3px] border-primary flex items-center justify-center">
                     <ShieldIcon size={32} className="text-primary" />
                   </div>
                   <span className="kicker text-primary">← OK</span>
                 </div>
-                <div className="font-serif text-2xl text-muted-foreground">ou</div>
+                <div className="font-heading font-extrabold text-2xl text-muted-foreground">ou</div>
                 <div className="flex flex-col items-center gap-2">
-                  <div className="w-16 h-16 rounded-full border-2 border-danger flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-danger/15 border-[3px] border-danger flex items-center justify-center">
                     <ChainsawIcon size={32} />
                   </div>
                   <span className="kicker text-danger">À revoir →</span>
@@ -135,15 +135,15 @@ export function Onboarding({ onDone }: OnboardingProps) {
             )}
 
             {slide.id === "go" && (
-              <div className="w-24 h-24 bg-card rounded-md flex items-center justify-center mb-8 border border-border text-foreground" aria-hidden="true">
+              <div className="w-24 h-24 bg-card rounded-3xl flex items-center justify-center mb-8 border border-border text-info shadow-(--shadow-card)" aria-hidden="true">
                 <UiIcon name="target" size={52} />
               </div>
             )}
 
-            <p className="kicker text-muted-foreground mb-3">
+            <p className="kicker text-primary mb-3">
               {slide.subtitle}
             </p>
-            <h1 className="text-4xl font-semibold leading-tight text-foreground mb-4">
+            <h1 className="text-4xl font-extrabold leading-tight text-foreground mb-4">
               {slide.title}
             </h1>
             <p className="text-muted-foreground text-base max-w-[280px] leading-relaxed">
@@ -160,9 +160,9 @@ export function Onboarding({ onDone }: OnboardingProps) {
           {slides.map((_, i) => (
             <div
               key={i}
-              className={`h-1.5 rounded-[1px] transition-all duration-300 ${
+              className={`h-1.5 rounded-full transition-all duration-300 ${
                 i === current
-                  ? "w-8 bg-foreground"
+                  ? "w-8 bg-primary"
                   : "w-2 bg-muted"
               }`}
             />
@@ -172,10 +172,10 @@ export function Onboarding({ onDone }: OnboardingProps) {
         {/* CTA */}
         <button
           onClick={goNext}
-          className={`w-full min-h-[48px] py-4 rounded-md font-semibold text-lg transition-colors ${
+          className={`w-full min-h-[52px] py-4 rounded-2xl font-heading font-bold text-lg transition-colors ${
             isLast
-              ? "bg-foreground text-background hover:opacity-90"
-              : "border border-foreground/40 text-foreground hover:bg-muted"
+              ? "bg-brand text-white hover:bg-brand-hover"
+              : "bg-card border border-border text-foreground hover:bg-muted"
           }`}
         >
           {isLast ? "Commencer" : "Suivant"}

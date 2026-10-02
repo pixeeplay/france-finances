@@ -49,7 +49,7 @@ export function DailySquares({ directions }: { directions: readonly VoteDirectio
   return (
     <div className="flex gap-1" role="img" aria-label={label}>
       {directions.map((d, i) => (
-        <span key={i} className={`flex h-5 w-5 items-center justify-center rounded-[2px] text-background ${SQUARE_CLASS[d]}`}>
+        <span key={i} className={`flex h-5 w-5 items-center justify-center rounded-md text-background ${SQUARE_CLASS[d]}`}>
           <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
             <path d={SQUARE_GLYPH[d]} />
           </svg>
@@ -74,13 +74,13 @@ export function DailyDeckEntry() {
   return (
     <section
       aria-labelledby="daily-deck-title"
-      className="mx-4 my-4 border-t-2 border-foreground pt-3"
+      className="mx-4 my-4 rounded-2xl border border-primary/30 bg-primary/10 p-4"
       data-testid="daily-deck-entry"
     >
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
-          <p className="kicker text-muted-foreground">Chaque jour à minuit</p>
-          <h2 id="daily-deck-title" className="mt-1 text-2xl font-semibold leading-tight">
+          <p className="kicker text-primary">Chaque jour à minuit</p>
+          <h2 id="daily-deck-title" className="mt-1 text-2xl font-extrabold leading-tight">
             Deck du jour{todayKey ? ` n°${getDailyNumber(todayKey)}` : ""}
           </h2>
           <p className="text-sm text-muted-foreground mt-1">
@@ -88,8 +88,8 @@ export function DailyDeckEntry() {
           </p>
         </div>
         {hydrated && streak > 0 && (
-          <p className="shrink-0 text-right border-l border-border pl-3">
-            <span className="block numeral text-3xl font-semibold leading-none text-foreground">{streak}</span>
+          <p className="shrink-0 text-center rounded-xl bg-warning/15 px-3 py-2">
+            <span className="block numeral text-3xl leading-none text-warning">{streak}</span>
             <span className="mt-1 block kicker text-muted-foreground">
               {streak > 1 ? "jours de suite" : "jour"}
             </span>
@@ -109,7 +109,7 @@ export function DailyDeckEntry() {
       <Link
         href={`/jeu/${DAILY_DECK_ID}`}
         onClick={() => track("deck_selected", { deckId: DAILY_DECK_ID, level: 1, mode: "daily" })}
-        className="mt-3 flex min-h-[48px] w-full items-center justify-center rounded-md bg-foreground px-4 text-sm font-semibold text-background hover:opacity-90 transition-opacity"
+        className="mt-3 flex min-h-[48px] w-full items-center justify-center rounded-2xl bg-primary px-4 text-base font-heading font-bold text-primary-foreground hover:bg-primary-light transition-colors"
       >
         {todayResult ? "Rejouer (le premier résultat compte)" : "Jouer le deck du jour"}
       </Link>
@@ -180,17 +180,17 @@ export function DailyResultPanel({ session }: { session: Session }) {
   if (!official || !dailyKey) return null;
 
   return (
-    <section className="px-4 py-5 border-b border-border" data-testid="daily-result">
+    <section className="mx-4 my-2 rounded-2xl bg-card border border-border p-5" data-testid="daily-result">
       <div>
         <div className="flex items-center justify-between gap-3">
           <div>
-            <p className="kicker text-muted-foreground">Série : {pluralDays(streak)}</p>
-            <p className="mt-1 font-serif text-xl font-semibold">Deck du jour n°{getDailyNumber(dailyKey)}</p>
+            <p className="kicker text-warning">Série : {pluralDays(streak)}</p>
+            <p className="mt-1 font-heading text-xl font-extrabold">Deck du jour n°{getDailyNumber(dailyKey)}</p>
           </div>
           <button
             type="button"
             onClick={handleShare}
-            className="flex min-h-[44px] items-center gap-2 rounded-md border border-foreground/40 px-3 text-sm font-semibold hover:bg-muted transition-colors"
+            className="flex min-h-[44px] items-center gap-2 rounded-full bg-brand px-4 text-sm font-heading font-bold text-white hover:bg-brand-hover transition-colors"
             aria-live="polite"
           >
             <span aria-hidden="true">
@@ -203,7 +203,7 @@ export function DailyResultPanel({ session }: { session: Session }) {
           <DailySquares directions={official.directions} />
         </div>
         <p className="mt-3 text-sm text-muted-foreground">
-          <span className="numeral text-base font-semibold text-foreground">{formatBillions(official.cutBillions)}</span>{" "}
+          <span className="numeral text-base text-foreground">{formatBillions(official.cutBillions)}</span>{" "}
           remis en question sur {formatBillions(official.totalBillions)}.
         </p>
         {isReplay && (

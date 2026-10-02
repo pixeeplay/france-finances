@@ -6,12 +6,12 @@ export default function NotFound() {
       <div className="flex flex-col items-center text-center gap-6 max-w-sm">
         <div className="flex flex-col items-center gap-2">
           <span className="kicker text-muted-foreground">Erreur</span>
-          <span className="numeral text-8xl font-semibold text-muted-foreground">
+          <span className="numeral text-8xl text-muted-foreground">
             404
           </span>
         </div>
         <div>
-          <h2 className="text-2xl font-semibold text-foreground mb-2">
+          <h2 className="text-2xl font-extrabold text-foreground mb-2">
             Page introuvable
           </h2>
           <p className="text-muted-foreground text-sm leading-relaxed">
@@ -22,7 +22,7 @@ export default function NotFound() {
         </div>
         <Link
           href="/jeu"
-          className="inline-flex items-center min-h-[44px] rounded-md py-3 px-8 bg-foreground text-background font-semibold hover:opacity-90 transition-opacity"
+          className="inline-flex items-center min-h-[44px] rounded-2xl py-3 px-8 bg-brand text-white font-heading font-bold hover:bg-brand-hover transition-colors"
         >
           Retour au jeu
         </Link>

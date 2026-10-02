@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useId, useMemo, useRef, useState } from "react";
-import { BarList, StatTile } from "@/components/chiffres/DataBlocks";
+import { BarList } from "@/components/chiffres/DataBlocks";
 import { REFERENCE_SALARIES } from "@/data/fiscal-2026";
 import { formatEuros, formatRatio } from "@/lib/format";
 import {
@@ -92,16 +92,16 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
   };
 
   const toggleBase =
-    "flex-1 min-h-[44px] rounded-sm text-sm font-semibold transition-colors";
-  const toggleOn = "bg-foreground text-background";
+    "flex-1 min-h-[44px] rounded-full text-sm font-semibold transition-colors";
+  const toggleOn = "bg-brand text-white";
   const toggleOff = "text-muted-foreground hover:text-foreground";
 
   return (
     <div className="space-y-8">
       {/* Saisie */}
-      <section aria-labelledby="sim-input-title" className="rounded-md border border-border bg-card p-4 sm:p-6">
-        <p className="kicker text-muted-foreground mb-1">Saisie</p>
-        <h2 id="sim-input-title" className="text-2xl font-semibold text-foreground mb-4">
+      <section aria-labelledby="sim-input-title" className="rounded-3xl border border-border bg-card p-5 sm:p-6">
+        <p className="kicker text-info mb-1">Saisie</p>
+        <h2 id="sim-input-title" className="text-2xl font-extrabold text-foreground mb-4">
           Votre situation
         </h2>
 
@@ -118,7 +118,7 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
             step={100}
             value={input.annualGross}
             onChange={(e) => setGross(e.target.value)}
-            className="w-full min-h-[44px] rounded-md border border-border bg-background px-3 numeral text-lg text-foreground"
+            className="w-full min-h-[44px] rounded-xl border border-border bg-background px-3 numeral text-lg text-foreground"
           />
           <span className="kicker text-muted-foreground" aria-hidden="true">€/an</span>
         </div>
@@ -142,7 +142,7 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
           <button
             type="button"
             onClick={() => update({ annualGross: REFERENCE_SALARIES.smic })}
-            className="min-h-[44px] px-3 rounded-md border border-border text-xs text-foreground hover:bg-muted"
+            className="min-h-[44px] px-4 rounded-full bg-info/12 text-info text-xs font-bold hover:bg-info/20"
           >
             SMIC ({formatEuros(REFERENCE_SALARIES.smic)})
           </button>
@@ -150,7 +150,7 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
 
         <fieldset className="mt-6">
           <legend className="text-sm font-medium text-foreground">Situation familiale</legend>
-          <div className="mt-2 flex gap-1 rounded-md bg-muted p-1">
+          <div className="mt-2 flex gap-1 rounded-xl bg-muted p-1">
             <button
               type="button"
               aria-pressed={input.isSingle}
@@ -183,11 +183,11 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
               onClick={() => update({ nbChildren: Math.max(0, input.nbChildren - 1) })}
               disabled={input.nbChildren === 0}
               aria-label="Retirer un enfant"
-              className="w-11 h-11 rounded-full border border-border text-lg text-foreground disabled:opacity-40"
+              className="w-11 h-11 rounded-full bg-muted text-lg font-bold text-foreground hover:bg-info/20 disabled:opacity-40"
             >
               −
             </button>
-            <output aria-live="polite" className="w-8 text-center numeral text-2xl font-semibold">
+            <output aria-live="polite" className="w-8 text-center numeral text-2xl">
               {input.nbChildren}
             </output>
             <button
@@ -195,7 +195,7 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
               onClick={() => update({ nbChildren: Math.min(SIMULATOR_LIMITS.maxChildren, input.nbChildren + 1) })}
               disabled={input.nbChildren >= SIMULATOR_LIMITS.maxChildren}
               aria-label="Ajouter un enfant"
-              className="w-11 h-11 rounded-full border border-border text-lg text-foreground disabled:opacity-40"
+              className="w-11 h-11 rounded-full bg-muted text-lg font-bold text-foreground hover:bg-info/20 disabled:opacity-40"
             >
               +
             </button>
@@ -206,32 +206,34 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
 
       {/* Synthèse */}
       <section aria-labelledby="sim-summary-title">
-        <p className="kicker text-muted-foreground mb-1">Synthèse</p>
-        <h2 id="sim-summary-title" className="text-2xl font-semibold text-foreground mb-4">
+        <p className="kicker text-danger mb-1">Synthèse</p>
+        <h2 id="sim-summary-title" className="text-2xl font-extrabold text-foreground mb-4">
           Estimation annuelle
         </h2>
         <p className="sr-only" aria-live="polite" aria-atomic="true">
           {announcement}
         </p>
-        <div className="grid grid-cols-2 gap-x-6 gap-y-5">
-          <StatTile
+        <div className="grid grid-cols-2 gap-3">
+          <SimTile
+            tone="danger"
             label="Prélèvements estimés"
             value={formatEuros(result.totalPrelevements)}
             detail="cotisations, CSG/CRDS, impôt sur le revenu et TVA"
           />
-          <StatTile
+          <SimTile
+            tone="warning"
             label="Taux global"
             value={formatRatio(result.tauxEffectifGlobal)}
             detail="du salaire brut"
           />
-          <StatTile label="Impôt sur le revenu" value={formatEuros(ir.irTotal)} detail={`taux moyen ${formatRatio(ir.effectiveRate)}`} />
-          <StatTile label="Net après impôt" value={formatEuros(result.netApresIR)} detail={`${formatEuros(result.netApresIR / 12)} par mois`} />
+          <SimTile tone="info" label="Impôt sur le revenu" value={formatEuros(ir.irTotal)} detail={`taux moyen ${formatRatio(ir.effectiveRate)}`} />
+          <SimTile tone="primary" label="Net après impôt" value={formatEuros(result.netApresIR)} detail={`${formatEuros(result.netApresIR / 12)} par mois`} />
         </div>
       </section>
 
       {/* Détail */}
-      <section aria-labelledby="sim-detail-title" className="border-t-2 border-foreground pt-4">
-        <h2 id="sim-detail-title" className="text-2xl font-semibold text-foreground mb-2">Détail du calcul</h2>
+      <section aria-labelledby="sim-detail-title" className="rounded-3xl border border-border bg-card p-5 sm:p-6">
+        <h2 id="sim-detail-title" className="text-2xl font-extrabold text-foreground mb-2">Détail du calcul</h2>
         <dl className="divide-y divide-border">
           <Row label="Salaire brut" value={formatEuros(input.annualGross)} strong />
           <Row label="CSG (9,2 %)" value={`− ${formatEuros(cotisations.csg)}`} />
@@ -255,8 +257,8 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
       </section>
 
       {/* Répartition */}
-      <section aria-labelledby="sim-budget-title">
-        <h2 id="sim-budget-title" className="text-2xl font-semibold leading-tight text-foreground mb-2">
+      <section aria-labelledby="sim-budget-title" className="rounded-3xl border border-border bg-card p-5 sm:p-6">
+        <h2 id="sim-budget-title" className="text-2xl font-extrabold leading-tight text-foreground mb-2">
           Si votre impôt sur le revenu et votre TVA suivaient le budget de l&apos;État
         </h2>
         <p className="mb-4 text-sm text-muted-foreground leading-relaxed">
@@ -279,7 +281,7 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
         <button
           type="button"
           onClick={share}
-          className="inline-flex items-center justify-center gap-2 min-h-[48px] px-6 rounded-md bg-foreground text-background font-semibold text-sm hover:opacity-90 transition-opacity"
+          className="inline-flex items-center justify-center gap-2 min-h-[48px] px-6 rounded-2xl bg-brand text-white font-heading font-bold text-sm hover:bg-brand-hover transition-colors"
         >
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
@@ -292,6 +294,24 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
           {copied ? "Lien de la simulation copié dans le presse-papiers" : ""}
         </span>
       </div>
+    </div>
+  );
+}
+
+const TONES = {
+  danger: "bg-danger/10 border-danger/25 text-danger",
+  warning: "bg-warning/10 border-warning/25 text-warning",
+  info: "bg-info/10 border-info/25 text-info",
+  primary: "bg-primary/10 border-primary/25 text-primary",
+} as const;
+
+/** Chiffre-clé de la synthèse, dans une tuile colorée. */
+function SimTile({ label, value, detail, tone }: { label: string; value: string; detail?: string; tone: keyof typeof TONES }) {
+  return (
+    <div className={`rounded-2xl border p-4 ${TONES[tone]}`}>
+      <p className="kicker">{label}</p>
+      <p className="mt-1 numeral text-2xl sm:text-3xl leading-tight">{value}</p>
+      {detail ? <p className="mt-1 text-xs text-muted-foreground leading-snug">{detail}</p> : null}
     </div>
   );
 }

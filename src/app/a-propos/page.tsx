@@ -14,7 +14,7 @@ export default function AProposPage() {
       <NavbarLanding />
 
       <main className="max-w-3xl mx-auto px-4 sm:px-6 pt-12 pb-16">
-        <h1 className="text-4xl sm:text-5xl font-semibold leading-tight mb-8">
+        <h1 className="text-4xl sm:text-5xl font-black tracking-tight leading-tight mb-8 text-brand-fg">
           À propos
         </h1>
 
@@ -24,17 +24,17 @@ export default function AProposPage() {
             qui rend les finances publiques françaises accessibles et compréhensibles par tous.
           </p>
 
-          <h2 className="text-2xl font-semibold text-foreground mt-8 mb-3">
+          <h2 className="text-2xl font-extrabold text-foreground mt-8 mb-3">
             Notre mission
           </h2>
           <p>
-            Le budget de la France représente plus de 1 600 milliards d&apos;euros par an.
+            Le budget de la France représente environ 1 670 milliards d&apos;euros de dépenses publiques par an (2024).
             Pourtant, peu de citoyens savent précisément où va cet argent.
             Notre objectif est de démocratiser l&apos;accès à cette information
             grâce à un format interactif et ludique.
           </p>
 
-          <h2 className="text-2xl font-semibold text-foreground mt-8 mb-3">
+          <h2 className="text-2xl font-extrabold text-foreground mt-8 mb-3">
             Les données
           </h2>
           <p>
@@ -45,7 +45,7 @@ export default function AProposPage() {
             est calculé sur la base de 68 millions d&apos;habitants.
           </p>
 
-          <h2 className="text-2xl font-semibold text-foreground mt-8 mb-3">
+          <h2 className="text-2xl font-extrabold text-foreground mt-8 mb-3">
             Neutralité
           </h2>
           <p>
@@ -54,7 +54,7 @@ export default function AProposPage() {
             L&apos;utilisateur se forge sa propre opinion.
           </p>
 
-          <h2 className="text-2xl font-semibold text-foreground mt-8 mb-3">
+          <h2 className="text-2xl font-extrabold text-foreground mt-8 mb-3">
             L&apos;équipe
           </h2>
           <p>
@@ -70,7 +70,7 @@ export default function AProposPage() {
             .
           </p>
 
-          <h2 className="text-2xl font-semibold text-foreground mt-8 mb-3">
+          <h2 className="text-2xl font-extrabold text-foreground mt-8 mb-3">
             Les outils
           </h2>
           <p>
@@ -86,17 +86,17 @@ export default function AProposPage() {
           </p>
         </div>
 
-        <div className="mt-12 flex gap-4">
+        <div className="mt-12 flex flex-col sm:flex-row gap-3">
           <Link
             href="/jeu"
-            className="inline-flex items-center gap-2 px-6 py-3 min-h-[44px] rounded-md bg-foreground text-background font-semibold text-sm hover:opacity-90 transition-opacity"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 min-h-[48px] rounded-2xl bg-brand text-white font-heading font-bold text-sm hover:bg-brand-hover transition-colors"
           >
             Commencer à jouer
-            <span>&#8594;</span>
+            <span aria-hidden="true">&#8594;</span>
           </Link>
           <Link
             href="/"
-            className="inline-flex items-center px-6 py-3 min-h-[44px] rounded-md border border-foreground/40 text-foreground font-semibold text-sm hover:bg-muted transition-colors"
+            className="inline-flex items-center justify-center px-6 py-3 min-h-[48px] rounded-2xl border-2 border-border bg-card text-foreground font-heading font-bold text-sm hover:bg-muted transition-colors"
           >
             Retour à l&apos;accueil
           </Link>

@@ -17,7 +17,7 @@ export function StatBar({ icon, label, count, percent, colorClass }: {
           <span className="text-muted-foreground"> · {count} carte{count > 1 ? "s" : ""}</span>
         </span>
       </div>
-      <div className="w-full bg-muted h-2 rounded-sm overflow-hidden">
+      <div className="w-full bg-muted h-2 rounded-full overflow-hidden">
         <div
           className={`${colorClass} h-full`}
           style={{ width: `${percent}%` }}

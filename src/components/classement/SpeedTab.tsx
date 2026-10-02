@@ -100,7 +100,7 @@ export function SpeedTab({
 
             {/* Speed */}
             <div className="text-right shrink-0">
-              <p className={`text-sm font-mono font-bold ${isMe ? "text-primary" : ""}`}>
+              <p className={`text-sm numeral ${isMe ? "text-primary" : ""}`}>
                 {formatSpeed(player.avgMsPerCard)}
               </p>
               <p className="text-[10px] text-muted-foreground uppercase font-bold">/ carte</p>

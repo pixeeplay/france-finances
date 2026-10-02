@@ -137,7 +137,7 @@ export function AcronymText({ text, className }: AcronymTextProps) {
         createPortal(
           <span
             ref={tooltipRef}
-            className={`${active.dark ? "dark " : ""}fixed z-[9999] px-3 py-2 bg-card border border-border rounded-md shadow-(--shadow-card) text-xs text-foreground font-medium max-w-[250px] text-wrap leading-snug pointer-events-auto`}
+            className={`${active.dark ? "dark " : ""}fixed z-[9999] px-3 py-2 bg-card border border-border rounded-xl shadow-(--shadow-card) text-xs text-foreground font-medium max-w-[250px] text-wrap leading-snug pointer-events-auto`}
             style={{
               top: active.top - 8,
               left: active.left,

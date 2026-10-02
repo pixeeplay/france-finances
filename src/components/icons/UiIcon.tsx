@@ -104,6 +104,29 @@ const PATHS = {
       <path d="M8 11V7a4 4 0 0 1 8 0v4" />
     </>
   ),
+  // Flèches croisées : externaliser
+  swap: (
+    <>
+      <path d="M4 7h13l-3-3M20 17H7l3 3" />
+    </>
+  ),
+  // Deux branches qui se rejoignent : fusionner
+  merge: (
+    <>
+      <path d="M6 3v4a5 5 0 0 0 5 5h2a5 5 0 0 1 5 5v4" />
+      <path d="M18 3v4a5 5 0 0 1-5 5" />
+      <path d="m15 18 3 3 3-3" />
+    </>
+  ),
+  // Croix : supprimer
+  close: <path d="M6 6l12 12M18 6 6 18" />,
+  // Tirelire / pièce : économies
+  coin: (
+    <>
+      <circle cx="12" cy="12" r="8.5" />
+      <path d="M14.5 9a3 3 0 0 0-5 1.5c0 3 5 1.5 5 4.5a3 3 0 0 1-5 1M12 6.5v1.5M12 16v1.5" />
+    </>
+  ),
 } as const satisfies Record<string, ReactNode>;
 
 export type UiIconName = keyof typeof PATHS;

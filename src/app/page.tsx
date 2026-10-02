@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { NavbarLanding } from "@/components/landing/NavbarLanding";
 import { HeroSection } from "@/components/landing/HeroSection";
-import { MagnitudeSection } from "@/components/landing/MagnitudeSection";
+import { DailyTeaser } from "@/components/landing/DailyTeaser";
 import { HowItWorks } from "@/components/landing/HowItWorks";
-import { DossiersSection } from "@/components/landing/DossiersSection";
+import { KeyNumbers } from "@/components/landing/KeyNumbers";
 import { CategoriesSection } from "@/components/landing/CategoriesSection";
+import { DossiersSection } from "@/components/landing/DossiersSection";
 import { ToolsSection } from "@/components/landing/ToolsSection";
 import { SourcesSection } from "@/components/landing/SourcesSection";
 import { Footer } from "@/components/landing/Footer";
@@ -21,10 +22,11 @@ export default function LandingPage() {
       <NavbarLanding />
       <main>
         <HeroSection />
-        <MagnitudeSection />
+        <DailyTeaser />
         <HowItWorks />
-        <DossiersSection />
+        <KeyNumbers />
         <CategoriesSection />
+        <DossiersSection />
         <ToolsSection />
         <SourcesSection />
       </main>

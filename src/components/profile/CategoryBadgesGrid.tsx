@@ -27,7 +27,7 @@ export function CategoryBadgesGrid({
         <h3 className="kicker text-muted-foreground">
           Badges Catégories
         </h3>
-        <span className="numeral text-sm font-semibold text-foreground">
+        <span className="numeral text-sm text-foreground">
           {completedCategory.length} / {categoryBadges.length}
         </span>
       </div>
@@ -40,7 +40,7 @@ export function CategoryBadgesGrid({
           return (
             <div
               key={a.id}
-              className={`relative flex flex-col items-center gap-1 p-2 rounded-md border transition-all ${
+              className={`relative flex flex-col items-center gap-1 p-2 rounded-xl border transition-all ${
                 completed
                   ? "bg-primary/10 border-primary/30"
                   : "bg-card border-border opacity-50"

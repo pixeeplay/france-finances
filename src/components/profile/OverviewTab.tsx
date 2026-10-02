@@ -40,7 +40,7 @@ export function OverviewTab({
             XP Cumulée
           </p>
           <div className="flex items-baseline gap-1">
-            <span className="text-xl font-mono font-bold text-primary">
+            <span className="text-xl numeral text-primary">
               {stats.xp.toLocaleString("fr-FR")}
             </span>
             <span className="text-[10px] text-muted-foreground">PTS</span>
@@ -71,7 +71,7 @@ export function OverviewTab({
           <h3 className="text-xs font-black uppercase tracking-widest text-muted-foreground">
             Impact &amp; Mesures
           </h3>
-          <span className="text-[10px] font-mono text-muted-foreground">
+          <span className="text-[10px] tabular-nums text-muted-foreground">
             CYCLE ACTIF
           </span>
         </div>
@@ -82,7 +82,7 @@ export function OverviewTab({
             <p className="text-[10px] font-bold text-danger/70 uppercase">
               Budget Tronçonné
             </p>
-            <p className="text-2xl font-mono font-black text-danger">
+            <p className="text-2xl numeral text-danger">
               {stats.totalCutBillions} Md€
             </p>
           </div>
@@ -101,7 +101,7 @@ export function OverviewTab({
             <p className="text-[10px] font-bold text-primary/70 uppercase">
               Budget Préservé
             </p>
-            <p className="text-2xl font-mono font-black text-primary">
+            <p className="text-2xl numeral text-primary">
               {stats.totalKeptBillions} Md€
             </p>
           </div>
@@ -128,7 +128,7 @@ export function OverviewTab({
                 strokeWidth="4"
               />
             </svg>
-            <span className="absolute text-[9px] font-mono font-bold">
+            <span className="absolute text-[9px] numeral">
               {keptPercent}%
             </span>
           </div>
@@ -158,7 +158,7 @@ export function OverviewTab({
                 <p className="text-[9px] font-bold text-muted-foreground uppercase">
                   {stat.label}
                 </p>
-                <p className="text-lg font-mono font-bold">{stat.value}</p>
+                <p className="text-lg numeral">{stat.value}</p>
               </div>
               <span className="text-sm opacity-50">{stat.icon}</span>
             </div>

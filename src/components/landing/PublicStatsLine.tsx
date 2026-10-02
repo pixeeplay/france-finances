@@ -8,8 +8,10 @@ export function PublicStatsLine() {
   if (totalSessions <= 0 && totalSwipes <= 0) return null;
 
   return (
-    <p className="kicker text-muted-foreground tabular-nums">
-      {totalSessions.toLocaleString("fr-FR")} parties · {totalSwipes.toLocaleString("fr-FR")} cartes jouées
+    <p className="text-sm text-muted-foreground tabular-nums">
+      <span className="font-semibold text-foreground">{totalSessions.toLocaleString("fr-FR")}</span> parties jouées
+      {" · "}
+      <span className="font-semibold text-foreground">{totalSwipes.toLocaleString("fr-FR")}</span> cartes swipées
     </p>
   );
 }

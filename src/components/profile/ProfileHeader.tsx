@@ -130,11 +130,11 @@ export function ProfileHeader({
             {authSession?.user?.name || profile?.username || "Chargement..."}
           </h2>
           <div className="flex items-center gap-2">
-            <span className="text-[10px] font-mono text-primary">
+            <span className="text-[10px] tabular-nums text-primary">
               {totalSessions > 0 ? "Opérationnel" : "Recrue"}
             </span>
             <span className="w-1 h-1 rounded-full bg-border" />
-            <span className="text-[10px] font-mono text-muted-foreground">
+            <span className="text-[10px] tabular-nums text-muted-foreground">
               {xp.toLocaleString("fr-FR")} XP
             </span>
           </div>
@@ -185,7 +185,7 @@ export function ProfileHeader({
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`flex-1 py-2 px-1 text-[10px] font-bold uppercase tracking-tight rounded-md transition-colors ${
+            className={`flex-1 py-2 px-1 text-[10px] font-bold uppercase tracking-tight rounded-xl transition-colors ${
               activeTab === tab
                 ? "bg-primary text-primary-foreground shadow-lg"
                 : "text-muted-foreground"

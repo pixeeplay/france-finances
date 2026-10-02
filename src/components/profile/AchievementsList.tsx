@@ -50,7 +50,7 @@ export function AchievementsList({
     <div className="pt-2 space-y-3">
       <div className="flex items-baseline justify-between px-1">
         <h3 className="kicker text-muted-foreground">Journal des hauts faits</h3>
-        <span className="numeral text-sm font-semibold text-foreground">
+        <span className="numeral text-sm text-foreground">
           {completedGeneral.length} / {generalAchievements.length}
         </span>
       </div>
@@ -65,7 +65,7 @@ export function AchievementsList({
           const content = (
             <>
               <span
-                className={`w-10 h-10 shrink-0 rounded-md border flex items-center justify-center ${
+                className={`w-10 h-10 shrink-0 rounded-xl border flex items-center justify-center ${
                   completed ? "border-primary/50 text-primary" : "border-border text-muted-foreground"
                 }`}
                 aria-hidden="true"
@@ -91,7 +91,7 @@ export function AchievementsList({
                     {a.description}
                   </span>
                 ) : (
-                  <span className="mt-1.5 block h-1 w-full bg-muted rounded-[1px] overflow-hidden" aria-hidden="true">
+                  <span className="mt-1.5 block h-1 w-full bg-muted rounded-full overflow-hidden" aria-hidden="true">
                     <span className="block h-full bg-muted-foreground" style={{ width: `${prog}%` }} />
                   </span>
                 )}

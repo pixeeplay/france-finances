@@ -21,7 +21,7 @@ export function BudgetChallengeEntry() {
   return (
     <section
       aria-labelledby="budget-challenge-title"
-      className="mx-4 mb-4 border-t border-border pt-3"
+      className="mx-4 mb-4 rounded-2xl border border-danger/30 bg-danger/10 p-4"
       data-testid="budget-challenge-entry"
     >
       <div className="flex items-start gap-3">
@@ -32,8 +32,8 @@ export function BudgetChallengeEntry() {
             </span>
             Défi
           </p>
-          <h2 id="budget-challenge-title" className="mt-1 text-2xl font-semibold leading-tight">
-            Trouve <span className="numeral">{BUDGET_CHALLENGE_TARGET}</span>&nbsp;Md€
+          <h2 id="budget-challenge-title" className="mt-1 text-2xl font-extrabold leading-tight">
+            Trouve <span className="numeral text-danger">{BUDGET_CHALLENGE_TARGET}&nbsp;Md€</span>
           </h2>
           <p className="text-sm text-muted-foreground mt-1">
             {BUDGET_CHALLENGE_CARD_COUNT} dépenses tirées au hasard, aucune au-delà de{" "}
@@ -47,7 +47,7 @@ export function BudgetChallengeEntry() {
         onClick={() =>
           track("deck_selected", { deckId: "random", level: 1, mode: "budget", target: BUDGET_CHALLENGE_TARGET })
         }
-        className="mt-3 flex min-h-[48px] w-full items-center justify-center rounded-md border border-foreground/40 px-4 text-sm font-semibold text-foreground hover:bg-muted transition-colors"
+        className="mt-3 flex min-h-[48px] w-full items-center justify-center rounded-2xl border-2 border-danger bg-card px-4 text-base font-heading font-bold text-danger hover:bg-danger/10 transition-colors"
       >
         Relever le défi
       </Link>
@@ -79,17 +79,17 @@ export function BudgetChallengeSummary({ session }: { session: Session }) {
   }
 
   return (
-    <section className="px-4 py-5 border-b border-border" data-testid="budget-challenge-summary">
-      <p className="kicker text-muted-foreground">Bilan du défi</p>
+    <section className="mx-4 my-2 rounded-2xl bg-card border border-border p-5" data-testid="budget-challenge-summary">
+      <p className="kicker text-warning">Bilan du défi</p>
       <p className="mt-2 text-sm leading-relaxed">{message}</p>
-      <dl className="mt-4 grid grid-cols-2 gap-4 border-t border-border pt-3">
-        <div>
+      <dl className="mt-4 grid grid-cols-2 gap-2">
+        <div className="rounded-xl bg-primary/10 p-3">
           <dt className="kicker text-muted-foreground">Gardé</dt>
-          <dd className="numeral text-xl font-semibold text-primary">{formatBillions(result.keptBillions)}</dd>
+          <dd className="numeral text-xl text-primary">{formatBillions(result.keptBillions)}</dd>
         </div>
-        <div className="border-l border-border pl-4">
+        <div className="rounded-xl bg-danger/10 p-3">
           <dt className="kicker text-muted-foreground">Remis en question</dt>
-          <dd className="numeral text-xl font-semibold text-danger">{formatBillions(result.cutBillions)}</dd>
+          <dd className="numeral text-xl text-danger">{formatBillions(result.cutBillions)}</dd>
         </div>
       </dl>
     </section>

@@ -12,7 +12,8 @@ import { useOnboarding, Onboarding } from "@/components/Onboarding";
 import { DailyDeckEntry } from "@/components/DailyDeck";
 import { BudgetChallengeEntry } from "@/components/BudgetChallenge";
 import type { Deck } from "@/types";
-import { CategoryIcon } from "@/components/icons/CategoryIcon";
+import { CategoryBadge } from "@/components/icons/CategoryBadge";
+import { UiIcon } from "@/components/icons/UiIcon";
 
 function RandomIcon({ size = 24, className }: { size?: number; className?: string }) {
   return (
@@ -200,7 +201,7 @@ function PlayPageContent() {
           <div className="flex items-center gap-4 px-4 py-4 justify-between">
             <div className="flex items-center gap-4">
               <div className="w-10 h-10 rounded-lg bg-warning/15 flex items-center justify-center text-warning shrink-0">
-                <span className="text-lg" aria-hidden="true">&#127919;</span>
+                <UiIcon name="target" size={22} />
               </div>
               <div className="flex flex-col">
                 <p className="text-base font-semibold leading-tight">
@@ -278,7 +279,7 @@ function PlayPageContent() {
               >
                 <span className="flex items-center gap-1">
                   {opt.label}
-                  {opt.locked && <><span className="text-xs" aria-hidden="true">&#128683;</span><span className="sr-only">verrouillé</span></>}
+                  {opt.locked && <><UiIcon name="lock" size={12} /><span className="sr-only">verrouillé</span></>}
                 </span>
               </button>
             ))}
@@ -291,7 +292,7 @@ function PlayPageContent() {
               <div className="absolute left-1/2 -translate-x-1/2 top-full -mt-1 z-20 pointer-events-none">
                 <div className="bg-slate-900 border border-primary/40 rounded-xl px-4 py-3 shadow-2xl shadow-black/60 text-center min-w-[200px]">
                   <p className="text-sm font-bold text-slate-100 mb-1">
-                    <span aria-hidden="true">&#128683;</span> {opt.label} verrouillé
+                    <UiIcon name="lock" size={14} className="inline -mt-0.5" /> {opt.label} verrouillé
                   </p>
                   <p className="text-xs text-slate-400 mb-2">
                     Déblocage : {opt.unlockHint}
@@ -303,7 +304,7 @@ function PlayPageContent() {
                         style={{ width: `${Math.min(100, (progressByLevel[opt.value as 2 | 3].done / progressByLevel[opt.value as 2 | 3].required) * 100)}%` }}
                       />
                     </div>
-                    <span className="text-[10px] font-mono font-bold text-primary">{opt.progress}</span>
+                    <span className="text-[10px] numeral text-primary">{opt.progress}</span>
                   </div>
                 </div>
               </div>
@@ -351,7 +352,7 @@ function PlayPageContent() {
               </span>
               {!thematicsUnlocked && (
                 <span className="text-[10px] text-muted-foreground ml-auto">
-                  <span aria-hidden="true">&#128274;</span> <span className="sr-only">Verrouillé,</span>{mainCategoriesPlayed}/{THEMATIC_UNLOCK_CATEGORIES} catégories
+                  <UiIcon name="lock" size={11} className="inline -mt-0.5" /> <span className="sr-only">Verrouillé,</span>{mainCategoriesPlayed}/{THEMATIC_UNLOCK_CATEGORIES} catégories
                 </span>
               )}
             </div>
@@ -395,7 +396,7 @@ function PlayPageContent() {
         <button
           onClick={handleLaunch}
           disabled={!selectedDeck && !randomMode}
-          className="relative w-full min-h-[44px] bg-primary hover:bg-primary-light text-primary-foreground font-semibold text-lg py-4 rounded-lg transition-all active:scale-95 flex items-center justify-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed"
+          className="relative w-full min-h-[52px] bg-primary hover:bg-primary-light text-primary-foreground font-heading font-bold text-lg py-4 rounded-2xl transition-all active:scale-95 flex items-center justify-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed"
         >
           <CardsIcon size={24} />
           {budgetMode ? `Lancer le défi (${budgetTarget} Md\u20AC)` : `Lancer la session ${playableLevel > 1 ? `(N${playableLevel})` : ""}`}
@@ -421,7 +422,7 @@ function DeckCard({
   return (
     <button
       onClick={onSelect}
-      className={`bg-card rounded-xl p-4 flex flex-col gap-3 text-left border-2 relative overflow-hidden group transition-all duration-200 ${
+      className={`bg-card rounded-2xl p-4 flex flex-col gap-3 text-left border-2 relative overflow-hidden group transition-all duration-200 ${
         isSelected
           ? "border-primary"
           : "border-border hover:border-primary/50"
@@ -429,12 +430,12 @@ function DeckCard({
       style={isSelected ? { transform: "scale(0.97)" } : undefined}
     >
       {isSelected && (
-        <div className="absolute top-2 right-2 text-primary">
-          <span className="text-lg">&#10003;</span>
+        <div className="absolute top-2.5 right-2.5 w-6 h-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>
         </div>
       )}
       <div className="mb-1">
-        <CategoryIcon deckId={deck.id} size={32} strokeWidth={1.5} className={isSelected ? "text-primary" : "text-foreground"} />
+        <CategoryBadge deckId={deck.id} size={44} />
       </div>
       <div>
         <h3 className="font-bold text-sm leading-tight mb-1">{deck.name}</h3>
