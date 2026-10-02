@@ -188,6 +188,6 @@ Phase 3  (plus tard) Feed / dossiers éditoriaux
 
 - [x] **Coolify** : `ADMIN_EMAILS` défini (2026-10-02).
 - [~] **SSO admin** : abandonné (2026-10-02). Le back-office se limite à une page Analytics (`/pixee-admin`) ; la connexion Google/GitHub existante + `ADMIN_EMAILS` suffit. À reconsidérer seulement si le back-office grossit.
-- [ ] Table `waitlist` : export puis suppression validés (2026-10-02), à exécuter sur la base de prod (accès VPS requis).
+- [x] Table `waitlist` : 11 inscrits exportés hors serveur, table supprimée en prod (2026-10-02).
 - [ ] **Simulateur** : sélecteur « Par mois / Par an » sur tous les montants (saisie et résultats), conservé dans l'URL.
 - [ ] **PLF 2027** : présenté le 1er octobre 2026, vote attendu avant le 31 décembre 2026. Mettre à jour cartes et `/chiffres` sur la loi votée (début 2027) ; en attendant, garder la LF 2026.
