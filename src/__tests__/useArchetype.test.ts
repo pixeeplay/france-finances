@@ -15,6 +15,10 @@ const mockDetermineArchetype = vi.fn();
 vi.mock("@/lib/archetype", () => ({
   computeStats: (...args: unknown[]) => mockComputeStats(...args),
   determineArchetype: (...args: unknown[]) => mockDetermineArchetype(...args),
+  computeSessionResult: (s: { votes: Vote[]; totalDuration: number; level: number }) => {
+    const stats = mockComputeStats(s.votes, s.totalDuration);
+    return { stats, profile: {}, archetype: mockDetermineArchetype(stats, s.level) };
+  },
 }));
 
 describe("useArchetype", () => {

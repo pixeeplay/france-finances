@@ -151,16 +151,30 @@ describe("SwipeCard", () => {
     );
 
     expect(screen.getByText("Defense nationale")).toBeInTheDocument();
-    expect(screen.getByText("47.2 Md€")).toBeInTheDocument();
+    // Format éditorial français : virgule décimale, espace insécable
+    expect(screen.getByText("47,2 Md€")).toBeInTheDocument();
   });
 
-  it("renders the card icon", () => {
-    const card = makeCard({ icon: "🛡️" });
+  it("renders the category pictogram instead of the card emoji", () => {
+    const card = makeCard({ icon: "🛡️", deckId: "defense" });
+    const { container } = render(
+      <SwipeCard card={card} isTop={true} onSwipe={vi.fn()} />,
+    );
+
+    expect(screen.queryByText("🛡️")).not.toBeInTheDocument();
+    const icon = container.querySelector('svg[data-category-icon="defense"]');
+    expect(icon).not.toBeNull();
+    expect(icon).toHaveAttribute("aria-hidden", "true");
+    expect(screen.getByText("Défense")).toBeInTheDocument();
+  });
+
+  it("renders the order-of-magnitude scale", () => {
+    const card = makeCard({ amountBillions: 16.5 });
     render(
       <SwipeCard card={card} isTop={true} onSwipe={vi.fn()} />,
     );
 
-    expect(screen.getByText("🛡️")).toBeInTheDocument();
+    expect(screen.getByText("Ordre de grandeur")).toBeInTheDocument();
   });
 
   it("shows costPerCitizen value", () => {
@@ -169,7 +183,7 @@ describe("SwipeCard", () => {
       <SwipeCard card={card} isTop={true} onSwipe={vi.fn()} />,
     );
 
-    expect(screen.getByText("694€")).toBeInTheDocument();
+    expect(screen.getByText("694 €")).toBeInTheDocument();
   });
 
   it("renders the equivalence block when present", () => {
@@ -262,12 +276,12 @@ describe("StatBar", () => {
         count={7}
         percent={70}
         colorClass="bg-primary"
-        glowClass="shadow-sm"
       />,
     );
 
     expect(screen.getByText("OK")).toBeInTheDocument();
-    expect(screen.getByText("7 cartes")).toBeInTheDocument();
+    expect(screen.getByText(/7 cartes/)).toBeInTheDocument();
+    expect(screen.getByText("70 %")).toBeInTheDocument();
   });
 
   it("uses singular 'carte' when count is 1", () => {
@@ -278,11 +292,10 @@ describe("StatBar", () => {
         count={1}
         percent={10}
         colorClass="bg-info"
-        glowClass="shadow-sm"
       />,
     );
 
-    expect(screen.getByText("1 carte")).toBeInTheDocument();
+    expect(screen.getByText(/1 carte$/)).toBeInTheDocument();
   });
 });
 

@@ -2,9 +2,13 @@ import type { NextConfig } from "next";
 import { withSentryConfig } from "@sentry/nextjs";
 import withSerwistInit from "@serwist/next";
 
+// @serwist/next is a webpack plugin: the production build MUST run with
+// `next build --webpack` (see package.json), otherwise public/sw.js is not emitted
+// (Next 16 defaults to Turbopack). Disabled in dev, where `next dev` uses Turbopack.
 const withSerwist = withSerwistInit({
   swSrc: "src/sw.ts",
   swDest: "public/sw.js",
+  disable: process.env.NODE_ENV !== "production",
 });
 
 const nextConfig: NextConfig = {

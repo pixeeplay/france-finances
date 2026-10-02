@@ -59,14 +59,14 @@ const cardExample = `{
 
 export default function ContribuerPage() {
   return (
-    <div className="min-h-dvh bg-white text-slate-900">
+    <div className="min-h-dvh bg-background text-foreground">
       <NavbarLanding />
 
-      <main className="max-w-3xl mx-auto px-4 sm:px-6 pt-28 pb-16">
-        <h1 className="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
+      <main className="max-w-3xl mx-auto px-4 sm:px-6 pt-12 pb-16">
+        <h1 className="text-4xl sm:text-5xl font-semibold leading-tight mb-4">
           Contribuer au projet
         </h1>
-        <p className="text-lg text-slate-500 mb-10 leading-relaxed">
+        <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
           Tout le monde peut proposer des cartes ou des decks complets
           de dépenses publiques pour Budget Swipe.
         </p>
@@ -82,8 +82,8 @@ export default function ContribuerPage() {
               "Des mises à jour quand les chiffres changent (PLF/PLFSS)",
               "Des corrections si une donnée est erronée ou périmée",
             ].map((item) => (
-              <li key={item} className="flex items-start gap-2 text-sm text-slate-600">
-                <span className="text-landing-primary mt-0.5 shrink-0">&#9679;</span>
+              <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
+                <span className="text-foreground mt-0.5 shrink-0">&#9679;</span>
                 {item}
               </li>
             ))}
@@ -92,21 +92,21 @@ export default function ContribuerPage() {
 
         {/* Règles éditoriales */}
         <Section title="Règles éditoriales">
-          <div className="space-y-4 text-sm text-slate-600 leading-relaxed">
+          <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
             <p>
-              <strong className="text-slate-900">Factuel, pas militant.</strong>{" "}
+              <strong className="text-foreground">Factuel, pas militant.</strong>{" "}
               La carte présente les faits et les deux côtés du débat.
             </p>
             <p>
-              <strong className="text-slate-900">Concret, pas abstrait.</strong>{" "}
+              <strong className="text-foreground">Concret, pas abstrait.</strong>{" "}
               Toujours ramener au coût par habitant et à une équivalence parlante.
             </p>
             <p>
-              <strong className="text-slate-900">Compréhensible en 5 secondes.</strong>{" "}
+              <strong className="text-foreground">Compréhensible en 5 secondes.</strong>{" "}
               Le titre et le montant doivent suffire à comprendre.
             </p>
             <p>
-              <strong className="text-slate-900">Sourcé, toujours.</strong>{" "}
+              <strong className="text-foreground">Sourcé, toujours.</strong>{" "}
               Pas de &laquo;&nbsp;on estime que&nbsp;&raquo; sans dire qui estime.
             </p>
           </div>
@@ -116,20 +116,20 @@ export default function ContribuerPage() {
         <Section title="Sources acceptées">
           <ol className="space-y-2 list-decimal list-inside">
             {sources.map((s) => (
-              <li key={s} className="text-sm text-slate-600">{s}</li>
+              <li key={s} className="text-sm text-muted-foreground">{s}</li>
             ))}
           </ol>
-          <p className="text-sm text-slate-500 mt-3 italic">
+          <p className="text-sm text-muted-foreground mt-3 italic">
             Sources refusées : blogs personnels, forums, réseaux sociaux, sites militants sans données sourcées.
           </p>
         </Section>
 
         {/* Format d'une carte */}
         <Section title="Format JSON d'une carte">
-          <pre className="bg-slate-50 border border-slate-200 rounded-xl p-4 text-xs text-slate-700 overflow-x-auto leading-relaxed">
+          <pre className="bg-card border border-border rounded-lg font-mono p-4 text-xs text-foreground overflow-x-auto leading-relaxed">
             {cardExample}
           </pre>
-          <p className="text-sm text-slate-500 mt-3">
+          <p className="text-sm text-muted-foreground mt-3">
             Le guide complet détaille tous les champs (obligatoires et optionnels),
             les conventions de nommage des IDs, le format des decks, et le schéma JSON de validation.
           </p>
@@ -139,8 +139,8 @@ export default function ContribuerPage() {
         <Section title="Checklist de validation">
           <ul className="space-y-2">
             {checklist.map((item) => (
-              <li key={item} className="flex items-start gap-2 text-sm text-slate-600">
-                <span className="text-slate-400 shrink-0">&#9744;</span>
+              <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
+                <span className="text-muted-foreground shrink-0">&#9744;</span>
                 {item}
               </li>
             ))}
@@ -173,7 +173,7 @@ export default function ContribuerPage() {
           <a
             href="/CONTRIBUER.md"
             download
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-landing-primary text-white font-semibold text-sm hover:bg-landing-primary-light transition-colors"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 min-h-[44px] rounded-md bg-foreground text-background font-semibold text-sm hover:opacity-90 transition-opacity"
           >
             <DownloadIcon />
             Télécharger le guide complet
@@ -182,7 +182,7 @@ export default function ContribuerPage() {
             href="https://pixeeplay.fr/play/?intent=contribuer"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-slate-200 text-slate-700 font-semibold text-sm hover:bg-slate-50 transition-colors"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 min-h-[44px] rounded-md border border-foreground/40 text-foreground font-semibold text-sm hover:bg-muted transition-colors"
           >
             Nous contacter
             <span>&#8594;</span>
@@ -190,7 +190,7 @@ export default function ContribuerPage() {
         </div>
 
         {/* Licence */}
-        <p className="mt-10 text-xs text-slate-400">
+        <p className="mt-10 text-xs text-muted-foreground">
           Les cartes contribuées sont publiées sous licence Creative Commons BY-SA 4.0.
           En soumettant une carte, vous acceptez cette licence.
         </p>
@@ -198,7 +198,7 @@ export default function ContribuerPage() {
         <div className="mt-8">
           <Link
             href="/"
-            className="text-sm text-landing-primary hover:underline"
+            className="text-sm underline underline-offset-4 hover:text-foreground"
           >
             &larr; Retour à l&apos;accueil
           </Link>
@@ -213,7 +213,7 @@ export default function ContribuerPage() {
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section className="mb-10">
-      <h2 className="font-heading text-xl font-bold text-slate-900 mb-4">{title}</h2>
+      <h2 className="text-2xl font-semibold mb-4">{title}</h2>
       {children}
     </section>
   );
@@ -222,12 +222,12 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 function SubmitOption({ step, title, description }: { step: string; title: string; description: string }) {
   return (
     <div className="flex items-start gap-3">
-      <div className="w-7 h-7 rounded-full bg-landing-primary/10 text-landing-primary flex items-center justify-center text-sm font-bold shrink-0">
+      <div className="w-7 h-7 rounded-full border border-foreground/40 text-foreground font-mono flex items-center justify-center text-sm font-bold shrink-0">
         {step}
       </div>
       <div>
-        <p className="text-sm font-semibold text-slate-900">{title}</p>
-        <p className="text-sm text-slate-500">{description}</p>
+        <p className="text-sm font-semibold text-foreground">{title}</p>
+        <p className="text-sm text-muted-foreground">{description}</p>
       </div>
     </div>
   );

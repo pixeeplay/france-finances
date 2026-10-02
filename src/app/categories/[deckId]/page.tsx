@@ -1,9 +1,10 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
 import type { Metadata } from "next";
 import decksData from "@/data";
 import type { Card, Deck } from "@/types";
+import { CategoryIcon } from "@/components/icons/CategoryIcon";
+import { formatBillions, formatEuros } from "@/lib/format";
 
 interface Props {
   params: Promise<{ deckId: string }>;
@@ -19,11 +20,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!deck) return {};
 
   const cards = decksData.cards.filter((c) => c.deckId === deckId);
-  const totalBillions = cards.reduce((sum, c) => sum + c.amountBillions, 0);
-  const description = `Découvrez les dépenses publiques françaises en ${deck.name} : ${cards.length} postes budgétaires pour ${totalBillions.toFixed(1)} Md€. ${deck.description}. Données PLF 2025-2026.`;
+  const description = `Découvrez les dépenses publiques françaises en ${deck.name} : ${cards.length} postes budgétaires sourcés. ${deck.description}. Données PLF 2025-2026.`;
 
   return {
-    title: `${deck.icon} ${deck.name} — La Tronçonneuse de Poche`,
+    title: `${deck.name} — france-finances.com`,
     description,
     alternates: {
       canonical: `/categories/${deckId}`,
@@ -36,113 +36,105 @@ export default async function CategoryPage({ params }: Props) {
   const deck = decksData.decks.find((d): d is Deck => d.id === deckId);
   if (!deck) notFound();
 
-  const cards = decksData.cards.filter((c) => c.deckId === deckId);
-  const totalBillions = cards.reduce((sum, c) => sum + c.amountBillions, 0);
+  const cards = decksData.cards
+    .filter((c) => c.deckId === deckId)
+    .sort((a, b) => b.amountBillions - a.amountBillions);
+  const max = cards[0]?.amountBillions ?? 0;
+  const min = cards[cards.length - 1]?.amountBillions ?? 0;
+  const isDossier = deck.type === "thematic";
 
   return (
     <>
-      {/* Header */}
-      <div className="bg-slate-50 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+      {/* En-tête */}
+      <header className="border-b border-border">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 md:py-14">
           <Link
-            href="/#categories"
-            className="inline-flex items-center gap-1.5 text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 mb-6 transition-colors"
+            href={isDossier ? "/#dossiers" : "/#categories"}
+            className="inline-flex items-center gap-1.5 min-h-[44px] text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
-            <span>&larr;</span> Toutes les cat&eacute;gories
+            <span aria-hidden="true">&larr;</span> {isDossier ? "Tous les dossiers" : "Toutes les catégories"}
           </Link>
 
-          <div className="flex items-start gap-4">
-            {deck.image ? (
-              <Image src={deck.image} alt={deck.name} width={56} height={56} />
-            ) : (
-              <span className="text-5xl">{deck.icon}</span>
-            )}
-            <div>
-              <h1 className="font-heading font-bold text-3xl md:text-4xl text-slate-900 dark:text-white">
-                {deck.name}
-              </h1>
-              <p className="text-slate-500 dark:text-slate-400 mt-1 text-lg">
-                {deck.description}
-              </p>
-            </div>
-          </div>
+          <p className="mt-4 flex items-center gap-2 text-muted-foreground">
+            <CategoryIcon deckId={deck.id} size={22} />
+            <span className="kicker">{isDossier ? "Dossier" : "Catégorie"}</span>
+          </p>
+          <h1 className="mt-2 text-4xl md:text-5xl font-semibold leading-tight">{deck.name}</h1>
+          <p className="mt-3 text-lg text-muted-foreground max-w-prose">{deck.description}</p>
 
-          <div className="flex flex-wrap gap-6 mt-8">
+          <dl className="mt-8 grid grid-cols-3 border-t-2 border-foreground pt-4 gap-4">
             <Stat label="Cartes" value={String(cards.length)} />
-            <Stat label="Budget total" value={`${totalBillions.toFixed(1)} Md€`} />
-            <Stat
-              label="Coût moyen/citoyen"
-              value={`${Math.round(cards.reduce((s, c) => s + c.costPerCitizen, 0) / cards.length)} €`}
-            />
-          </div>
+            <Stat label="Plus gros poste" value={formatBillions(max)} />
+            <Stat label="Plus petit poste" value={formatBillions(min)} />
+          </dl>
 
           <div className="mt-8">
             <Link
-              href="/jeu"
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-white font-semibold transition-colors"
-              style={{ backgroundColor: deck.color }}
+              href={`/jeu/${deck.id}`}
+              className="inline-flex items-center justify-center gap-2 min-h-[48px] px-6 rounded-md bg-foreground text-background font-semibold hover:opacity-90 transition-opacity"
             >
-              Lancer le jeu <span>&rarr;</span>
+              Jouer ce deck <span aria-hidden="true">&rarr;</span>
             </Link>
           </div>
         </div>
-      </div>
+      </header>
 
-      {/* Card list */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10">
-        <h2 className="font-heading font-bold text-xl mb-6 text-slate-900 dark:text-white">
-          {cards.length} d&eacute;penses &agrave; passer en revue
-        </h2>
-
-        <div className="grid gap-3">
-          {cards.map((card) => (
-            <CardRow key={card.id} card={card} color={deck.color} />
-          ))}
+      {/* Liste des cartes, classées par montant */}
+      <section aria-labelledby="cards-title" className="max-w-4xl mx-auto px-4 sm:px-6 py-10">
+        <div className="flex items-baseline justify-between gap-4 border-b-2 border-foreground pb-3">
+          <h2 id="cards-title" className="text-2xl font-semibold">
+            {cards.length} dépenses, de la plus lourde à la plus légère
+          </h2>
         </div>
 
-        <div className="text-center mt-10">
+        <ol>
+          {cards.map((card, i) => (
+            <CardRow key={card.id} card={card} rank={i + 1} max={max} />
+          ))}
+        </ol>
+        <p className="mt-4 font-mono text-xs text-muted-foreground">
+          Barres proportionnelles au montant annuel, échelle linéaire propre à ce deck.
+          Les cartes peuvent se recouper&nbsp;: leurs montants ne s&apos;additionnent pas.
+        </p>
+
+        <div className="mt-10">
           <Link
-            href="/jeu"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-white font-semibold transition-colors"
-            style={{ backgroundColor: deck.color }}
+            href={`/jeu/${deck.id}`}
+            className="inline-flex items-center justify-center gap-2 min-h-[48px] px-6 rounded-md border border-foreground/40 font-semibold hover:bg-muted transition-colors"
           >
-            Tron&ccedil;onner cette cat&eacute;gorie <span>&rarr;</span>
+            Passer ce deck à la tron&ccedil;onneuse <span aria-hidden="true">&rarr;</span>
           </Link>
         </div>
-      </div>
+      </section>
     </>
   );
 }
 
 function Stat({ label, value }: { label: string; value: string }) {
   return (
-    <div>
-      <div className="font-heading font-bold text-2xl text-slate-900 dark:text-white">{value}</div>
-      <div className="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wide">{label}</div>
+    <div className="min-w-0">
+      <dt className="kicker text-muted-foreground">{label}</dt>
+      <dd className="numeral text-2xl md:text-3xl font-semibold truncate">{value}</dd>
     </div>
   );
 }
 
-function CardRow({ card, color }: { card: Card; color: string }) {
+function CardRow({ card, rank, max }: { card: Card; rank: number; max: number }) {
+  const width = max > 0 ? Math.max((card.amountBillions / max) * 100, 0.5) : 0;
   return (
-    <div className="flex items-center gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
-      <span className="text-2xl flex-shrink-0">{card.icon}</span>
-      <div className="flex-1 min-w-0">
-        <div className="font-semibold text-sm text-slate-900 dark:text-slate-50 truncate">
-          {card.title}
-        </div>
-        <div className="text-xs text-slate-500 dark:text-slate-400 truncate">
-          {card.subtitle}
-        </div>
+    <li className="grid grid-cols-[2rem_1fr_auto] gap-x-3 gap-y-1 py-3 border-b border-border items-baseline">
+      <span className="font-mono text-xs text-muted-foreground tabular-nums">{String(rank).padStart(2, "0")}</span>
+      <div className="min-w-0">
+        <p className="font-medium leading-snug">{card.title}</p>
+        <p className="text-xs text-muted-foreground truncate">{card.subtitle}</p>
       </div>
-      <div className="text-right flex-shrink-0">
-        <div className="font-heading font-bold text-sm" style={{ color }}>
-          {card.amountBillions} Md&euro;
-        </div>
-        <div className="text-xs text-slate-400 dark:text-slate-500">
-          {card.costPerCitizen} &euro;/citoyen
-        </div>
+      <div className="text-right">
+        <p className="numeral text-lg font-semibold">{formatBillions(card.amountBillions)}</p>
+        <p className="text-xs text-muted-foreground tabular-nums">{formatEuros(card.costPerCitizen)}/hab.</p>
       </div>
-    </div>
+      <span className="col-start-2 col-span-2 h-1.5 bg-muted" aria-hidden="true">
+        <span className="block h-full bg-foreground/70" style={{ width: `${width}%` }} />
+      </span>
+    </li>
   );
 }

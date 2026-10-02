@@ -2,8 +2,17 @@
 
 import dynamic from "next/dynamic";
 import type { CommunityStats } from "@/hooks/useCommunityStats";
-import { FALLBACK_DISTRIBUTION } from "./types";
+import { ChainsawIcon } from "@/components/ChainsawIcon";
+import { ShieldIcon } from "@/components/ShieldIcon";
+import { UiIcon } from "@/components/icons/UiIcon";
+import { FALLBACK_DISTRIBUTION, type ArchetypeFamilyIcon, type ArchetypeFamilyShare } from "./types";
 import { DataSourceBadge } from "./DataSourceBadge";
+
+function FamilyIcon({ icon }: { icon: ArchetypeFamilyIcon }) {
+  if (icon === "chainsaw") return <ChainsawIcon size={16} />;
+  if (icon === "shield") return <ShieldIcon size={16} className="text-primary" />;
+  return <UiIcon name={icon} size={16} className="text-muted-foreground" />;
+}
 
 const RadarChart = dynamic(() => import("@/components/RadarChart").then((m) => m.RadarChart), { ssr: false });
 
@@ -19,18 +28,18 @@ export function ArchetypesTab({
   communityStats,
 }: ArchetypesTabProps) {
   // Build distribution from real API data or use fallback
-  const distribution = (() => {
+  const distribution = ((): ArchetypeFamilyShare[] => {
     if (communityStats.isFallback || communityStats.archetypeDistribution.length === 0) {
       return FALLBACK_DISTRIBUTION;
     }
 
     // Group archetypes into families for display
-    const families: { name: string; icon: string; ids: string[]; count: number }[] = [
-      { name: "Équilibristes", icon: "⚖️", ids: ["equilibriste"], count: 0 },
-      { name: "Coupeurs", icon: "✂️", ids: ["austeritaire", "demolisseur", "liquidateur_en_chef", "tranchant"], count: 0 },
-      { name: "Gardiens", icon: "🛡️", ids: ["gardien", "conservateur", "investisseur_public", "protecteur"], count: 0 },
-      { name: "Stratèges", icon: "🎯", ids: ["chirurgien", "stratege", "reformateur", "optimisateur"], count: 0 },
-      { name: "Analystes", icon: "🔍", ids: ["sceptique", "auditeur_rigoureux", "speedrunner"], count: 0 },
+    const families: { name: string; icon: ArchetypeFamilyIcon; ids: string[]; count: number }[] = [
+      { name: "Équilibristes", icon: "balance", ids: ["equilibriste"], count: 0 },
+      { name: "Coupeurs", icon: "chainsaw", ids: ["austeritaire", "demolisseur", "liquidateur_en_chef", "tranchant", "bucheron"], count: 0 },
+      { name: "Gardiens", icon: "shield", ids: ["gardien", "conservateur", "investisseur_public", "protecteur"], count: 0 },
+      { name: "Stratèges", icon: "target", ids: ["chirurgien", "stratege", "reformateur", "optimisateur", "elagueur"], count: 0 },
+      { name: "Analystes", icon: "search", ids: ["sceptique", "auditeur_rigoureux", "speedrunner"], count: 0 },
     ];
 
     for (const arch of communityStats.archetypeDistribution) {
@@ -64,9 +73,9 @@ export function ArchetypesTab({
 
       {/* Radar: Tes choix vs la communauté */}
       {radarAxes.length >= 3 && (
-        <div className="flex flex-col gap-4 rounded-xl border border-border bg-card p-5">
+        <div className="flex flex-col gap-4 border-t-2 border-foreground pt-3">
           <div>
-            <h2 className="text-lg font-bold">Tes choix vs la communauté</h2>
+            <h2 className="text-xl font-semibold">Tes choix vs la communauté</h2>
             <p className="text-sm text-muted-foreground mt-1">
               % de coupes par catégorie
             </p>
@@ -76,9 +85,9 @@ export function ArchetypesTab({
       )}
 
       {/* Distribution */}
-      <div className="flex flex-col gap-4 rounded-xl border border-border bg-card p-5">
+      <div className="flex flex-col gap-4 border-t-2 border-foreground pt-3">
         <div>
-          <h2 className="text-lg font-bold">Distribution de la communauté</h2>
+          <h2 className="text-xl font-semibold">Distribution de la communauté</h2>
           <p className="text-sm text-muted-foreground mt-1">
             L&apos;équilibre des forces budgétaires
           </p>
@@ -87,17 +96,18 @@ export function ArchetypesTab({
           {distribution.map((a) => {
             const isPlayer = !!(playerArchetypeId && a.ids.includes(playerArchetypeId));
             return (
-              <div key={a.name} className={`flex flex-col gap-1.5 rounded-lg px-2 py-1.5 -mx-2 transition-colors ${isPlayer ? "bg-primary/10 ring-1 ring-primary/30" : ""}`}>
-                <div className="flex justify-between items-end text-sm font-medium">
-                  <span>
-                    {a.icon} {a.name}
-                    {isPlayer && <span className="ml-2 text-[10px] font-bold text-primary bg-primary/20 px-1.5 py-0.5 rounded-full">Toi</span>}
+              <div key={a.name} className={`flex flex-col gap-1.5 rounded-md px-2 py-1.5 -mx-2 transition-colors ${isPlayer ? "bg-muted/60" : ""}`}>
+                <div className="flex justify-between items-baseline text-sm font-medium">
+                  <span className="flex items-center gap-2">
+                    <span aria-hidden="true" className="shrink-0"><FamilyIcon icon={a.icon} /></span>
+                    {a.name}
+                    {isPlayer && <span className="kicker text-primary border border-primary/50 px-1.5 rounded-sm">Toi</span>}
                   </span>
-                  <span className="font-bold">{a.percent}%</span>
+                  <span className="numeral text-base font-semibold">{a.percent}&nbsp;%</span>
                 </div>
-                <div className="w-full h-2.5 bg-muted rounded-full overflow-hidden">
+                <div className="w-full h-2.5 bg-muted rounded-[1px] overflow-hidden" aria-hidden="true">
                   <div
-                    className="h-full bg-info rounded-full"
+                    className="h-full bg-foreground/70 rounded-[1px]"
                     style={{ width: `${a.percent}%` }}
                   />
                 </div>

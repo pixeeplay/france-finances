@@ -10,21 +10,21 @@ export const metadata: Metadata = {
 
 export default function AProposPage() {
   return (
-    <div className="min-h-dvh bg-white text-slate-900">
+    <div className="min-h-dvh bg-background text-foreground">
       <NavbarLanding />
 
-      <main className="max-w-3xl mx-auto px-4 sm:px-6 pt-28 pb-16">
-        <h1 className="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mb-8">
+      <main className="max-w-3xl mx-auto px-4 sm:px-6 pt-12 pb-16">
+        <h1 className="text-4xl sm:text-5xl font-semibold leading-tight mb-8">
           À propos
         </h1>
 
-        <div className="prose prose-slate max-w-none space-y-6 text-slate-600 leading-relaxed">
+        <div className="max-w-prose space-y-6 text-muted-foreground leading-relaxed">
           <p>
-            <strong className="text-slate-900">france-finances.com</strong> est un projet citoyen
+            <strong className="text-foreground">france-finances.com</strong> est un projet citoyen
             qui rend les finances publiques françaises accessibles et compréhensibles par tous.
           </p>
 
-          <h2 className="font-heading text-xl font-bold text-slate-900 mt-8 mb-3">
+          <h2 className="text-2xl font-semibold text-foreground mt-8 mb-3">
             Notre mission
           </h2>
           <p>
@@ -34,7 +34,7 @@ export default function AProposPage() {
             grâce à un format interactif et ludique.
           </p>
 
-          <h2 className="font-heading text-xl font-bold text-slate-900 mt-8 mb-3">
+          <h2 className="text-2xl font-semibold text-foreground mt-8 mb-3">
             Les données
           </h2>
           <p>
@@ -45,7 +45,7 @@ export default function AProposPage() {
             est calculé sur la base de 68 millions d&apos;habitants.
           </p>
 
-          <h2 className="font-heading text-xl font-bold text-slate-900 mt-8 mb-3">
+          <h2 className="text-2xl font-semibold text-foreground mt-8 mb-3">
             Neutralité
           </h2>
           <p>
@@ -54,7 +54,7 @@ export default function AProposPage() {
             L&apos;utilisateur se forge sa propre opinion.
           </p>
 
-          <h2 className="font-heading text-xl font-bold text-slate-900 mt-8 mb-3">
+          <h2 className="text-2xl font-semibold text-foreground mt-8 mb-3">
             L&apos;équipe
           </h2>
           <p>
@@ -63,34 +63,40 @@ export default function AProposPage() {
               href="https://pixeeplay.fr"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-landing-primary hover:underline"
+              className="underline underline-offset-4 hover:text-foreground"
             >
               PixeePlay
             </a>
-            , en partenariat avec{" "}
-            <a
-              href="https://nicoquipaie.co"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-landing-primary hover:underline"
-            >
-              nicoquipaie.co
-            </a>
             .
+          </p>
+
+          <h2 className="text-2xl font-semibold text-foreground mt-8 mb-3">
+            Les outils
+          </h2>
+          <p>
+            En plus du jeu, le site propose{" "}
+            <Link href="/chiffres" className="underline underline-offset-4 hover:text-foreground">
+              les chiffres des finances publiques
+            </Link>{" "}
+            (dette, déficit, budget de l&apos;État, dépense publique) et{" "}
+            <Link href="/simulateur" className="underline underline-offset-4 hover:text-foreground">
+              un simulateur
+            </Link>{" "}
+            des impôts et cotisations prélevés sur un salaire.
           </p>
         </div>
 
         <div className="mt-12 flex gap-4">
           <Link
             href="/jeu"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-landing-primary text-white font-semibold text-sm hover:bg-landing-primary-light transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 min-h-[44px] rounded-md bg-foreground text-background font-semibold text-sm hover:opacity-90 transition-opacity"
           >
             Commencer à jouer
             <span>&#8594;</span>
           </Link>
           <Link
             href="/"
-            className="inline-flex items-center px-6 py-3 rounded-full border border-slate-200 text-slate-700 font-semibold text-sm hover:bg-slate-50 transition-colors"
+            className="inline-flex items-center px-6 py-3 min-h-[44px] rounded-md border border-foreground/40 text-foreground font-semibold text-sm hover:bg-muted transition-colors"
           >
             Retour à l&apos;accueil
           </Link>

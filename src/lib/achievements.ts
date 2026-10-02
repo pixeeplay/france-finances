@@ -6,8 +6,8 @@ export interface Achievement {
   icon: string;
   title: string;
   description: string;
-  /** Optional: "general" (default) or "category" for per-deck badges */
-  category?: "general" | "category";
+  /** Optional: "general" (default), "category" for per-deck badges, "comprehension" for quiz badges */
+  category?: "general" | "category" | "comprehension";
   check: (stats: GlobalStats, sessions: StoredSession[]) => boolean;
   progress: (stats: GlobalStats, sessions: StoredSession[]) => number;
 }
@@ -39,6 +39,45 @@ const CATEGORY_BADGES: Achievement[] = [
   { id: "badge_france_europe", icon: "\uD83C\uDDEA\uD83C\uDDFA", title: "Expert France-Europe", description: `Jouer ${BADGE_THRESHOLD} sessions France-Europe.`, category: "category", check: (s) => deckSessions(s, "france-europe") >= BADGE_THRESHOLD, progress: (s) => Math.min(100, Math.round((deckSessions(s, "france-europe") / BADGE_THRESHOLD) * 100)) },
   { id: "badge_zombies", icon: "\uD83D\uDC80", title: "Expert Zombies", description: `Jouer ${BADGE_THRESHOLD} sessions Zombies budgétaires.`, category: "category", check: (s) => deckSessions(s, "zombies") >= BADGE_THRESHOLD, progress: (s) => Math.min(100, Math.round((deckSessions(s, "zombies") / BADGE_THRESHOLD) * 100)) },
   { id: "badge_ukraine", icon: "\uD83C\uDDFA\uD83C\uDDE6", title: "Expert Ukraine", description: `Jouer ${BADGE_THRESHOLD} sessions Ukraine.`, category: "category", check: (s) => deckSessions(s, "ukraine") >= BADGE_THRESHOLD, progress: (s) => Math.min(100, Math.round((deckSessions(s, "ukraine") / BADGE_THRESHOLD) * 100)) },
+];
+
+function quizCorrect(stats: GlobalStats): number {
+  return stats.quiz?.correct ?? 0;
+}
+
+function quizBestStreak(stats: GlobalStats): number {
+  return stats.quiz?.bestStreak ?? 0;
+}
+
+/** Comprehension badges — earned by estimating amounts ("A ton avis, combien ?") */
+const COMPREHENSION_BADGES: Achievement[] = [
+  {
+    id: "quiz_ordre_grandeur",
+    icon: "\uD83C\uDFAF",
+    title: "Bon ordre de grandeur",
+    description: "Trouver 5 montants au mini-quiz « À ton avis, combien ? ».",
+    category: "comprehension",
+    check: (s) => quizCorrect(s) >= 5,
+    progress: (s) => Math.min(100, Math.round((quizCorrect(s) / 5) * 100)),
+  },
+  {
+    id: "quiz_serie",
+    icon: "\uD83E\uDDE0",
+    title: "Sans faute",
+    description: "Trouver 5 montants d'affilée au mini-quiz.",
+    category: "comprehension",
+    check: (s) => quizBestStreak(s) >= 5,
+    progress: (s) => Math.min(100, Math.round((quizBestStreak(s) / 5) * 100)),
+  },
+  {
+    id: "quiz_expert",
+    icon: "\uD83D\uDCCA",
+    title: "Lecteur de budget",
+    description: "Trouver 25 montants au mini-quiz.",
+    category: "comprehension",
+    check: (s) => quizCorrect(s) >= 25,
+    progress: (s) => Math.min(100, Math.round((quizCorrect(s) / 25) * 100)),
+  },
 ];
 
 /** General (non-category) achievements */
@@ -173,19 +212,19 @@ const GENERAL_ACHIEVEMENTS: Achievement[] = [
     description: "Débloquer 10 badges ou achievements.",
     check: (s, sessions) => {
       const completed = GENERAL_ACHIEVEMENTS.filter((a) => a.id !== "collectionneur" && a.check(s, sessions));
-      const badges = CATEGORY_BADGES.filter((a) => a.check(s, sessions));
+      const badges = [...CATEGORY_BADGES, ...COMPREHENSION_BADGES].filter((a) => a.check(s, sessions));
       return completed.length + badges.length >= 10;
     },
     progress: (s, sessions) => {
       const completed = GENERAL_ACHIEVEMENTS.filter((a) => a.id !== "collectionneur" && a.check(s, sessions));
-      const badges = CATEGORY_BADGES.filter((a) => a.check(s, sessions));
+      const badges = [...CATEGORY_BADGES, ...COMPREHENSION_BADGES].filter((a) => a.check(s, sessions));
       return Math.min(100, Math.round(((completed.length + badges.length) / 10) * 100));
     },
   },
 ];
 
 /** All achievements combined */
-export const ACHIEVEMENTS: Achievement[] = [...GENERAL_ACHIEVEMENTS, ...CATEGORY_BADGES];
+export const ACHIEVEMENTS: Achievement[] = [...GENERAL_ACHIEVEMENTS, ...COMPREHENSION_BADGES, ...CATEGORY_BADGES];
 
 const UNLOCKED_KEY = "trnc:achievements";
 

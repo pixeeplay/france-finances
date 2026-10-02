@@ -3,9 +3,9 @@ import { Footer } from "@/components/landing/Footer";
 
 export default function CategoriesLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-dvh bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50">
+    <div className="min-h-dvh bg-background text-foreground">
       <NavbarLanding />
-      <div className="pt-16">{children}</div>
+      <main>{children}</main>
       <Footer />
     </div>
   );

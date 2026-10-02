@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import { SwipeSession } from "./SwipeSession";
 import decksData from "@/data";
 import { drawCards, filterByDeck } from "@/lib/deckUtils";
+import { clampBudgetTarget, drawBudgetChallengeCards, isBudgetEligibleDeck } from "@/lib/budgetChallenge";
+import { DAILY_DECK_ID, drawDailyCards, getDailyNumber, getParisDateKey } from "@/lib/daily";
 import { validateDecksData } from "@/lib/validateData";
 import type { Card, Deck, GameMode } from "@/types";
 import type { Metadata } from "next";
@@ -22,6 +24,17 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { deckId } = await params;
   const deck = decksData.decks.find((d) => d.id === deckId);
+
+  if (deckId === DAILY_DECK_ID) {
+    return {
+      title: "Deck du jour — La Tronçonneuse de Poche",
+      description:
+        "Les mêmes 10 dépenses publiques pour tout le monde, chaque jour. Garde ou remets en question, puis compare ton résultat.",
+      alternates: {
+        canonical: `/jeu/${DAILY_DECK_ID}`,
+      },
+    };
+  }
 
   if (!deck) {
     return {
@@ -59,25 +72,49 @@ export default async function SwipePage({
 
   // Validate deckId
   const deck = decksData.decks.find((d) => d.id === deckId);
-  if (deckId !== "random" && !deck) {
+  if (deckId !== "random" && deckId !== DAILY_DECK_ID && !deck) {
     notFound();
+  }
+
+  const allCards = decksData.cards as Card[];
+
+  // Daily deck: same draw for everyone (seed = date in Europe/Paris), always level 1 classic
+  if (deckId === DAILY_DECK_ID) {
+    const dailyKey = getParisDateKey();
+    return (
+      <SwipeSession
+        deckId={DAILY_DECK_ID}
+        deckName={`Deck du jour n°${getDailyNumber(dailyKey)}`}
+        cards={drawDailyCards(allCards, dailyKey)}
+        level={1}
+        dailyKey={dailyKey}
+      />
+    );
   }
 
   // Clamp level to 1-3
   const rawLevel = Number(levelStr) || 1;
   const level = Math.min(Math.max(rawLevel, 1), 3) as 1 | 2 | 3;
 
-  const gameMode: GameMode = mode === "budget" ? "budget" : "classic";
-  const budgetTarget = gameMode === "budget" ? (Number(target) || 15) : undefined;
+  // Budget mode makes no sense on excluded decks (cutting revenue is not a saving): classic session
+  const gameMode: GameMode = mode === "budget" && isBudgetEligibleDeck(deckId) ? "budget" : "classic";
+  const budgetTarget = gameMode === "budget" ? clampBudgetTarget(target) : undefined;
 
-  const allCards = decksData.cards as Card[];
   const deckCards = deckId === "random" ? allCards : filterByDeck(allCards, deckId);
-  const sessionCards = drawCards(deckCards, 10);
+  // Budget mode: no single card reaches the target, and the draw leaves room for trade-offs
+  const sessionCards =
+    budgetTarget !== undefined
+      ? drawBudgetChallengeCards(deckCards, budgetTarget)
+      : drawCards(deckCards, 10);
 
   return (
     <SwipeSession
       deckId={deckId}
-      deckName={deck?.name ?? "Aléatoire"}
+      deckName={
+        budgetTarget !== undefined && deckId === "random"
+          ? `Trouve ${budgetTarget} Md€`
+          : (deck?.name ?? "Aléatoire")
+      }
       cards={sessionCards}
       level={level}
       gameMode={gameMode}

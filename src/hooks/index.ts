@@ -1,6 +1,9 @@
 export { useArchetype } from "./useArchetype";
 export { useCommunityStats } from "./useCommunityStats";
+export { useCommunityVotes } from "./useCommunityVotes";
+export { useHydrated } from "./useHydrated";
 export { useInstallPrompt } from "./useInstallPrompt";
+export { useProgression } from "./useProgression";
 export { useKeyboardSwipe } from "./useKeyboardSwipe";
 export { usePublicStats } from "./usePublicStats";
 export { useSwipeGesture } from "./useSwipeGesture";

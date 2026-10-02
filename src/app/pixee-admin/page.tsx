@@ -23,7 +23,7 @@ export default function AdminPage() {
     setError("");
     try {
       const res = await fetch(`/api/analytics/dashboard?days=${d}`);
-      if (res.status === 401) {
+      if (res.status === 401 || res.status === 403) {
         setError("Non autorise");
         setLoading(false);
         return;
@@ -51,7 +51,7 @@ export default function AdminPage() {
   return (
     <div className="flex-1 overflow-y-auto scrollbar-hide">
       {/* Header */}
-      <header className="flex items-center justify-between p-4 pb-2 bg-background/90 backdrop-blur-md border-b border-border">
+      <header className="flex items-center justify-between p-4 pb-2 bg-background border-b border-border">
         <h1 className="text-lg font-bold">Analytics</h1>
         <div className="flex gap-1">
           {[7, 14, 30].map((d) => (
@@ -59,7 +59,7 @@ export default function AdminPage() {
               key={d}
               onClick={() => setDays(d)}
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
-                days === d ? "bg-primary text-white" : "bg-card text-muted-foreground"
+                days === d ? "bg-primary text-primary-foreground" : "bg-card text-muted-foreground"
               }`}
             >
               {d}j

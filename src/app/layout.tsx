@@ -1,25 +1,37 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { Outfit } from "next/font/google";
+import { Source_Serif_4, Schibsted_Grotesk, IBM_Plex_Mono } from "next/font/google";
 import { AuthProvider } from "@/components/AuthProvider";
 import { AppInit } from "@/components/AppInit";
 import { PageviewTracker } from "@/components/PageviewTracker";
 import { JsonLd } from "@/components/JsonLd";
+import { THEME_COLORS } from "@/lib/theme";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// Serif éditoriale : titres et chiffres forts, toujours en semibold.
+// Une seule graisse statique, sans l'axe optique : bien plus léger à
+// précharger que le fichier variable complet (graisses 200-900 + opsz).
+const serif = Source_Serif_4({
+  variable: "--ff-serif",
   subsets: ["latin"],
+  weight: ["600"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+// Grotesk : texte courant et interface
+const grotesk = Schibsted_Grotesk({
+  variable: "--ff-grotesk",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const outfit = Outfit({
-  variable: "--font-outfit",
+// Mono : étiquettes, axes, sources. Non préchargée : elle ne sert qu'aux
+// petits textes (kicker), le repli système suffit le temps du chargement.
+const mono = IBM_Plex_Mono({
+  variable: "--ff-mono",
   subsets: ["latin"],
+  weight: ["400", "500"],
+  display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -74,7 +86,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: "#0F172A",
+  themeColor: THEME_COLORS.dark,
 };
 
 export default function RootLayout({
@@ -83,17 +95,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" suppressHydrationWarning>
+    <html lang="fr" className="dark" suppressHydrationWarning>
       <head>
         <JsonLd />
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{if(window.matchMedia('(prefers-color-scheme:dark)').matches){document.documentElement.classList.add('dark')}}catch(e){}})()`,
+            // Thème sombre par défaut ; le clair n'est appliqué que sur choix explicite.
+            __html: `(function(){try{if(localStorage.getItem('theme')==='light'){var d=document.documentElement;d.classList.remove('dark');var c=function(){var m=document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content','${THEME_COLORS.light}')};c();document.addEventListener('DOMContentLoaded',c)}}catch(e){}})()`,
           }}
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} antialiased`}
+        className={`${serif.variable} ${grotesk.variable} ${mono.variable} antialiased`}
       >
         <AuthProvider>
           <AppInit />

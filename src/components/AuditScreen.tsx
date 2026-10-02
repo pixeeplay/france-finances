@@ -4,6 +4,8 @@ import { useState } from "react";
 import { ChainsawIcon } from "./ChainsawIcon";
 import { ShieldIcon } from "./ShieldIcon";
 import { ReinforceIcon } from "./ReinforceIcon";
+import { CategoryIcon } from "./icons/CategoryIcon";
+import { formatBillions } from "@/lib/format";
 import auditData from "@/data/audit-questions.json";
 import type { Card, AuditRecommendation, AuditResponse } from "@/types";
 
@@ -70,7 +72,7 @@ export function AuditScreen({
   return (
     <div className="flex flex-col flex-1 min-h-0">
       {/* Header */}
-      <header className="flex items-center justify-between p-4 pb-2 sticky top-0 z-10 bg-background/80 backdrop-blur-md">
+      <header className="flex items-center justify-between p-4 pb-2 sticky top-0 z-10 bg-background">
         <button
           onClick={onBack}
           aria-label="Retour"
@@ -87,9 +89,11 @@ export function AuditScreen({
         <button
           onClick={onBack}
           aria-label="Fermer l'audit"
-          className="w-10 h-10 min-h-[44px] rounded-full bg-card flex items-center justify-center text-muted-foreground hover:bg-danger hover:text-white transition-colors"
+          className="w-11 h-11 rounded-md flex items-center justify-center text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
         >
-          ✕
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true" focusable="false">
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
         </button>
       </header>
 
@@ -108,12 +112,12 @@ export function AuditScreen({
         {/* Card summary */}
         <div className="flex items-center justify-between bg-card p-4 rounded-xl border border-border">
           <div className="flex items-center gap-3">
-            <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-background text-2xl">
-              {card.icon}
+            <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-background text-muted-foreground">
+              <CategoryIcon deckId={card.deckId} size={24} />
             </div>
             <div>
               <h3 className="font-bold text-foreground line-clamp-1">{card.title}</h3>
-              <p className="text-sm text-muted-foreground">{card.amountBillions} Md&euro;</p>
+              <p className="text-sm text-muted-foreground tabular-nums">{formatBillions(card.amountBillions)}</p>
             </div>
           </div>
           {dirLabel && (
@@ -196,12 +200,12 @@ export function AuditScreen({
       </main>
 
       {/* Submit button */}
-      <footer className="fixed bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-background via-background to-transparent pt-8 pb-6 pb-safe z-40 flex justify-center">
+      <footer className="fixed bottom-0 left-0 right-0 p-4 bg-background border-t border-border pt-4 pb-6 pb-safe z-40 flex justify-center">
         <div className="w-full max-w-md">
           <button
             onClick={handleSubmit}
             disabled={!canSubmit}
-            className="w-full flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-primary text-primary-foreground font-bold text-lg shadow-lg shadow-primary/30 active:scale-[0.98] transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+            className="w-full flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-primary text-primary-foreground font-bold text-lg active:scale-[0.98] transition-all disabled:opacity-40 disabled:cursor-not-allowed"
           >
             Valider mon audit
             <span className="text-base">&rarr;</span>

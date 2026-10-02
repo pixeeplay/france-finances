@@ -7,7 +7,11 @@ import { ShieldIcon } from "./ShieldIcon";
 import { ReinforceIcon } from "./ReinforceIcon";
 import { StopIcon } from "./StopIcon";
 import { AcronymText } from "./AcronymText";
+import { AmountScale } from "./AmountScale";
+import { CategoryIcon } from "./icons/CategoryIcon";
 import type { Card, VoteDirection } from "@/types";
+import { formatBillions, formatEuros } from "@/lib/format";
+import { getDeckName } from "@/lib/deckMeta";
 import { SPRING_SWIPE } from "@/lib/motion-constants";
 
 interface CardDetailProps {
@@ -112,7 +116,7 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
             dragControls={dragControls}
             role="dialog"
             aria-label={`Détail : ${card.title}`}
-            className="fixed bottom-0 left-0 right-0 z-50 flex flex-col bg-card rounded-t-3xl max-h-[92vh] shadow-[0_-10px_40px_rgba(0,0,0,0.3)] max-w-md mx-auto will-change-transform"
+            className="fixed bottom-0 left-0 right-0 z-50 flex flex-col bg-card border-t border-border rounded-t-2xl max-h-[92vh] max-w-md mx-auto will-change-transform"
           >
             {/* Drag Handle & Close */}
             <div className="flex flex-col items-center pt-3 pb-2 relative shrink-0">
@@ -125,9 +129,9 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
               <button
                 onClick={onClose}
                 aria-label="Fermer le détail"
-                className="absolute top-4 right-4 p-2 text-muted-foreground hover:text-foreground rounded-full hover:bg-muted transition-colors"
+                className="absolute top-2 right-2 min-h-[44px] min-w-[44px] flex items-center justify-center text-muted-foreground hover:text-foreground rounded-full hover:bg-muted transition-colors"
               >
-                <span className="text-lg">✕</span>
+                <span className="text-lg" aria-hidden="true">✕</span>
               </button>
             </div>
 
@@ -135,32 +139,40 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
             <div className="flex-1 overflow-y-auto scrollbar-hide px-5 pb-[180px] relative">
               {/* Category & Title */}
               <div className="pt-2">
-                <h2 className="text-sm font-bold text-muted-foreground tracking-widest uppercase mb-1">
-                  {card.icon} {card.deckId.toUpperCase()}
-                </h2>
-                <h1 className="text-3xl leading-tight font-bold text-foreground tracking-tight mb-5">
+                <p className="flex items-center gap-2 text-muted-foreground mb-2">
+                  <CategoryIcon deckId={card.deckId} size={18} />
+                  <span className="kicker">{getDeckName(card.deckId)}</span>
+                </p>
+                <h1 className="text-3xl leading-tight font-semibold text-foreground mb-5">
                   <AcronymText text={card.title} />
                 </h1>
               </div>
 
               {/* Badges */}
-              <div className="flex flex-wrap gap-3 mb-8">
-                <div className="flex h-9 items-center justify-center gap-x-2 rounded-xl bg-primary/10 border border-primary/20 px-3.5 shadow-sm">
-                  <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                  <p className="text-primary text-sm font-bold tracking-wide">
-                    ~{card.amountBillions} Md€ / an
-                  </p>
+              <dl className="grid grid-cols-2 gap-4 border-y border-border py-4 mb-4">
+                <div>
+                  <dt className="kicker text-muted-foreground">Coût annuel</dt>
+                  <dd className="numeral text-3xl font-semibold text-foreground">
+                    {formatBillions(card.amountBillions)}
+                  </dd>
                 </div>
-                <div className="flex h-9 items-center justify-center gap-x-2 rounded-xl bg-muted border border-border px-3.5 shadow-sm">
-                  <p className="text-foreground text-sm font-medium">
-                    ~{card.costPerCitizen}€ par Français / an
-                  </p>
+                <div className="border-l border-border pl-4">
+                  <dt className="kicker text-muted-foreground">Par habitant / an</dt>
+                  <dd className="numeral text-3xl font-semibold text-foreground">
+                    {formatEuros(card.costPerCitizen)}
+                  </dd>
+                  {card.costPerCitizen >= 24 && (
+                    <dd className="text-xs text-muted-foreground mt-0.5 tabular-nums">
+                      soit {formatEuros(card.costPerCitizen / 12)} par mois
+                    </dd>
+                  )}
                 </div>
-              </div>
+              </dl>
+              <AmountScale amountBillions={card.amountBillions} className="mb-8" />
 
               {/* Contexte */}
               <section className="mb-8">
-                <h3 className="text-lg font-bold text-foreground mb-3 tracking-tight">
+                <h3 className="text-xl font-semibold text-foreground mb-3">
                   Contexte
                 </h3>
                 <AcronymText
@@ -172,12 +184,10 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
               {/* Équivalence */}
               {card.equivalence && (
                 <section className="mb-8">
-                  <h3 className="text-lg font-bold text-foreground mb-3 flex items-center gap-2 tracking-tight">
-                    <span className="text-warning text-xl" aria-hidden="true">📊</span>
+                  <h3 className="text-xl font-semibold text-foreground mb-3">
                     Équivalence
                   </h3>
-                  <div className="bg-warning/5 border border-warning/20 rounded-2xl p-4 flex items-start gap-3">
-                    <span className="text-2xl mt-0.5" aria-hidden="true">💡</span>
+                  <div className="border-l-2 border-foreground/60 pl-4">
                     <AcronymText
                       text={card.equivalence}
                       className="text-foreground font-medium text-[15px] leading-snug"
@@ -189,12 +199,10 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
               {/* Subtitle / Détail (masqué si contenu dans l'équivalence) */}
               {card.subtitle && !(card.equivalence && card.equivalence.includes(card.subtitle)) && (
                 <section className="mb-8">
-                  <h3 className="text-lg font-bold text-foreground mb-3 flex items-center gap-2 tracking-tight">
-                    <span className="text-primary text-xl" aria-hidden="true">📋</span>
+                  <h3 className="text-xl font-semibold text-foreground mb-3">
                     Détail
                   </h3>
-                  <div className="bg-primary/5 border border-primary/20 rounded-2xl p-4 flex items-start gap-3">
-                    <span className="text-2xl mt-0.5" aria-hidden="true">💡</span>
+                  <div className="border-l-2 border-border pl-4">
                     <AcronymText
                       text={card.subtitle}
                       className="text-foreground font-medium text-[15px] leading-snug"
@@ -206,19 +214,15 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
               {/* Trend */}
               {card.trend !== undefined && (
                 <section className="mb-8">
-                  <h3 className="text-lg font-bold text-foreground mb-3 tracking-tight">
+                  <h3 className="text-xl font-semibold text-foreground mb-3">
                     Évolution
                   </h3>
                   <div className="flex items-center gap-2">
                     <span
-                      className={`text-sm font-bold px-3 py-1 rounded-full ${
-                        card.trend > 0
-                          ? "bg-danger/10 text-danger"
-                          : "bg-primary/10 text-primary"
-                      }`}
+                      className="numeral text-2xl font-semibold text-foreground"
                     >
                       {card.trend > 0 ? "+" : ""}
-                      {card.trend}%
+                      {card.trend.toLocaleString("fr-FR")}{"\u00A0"}%
                     </span>
                     <span className="text-muted-foreground text-sm">
                       sur la période récente
@@ -229,8 +233,7 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
 
               {/* Sources */}
               <section className="mb-6">
-                <h3 className="text-lg font-bold text-foreground mb-3 flex items-center gap-2 tracking-tight">
-                  <span className="text-muted-foreground text-xl" aria-hidden="true">🔗</span>
+                <h3 className="text-xl font-semibold text-foreground mb-3">
                   Sources
                 </h3>
                 <div className="flex flex-col gap-2.5">
@@ -239,18 +242,18 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
                       href={card.sourceUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-between p-3.5 rounded-xl bg-background/40 border border-border hover:bg-muted transition-all group"
+                      className="flex items-center justify-between gap-3 min-h-[44px] p-3.5 rounded-lg border border-border hover:bg-muted transition-colors group"
                     >
                       <AcronymText
                         text={card.source}
                         className="text-foreground font-medium text-[15px]"
                       />
-                      <span className="text-muted-foreground text-lg group-hover:text-primary transition-colors">
+                      <span className="text-muted-foreground text-lg group-hover:text-foreground transition-colors" aria-hidden="true">
                         ↗
                       </span>
                     </a>
                   ) : (
-                    <div className="p-3.5 rounded-xl bg-background/40 border border-border">
+                    <div className="p-3.5 rounded-lg border border-border">
                       <AcronymText
                         text={card.source}
                         className="text-foreground font-medium text-[15px]"
@@ -266,7 +269,7 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
                   {card.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-xs font-medium text-muted-foreground bg-muted px-2.5 py-1 rounded-full"
+                      className="font-mono text-[11px] text-muted-foreground border border-border px-2 py-0.5 rounded-sm"
                     >
                       #{tag}
                     </span>
@@ -275,11 +278,8 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
               )}
             </div>
 
-            {/* Scroll fade hint */}
-            <div className="pointer-events-none absolute bottom-[168px] left-0 right-0 h-12 bg-gradient-to-t from-card to-transparent z-20" />
-
             {/* Sticky Footer Actions */}
-            <div className="absolute bottom-0 left-0 right-0 bg-card/95 backdrop-blur-xl border-t border-border p-5 pt-4 rounded-t-3xl z-30 shadow-[0_-10px_20px_rgba(0,0,0,0.05)]">
+            <div className="absolute bottom-0 left-0 right-0 bg-card border-t border-border p-5 pt-4 pb-safe z-30">
               {level >= 2 ? (
                 <div className="flex items-center justify-evenly mb-3">
                   <div className="flex flex-col items-center gap-1.5">
@@ -336,7 +336,7 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
                   <button
                     onClick={() => handleVote("cut")}
                     aria-label="Remettre en question cette dépense"
-                    className="group/item flex items-center justify-center gap-2 py-3.5 min-h-[44px] rounded-xl border-2 border-danger/80 text-danger font-bold hover:bg-danger hover:text-white active:scale-95 transition-all"
+                    className="group/item flex items-center justify-center gap-2 py-3.5 min-h-[44px] rounded-xl border-2 border-danger/80 text-danger font-bold hover:bg-danger hover:text-background active:scale-95 transition-all"
                   >
                     <ChainsawIcon size={20} className="chainsaw-hover-white" />
                     À revoir

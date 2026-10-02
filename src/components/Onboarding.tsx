@@ -4,6 +4,7 @@ import { useState, useCallback } from "react";
 import { m, AnimatePresence, LazyMotion, domAnimation } from "framer-motion";
 import { ChainsawIcon } from "./ChainsawIcon";
 import { ShieldIcon } from "./ShieldIcon";
+import { UiIcon } from "./icons/UiIcon";
 import { track } from "@/lib/analytics";
 import { SPRING_SWIPE } from "@/lib/motion-constants";
 
@@ -12,21 +13,18 @@ const ONBOARDED_KEY = "trnc:onboarded";
 const slides = [
   {
     id: "welcome",
-    icon: null, // uses ChainsawIcon
     title: "Bienvenue",
     subtitle: "La Tronçonneuse de Poche",
     description: "Swipe les dépenses publiques françaises et découvre ton profil budgétaire.",
   },
   {
     id: "howto",
-    icon: null, // custom layout
     title: "Comment jouer ?",
     subtitle: "2 gestes, 1 choix",
     description: "Swipe à gauche pour garder une dépense, à droite pour la remettre en question.",
   },
   {
     id: "go",
-    icon: "🎯",
     title: "C'est parti !",
     subtitle: "370 cartes, 16 catégories",
     description: "Choisis un thème ou lance le mode aléatoire. 10 cartes, 3 minutes max.",
@@ -90,7 +88,7 @@ export function Onboarding({ onDone }: OnboardingProps) {
       <div className="flex justify-end p-4">
         <button
           onClick={skip}
-          className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-3 py-1"
+          className="min-h-[44px] text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-3"
         >
           Passer
         </button>
@@ -113,40 +111,42 @@ export function Onboarding({ onDone }: OnboardingProps) {
           >
             {/* Slide-specific illustration */}
             {slide.id === "welcome" && (
-              <div className="w-24 h-24 bg-card rounded-3xl flex items-center justify-center mb-8 border border-border shadow-xl">
+              <div className="w-24 h-24 bg-card rounded-md flex items-center justify-center mb-8 border border-border" aria-hidden="true">
                 <ChainsawIcon size={56} />
               </div>
             )}
 
             {slide.id === "howto" && (
-              <div className="flex items-center gap-6 mb-8">
+              <div className="flex items-center gap-6 mb-8" aria-hidden="true">
                 <div className="flex flex-col items-center gap-2">
-                  <div className="w-16 h-16 rounded-full bg-primary/10 border-2 border-primary flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full border-2 border-primary flex items-center justify-center">
                     <ShieldIcon size={32} className="text-primary" />
                   </div>
-                  <span className="text-xs font-bold text-primary">← OK</span>
+                  <span className="kicker text-primary">← OK</span>
                 </div>
-                <div className="text-2xl text-muted-foreground font-bold">ou</div>
+                <div className="font-serif text-2xl text-muted-foreground">ou</div>
                 <div className="flex flex-col items-center gap-2">
-                  <div className="w-16 h-16 rounded-full bg-danger/10 border-2 border-danger flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full border-2 border-danger flex items-center justify-center">
                     <ChainsawIcon size={32} />
                   </div>
-                  <span className="text-xs font-bold text-danger">À revoir →</span>
+                  <span className="kicker text-danger">À revoir →</span>
                 </div>
               </div>
             )}
 
             {slide.id === "go" && (
-              <div className="text-6xl mb-8">{slide.icon}</div>
+              <div className="w-24 h-24 bg-card rounded-md flex items-center justify-center mb-8 border border-border text-foreground" aria-hidden="true">
+                <UiIcon name="target" size={52} />
+              </div>
             )}
 
-            <p className="text-xs font-bold text-primary uppercase tracking-[0.2em] mb-2">
+            <p className="kicker text-muted-foreground mb-3">
               {slide.subtitle}
             </p>
-            <h1 className="text-3xl font-[900] text-foreground mb-4 tracking-tight">
+            <h1 className="text-4xl font-semibold leading-tight text-foreground mb-4">
               {slide.title}
             </h1>
-            <p className="text-muted-foreground text-base font-medium max-w-[280px] leading-relaxed">
+            <p className="text-muted-foreground text-base max-w-[280px] leading-relaxed">
               {slide.description}
             </p>
           </m.div>
@@ -160,9 +160,9 @@ export function Onboarding({ onDone }: OnboardingProps) {
           {slides.map((_, i) => (
             <div
               key={i}
-              className={`h-2 rounded-full transition-all duration-300 ${
+              className={`h-1.5 rounded-[1px] transition-all duration-300 ${
                 i === current
-                  ? "w-8 bg-primary"
+                  ? "w-8 bg-foreground"
                   : "w-2 bg-muted"
               }`}
             />
@@ -172,10 +172,10 @@ export function Onboarding({ onDone }: OnboardingProps) {
         {/* CTA */}
         <button
           onClick={goNext}
-          className={`w-full py-4 rounded-2xl font-bold text-lg transition-all active:scale-95 ${
+          className={`w-full min-h-[48px] py-4 rounded-md font-semibold text-lg transition-colors ${
             isLast
-              ? "bg-primary text-primary-foreground shadow-lg shadow-primary/30"
-              : "bg-card border border-border text-foreground hover:bg-muted"
+              ? "bg-foreground text-background hover:opacity-90"
+              : "border border-foreground/40 text-foreground hover:bg-muted"
           }`}
         >
           {isLast ? "Commencer" : "Suivant"}

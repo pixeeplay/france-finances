@@ -1,5 +1,14 @@
 import type { Session, Vote, Archetype } from "@/types";
-import { computeStats, determineArchetype } from "@/lib/archetype";
+import { computeSessionResult, type determineArchetype } from "@/lib/archetype";
+import { DAILY_DECK_ID } from "@/lib/daily";
+import { applyQuizAnswer, EMPTY_QUIZ_STATS, type QuizStats } from "@/lib/quiz";
+import {
+  computeUnlockedLevel,
+  countSessionsByLevel,
+  mergeLevelCounts,
+  type GameLevel,
+  type LevelCounts,
+} from "@/lib/progression";
 
 // === Storage Keys ===
 const SESSIONS_KEY = "trnc:sessions";
@@ -36,6 +45,10 @@ export interface GlobalStats {
   auditsN3: number;
   totalKeptBillions: number;
   totalCutBillions: number;
+  /** Sessions terminees par niveau ("1" | "2" | "3"), cumul jamais purge */
+  sessionsPerLevel?: Record<string, number>;
+  /** Mini-quiz "a ton avis, combien ?" */
+  quiz?: QuizStats;
 }
 
 export interface PlayerProfile {
@@ -165,8 +178,7 @@ export function saveCompletedSession(session: Session): void {
     .reduce((sum, c) => sum + c.amountBillions, 0);
 
   // Determine archetype
-  const rawStats = computeStats(session.votes, session.totalDuration);
-  const archetype = determineArchetype(rawStats, session.level);
+  const { archetype } = computeSessionResult(session);
 
   const stored: StoredSession = {
     id: session.id,
@@ -205,7 +217,7 @@ export function saveCompletedSession(session: Session): void {
   stats.totalCutBillions =
     Math.round((stats.totalCutBillions + stored.totalCutBillions) * 10) / 10;
   if (!stats.sessionsPerDeck) stats.sessionsPerDeck = {};
-  if (stored.deckId === "random") {
+  if (stored.deckId === "random" || stored.deckId === DAILY_DECK_ID) {
     // For random sessions, increment per-deck counters (used for badges)
     // but do NOT mark categories as "played" (requires a dedicated session)
     const cardDeckIds = [...new Set(session.votes.map((v) => {
@@ -224,6 +236,11 @@ export function saveCompletedSession(session: Session): void {
   if (stored.level === 3) {
     stats.auditsN3 += 1;
   }
+  const levelKey = String(stored.level);
+  stats.sessionsPerLevel = {
+    ...(stats.sessionsPerLevel ?? {}),
+    [levelKey]: (stats.sessionsPerLevel?.[levelKey] ?? 0) + 1,
+  };
   setItem(STATS_KEY, stats);
 
   // Update profile
@@ -287,6 +304,19 @@ export function updatePlayerAvatar(emoji: string): void {
   const profile = getPlayerProfile();
   profile.customAvatar = emoji;
   setItem(PROFILE_KEY, profile);
+}
+
+/** Enregistre une reponse au mini-quiz et retourne les stats mises a jour */
+export function recordQuizAnswer(correct: boolean): QuizStats {
+  const stats = getGlobalStats();
+  const quiz = applyQuizAnswer(stats.quiz ?? EMPTY_QUIZ_STATS, correct);
+  setItem(STATS_KEY, { ...stats, quiz });
+  return quiz;
+}
+
+/** Sessions terminees par niveau (cumul + historique local) */
+export function getLevelCounts(): LevelCounts {
+  return mergeLevelCounts(getGlobalStats().sessionsPerLevel, countSessionsByLevel(getSessions()));
 }
 
 /** Get decks that have been played */

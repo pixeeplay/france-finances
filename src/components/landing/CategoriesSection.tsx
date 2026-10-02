@@ -1,69 +1,46 @@
-import { memo } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import decksData from "@/data";
-import type { Deck } from "@/types";
+import { CategoryIcon } from "@/components/icons/CategoryIcon";
 
-const mainDecks = (decksData.decks as Deck[]).filter((d) => d.type !== "thematic");
+const mainDecks = decksData.decks.filter((d) => d.type !== "thematic");
 
+/** Index typographique des catégories (sommaire plutôt que tuiles). */
 export function CategoriesSection() {
   return (
-    <section id="categories" className="section-padding bg-white dark:bg-slate-950">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <h2 className="font-heading font-bold text-2xl md:text-3xl text-center mb-2 text-landing-primary dark:text-white">
-          Explorer les cat&eacute;gories
-        </h2>
-        <p className="text-center text-muted-foreground mb-10 text-sm md:text-base">
-          {mainDecks.length} cat&eacute;gories de d&eacute;penses publiques &agrave; passer &agrave; la tron&ccedil;onneuse
-        </p>
-
-        {/* Mobile: horizontal scroll */}
-        <div className="md:hidden overflow-x-auto scrollbar-hide -mx-4 px-4 pb-4">
-          <div className="flex gap-3" style={{ width: "max-content" }}>
-            {mainDecks.map((deck) => (
-              <CategoryCard key={deck.id} deck={deck} />
-            ))}
+    <section id="categories" aria-labelledby="categories-title" className="border-b border-border">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+        <header className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2 mb-6 border-b-2 border-foreground pb-3">
+          <div>
+            <p className="kicker text-muted-foreground mb-2">Sommaire</p>
+            <h2 id="categories-title" className="text-3xl md:text-4xl font-semibold leading-tight">
+              Les {mainDecks.length} catégories
+            </h2>
           </div>
-        </div>
-
-        {/* Desktop: grid */}
-        <div className="hidden md:grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-          {mainDecks.map((deck) => (
-            <CategoryCard key={deck.id} deck={deck} />
-          ))}
-        </div>
-
-        <div className="text-center mt-10">
-          <Link
-            href="/jeu"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-landing-primary text-white font-semibold hover:bg-landing-primary-light transition-all"
-          >
-            Jouer maintenant
-            <span>&#8594;</span>
+          <Link href="/jeu" className="text-sm font-semibold underline underline-offset-4 decoration-1 min-h-[44px] inline-flex items-center">
+            Choisir un thème et jouer <span aria-hidden="true" className="ml-1">&#8594;</span>
           </Link>
-        </div>
+        </header>
+
+        <ul className="grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-x-8">
+          {mainDecks.map((deck) => (
+            <li key={deck.id} className="border-b border-border">
+              <Link
+                href={`/categories/${deck.id}`}
+                className="group flex items-center gap-3 py-3 min-h-[44px]"
+              >
+                <CategoryIcon deckId={deck.id} size={20} className="shrink-0 text-muted-foreground group-hover:text-foreground transition-colors" />
+                <span className="flex-1 font-medium leading-tight group-hover:underline underline-offset-4 decoration-1">
+                  {deck.name}
+                </span>
+                <span className="font-mono text-xs text-muted-foreground tabular-nums">
+                  {deck.cardCount}
+                  <span className="sr-only"> cartes</span>
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
 }
-
-const CategoryCard = memo(function CategoryCard({ deck }: { deck: Deck }) {
-  return (
-    <Link
-      href={`/categories/${deck.id}`}
-      className="hover-lift flex flex-col items-center gap-2 bg-slate-50 dark:bg-slate-800 rounded-xl p-5 border border-slate-100 dark:border-slate-700 min-w-[140px] md:min-w-0 text-center"
-    >
-      {deck.image ? (
-        <Image src={deck.image} alt={deck.name} width={40} height={40} />
-      ) : (
-        <span className="text-3xl">{deck.icon}</span>
-      )}
-      <span className="text-sm font-semibold text-foreground leading-tight">
-        {deck.name}
-      </span>
-      <span className="text-xs text-muted-foreground">
-        {deck.cardCount} cartes
-      </span>
-    </Link>
-  );
-});

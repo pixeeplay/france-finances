@@ -1,30 +1,28 @@
 import { NextRequest } from "next/server";
-import { timingSafeEqual } from "crypto";
 import { db, isDbAvailable } from "@/db";
 import { analyticsEvents } from "@/db/schema";
 import { lt } from "drizzle-orm";
-import { dbUnavailableResponse, jsonOk, authError, serverError } from "@/lib/api-utils";
+import { auth } from "@/auth";
+import { dbUnavailableResponse, jsonOk, jsonError, serverError } from "@/lib/api-utils";
+import { isAdmin, hasValidAnalyticsSecret } from "@/lib/admin";
 
 export const dynamic = "force-dynamic";
 
 /**
  * DELETE /api/analytics/purge
  * Removes analytics_events older than 90 days.
- * Protected by ANALYTICS_SECRET header (same pattern as dashboard endpoint).
+ * Protected like the dashboard endpoint: admin session (ADMIN_EMAILS) or
+ * ANALYTICS_SECRET header/query param. Fails closed when neither is configured.
+ * Anonymous -> 401, signed-in non-admin -> 403.
  */
 export async function DELETE(request: NextRequest) {
-  // Auth: require ANALYTICS_SECRET header
-  const secret = process.env.ANALYTICS_SECRET;
-  if (secret) {
+  const session = await auth();
+  if (!isAdmin(session)) {
     const provided =
       request.headers.get("x-analytics-secret") ??
       request.nextUrl.searchParams.get("secret");
-    if (
-      !provided ||
-      provided.length !== secret.length ||
-      !timingSafeEqual(Buffer.from(provided), Buffer.from(secret))
-    ) {
-      return authError("Unauthorized");
+    if (!hasValidAnalyticsSecret(provided)) {
+      return session?.user ? jsonError("Forbidden", 403) : jsonError("Unauthorized", 401);
     }
   }
 

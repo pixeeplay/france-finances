@@ -4,6 +4,8 @@
 **Contexte :** projet en pause depuis mars 2026 (Sprint 35). Le partenaire nicoquipaie.co est hors ligne et son responsable injoignable. Objectifs : récupérer nos contributions à nicoquipaie, moderniser le site (sortir du look "IA générique"), enrichir le jeu.
 
 > Mise à jour du 2026-10-02 : la Phase 0 initiale (rapatriement par archives web) est abandonnée. Voir section 1.
+>
+> Mise à jour du 2026-10-02 (soir) : Phases 1 et 2 réalisées et fusionnées dans la branche locale `refonte/integration` (rien n'est poussé ni déployé). Avancement coché en section 3, décisions ouvertes en section 4.
 
 ---
 
@@ -24,7 +26,7 @@
 
 - Les publications du site (`scripts/seed.ts`, 80 signalements « Nicolas Paie ») ont été rédigées par lezardoloris, en partie issues d'une recherche Gemini. Ce n'est pas notre contenu. Elles peuvent servir d'idées de cartes, à condition de tout re-sourcer à partir de documents officiels. Les publications ajoutées ensuite par les visiteurs n'existaient que dans la base Railway (pas d'accès).
 
-### Nettoyage des références à nicoquipaie.co
+### Nettoyage des références à nicoquipaie.co (fait, agent E)
 
 - `src/components/landing/EcosystemSection.tsx` : section à supprimer ou à remplacer par « Les Chiffres / Le Simulateur » une fois portés.
 - `src/app/a-propos/page.tsx`, `src/app/api/og/route.tsx`, `src/app/(game)/infos/page.tsx`.
@@ -32,7 +34,7 @@
 
 ---
 
-## 2. Analyse de l'existant
+## 2. Analyse de l'existant (état au 2026-09-30, avant la refonte)
 
 ### Points forts
 
@@ -90,45 +92,52 @@ Phase 3  (plus tard) Feed / dossiers éditoriaux
 
 **D. Assainissement** (en premier, car A et C touchent aux mêmes composants)
 
-- Contrôle de rôle admin sur `pixee-admin` : un champ `role` sur `users` ou une variable d'env `ADMIN_EMAILS`. Retirer le lien de `BottomNav`.
-- Supprimer la waitlist, `ParisTeaser` et les SVG de démo.
-- Vérifier que Next 16, NextAuth beta, serwist et Sentry fonctionnent ensemble. `npm run lint`, `type-check`, `test` et `build` doivent passer.
-- Remettre CLAUDE.md et le README en accord avec la réalité.
+- [x] Contrôle de rôle admin sur `pixee-admin` : variable d'env `ADMIN_EMAILS` (`src/lib/admin.ts`, refus par défaut). Routes `/api/analytics/dashboard` et `/purge` protégées (session admin ou `ANALYTICS_SECRET`). Lien retiré de `BottomNav`.
+- [x] Supprimer la waitlist, `ParisTeaser` et les SVG de démo (migration `drizzle/0002_drop_waitlist.sql` écrite, **non exécutée**).
+- [x] Next 16, NextAuth beta, serwist et Sentry ensemble : build prod en `next build --webpack` (sinon `public/sw.js` n'est plus généré), Sentry client dans `src/instrumentation-client.ts`.
+- [x] Remettre CLAUDE.md et le README en accord avec la réalité (mis à jour à nouveau après l'intégration finale).
 
 **A. Direction artistique** (après D)
 
-- Direction « data-journalisme » (références : Les Décodeurs, FT Visual, Our World in Data) : typographie éditoriale (une serif pour les titres, une grotesk pour le texte, des chiffres tabulaires), grille rigoureuse, palette sobre avec la couleur réservée au sens (garder / couper / renforcer / injustifié).
-- Supprimer les dégradés de texte, les ombres néon et les flous décoratifs.
-- Remplacer les emojis des cartes par un pictogramme SVG par catégorie (au moins 16) ou par une visualisation du montant (barre proportionnelle, équivalence).
-- Refaire la landing : entrée directe dans le jeu, un chiffre fort, les dossiers mis en avant.
-- Livrables : design tokens (`globals.css`), `SwipeCard`, `ResultScreen`, landing, OG image.
+- [x] Direction « data-journalisme » : Source Serif 4 (titres, chiffres), Schibsted Grotesk (texte), IBM Plex Mono (étiquettes) ; utilitaires `kicker` et `numeral` ; palette sobre, couleur réservée au sens. Thème clair ajouté.
+- [x] Supprimer les dégradés de texte, les ombres néon et les flous décoratifs.
+- [x] Remplacer les emojis des cartes par un pictogramme SVG par catégorie (`CategoryIcon`) et une échelle de montant (`AmountScale`).
+- [x] Refaire la landing : entrée directe dans le jeu, un chiffre fort (`src/data/headline.ts`), outils `/chiffres` et `/simulateur`.
+- [x] Livrables : design tokens (`globals.css`), `SwipeCard`, `ResultScreen`, landing, OG image.
+- [x] Restyle éditorial des encarts de C et des pages de E (fait en Phase 2, branche `refonte/fix-ui`).
+- [ ] Emojis d'interface restants : OverviewTab, SessionsTab/JournalTab, PlayerProfileCard, SpeedTab, TopXPTab, AuditScreen/AuditReport, `error.tsx`, champ `icon` de `achievements.ts` (partage). Classes `slate-*` en dur dans InstallBanner et la modale de `/jeu`.
 
 **B. Données** (en parallèle de A et C)
 
-- Une `sourceUrl` précise (document ou page exacte) pour chaque carte, et correction des 22 domaines accentués.
-- Mise à jour PLF 2027 / LFSS 2027 dès leur publication ; ajouter les champs `year` et `sourceDate`.
-- Répartition réelle des cartes par niveau : L1 pour les grands postes, L2 pour les dispositifs, L3 pour les niches et les micro-audits.
-- Schéma Zod des cartes et script `npm run data:check` (schéma, doublons, URL valides, cohérence entre `costPerCitizen` et `amountBillions` sur 68 M d'habitants), lancé en CI.
+- [x] Correction des 22 domaines accentués.
+- [ ] Une `sourceUrl` précise pour chaque carte : 346/369 faites ; 23 cartes sans source et 3 pages d'accueil (edu-12, ene-14, sec-12) restent.
+- [x] Champs `year` et `sourceDate` ajoutés au schéma (182 cartes avec `year`).
+- [ ] Mise à jour PLF 2027 / PLFSS 2027 (présentés le 1er octobre 2026) : cartes `year: 2026`, `src/data/chiffres.ts`, `src/data/fiscal-2026.ts`.
+- [x] Répartition réelle des cartes par niveau : L1=130, L2=130, L3=109 (au moins 2 par niveau et par deck).
+- [x] Schéma Zod des cartes et script `npm run data:check`, lancé en CI.
 
 **C. Game design** (en parallèle de A et B)
 
-- Retour après chaque swipe : pourcentage de la communauté du même avis, un fait marquant, et le montant cumulé « tronçonné ».
-- Deck du jour : même tirage pour tous (seed = date), avec série de jours et partage du résultat façon Wordle.
-- Mode « Trouve 50 Md€ » : objectif budgétaire à atteindre, en s'appuyant sur `gameMode: "budget"` qui existe déjà dans `gameStore`.
-- Archétype calculé à partir du contenu (catégories et montants coupés), pas seulement des pourcentages.
-- Remplacer les badges de volume par des badges de compréhension (mini-quiz « à ton avis, combien ? » avant de révéler le montant).
-- Progression L1 → L2 → L3 débloquée par le jeu, pas par l'URL.
+- [x] Retour après chaque swipe (bandeau `SessionFeedbackBar` au-dessus de la pile) : avis de la communauté, fait marquant, montant cumulé.
+- [x] Deck du jour `/jeu/quotidien` : même tirage pour tous (seed = date, heure de Paris), série de jours, partage façon Wordle.
+- [x] Mode « Trouve 50 Md€ » (`/jeu/random?mode=budget&target=50`).
+- [x] Archétype calculé à partir du contenu ; 18 archétypes (ajout de Bûcheron et Élagueur).
+- [x] Badges de compréhension (3) et mini-quiz « à ton avis, combien ? ». Les 19 badges de volume sont conservés (décision ouverte).
+- [x] Progression L1 → L2 → L3 débloquée par le jeu (2 sessions par palier).
 
 **E. Portage Chiffres / Simulateur** (en parallèle de A, B et C)
 
-- Reprendre notre code de `/work/projects/NICOLAS/CestNicolasQuiPaye` (`feat/les-chiffres`, `feat/simulateur`) et l'adapter à la stack et aux conventions de ce repo (pas de shadcn, Zustand, mobile-first, dark).
-- Routes `/chiffres` et `/simulateur`, liens depuis la landing à la place de `EcosystemSection`, sitemap, tests.
+- [x] Reprendre notre code de `/work/projects/NICOLAS/CestNicolasQuiPaye` et l'adapter (barèmes 2026 vérifiés, `src/lib/taxCalculator.ts`, `src/data/fiscal-2026.ts`, `src/data/chiffres.ts`).
+- [x] Routes `/chiffres` et `/simulateur`, `ToolsSection` à la place de `EcosystemSection`, sitemap, 51 tests unitaires.
+- [ ] Tests e2e Playwright de `/chiffres` et `/simulateur` ; OG image dédiée.
 
 ### Phase 2 : Relecture croisée
 
-- **Fact-check** : un agent contradictoire vérifie les montants et les sources des cartes (B) et du portage (E). Il signale aussi le ton militant.
-- **Code review** des branches A et C (`/code-review`).
-- **Audit accessibilité et performance mobile** : Playwright + Lighthouse sur 375px, swipe à 60 fps, `prefers-reduced-motion`.
+- [x] **Fact-check** des cartes : 22 constats corrigés, environ 300 cartes relues et alignées sur les sources citées, formulations militantes retirées (branche `refonte/fix-donnees`).
+- [ ] **Fact-check** du portage E (`src/data/chiffres.ts` : dette 115,7 vs 115,6 %, population) et du chiffre d'ouverture (1 670 Md€, `src/data/headline.ts`, sans URL).
+- [x] **Code review** des branches A et C : 7 constats corrigés (mode budget, sync, formatage unifié, progression, toast PWA à la première visite) ; e2e Playwright adaptés, 14/14 verts sur build de prod (branche `refonte/fix-code`).
+- [x] **Audit accessibilité** : 9 constats corrigés (polices préchargées 189 Ko → 68 Ko, annonces du simulateur, focus du quiz, débordement des cartes à 360×640, `theme-color`, contrastes) (branche `refonte/fix-ui`).
+- [ ] **Performance réelle** : Lighthouse et swipe à 60 fps sur un vrai mobile milieu de gamme ; `useSwipeGesture` ignore encore `prefers-reduced-motion` au relâchement ; boutons Niveau 1/2/3 à 40 px.
 
 ### Phase 3 : Plus tard
 
@@ -136,13 +145,46 @@ Phase 3  (plus tard) Feed / dossiers éditoriaux
 
 ---
 
-## 4. Pour reprendre
+## 4. Décisions ouvertes
 
-1. « Lance le workflow multi-agents des Phases 1 et 2 de PLAN-REFONTE.md ». Garder l'ordre D, puis A, B, C et E en parallèle.
+**Produit / game design**
 
----
+1. ✅ Validé 2026-10-02 (statu quo). Couleurs du niveau 2 : en jeu, « Réduire » est en amber et « Injustifié » en rouge, alors que le token `unjustified` est amber. Harmoniser ou garder.
+2. ✅ Validé 2026-10-02. Seuils de déblocage (2 sessions N1 → N2, 2 sessions N2 → N3). Les joueurs qui passaient par `?level=` repartent au niveau 1.
+3. ✅ Validé 2026-10-02 : gardés. Garder ou supprimer les 19 badges de volume (« jouer 3 sessions du deck X »).
+4. Champ `kind` (dépense / recette / agrégat) sur les cartes, pour exclure du deck du jour et du défi les cartes qui ne sont pas des dépenses (fraude fiscale, dette des collectivités…). Le niveau des cartes n'est pas non plus utilisé pour le tirage.
+5. Choisir un deck sur `/jeu` désactive le mode budget : un défi budget sur un deck de catégorie n'est accessible que par URL.
+6. Table `communityVotes` jamais alimentée (le pourcentage communautaire vient de `votes`) : la supprimer ou la brancher.
 
-## 5. Todo (hors workflow)
+**Données**
+
+7. Population de référence : 68 M (cartes, `data:check`) ou 69,1 M (Insee 2026, `/chiffres`).
+8. ukr-10 (montant en points de PIB), fre-10, log-16 : exceptions « à vérifier », à convertir ou retirer. Montants dérivés à valider : ukr-01, ret-02, edu-17, fre-05 à fre-08 (clé de contribution UE 17,2 %).
+9. Faits ajoutés de mémoire à vérifier : env-09 (ZFE), env-18, env-19, rec-12, ene-15, soc-06, ret-05, soc-18, san-14. URL à vérifier dans un navigateur : num-03, num-13, log-13, fre-06.
+10. Sections de la page Chiffres d'origine écartées (recettes détaillées, IR par décile, fraude sociale…) : à réintroduire ou non avec des sources officielles. Hypothèses du simulateur à valider (TVA moyenne 13 % sur 80 % du revenu, parent isolé, un salaire non-cadre).
+
+**Technique**
+
+11. Deux familles de formatage dans `src/lib/format.ts` (éditoriale et tableaux) : garder les deux ou fusionner.
+12. Dérive schéma / migrations Drizzle (FK en cascade, `idx_analytics_ip`) à régulariser dans une migration dédiée.
+13. `/pixee-admin` renvoie le fallback 404 avec un statut 200 (streaming) : contrôle dans `proxy.ts` ou non.
+14. Migrer serwist vers `@serwist/turbopack` pour repasser le build sur Turbopack ; CSP sans `worker-src` (erreur serwist « waiting » observée).
+15. `components.json` et `class-variance-authority` subsistent sans composant shadcn.
+16. `recomputeStats` reconstruit xp et sessions à partir de l'historique local purgé à 30 jours ; les sessions du deck du jour sont comptées sous `daily`.
+
+## 4 bis. Pour reprendre
+
+1. Relire `refonte/integration` et trancher les décisions ci-dessus.
+2. Intégrer le PLF / PLFSS 2027 (agent B).
+3. Phase 3 : Feed / dossiers éditoriaux.
+
+## 5. Avant le déploiement de la refonte
+
+0. **Définir `ADMIN_EMAILS` dans Coolify** (sinon plus personne n'accède à `/pixee-admin`) ; vérifier qu'aucun cron n'appelle `/api/analytics/purge` sans `ANALYTICS_SECRET`.
+1. **Exporter la table `waitlist` en prod** avant tout `npm run db:migrate`. La migration `drizzle/0002_drop_waitlist.sql` fait un `DROP TABLE IF EXISTS "waitlist"` et efface définitivement les emails inscrits. Exemple : `psql "$DATABASE_URL" -c "\copy waitlist TO 'waitlist-$(date +%F).csv' CSV HEADER"`, puis conserver le fichier hors du serveur.
+2. Seulement ensuite, appliquer les migrations (`npm run db:migrate`), qui restent manuelles : elles ne sont pas lancées au déploiement.
+
+## 6. Todo équipe (accès admin)
 
 - [ ] **Coolify** : ajouter `ADMIN_EMAILS=smiollis@gmail.com,seb@pixeeplay.com,arnaud@pixeeplay.com,alexis@pixeeplay.com` (sans espaces ; le parseur doit quand même faire un `trim`).
 - [ ] **SSO admin Google Workspace + GitHub** : toute l'équipe a un compte Google Workspace `@pixeeplay.com`.

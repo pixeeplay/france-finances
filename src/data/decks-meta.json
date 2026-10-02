@@ -6,7 +6,7 @@
       "description": "Budget des armées, renseignement, gendarmerie",
       "icon": "⚔️",
       "color": "#3B82F6",
-      "cardCount": 20,
+      "cardCount": 19,
       "image": "/categories/defense.svg",
       "type": "main"
     },
