@@ -63,8 +63,10 @@ export function AcronymText({ text, className, style }: AcronymTextProps) {
     return () => document.removeEventListener("click", handler, true);
   }, [active]);
 
-  // Split text into parts (text + acronym matches)
-  const parts: Array<{ type: "text" | "acronym"; value: string }> = [];
+  // Split text into parts (text + acronym matches). Opening/closing punctuation
+  // touching an acronym ("(", ")", ",", ".") is kept with it so the line never
+  // breaks between "(" and the acronym button.
+  const parts: Array<{ type: "text" | "acronym"; value: string; before?: string; after?: string }> = [];
   let lastIndex = 0;
   let match: RegExpExecArray | null;
   const regex = new RegExp(acronymPattern, "g");
@@ -79,6 +81,25 @@ export function AcronymText({ text, className, style }: AcronymTextProps) {
   if (lastIndex < text.length) {
     parts.push({ type: "text", value: text.slice(lastIndex) });
   }
+  parts.forEach((part, i) => {
+    if (part.type !== "acronym" || !ACRONYMS[part.value]) return;
+    const prev = parts[i - 1];
+    if (prev?.type === "text") {
+      const lead = /[([«\u00a0]+$/.exec(prev.value)?.[0];
+      if (lead) {
+        part.before = lead;
+        prev.value = prev.value.slice(0, -lead.length);
+      }
+    }
+    const next = parts[i + 1];
+    if (next?.type === "text") {
+      const trail = /^[)\]»\u00a0,.;:!?]+/.exec(next.value)?.[0];
+      if (trail) {
+        part.after = trail;
+        next.value = next.value.slice(trail.length);
+      }
+    }
+  });
 
   // If no acronyms found, render plain text
   if (parts.every((p) => p.type === "text")) {
@@ -105,29 +126,32 @@ export function AcronymText({ text, className, style }: AcronymTextProps) {
         const key = `${part.value}-${i}`;
 
         return (
-          <button
-            key={i}
-            type="button"
-            onClick={(e) => {
-              e.stopPropagation();
-              e.preventDefault();
-              handleClick(key, e.currentTarget);
-            }}
-            onMouseEnter={(e) => {
-              // Hover only on devices with a fine pointer (desktop)
-              if (window.matchMedia("(pointer: fine)").matches) {
-                show(key, e.currentTarget);
-              }
-            }}
-            onMouseLeave={() => {
-              if (window.matchMedia("(pointer: fine)").matches) {
-                setActive(null);
-              }
-            }}
-            className="text-foreground font-medium border-b border-dotted border-muted-foreground hover:border-foreground transition-colors cursor-help"
-          >
-            {part.value}
-          </button>
+          <span key={i} className="whitespace-nowrap">
+            {part.before}
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                e.preventDefault();
+                handleClick(key, e.currentTarget);
+              }}
+              onMouseEnter={(e) => {
+                // Hover only on devices with a fine pointer (desktop)
+                if (window.matchMedia("(pointer: fine)").matches) {
+                  show(key, e.currentTarget);
+                }
+              }}
+              onMouseLeave={() => {
+                if (window.matchMedia("(pointer: fine)").matches) {
+                  setActive(null);
+                }
+              }}
+              className="text-foreground font-medium border-b border-dotted border-muted-foreground hover:border-foreground transition-colors cursor-help"
+            >
+              {part.value}
+            </button>
+            {part.after}
+          </span>
         );
       })}
 
