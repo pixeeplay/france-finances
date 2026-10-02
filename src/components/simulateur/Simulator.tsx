@@ -259,22 +259,22 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
         <h2 id="sim-detail-title" className="text-2xl font-extrabold text-foreground mb-2">Détail du calcul</h2>
         <dl className="divide-y divide-border">
           <Row label="Salaire brut" value={formatEuros(input.annualGross)} strong />
-          <Row label="CSG (9,2 %)" value={`− ${formatEuros(cotisations.csg)}`} />
-          <Row label="CRDS (0,5 %)" value={`− ${formatEuros(cotisations.crds)}`} />
+          <Row label="CSG, contribution sociale généralisée (9,2 %)" value={`− ${formatEuros(cotisations.csg)}`} />
+          <Row label="CRDS, remboursement de la dette sociale (0,5 %)" value={`− ${formatEuros(cotisations.crds)}`} />
           <Row label="Retraite de base" value={`− ${formatEuros(cotisations.retraiteBase)}`} />
           <Row label="Retraite complémentaire (Agirc-Arrco)" value={`− ${formatEuros(cotisations.retraiteComplementaire)}`} />
           <Row label="Salaire net avant impôt" value={formatEuros(result.netAvantIR)} strong />
-          <Row label="Revenu net imposable (après abattement de 10 %)" value={formatEuros(result.netImposable)} />
+          <Row label="Revenu imposable (net moins 10 % pour frais professionnels)" value={formatEuros(result.netImposable)} />
           <Row label={`Impôt avant décote (${formatPartsLabel(ir.nbParts)})`} value={formatEuros(ir.irBrut)} />
-          {ir.decote > 0 ? <Row label="Décote" value={`− ${formatEuros(ir.decote)}`} /> : null}
+          {ir.decote > 0 ? <Row label="Décote (réduction pour revenus modestes)" value={`− ${formatEuros(ir.decote)}`} /> : null}
           <Row label="Impôt sur le revenu" value={`− ${formatEuros(ir.irTotal)}`} />
-          <Row label="Tranche marginale" value={formatRatio(ir.marginalRate, 0)} />
+          <Row label="Taux de votre tranche la plus haute (tranche marginale)" value={formatRatio(ir.marginalRate, 0)} />
           <Row label="Salaire net après impôt" value={formatEuros(result.netApresIR)} strong />
           <Row label="TVA estimée sur votre consommation" value={formatEuros(tva.estimatedTVA)} />
         </dl>
         {ir.qfCapped ? (
           <p className="mt-3 text-xs text-muted-foreground">
-            Le plafonnement du quotient familial s&apos;applique à votre situation.
+            L&apos;avantage fiscal des parts supplémentaires (quotient familial) est plafonné dans votre situation.
           </p>
         ) : null}
       </section>
@@ -289,12 +289,12 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
         </h2>
         <p className="mb-4 text-sm text-muted-foreground leading-relaxed">
           Répartition indicative de {formatEuros(ir.irTotal + tva.estimatedTVA)} au prorata des
-          crédits des missions de l&apos;État en 2026. En réalité, les recettes ne sont pas affectées
+          dépenses prévues pour chaque grand poste du budget de l&apos;État en 2026. En réalité, les recettes ne sont pas affectées
           à une dépense précise, et une partie de la TVA finance la Sécurité sociale et les
           collectivités. Vos cotisations financent la Sécurité sociale.
         </p>
         <BarList
-          caption="Répartition indicative de l'impôt sur le revenu et de la TVA par mission"
+          caption="Répartition indicative de l'impôt sur le revenu et de la TVA par poste du budget de l'État"
           items={result.budgetAllocation.map((s) => ({
             label: s.label,
             value: s.amount,

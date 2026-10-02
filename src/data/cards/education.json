@@ -2,7 +2,7 @@
   {
     "id": "edu-01",
     "title": "Éducation nationale",
-    "subtitle": "Mission « Enseignement scolaire » — 1er poste de l'État",
+    "subtitle": "Budget « Enseignement scolaire » — 1er poste de l'État",
     "description": "Environ 12 millions d'élèves, dont un peu plus de 2 millions dans le privé sous contrat. Le PLF 2026 prévoit 64,5 Md€ de crédits hors pensions (+0,26 %) et 89,6 Md€ en incluant les pensions. Il prévoit la suppression de 4 018 ETP d'enseignants, compensée en partie par 5 440 postes de stagiaires liés à la réforme de la formation initiale. Selon l'OCDE, la France dépense moins par élève du primaire que la moyenne des pays membres.",
     "amountBillions": 89.6,
     "costPerCitizen": 1297,
@@ -15,7 +15,7 @@
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["éducation", "budget", "enseignement"],
-    "equivalence": "89,6 Md€ en 2026, pensions comprises"
+    "equivalence": "89,6 Md€ en 2026, retraites des personnels comprises"
   },
   {
     "id": "edu-02",
@@ -37,7 +37,7 @@
   {
     "id": "edu-03",
     "title": "Salaires des enseignants",
-    "subtitle": "Masse salariale des enseignants du public",
+    "subtitle": "Total des salaires des enseignants du public",
     "description": "Environ 860 000 enseignants. Les revalorisations engagées depuis 2023 représentent un coût budgétaire de 4,2 Md€ en 2026. Selon le Sénat, les rémunérations restent insuffisantes pour enrayer la crise d'attractivité du métier, visible dans la stagnation des indicateurs des concours ; le recours aux contractuels progresse.",
     "amountBillions": 48,
     "costPerCitizen": 695,
@@ -68,8 +68,8 @@
   },
   {
     "id": "edu-05",
-    "title": "Inclusion scolaire (AESH)",
-    "subtitle": "École inclusive — accompagnants d'élèves handicapés",
+    "title": "Élèves handicapés à l'école (AESH)",
+    "subtitle": "École inclusive — accompagnants d'élèves en situation de handicap",
     "description": "Depuis 2005, près de 266 000 élèves en situation de handicap supplémentaires ont été scolarisés en milieu ordinaire. Le nombre d'accompagnants d'élèves en situation de handicap (AESH) a été multiplié par 3,2 entre 2017 et 2025, pour atteindre 139 993 personnes. Le budget de l'école inclusive atteint 4,74 Md€ dans le PLF 2026, 25 % de plus qu'en 2022. Les AESH travaillent majoritairement à temps partiel.",
     "amountBillions": 4.74,
     "costPerCitizen": 69,
@@ -81,12 +81,12 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["éducation", "handicap", "inclusion"],
-    "equivalence": "139 993 AESH en 2025, trois fois plus qu'en 2017"
+    "equivalence": "139 993 accompagnants (AESH) en 2025, trois fois plus qu'en 2017"
   },
   {
     "id": "edu-06",
     "title": "Recherche publique",
-    "subtitle": "CNRS, INSERM, CEA, INRIA, ANR…",
+    "subtitle": "Organismes de recherche : CNRS, Inserm, CEA, Inria, ANR…",
     "description": "Organismes de recherche (CNRS, Inserm, CEA, Inria, INRAE) et Agence nationale de la recherche. Le programme 172 « Recherches scientifiques et technologiques pluridisciplinaires » en est le principal financement, avec 8,2 Md€ de crédits de paiement en 2026. Le CNRS est l'un des premiers organismes de recherche au monde par le nombre de publications. Le crédit d'impôt recherche (8 Md€) finance en parallèle la R&D privée.",
     "amountBillions": 20,
     "costPerCitizen": 289,
@@ -97,7 +97,7 @@
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["éducation", "recherche", "CNRS"],
-    "equivalence": "Programme 172 : 8,2 Md€ en 2026"
+    "equivalence": "Budget de la recherche scientifique (programme 172) : 8,2 Md€ en 2026"
   },
   {
     "id": "edu-07",
@@ -119,7 +119,7 @@
   {
     "id": "edu-08",
     "title": "Crédit d'impôt recherche (CIR)",
-    "subtitle": "Subvention fiscale à la R&D privée",
+    "subtitle": "Réduction d'impôt pour les entreprises qui font de la recherche",
     "description": "Le CIR devrait coûter 8,0 Md€ en 2026 pour un peu plus de 17 500 entreprises, contre 4,5 Md€ en 2009. Les grandes entreprises représentent 42 % des créances (2021). La commission d'enquête du Sénat sur les aides publiques aux entreprises a pointé plusieurs limites du dispositif, notamment son ciblage et son évaluation.",
     "amountBillions": 8,
     "costPerCitizen": 116,
@@ -169,8 +169,8 @@
   },
   {
     "id": "edu-11",
-    "title": "Éducation prioritaire (REP/REP+)",
-    "subtitle": "1,7 million d'élèves en zone prioritaire",
+    "title": "Écoles et collèges en éducation prioritaire (REP/REP+)",
+    "subtitle": "Plus de moyens pour 1,7 million d'élèves de quartiers défavorisés",
     "description": "Environ 1 100 réseaux d'éducation prioritaire, dont environ 360 REP+, scolarisent 1,7 million d'élèves. Près de 2,6 Md€ y sont consacrés chaque année. Les classes de grande section, CP et CE1 y sont dédoublées, et les enseignants perçoivent une indemnité spécifique, jusqu'à environ 5 000 € par an en REP+. Les écarts de résultats avec les autres établissements persistent au collège.",
     "amountBillions": 2.6,
     "costPerCitizen": 38,
@@ -203,8 +203,8 @@
   },
   {
     "id": "edu-13",
-    "title": "Lycees professionnels",
-    "subtitle": "620 000 lyceens en voie professionnelle",
+    "title": "Lycées professionnels",
+    "subtitle": "620 000 lycéens en voie professionnelle",
     "description": "Environ un tiers des lycéens suivent la voie professionnelle. La réforme engagée en 2023 introduit une gratification des stages et la fermeture des formations sans débouchés. Le décrochage y reste plus élevé que dans la voie générale.",
     "amountBillions": 7,
     "costPerCitizen": 101,
@@ -220,7 +220,7 @@
   },
   {
     "id": "edu-14",
-    "title": "AEFE (lycées français à l'étranger)",
+    "title": "Lycées français à l'étranger (AEFE)",
     "subtitle": "612 établissements homologués dans le monde",
     "description": "À la rentrée 2025, l'AEFE coordonne un réseau de 612 établissements homologués : 68 en gestion directe, 155 conventionnés et 389 partenaires autofinancés. Le réseau scolarisait 398 108 élèves en 2024-2025. Les dotations de l'État (subvention pour charges de service public et aide à la scolarité) atteignent 503 M€ dans le PLF 2026 (-5,5 %) et couvrent environ la moitié du budget de l'agence, le reste reposant sur ses ressources propres.",
     "amountBillions": 0.503,
@@ -239,7 +239,7 @@
   {
     "id": "edu-15",
     "title": "Recherche spatiale et ESA",
-    "subtitle": "Programme 193 « Recherche spatiale »",
+    "subtitle": "Centre national d'études spatiales (CNES) et Agence spatiale européenne",
     "description": "Le programme 193 finance la politique spatiale française, dont le CNES et la contribution à l'Agence spatiale européenne (ESA) : 1 848 M€ en 2026, un montant stabilisé. Il couvre les missions scientifiques, les lanceurs (Ariane 6, qui a effectué son premier vol en 2024) et l'observation de la Terre. Face à la concurrence de SpaceX, l'Europe développe des technologies de lanceurs réutilisables.",
     "amountBillions": 1.85,
     "costPerCitizen": 27,
@@ -257,7 +257,7 @@
   {
     "id": "edu-16",
     "title": "Numérique éducatif",
-    "subtitle": "Tablettes, ENT, logiciels scolaires",
+    "subtitle": "Tablettes, espaces numériques de travail (ENT), logiciels scolaires",
     "description": "Tablettes, espaces numériques de travail (ENT), ressources numériques et formation des enseignants. Selon la Cour des comptes (2019), entre 2013 et 2017, les collectivités ont consacré 2 Md€ à l'équipement numérique des établissements et l'État près de 300 M€, alors que son engagement initial était annoncé à 1 Md€. Les smartphones sont interdits à l'école et au collège.",
     "amountBillions": 1,
     "costPerCitizen": 14,
@@ -272,8 +272,8 @@
   },
   {
     "id": "edu-17",
-    "title": "CROUS et vie étudiante",
-    "subtitle": "Residences universitaires + restaurants + accompagnement social",
+    "title": "Vie étudiante (CROUS)",
+    "subtitle": "Résidences universitaires + restaurants + accompagnement social",
     "description": "Les CROUS gèrent logements, restaurants universitaires et accompagnement social des étudiants. Le programme « Vie étudiante » est doté de 3,23 Md€ en 2026, dont 2,32 Md€ de bourses : environ 0,9 Md€ financent donc les autres actions, principalement les CROUS. Le repas au restaurant universitaire coûte 3,30 € (1 € pour les boursiers). Le réseau prévoit un déficit de 181 M€ en 2025, après 4,8 M€ en 2024.",
     "amountBillions": 0.91,
     "costPerCitizen": 13,
@@ -284,13 +284,13 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["education", "étudiants", "crous"],
-    "equivalence": "Programme Vie étudiante : 3,23 Md€ en 2026, dont 2,32 Md€ de bourses",
+    "equivalence": "Budget vie étudiante : 3,23 Md€ en 2026, dont 2,32 Md€ de bourses",
     "year": 2026
   },
   {
     "id": "edu-18",
     "title": "Parcoursup et orientation",
-    "subtitle": "Plateforme d'admission post-bac",
+    "subtitle": "Plateforme d'admission après le bac",
     "description": "Parcoursup gère depuis 2018 les candidatures dans l'enseignement supérieur. Dans son premier bilan de la loi ORE (2020), la Cour des comptes relevait le manque de transparence des algorithmes locaux et l'insuffisance de l'accompagnement à l'orientation des lycéens. Elle estimait le coût des réorientations à près de 550 M€ par an pour la seule première année du supérieur.",
     "amountBillions": 0.05,
     "costPerCitizen": 1,

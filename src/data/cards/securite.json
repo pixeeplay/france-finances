@@ -2,7 +2,7 @@
   {
     "id": "sec-01",
     "title": "Police nationale",
-    "subtitle": "Programme « Police nationale » de la mission Sécurités",
+    "subtitle": "Budget de la Police nationale",
     "description": "Sécurité publique, police judiciaire, renseignement, CRS, police aux frontières. Le PLF 2026 prévoit 13,9 Md€ de crédits de paiement (+3,3 %) et plus de 1 000 ETP supplémentaires, dont 300 pour la police aux frontières. La trajectoire de la LOPMI est légèrement dépassée.",
     "amountBillions": 13.9,
     "costPerCitizen": 201,
@@ -55,8 +55,8 @@
   },
   {
     "id": "sec-04",
-    "title": "Administration pénitentiaire",
-    "subtitle": "Crédits 2026 hors pensions",
+    "title": "Prisons (administration pénitentiaire)",
+    "subtitle": "Crédits 2026 hors retraites",
     "description": "Au 1er octobre 2025, la France compte 84 862 détenus pour une densité carcérale de 135,8 % (165,4 % en maisons d'arrêt). La France a été condamnée à plusieurs reprises par la CEDH pour ses conditions de détention. Le plan « 15 000 places », en retard, est complété par un programme de prisons modulaires. Pour 2026, les crédits de paiement de l'administration pénitentiaire atteignent 4,3 Md€ hors pensions (+3 %) et 5,5 Md€ pensions comprises.",
     "amountBillions": 4.3,
     "costPerCitizen": 62,
@@ -67,13 +67,13 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["justice", "prisons", "surpopulation"],
-    "equivalence": "84 862 détenus pour une densité carcérale de 135,8 %",
+    "equivalence": "84 862 détenus, soit 135,8 détenus pour 100 places",
     "year": 2026
   },
   {
     "id": "sec-05",
     "title": "Sécurité civile (pompiers)",
-    "subtitle": "SDIS, bases aériennes, gestion de crises",
+    "subtitle": "Pompiers départementaux (SDIS), avions bombardiers d'eau, gestion de crises",
     "description": "Environ 250 000 sapeurs-pompiers, dont près de 80 % de volontaires, réalisent près de 5 millions d'interventions par an ; les services d'incendie et de secours sont financés par les départements et les communes. L'État finance la flotte aérienne et les moyens nationaux (programme 161 : 882,7 M€ de crédits de paiement en 2026). Plus de 70 000 hectares ont brûlé en 2022. La flotte de 12 Canadair doit être renouvelée.",
     "amountBillions": 7,
     "costPerCitizen": 101,
@@ -122,7 +122,7 @@
   {
     "id": "sec-08",
     "title": "Cybersécurité nationale",
-    "subtitle": "ANSSI + COMCYBER + moyens des ministères",
+    "subtitle": "Agence de cybersécurité (ANSSI), cyberdéfense militaire, moyens des ministères",
     "description": "L'ANSSI, qui compte environ 600 agents, protège les systèmes d'information de l'État et des opérateurs essentiels ; les armées disposent de leur propre commandement de la cyberdéfense. Les hôpitaux et les collectivités sont régulièrement visés par des rançongiciels. Le Campus Cyber réunit acteurs publics et privés de la filière.",
     "amountBillions": 1,
     "costPerCitizen": 14,
@@ -154,9 +154,9 @@
   },
   {
     "id": "sec-10",
-    "title": "Sécurité routiere",
+    "title": "Sécurité routière",
     "subtitle": "Plus de 3 000 morts par an sur les routes",
-    "description": "La politique transversale de sécurité routière mobilise 5,05 Md€ de crédits de paiement en 2026. Plus de 3 000 personnes meurent chaque année sur les routes françaises, un chiffre qui stagne depuis une dizaine d'années. Les amendes des radars financent notamment la sécurité routière et les collectivités.",
+    "description": "Tous ministères confondus, la politique de sécurité routière mobilise 5,05 Md€ de crédits en 2026. Plus de 3 000 personnes meurent chaque année sur les routes françaises, un chiffre qui stagne depuis une dizaine d'années. Les amendes des radars financent notamment la sécurité routière et les collectivités.",
     "amountBillions": 5.05,
     "costPerCitizen": 73,
     "deckId": "securite",
@@ -207,7 +207,7 @@
   {
     "id": "sec-13",
     "title": "Victimes et indemnisation",
-    "subtitle": "Le FGTI indemnise les victimes d'infractions et d'actes de terrorisme",
+    "subtitle": "Un fonds public (FGTI) indemnise les victimes d'infractions et d'actes de terrorisme",
     "description": "Le Fonds de garantie des victimes des actes de terrorisme et d'autres infractions (FGTI) indemnise les victimes d'agressions, de violences sexuelles, de vols avec violence et d'attentats. Il est financé par une contribution forfaitaire prélevée sur chaque contrat d'assurance de biens. Les indemnisations des attentats de 2015-2016 ont représenté plusieurs centaines de millions d'euros.",
     "amountBillions": 0.7,
     "costPerCitizen": 10,
@@ -224,8 +224,8 @@
   },
   {
     "id": "sec-14",
-    "title": "Violences conjugales et feminicides",
-    "subtitle": "Plan interministeriel 2024-2027",
+    "title": "Violences conjugales et féminicides",
+    "subtitle": "Plan interministériel 2024-2027",
     "description": "Chaque année, près d'une centaine de femmes sont tuées par leur conjoint ou ex-conjoint et plus de 200 000 sont victimes de violences conjugales selon les enquêtes de victimation. Les dispositifs de protection se développent : téléphone grave danger, bracelet anti-rapprochement, ligne d'écoute 3919 accessible 24 h/24, hébergement spécialisé. Le plan interministériel 2024-2027 vise à renforcer la prévention et l'accompagnement.",
     "amountBillions": 0.36,
     "costPerCitizen": 5,
@@ -242,7 +242,7 @@
   {
     "id": "sec-15",
     "title": "Bracelet électronique et alternatives",
-    "subtitle": "PSE + TIG + semi-liberté + sursis probatoire",
+    "subtitle": "Bracelet électronique, travaux d'intérêt général, semi-liberté, sursis avec obligations",
     "description": "Surveillance électronique, travail d'intérêt général, semi-liberté, sursis probatoire : les alternatives à l'incarcération sont moins coûteuses qu'une place de prison. Au 1er octobre 2025, la France compte 84 862 détenus pour une densité carcérale de 135,8 %. Le développement de ces alternatives est l'un des leviers identifiés pour réduire la surpopulation carcérale.",
     "amountBillions": 0.2,
     "costPerCitizen": 3,
@@ -253,12 +253,12 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["justice", "prison", "alternatives"],
-    "equivalence": "84 862 détenus pour une densité carcérale de 135,8 % (octobre 2025)"
+    "equivalence": "84 862 détenus, soit 135,8 détenus pour 100 places (octobre 2025)"
   },
   {
     "id": "sec-16",
-    "title": "Videoprotection et surveillance",
-    "subtitle": "Cameras + videosurveillance algorithmique (VSA)",
+    "title": "Vidéoprotection et surveillance",
+    "subtitle": "Caméras + vidéosurveillance analysée par logiciel (VSA)",
     "description": "Les communes et l'État déploient des dizaines de milliers de caméras de vidéoprotection sur la voie publique. La loi relative aux Jeux olympiques de 2024 a autorisé à titre expérimental la vidéosurveillance algorithmique, dont la prolongation a été débattue au Parlement. La CNIL et la Défenseure des droits alertent sur les risques pour les libertés.",
     "amountBillions": 0.3,
     "costPerCitizen": 4,
@@ -289,8 +289,8 @@
   },
   {
     "id": "sec-18",
-    "title": "Deradicalisation et renseignement pénitentiaire",
-    "subtitle": "CIPDR + quartiers d'évaluation de la radicalisation + SNRP",
+    "title": "Déradicalisation et renseignement pénitentiaire",
+    "subtitle": "Prévention de la radicalisation (CIPDR) + quartiers de prison dédiés + renseignement pénitentiaire",
     "description": "Plusieurs milliers de personnes sont inscrites au fichier des signalements pour la prévention de la radicalisation à caractère terroriste (FSPRT). Le service national du renseignement pénitentiaire détecte la radicalisation en détention, et des quartiers d'évaluation accueillent les détenus concernés. Les dispositifs de prévention de la radicalisation ont été évalués par le Sénat dès 2017.",
     "amountBillions": 0.1,
     "costPerCitizen": 2,

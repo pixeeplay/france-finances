@@ -3,7 +3,7 @@
     "id": "num-01",
     "title": "Plan France 2030",
     "subtitle": "54 Md€ sur 2022-2030 — technologies d'avenir",
-    "description": "Le plan France 2030 mobilise 54 Md€ sur 2022-2030 (54,5 Md€ avec les 450 M€ d'engagements ajoutés par le PLF 2026) : semi-conducteurs, hydrogène, batteries, spatial, quantique, IA, santé. En 2026, 5,1 Md€ de crédits de paiement financent 75 % des décaissements prévus, le reste étant couvert par la trésorerie des opérateurs. Le Sénat juge lacunaires les informations transmises au Parlement sur son déploiement.",
+    "description": "Le plan France 2030 mobilise 54 Md€ sur 2022-2030 (54,5 Md€ avec les 450 M€ d'engagements ajoutés par le projet de budget 2026) : semi-conducteurs, hydrogène, batteries, spatial, quantique, IA, santé. En 2026, 5,1 Md€ de crédits de paiement financent 75 % des décaissements prévus, le reste étant couvert par la trésorerie des opérateurs. Le Sénat juge lacunaires les informations transmises au Parlement sur son déploiement.",
     "amountBillions": 5.1,
     "costPerCitizen": 74,
     "deckId": "numerique",
@@ -14,7 +14,7 @@
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["numérique", "investissement", "France 2030"],
-    "equivalence": "5,1 Md€ de crédits de paiement en 2026"
+    "equivalence": "5,1 Md€ de dépenses prévues en 2026"
   },
   {
     "id": "num-02",
@@ -31,7 +31,7 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["numérique", "spatial", "CNES"],
-    "equivalence": "Programme 193 : 1 848 M€ en 2026"
+    "equivalence": "Budget de l'État pour la recherche spatiale : 1 848 M€ en 2026"
   },
   {
     "id": "num-03",
@@ -68,7 +68,7 @@
   {
     "id": "num-05",
     "title": "Transformation numérique de l'État",
-    "subtitle": "DINUM — France Connect, démarches-simplifiées.fr",
+    "subtitle": "Direction du numérique de l'État — FranceConnect, démarches-simplifiées.fr",
     "description": "La direction interministérielle du numérique (DINUM) pilote FranceConnect, utilisé par plus de 40 millions de personnes, le système de design de l'État et les échanges de données entre administrations. Malgré la numérisation des démarches, une part importante de la population reste en difficulté avec le numérique.",
     "amountBillions": 0.2,
     "costPerCitizen": 3,
@@ -85,7 +85,7 @@
   {
     "id": "num-06",
     "title": "Semiconducteurs et industrie verte",
-    "subtitle": "France 2030 + C3IV — filière puces",
+    "subtitle": "France 2030 + crédit d'impôt industrie verte — filière puces",
     "description": "Extension de l'usine STMicroelectronics de Crolles, soutien à la filière dans le cadre de France 2030 et du crédit d'impôt pour l'industrie verte (C3IV). L'Europe vise 20 % de la production mondiale de semi-conducteurs d'ici 2030 (European Chips Act). Une usine de puces représente plusieurs milliards d'euros d'investissement. La Cour des comptes a évalué ce soutien public en 2026.",
     "amountBillions": 0.8,
     "costPerCitizen": 12,
@@ -102,7 +102,7 @@
   {
     "id": "num-07",
     "title": "Cybersécurité civile",
-    "subtitle": "ANSSI + cyber France 2030 + Campus Cyber",
+    "subtitle": "Agence de cybersécurité de l'État (ANSSI) + France 2030 + Campus Cyber",
     "description": "L'ANSSI protège les systèmes d'information de l'État et des opérateurs d'importance vitale, et traite chaque année des centaines d'incidents. Le Campus Cyber et France 2030 soutiennent la filière. Ce volet civil est distinct du commandement de la cyberdéfense des armées (COMCYBER).",
     "amountBillions": 0.4,
     "costPerCitizen": 6,
@@ -113,12 +113,12 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["numérique", "cybersécurité", "ANSSI"],
-    "equivalence": "Le volet civil de la cybersécurité, distinct du COMCYBER"
+    "equivalence": "Le volet civil de la cybersécurité, distinct de la cyberdéfense militaire (COMCYBER)"
   },
   {
     "id": "num-08",
     "title": "France Travail (ex-Pôle Emploi)",
-    "subtitle": "Premier opérateur de l'État — 48 632 emplois en 2026",
+    "subtitle": "Premier organisme public de l'État par ses effectifs — 48 632 emplois en 2026",
     "description": "France Travail accompagne les demandeurs d'emploi et verse les allocations chômage pour le compte de l'Unédic. En 2026, il reçoit 1,16 Md€ de subvention de l'État (-12 %) et 2,16 Md€ de transferts, soit environ 23 % de ses ressources ; la contribution de l'Unédic atteint 5,2 Md€ (74 %). Son plafond d'emplois passe à 48 632 ETPT. Le réseau France Travail coordonne aussi missions locales et Cap emploi.",
     "amountBillions": 3.32,
     "costPerCitizen": 48,
@@ -130,7 +130,7 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["numérique", "emploi", "France Travail"],
-    "equivalence": "L'Unédic finance environ les trois quarts de France Travail"
+    "equivalence": "L'assurance chômage (Unédic) finance environ les trois quarts de France Travail"
   },
   {
     "id": "num-09",
@@ -179,8 +179,8 @@
   },
   {
     "id": "num-12",
-    "title": "Cloud souverain et donnees publiques",
-    "subtitle": "Label SecNumCloud — hébergement des donnees critiques",
+    "title": "Cloud souverain et données publiques",
+    "subtitle": "Label de sécurité SecNumCloud — hébergement des données sensibles",
     "description": "La doctrine « cloud au centre » impose d'héberger les données sensibles de l'État dans des offres qualifiées SecNumCloud par l'ANSSI. La Cour des comptes (2025) relève la faible utilisation des clouds internes de l'État et les enjeux de souveraineté liés à la dépendance aux fournisseurs américains, qui dominent le marché du cloud. L'hébergement du Health Data Hub chez Microsoft a suscité une longue controverse.",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
@@ -195,7 +195,7 @@
   },
   {
     "id": "num-13",
-    "title": "IA generative et investissements français",
+    "title": "IA générative et investissements français",
     "subtitle": "Mistral AI, Hugging Face, Jean Zay",
     "description": "Mistral AI, valorisée près de 6 Md€ en 2024, est devenue le principal acteur français de l'IA générative ; Hugging Face héberge une grande partie des modèles ouverts mondiaux. L'État soutient l'accès au calcul (supercalculateur Jean Zay) et la recherche. Les investissements publics restent sans commune mesure avec ceux des États-Unis, et les chercheurs formés en France sont très sollicités par les grands groupes étrangers.",
     "amountBillions": 0.5,
@@ -228,7 +228,7 @@
   },
   {
     "id": "num-15",
-    "title": "Régulation du numérique (CNIL, DSA, DMA)",
+    "title": "Régulation du numérique (CNIL, règles européennes DSA et DMA)",
     "subtitle": "Amendes record et cadre européen",
     "description": "La CNIL contrôle le respect du RGPD et sanctionne les manquements, y compris des grandes plateformes (150 M€ d'amende à Google en 2021 pour les cookies). Le règlement sur les services numériques (DSA), le règlement sur les marchés numériques (DMA) et le règlement sur l'IA (AI Act) encadrent désormais les plateformes au niveau européen. La Cour des comptes a contrôlé la CNIL en 2026.",
     "amountBillions": 0.1,
@@ -259,7 +259,7 @@
   },
   {
     "id": "num-17",
-    "title": "Identite numérique (France Identite)",
+    "title": "Identité numérique (France Identité)",
     "subtitle": "Carte d'identité sur smartphone",
     "description": "L'application France Identité permet de disposer d'une version numérique de la carte nationale d'identité et sert de socle à FranceConnect+ pour les démarches sensibles. Le portefeuille d'identité numérique européen (règlement eIDAS 2) doit être proposé dans tous les États membres d'ici 2026-2027.",
     "amountBillions": 0.1,
@@ -275,8 +275,8 @@
   },
   {
     "id": "num-18",
-    "title": "Open data et donnees publiques",
-    "subtitle": "data.gouv.fr et API publiques",
+    "title": "Open data et données publiques",
+    "subtitle": "data.gouv.fr et accès ouverts aux données publiques (API)",
     "description": "La France figure parmi les pays les mieux classés en Europe pour l'ouverture des données publiques (data.gouv.fr, API publiques). L'ouverture des données de santé et des algorithmes publics (Parcoursup) fait débat. Le coût de la politique d'open data est faible au regard des usages qu'elle permet.",
     "amountBillions": 0.03,
     "costPerCitizen": 0.4,

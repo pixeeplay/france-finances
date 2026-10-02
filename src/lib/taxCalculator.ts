@@ -201,7 +201,7 @@ export function allocateByBudget(total: number, items: readonly BudgetItem[], to
   const sorted = [...items].sort((a, b) => b.amountBn - a.amountBn);
   const head = sorted.slice(0, topN);
   const restBn = sorted.slice(topN).reduce((s, i) => s + i.amountBn, 0);
-  const groups = restBn > 0 ? [...head, { label: "Autres missions", amountBn: restBn }] : head;
+  const groups = restBn > 0 ? [...head, { label: "Autres postes du budget", amountBn: restBn }] : head;
   return groups.map((g) => ({
     label: g.label,
     percentage: (g.amountBn / sum) * 100,

@@ -14,7 +14,7 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["militaire", "nucléaire", "souveraineté"],
-    "equivalence": "11,1 % des crédits de paiement de la mission Défense en 2026",
+    "equivalence": "11,1 % du budget de la Défense en 2026",
     "year": 2026
   },
   {
@@ -36,9 +36,9 @@
   },
   {
     "id": "def-03",
-    "title": "Opérations extérieures (OPEX)",
-    "subtitle": "Opérations militaires extérieures et missions opérationnelles",
-    "description": "OPEX (interventions à l'étranger) et missions intérieures, dont le renforcement du flanc Est de l'OTAN (Estonie, Roumanie). La provision budgétaire inscrite à ce titre passe de 750 M€ en 2025 à 1,2 Md€ en 2026. Jusqu'ici, elle était systématiquement inférieure aux surcoûts réels, ce qui imposait des ouvertures de crédits en cours d'année.",
+    "title": "Opérations militaires à l'étranger (OPEX)",
+    "subtitle": "Opérations militaires à l'étranger et missions en France",
+    "description": "Opérations extérieures (OPEX, interventions à l'étranger) et missions intérieures, dont le renforcement du flanc Est de l'OTAN (Estonie, Roumanie). La provision budgétaire inscrite à ce titre passe de 750 M€ en 2025 à 1,2 Md€ en 2026. Jusqu'ici, elle était systématiquement inférieure aux surcoûts réels, ce qui imposait des ouvertures de crédits en cours d'année.",
     "amountBillions": 1.2,
     "costPerCitizen": 17,
     "deckId": "defense",
@@ -48,13 +48,13 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["militaire", "opérations", "OTAN"],
-    "equivalence": "Provision OPEX/MISSINT : 750 M€ en 2025, 1,2 Md€ en 2026",
+    "equivalence": "Enveloppe réservée d'avance aux opérations extérieures et intérieures : 750 M€ en 2025, 1,2 Md€ en 2026",
     "year": 2026
   },
   {
     "id": "def-04",
-    "title": "Cyberdéfense (COMCYBER)",
-    "subtitle": "Commandement de la cyberdéfense (moyenne annuelle LPM)",
+    "title": "Cyberdéfense militaire (COMCYBER)",
+    "subtitle": "Commandement de la cyberdéfense (moyenne annuelle de la loi de programmation militaire)",
     "description": "Cybersécurité militaire, lutte informatique offensive et défensive, recrutement de spécialistes. La LPM 2024-2030 programme 4 Md€ pour la cyberdéfense sur sept ans, soit environ 0,57 Md€ par an en moyenne, et prévoit d'augmenter et de fidéliser les effectifs du commandement de la cyberdéfense (COMCYBER).",
     "amountBillions": 0.57,
     "costPerCitizen": 8,
@@ -65,12 +65,12 @@
     "sourceUrl": "https://www.defense.gouv.fr/actualites/objectifs-lpm-2024-2030-maitriser-nouveaux-espaces-conflictualite",
     "level": 3,
     "tags": ["militaire", "cyber", "technologie"],
-    "equivalence": "4 Md€ programmés sur 2024-2030 par la LPM",
+    "equivalence": "4 Md€ prévus sur 2024-2030 par la loi de programmation militaire",
     "sourceDate": "2023-05-09"
   },
   {
     "id": "def-05",
-    "title": "Renseignement (DGSE)",
+    "title": "Renseignement extérieur (DGSE)",
     "subtitle": "Direction générale de la sécurité extérieure",
     "description": "Renseignement extérieur, contre-espionnage, opérations clandestines. En 2026, près de 1,14 Md€ sont consacrés à la DGSE, personnel compris, dont 549 M€ de crédits de fonctionnement et d'investissement (+13 % avec la DRSD). Son plafond d'emplois atteint 6 453 ETPT, contre 5 987 en 2024. Un nouveau siège est en construction au Fort-Neuf de Vincennes.",
     "amountBillions": 1.14,
@@ -84,12 +84,12 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["militaire", "renseignement", "souveraineté"],
-    "equivalence": "6 453 ETPT en 2026, contre 5 987 en 2024"
+    "equivalence": "6 453 agents (équivalents temps plein) en 2026, contre 5 987 en 2024"
   },
   {
     "id": "def-06",
     "title": "Service de santé des armées",
-    "subtitle": "SSA — hôpitaux militaires et médecine des forces",
+    "subtitle": "Hôpitaux militaires et médecine des forces (SSA)",
     "description": "Hôpitaux militaires (dont Percy et Bégin), médecine de guerre, recherche biomédicale, soutien des opérations extérieures. Le SSA dispose d'un budget d'environ 1,5 Md€ et de près de 15 000 personnels. Ses hôpitaux accueillent aussi des patients civils. Le service fait face à des difficultés de fidélisation de ses médecins.",
     "amountBillions": 1.5,
     "costPerCitizen": 22,
@@ -106,7 +106,7 @@
   {
     "id": "def-07",
     "title": "Spatial militaire",
-    "subtitle": "Programme spatial militaire (moyenne annuelle LPM)",
+    "subtitle": "Satellites militaires (moyenne annuelle de la loi de programmation militaire)",
     "description": "Satellites d'observation (CSO), de télécommunication (Syracuse), surveillance de l'espace, Commandement de l'Espace. La LPM 2024-2030 consacre une enveloppe de 6 Md€ au spatial sur sept ans, soit environ 0,86 Md€ par an en moyenne, pour accroître les capacités d'observation et de renseignement et la défense des satellites.",
     "amountBillions": 0.86,
     "costPerCitizen": 12,
@@ -117,7 +117,7 @@
     "sourceUrl": "https://www.defense.gouv.fr/actualites/objectifs-lpm-2024-2030-maitriser-nouveaux-espaces-conflictualite",
     "level": 3,
     "tags": ["militaire", "espace", "technologie"],
-    "equivalence": "6 Md€ programmés sur 2024-2030 par la LPM",
+    "equivalence": "6 Md€ prévus sur 2024-2030 par la loi de programmation militaire",
     "sourceDate": "2023-05-09"
   },
   {
@@ -141,7 +141,7 @@
   {
     "id": "def-09",
     "title": "Innovation & technologies de rupture",
-    "subtitle": "Budget innovation et études amont",
+    "subtitle": "Budget innovation et recherche préparant les futurs armements",
     "description": "Drones, armes à énergie dirigée, intelligence artificielle, quantique, hypersonique, fonds marins. Pilotés par l'Agence de l'innovation de défense, les crédits de paiement consacrés à l'innovation (études amont hors dissuasion et subventions aux opérateurs) atteignent 1,4 Md€ en 2026 (+127 M€), un peu au-dessus de la trajectoire de la LPM (1,32 Md€).",
     "amountBillions": 1.4,
     "costPerCitizen": 20,
@@ -153,11 +153,11 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["militaire", "innovation", "technologie"],
-    "equivalence": "1,4 Md€ en 2026, soit 70 M€ de plus que prévu par la LPM"
+    "equivalence": "1,4 Md€ en 2026, soit 70 M€ de plus que prévu par la loi de programmation militaire"
   },
   {
     "id": "def-10",
-    "title": "Objectif OTAN 3,5% du PIB",
+    "title": "Objectif OTAN : 3,5 % de la richesse nationale (PIB)",
     "subtitle": "Budget de défense nécessaire en 2035 pour atteindre 3,5 % du PIB",
     "description": "Au sommet de La Haye (juin 2025), les Alliés se sont engagés à porter leurs dépenses de défense à 5 % du PIB d'ici 2035, dont 3,5 % pour les dépenses militaires de base. Selon le Sénat, atteindre 3,5 % du PIB en 2035 représenterait un budget de l'ordre de 140 Md€ (périmètre OTAN, pensions comprises), à condition d'augmenter l'effort de 0,15 point de PIB chaque année. En 2026, la mission Défense dispose de 66,7 Md€ de crédits de paiement, dont 57,2 Md€ hors pensions.",
     "amountBillions": 140,
@@ -169,12 +169,12 @@
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["militaire", "OTAN", "trajectoire"],
-    "equivalence": "Environ 140 Md€ en 2035, contre 66,7 Md€ de crédits de la mission Défense en 2026"
+    "equivalence": "Environ 140 Md€ en 2035, contre 66,7 Md€ de budget de la Défense en 2026"
   },
   {
     "id": "def-11",
     "title": "Exportations d'armement",
-    "subtitle": "Prises de commandes 2024",
+    "subtitle": "Commandes signées en 2024",
     "description": "La France est l'un des tout premiers exportateurs mondiaux d'armement. En 2024, les prises de commandes atteignent 21,6 Md€, portées notamment par une dernière tranche de 18 Rafale pour l'Indonésie et une commande de 12 Rafale. Ces exportations soutiennent la base industrielle de défense et réduisent le coût unitaire des équipements pour les armées françaises. Certaines ventes, notamment à l'Arabie saoudite ou à l'Égypte, sont critiquées par des ONG.",
     "amountBillions": 21.6,
     "costPerCitizen": 313,
@@ -186,7 +186,7 @@
     "sourceDate": "2025",
     "level": 1,
     "tags": ["armement", "exportation", "industrie"],
-    "equivalence": "21,6 Md€ de prises de commandes en 2024",
+    "equivalence": "21,6 Md€ de commandes signées en 2024",
     "year": 2024
   },
   {
@@ -210,7 +210,7 @@
   {
     "id": "def-13",
     "title": "Stocks de munitions et reconstitution",
-    "subtitle": "Montee en cadence post-Ukraine",
+    "subtitle": "Production accélérée depuis la guerre en Ukraine",
     "description": "Les livraisons à l'Ukraine ont révélé la faiblesse des stocks de munitions. En 2026, plus de 2,4 Md€ sont consacrés à l'achat de munitions, y compris complexes et téléopérées. Les industriels de défense augmentent leurs cadences de production, notamment pour les obus de 155 mm.",
     "amountBillions": 2.4,
     "costPerCitizen": 35,
@@ -261,7 +261,7 @@
   {
     "id": "def-17",
     "title": "Anciens combattants et mémoire",
-    "subtitle": "Mission Monde combattant, memoire et liens avec la Nation",
+    "subtitle": "Pensions, aides et mémoire des anciens combattants",
     "description": "Pensions militaires d'invalidité, allocation de reconnaissance du combattant (environ 835 € par an), Institution nationale des Invalides, politique de mémoire. Les crédits de la mission sont passés de 3,19 Md€ en 2012 à 1,73 Md€ en 2026 (-120 M€ sur la seule année 2026), du fait de la baisse du nombre de bénéficiaires. Le point de pension militaire d'invalidité (16,07 € au 1er janvier 2025) n'est pas revalorisé en 2026. S'y ajoutent 563 M€ de dépenses fiscales.",
     "amountBillions": 1.73,
     "costPerCitizen": 25,
@@ -278,8 +278,8 @@
   },
   {
     "id": "def-18",
-    "title": "Forces speciales (COS)",
-    "subtitle": "Commandement des opérations speciales",
+    "title": "Forces spéciales",
+    "subtitle": "Commandement des opérations spéciales (COS)",
     "description": "Le Commandement des opérations spéciales (COS) coordonne les unités de forces spéciales des trois armées (1er RPIMa, 13e RDP, commandos marine, CPA 10, etc.). La France fait partie des rares nations européennes capables de projeter des forces spéciales à l'échelle mondiale ; elles ont été très engagées au Sahel. Le montant affiché est une estimation, le budget du COS n'étant pas publié séparément.",
     "amountBillions": 1,
     "costPerCitizen": 14,
@@ -292,8 +292,8 @@
   },
   {
     "id": "def-19",
-    "title": "DGA et acquisition d'armement",
-    "subtitle": "Direction générale de l'armement — titre 5 équipement des forces",
+    "title": "Achats d'armement (DGA)",
+    "subtitle": "Direction générale de l'armement — crédits d'équipement des armées",
     "description": "La DGA pilote les programmes d'armement : Rafale, SCAF (avion de combat du futur), MGCS (char du futur), sous-marins Barracuda, frégates FDI, satellites, drones. Les crédits de paiement du programme 146 « Équipement des forces » passent de 18,69 Md€ en 2025 à 22,88 Md€ en 2026 (+22,4 %), dont plus de 3,3 Md€ supplémentaires pour les programmes à effet majeur. Les coopérations franco-allemandes (SCAF, MGCS) connaissent des difficultés industrielles.",
     "amountBillions": 22.9,
     "costPerCitizen": 331,
@@ -306,12 +306,12 @@
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["défense", "armement", "dga"],
-    "equivalence": "+22,4 % de crédits de paiement pour l'équipement des forces en 2026"
+    "equivalence": "+22,4 % de crédits pour l'équipement des armées en 2026"
   },
   {
     "id": "def-20",
     "title": "Bases militaires outre-mer",
-    "subtitle": "Forces de souveraineté et forces de présence",
+    "subtitle": "Troupes dans les outre-mer et bases à l'étranger",
     "description": "La France maintient des forces de souveraineté dans ses territoires ultramarins et des forces de présence à l'étranger (Djibouti, Émirats arabes unis, Gabon). Après le retrait du Sahel et la fermeture de plusieurs bases en Afrique de l'Ouest, le dispositif africain a été fortement réduit. Des renforts ont été envoyés en Nouvelle-Calédonie lors des troubles de 2024.",
     "amountBillions": 1.7,
     "costPerCitizen": 25,

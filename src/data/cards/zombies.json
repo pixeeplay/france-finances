@@ -1,7 +1,7 @@
 [
   {
     "id": "zom-01",
-    "title": "France Compétences",
+    "title": "France Compétences (financement de la formation)",
     "subtitle": "Budget initial 2025 : 14,1 Md€ de dépenses",
     "description": "Créé en 2019, France Compétences finance l'apprentissage et la formation professionnelle. Son déficit atteignait 4,6 Md€ dès 2020 ; en 2022, il aurait été de 7,4 Md€ sans 4 Md€ de dotations exceptionnelles de l'État, reconduites en 2023 et 2024. Le budget initial 2025 prévoit 14,1 Md€ de dépenses pour 13,7 Md€ de ressources, dont 1,9 Md€ de dotation de l'État. Après les mesures d'économies sur l'apprentissage, le Sénat juge le retour à l'équilibre désormais envisageable.",
     "amountBillions": 14.1,
@@ -14,7 +14,7 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["zombie", "formation", "CPF", "déficit"],
-    "equivalence": "Dépenses liées au CPF : 1,9 Md€ en 2025, après un pic de 2,7 Md€ en 2021"
+    "equivalence": "Dépenses du compte formation (CPF) : 1,9 Md€ en 2025, après un pic de 2,7 Md€ en 2021"
   },
   {
     "id": "zom-02",
@@ -30,11 +30,11 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["zombie", "COVID", "PGE", "dette"],
-    "equivalence": "5,7 Md€ de garanties déjà appelées à fin octobre 2025"
+    "equivalence": "5,7 Md€ déjà payés par l'État pour des prêts non remboursés, à fin octobre 2025"
   },
   {
     "id": "zom-03",
-    "title": "L'ARENH (mort mais ses effets perdurent)",
+    "title": "Nucléaire vendu à prix fixe aux concurrents d'EDF (ARENH)",
     "subtitle": "Un mécanisme de vente régulée de l'électricité nucléaire, éteint fin 2025",
     "description": "L'accès régulé à l'électricité nucléaire historique (ARENH), créé en 2010 pour ouvrir le marché à la concurrence, obligeait EDF à vendre jusqu'à 100 TWh par an, soit environ un quart de sa production nucléaire, à 42 €/MWh aux fournisseurs alternatifs. Lorsque les prix de marché ont flambé en 2022, ce prix fixe est devenu très inférieur au marché, au détriment des résultats d'EDF. Le mécanisme a pris fin le 31 décembre 2025.",
     "amountBillions": 8,
@@ -82,7 +82,7 @@
   },
   {
     "id": "zom-06",
-    "title": "CESE (Conseil économique, social et environnemental)",
+    "title": "Conseil économique, social et environnemental (CESE)",
     "subtitle": "34,1 M€ de crédits en 2026",
     "description": "Troisième assemblée constitutionnelle, le CESE rend des avis consultatifs et organise les conventions citoyennes (Convention citoyenne sur les temps de l'enfant en 2025). Pour 2026, ses crédits sont stables à 34,1 M€, dont 8,4 M€ pour la rémunération de ses 175 membres et 15,5 M€ pour ses personnels. Le régime spécial de retraite des conseillers, fermé en 2023, pourrait cumuler 141,2 M€ de déficit sur 2024-2040 selon les estimations du CESE.",
     "amountBillions": 0.034,
@@ -99,8 +99,8 @@
   },
   {
     "id": "zom-07",
-    "title": "Opérateurs de l'État (le mille-feuille)",
-    "subtitle": "Plus de 400 opérateurs financés par l'État",
+    "title": "Agences et établissements publics de l'État (« opérateurs »)",
+    "subtitle": "Plus de 400 organismes financés par l'État",
     "description": "L'État finance plus de 400 opérateurs : agences, offices, établissements publics, instituts. Leur plafond d'emplois est fixé à 401 310 ETPT dans le PLF 2026. Leur taille va de quelques dizaines d'agents à plusieurs dizaines de milliers (France Travail). La Cour des comptes relève régulièrement des chevauchements de missions et des frais de structure ; plusieurs rapprochements ont été proposés ces dernières années.",
     "amountBillions": 80,
     "costPerCitizen": 1158,
@@ -112,7 +112,7 @@
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["zombie", "opérateurs", "mille-feuille", "administration"],
-    "equivalence": "401 310 emplois chez les opérateurs de l'État en 2026"
+    "equivalence": "401 310 emplois dans ces organismes en 2026"
   },
   {
     "id": "zom-08",
@@ -148,7 +148,7 @@
   {
     "id": "zom-10",
     "title": "Fonds de réserve pour les retraites (FRR)",
-    "subtitle": "Un fonds qui verse 1,45 Md€ par an à la CADES",
+    "subtitle": "Un fonds qui verse 1,45 Md€ par an pour rembourser la dette de la Sécu (CADES)",
     "description": "Créé en 2001 pour préparer le départ à la retraite des générations du baby-boom, le FRR n'a jamais atteint les 150 Md€ d'actifs prévus. Depuis la réforme de 2010, il verse chaque année une somme à la Caisse d'amortissement de la dette sociale (2,1 Md€, ramenés à 1,45 Md€ depuis 2025) ; son actif a presque été divisé par deux en dix ans. Le Sénat propose de reprendre son abondement pour lui redonner sa mission initiale.",
     "amountBillions": 21,
     "costPerCitizen": 304,
@@ -159,6 +159,6 @@
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["zombie", "retraites", "FRR", "réserves"],
-    "equivalence": "1,45 Md€ versés chaque année à la CADES depuis 2025"
+    "equivalence": "1,45 Md€ versés chaque année à la caisse de la dette sociale (CADES) depuis 2025"
   }
 ]

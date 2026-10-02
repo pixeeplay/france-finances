@@ -3,7 +3,7 @@
     "id": "fre-01",
     "title": "Contribution française au budget de l'UE",
     "subtitle": "Environ 1,1 € par habitant et par jour",
-    "description": "Le PLF 2026 évalue le prélèvement sur recettes au profit de l'UE à 28,8 Md€, en hausse de 24,6 % par rapport à la prévision d'exécution pour 2025 (23,1 Md€ votés en LFI 2025). La contribution repose sur le revenu national brut, une ressource assise sur la TVA et les droits de douane. Avec un solde net estimé à -7,9 Md€ en 2024, la France est le 2e contributeur net au budget européen, derrière l'Allemagne.",
+    "description": "Le projet de budget 2026 (PLF) évalue la contribution de la France au budget européen (le « prélèvement sur recettes ») à 28,8 Md€, en hausse de 24,6 % par rapport à la prévision d'exécution pour 2025 (23,1 Md€ votés dans le budget initial 2025). La contribution repose sur le revenu national brut, une ressource assise sur la TVA et les droits de douane. Avec un solde net estimé à -7,9 Md€ en 2024, la France est le 2e contributeur net au budget européen, derrière l'Allemagne.",
     "amountBillions": 28.8,
     "costPerCitizen": 417,
     "deckId": "france-europe",
@@ -50,8 +50,8 @@
   },
   {
     "id": "fre-04",
-    "title": "Facilité européenne pour la paix (FEP)",
-    "subtitle": "Contribution française aux remboursements de la FEP pour l'Ukraine",
+    "title": "Fonds européen d'aide militaire (Facilité européenne pour la paix)",
+    "subtitle": "Part française du fonds qui rembourse les armes livrées à l'Ukraine",
     "description": "La Facilité européenne pour la paix (FEP), créée en 2021, finance les mesures d'assistance militaire de l'UE, dont les livraisons d'armes à l'Ukraine. Hors budget de l'UE, elle est alimentée directement par les États membres ; son plafond a été porté de 5,7 à 17 Md€. La France en est le 2e contributeur : elle finance 18 % du coût des cessions remboursées, soit jusqu'à 2,3 Md€ fin 2024, dont 1,4 Md€ suspendus au déblocage par la Hongrie.",
     "amountBillions": 2.3,
     "costPerCitizen": 33,
@@ -62,7 +62,7 @@
     "sourceDate": "2025",
     "level": 2,
     "tags": ["Europe", "défense", "Ukraine", "FEP"],
-    "equivalence": "Plafond de la FEP porté de 5,7 à 17 Md€ depuis 2021"
+    "equivalence": "Plafond du fonds porté de 5,7 à 17 Md€ depuis 2021"
   },
   {
     "id": "fre-05",
@@ -117,7 +117,7 @@
     "id": "fre-08",
     "title": "Politique agricole commune (budget de l'UE)",
     "subtitle": "386,6 Md€ sur 2021-2027, près d'un tiers du budget européen",
-    "description": "La PAC dispose de 386,6 Md€ sur 2021-2027 (291,1 Md€ pour le FEAGA, 95,5 Md€ pour le Feader), soit près d'un tiers du cadre financier pluriannuel et environ 55 Md€ par an en moyenne. En 2024, la France en a reçu 9,6 Md€, ce qui en fait le premier poste des retours européens vers la France. Pour l'après-2027, la Commission propose de regrouper PAC et cohésion dans des plans de partenariat nationaux et régionaux. Le coût par habitant affiché correspond à la part française du financement (clé de contribution de 17,2 % en 2024).",
+    "description": "La PAC dispose de 386,6 Md€ sur 2021-2027 (291,1 Md€ d'aides directes et de marché, 95,5 Md€ pour le développement rural), soit près d'un tiers du budget européen sur sept ans et environ 55 Md€ par an en moyenne. En 2024, la France en a reçu 9,6 Md€, ce qui en fait le premier poste des retours européens vers la France. Pour l'après-2027, la Commission propose de regrouper PAC et cohésion dans des plans de partenariat nationaux et régionaux. Le coût par habitant affiché correspond à la part française du financement (clé de contribution de 17,2 % en 2024).",
     "amountBillions": 55.2,
     "costPerCitizen": 138,
     "deckId": "france-europe",
@@ -130,7 +130,7 @@
   },
   {
     "id": "fre-09",
-    "title": "Mécanisme d'ajustement carbone aux frontières (MACF)",
+    "title": "Taxe carbone aux frontières de l'UE (MACF)",
     "subtitle": "Recette européenne envisagée : environ 1,5 Md€ par an",
     "description": "Après une phase transitoire de déclaration (octobre 2023 - fin 2025), le MACF s'applique depuis 2026 aux importations d'acier, de ciment, d'aluminium, d'engrais, d'électricité et d'hydrogène venant de pays sans prix du carbone équivalent. Objectif : limiter les « fuites de carbone ». Dans sa proposition pour le prochain cadre financier, la Commission envisage d'en affecter une partie au budget de l'UE, pour environ 1,5 Md€ par an, contre 10,8 Md€ pour la ressource fondée sur le marché carbone européen.",
     "amountBillions": 1.5,
@@ -147,7 +147,7 @@
   {
     "id": "fre-10",
     "title": "Coût du Brexit pour la France et l'UE",
-    "subtitle": "Hausse de la clé de contribution française après le départ du Royaume-Uni",
+    "subtitle": "Hausse de la part payée par la France après le départ du Royaume-Uni",
     "description": "Le départ du Royaume-Uni (2020) a privé l'UE d'un de ses principaux contributeurs nets. Selon la Cour des comptes, la clé de contribution effective de la France au budget européen est passée de 16,75 % en 2019 à 18,52 % en 2023, sous l'effet du Brexit et d'autres facteurs. Le Royaume-Uni était le premier excédent commercial bilatéral de la France (12,6 Md€). La France pouvait bénéficier de 736 M€ de la réserve d'ajustement au Brexit (5,4 Md€).",
     "amountBillions": 13.5,
     "costPerCitizen": 35,
@@ -158,6 +158,6 @@
     "sourceDate": "2023-06",
     "level": 1,
     "tags": ["Europe", "Brexit", "commerce"],
-    "equivalence": "Clé de contribution française : 16,75 % en 2019, 18,52 % en 2023"
+    "equivalence": "Part de la France dans le financement de l'UE : 16,75 % en 2019, 18,52 % en 2023"
   }
 ]

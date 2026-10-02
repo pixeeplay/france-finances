@@ -2,7 +2,7 @@
   {
     "id": "log-01",
     "title": "Logement social",
-    "subtitle": "Financement global — aides à la pierre + fiscalité + APL bailleurs",
+    "subtitle": "Aides à la construction, avantages fiscaux et APL versées aux bailleurs",
     "description": "Environ 5,2 millions de logements sociaux abritent près de 10 millions de personnes. Le nombre de demandeurs en attente atteint 2,8 millions, avec des délais très longs en zone tendue. La production s'est établie autour de 85 000 logements sociaux en 2024 ; la Banque des Territoires estime qu'à politique inchangée, le secteur ne pourra en construire qu'environ 90 000 par an d'ici 2038.",
     "amountBillions": 17,
     "costPerCitizen": 246,
@@ -19,7 +19,7 @@
   {
     "id": "log-02",
     "title": "Hébergement d'urgence",
-    "subtitle": "CHRS, hôtels, centres d'accueil",
+    "subtitle": "Centres d'hébergement et de réinsertion (CHRS), hôtels, centres d'accueil",
     "description": "Le parc d'hébergement d'urgence (centres d'hébergement, CHRS, nuitées hôtelières) compte environ 203 000 places, un niveau stabilisé depuis 2021 ; près de 52 000 places ont été créées depuis 2017. Le programme 177 est doté de 3,1 Md€ en 2026 (+110 M€), une budgétisation jugée plus sincère par le Sénat. Le 115 ne peut pas répondre à toutes les demandes, en particulier en hiver.",
     "amountBillions": 3.1,
     "costPerCitizen": 45,
@@ -36,7 +36,7 @@
   {
     "id": "log-03",
     "title": "Rénovation urbaine (ANRU)",
-    "subtitle": "NPNRU — 450 quartiers prioritaires",
+    "subtitle": "Rénovation de 450 quartiers prioritaires (NPNRU)",
     "description": "Démolition-reconstruction de logements, création d'équipements publics, désenclavement. 12 Md€ dont 6 Md€ d'Action Logement. Les opérations prennent 10-15 ans. Certains quartiers rénovés dans les années 2000 nécessitent déjà de nouvelles interventions.",
     "amountBillions": 1.2,
     "costPerCitizen": 17,
@@ -48,12 +48,12 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["logement", "rénovation urbaine", "quartiers"],
-    "equivalence": "450 quartiers renoves, soit ~27 M€ par quartier en moyenne"
+    "equivalence": "450 quartiers rénovés, soit ~27 M€ par quartier en moyenne"
   },
   {
     "id": "log-04",
     "title": "Prêt à taux zéro (PTZ)",
-    "subtitle": "Aide aux primo-accédants",
+    "subtitle": "Aide aux personnes qui achètent leur premier logement",
     "description": "Le prêt à taux zéro aide les primo-accédants sous conditions de ressources : l'État compense aux banques les intérêts non perçus. Après avoir été recentré sur l'ancien avec travaux et certaines zones, il a été de nouveau ouvert à tous les logements neufs sur l'ensemble du territoire par la loi de finances pour 2025. Certaines évaluations soulignent son effet possible sur les prix.",
     "amountBillions": 2,
     "costPerCitizen": 29,
@@ -101,7 +101,7 @@
   },
   {
     "id": "log-07",
-    "title": "Mission Cohésion des territoires",
+    "title": "Budget logement et territoires (« Cohésion des territoires »)",
     "subtitle": "Budget global — APL incluses",
     "description": "Regroupe les aides personnelles au logement (APL, 16,1 Md€), l'hébergement d'urgence (3,1 Md€), la politique de la ville et l'urbanisme. Ses crédits de paiement passent de 23,1 Md€ en 2025 à 22,2 Md€ dans le PLF 2026, sous l'effet du gel des APL et de la hausse de la réduction de loyer de solidarité. S'y ajoutent 11,7 Md€ de dépenses fiscales rattachées.",
     "amountBillions": 22.2,
@@ -115,7 +115,7 @@
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["logement", "budget", "cohésion"],
-    "equivalence": "22,2 Md€ de crédits et 11,7 Md€ de dépenses fiscales rattachées"
+    "equivalence": "22,2 Md€ de crédits et 11,7 Md€ de niches fiscales liées"
   },
   {
     "id": "log-08",
@@ -136,8 +136,8 @@
   },
   {
     "id": "log-09",
-    "title": "Action Logement (1% patronal)",
-    "subtitle": "PEEC — participation des employeurs",
+    "title": "Action Logement (« 1 % logement »)",
+    "subtitle": "Une contribution des employeurs pour loger les salariés (PEEC)",
     "description": "Action Logement collecte la participation des employeurs à l'effort de construction (0,45 % de la masse salariale des entreprises de 50 salariés et plus) et la redistribue : aide à la mobilité, garantie Visale, prêts, financement du logement social et de la rénovation urbaine. L'État sollicite régulièrement ses ressources pour financer des politiques publiques du logement.",
     "amountBillions": 5,
     "costPerCitizen": 0,
@@ -153,8 +153,8 @@
   },
   {
     "id": "log-10",
-    "title": "Coproprietes dégradées et habitat indigne",
-    "subtitle": "ANAH + Plan Initiative Coproprietes",
+    "title": "Copropriétés dégradées et habitat indigne",
+    "subtitle": "Agence nationale de l'habitat (ANAH) + plan Initiative copropriétés",
     "description": "Plusieurs dizaines de milliers de copropriétés sont fragiles, dont une partie en grande difficulté, et environ 400 000 logements du parc privé sont considérés comme potentiellement indignes. L'effondrement d'immeubles rue d'Aubagne à Marseille en 2018 (8 morts) a conduit à renforcer la lutte contre l'habitat indigne. L'Anah finance le redressement des copropriétés et la résorption de l'habitat dégradé.",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
@@ -203,7 +203,7 @@
   },
   {
     "id": "log-13",
-    "title": "Airbnb et meubles touristiques",
+    "title": "Airbnb et meublés touristiques",
     "subtitle": "Régulation des meublés de tourisme",
     "description": "Les locations meublées de tourisme se sont fortement développées dans les grandes villes et les zones touristiques, au détriment de l'offre de location longue durée selon plusieurs collectivités. La loi Le Meur du 19 novembre 2024 réduit l'avantage fiscal des meublés de tourisme et renforce les outils de régulation des communes.",
     "amountBillions": 0.3,
@@ -219,8 +219,8 @@
   },
   {
     "id": "log-14",
-    "title": "Passoires thermiques et DPE",
-    "subtitle": "3,9 millions de résidences principales classées F ou G",
+    "title": "Passoires thermiques (logements classés F ou G)",
+    "subtitle": "3,9 millions de résidences principales mal classées au diagnostic énergétique (DPE)",
     "description": "Au 1er janvier 2025, l'Observatoire national de la rénovation énergétique estime à 3,9 millions le nombre de résidences principales classées F ou G (12,7 % du parc), et à 5,4 millions sur l'ensemble des logements (14,4 %), contre 5,8 millions un an plus tôt. Depuis janvier 2025, les logements classés G ne peuvent plus être proposés à la location ; ce sera le cas des F en 2028 et des E en 2034 (loi Climat et résilience). Le montant affiché est un ordre de grandeur du besoin total de rénovation, sans chiffrage officiel unique.",
     "amountBillions": 150,
     "costPerCitizen": 2171,
@@ -235,7 +235,7 @@
   },
   {
     "id": "log-15",
-    "title": "Loi SRU et obligation de 25% HLM",
+    "title": "Obligation de 25 % de logements sociaux (loi SRU)",
     "subtitle": "25 % de logements sociaux exigés dans les communes concernées",
     "description": "L'article 55 de la loi SRU impose aux communes de plus de 3 500 habitants (1 500 en Île-de-France) situées dans les agglomérations concernées de disposer de 25 % de logements sociaux, ou 20 % dans les territoires moins tendus. Les communes déficitaires paient un prélèvement annuel proportionnel à leur retard ; celles qui ne respectent pas leurs objectifs de rattrapage peuvent être déclarées carencées, avec une majoration du prélèvement. La loi 3DS (2022) a pérennisé le dispositif au-delà de 2025.",
     "amountBillions": 0.2,

@@ -1,5 +1,5 @@
 const sources = [
-  { name: "PLF 2026", title: "Projet de loi de finances 2026", url: "https://www.budget.gouv.fr/budget-etat/plf-2026" },
+  { name: "Projet de budget 2026 (PLF)", title: "Projet de loi de finances 2026", url: "https://www.budget.gouv.fr/budget-etat/plf-2026" },
   { name: "Cour des comptes", title: "Cour des comptes", url: "https://www.ccomptes.fr" },
   { name: "Sénat", title: "Sénat", url: "https://www.senat.fr" },
   { name: "DREES", title: "Direction de la recherche, des études, de l’évaluation et des statistiques", url: "https://drees.solidarites-sante.gouv.fr" },

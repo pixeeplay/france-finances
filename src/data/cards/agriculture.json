@@ -19,7 +19,7 @@
   {
     "id": "agr-02",
     "title": "Budget ministère de l'Agriculture",
-    "subtitle": "Mission AAFAR — hors PAC européenne",
+    "subtitle": "Crédits du ministère, hors aides européennes de la PAC",
     "description": "Sécurité sanitaire de l'alimentation, enseignement et recherche agricoles, forêt, gestion des crises sanitaires (grippe aviaire, dermatose nodulaire bovine) et installation des jeunes agriculteurs. En 2026, les crédits de paiement de la mission atteignent 4 Md€, contre 4,2 Md€ votés en 2025 (-5 %). Les crédits de planification écologique passent de 1,3 Md€ en 2024 à 491 M€ en 2025, puis 143 M€ en 2026.",
     "amountBillions": 4,
     "costPerCitizen": 58,
@@ -87,7 +87,7 @@
   {
     "id": "agr-06",
     "title": "Sécurité sanitaire alimentaire",
-    "subtitle": "ANSES + DGAL + contrôles vétérinaires",
+    "subtitle": "Agence de sécurité sanitaire (ANSES), services vétérinaires de l'État, contrôles",
     "description": "L'ANSES évalue les risques alimentaires, pesticides, médicaments vétérinaires. La DGAL coordonne les contrôles en abattoirs, restaurants et usines. La France a géré en 2025-2026 des crises sanitaires majeures (grippe aviaire H5N1, dermatose nodulaire bovine). L'ANSES perd 6 ETP en 2026.",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
@@ -104,7 +104,7 @@
   {
     "id": "agr-07",
     "title": "Assurance récolte et calamités",
-    "subtitle": "FNGRA + subvention assurance agricole",
+    "subtitle": "Fonds national de gestion des risques agricoles (FNGRA) + aide à l'assurance récolte",
     "description": "Depuis 2023, un système à trois étages : l'exploitant absorbe les petites pertes, l'assureur privé (subventionné à 70%) couvre les pertes moyennes, l'État intervient pour les catastrophes majeures. Les aléas climatiques s'intensifient. La dotation du FNGRA baisse de 60 M€ en 2026.",
     "amountBillions": 0.6,
     "costPerCitizen": 9,
@@ -121,8 +121,8 @@
   {
     "id": "agr-08",
     "title": "Dépenses publiques totales agriculture",
-    "subtitle": "Budget État + PAC + fiscal + social",
-    "description": "En cumulant PAC (9,3 Md€), budget ministère (4,4 Md€), dépenses fiscales et allègements sociaux, le total atteint 25,3 Md€ en 2026. La France compte environ 400 000 exploitations (contre 500 000 il y a 15 ans) et peine à stabiliser les nouvelles installations.",
+    "subtitle": "Budget de l'État + aides européennes + allègements d'impôts et de cotisations",
+    "description": "En cumulant PAC (9,3 Md€), budget ministère (4,4 Md€), niches fiscales et allègements de cotisations sociales, le total atteint 25,3 Md€ en 2026. La France compte environ 400 000 exploitations (contre 500 000 il y a 15 ans) et peine à stabiliser les nouvelles installations.",
     "amountBillions": 25.3,
     "costPerCitizen": 366,
     "deckId": "agriculture",
@@ -138,7 +138,7 @@
   {
     "id": "agr-09",
     "title": "Pêche et aquaculture",
-    "subtitle": "FEAMPA européen + budget national",
+    "subtitle": "Fonds européen pour la pêche (FEAMPA) + budget national",
     "description": "La pêche française emploie environ 15 000 marins. Le Brexit a réduit l'accès des pêcheurs français aux eaux britanniques. Le Fonds européen pour les affaires maritimes, la pêche et l'aquaculture (FEAMPA) finance la modernisation de la flotte et la transition écologique. L'aquaculture reste peu développée au regard du potentiel.",
     "amountBillions": 0.4,
     "costPerCitizen": 6,
@@ -154,7 +154,7 @@
   {
     "id": "agr-10",
     "title": "Bien-être animal et abattoirs",
-    "subtitle": "Contrôles DGAL + mises aux normes",
+    "subtitle": "Contrôles des services vétérinaires + mises aux normes",
     "description": "Les services vétérinaires de l'État (DGAL) contrôlent les conditions d'abattage et le bien-être animal en élevage. La loi EGalim (2018) a ouvert une expérimentation de la vidéosurveillance en abattoir. L'élimination des poussins mâles par broyage et la castration à vif des porcelets sont interdites depuis 2022.",
     "amountBillions": 0.15,
     "costPerCitizen": 2,
@@ -170,7 +170,7 @@
   {
     "id": "agr-11",
     "title": "Vigne, vin et spiritueux",
-    "subtitle": "Filiere viticole et fiscalité alcool",
+    "subtitle": "Filière viticole et fiscalité de l'alcool",
     "description": "La France est l'un des premiers producteurs et exportateurs mondiaux de vins et spiritueux. La consommation de vin baisse depuis plusieurs décennies et l'État finance des plans d'arrachage de vignes pour réduire les surfaces. La filière bénéficie de la promotion à l'export, alors que la politique de santé publique vise à réduire la consommation d'alcool (loi Évin).",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
@@ -185,7 +185,7 @@
   },
   {
     "id": "agr-12",
-    "title": "Gaspillage alimentaire et loi AGEC",
+    "title": "Gaspillage alimentaire et loi anti-gaspillage (AGEC)",
     "subtitle": "10 millions de tonnes perdues/an",
     "description": "Selon l'Ademe (2016), environ 10 millions de tonnes de nourriture sont perdues ou gaspillées chaque année en France, pour une valeur commerciale estimée à 16 Md€. Les ménages en jettent environ 30 kg par personne et par an. La loi Garot (2016) puis la loi AGEC (2020) interdisent la destruction des invendus alimentaires et imposent leur don. L'objectif est de réduire le gaspillage de moitié d'ici 2025 dans la distribution et d'ici 2030 dans les autres secteurs.",
     "amountBillions": 16,
@@ -260,12 +260,12 @@
     "sourceDate": "2020-02-04",
     "level": 3,
     "tags": ["agriculture", "pesticides", "sante"],
-    "equivalence": "Crédits phytosanitaires : 250 M€ en 2024, 25 M€ proposés pour 2026"
+    "equivalence": "Crédits pour réduire les pesticides : 250 M€ en 2024, 25 M€ proposés pour 2026"
   },
   {
     "id": "agr-17",
-    "title": "Souverainete alimentaire",
-    "subtitle": "Dependance aux importations",
+    "title": "Souveraineté alimentaire",
+    "subtitle": "Dépendance aux importations",
     "description": "La France est excédentaire en céréales, vins et produits laitiers, mais dépend des importations pour une large part des fruits, des légumes et du poisson. Selon le Sénat, la balance commerciale agroalimentaire a été ponctuellement déficitaire en 2025. Les concours publics à l'agriculture atteignent 16,3 Md€ en 2026 (25,7 Md€ avec les crédits européens).",
     "amountBillions": 50,
     "costPerCitizen": 724,
@@ -313,8 +313,8 @@
   },
   {
     "id": "agr-20",
-    "title": "Foret française et bois-énergie",
-    "subtitle": "ONF + reboisement + filiere bois",
+    "title": "Forêt française et bois-énergie",
+    "subtitle": "Office national des forêts + reboisement + filière bois",
     "description": "La forêt couvre environ 17 millions d'hectares, près d'un tiers du territoire métropolitain. Elle est menacée par les scolytes, les sécheresses et les incendies, exceptionnels en 2022. France 2030 vise la plantation d'un milliard d'arbres en dix ans. Le bois-énergie représente environ 30 % de la production d'énergies renouvelables.",
     "amountBillions": 1.2,
     "costPerCitizen": 17,

@@ -2,7 +2,7 @@
   {
     "id": "ukr-01",
     "title": "Aide militaire directe (matériel livré)",
-    "subtitle": "Cessions de matériels, formation et maintien en condition (2022-2024)",
+    "subtitle": "Matériel cédé, formation et entretien des équipements (2022-2024)",
     "description": "Le ministère des Armées estime le soutien militaire de la France à l'Ukraine à 5,9 Md€ entre février 2022 et fin 2024, contribution à la Facilité européenne pour la paix (jusqu'à 2,3 Md€) et fonds bilatéral (400 M€) compris. En déduisant ces deux montants, les cessions de matériels, la formation, l'acheminement et le maintien en condition représentent environ 3,2 Md€. La France a notamment livré des canons Caesar, des blindés AMX-10 RC, des systèmes sol-air Crotale NG et SAMP/T, des lance-roquettes et des missiles Scalp.",
     "amountBillions": 3.2,
     "costPerCitizen": 46,
@@ -17,8 +17,8 @@
   },
   {
     "id": "ukr-02",
-    "title": "Contribution à la Facilité européenne pour la paix",
-    "subtitle": "18 % du coût des cessions remboursées par la FEP",
+    "title": "Part française du fonds européen d'aide militaire (FEP)",
+    "subtitle": "18 % du coût des armes livrées remboursées par ce fonds",
     "description": "La Facilité européenne pour la paix (FEP) rembourse aux États membres une partie du coût des armes livrées à l'Ukraine ; son plafond a été porté de 5,7 à 17 Md€. La France en est le 2e contributeur. Elle finance 18 % du coût des cessions remboursées, soit jusqu'à 2,3 Md€ : 0,9 Md€ pour les cessions réalisées jusqu'en mai 2023 et 1,4 Md€ dont le versement reste suspendu à l'accord de la Hongrie.",
     "amountBillions": 2.3,
     "costPerCitizen": 33,
@@ -29,7 +29,7 @@
     "sourceDate": "2025",
     "level": 2,
     "tags": ["Ukraine", "FEP", "Europe", "défense"],
-    "equivalence": "La France finance 18 % des remboursements de la FEP"
+    "equivalence": "La France finance 18 % des remboursements du fonds"
   },
   {
     "id": "ukr-03",
@@ -61,7 +61,7 @@
     "sourceDate": "2023-12-19",
     "level": 3,
     "tags": ["Ukraine", "formation", "militaire"],
-    "equivalence": "Près de 8 000 soldats formés en 2023, environ un quart de l'effort de l'EUMAM"
+    "equivalence": "Près de 8 000 soldats formés en 2023, environ un quart de la mission européenne de formation (EUMAM)"
   },
   {
     "id": "ukr-05",
@@ -95,9 +95,9 @@
   },
   {
     "id": "ukr-07",
-    "title": "Hausse du budget Défense (accélération LPM)",
-    "subtitle": "+6,78 Md€ de crédits de paiement en 2026",
-    "description": "La LPM 2024-2030 prévoit 400 Md€ de crédits de paiement hors pensions sur sept ans. En 2026, les crédits de paiement de la mission Défense atteignent 66,7 Md€ (+6,78 Md€), dont 57,2 Md€ hors pensions : à la marche de 3,2 Md€ prévue par la LPM s'ajoute une « surmarche » de 3,5 Md€ annoncée en juillet 2025. La guerre en Ukraine a justifié cette accélération : reconstitution des stocks, montée en cadence de la production de munitions, objectif OTAN de 3,5 % du PIB. La Défense est l'une des rares missions en hausse dans le PLF 2026.",
+    "title": "Hausse du budget de la Défense (programmation militaire accélérée)",
+    "subtitle": "+6,78 Md€ de crédits en 2026",
+    "description": "La loi de programmation militaire (LPM) 2024-2030 prévoit 400 Md€ de crédits hors retraites sur sept ans. En 2026, les crédits de paiement de la mission Défense atteignent 66,7 Md€ (+6,78 Md€), dont 57,2 Md€ hors pensions : à la marche de 3,2 Md€ prévue par la LPM s'ajoute une « surmarche » de 3,5 Md€ annoncée en juillet 2025. La guerre en Ukraine a justifié cette accélération : reconstitution des stocks, montée en cadence de la production de munitions, objectif OTAN de 3,5 % du PIB. La Défense est l'une des rares missions en hausse dans le PLF 2026.",
     "amountBillions": 6.78,
     "costPerCitizen": 98,
     "deckId": "ukraine",
@@ -108,7 +108,7 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["Ukraine", "défense", "LPM", "budget"],
-    "equivalence": "Une marche LPM de 3,2 Md€ et une surmarche de 3,5 Md€ en 2026"
+    "equivalence": "3,2 Md€ de hausse prévue par la loi de programmation militaire et 3,5 Md€ de plus en 2026"
   },
   {
     "id": "ukr-08",

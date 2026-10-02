@@ -215,7 +215,7 @@ describe("allocateByBudget", () => {
     const shares = allocateByBudget(10_000, missions);
     expect(shares).toHaveLength(9);
     expect(shares[0].label).toBe("Enseignement scolaire");
-    expect(shares[8].label).toBe("Autres missions");
+    expect(shares[8].label).toBe("Autres postes du budget");
     const pct = shares.reduce((s, x) => s + x.percentage, 0);
     expect(pct).toBeCloseTo(100, 6);
     const total = shares.reduce((s, x) => s + x.amount, 0);

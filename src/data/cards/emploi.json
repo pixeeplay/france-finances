@@ -2,7 +2,7 @@
   {
     "id": "emp-01",
     "title": "Formation professionnelle continue",
-    "subtitle": "État + entreprises + Régions + Unédic",
+    "subtitle": "État, entreprises, Régions et assurance chômage (Unédic)",
     "description": "Financée par l'État, les entreprises, les régions et l'Unédic, la formation professionnelle est jugée peu lisible. Le compte personnel de formation (CPF) est crédité de 500 € par an (plafond de 5 000 €). France Compétences a accumulé les déficits après la réforme de 2018 : 4,6 Md€ dès 2020, et 7,4 Md€ en 2022 sans les dotations exceptionnelles de l'État. Des mesures d'économies sur l'apprentissage et le CPF ont depuis réduit ce déséquilibre.",
     "amountBillions": 32,
     "costPerCitizen": 463,
@@ -18,7 +18,7 @@
   {
     "id": "emp-02",
     "title": "Crédit d'impôt services à la personne",
-    "subtitle": "2e dépense fiscale de l'État — 50 % de crédit d'impôt",
+    "subtitle": "2e niche fiscale de l'État — 50 % des dépenses remboursées en crédit d'impôt",
     "description": "Ménage, garde d'enfants, soutien scolaire, aide aux personnes âgées : le crédit d'impôt couvre 50 % des dépenses, dans la limite d'un plafond. Son coût est estimé à 7,2 Md€ en 2026 (7,0 Md€ en 2025). Les ménages aux revenus élevés en sont les principaux bénéficiaires ; l'avance immédiate, déployée depuis 2022, évite d'avancer la totalité des sommes.",
     "amountBillions": 7.2,
     "costPerCitizen": 104,
@@ -30,12 +30,12 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["emploi", "fiscalité", "services à la personne"],
-    "equivalence": "2e dépense fiscale, derrière le crédit d'impôt recherche (8 Md€)"
+    "equivalence": "2e niche fiscale, derrière le crédit d'impôt recherche (8 Md€)"
   },
   {
     "id": "emp-03",
-    "title": "Exonérations Outre-mer (LODEOM)",
-    "subtitle": "Cotisations sociales spécifiques DOM-TOM",
+    "title": "Baisses de cotisations en outre-mer (Lodeom)",
+    "subtitle": "Cotisations des employeurs allégées dans les outre-mer",
     "description": "Exonérations pour compenser les surcoûts structurels (éloignement, insularité). Le taux de chômage en Outre-mer reste 2 à 3 fois supérieur à la métropole. Le PLF 2026 réforme ces exonérations pour les recentrer sur les bas salaires.",
     "amountBillions": 1.5,
     "costPerCitizen": 22,
@@ -51,7 +51,7 @@
   },
   {
     "id": "emp-04",
-    "title": "CVAE (suppression progressive)",
+    "title": "Suppression d'un impôt sur les entreprises (CVAE)",
     "subtitle": "Cotisation sur la valeur ajoutée des entreprises",
     "description": "Impôt de production payé par les entreprises dont le chiffre d'affaires dépasse 500 000 €. Sa suppression, engagée en 2021, a été plusieurs fois rééchelonnée : la loi de finances pour 2025 l'a reportée à 2028-2030 ; le PLF 2026 propose de la reprendre dès 2026 pour une disparition en 2028. Les collectivités ont perdu cette recette, compensée par une fraction de TVA.",
     "amountBillions": 4,
@@ -70,7 +70,7 @@
   {
     "id": "emp-05",
     "title": "Activité partielle (chômage partiel)",
-    "subtitle": "Régime de croisière — hors crise",
+    "subtitle": "Le dispositif en temps normal, hors crise",
     "description": "Permet aux entreprises en difficulté de réduire le temps de travail en indemnisant partiellement les salariés. Massivement utilisée pendant la crise sanitaire, elle est revenue à un niveau bas. Le PLF 2026 prévoit 220 M€ pour l'activité partielle, dont 118 M€ pour le nouveau dispositif « rebond », en hausse de 41,9 % par rapport à 2025.",
     "amountBillions": 0.22,
     "costPerCitizen": 3,
@@ -116,12 +116,12 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["emploi", "jeunes", "insertion"],
-    "equivalence": "~5 000€ par jeune accompagne sur un parcours complet"
+    "equivalence": "~5 000 € par jeune accompagné sur un parcours complet"
   },
   {
     "id": "emp-08",
-    "title": "Ex-CICE (allègements bas salaires)",
-    "subtitle": "Réduction pérenne de cotisations patronales",
+    "title": "Baisse de cotisations sur les bas salaires (ex-CICE)",
+    "subtitle": "Réduction permanente des cotisations payées par les employeurs",
     "description": "L'ex-crédit d'impôt compétitivité emploi (CICE) a été transformé en 2019 en baisse pérenne de cotisations patronales d'assurance maladie sur les salaires jusqu'à 2,5 SMIC. Les évaluations (France Stratégie) concluent à un effet sur l'emploi modéré, de l'ordre de 100 000 à 300 000 emplois selon les études. Les LFSS 2025 et 2026 réduisent ces allègements généraux.",
     "amountBillions": 25,
     "costPerCitizen": 364,
@@ -136,7 +136,7 @@
   },
   {
     "id": "emp-09",
-    "title": "Fraude au CPF",
+    "title": "Fraude au compte formation (CPF)",
     "subtitle": "Compte personnel de formation",
     "description": "Le CPF, géré par la Caisse des dépôts, a été la cible de nombreuses escroqueries. Depuis octobre 2022, l'accès au service passe par FranceConnect+, et la loi de finances pour 2023 a instauré une participation financière des bénéficiaires. Les formations éligibles ont été resserrées et de nombreux organismes déréférencés. Les dépenses liées au CPF financées par France Compétences sont passées de 2,7 Md€ en 2021 à 1,9 Md€ en 2025. Le montant total de la fraude n'est pas chiffré officiellement : celui de la carte est un ordre de grandeur.",
     "amountBillions": 0.25,
@@ -148,12 +148,12 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["emploi", "CPF", "fraude"],
-    "equivalence": "Dépenses du CPF : 1,9 Md€ en 2025, contre 2,7 Md€ en 2021"
+    "equivalence": "Dépenses du compte formation : 1,9 Md€ en 2025, contre 2,7 Md€ en 2021"
   },
   {
     "id": "emp-10",
-    "title": "Zones franches et ZRR (ruralite)",
-    "subtitle": "Exonerations fiscales et sociales",
+    "title": "Zones franches et zones rurales aidées (ZRR)",
+    "subtitle": "Exonérations d'impôts et de cotisations",
     "description": "Les zones franches urbaines (environ 100 quartiers) et les zones de revitalisation rurale (environ 18 000 communes) offrent des exonérations pour attirer les entreprises. Les ZRR ont été remplacées par le dispositif France Ruralités Revitalisation (FRR) en 2024. Les évaluations concluent à des effets modérés sur l'emploi local.",
     "amountBillions": 0.7,
     "costPerCitizen": 10,
@@ -165,12 +165,12 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["emploi", "zones franches", "ruralite"],
-    "equivalence": "Environ la moitié des communes en ZRR"
+    "equivalence": "Environ la moitié des communes en zone de revitalisation rurale"
   },
   {
     "id": "emp-11",
-    "title": "Dialogue social et représentativité",
-    "subtitle": "Financement syndicats + patronat",
+    "title": "Financement des syndicats et du patronat",
+    "subtitle": "Dialogue social et représentativité",
     "description": "Le fonds paritaire national (AGFPN) répartit chaque année plus de 100 M€ entre les organisations syndicales et patronales représentatives, pour des missions liées au paritarisme et à la formation syndicale. Il est financé par une contribution des employeurs et par l'État (34,7 M€ de crédits en 2026). Le taux de syndicalisation en France, autour de 10 %, est l'un des plus bas d'Europe.",
     "amountBillions": 0.13,
     "costPerCitizen": 2,
@@ -181,7 +181,7 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["emploi", "syndicats", "dialogue social"],
-    "equivalence": "Subvention de l'État au fonds paritaire : 34,7 M€ en 2026"
+    "equivalence": "Subvention de l'État au fonds qui finance syndicats et patronat : 34,7 M€ en 2026"
   },
   {
     "id": "emp-12",
@@ -217,7 +217,7 @@
   {
     "id": "emp-14",
     "title": "Travail illégal et économie souterraine",
-    "subtitle": "Cotisations éludées par le travail dissimulé : 6,2 à 7,9 Md€ en 2024",
+    "subtitle": "Cotisations non payées à cause du travail dissimulé : 6,2 à 7,9 Md€ en 2024",
     "description": "Le Haut Conseil du financement de la protection sociale estime qu'en 2024 le travail dissimulé a fait perdre entre 6,2 et 7,9 Md€ de cotisations sociales (champ incluant la retraite complémentaire). En ajoutant les erreurs et irrégularités hors fraude, le manque à gagner global est compris entre 8,3 et 10,7 Md€, soit 2,0 % à 2,6 % des cotisations dues. Le montant affiché correspond au milieu de la fourchette de fraude.",
     "amountBillions": 7,
     "costPerCitizen": 101,
@@ -228,13 +228,13 @@
     "sourceDate": "2026",
     "level": 2,
     "tags": ["emploi", "travail illégal", "économie souterraine"],
-    "equivalence": "Entre 6,2 et 7,9 Md€ de cotisations éludées en 2024",
+    "equivalence": "Entre 6,2 et 7,9 Md€ de cotisations non payées en 2024",
     "year": 2024
   },
   {
     "id": "emp-15",
     "title": "Temps de travail et 35 heures",
-    "subtitle": "Cout et debat depuis 25 ans",
+    "subtitle": "Coût et débat depuis 25 ans",
     "description": "Le passage aux 35 heures s'est accompagné d'allègements de cotisations, aujourd'hui fondus dans les allègements généraux. La durée annuelle légale est de 1 607 heures ; la durée effective des salariés à temps complet est plus élevée. Les évaluations de l'effet sur l'emploi divergent fortement selon les études.",
     "amountBillions": 12,
     "costPerCitizen": 174,
@@ -247,8 +247,8 @@
   },
   {
     "id": "emp-16",
-    "title": "RSE et index égalité professionnelle",
-    "subtitle": "Index de l'égalité professionnelle et reporting extra-financier",
+    "title": "Égalité salariale femmes-hommes et obligations des entreprises",
+    "subtitle": "Index de l'égalité professionnelle et rapports sur l'impact social et environnemental (RSE)",
     "description": "L'index de l'égalité professionnelle oblige les entreprises de plus de 50 salariés à publier un score sur 100. La directive européenne sur la transparence salariale, à transposer d'ici juin 2026, va le remplacer par des obligations plus détaillées. La directive CSRD impose par ailleurs un reporting extra-financier aux grandes entreprises.",
     "amountBillions": 0.2,
     "costPerCitizen": 0,
@@ -263,7 +263,7 @@
     "id": "emp-17",
     "title": "Accidents du travail et maladies professionnelles",
     "subtitle": "764 décès par accident du travail en 2024, soit environ 2 par jour",
-    "description": "En 2025, les charges nettes de la branche AT-MP de la Sécurité sociale, financée par les cotisations des employeurs, atteignent 17,4 Md€ (+6,7 %), dont 5,8 Md€ de rentes d'incapacité permanente ; la branche connaît son premier déficit depuis 2013. En 2024, l'Assurance maladie a recensé 549 614 accidents du travail avec arrêt ou incapacité et 1 297 décès : 764 après un accident du travail (dont plus de la moitié par malaise), 318 après un accident de trajet et 215 dus à une maladie professionnelle.",
+    "description": "En 2025, les dépenses nettes de la branche « accidents du travail - maladies professionnelles » (AT-MP) de la Sécurité sociale, financée par les cotisations des employeurs, atteignent 17,4 Md€ (+6,7 %), dont 5,8 Md€ de rentes d'incapacité permanente ; la branche connaît son premier déficit depuis 2013. En 2024, l'Assurance maladie a recensé 549 614 accidents du travail avec arrêt ou incapacité et 1 297 décès : 764 après un accident du travail (dont plus de la moitié par malaise), 318 après un accident de trajet et 215 dus à une maladie professionnelle.",
     "amountBillions": 17.4,
     "costPerCitizen": 252,
     "deckId": "emploi",

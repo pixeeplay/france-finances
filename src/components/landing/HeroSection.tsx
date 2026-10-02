@@ -70,7 +70,7 @@ export function HeroSection() {
           </p>
 
           <p className="mt-4 text-xs text-muted-foreground">
-            Dépense publique {HEADLINE_FIGURE.year}, toutes administrations. Source&nbsp;: {HEADLINE_FIGURE.source}.
+            Dépense publique {HEADLINE_FIGURE.year} de l&apos;État, de la Sécurité sociale et des collectivités. Source&nbsp;: {HEADLINE_FIGURE.source}.
           </p>
 
           <div className="mt-4">

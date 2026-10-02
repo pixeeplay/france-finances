@@ -2,7 +2,7 @@
   {
     "id": "cul-01",
     "title": "Budget de la Culture",
-    "subtitle": "Mission « Culture » + « Médias, livre et industries culturelles »",
+    "subtitle": "Crédits « Culture » + « Médias, livre et industries culturelles »",
     "description": "Patrimoine, spectacle vivant, musées, archéologie, création artistique, livre et industries culturelles. Pour 2026, la mission « Culture » dispose de 3,75 Md€ de crédits de paiement (-4,3 % par rapport à 2025) et la mission « Médias, livre et industries culturelles » de 0,71 Md€. La mission Culture subventionne 72 opérateurs (Louvre, Opéra de Paris, Comédie-Française...), dont les budgets totalisent 2,5 Md€.",
     "amountBillions": 4.46,
     "costPerCitizen": 65,
@@ -14,7 +14,7 @@
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["culture", "patrimoine", "musées"],
-    "equivalence": "Mission Culture : 3,75 Md€ de crédits de paiement en 2026",
+    "equivalence": "Budget Culture : 3,75 Md€ de dépenses prévues en 2026",
     "year": 2026
   },
   {
@@ -84,9 +84,9 @@
   },
   {
     "id": "cul-06",
-    "title": "Sport (budget + JOP héritage)",
-    "subtitle": "Programme « Sport » (Agence nationale du sport, opérateurs)",
-    "description": "Le programme « Sport » porte notamment la subvention de l'État à l'Agence nationale du sport et aux opérateurs du sport : 554,4 M€ de crédits de paiement en 2026 (-6,5 %). La mission « Sport, jeunesse et vie associative », qui finance aussi le service civique, est en proportion celle qui contribue le plus aux économies du PLF 2026 : -17,5 %, à 1 235,9 M€.",
+    "title": "Sport (budget et héritage des JO de Paris)",
+    "subtitle": "Crédits « Sport » de l'État (Agence nationale du sport, organismes publics du sport)",
+    "description": "Les crédits « Sport » financent notamment l'Agence nationale du sport et les autres organismes publics du sport : 554,4 M€ de dépenses prévues en 2026 (-6,5 %). La mission « Sport, jeunesse et vie associative », qui finance aussi le service civique, est en proportion celle qui contribue le plus aux économies du PLF 2026 : -17,5 %, à 1 235,9 M€.",
     "amountBillions": 0.554,
     "costPerCitizen": 8,
     "deckId": "culture",
@@ -96,7 +96,7 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["sport", "JOP", "clubs"],
-    "equivalence": "Mission Sport, jeunesse et vie associative : -17,5 % en 2026",
+    "equivalence": "Budget Sport, jeunesse et vie associative : -17,5 % en 2026",
     "year": 2026
   },
   {
@@ -113,7 +113,7 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["culture", "presse", "médias"],
-    "equivalence": "346 M€ de crédits et 65 M€ de dépenses fiscales en 2026",
+    "equivalence": "346 M€ d'aides directes et 65 M€ d'allègements d'impôts en 2026",
     "year": 2026
   },
   {
@@ -135,8 +135,8 @@
   {
     "id": "cul-09",
     "title": "Aviation civile",
-    "subtitle": "Budget annexe de l'aviation civile (DGAC)",
-    "description": "Le budget annexe « Contrôle et exploitation aériens » (BACEA) finance la DGAC, le contrôle aérien et la sécurité de l'aviation civile : 2,4 Md€ en 2026, dont 1 442 M€ de dépenses de personnel (+3 %). Il est financé par les redevances et taxes du transport aérien, et non par l'impôt général. Le kérosène des vols commerciaux n'est pas soumis à l'accise sur les carburants.",
+    "subtitle": "Un budget à part, financé par les redevances et taxes du transport aérien (DGAC)",
+    "description": "Le budget annexe « Contrôle et exploitation aériens » (BACEA), un budget à part de celui de l'État, finance la DGAC, le contrôle aérien et la sécurité de l'aviation civile : 2,4 Md€ en 2026, dont 1 442 M€ de dépenses de personnel (+3 %). Il est financé par les redevances et taxes du transport aérien, et non par l'impôt général. Le kérosène des vols commerciaux n'est pas soumis à l'accise sur les carburants.",
     "amountBillions": 2.4,
     "costPerCitizen": 35,
     "deckId": "culture",
@@ -146,7 +146,7 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["transports", "aérien", "DGAC"],
-    "equivalence": "Dépenses de personnel de la DGAC : 1 442 M€ en 2026",
+    "equivalence": "Dépenses de personnel de l'aviation civile (DGAC) : 1 442 M€ en 2026",
     "year": 2026
   },
   {
@@ -167,8 +167,8 @@
   },
   {
     "id": "cul-11",
-    "title": "CNC et industrie du cinema",
-    "subtitle": "Autofinance par la taxe TSA",
+    "title": "Aides au cinéma (CNC)",
+    "subtitle": "Financées par des taxes sur les billets, la télévision et les plateformes",
     "description": "Le CNC ne reçoit aucun crédit budgétaire : il est financé par quatre taxes affectées (entrées en salle, éditeurs et distributeurs de télévision, vidéo et plateformes en ligne), dont le produit est estimé à 785 M€ en 2026 (+3,8 %). En 2025, l'État a prélevé 500 M€ sur sa trésorerie, puis 50 M€ supplémentaires sont prévus en 2026.",
     "amountBillions": 0.8,
     "costPerCitizen": 12,
@@ -181,12 +181,12 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["cinema", "CNC", "culture"],
-    "equivalence": "785 M€ de taxes affectées au CNC en 2026"
+    "equivalence": "785 M€ de taxes reversées directement au CNC en 2026"
   },
   {
     "id": "cul-12",
-    "title": "Velo et mobilités douces",
-    "subtitle": "Plan velo : 2 Md€ sur 4 ans",
+    "title": "Vélo et mobilités douces",
+    "subtitle": "Plan vélo : 2 Md€ sur 4 ans",
     "description": "Le plan vélo finance pistes cyclables, stationnements sécurisés et aides à l'achat. La part modale du vélo progresse mais reste loin de celle des Pays-Bas. Les crédits de l'État pour le vélo, portés notamment par l'Afit France, dépendent de recettes jugées structurellement incertaines par le Sénat.",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
@@ -198,12 +198,12 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["velo", "mobilite", "transport"],
-    "equivalence": "Les crédits vélo dépendent du budget de l'Afit France"
+    "equivalence": "Les crédits vélo dépendent du budget de l'agence de financement des infrastructures de transport (Afit France)"
   },
   {
     "id": "cul-13",
     "title": "Grand Paris Express",
-    "subtitle": "200 km de metro automatique, 68 gares",
+    "subtitle": "200 km de métro automatique, 68 gares",
     "description": "Plus grand projet de transport en Europe, le Grand Paris Express compte 200 km de métro automatique et 68 gares. Son coût global actualisé est de 36,1 Md€ depuis 2021, au-delà des prévisions initiales, auxquels s'ajoutent 3,5 Md€ de contribution de la Société des grands projets aux SERM. Il est financé par des taxes affectées franciliennes et par l'emprunt. Depuis 2025, IDFM verse une redevance d'infrastructure pour l'usage du réseau.",
     "amountBillions": 36.1,
     "costPerCitizen": 522,
@@ -215,7 +215,7 @@
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["metro", "transport", "infrastructure"],
-    "equivalence": "36,1 Md€ de coût global actualisé, plus 3,5 Md€ pour les SERM"
+    "equivalence": "36,1 Md€ de coût global actualisé, plus 3,5 Md€ pour les RER métropolitains (SERM)"
   },
   {
     "id": "cul-14",
@@ -236,8 +236,8 @@
   },
   {
     "id": "cul-15",
-    "title": "Taxe aérien et quotas carbone",
-    "subtitle": "Taxe de solidarite Chirac + ETS",
+    "title": "Taxes sur l'avion et quotas carbone",
+    "subtitle": "Taxe de solidarité sur les billets d'avion (« taxe Chirac ») + marché européen du carbone",
     "description": "La taxe de solidarité sur les billets d'avion, créée en 2006, finance notamment UNITAID ; elle a été relevée en 2025. Les vols intra-européens sont soumis au marché carbone européen (ETS). L'interdiction des vols intérieurs lorsqu'une alternative en train de moins de 2h30 existe ne concerne que quelques liaisons.",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
@@ -254,7 +254,7 @@
   },
   {
     "id": "cul-16",
-    "title": "Musees nationaux",
+    "title": "Musées nationaux",
     "subtitle": "Louvre, Orsay, Versailles et grands musées",
     "description": "Le Louvre est le musée le plus visité au monde. Ses ressources propres (billetterie, mécénat) financent une part croissante de son budget, aux côtés de la subvention de l'État, alors que ses besoins d'investissement dépassent 1 Md€ sur dix ans. À partir de 2026, une hausse des tarifs pour les visiteurs non européens doit rapporter plus de 23 M€ dans les quatre monuments les plus fréquentés, dont plus de 15 M€ pour le Louvre. La gratuité pour les moins de 26 ans résidents de l'UE fait débat.",
     "amountBillions": 1.5,
@@ -304,7 +304,7 @@
   {
     "id": "cul-19",
     "title": "Bibliothèques publiques",
-    "subtitle": "16 500 bibliotheques + BnF",
+    "subtitle": "16 500 bibliothèques + Bibliothèque nationale de France (BnF)",
     "description": "Environ 16 500 bibliothèques et points d'accès au livre maillent le territoire, ce qui en fait le premier réseau culturel de proximité. La BnF conserve plusieurs dizaines de millions de documents et Gallica en donne une partie en accès libre. Les bibliothèques développent des services de tiers-lieu (accès numérique, aide aux démarches).",
     "amountBillions": 2,
     "costPerCitizen": 29,
@@ -319,8 +319,8 @@
   },
   {
     "id": "cul-20",
-    "title": "Archéologie préventive (INRAP)",
-    "subtitle": "Redevance d'archeologie préventive + INRAP",
+    "title": "Fouilles archéologiques avant travaux (Inrap)",
+    "subtitle": "Redevance d'archéologie préventive + institut public des fouilles",
     "description": "Avant certains chantiers d'aménagement, un diagnostic archéologique peut être prescrit par l'État (loi de 2001). L'INRAP réalise une grande part des diagnostics et des fouilles. La redevance d'archéologie préventive est payée par les aménageurs.",
     "amountBillions": 0.2,
     "costPerCitizen": 3,

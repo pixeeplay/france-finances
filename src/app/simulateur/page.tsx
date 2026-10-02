@@ -48,7 +48,7 @@ export default async function SimulateurPage({
             rel="noopener noreferrer"
             className="underline underline-offset-2 hover:text-foreground"
           >
-            simulateur officiel de la DGFiP
+            simulateur officiel de l&apos;administration fiscale (DGFiP)
           </a>
           .
         </p>
@@ -76,12 +76,12 @@ export default async function SimulateurPage({
                 {IR_YEAR}, applicables aux revenus {IR_INCOME_YEAR}.
               </li>
               <li>
-                TVA : on suppose que 80 % du revenu net est consommé, avec un taux moyen apparent de
+                TVA : on suppose que 80 % du revenu net est consommé, avec un taux moyen de TVA de
                 13 %. C&apos;est un ordre de grandeur, pas une donnée officielle.
               </li>
               <li>
-                La répartition par mission est une illustration : le budget de l&apos;État ne flèche pas
-                une recette vers une dépense.
+                La répartition par poste du budget de l&apos;État (« mission ») est une illustration : le
+                budget de l&apos;État ne flèche pas une recette vers une dépense.
               </li>
             </ul>
           </div>

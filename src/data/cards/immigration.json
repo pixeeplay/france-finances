@@ -1,8 +1,8 @@
 [
   {
     "id": "imm-01",
-    "title": "Mission Immigration, asile et intégration",
-    "subtitle": "Crédits de la mission budgétaire dédiée",
+    "title": "Budget de l'État pour l'immigration, l'asile et l'intégration",
+    "subtitle": "Les crédits spécifiquement consacrés à ces politiques",
     "description": "Finance l'accueil des demandeurs d'asile (hébergement, allocation pour demandeur d'asile), l'instruction des demandes (OFPRA, CNDA), la rétention administrative et l'intégration. En 2026, ses crédits de paiement atteignent 2,16 Md€ (+3,8 %), la hausse se concentrant sur la lutte contre l'immigration irrégulière, tandis que le parc d'hébergement d'urgence des demandeurs d'asile est réduit.",
     "amountBillions": 2.16,
     "costPerCitizen": 31,
@@ -36,9 +36,9 @@
   },
   {
     "id": "imm-03",
-    "title": "Coût global politique migratoire",
-    "subtitle": "Estimation large — 19 programmes, 12 missions",
-    "description": "Au-delà de la mission dédiée (2,16 Md€), la politique migratoire mobilisé des crédits dans 12 missions : hébergement, scolarisation, aide juridictionnelle, soins, rétention, police aux frontières. Le Sénat estimé le coût global à 7,82 Md€ en 2026.",
+    "title": "Coût global de la politique migratoire",
+    "subtitle": "Estimation large — dépenses réparties dans 12 grands postes du budget",
+    "description": "Au-delà du budget dédié (2,16 Md€), la politique migratoire mobilise des crédits dans 12 grands postes du budget (« missions ») : hébergement, scolarisation, aide juridictionnelle, soins, rétention, police aux frontières. Le Sénat estimé le coût global à 7,82 Md€ en 2026.",
     "amountBillions": 7.8,
     "costPerCitizen": 113,
     "deckId": "immigration",
@@ -49,13 +49,13 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["immigration", "coût global", "budget"],
-    "equivalence": "La mission Immigration représente un peu plus du quart du coût total"
+    "equivalence": "Le budget Immigration représente un peu plus du quart du coût total"
   },
   {
     "id": "imm-04",
     "title": "Centres de rétention (CRA)",
     "subtitle": "Investissement immobilier — objectif 3 000 places en 2029",
-    "description": "Pour atteindre l'objectif de 3 000 places de rétention en 2029, le PLF 2026 prévoit 266,7 M€ d'autorisations d'engagement et 156,2 M€ de crédits de paiement d'investissements immobiliers dans les centres de rétention administrative, contre 21,6 M€ et 43,1 M€ en 2025. Selon la Cour des comptes, une journée de rétention coûte environ 600 €.",
+    "description": "Pour atteindre l'objectif de 3 000 places de rétention en 2029, le projet de budget 2026 autorise 266,7 M€ d'engagements (contrats payables sur plusieurs années) et 156,2 M€ de paiements dans l'année pour construire ou rénover les centres de rétention administrative, contre 21,6 M€ et 43,1 M€ en 2025. Selon la Cour des comptes, une journée de rétention coûte environ 600 €.",
     "amountBillions": 0.266,
     "costPerCitizen": 4,
     "deckId": "immigration",
@@ -71,9 +71,9 @@
   },
   {
     "id": "imm-05",
-    "title": "Allocation demandeur d'asile (ADA)",
+    "title": "Allocation versée aux demandeurs d'asile (ADA)",
     "subtitle": "204€/mois pour une personne seule",
-    "description": "Pour 2026, 241,4 M€ sont prévus pour l'ADA versée aux demandeurs d'asile, soit 5,2 M€ de moins qu'en LFI 2025 (-2 %), principalement grâce à la réduction des délais de traitement à l'OFPRA. En incluant l'ADA versée aux bénéficiaires de la protection temporaire, l'enveloppe atteint 313,4 M€. La transposition du Pacte européen sur la migration et l'asile entraîne une revalorisation des conditions matérielles d'accueil.",
+    "description": "Pour 2026, 241,4 M€ sont prévus pour l'ADA versée aux demandeurs d'asile, soit 5,2 M€ de moins qu'au budget initial 2025 (-2 %), principalement grâce à la réduction des délais de traitement à l'OFPRA. En incluant l'ADA versée aux bénéficiaires de la protection temporaire, l'enveloppe atteint 313,4 M€. La transposition du Pacte européen sur la migration et l'asile entraîne une revalorisation des conditions matérielles d'accueil.",
     "amountBillions": 0.241,
     "costPerCitizen": 3,
     "deckId": "immigration",
@@ -89,8 +89,8 @@
   },
   {
     "id": "imm-06",
-    "title": "Hébergement demandeurs d'asile",
-    "subtitle": "Dispositif national d'accueil (DNA)",
+    "title": "Hébergement des demandeurs d'asile",
+    "subtitle": "Places réservées aux demandeurs d'asile (dispositif national d'accueil)",
     "description": "Le dispositif national d'accueil regroupe les centres d'accueil des demandeurs d'asile (CADA), l'hébergement d'urgence (HUDA) et les centres d'accueil et d'examen des situations. Dans le PLF 2026, les places d'HUDA passent de 40 011 à 27 711, une partie étant transformée en places de CADA (+11 000). Une part importante des demandeurs d'asile ne bénéficie pas d'un hébergement dédié.",
     "amountBillions": 1.1,
     "costPerCitizen": 16,
@@ -102,12 +102,12 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["immigration", "hébergement", "asile"],
-    "equivalence": "HUDA : de 40 011 places en 2025 à 27 711 en 2026"
+    "equivalence": "Hébergement d'urgence des demandeurs d'asile (HUDA) : de 40 011 places en 2025 à 27 711 en 2026"
   },
   {
     "id": "imm-07",
     "title": "Intégration et accès à la nationalité",
-    "subtitle": "Programme 104 — OFII",
+    "subtitle": "Cours de français, accompagnement des nouveaux arrivants, naturalisations (OFII)",
     "description": "Formation linguistique et civique des étrangers primo-arrivants signataires du contrat d'intégration républicaine, accompagnement vers l'emploi et le logement. Les crédits stagnent à 368 M€ en 2026, malgré l'exigence d'un niveau A2 en français pour les titres de séjour pluriannuels depuis le 1er janvier 2026 ; la dématérialisation de la formation linguistique doit en limiter le coût.",
     "amountBillions": 0.368,
     "costPerCitizen": 5,
@@ -139,9 +139,9 @@
   },
   {
     "id": "imm-09",
-    "title": "OFPRA et délais d'instruction asile",
+    "title": "Examen des demandes d'asile (OFPRA)",
     "subtitle": "Plus de 100 000 demandes d'asile par an",
-    "description": "L'OFPRA instruit plus de 100 000 demandes d'asile par an ; le PLF 2026 lui accorde 48 emplois supplémentaires pour atteindre 174 000 décisions. Une majorité des demandeurs sont déboutés, en première instance ou devant la Cour nationale du droit d'asile (CNDA), qui est la juridiction rendant le plus de décisions en France. Les déboutés doivent quitter le territoire, mais l'exécution des mesures d'éloignement reste faible.",
+    "description": "L'OFPRA instruit plus de 100 000 demandes d'asile par an ; le projet de budget 2026 lui accorde 48 emplois supplémentaires pour atteindre 174 000 décisions. Une majorité des demandeurs sont déboutés, en première instance ou devant la Cour nationale du droit d'asile (CNDA), qui est la juridiction rendant le plus de décisions en France. Les déboutés doivent quitter le territoire, mais l'exécution des mesures d'éloignement reste faible.",
     "amountBillions": 0.1,
     "costPerCitizen": 1.5,
     "deckId": "immigration",
@@ -152,7 +152,7 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["immigration", "asile", "OFPRA"],
-    "equivalence": "Objectif de 174 000 décisions de l'OFPRA en 2026"
+    "equivalence": "Objectif de 174 000 décisions de l'office de l'asile (OFPRA) en 2026"
   },
   {
     "id": "imm-10",
@@ -173,7 +173,7 @@
   },
   {
     "id": "imm-11",
-    "title": "Regularisations et sans-papiers",
+    "title": "Régularisations et sans-papiers",
     "subtitle": "Un nombre de personnes en situation irrégulière difficile à estimer",
     "description": "Environ 30 000 personnes sont régularisées chaque année par admission exceptionnelle au séjour. Selon la Cour des comptes, le nombre d'étrangers en situation irrégulière est incertain : il est généralement approché par le nombre de bénéficiaires de l'aide médicale d'État (466 000 fin 2023), qui ne le mesure qu'imparfaitement. Ces personnes travaillent notamment dans le BTP, la restauration et l'aide à domicile. Leur coût net pour les finances publiques fait l'objet d'estimations divergentes.",
     "amountBillions": 4,
@@ -207,7 +207,7 @@
   {
     "id": "imm-13",
     "title": "Scolarisation des enfants étrangers",
-    "subtitle": "Élèves allophones et dispositifs UPE2A",
+    "subtitle": "Élèves qui ne parlent pas encore français et classes d'accueil (UPE2A)",
     "description": "Tous les enfants de 3 à 16 ans doivent être scolarisés, quelle que soit la situation administrative de leurs parents. Les élèves allophones nouvellement arrivés sont accueillis dans des dispositifs spécifiques (UPE2A) pour l'apprentissage du français, avant leur inclusion dans les classes ordinaires.",
     "amountBillions": 1.5,
     "costPerCitizen": 22,
@@ -236,7 +236,7 @@
   },
   {
     "id": "imm-15",
-    "title": "Eloignement et OQTF (execution)",
+    "title": "Renvois d'étrangers en situation irrégulière (OQTF)",
     "subtitle": "Coût de la lutte contre l'immigration irrégulière",
     "description": "La Cour des comptes (2024) évalue le coût de la lutte contre l'immigration irrégulière à environ 1,8 Md€ par an. Entre 2019 et 2022, 447 257 OQTF ont été prononcées ; la direction générale des étrangers en France évalue à 12 % le taux d'exécution des OQTF exécutoires. Un éloignement forcé coûte en moyenne 4 414 €, contre 1 120 € pour un retour volontaire aidé. Obstacles : identification des personnes, laissez-passer consulaires, recours suspensifs.",
     "amountBillions": 1.8,
@@ -284,7 +284,7 @@
   },
   {
     "id": "imm-18",
-    "title": "Naturalisation et acquisition de la nationalite",
+    "title": "Naturalisation et acquisition de la nationalité",
     "subtitle": "Plusieurs dizaines de milliers de naturalisations par an",
     "description": "Chaque année, plusieurs dizaines de milliers d'étrangers acquièrent la nationalité française, par décret, par mariage ou par déclaration. La naturalisation suppose notamment cinq ans de résidence et un niveau suffisant en français, relevé par la loi de 2024. Les délais d'instruction restent longs.",
     "amountBillions": 0.1,

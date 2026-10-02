@@ -51,13 +51,13 @@ export interface ChartDatum {
 export const COFOG_DECK: Readonly<Record<string, string>> = {
   "Protection sociale": "social",
   "Santé": "sante",
-  "Services publics généraux (dont intérêts de la dette)": "etat",
-  "Affaires économiques": "energie",
+  "Administration générale (dont intérêts de la dette)": "etat",
+  "Économie, transports et énergie (« affaires économiques »)": "energie",
   "Enseignement": "education",
   "Défense": "defense",
-  "Ordre et sécurité publics": "securite",
+  "Police, justice, prisons et pompiers": "securite",
   "Loisirs, culture et culte": "culture",
-  "Logement et équipements collectifs": "logement",
+  "Logement et aménagement (eau, éclairage public…)": "logement",
   "Protection de l'environnement": "environnement",
 };
 
