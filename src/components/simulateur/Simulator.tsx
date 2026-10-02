@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useMemo, useState } from "react";
+import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { BarList, StatTile } from "@/components/chiffres/DataBlocks";
 import { REFERENCE_SALARIES } from "@/data/fiscal-2026";
 import { formatEuros, formatRatio } from "@/lib/format";
@@ -14,6 +14,8 @@ import type { SimulatorInput } from "@/types/simulator";
 
 const SLIDER_MAX = 150_000;
 const SLIDER_STEP = 500;
+/** Délai avant d'annoncer la synthèse aux lecteurs d'écran (évite les annonces en rafale pendant le glissement du curseur) */
+const ANNOUNCE_DELAY_MS = 400;
 
 interface SimulatorProps {
   initialInput: SimulatorInput;
@@ -24,7 +26,7 @@ function Row({ label, value, strong }: { label: string; value: string; strong?: 
   return (
     <div className={`flex items-baseline justify-between gap-3 py-2 text-sm ${strong ? "font-semibold" : ""}`}>
       <dt className={strong ? "text-foreground" : "text-muted-foreground"}>{label}</dt>
-      <dd className="shrink-0 whitespace-nowrap tabular-nums text-foreground">{value}</dd>
+      <dd className={`shrink-0 whitespace-nowrap numeral text-foreground ${strong ? "text-base" : ""}`}>{value}</dd>
     </div>
   );
 }
@@ -37,6 +39,20 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
 
   const result = useMemo(() => runFullSimulation(input, budgetItems), [input, budgetItems]);
   const { ir, cotisations, tva } = result;
+
+  // Annonce courte et différée de la synthèse (zone sr-only), plutôt qu'un aria-live
+  // sur tout le bloc qui serait relu à chaque cran du curseur.
+  const [announcement, setAnnouncement] = useState("");
+  const isFirstRender = useRef(true);
+  const summaryText = `Prélèvements estimés ${formatEuros(result.totalPrelevements)}, taux global ${formatRatio(result.tauxEffectifGlobal)}`;
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+    const handle = window.setTimeout(() => setAnnouncement(summaryText), ANNOUNCE_DELAY_MS);
+    return () => window.clearTimeout(handle);
+  }, [summaryText]);
 
   // Garde l'URL partageable synchronisée avec la saisie, sans recharger la page.
   useEffect(() => {
@@ -76,15 +92,16 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
   };
 
   const toggleBase =
-    "flex-1 min-h-[44px] rounded-lg text-sm font-semibold transition-colors";
-  const toggleOn = "bg-primary text-primary-foreground";
+    "flex-1 min-h-[44px] rounded-sm text-sm font-semibold transition-colors";
+  const toggleOn = "bg-foreground text-background";
   const toggleOff = "text-muted-foreground hover:text-foreground";
 
   return (
     <div className="space-y-8">
       {/* Saisie */}
-      <section aria-labelledby="sim-input-title" className="rounded-2xl border border-border bg-card p-4 sm:p-6">
-        <h2 id="sim-input-title" className="font-heading text-lg font-bold text-foreground mb-4">
+      <section aria-labelledby="sim-input-title" className="rounded-md border border-border bg-card p-4 sm:p-6">
+        <p className="kicker text-muted-foreground mb-1">Saisie</p>
+        <h2 id="sim-input-title" className="text-2xl font-semibold text-foreground mb-4">
           Votre situation
         </h2>
 
@@ -101,9 +118,9 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
             step={100}
             value={input.annualGross}
             onChange={(e) => setGross(e.target.value)}
-            className="w-full min-h-[44px] rounded-lg border border-border bg-background px-3 text-base tabular-nums text-foreground"
+            className="w-full min-h-[44px] rounded-md border border-border bg-background px-3 numeral text-lg text-foreground"
           />
-          <span className="text-sm text-muted-foreground" aria-hidden="true">€/an</span>
+          <span className="kicker text-muted-foreground" aria-hidden="true">€/an</span>
         </div>
         <p className="mt-1 text-xs text-muted-foreground">
           Soit {formatEuros(input.annualGross / 12)} brut par mois.
@@ -125,7 +142,7 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
           <button
             type="button"
             onClick={() => update({ annualGross: REFERENCE_SALARIES.smic })}
-            className="min-h-[44px] px-3 rounded-full border border-border text-xs text-foreground hover:bg-muted"
+            className="min-h-[44px] px-3 rounded-md border border-border text-xs text-foreground hover:bg-muted"
           >
             SMIC ({formatEuros(REFERENCE_SALARIES.smic)})
           </button>
@@ -133,7 +150,7 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
 
         <fieldset className="mt-6">
           <legend className="text-sm font-medium text-foreground">Situation familiale</legend>
-          <div className="mt-2 flex gap-1 rounded-xl bg-muted p-1">
+          <div className="mt-2 flex gap-1 rounded-md bg-muted p-1">
             <button
               type="button"
               aria-pressed={input.isSingle}
@@ -170,7 +187,7 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
             >
               −
             </button>
-            <output aria-live="polite" className="w-8 text-center text-lg font-semibold tabular-nums">
+            <output aria-live="polite" className="w-8 text-center numeral text-2xl font-semibold">
               {input.nbChildren}
             </output>
             <button
@@ -188,11 +205,15 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
       </section>
 
       {/* Synthèse */}
-      <section aria-labelledby="sim-summary-title" aria-live="polite">
-        <h2 id="sim-summary-title" className="font-heading text-lg font-bold text-foreground mb-3">
+      <section aria-labelledby="sim-summary-title">
+        <p className="kicker text-muted-foreground mb-1">Synthèse</p>
+        <h2 id="sim-summary-title" className="text-2xl font-semibold text-foreground mb-4">
           Estimation annuelle
         </h2>
-        <div className="grid grid-cols-2 gap-3">
+        <p className="sr-only" aria-live="polite" aria-atomic="true">
+          {announcement}
+        </p>
+        <div className="grid grid-cols-2 gap-x-6 gap-y-5">
           <StatTile
             label="Prélèvements estimés"
             value={formatEuros(result.totalPrelevements)}
@@ -209,8 +230,8 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
       </section>
 
       {/* Détail */}
-      <section aria-labelledby="sim-detail-title" className="rounded-2xl border border-border bg-card p-4 sm:p-6">
-        <h2 id="sim-detail-title" className="font-heading text-lg font-bold text-foreground mb-2">Détail du calcul</h2>
+      <section aria-labelledby="sim-detail-title" className="border-t-2 border-foreground pt-4">
+        <h2 id="sim-detail-title" className="text-2xl font-semibold text-foreground mb-2">Détail du calcul</h2>
         <dl className="divide-y divide-border">
           <Row label="Salaire brut" value={formatEuros(input.annualGross)} strong />
           <Row label="CSG (9,2 %)" value={`− ${formatEuros(cotisations.csg)}`} />
@@ -235,7 +256,7 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
 
       {/* Répartition */}
       <section aria-labelledby="sim-budget-title">
-        <h2 id="sim-budget-title" className="font-heading text-lg font-bold text-foreground mb-2">
+        <h2 id="sim-budget-title" className="text-2xl font-semibold leading-tight text-foreground mb-2">
           Si votre impôt sur le revenu et votre TVA suivaient le budget de l&apos;État
         </h2>
         <p className="mb-4 text-sm text-muted-foreground leading-relaxed">
@@ -258,7 +279,7 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
         <button
           type="button"
           onClick={share}
-          className="inline-flex items-center justify-center gap-2 min-h-[44px] px-6 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-colors"
+          className="inline-flex items-center justify-center gap-2 min-h-[48px] px-6 rounded-md bg-foreground text-background font-semibold text-sm hover:opacity-90 transition-opacity"
         >
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
@@ -267,6 +288,9 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
           </svg>
           {copied ? "Lien copié" : "Partager cette simulation"}
         </button>
+        <span className="sr-only" role="status">
+          {copied ? "Lien de la simulation copié dans le presse-papiers" : ""}
+        </span>
       </div>
     </div>
   );

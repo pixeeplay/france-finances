@@ -83,19 +83,17 @@ export function HowItWorks() {
 
         <dl className="lg:col-span-8 grid sm:grid-cols-2 sm:gap-x-8 border-t border-border">
           {DIRECTIONS.map((d) => (
-            <div key={d.label} className="flex gap-4 py-4 border-b border-border">
-              <span className={`mt-1.5 h-3 w-3 shrink-0 rounded-[2px] ${d.swatch}`} aria-hidden="true" />
-              <div className="min-w-0">
-                <dt className="flex items-center gap-2">
-                  {d.icon}
-                  <span className="font-serif text-xl font-semibold">{d.label}</span>
-                </dt>
-                <dd className="mt-1 text-sm text-muted-foreground">{d.meaning}</dd>
-                <dd className="mt-2 kicker text-muted-foreground">
-                  <span aria-hidden="true">{d.arrow} </span>
-                  Glisser vers {d.gesture} · {d.level}
-                </dd>
-              </div>
+            <div key={d.label} className="py-4 border-b border-border">
+              <dt className="flex items-center gap-2">
+                <span className={`mr-2 h-3 w-3 shrink-0 rounded-[2px] ${d.swatch}`} aria-hidden="true" />
+                {d.icon}
+                <span className="font-serif text-xl font-semibold">{d.label}</span>
+              </dt>
+              <dd className="mt-1 pl-7 text-sm text-muted-foreground">{d.meaning}</dd>
+              <dd className="mt-2 pl-7 kicker text-muted-foreground">
+                <span aria-hidden="true">{d.arrow} </span>
+                Glisser vers {d.gesture} · {d.level}
+              </dd>
             </div>
           ))}
         </dl>
