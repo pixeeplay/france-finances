@@ -19,8 +19,8 @@
   {
     "id": "agr-02",
     "title": "Budget ministère de l'Agriculture",
-    "subtitle": "Crédits du ministère, hors aides européennes de la PAC",
-    "description": "Sécurité sanitaire de l'alimentation, enseignement et recherche agricoles, forêt, gestion des crises sanitaires (grippe aviaire, dermatose nodulaire bovine) et installation des jeunes agriculteurs. En 2026, les crédits de paiement de la mission atteignent 4 Md€, contre 4,2 Md€ votés en 2025 (-5 %). Les crédits de planification écologique passent de 1,3 Md€ en 2024 à 491 M€ en 2025, puis 143 M€ en 2026.",
+    "subtitle": "Budget du ministère, hors aides européennes de la PAC",
+    "description": "Sécurité sanitaire de l'alimentation, enseignement et recherche agricoles, forêt, gestion des crises sanitaires (grippe aviaire, dermatose nodulaire bovine) et installation des jeunes agriculteurs. En 2026, les dépenses prévues pour l'agriculture dans le budget de l'État atteignent 4 Md€, contre 4,2 Md€ votés en 2025 (-5 %). Les sommes consacrées à la planification écologique passent de 1,3 Md€ en 2024 à 491 M€ en 2025, puis 143 M€ en 2026.",
     "amountBillions": 4,
     "costPerCitizen": 58,
     "deckId": "agriculture",
@@ -32,7 +32,7 @@
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["agriculture", "budget", "ministère"],
-    "equivalence": "La mission ne représente qu'environ un cinquième des 25,3 Md€ de dépenses publiques pour l'agriculture"
+    "equivalence": "Ce budget ne représente qu'environ un cinquième des 25,3 Md€ de dépenses publiques pour l'agriculture"
   },
   {
     "id": "agr-03",
@@ -54,7 +54,7 @@
     "id": "agr-04",
     "title": "Office national des forêts (ONF)",
     "subtitle": "Gestion de 11 millions d'hectares de forêts publiques",
-    "description": "L'ONF gère les forêts publiques, soit environ un quart de la forêt française. Pour 2026, les crédits de l'État en sa faveur atteignent 257,4 M€ (256,8 M€ en 2025), dont environ 228 M€ du programme 149 : c'est le seul opérateur de la mission dont les moyens sont consolidés, notamment pour le renouvellement forestier. Le reste de son budget provient surtout des ventes de bois.",
+    "description": "L'ONF gère les forêts publiques, soit environ un quart de la forêt française. Pour 2026, l'État lui verse 257,4 M€ (256,8 M€ en 2025), dont environ 228 M€ sur la principale ligne du budget agricole et forestier : c'est le seul organisme public financé par le budget de l'agriculture dont les moyens sont maintenus, notamment pour le renouvellement forestier. Le reste de son budget provient surtout des ventes de bois.",
     "amountBillions": 0.257,
     "costPerCitizen": 4,
     "deckId": "agriculture",
@@ -65,13 +65,13 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["agriculture", "forêts", "ONF"],
-    "equivalence": "257,4 M€ de crédits de l'État en 2026"
+    "equivalence": "257,4 M€ versés par l'État en 2026"
   },
   {
     "id": "agr-05",
     "title": "Agriculture biologique",
     "subtitle": "Soutien public — conversion + maintien + fonds Avenir Bio",
-    "description": "La France vise 21 % de surface agricole en bio d'ici 2030. Les crédits du fonds Avenir Bio sont divisés par deux dans le PLF 2026 (de 18 M€ à 8,8 M€) et le crédit d'impôt bio n'est prorogé que de deux ans. Plusieurs exploitations se déconvertissent faute de débouchés rentables.",
+    "description": "La France vise 21 % de surface agricole en bio d'ici 2030. Le fonds Avenir Bio est divisé par deux dans le projet de budget 2026 (de 18 M€ à 8,8 M€) et le crédit d'impôt bio n'est prolongé que de deux ans. Plusieurs exploitations abandonnent le bio faute de débouchés rentables.",
     "amountBillions": 0.25,
     "costPerCitizen": 4,
     "deckId": "agriculture",
@@ -88,7 +88,7 @@
     "id": "agr-06",
     "title": "Sécurité sanitaire alimentaire",
     "subtitle": "Agence de sécurité sanitaire (ANSES), services vétérinaires de l'État, contrôles",
-    "description": "L'ANSES évalue les risques alimentaires, pesticides, médicaments vétérinaires. La DGAL coordonne les contrôles en abattoirs, restaurants et usines. La France a géré en 2025-2026 des crises sanitaires majeures (grippe aviaire H5N1, dermatose nodulaire bovine). L'ANSES perd 6 ETP en 2026.",
+    "description": "L'ANSES évalue les risques alimentaires, pesticides, médicaments vétérinaires. La DGAL coordonne les contrôles en abattoirs, restaurants et usines. La France a géré en 2025-2026 des crises sanitaires majeures (grippe aviaire H5N1, dermatose nodulaire bovine). L'ANSES perd 6 postes (équivalents temps plein) en 2026.",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
     "deckId": "agriculture",
@@ -203,7 +203,7 @@
     "id": "agr-13",
     "title": "Crise agricole et plans d'urgence",
     "subtitle": "Dépenses de crise 2024 : 587 M€ pour 282 M€ prévus",
-    "description": "Gel, sécheresse, crises des prix, épizooties : les dépenses de gestion de crise dépassent chaque année la budgétisation. En 2024, le programme 149 avait prévu 282 M€ de crédits de paiement pour la gestion des crises ; l'exécution a atteint 587 M€ selon la Cour des comptes, au prix de redéploiements de crédits. L'influenza aviaire a coûté 717 M€ d'indemnisations entre 2020 et 2024.",
+    "description": "Gel, sécheresse, crises des prix, épizooties : les dépenses de gestion de crise dépassent chaque année ce qui est prévu au budget. En 2024, l'État avait prévu 282 M€ pour la gestion des crises agricoles ; les dépenses réelles ont atteint 587 M€ selon la Cour des comptes, en prenant de l'argent sur d'autres postes du budget. L'influenza aviaire a coûté 717 M€ d'indemnisations entre 2020 et 2024.",
     "amountBillions": 0.587,
     "costPerCitizen": 8,
     "deckId": "agriculture",
@@ -213,7 +213,7 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["agriculture", "crise", "urgence"],
-    "equivalence": "Plus du double des crédits prévus en 2024",
+    "equivalence": "Plus du double de la somme prévue en 2024",
     "year": 2024
   },
   {
@@ -252,7 +252,7 @@
     "id": "agr-16",
     "title": "Pesticides et plan Ecophyto",
     "subtitle": "Objectif de réduction de moitié non atteint selon la Cour des comptes",
-    "description": "Lancés en 2008, les plans Écophyto visaient à réduire de moitié l'usage des pesticides. En 2020, la Cour des comptes constate que, dix ans après et malgré des fonds publics importants, ils n'ont pas atteint leurs objectifs. Le plan a été mis en pause début 2024 avant la présentation de la stratégie Écophyto 2030 ; l'UE a renouvelé l'autorisation du glyphosate pour dix ans en novembre 2023. Selon le Sénat, les crédits de la stratégie de réduction des produits phytosanitaires passent de 250 M€ (AE 2024) à 25 M€ dans le PLF 2026.",
+    "description": "Lancés en 2008, les plans Écophyto visaient à réduire de moitié l'usage des pesticides. En 2020, la Cour des comptes constate que, dix ans après et malgré des fonds publics importants, ils n'ont pas atteint leurs objectifs. Le plan a été mis en pause début 2024 avant la présentation de la stratégie Écophyto 2030 ; l'UE a renouvelé l'autorisation du glyphosate pour dix ans en novembre 2023. Selon le Sénat, le budget de la stratégie de réduction des pesticides passe de 250 M€ d'engagements autorisés en 2024 à 25 M€ dans le projet de budget 2026.",
     "amountBillions": 0.3,
     "costPerCitizen": 4,
     "deckId": "agriculture",
@@ -262,13 +262,13 @@
     "sourceDate": "2020-02-04",
     "level": 3,
     "tags": ["agriculture", "pesticides", "sante"],
-    "equivalence": "Crédits pour réduire les pesticides : 250 M€ en 2024, 25 M€ proposés pour 2026"
+    "equivalence": "Budget pour réduire les pesticides : 250 M€ en 2024, 25 M€ proposés pour 2026"
   },
   {
     "id": "agr-17",
     "title": "Souveraineté alimentaire",
     "subtitle": "Dépendance aux importations",
-    "description": "La France est excédentaire en céréales, vins et produits laitiers, mais dépend des importations pour une large part des fruits, des légumes et du poisson. Selon le Sénat, la balance commerciale agroalimentaire a été ponctuellement déficitaire en 2025. Les concours publics à l'agriculture atteignent 16,3 Md€ en 2026 (25,7 Md€ avec les crédits européens).",
+    "description": "La France est excédentaire en céréales, vins et produits laitiers, mais dépend des importations pour une large part des fruits, des légumes et du poisson. Selon le Sénat, la balance commerciale agroalimentaire a été ponctuellement déficitaire en 2025. Les aides publiques à l'agriculture atteignent 16,3 Md€ en 2026 (25,7 Md€ avec les fonds européens).",
     "amountBillions": 50,
     "costPerCitizen": 724,
     "deckId": "agriculture",
@@ -278,7 +278,7 @@
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["agriculture", "souverainete", "importations"],
-    "equivalence": "Concours publics à l'agriculture : 25,7 Md€ avec les crédits européens"
+    "equivalence": "Aides publiques à l'agriculture : 25,7 Md€ avec les fonds européens"
   },
   {
     "id": "agr-18",
@@ -301,7 +301,7 @@
     "id": "agr-19",
     "title": "Grippe aviaire et crises sanitaires animales",
     "subtitle": "717 M€ d'indemnisations entre 2020 et 2024",
-    "description": "L'influenza aviaire H5N1 a frappé les élevages français plusieurs hivers de suite depuis 2020. Selon le Sénat, la crise a coûté 717 M€ à l'État entre 2020 et 2024 pour le seul volet indemnisation des éleveurs. La vaccination des canards est obligatoire depuis l'automne 2023. D'autres épizooties, comme la dermatose nodulaire bovine, mobilisent aussi les crédits de crise.",
+    "description": "L'influenza aviaire H5N1 a frappé les élevages français plusieurs hivers de suite depuis 2020. Selon le Sénat, la crise a coûté 717 M€ à l'État entre 2020 et 2024 pour le seul volet indemnisation des éleveurs. La vaccination des canards est obligatoire depuis l'automne 2023. D'autres épizooties, comme la dermatose nodulaire bovine, pèsent aussi sur le budget de gestion des crises.",
     "amountBillions": 0.717,
     "costPerCitizen": 10,
     "deckId": "agriculture",
