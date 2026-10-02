@@ -27,9 +27,9 @@ export function ArchetypesTab({
     // Group archetypes into families for display
     const families: { name: string; icon: string; ids: string[]; count: number }[] = [
       { name: "Équilibristes", icon: "⚖️", ids: ["equilibriste"], count: 0 },
-      { name: "Coupeurs", icon: "✂️", ids: ["austeritaire", "demolisseur", "liquidateur_en_chef", "tranchant"], count: 0 },
+      { name: "Coupeurs", icon: "✂️", ids: ["austeritaire", "demolisseur", "liquidateur_en_chef", "tranchant", "bucheron"], count: 0 },
       { name: "Gardiens", icon: "🛡️", ids: ["gardien", "conservateur", "investisseur_public", "protecteur"], count: 0 },
-      { name: "Stratèges", icon: "🎯", ids: ["chirurgien", "stratege", "reformateur", "optimisateur"], count: 0 },
+      { name: "Stratèges", icon: "🎯", ids: ["chirurgien", "stratege", "reformateur", "optimisateur", "elagueur"], count: 0 },
       { name: "Analystes", icon: "🔍", ids: ["sceptique", "auditeur_rigoureux", "speedrunner"], count: 0 },
     ];
 

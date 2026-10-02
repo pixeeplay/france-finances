@@ -1,6 +1,30 @@
 {
   "archetypes": [
     {
+      "id": "bucheron",
+      "name": "Le Bûcheron",
+      "icon": "🪓",
+      "tagline": "Peu de coupes, mais dans les gros postes.",
+      "description": "Tu as remis en question moins de la moitié des cartes, mais elles pèsent plus de 60 % des montants en jeu. Tu vises les dépenses les plus lourdes plutôt que les petites lignes.",
+      "level": 1,
+      "condition": {
+        "maxCutPercent": 50,
+        "minCutAmountPercent": 60
+      }
+    },
+    {
+      "id": "elagueur",
+      "name": "L'Élagueur",
+      "icon": "🌿",
+      "tagline": "Beaucoup de petites coupes, les gros postes intacts.",
+      "description": "Tu as remis en question au moins la moitié des cartes, mais elles représentent moins de 20 % des montants en jeu. Tu tailles dans les petites lignes et laisses les grandes masses en place.",
+      "level": 1,
+      "condition": {
+        "minCutPercent": 50,
+        "maxCutAmountPercent": 20
+      }
+    },
+    {
       "id": "austeritaire",
       "name": "L'Austéritaire",
       "icon": "✂️",

@@ -252,6 +252,11 @@ test.describe("L2 (4 directions) flow", () => {
   test.beforeEach(async ({ page }) => {
     await page.addInitScript(() => {
       localStorage.setItem("trnc:onboarded", "true");
+      // Levels are unlocked by playing: seed 2 completed N1 sessions
+      localStorage.setItem("trnc:stats", JSON.stringify({
+        xp: 0, totalSessions: 2, totalCards: 20, categoriesPlayed: [], sessionsPerDeck: {},
+        auditsN3: 0, totalKeptBillions: 0, totalCutBillions: 0, sessionsPerLevel: { "1": 2 },
+      }));
       localStorage.removeItem("game_sessions");
       sessionStorage.clear();
     });
@@ -260,7 +265,7 @@ test.describe("L2 (4 directions) flow", () => {
   test("L2: select a deck, choose level 2, swipe all cards with 4 directions, see results", async ({
     page,
   }) => {
-    // Navigate to deck selection with level=2 query param to unlock L2
+    // Navigate to deck selection (L2 unlocked via seeded progression)
     await page.goto("/jeu?level=2");
 
     await expect(
@@ -323,6 +328,11 @@ test.describe("L3 (micro-audit) flow", () => {
   test.beforeEach(async ({ page }) => {
     await page.addInitScript(() => {
       localStorage.setItem("trnc:onboarded", "true");
+      // Levels are unlocked by playing: seed 2 N1 + 2 N2 completed sessions
+      localStorage.setItem("trnc:stats", JSON.stringify({
+        xp: 0, totalSessions: 4, totalCards: 40, categoriesPlayed: [], sessionsPerDeck: {},
+        auditsN3: 0, totalKeptBillions: 0, totalCutBillions: 0, sessionsPerLevel: { "1": 2, "2": 2 },
+      }));
       localStorage.removeItem("game_sessions");
       sessionStorage.clear();
     });
@@ -331,7 +341,7 @@ test.describe("L3 (micro-audit) flow", () => {
   test("L3: select a deck, choose level 3, swipe and complete audit for all cards, see results", async ({
     page,
   }) => {
-    // Navigate to deck selection with level=3 query param to unlock L3
+    // Navigate to deck selection (L3 unlocked via seeded progression)
     await page.goto("/jeu?level=3");
 
     await expect(

@@ -17,10 +17,12 @@ function sanitizeParam(value: unknown): string {
 export default async function OgImage({ params }: { params: Promise<{ deckId: string }> }) {
   const deckId = sanitizeParam((await params).deckId);
   const deck = decksMeta.decks.find((d) => d.id === deckId);
-  const name = deck?.name ?? "Deck inconnu";
-  const description = deck?.description ?? "";
-  const cardCount = deck?.cardCount ?? 0;
-  const kicker = deck?.type === "thematic" ? "DOSSIER" : "CATÉGORIE";
+  const isDaily = deckId === "quotidien";
+  const name = deck?.name ?? (isDaily ? "Deck du jour" : "Deck inconnu");
+  const description =
+    deck?.description ?? (isDaily ? "Les mêmes 10 dépenses pour tout le monde, chaque jour" : "");
+  const cardCount = deck?.cardCount ?? (isDaily ? 10 : 0);
+  const kicker = isDaily ? "DECK DU JOUR" : deck?.type === "thematic" ? "DOSSIER" : "CATÉGORIE";
   const brand = "france-finances.com";
   const fonts = await loadOgFonts(`${kicker} ${name} ${description} ${cardCount} cartes Budget Swipe ${brand} 0123456789`);
 

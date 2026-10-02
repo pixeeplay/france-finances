@@ -12,6 +12,8 @@ const ARCHETYPES: Record<string, string> = {
   protecteur: "Le Protecteur",
   equilibriste: "L'Équilibriste",
   speedrunner: "Le Speedrunner",
+  bucheron: "Le Bûcheron",
+  elagueur: "L'Élagueur",
   // Level 2
   stratege: "Le Stratège",
   reformateur: "Le Réformateur",

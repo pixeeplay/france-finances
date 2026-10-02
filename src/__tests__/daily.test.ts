@@ -1,0 +1,187 @@
+import { describe, it, expect, beforeEach } from "vitest";
+import {
+  applyDailyResult,
+  buildDailyShareText,
+  DAILY_CARD_COUNT,
+  daysBetween,
+  directionsToSquares,
+  drawDailyCards,
+  getActiveStreak,
+  getDailyNumber,
+  getParisDateKey,
+  INITIAL_DAILY_PROGRESS,
+  isValidDateKey,
+  shiftDateKey,
+  type DailyResult,
+} from "@/lib/daily";
+import { useDailyStore } from "@/stores/dailyStore";
+import decksData from "@/data";
+import type { Card } from "@/types";
+
+const allCards = decksData.cards as Card[];
+
+function result(dateKey: string, extra: Partial<DailyResult> = {}): DailyResult {
+  return { dateKey, directions: ["cut", "keep"], cutBillions: 3, totalBillions: 10, ...extra };
+}
+
+describe("getParisDateKey", () => {
+  it("uses the Europe/Paris calendar day", () => {
+    // 23:30 UTC on Oct 1st = 01:30 on Oct 2nd in Paris (UTC+2)
+    expect(getParisDateKey(new Date("2026-10-01T23:30:00Z"))).toBe("2026-10-02");
+    expect(getParisDateKey(new Date("2026-10-01T21:59:00Z"))).toBe("2026-10-01");
+    // Winter time (UTC+1)
+    expect(getParisDateKey(new Date("2026-12-31T23:30:00Z"))).toBe("2027-01-01");
+  });
+});
+
+describe("date key helpers", () => {
+  it("validates keys", () => {
+    expect(isValidDateKey("2026-10-02")).toBe(true);
+    expect(isValidDateKey("2026-02-30")).toBe(false);
+    expect(isValidDateKey("2026-1-2")).toBe(false);
+  });
+
+  it("shifts and diffs across months, years and DST changes", () => {
+    expect(shiftDateKey("2026-10-31", 1)).toBe("2026-11-01");
+    expect(shiftDateKey("2026-01-01", -1)).toBe("2025-12-31");
+    expect(shiftDateKey("2026-10-25", 1)).toBe("2026-10-26");
+    expect(daysBetween("2026-10-24", "2026-10-26")).toBe(2);
+    expect(daysBetween("2026-10-26", "2026-10-24")).toBe(-2);
+  });
+
+  it("numbers daily decks from the epoch", () => {
+    expect(getDailyNumber("2026-10-01")).toBe(1);
+    expect(getDailyNumber("2026-10-31")).toBe(31);
+  });
+});
+
+describe("drawDailyCards", () => {
+  it("is identical for everyone on a given day, whatever the input order", () => {
+    const a = drawDailyCards(allCards, "2026-10-02").map((c) => c.id);
+    const b = drawDailyCards([...allCards].reverse(), "2026-10-02").map((c) => c.id);
+    expect(a).toEqual(b);
+    expect(a).toHaveLength(DAILY_CARD_COUNT);
+  });
+
+  it("changes from one day to the next", () => {
+    const a = drawDailyCards(allCards, "2026-10-02").map((c) => c.id);
+    const b = drawDailyCards(allCards, "2026-10-03").map((c) => c.id);
+    expect(a).not.toEqual(b);
+  });
+
+  it("excludes revenue cards and favours distinct decks", () => {
+    for (const day of ["2026-10-02", "2026-11-15", "2027-03-01"]) {
+      const cards = drawDailyCards(allCards, day);
+      expect(cards.every((c) => c.deckId !== "recettes")).toBe(true);
+      expect(new Set(cards.map((c) => c.deckId)).size).toBe(DAILY_CARD_COUNT);
+      expect(new Set(cards.map((c) => c.id)).size).toBe(DAILY_CARD_COUNT);
+    }
+  });
+
+  it("fills with same-deck cards when there are not enough decks", () => {
+    const few = allCards.filter((c) => c.deckId === "defense" || c.deckId === "sante");
+    const cards = drawDailyCards(few, "2026-10-02", 5);
+    expect(cards).toHaveLength(5);
+    expect(new Set(cards.map((c) => c.id)).size).toBe(5);
+  });
+});
+
+describe("applyDailyResult", () => {
+  it("starts a streak at 1", () => {
+    const p = applyDailyResult(INITIAL_DAILY_PROGRESS, result("2026-10-02"));
+    expect(p.currentStreak).toBe(1);
+    expect(p.bestStreak).toBe(1);
+    expect(p.lastPlayedDate).toBe("2026-10-02");
+  });
+
+  it("extends on consecutive days and resets after a gap", () => {
+    let p = applyDailyResult(INITIAL_DAILY_PROGRESS, result("2026-10-02"));
+    p = applyDailyResult(p, result("2026-10-03"));
+    p = applyDailyResult(p, result("2026-10-04"));
+    expect(p.currentStreak).toBe(3);
+    p = applyDailyResult(p, result("2026-10-06"));
+    expect(p.currentStreak).toBe(1);
+    expect(p.bestStreak).toBe(3);
+  });
+
+  it("only counts the first play of the day", () => {
+    const first = applyDailyResult(INITIAL_DAILY_PROGRESS, result("2026-10-02", { cutBillions: 1 }));
+    const again = applyDailyResult(first, result("2026-10-02", { cutBillions: 99 }));
+    expect(again).toBe(first);
+    expect(again.results["2026-10-02"].cutBillions).toBe(1);
+  });
+
+  it("archives past days without touching the streak and ignores invalid keys", () => {
+    let p = applyDailyResult(INITIAL_DAILY_PROGRESS, result("2026-10-05"));
+    p = applyDailyResult(p, result("2026-10-01"));
+    expect(p.lastPlayedDate).toBe("2026-10-05");
+    expect(p.currentStreak).toBe(1);
+    expect(p.results["2026-10-01"]).toBeDefined();
+    expect(applyDailyResult(p, result("nope"))).toBe(p);
+  });
+
+  it("keeps at most 60 results", () => {
+    let p = INITIAL_DAILY_PROGRESS;
+    for (let i = 0; i < 70; i++) p = applyDailyResult(p, result(shiftDateKey("2026-10-01", i)));
+    expect(Object.keys(p.results)).toHaveLength(60);
+    expect(p.currentStreak).toBe(70);
+    expect(p.results["2026-10-01"]).toBeUndefined();
+  });
+});
+
+describe("getActiveStreak", () => {
+  const p = { ...INITIAL_DAILY_PROGRESS, lastPlayedDate: "2026-10-02", currentStreak: 4, bestStreak: 4 };
+  it("is kept today and tomorrow, lost afterwards", () => {
+    expect(getActiveStreak(p, "2026-10-02")).toBe(4);
+    expect(getActiveStreak(p, "2026-10-03")).toBe(4);
+    expect(getActiveStreak(p, "2026-10-04")).toBe(0);
+    expect(getActiveStreak(INITIAL_DAILY_PROGRESS, "2026-10-02")).toBe(0);
+  });
+});
+
+describe("share text", () => {
+  it("maps directions to coloured squares", () => {
+    expect(directionsToSquares(["cut", "keep", "reinforce", "unjustified"])).toBe("🟥🟩🟦🟧");
+  });
+
+  it("builds a Wordle-like text", () => {
+    const text = buildDailyShareText({
+      result: result("2026-10-02", { directions: ["cut", "keep", "cut"], cutBillions: 34.25, totalBillions: 120 }),
+      streak: 3,
+      url: "https://france-finances.com/jeu/quotidien",
+    });
+    expect(text.split("\n")).toEqual([
+      "La Tronçonneuse de Poche, deck du jour n°2",
+      "🟥🟩🟥",
+      "Remis en question : 34,3 Md€ sur 120 Md€",
+      "Série : 3 jours",
+      "https://france-finances.com/jeu/quotidien",
+    ]);
+  });
+
+  it("omits the streak line for a single day", () => {
+    const text = buildDailyShareText({ result: result("2026-10-02"), streak: 1, url: "u" });
+    expect(text).not.toContain("Série");
+  });
+});
+
+describe("useDailyStore", () => {
+  beforeEach(() => {
+    useDailyStore.getState().resetDaily();
+  });
+
+  it("records results and streaks idempotently", () => {
+    useDailyStore.getState().recordResult(result("2026-10-02"));
+    useDailyStore.getState().recordResult(result("2026-10-03"));
+    useDailyStore.getState().recordResult(result("2026-10-03", { cutBillions: 50 }));
+    const s = useDailyStore.getState();
+    expect(s.currentStreak).toBe(2);
+    expect(s.results["2026-10-03"].cutBillions).toBe(3);
+  });
+
+  it("persists to localStorage under trnc:daily", () => {
+    useDailyStore.getState().recordResult(result("2026-10-02"));
+    const raw = localStorage.getItem("trnc:daily");
+    expect(raw).toContain("2026-10-02");
+  });
+});

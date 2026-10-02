@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useRef, useEffect } from "react";
+import { useState, useCallback, useRef, useEffect, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { AnimatePresence } from "framer-motion";
 import { SwipeCard } from "./SwipeCard";
@@ -13,6 +13,12 @@ import { useGameStore } from "@/stores/gameStore";
 import { useShallow } from "zustand/react/shallow";
 import { track } from "@/lib/analytics";
 import { useKeyboardSwipe } from "@/hooks/useKeyboardSwipe";
+import { useCommunityVotes } from "@/hooks/useCommunityVotes";
+import { computeCutBillions } from "@/lib/sessionFeedback";
+import { SwipeFeedbackToast, SessionCutCounter, type LastVote } from "./SwipeFeedback";
+import { AmountQuiz } from "./AmountQuiz";
+import { getQuizIndexes } from "@/lib/quiz";
+import { recordQuizAnswer } from "@/lib/stats";
 import type { Card, VoteDirection, GameMode } from "@/types";
 
 interface SwipeStackProps {
@@ -22,6 +28,8 @@ interface SwipeStackProps {
   level?: 1 | 2 | 3;
   gameMode?: GameMode;
   budgetTarget?: number;
+  /** Deck du jour : date du tirage (YYYY-MM-DD) */
+  dailyKey?: string;
   onCardTap?: (card: Card) => void;
   /** Level 3: delegate swipe handling to parent (card + direction) */
   onSwipeComplete?: (card: Card, direction: VoteDirection) => void;
@@ -34,6 +42,7 @@ export function SwipeStack({
   level = 1,
   gameMode = "classic",
   budgetTarget,
+  dailyKey,
   onCardTap,
   onSwipeComplete,
 }: SwipeStackProps) {
@@ -53,11 +62,11 @@ export function SwipeStack({
 
   useEffect(() => {
     if (!initialized) {
-      startSession(deckId, cards, level, gameMode, budgetTarget);
+      startSession(deckId, cards, level, gameMode, budgetTarget, dailyKey ? { dailyKey } : undefined);
       track("session_start", { deckId, level, gameMode });
       setInitialized(true); // eslint-disable-line react-hooks/set-state-in-effect -- one-time init guard
     }
-  }, [initialized, startSession, deckId, cards, level, gameMode, budgetTarget]);
+  }, [initialized, startSession, deckId, cards, level, gameMode, budgetTarget, dailyKey]);
 
   // Warn before leaving mid-session (browser navigation)
   useEffect(() => {
@@ -81,6 +90,25 @@ export function SwipeStack({
 
   const currentIndex = session?.currentIndex ?? 0;
   const totalCards = cards.length;
+
+  // Mini-quiz "A ton avis, combien ?" before revealing some cards (levels 1-2)
+  const quizIndexes = useMemo(() => (level < 3 ? getQuizIndexes(cards) : []), [cards, level]);
+  const [quizzedCardIds, setQuizzedCardIds] = useState<ReadonlySet<string>>(() => new Set());
+  const quizCard = cards[currentIndex];
+  const quizActive =
+    !!quizCard && quizIndexes.includes(currentIndex) && !quizzedCardIds.has(quizCard.id);
+  const handleQuizAnswer = useCallback(
+    (correct: boolean) => {
+      if (!quizCard) return;
+      recordQuizAnswer(correct);
+      track("quiz_answer", { cardId: quizCard.id, correct });
+    },
+    [quizCard]
+  );
+  const handleQuizContinue = useCallback(() => {
+    if (!quizCard) return;
+    setQuizzedCardIds((prev) => new Set(prev).add(quizCard.id));
+  }, [quizCard]);
 
   const handleSwipe = useCallback(
     (direction: VoteDirection) => {
@@ -110,7 +138,7 @@ export function SwipeStack({
 
   const handleButtonVote = useCallback(
     (direction: VoteDirection) => {
-      if (!cards[currentIndex] || isAnimating.current) return;
+      if (!cards[currentIndex] || isAnimating.current || quizActive) return;
       isAnimating.current = true;
       if (cardRef.current) {
         cardRef.current.triggerSwipe(direction);
@@ -118,27 +146,36 @@ export function SwipeStack({
         handleSwipe(direction);
       }
     },
-    [currentIndex, cards, handleSwipe]
+    [currentIndex, cards, handleSwipe, quizActive]
   );
 
   useKeyboardSwipe({
     onVote: handleButtonVote,
-    enabled: !!cards[currentIndex],
+    enabled: !!cards[currentIndex] && !quizActive,
     level,
   });
 
   const currentCard = cards[currentIndex];
   const nextCardInPile = cards[currentIndex + 1];
 
-  // Budget mode: compute current savings from cut votes
-  const currentSavings = gameMode === "budget" && session
-    ? session.votes
-        .filter((v) => v.direction === "cut" || v.direction === "unjustified")
-        .reduce((sum, v) => {
-          const card = cards.find((c) => c.id === v.cardId);
-          return sum + (card?.amountBillions ?? 0);
-        }, 0)
-    : 0;
+  // Community votes for this session's cards (empty when the DB is unavailable)
+  const cardIds = useMemo(() => cards.map((c) => c.id), [cards]);
+  const { counts: communityCounts } = useCommunityVotes(cardIds);
+
+  // Cumulative amount put into question (cut + unjustified) during the session
+  const sessionVotes = session?.votes;
+  const currentSavings = useMemo(
+    () => (sessionVotes ? computeCutBillions(cards, sessionVotes) : 0),
+    [cards, sessionVotes]
+  );
+
+  // Last vote (whatever the path: swipe, buttons, detail sheet, audit) drives the feedback toast
+  const lastVote = useMemo<LastVote | null>(() => {
+    const vote = sessionVotes?.[sessionVotes.length - 1];
+    if (!vote) return null;
+    const card = cards.find((c) => c.id === vote.cardId);
+    return card ? { card, direction: vote.direction, at: vote.timestamp } : null;
+  }, [cards, sessionVotes]);
   const savingsProgress = budgetTarget ? Math.min(currentSavings / budgetTarget, 1) : 0;
   const targetReached = budgetTarget ? currentSavings >= budgetTarget : false;
 
@@ -209,9 +246,13 @@ export function SwipeStack({
         </div>
       )}
 
+      {gameMode !== "budget" && <SessionCutCounter cutBillions={currentSavings} />}
+
       {/* Screen reader announcement */}
       <div className="sr-only" aria-live="polite" aria-atomic="true">
-        {currentCard
+        {currentCard && quizActive
+          ? `Carte ${currentIndex + 1} sur ${totalCards} : mini-quiz, à ton avis, combien coûte ${currentCard.title} ?`
+          : currentCard
           ? `Carte ${currentIndex + 1} sur ${totalCards} : ${currentCard.title}, ${currentCard.amountBillions} milliards d'euros.`
           : "Session terminée."}
       </div>
@@ -237,6 +278,21 @@ export function SwipeStack({
               <span className="flex items-center gap-1 text-[10px] font-bold text-warning tracking-wider rotate-90 whitespace-nowrap opacity-60" aria-hidden="true"><ChainsawIcon size={10} variant="orange" /> RÉDUIRE</span>
             </div>
           </>
+        )}
+
+        <SwipeFeedbackToast
+          lastVote={lastVote}
+          counts={communityCounts}
+          cutBillions={currentSavings}
+        />
+
+        {quizActive && quizCard && (
+          <AmountQuiz
+            key={quizCard.id}
+            card={quizCard}
+            onAnswer={handleQuizAnswer}
+            onContinue={handleQuizContinue}
+          />
         )}
 
         <AnimatePresence>

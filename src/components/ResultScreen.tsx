@@ -23,6 +23,10 @@ import { StatBar } from "./StatBar";
 import { ShareIcon } from "./ShareIcon";
 import { ChevronIcon } from "./ChevronIcon";
 import { CategoryIcon } from "./icons/CategoryIcon";
+import { DailyResultPanel } from "./DailyDeck";
+import { BudgetChallengeSummary } from "./BudgetChallenge";
+import { ContentProfilePanel } from "./ContentProfilePanel";
+import { NextLevelCTA } from "./LevelProgress";
 
 const SITE_URL = "https://france-finances.com";
 
@@ -233,6 +237,12 @@ export function ResultScreen() {
         </dl>
       </section>
 
+      {/* Content-based reading: amounts and categories put into question */}
+      <ContentProfilePanel session={session} />
+
+      {/* Daily deck: streak + Wordle-like share */}
+      {session.dailyKey && <DailyResultPanel session={session} />}
+
       {/* Radar: Tes choix vs la communauté (Level 2+) */}
       {level >= 2 && session.cards && (() => {
         const radarAxes = computeRadarFromSession(session.cards, session.votes);
@@ -275,6 +285,8 @@ export function ResultScreen() {
         </section>
       )}
 
+      {isBudgetMode && budgetTarget > 0 && <BudgetChallengeSummary session={session} />}
+
       {/* Level 3: Audit Report */}
       {level === 3 && session.auditResponses && session.auditResponses.length > 0 && (
         <AuditReport cards={session.cards} auditResponses={session.auditResponses} />
@@ -282,24 +294,8 @@ export function ResultScreen() {
 
       {/* CTAs */}
       <div className="flex flex-col gap-3 px-4 py-6">
-        {level === 1 && (
-          <button
-            onClick={() => router.push("/jeu?level=2")}
-            className="flex items-center justify-center gap-2 w-full min-h-[44px] rounded-lg py-4 px-6 bg-primary text-primary-foreground font-semibold text-lg active:scale-[0.98] transition-transform"
-          >
-            Passer au Niveau 2
-            <span aria-hidden="true">&#8594;</span>
-          </button>
-        )}
-        {level === 2 && (
-          <button
-            onClick={() => router.push("/jeu?level=3")}
-            className="flex items-center justify-center gap-2 w-full min-h-[44px] rounded-lg py-4 px-6 bg-primary text-primary-foreground font-semibold text-lg active:scale-[0.98] transition-transform"
-          >
-            Passer au Niveau 3
-            <span aria-hidden="true">&#8594;</span>
-          </button>
-        )}
+        {/* Niveau suivant : débloqué en jouant (pas par l'URL) */}
+        <NextLevelCTA level={level} />
         <button
           onClick={() => router.push("/jeu")}
           className="flex items-center justify-center w-full min-h-[44px] rounded-lg py-4 px-6 border border-foreground/40 text-foreground font-semibold hover:bg-card transition-colors"

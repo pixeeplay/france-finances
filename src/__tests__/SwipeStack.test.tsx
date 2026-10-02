@@ -322,6 +322,86 @@ describe("SwipeStack", () => {
     });
   });
 
+  describe("swipe feedback", () => {
+    it("shows the cumulative cut amount and community agreement after a cut", async () => {
+      globalThis.fetch = vi.fn(() =>
+        Promise.resolve(
+          new Response(
+            JSON.stringify({ c1: { keep: 2, cut: 8, reinforce: 0, unjustified: 0, total: 10 } }),
+          ),
+        ),
+      ) as unknown as typeof fetch;
+      const cards = [makeCard("c1"), makeCard("c2"), makeCard("c3")];
+
+      render(<SwipeStack cards={cards} deckId="defense" deckName="Defense" />);
+
+      await waitFor(() => {
+        expect(useGameStore.getState().session).not.toBeNull();
+      });
+      expect(screen.getByTestId("session-cut-counter")).toHaveTextContent("0");
+
+      fireEvent.click(screen.getByTestId("swipe-cut-c1"));
+
+      await waitFor(() => {
+        expect(screen.getByTestId("swipe-feedback")).toHaveTextContent("80");
+      });
+      expect(screen.getByTestId("swipe-feedback")).toHaveTextContent("même avis");
+      expect(screen.getByTestId("session-cut-counter")).toHaveTextContent("2");
+    });
+
+    it("degrades gracefully when the community API is unavailable", async () => {
+      globalThis.fetch = vi.fn(() => Promise.reject(new Error("offline"))) as unknown as typeof fetch;
+      const cards = [makeCard("c1"), makeCard("c2")];
+
+      render(<SwipeStack cards={cards} deckId="defense" deckName="Defense" />);
+      await waitFor(() => {
+        expect(useGameStore.getState().session).not.toBeNull();
+      });
+
+      fireEvent.click(screen.getByTestId("swipe-keep-c1"));
+
+      await waitFor(() => {
+        expect(screen.getByTestId("swipe-feedback")).toHaveTextContent("Pas encore assez de votes");
+      });
+    });
+  });
+
+  describe("amount quiz", () => {
+    it("asks for an estimate before revealing the 2nd card and blocks votes meanwhile", async () => {
+      const cards = Array.from({ length: 6 }, (_, i) => makeCard(`def-0${i}`));
+
+      render(<SwipeStack cards={cards} deckId="defense" deckName="Defense" />);
+      await waitFor(() => {
+        expect(useGameStore.getState().session).not.toBeNull();
+      });
+      expect(screen.queryByTestId("amount-quiz")).not.toBeInTheDocument();
+
+      fireEvent.click(screen.getByTestId("swipe-keep-def-00"));
+      expect(await screen.findByTestId("amount-quiz")).toBeInTheDocument();
+
+      // Keyboard votes are disabled while the quiz is open
+      fireEvent.keyDown(window, { key: "ArrowRight" });
+      expect(useGameStore.getState().session!.votes).toHaveLength(1);
+
+      fireEvent.click(screen.getAllByRole("button", { name: /Md€|M€/ })[0]);
+      fireEvent.click(screen.getByRole("button", { name: "Voir la carte" }));
+      expect(screen.queryByTestId("amount-quiz")).not.toBeInTheDocument();
+      expect(JSON.parse(localStorage.getItem("trnc:stats") ?? "{}").quiz.answered).toBe(1);
+    });
+
+    it("is not shown at level 3", async () => {
+      const cards = Array.from({ length: 6 }, (_, i) => makeCard(`def-0${i}`));
+      render(<SwipeStack cards={cards} deckId="defense" deckName="Defense" level={3} />);
+      await waitFor(() => {
+        expect(useGameStore.getState().session).not.toBeNull();
+      });
+      act(() => {
+        useGameStore.getState().voteAndAdvance("def-00", "keep");
+      });
+      expect(screen.queryByTestId("amount-quiz")).not.toBeInTheDocument();
+    });
+  });
+
   describe("screen reader", () => {
     it("renders an sr-only live region with card info", () => {
       const cards = [makeCard("c1"), makeCard("c2")];

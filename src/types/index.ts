@@ -75,6 +75,8 @@ export interface Session {
   gameMode: GameMode;
   /** Objectif budget en Md€ (mode budget uniquement) */
   budgetTarget?: number;
+  /** Date du deck du jour (YYYY-MM-DD, Europe/Paris) si la session est le deck du jour */
+  dailyKey?: string;
   /** Cartes de la session (dans l'ordre) */
   cards: Card[];
   /** Votes enregistrés */
@@ -121,6 +123,10 @@ export interface ArchetypeCondition {
   maxKeepPercent?: number;
   /** Durée maximum en secondes (pour Speedrunner) */
   maxDurationSeconds?: number;
+  /** Part minimum des montants remis en question (0-100), évaluée sur le contenu */
+  minCutAmountPercent?: number;
+  /** Part maximum des montants remis en question (0-100), évaluée sur le contenu */
+  maxCutAmountPercent?: number;
 }
 
 // === AUDIT (Level 3) ===
