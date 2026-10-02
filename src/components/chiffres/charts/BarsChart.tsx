@@ -3,7 +3,9 @@
 import { Bar, BarChart, Cell, LabelList, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { useReducedMotion } from "framer-motion";
 import { barsChartHeight, toneColor, type ChartDatum } from "@/lib/chiffresCharts";
-import { TOOLTIP_CONTENT_STYLE, TOOLTIP_ITEM_STYLE, TOOLTIP_LABEL_STYLE, TOOLTIP_WRAPPER_STYLE } from "./chartStyles";
+import {
+  DISPLAY_FONT,
+  TOOLTIP_CONTENT_STYLE, TOOLTIP_ITEM_STYLE, TOOLTIP_LABEL_STYLE, TOOLTIP_WRAPPER_STYLE } from "./chartStyles";
 
 interface LabelContentProps {
   x?: number | string;
@@ -40,8 +42,9 @@ export function BarsChart({ data, valueName = "Montant" }: { data: readonly Char
         x={Number(x) + Number(width) + 6}
         y={Number(y) + 12}
         fill={toneColor(d.tone)}
+        fontFamily={DISPLAY_FONT}
         fontSize={12}
-        fontWeight={700}
+        fontWeight={800}
       >
         {d.display}
       </text>

@@ -17,6 +17,7 @@ import { DEBT_CHART_HEIGHT, type DebtSeriesPoint } from "@/lib/chiffresCharts";
 import { formatBillionsExact, formatNumber } from "@/lib/format";
 import {
   AXIS_TICK,
+  DISPLAY_FONT,
   TOOLTIP_CONTENT_STYLE,
   TOOLTIP_ITEM_STYLE,
   TOOLTIP_LABEL_STYLE,
@@ -45,8 +46,9 @@ export function DebtAreaChart({ data }: { data: readonly DebtSeriesPoint[] }) {
         y={Number(y) - (isLast ? 26 : 10)}
         textAnchor={isLast ? "end" : "middle"}
         fill={isLast ? "var(--chart-red)" : "var(--foreground)"}
-        fontSize={isLast ? 12 : 11}
-        fontWeight={700}
+        fontFamily={DISPLAY_FONT}
+        fontSize={isLast ? 13 : 11}
+        fontWeight={800}
       >
         {isLast ? `${formatNumber(p.pctGdp, 1)} % mi-2026` : formatNumber(p.pctGdp, 1)}
       </text>
@@ -92,7 +94,7 @@ export function DebtAreaChart({ data }: { data: readonly DebtSeriesPoint[] }) {
             value: "Seuil européen : 60 %",
             fill: "var(--chart-amber)",
             fontSize: 11,
-            fontWeight: 600,
+            fontWeight: 700,
             position: "insideBottomLeft",
           }}
         />

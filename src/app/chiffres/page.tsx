@@ -155,7 +155,7 @@ export default function ChiffresPage() {
             <UiIcon name="chart" size={14} />
             Données officielles · mise à jour octobre 2026
           </p>
-          <h1 className="mt-4 font-heading text-4xl sm:text-5xl font-black leading-[1.05] text-blue-700 dark:text-blue-400">
+          <h1 className="mt-4 font-heading text-4xl sm:text-5xl font-black leading-[1.05] text-brand-fg">
             {TITLE}
           </h1>
           <p className="mt-4 text-base text-muted-foreground leading-relaxed">
@@ -648,13 +648,13 @@ export default function ChiffresPage() {
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
             <Link
               href="/simulateur"
-              className="inline-flex items-center justify-center min-h-[48px] px-6 rounded-2xl bg-blue-600 text-white font-bold text-sm hover:bg-blue-500 transition-colors"
+              className="inline-flex items-center justify-center min-h-[48px] px-6 rounded-2xl bg-brand text-white font-heading font-bold text-sm shadow-lg hover:bg-brand-hover transition-colors"
             >
               Estimer ma contribution
             </Link>
             <Link
               href="/jeu"
-              className="inline-flex items-center justify-center min-h-[48px] px-6 rounded-2xl border border-border bg-card text-foreground font-bold text-sm hover:border-foreground/40 transition-colors"
+              className="inline-flex items-center justify-center min-h-[48px] px-6 rounded-2xl border border-border bg-card text-foreground font-heading font-bold text-sm hover:border-foreground/40 transition-colors"
             >
               Jouer à Budget Swipe
             </Link>
