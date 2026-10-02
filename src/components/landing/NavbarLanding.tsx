@@ -4,6 +4,8 @@ import { useState, useCallback, useSyncExternalStore } from "react";
 import Link from "next/link";
 
 const NAV_LINKS = [
+  { href: "/chiffres", label: "Les chiffres" },
+  { href: "/simulateur", label: "Simulateur" },
   { href: "/#ordres-de-grandeur", label: "Ordres de grandeur" },
   { href: "/#dossiers", label: "Dossiers" },
   { href: "/#categories", label: "Catégories" },

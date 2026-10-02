@@ -53,3 +53,34 @@ export function amountScalePosition(
   if (amountBillions >= max) return 1;
   return (Math.log10(amountBillions) - Math.log10(min)) / (Math.log10(max) - Math.log10(min));
 }
+
+/*
+ * Formats « tableaux de chiffres » (pages /chiffres et /simulateur) :
+ * précision fixe, valeurs négatives acceptées, pas de bascule en M€.
+ */
+
+/** Ratio -> pourcentage : 0.1234 -> « 12,3 % » */
+export function formatRatio(ratio: number, digits = 1): string {
+  return new Intl.NumberFormat("fr-FR", {
+    style: "percent",
+    minimumFractionDigits: digits,
+    maximumFractionDigits: digits,
+  }).format(ratio);
+}
+
+/** Montant en Md€ à précision fixe : 89.645 -> « 89,6 Md€ » ; -170.5 -> « -170,5 Md€ » */
+export function formatBillionsExact(valueBn: number, digits = 1): string {
+  const n = new Intl.NumberFormat("fr-FR", {
+    minimumFractionDigits: 0,
+    maximumFractionDigits: digits,
+  }).format(valueBn);
+  return `${n}${NBSP}Md€`;
+}
+
+/** 3_595.5 -> « 3 595,5 » */
+export function formatNumber(value: number, digits = 0): string {
+  return new Intl.NumberFormat("fr-FR", {
+    minimumFractionDigits: 0,
+    maximumFractionDigits: digits,
+  }).format(value);
+}

@@ -25,8 +25,6 @@ export default function InfosPage() {
                 <h2 className="text-lg font-bold">La Tronçonneuse de Poche</h2>
                 <p className="text-xs text-muted-foreground">
                   par{" "}
-                  <a href="https://nicoquipaie.co" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">nicoquipaie.co</a>
-                  {" "}et{" "}
                   <a href="https://pixeeplay.fr" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">pixeeplay</a>
                 </p>
               </div>
@@ -67,6 +65,29 @@ export default function InfosPage() {
         {/* Replay tutorial */}
         <section className="px-4 py-2">
           <ReplayTutorialButton />
+        </section>
+
+        {/* Outils */}
+        <section className="px-4 py-2">
+          <div className="flex flex-col gap-3 rounded-xl border border-border bg-card p-5">
+            <h2 className="text-lg font-bold">Aller plus loin</h2>
+            {[
+              { href: "/chiffres", title: "Les chiffres", text: "Dette, déficit, budget de l'État, dépense publique" },
+              { href: "/simulateur", title: "Le simulateur", text: "Impôts et cotisations prélevés sur un salaire" },
+            ].map((tool) => (
+              <Link
+                key={tool.href}
+                href={tool.href}
+                className="flex items-center justify-between gap-3 min-h-[44px] rounded-xl border border-border/50 bg-muted/30 px-4 py-3 hover:bg-muted/50 transition-colors"
+              >
+                <span>
+                  <span className="block text-sm font-semibold">{tool.title}</span>
+                  <span className="block text-xs text-muted-foreground">{tool.text}</span>
+                </span>
+                <span aria-hidden="true" className="text-muted-foreground">&#8594;</span>
+              </Link>
+            ))}
+          </div>
         </section>
 
         {/* Sources */}

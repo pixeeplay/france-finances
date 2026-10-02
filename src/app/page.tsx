@@ -5,7 +5,7 @@ import { MagnitudeSection } from "@/components/landing/MagnitudeSection";
 import { HowItWorks } from "@/components/landing/HowItWorks";
 import { DossiersSection } from "@/components/landing/DossiersSection";
 import { CategoriesSection } from "@/components/landing/CategoriesSection";
-import { EcosystemSection } from "@/components/landing/EcosystemSection";
+import { ToolsSection } from "@/components/landing/ToolsSection";
 import { SourcesSection } from "@/components/landing/SourcesSection";
 import { Footer } from "@/components/landing/Footer";
 
@@ -25,7 +25,7 @@ export default function LandingPage() {
         <HowItWorks />
         <DossiersSection />
         <CategoriesSection />
-        <EcosystemSection />
+        <ToolsSection />
         <SourcesSection />
       </main>
       <Footer />
