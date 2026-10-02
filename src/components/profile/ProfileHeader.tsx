@@ -60,7 +60,7 @@ export function ProfileHeader({
   const { data: authSession } = useSession();
 
   return (
-    <header className="pt-4 px-4 flex flex-col border-b border-border bg-card/50 backdrop-blur-xl sticky top-0 z-40">
+    <header className="pt-4 px-4 flex flex-col border-b border-border bg-background sticky top-0 z-40">
       {/* Row 1: Avatar + Pseudo + Auth */}
       <div className="flex items-center gap-3 w-full mb-3">
         <div className="relative flex-shrink-0">
