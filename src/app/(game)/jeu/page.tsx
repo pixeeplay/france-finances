@@ -327,6 +327,7 @@ function PlayPageContent() {
               deckSessions={sessionsPerDeck[deck.id] ?? 0}
               onSelect={() => {
                 setRandomMode(false);
+                setBudgetMode(false);
                 setTooltip(null);
                 const newSelection = selectedDeck === deck.id ? null : deck.id;
                 setSelectedDeck(newSelection);
@@ -364,6 +365,7 @@ function PlayPageContent() {
                   deckSessions={sessionsPerDeck[deck.id] ?? 0}
                   onSelect={() => {
                     setRandomMode(false);
+                    setBudgetMode(false);
                     setTooltip(null);
                     const newSelection = selectedDeck === deck.id ? null : deck.id;
                     setSelectedDeck(newSelection);

@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { SwipeSession } from "./SwipeSession";
 import decksData from "@/data";
 import { drawCards, filterByDeck } from "@/lib/deckUtils";
-import { clampBudgetTarget, drawBudgetChallengeCards } from "@/lib/budgetChallenge";
+import { clampBudgetTarget, drawBudgetChallengeCards, isBudgetEligibleDeck } from "@/lib/budgetChallenge";
 import { DAILY_DECK_ID, drawDailyCards, getDailyNumber, getParisDateKey } from "@/lib/daily";
 import { validateDecksData } from "@/lib/validateData";
 import type { Card, Deck, GameMode } from "@/types";
@@ -96,7 +96,8 @@ export default async function SwipePage({
   const rawLevel = Number(levelStr) || 1;
   const level = Math.min(Math.max(rawLevel, 1), 3) as 1 | 2 | 3;
 
-  const gameMode: GameMode = mode === "budget" ? "budget" : "classic";
+  // Budget mode makes no sense on excluded decks (cutting revenue is not a saving): classic session
+  const gameMode: GameMode = mode === "budget" && isBudgetEligibleDeck(deckId) ? "budget" : "classic";
   const budgetTarget = gameMode === "budget" ? clampBudgetTarget(target) : undefined;
 
   const deckCards = deckId === "random" ? allCards : filterByDeck(allCards, deckId);
