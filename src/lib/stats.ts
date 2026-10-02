@@ -1,5 +1,5 @@
 import type { Session, Vote, Archetype } from "@/types";
-import { computeStats, determineArchetype } from "@/lib/archetype";
+import { computeSessionResult, type determineArchetype } from "@/lib/archetype";
 import { DAILY_DECK_ID } from "@/lib/daily";
 
 // === Storage Keys ===
@@ -166,8 +166,7 @@ export function saveCompletedSession(session: Session): void {
     .reduce((sum, c) => sum + c.amountBillions, 0);
 
   // Determine archetype
-  const rawStats = computeStats(session.votes, session.totalDuration);
-  const archetype = determineArchetype(rawStats, session.level);
+  const { archetype } = computeSessionResult(session);
 
   const stored: StoredSession = {
     id: session.id,

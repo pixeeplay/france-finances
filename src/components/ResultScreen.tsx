@@ -24,6 +24,7 @@ import { ShareIcon } from "./ShareIcon";
 import { ChevronIcon } from "./ChevronIcon";
 import { DailyResultPanel } from "./DailyDeck";
 import { BudgetChallengeSummary } from "./BudgetChallenge";
+import { ContentProfilePanel } from "./ContentProfilePanel";
 
 const SITE_URL = "https://france-finances.com";
 
@@ -283,6 +284,9 @@ export function ResultScreen() {
           </div>
         </div>
       </div>
+
+      {/* Content-based reading: amounts and categories put into question */}
+      <ContentProfilePanel session={session} />
 
       {/* Daily deck: streak + Wordle-like share */}
       {session.dailyKey && <DailyResultPanel session={session} />}

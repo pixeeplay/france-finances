@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 import type { Card, Vote, VoteDirection, Session, SessionStats, AuditResponse, GameMode } from "@/types";
-import { computeStats, determineArchetype } from "@/lib/archetype";
+import { computeSessionResult } from "@/lib/archetype";
 import { saveCompletedSession } from "@/lib/stats";
 import { track } from "@/lib/analytics";
 
@@ -108,8 +108,7 @@ export const useGameStore = create<GameState>()(
     };
 
     // Compute stats once and cache
-    const rawStats = computeStats(completed.votes, completed.totalDuration ?? 0);
-    const archetype = determineArchetype(rawStats, completed.level);
+    const { stats: rawStats, archetype } = computeSessionResult(completed);
     const cachedStats: SessionStats = { ...rawStats, archetype };
 
     set({ session: completed, _cachedStats: cachedStats });
@@ -167,8 +166,7 @@ export const useGameStore = create<GameState>()(
     if (!session || !session.completed || !session.totalDuration) return null;
 
     // Fallback: compute if cache was lost (shouldn't happen in normal flow)
-    const rawStats = computeStats(session.votes, session.totalDuration);
-    const archetype = determineArchetype(rawStats, session.level);
+    const { stats: rawStats, archetype } = computeSessionResult(session);
     return { ...rawStats, archetype };
   },
 }),

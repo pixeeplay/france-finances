@@ -123,6 +123,10 @@ export interface ArchetypeCondition {
   maxKeepPercent?: number;
   /** Durée maximum en secondes (pour Speedrunner) */
   maxDurationSeconds?: number;
+  /** Part minimum des montants remis en question (0-100), évaluée sur le contenu */
+  minCutAmountPercent?: number;
+  /** Part maximum des montants remis en question (0-100), évaluée sur le contenu */
+  maxCutAmountPercent?: number;
 }
 
 // === AUDIT (Level 3) ===

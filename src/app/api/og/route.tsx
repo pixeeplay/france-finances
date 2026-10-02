@@ -11,6 +11,8 @@ const ARCHETYPES: Record<string, { icon: string; name: string }> = {
   protecteur: { icon: "🏰", name: "Le Protecteur" },
   equilibriste: { icon: "⚖️", name: "L'Équilibriste" },
   speedrunner: { icon: "🔥", name: "Le Speedrunner" },
+  bucheron: { icon: "🪓", name: "Le Bûcheron" },
+  elagueur: { icon: "🌿", name: "L'Élagueur" },
   // Level 2
   stratege: { icon: "🧠", name: "Le Stratège" },
   reformateur: { icon: "🔧", name: "Le Réformateur" },

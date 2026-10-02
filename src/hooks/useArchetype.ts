@@ -2,7 +2,7 @@
 
 import { useMemo } from "react";
 import { useGameStore } from "@/stores/gameStore";
-import { computeStats, determineArchetype } from "@/lib/archetype";
+import { computeSessionResult } from "@/lib/archetype";
 import type { Archetype, SessionStats } from "@/types";
 
 /**
@@ -20,8 +20,7 @@ export function useArchetype(): {
       return { archetype: null, stats: null };
     }
 
-    const stats = computeStats(session.votes, session.totalDuration);
-    const archetype = determineArchetype(stats, session.level);
+    const { stats, archetype } = computeSessionResult(session);
 
     return { archetype, stats };
   }, [session]);
