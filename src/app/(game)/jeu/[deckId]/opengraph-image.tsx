@@ -15,10 +15,12 @@ function sanitizeParam(value: unknown): string {
 export default function OgImage({ params }: { params: { deckId: string } }) {
   const deckId = sanitizeParam(params.deckId);
   const deck = decksMeta.decks.find((d) => d.id === deckId);
-  const name = deck?.name ?? "Deck inconnu";
-  const description = deck?.description ?? "";
+  const isDaily = deckId === "quotidien";
+  const name = deck?.name ?? (isDaily ? "Deck du jour" : "Deck inconnu");
+  const description =
+    deck?.description ?? (isDaily ? "Les mêmes 10 dépenses pour tout le monde, chaque jour" : "");
   const icon = deck?.icon ?? "🎴";
-  const cardCount = deck?.cardCount ?? 0;
+  const cardCount = deck?.cardCount ?? (isDaily ? 10 : 0);
   const color = deck?.color ?? "#3B82F6";
 
   return new ImageResponse(

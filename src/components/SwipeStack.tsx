@@ -25,6 +25,8 @@ interface SwipeStackProps {
   level?: 1 | 2 | 3;
   gameMode?: GameMode;
   budgetTarget?: number;
+  /** Deck du jour : date du tirage (YYYY-MM-DD) */
+  dailyKey?: string;
   onCardTap?: (card: Card) => void;
   /** Level 3: delegate swipe handling to parent (card + direction) */
   onSwipeComplete?: (card: Card, direction: VoteDirection) => void;
@@ -37,6 +39,7 @@ export function SwipeStack({
   level = 1,
   gameMode = "classic",
   budgetTarget,
+  dailyKey,
   onCardTap,
   onSwipeComplete,
 }: SwipeStackProps) {
@@ -56,11 +59,11 @@ export function SwipeStack({
 
   useEffect(() => {
     if (!initialized) {
-      startSession(deckId, cards, level, gameMode, budgetTarget);
+      startSession(deckId, cards, level, gameMode, budgetTarget, dailyKey ? { dailyKey } : undefined);
       track("session_start", { deckId, level, gameMode });
       setInitialized(true); // eslint-disable-line react-hooks/set-state-in-effect -- one-time init guard
     }
-  }, [initialized, startSession, deckId, cards, level, gameMode, budgetTarget]);
+  }, [initialized, startSession, deckId, cards, level, gameMode, budgetTarget, dailyKey]);
 
   // Warn before leaving mid-session (browser navigation)
   useEffect(() => {

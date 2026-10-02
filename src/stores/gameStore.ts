@@ -15,7 +15,14 @@ interface GameState {
 
   // === Actions ===
   /** Démarrer une nouvelle session */
-  startSession: (deckId: string, cards: Card[], level?: 1 | 2 | 3, gameMode?: GameMode, budgetTarget?: number) => void;
+  startSession: (
+    deckId: string,
+    cards: Card[],
+    level?: 1 | 2 | 3,
+    gameMode?: GameMode,
+    budgetTarget?: number,
+    options?: { dailyKey?: string },
+  ) => void;
   /** Vote + advance atomique. Retourne true si la session est terminée */
   voteAndAdvance: (cardId: string, direction: VoteDirection) => boolean;
   /** Terminer la session et calculer l'archétype */
@@ -43,7 +50,7 @@ export const useGameStore = create<GameState>()(
   cardShownAt: 0,
   _cachedStats: null,
 
-  startSession: (deckId, cards, level = 1, gameMode = "classic", budgetTarget) => {
+  startSession: (deckId, cards, level = 1, gameMode = "classic", budgetTarget, options) => {
     set({
       session: {
         id: crypto.randomUUID(),
@@ -51,6 +58,7 @@ export const useGameStore = create<GameState>()(
         level,
         gameMode,
         budgetTarget,
+        ...(options?.dailyKey ? { dailyKey: options.dailyKey } : {}),
         cards,
         votes: [],
         currentIndex: 0,

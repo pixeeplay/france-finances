@@ -1,5 +1,6 @@
 import type { Session, Vote, Archetype } from "@/types";
 import { computeStats, determineArchetype } from "@/lib/archetype";
+import { DAILY_DECK_ID } from "@/lib/daily";
 
 // === Storage Keys ===
 const SESSIONS_KEY = "trnc:sessions";
@@ -205,7 +206,7 @@ export function saveCompletedSession(session: Session): void {
   stats.totalCutBillions =
     Math.round((stats.totalCutBillions + stored.totalCutBillions) * 10) / 10;
   if (!stats.sessionsPerDeck) stats.sessionsPerDeck = {};
-  if (stored.deckId === "random") {
+  if (stored.deckId === "random" || stored.deckId === DAILY_DECK_ID) {
     // For random sessions, increment per-deck counters (used for badges)
     // but do NOT mark categories as "played" (requires a dedicated session)
     const cardDeckIds = [...new Set(session.votes.map((v) => {

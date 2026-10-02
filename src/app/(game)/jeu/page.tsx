@@ -8,6 +8,7 @@ import decksData from "@/data";
 import { getPlayedDeckIds, getGlobalStats, getSessions } from "@/lib/stats";
 import { track } from "@/lib/analytics";
 import { useOnboarding, Onboarding } from "@/components/Onboarding";
+import { DailyDeckEntry } from "@/components/DailyDeck";
 import type { Deck } from "@/types";
 
 function RandomIcon({ size = 24, className }: { size?: number; className?: string }) {
@@ -151,6 +152,9 @@ function PlayPageContent() {
         ref={scrollRef}
         className="flex-1 overflow-y-auto scrollbar-hide pb-36"
       >
+        {/* Daily deck (same draw for everyone) */}
+        <DailyDeckEntry />
+
         {/* Random Mode Toggle */}
         <div className="flex items-center gap-4 px-4 py-4 justify-between border-b border-border">
           <div className="flex items-center gap-4">

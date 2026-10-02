@@ -16,9 +16,11 @@ interface SwipeSessionProps {
   level?: 1 | 2 | 3;
   gameMode?: GameMode;
   budgetTarget?: number;
+  /** Deck du jour : date du tirage (YYYY-MM-DD) */
+  dailyKey?: string;
 }
 
-export function SwipeSession({ deckId, deckName, cards, level = 1, gameMode = "classic", budgetTarget }: SwipeSessionProps) {
+export function SwipeSession({ deckId, deckName, cards, level = 1, gameMode = "classic", budgetTarget, dailyKey }: SwipeSessionProps) {
   const router = useRouter();
   const [detailCard, setDetailCard] = useState<Card | null>(null);
   const { session, recordAudit, voteAndAdvance, completeSession } = useGameStore(
@@ -108,6 +110,7 @@ export function SwipeSession({ deckId, deckName, cards, level = 1, gameMode = "c
           level={level}
           gameMode={gameMode}
           budgetTarget={budgetTarget}
+          dailyKey={dailyKey}
           onCardTap={handleCardTap}
           onSwipeComplete={level === 3 ? handleSwipeComplete : undefined}
         />
