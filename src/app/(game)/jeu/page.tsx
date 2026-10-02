@@ -3,12 +3,12 @@
 import { useState, useEffect, useRef, useCallback, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { AnimatePresence } from "framer-motion";
-import Image from "next/image";
 import decksData from "@/data";
 import { getPlayedDeckIds, getGlobalStats, getSessions } from "@/lib/stats";
 import { track } from "@/lib/analytics";
 import { useOnboarding, Onboarding } from "@/components/Onboarding";
 import type { Deck } from "@/types";
+import { CategoryIcon } from "@/components/icons/CategoryIcon";
 
 function RandomIcon({ size = 24, className }: { size?: number; className?: string }) {
   return (
@@ -132,7 +132,7 @@ function PlayPageContent() {
       </AnimatePresence>
 
       {/* Header */}
-      <div className="flex items-center p-4 justify-between sticky top-0 z-10 bg-background/90 backdrop-blur-md border-b border-border">
+      <div className="flex items-center p-4 justify-between sticky top-0 z-10 bg-background border-b border-border">
         <button
           onClick={() => router.push("/")}
           aria-label="Retour à l'accueil"
@@ -376,18 +376,18 @@ function PlayPageContent() {
       {/* Scroll chevron indicator */}
       {showChevron && (
         <div className="absolute bottom-36 left-1/2 -translate-x-1/2 z-10 pointer-events-none animate-bounce">
-          <div className="w-8 h-8 rounded-full bg-card/80 backdrop-blur border border-border/50 flex items-center justify-center shadow-lg">
+          <div className="w-8 h-8 rounded-full bg-card border border-border flex items-center justify-center">
             <span className="text-muted-foreground text-sm">&darr;</span>
           </div>
         </div>
       )}
 
       {/* Bottom Action Button */}
-      <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-background via-background/90 to-transparent pt-10 z-30">
+      <div className="absolute bottom-0 left-0 right-0 p-4 bg-background border-t border-border z-30">
         <button
           onClick={handleLaunch}
           disabled={!selectedDeck && !randomMode}
-          className="relative w-full bg-primary hover:bg-primary/90 text-white font-bold text-lg py-4 rounded-xl shadow-(--shadow-glow-green) transition-all active:scale-95 flex items-center justify-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed"
+          className="relative w-full min-h-[44px] bg-primary hover:bg-primary-light text-primary-foreground font-semibold text-lg py-4 rounded-lg transition-all active:scale-95 flex items-center justify-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed"
         >
           <CardsIcon size={24} />
           {budgetMode ? `Lancer le défi (${budgetTarget} Md\u20AC)` : `Lancer la session ${level > 1 ? `(N${level})` : ""}`}
@@ -415,7 +415,7 @@ function DeckCard({
       onClick={onSelect}
       className={`bg-card rounded-xl p-4 flex flex-col gap-3 text-left border-2 relative overflow-hidden group transition-all duration-200 ${
         isSelected
-          ? "border-primary shadow-(--shadow-glow-green)"
+          ? "border-primary"
           : "border-border hover:border-primary/50"
       }`}
       style={isSelected ? { transform: "scale(0.97)" } : undefined}
@@ -426,17 +426,7 @@ function DeckCard({
         </div>
       )}
       <div className="mb-1">
-        {deck.image ? (
-          <Image
-            src={deck.image}
-            alt={deck.name}
-            width={40}
-            height={40}
-            className="w-10 h-10"
-          />
-        ) : (
-          <span className="text-3xl">{deck.icon}</span>
-        )}
+        <CategoryIcon deckId={deck.id} size={32} strokeWidth={1.5} className={isSelected ? "text-primary" : "text-foreground"} />
       </div>
       <div>
         <h3 className="font-bold text-sm leading-tight mb-1">{deck.name}</h3>

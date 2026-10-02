@@ -1,71 +1,110 @@
-// PERF-09: This component must remain "use client" because:
-// - usePublicStats() is a client hook (useState + useEffect + fetch)
-// - framer-motion <m.div> requires client-side JS for animations
-// To make this a Server Component, stats would need to be fetched server-side
-// and animations replaced with CSS transitions or a separate client wrapper.
-"use client";
-
 import Link from "next/link";
-import Image from "next/image";
-import { m, LazyMotion, domAnimation } from "framer-motion";
-import { usePublicStats } from "@/hooks/usePublicStats";
+import decksData from "@/data";
+import { HEADLINE_FIGURE, headlinePerCapita } from "@/data/headline";
+import { formatBillions, formatEuros } from "@/lib/format";
+import { getDeckName } from "@/lib/deckMeta";
+import { AmountScale } from "@/components/AmountScale";
+import { CategoryIcon } from "@/components/icons/CategoryIcon";
+import { ShieldIcon } from "@/components/ShieldIcon";
+import { ChainsawIcon } from "@/components/ChainsawIcon";
+import { PublicStatsLine } from "./PublicStatsLine";
+
+/** Carte d'exemple affichée en ouverture (mappée par id, sans dépendre de sa position). */
+const SAMPLE_CARD_ID = "soc-01";
 
 export function HeroSection() {
-  const { totalSessions, totalSwipes } = usePublicStats();
+  const sample = decksData.cards.find((c) => c.id === SAMPLE_CARD_ID) ?? decksData.cards[0];
+  const playHref = `/jeu/${sample.deckId}`;
+  const [whole, unit] = formatBillions(HEADLINE_FIGURE.amountBillions).split(" ");
 
   return (
-    <LazyMotion features={domAnimation}>
-      <section id="hero" className="section-padding pt-28 md:pt-36 xl:pt-44 text-center">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6">
-        <m.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-        >
-          <h1 className="font-heading font-[900] text-4xl md:text-6xl xl:text-7xl tracking-tight leading-[1.1] mb-6">
-            <span className="text-gradient-primary">O&ugrave; va l&apos;argent public ?</span>
+    <section id="hero" aria-labelledby="hero-title" className="border-b border-border">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10 md:py-16 grid gap-10 lg:grid-cols-12 lg:gap-12">
+        {/* Le chiffre */}
+        <div className="lg:col-span-7 flex flex-col">
+          <p className="kicker text-muted-foreground mb-4">
+            Budget de la France · le jeu des dépenses publiques
+          </p>
+          <h1 id="hero-title" className="text-4xl sm:text-5xl xl:text-6xl font-semibold leading-[1.05] max-w-[18ch]">
+            Où va l&apos;argent public&nbsp;?
           </h1>
 
-          <p className="text-lg md:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-            La France d&eacute;pense{" "}
-            <strong className="text-landing-expense">1 600 milliards d&apos;euros</strong>{" "}
-            par an. <br />
-            Soit{" "}
-            <strong className="text-landing-expense">23 500 &euro; par Fran&ccedil;ais</strong>.<br />
-            Savez-vous &agrave; quoi ils servent ?
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
-            <Link
-              href="/jeu"
-              className="inline-flex items-center gap-3 bg-landing-primary text-white font-heading font-bold text-lg px-10 h-14 rounded-2xl shadow-lg hover-lift hover:bg-landing-primary-light transition-all active:scale-95"
-            >
-              Jouer &agrave; Budget Swipe
-              <Image src="/chainsaw.svg" alt="" role="presentation" width={24} height={24} className="invert" />
-            </Link>
-            <a
-              href="#categories"
-              className="inline-flex items-center gap-2 font-heading font-bold text-lg px-10 h-14 rounded-2xl border-2 border-landing-primary/40 dark:border-slate-600 text-landing-primary dark:text-white hover:bg-landing-primary/5 dark:hover:bg-slate-800 transition-all hover-lift"
-            >
-              Explorer les cat&eacute;gories
-            </a>
+          <div className="mt-8 border-t-2 border-foreground pt-4">
+            <p className="numeral font-semibold leading-none text-[4.5rem] sm:text-[6rem] xl:text-[7.5rem]">
+              {whole}
+              <span className="text-[0.4em] font-normal text-muted-foreground ml-2">{unit}</span>
+            </p>
+            <p className="mt-3 text-lg leading-snug max-w-prose">
+              de dépenses publiques en {HEADLINE_FIGURE.year} (État, Sécurité sociale, collectivités),
+              soit environ <strong className="font-semibold tabular-nums">{formatEuros(headlinePerCapita())}</strong> par habitant.
+            </p>
+            <p className="mt-3 font-mono text-xs text-muted-foreground">
+              Source&nbsp;: {HEADLINE_FIGURE.source}.
+            </p>
           </div>
 
-          {(totalSessions > 0 || totalSwipes > 0) && (
-          <p className="text-sm text-slate-400 dark:text-slate-500">
-            <span className="font-semibold text-slate-600 dark:text-slate-300">
-              {totalSessions.toLocaleString("fr-FR")}
-            </span>{" "}
-            sessions jou&eacute;es{" \u00B7 "}
-            <span className="font-semibold text-slate-600 dark:text-slate-300">
-              {totalSwipes.toLocaleString("fr-FR")}
-            </span>{" "}
-            cartes swip&eacute;es
-          </p>
-        )}
-        </m.div>
+          <div className="mt-8 flex flex-col sm:flex-row gap-3">
+            <Link
+              href={playHref}
+              className="inline-flex items-center justify-center gap-2 min-h-[48px] px-6 rounded-md bg-foreground text-background font-semibold hover:opacity-90 transition-opacity"
+            >
+              Commencer une partie
+              <span aria-hidden="true">&#8594;</span>
+            </Link>
+            <Link
+              href="/jeu"
+              className="inline-flex items-center justify-center min-h-[48px] px-6 rounded-md border border-foreground/40 text-foreground font-semibold hover:bg-muted transition-colors"
+            >
+              Choisir un thème
+            </Link>
+          </div>
+          <div className="mt-4">
+            <PublicStatsLine />
+          </div>
+        </div>
+
+        {/* Entrée directe : une carte du jeu */}
+        <div className="lg:col-span-5">
+          <Link
+            href={playHref}
+            aria-label={`Jouer : ${sample.title}, ${formatBillions(sample.amountBillions)} par an`}
+            className="group block rounded-2xl border border-border bg-card p-5 shadow-(--shadow-card) hover:border-foreground/40 transition-colors"
+          >
+            <div className="flex items-center justify-between border-b border-border pb-3">
+              <span className="flex items-center gap-2 text-muted-foreground">
+                <CategoryIcon deckId={sample.deckId} size={20} />
+                <span className="kicker">{getDeckName(sample.deckId)}</span>
+              </span>
+              <span className="kicker text-muted-foreground">Exemple de carte</span>
+            </div>
+            <p className="font-serif text-3xl font-semibold mt-4">{sample.title}</p>
+            <div className="grid grid-cols-[1.4fr_1fr] gap-4 mt-4">
+              <div>
+                <p className="kicker text-muted-foreground">Coût annuel</p>
+                <p className="numeral text-3xl font-semibold">{formatBillions(sample.amountBillions)}</p>
+              </div>
+              <div className="border-l border-border pl-4">
+                <p className="kicker text-muted-foreground">Par habitant</p>
+                <p className="numeral text-3xl font-semibold">{formatEuros(sample.costPerCitizen)}</p>
+              </div>
+            </div>
+            <AmountScale amountBillions={sample.amountBillions} className="mt-5" />
+            <div className="mt-5 grid grid-cols-2 border-t border-border pt-3 text-sm">
+              <span className="flex items-center gap-2 text-primary font-medium">
+                <span aria-hidden="true">&#8592;</span>
+                <ShieldIcon size={16} /> OK
+              </span>
+              <span className="flex items-center justify-end gap-2 text-danger font-medium">
+                <ChainsawIcon size={16} /> À revoir
+                <span aria-hidden="true">&#8594;</span>
+              </span>
+            </div>
+            <p className="mt-3 text-xs text-muted-foreground">
+              Glissez la carte à gauche pour la garder, à droite pour la remettre en question.
+            </p>
+          </Link>
+        </div>
       </div>
     </section>
-    </LazyMotion>
   );
 }

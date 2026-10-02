@@ -1,55 +1,59 @@
-import Image from "next/image";
 import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950">
+    <footer className="bg-background pb-safe">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="text-center md:text-left">
-            <div className="font-heading font-bold text-landing-primary dark:text-white mb-1 flex items-center gap-2 justify-center md:justify-start">
-              <Image src="/france.svg" alt="France" width={24} height={24} />
-              <span>france-finances<span className="text-landing-expense">.com</span></span>
-            </div>
-            <p className="text-xs text-muted-foreground">
-              Comprendre les finances publiques de mani&egrave;re interactive et accessible.
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 border-t-2 border-foreground pt-6">
+          <div>
+            <p className="font-serif text-xl tracking-tight">
+              <span className="font-semibold">france-finances</span>
+              <span className="text-muted-foreground">.com</span>
             </p>
-            <p className="text-xs text-landing-primary dark:text-foreground font-heading font-semibold mt-1">
-              Chaque Euro compte. Chaque citoyen aussi.
+            <p className="mt-2 text-sm text-muted-foreground max-w-sm">
+              Comprendre les finances publiques de manière interactive et accessible.
             </p>
           </div>
 
-          <div className="flex items-center gap-3">
-            <Link
-              href="/contribuer"
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-landing-primary/30 dark:border-white/30 text-landing-primary dark:text-white text-sm font-heading font-semibold hover:bg-landing-primary/5 dark:hover:bg-white/5 transition-colors"
-            >
-              🤝 Contribuer
-            </Link>
-            <a
-              href="https://pixeeplay.fr/play/?intent=sponsoriser"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-landing-primary text-white text-sm font-heading font-semibold hover:bg-landing-primary-light transition-colors"
-            >
-              💎 Devenez sponsor
-            </a>
-          </div>
+          <nav aria-label="Liens de pied de page">
+            <ul className="flex flex-wrap gap-x-6 text-sm">
+              <li>
+                <Link href="/jeu" className="inline-flex items-center min-h-[44px] hover:underline underline-offset-4">Jouer</Link>
+              </li>
+              <li>
+                <Link href="/a-propos" className="inline-flex items-center min-h-[44px] hover:underline underline-offset-4">À propos</Link>
+              </li>
+              <li>
+                <Link href="/contribuer" className="inline-flex items-center min-h-[44px] hover:underline underline-offset-4">Contribuer</Link>
+              </li>
+              <li>
+                <a
+                  href="https://pixeeplay.fr/play/?intent=sponsoriser"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center min-h-[44px] hover:underline underline-offset-4"
+                >
+                  Devenir sponsor
+                  <span className="sr-only"> (nouvel onglet)</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
 
-        <div className="text-center text-xs text-muted-foreground mt-8">
+        <div className="mt-6 flex flex-col sm:flex-row sm:justify-between gap-2 font-mono text-xs text-muted-foreground">
           <p>
-            Fait avec rigueur, un peu de tronçonneuse et ❤️ par{" "}
+            Conçu par{" "}
             <a
               href="https://pixeeplay.fr"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-landing-primary hover:underline"
+              className="underline underline-offset-4 hover:text-foreground"
             >
               PixeePlay
             </a>
           </p>
-          <p className="mt-2">&copy; {new Date().getFullYear()} france-finances.com</p>
+          <p>&copy; {new Date().getFullYear()} france-finances.com</p>
         </div>
       </div>
     </footer>

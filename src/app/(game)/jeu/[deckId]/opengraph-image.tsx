@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
 import decksMeta from "@/data/decks-meta.json";
+import { OG_COLORS, OG_MONO, OG_SERIF, loadOgFonts } from "@/lib/og";
 
 export const runtime = "edge";
 export const alt = "france-finances.com — Deck";
@@ -12,14 +13,16 @@ function sanitizeParam(value: unknown): string {
   return value.replace(/<[^>]*>/g, "").slice(0, 200);
 }
 
-export default function OgImage({ params }: { params: { deckId: string } }) {
-  const deckId = sanitizeParam(params.deckId);
+// Next 16 : `params` est une Promise pour les images de métadonnées.
+export default async function OgImage({ params }: { params: Promise<{ deckId: string }> }) {
+  const deckId = sanitizeParam((await params).deckId);
   const deck = decksMeta.decks.find((d) => d.id === deckId);
   const name = deck?.name ?? "Deck inconnu";
   const description = deck?.description ?? "";
-  const icon = deck?.icon ?? "🎴";
   const cardCount = deck?.cardCount ?? 0;
-  const color = deck?.color ?? "#3B82F6";
+  const kicker = deck?.type === "thematic" ? "DOSSIER" : "CATÉGORIE";
+  const brand = "france-finances.com";
+  const fonts = await loadOgFonts(`${kicker} ${name} ${description} ${cardCount} cartes Budget Swipe ${brand} 0123456789`);
 
   return new ImageResponse(
     (
@@ -29,125 +32,44 @@ export default function OgImage({ params }: { params: { deckId: string } }) {
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          backgroundColor: "#0F172A",
-          fontFamily: "sans-serif",
-          position: "relative",
+          justifyContent: "space-between",
+          backgroundColor: OG_COLORS.background,
+          color: OG_COLORS.text,
+          padding: "64px 80px",
+          fontFamily: OG_SERIF,
         }}
       >
-        {/* French flag stripes at top */}
         <div
           style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            height: 8,
             display: "flex",
+            justifyContent: "space-between",
+            borderBottom: `2px solid ${OG_COLORS.text}`,
+            paddingBottom: 16,
+            fontFamily: OG_MONO,
+            fontSize: 22,
+            letterSpacing: "0.08em",
+            color: OG_COLORS.muted,
           }}
         >
-          <div style={{ flex: 1, backgroundColor: "#002395", display: "flex" }} />
-          <div style={{ flex: 1, backgroundColor: "#FFFFFF", display: "flex" }} />
-          <div style={{ flex: 1, backgroundColor: "#ED2939", display: "flex" }} />
+          <span>{kicker}</span>
+          <span>{`${cardCount} cartes`}</span>
         </div>
 
-        {/* Deck icon */}
-        <div
-          style={{
-            fontSize: 96,
-            marginBottom: 24,
-            display: "flex",
-          }}
-        >
-          {icon}
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <div style={{ display: "flex", fontSize: 96, fontWeight: 600, lineHeight: 1.05, letterSpacing: "-0.02em" }}>
+            {name}
+          </div>
+          <div style={{ display: "flex", fontSize: 32, color: OG_COLORS.muted, marginTop: 20, maxWidth: 900 }}>
+            {description}
+          </div>
         </div>
 
-        {/* Deck name */}
-        <div
-          style={{
-            fontSize: 52,
-            fontWeight: 900,
-            color: "#F8FAFC",
-            display: "flex",
-            marginBottom: 12,
-          }}
-        >
-          {name}
-        </div>
-
-        {/* Description */}
-        <div
-          style={{
-            fontSize: 24,
-            color: "#94A3B8",
-            display: "flex",
-            marginBottom: 36,
-            maxWidth: 800,
-            textAlign: "center",
-          }}
-        >
-          {description}
-        </div>
-
-        {/* Card count badge */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 12,
-            backgroundColor: "#1E293B",
-            borderRadius: 16,
-            padding: "14px 32px",
-            border: `2px solid ${color}`,
-          }}
-        >
-          <span style={{ fontSize: 28, display: "flex" }}>🎴</span>
-          <span
-            style={{
-              fontSize: 26,
-              fontWeight: 700,
-              color: "#F8FAFC",
-              display: "flex",
-            }}
-          >
-            {cardCount} cartes
-          </span>
-        </div>
-
-        {/* Bottom branding */}
-        <div
-          style={{
-            position: "absolute",
-            bottom: 28,
-            display: "flex",
-            alignItems: "baseline",
-            gap: 4,
-          }}
-        >
-          <span
-            style={{
-              fontSize: 20,
-              fontWeight: 700,
-              color: "#64748B",
-              display: "flex",
-            }}
-          >
-            france-finances
-          </span>
-          <span
-            style={{
-              fontSize: 20,
-              fontWeight: 700,
-              color: "#EF4444",
-              display: "flex",
-            }}
-          >
-            .com
-          </span>
+        <div style={{ display: "flex", justifyContent: "space-between", fontFamily: OG_MONO, fontSize: 22, color: OG_COLORS.muted }}>
+          <span>Budget Swipe</span>
+          <span>{brand}</span>
         </div>
       </div>
     ),
-    { ...size }
+    { ...size, fonts: fonts.length > 0 ? fonts : undefined }
   );
 }

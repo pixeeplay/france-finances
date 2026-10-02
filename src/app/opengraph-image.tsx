@@ -1,11 +1,21 @@
 import { ImageResponse } from "next/og";
+import { HEADLINE_FIGURE } from "@/data/headline";
+import { formatBillions } from "@/lib/format";
+import { OG_COLORS, OG_MONO, OG_SERIF, loadOgFonts } from "@/lib/og";
 
 export const runtime = "edge";
 export const alt = "france-finances.com — Comprendre les finances publiques";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function OgImage() {
+export default async function OgImage() {
+  const figure = formatBillions(HEADLINE_FIGURE.amountBillions);
+  const kicker = "BUDGET DE LA FRANCE";
+  const title = "Où va l'argent public ?";
+  const caption = `de dépenses publiques en ${HEADLINE_FIGURE.year}. Source : INSEE.`;
+  const brand = "france-finances.com";
+  const fonts = await loadOgFonts(`${kicker} ${title} ${figure} ${caption} ${brand} Budget Swipe 0123456789`);
+
   return new ImageResponse(
     (
       <div
@@ -14,155 +24,44 @@ export default function OgImage() {
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          backgroundColor: "#0F172A",
-          fontFamily: "sans-serif",
-          position: "relative",
+          justifyContent: "space-between",
+          backgroundColor: OG_COLORS.background,
+          color: OG_COLORS.text,
+          padding: "64px 80px",
+          fontFamily: OG_SERIF,
         }}
       >
-        {/* French flag stripes at top */}
         <div
           style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            height: 8,
             display: "flex",
+            justifyContent: "space-between",
+            borderBottom: `2px solid ${OG_COLORS.text}`,
+            paddingBottom: 16,
+            fontFamily: OG_MONO,
+            fontSize: 22,
+            letterSpacing: "0.08em",
+            color: OG_COLORS.muted,
           }}
         >
-          <div style={{ flex: 1, backgroundColor: "#002395", display: "flex" }} />
-          <div style={{ flex: 1, backgroundColor: "#FFFFFF", display: "flex" }} />
-          <div style={{ flex: 1, backgroundColor: "#ED2939", display: "flex" }} />
+          <span>{kicker}</span>
+          <span>Budget Swipe</span>
         </div>
 
-        {/* Flag icon (rendered as colored rectangles) */}
-        <div
-          style={{
-            display: "flex",
-            width: 120,
-            height: 80,
-            borderRadius: 12,
-            overflow: "hidden",
-            marginBottom: 32,
-            boxShadow: "0 4px 24px rgba(0,0,0,0.4)",
-          }}
-        >
-          <div style={{ flex: 1, backgroundColor: "#002395", display: "flex" }} />
-          <div style={{ flex: 1, backgroundColor: "#FFFFFF", display: "flex" }} />
-          <div style={{ flex: 1, backgroundColor: "#ED2939", display: "flex" }} />
-        </div>
-
-        {/* Site name */}
-        <div
-          style={{
-            fontSize: 56,
-            fontWeight: 900,
-            color: "#F8FAFC",
-            display: "flex",
-            alignItems: "baseline",
-            marginBottom: 16,
-          }}
-        >
-          <span>france-finances</span>
-          <span style={{ color: "#EF4444" }}>.com</span>
-        </div>
-
-        {/* Tagline */}
-        <div
-          style={{
-            fontSize: 28,
-            color: "#94A3B8",
-            display: "flex",
-            marginBottom: 40,
-          }}
-        >
-          Comprendre les finances publiques
-        </div>
-
-        {/* Stats badges */}
-        <div
-          style={{
-            display: "flex",
-            gap: 24,
-            alignItems: "center",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 8,
-              backgroundColor: "#1E293B",
-              borderRadius: 12,
-              padding: "12px 24px",
-              border: "1px solid #334155",
-            }}
-          >
-            <span style={{ fontSize: 24, display: "flex" }}>🎴</span>
-            <span style={{ fontSize: 22, fontWeight: 700, color: "#F8FAFC", display: "flex" }}>
-              370 cartes
-            </span>
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <div style={{ display: "flex", fontSize: 72, fontWeight: 600, lineHeight: 1.05, letterSpacing: "-0.02em" }}>
+            {title}
           </div>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 8,
-              backgroundColor: "#1E293B",
-              borderRadius: 12,
-              padding: "12px 24px",
-              border: "1px solid #334155",
-            }}
-          >
-            <span style={{ fontSize: 24, display: "flex" }}>📊</span>
-            <span style={{ fontSize: 22, fontWeight: 700, color: "#F8FAFC", display: "flex" }}>
-              16 catégories
-            </span>
+          <div style={{ display: "flex", fontSize: 160, fontWeight: 600, lineHeight: 1, marginTop: 24, letterSpacing: "-0.03em" }}>
+            {figure}
           </div>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 8,
-              backgroundColor: "#1E293B",
-              borderRadius: 12,
-              padding: "12px 24px",
-              border: "1px solid #334155",
-            }}
-          >
-            <span style={{ fontSize: 24, display: "flex" }}>🎮</span>
-            <span style={{ fontSize: 22, fontWeight: 700, color: "#F8FAFC", display: "flex" }}>
-              Interactif
-            </span>
-          </div>
+          <div style={{ display: "flex", fontSize: 30, color: OG_COLORS.muted, marginTop: 12 }}>{caption}</div>
         </div>
 
-        {/* Bottom tagline */}
-        <div
-          style={{
-            position: "absolute",
-            bottom: 28,
-            display: "flex",
-            alignItems: "center",
-            gap: 8,
-          }}
-        >
-          <div
-            style={{
-              fontSize: 16,
-              fontWeight: 700,
-              color: "#64748B",
-              letterSpacing: "0.1em",
-              display: "flex",
-            }}
-          >
-            Chaque Euro compte. Chaque citoyen aussi.
-          </div>
+        <div style={{ display: "flex", justifyContent: "flex-end", fontFamily: OG_MONO, fontSize: 22, color: OG_COLORS.muted }}>
+          {brand}
         </div>
       </div>
     ),
-    { ...size }
+    { ...size, fonts: fonts.length > 0 ? fonts : undefined }
   );
 }

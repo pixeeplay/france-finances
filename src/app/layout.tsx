@@ -1,25 +1,32 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { Outfit } from "next/font/google";
+import { Source_Serif_4, Schibsted_Grotesk, IBM_Plex_Mono } from "next/font/google";
 import { AuthProvider } from "@/components/AuthProvider";
 import { AppInit } from "@/components/AppInit";
 import { PageviewTracker } from "@/components/PageviewTracker";
 import { JsonLd } from "@/components/JsonLd";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// Serif éditoriale : titres et chiffres forts (axe optique pour les grands corps)
+const serif = Source_Serif_4({
+  variable: "--ff-serif",
   subsets: ["latin"],
+  axes: ["opsz"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+// Grotesk : texte courant et interface
+const grotesk = Schibsted_Grotesk({
+  variable: "--ff-grotesk",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const outfit = Outfit({
-  variable: "--font-outfit",
+// Mono : étiquettes, axes, sources
+const mono = IBM_Plex_Mono({
+  variable: "--ff-mono",
   subsets: ["latin"],
+  weight: ["400", "500"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -83,17 +90,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" suppressHydrationWarning>
+    <html lang="fr" className="dark" suppressHydrationWarning>
       <head>
         <JsonLd />
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{if(window.matchMedia('(prefers-color-scheme:dark)').matches){document.documentElement.classList.add('dark')}}catch(e){}})()`,
+            // Thème sombre par défaut ; le clair n'est appliqué que sur choix explicite.
+            __html: `(function(){try{if(localStorage.getItem('theme')==='light'){document.documentElement.classList.remove('dark')}}catch(e){}})()`,
           }}
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} antialiased`}
+        className={`${serif.variable} ${grotesk.variable} ${mono.variable} antialiased`}
       >
         <AuthProvider>
           <AppInit />

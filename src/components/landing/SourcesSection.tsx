@@ -1,54 +1,50 @@
 const sources = [
-  { name: "PLF 2026", title: "Projet de Loi de Finances 2026", url: "https://www.budget.gouv.fr/budget-etat/plf-2026" },
+  { name: "PLF 2026", title: "Projet de loi de finances 2026", url: "https://www.budget.gouv.fr/budget-etat/plf-2026" },
   { name: "Cour des comptes", title: "Cour des comptes", url: "https://www.ccomptes.fr" },
-  { name: "S\u00E9nat", title: "S\u00E9nat", url: "https://www.senat.fr" },
-  { name: "DREES", title: "Direction de la Recherche, des \u00C9tudes, de l\u2019\u00C9valuation et des Statistiques", url: "https://drees.solidarites-sante.gouv.fr" },
+  { name: "Sénat", title: "Sénat", url: "https://www.senat.fr" },
+  { name: "DREES", title: "Direction de la recherche, des études, de l’évaluation et des statistiques", url: "https://drees.solidarites-sante.gouv.fr" },
   { name: "vie-publique.fr", title: "vie-publique.fr", url: "https://www.vie-publique.fr" },
-  { name: "INSEE", title: "Institut National de la Statistique et des \u00C9tudes \u00C9conomiques", url: "https://www.insee.fr" },
-  { name: "ADEME", title: "Agence de l\u2019Environnement et de la Ma\u00EEtrise de l\u2019\u00C9nergie", url: "https://www.ademe.fr" },
-  { name: "DGFiP", title: "Direction G\u00E9n\u00E9rale des Finances Publiques", url: "https://www.economie.gouv.fr/dgfip" },
-  { name: "DARES", title: "Direction de l\u2019Animation de la Recherche, des \u00C9tudes et des Statistiques", url: "https://dares.travail-emploi.gouv.fr" },
-  { name: "Commission europ\u00E9enne", title: "Commission europ\u00E9enne", url: "https://commission.europa.eu/index_fr" },
+  { name: "INSEE", title: "Institut national de la statistique et des études économiques", url: "https://www.insee.fr" },
+  { name: "ADEME", title: "Agence de l’environnement et de la maîtrise de l’énergie", url: "https://www.ademe.fr" },
+  { name: "DGFiP", title: "Direction générale des finances publiques", url: "https://www.economie.gouv.fr/dgfip" },
+  { name: "DARES", title: "Direction de l’animation de la recherche, des études et des statistiques", url: "https://dares.travail-emploi.gouv.fr" },
+  { name: "Commission européenne", title: "Commission européenne", url: "https://commission.europa.eu/index_fr" },
 ];
 
 export function SourcesSection() {
   return (
-    <section id="sources" className="section-padding bg-slate-50 dark:bg-slate-900">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
-        <h2 className="font-heading font-bold text-2xl md:text-3xl text-landing-primary dark:text-white mb-6">
-          Toutes nos donn&eacute;es sont sourc&eacute;es.
-        </h2>
-
-        <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
-          {sources.map((s) => (
-            <a
-              key={s.name}
-              href={s.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              title={s.title}
-              className="group px-5 py-2.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl text-sm font-medium text-muted-foreground hover:border-landing-primary/40 dark:hover:border-landing-primary/40 hover:text-landing-primary dark:hover:text-white transition-colors"
-            >
-              {s.name}
-              <svg
-                width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-                className="inline-block ml-1.5 mb-0.5 opacity-0 group-hover:opacity-100 transition-opacity"
-                aria-hidden="true"
-              >
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                <polyline points="15 3 21 3 21 9" />
-                <line x1="10" y1="14" x2="21" y2="3" />
-              </svg>
-            </a>
-          ))}
+    <section id="sources" aria-labelledby="sources-title" className="border-b border-border">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 md:py-16 grid gap-8 lg:grid-cols-12">
+        <header className="lg:col-span-4">
+          <p className="kicker text-muted-foreground mb-3">Méthode</p>
+          <h2 id="sources-title" className="text-3xl md:text-4xl font-semibold leading-tight">
+            Des chiffres sourcés, sans parti pris
+          </h2>
+        </header>
+        <div className="lg:col-span-8">
+          <p className="leading-relaxed max-w-prose">
+            Chaque carte cite ses sources officielles. Les montants sont exprimés en milliards
+            d&apos;euros par an&nbsp;; le coût par habitant est calculé sur une base d&apos;environ
+            68&nbsp;millions d&apos;habitants. Le jeu ne dit pas ce qu&apos;il faut couper&nbsp;:
+            il montre ce que coûte chaque politique publique.
+          </p>
+          <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-1">
+            {sources.map((s) => (
+              <li key={s.name}>
+                <a
+                  href={s.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={s.title}
+                  className="inline-flex items-center min-h-[44px] font-mono text-sm text-muted-foreground underline decoration-border underline-offset-4 hover:text-foreground hover:decoration-foreground transition-colors"
+                >
+                  {s.name}
+                  <span className="sr-only"> (nouvel onglet)</span>
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
-
-        <p className="text-muted-foreground text-sm">
-          <strong className="text-foreground">400+ sources</strong>.
-          <br />
-          Aucun parti pris.
-        </p>
       </div>
     </section>
   );

@@ -51,7 +51,7 @@ export default function AdminPage() {
   return (
     <div className="flex-1 overflow-y-auto scrollbar-hide">
       {/* Header */}
-      <header className="flex items-center justify-between p-4 pb-2 bg-background/90 backdrop-blur-md border-b border-border">
+      <header className="flex items-center justify-between p-4 pb-2 bg-background border-b border-border">
         <h1 className="text-lg font-bold">Analytics</h1>
         <div className="flex gap-1">
           {[7, 14, 30].map((d) => (

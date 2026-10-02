@@ -1,128 +1,107 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useCallback, useSyncExternalStore } from "react";
 import Link from "next/link";
-import Image from "next/image";
+
+const NAV_LINKS = [
+  { href: "/#ordres-de-grandeur", label: "Ordres de grandeur" },
+  { href: "/#dossiers", label: "Dossiers" },
+  { href: "/#categories", label: "Catégories" },
+  { href: "/#sources", label: "Sources" },
+];
+
+/** Suit la classe `dark` de <html> (sombre par défaut, y compris au rendu serveur). */
+function subscribeTheme(callback: () => void) {
+  const observer = new MutationObserver(callback);
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+  return () => observer.disconnect();
+}
+const getThemeSnapshot = () => document.documentElement.classList.contains("dark");
+const getServerThemeSnapshot = () => true;
+
+function SunIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="4.5" />
+      <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+    </svg>
+  );
+}
+
+function MoonIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
+    </svg>
+  );
+}
 
 export function NavbarLanding() {
-  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [isDark, setIsDark] = useState(() =>
-    typeof document !== "undefined"
-      ? document.documentElement.classList.contains("dark")
-      : false
-  );
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const isDark = useSyncExternalStore(subscribeTheme, getThemeSnapshot, getServerThemeSnapshot);
 
   const toggleTheme = useCallback(() => {
     const nowDark = document.documentElement.classList.toggle("dark");
-    setIsDark(nowDark);
+    try {
+      localStorage.setItem("theme", nowDark ? "dark" : "light");
+    } catch {
+      // stockage indisponible : le choix vaut pour la page courante
+    }
   }, []);
 
+  const themeLabel = isDark ? "Passer en thème clair" : "Passer en thème sombre";
+
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/95 dark:bg-slate-950/95 backdrop-blur-md shadow-sm border-b border-slate-200 dark:border-slate-800"
-          : "bg-transparent"
-      }`}
-    >
+    <header className="sticky top-0 z-50 bg-background border-b border-border">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-16">
-          <Link href="/" className="flex items-center gap-2">
-            <Image src="/france.svg" alt="France" width={28} height={28} priority />
-            <span className="font-heading text-lg font-bold text-landing-primary dark:text-white">
-              france-finances<span className="text-landing-expense dark:text-landing-expense">.com</span>
-            </span>
+        <div className="flex items-center justify-between h-14">
+          <Link href="/" className="flex items-center min-h-[44px] font-serif text-xl tracking-tight" aria-label="france-finances.com, accueil">
+            <span className="font-semibold text-foreground">france-finances</span>
+            <span className="text-muted-foreground">.com</span>
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-8">
-            <Link href="/#chiffres" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              Chiffres cl&eacute;s
-            </Link>
-            <Link href="/#comment-ca-marche" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              Comment &ccedil;a marche
-            </Link>
-            <Link href="/#categories" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              Cat&eacute;gories
-            </Link>
+          <nav aria-label="Navigation principale" className="hidden md:flex items-center gap-6">
+            {NAV_LINKS.map((l) => (
+              <Link key={l.href} href={l.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                {l.label}
+              </Link>
+            ))}
             <button
               onClick={toggleTheme}
-              className="w-9 h-9 flex items-center justify-center rounded-full text-muted-foreground hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
-              aria-label={isDark ? "Mode clair" : "Mode sombre"}
+              className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-full text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+              aria-label={themeLabel}
             >
-              {isDark ? (
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <circle cx="12" cy="12" r="5" />
-                  <line x1="12" y1="1" x2="12" y2="3" />
-                  <line x1="12" y1="21" x2="12" y2="23" />
-                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                  <line x1="1" y1="12" x2="3" y2="12" />
-                  <line x1="21" y1="12" x2="23" y2="12" />
-                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-                </svg>
-              ) : (
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-                </svg>
-              )}
+              {isDark ? <SunIcon /> : <MoonIcon />}
             </button>
             <Link
               href="/jeu"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-landing-primary text-white font-semibold text-sm hover:bg-landing-primary-light transition-colors"
+              className="inline-flex items-center gap-2 min-h-[44px] px-4 rounded-md bg-foreground text-background font-semibold text-sm hover:opacity-90 transition-opacity"
             >
               Jouer
-              <span>&#8594;</span>
+              <span aria-hidden="true">&#8594;</span>
             </Link>
           </nav>
 
-          {/* Mobile: theme toggle + burger */}
-          <div className="md:hidden flex items-center gap-1">
+          {/* Mobile: theme toggle + menu */}
+          <div className="md:hidden flex items-center">
             <button
               onClick={toggleTheme}
-              className="w-10 h-10 flex items-center justify-center text-foreground"
-              aria-label={isDark ? "Mode clair" : "Mode sombre"}
+              className="min-h-[44px] min-w-[44px] flex items-center justify-center text-foreground"
+              aria-label={themeLabel}
             >
-              {isDark ? (
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <circle cx="12" cy="12" r="5" />
-                  <line x1="12" y1="1" x2="12" y2="3" />
-                  <line x1="12" y1="21" x2="12" y2="23" />
-                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                  <line x1="1" y1="12" x2="3" y2="12" />
-                  <line x1="21" y1="12" x2="23" y2="12" />
-                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-                </svg>
-              ) : (
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-                </svg>
-              )}
+              {isDark ? <SunIcon /> : <MoonIcon />}
             </button>
             <button
-              onClick={() => setMobileOpen(!mobileOpen)}
-              className="w-10 h-10 flex items-center justify-center text-foreground"
-              aria-label="Menu"
+              onClick={() => setMobileOpen((o) => !o)}
+              className="min-h-[44px] min-w-[44px] flex items-center justify-center text-foreground"
+              aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
+              aria-expanded={mobileOpen}
+              aria-controls="menu-mobile"
             >
-              {mobileOpen ? (
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                  <path d="M18 6L6 18M6 6l12 12" />
-                </svg>
-              ) : (
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                  <path d="M3 12h18M3 6h18M3 18h18" />
-                </svg>
-              )}
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" aria-hidden="true">
+                {mobileOpen ? <path d="M18 6 6 18M6 6l12 12" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
+              </svg>
             </button>
           </div>
         </div>
@@ -130,38 +109,30 @@ export function NavbarLanding() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 shadow-lg">
-          <div className="flex flex-col px-4 py-4 gap-3">
-            <Link
-              href="/#chiffres"
-              onClick={() => setMobileOpen(false)}
-              className="py-2 text-sm font-medium text-muted-foreground"
-            >
-              Chiffres cl&eacute;s
-            </Link>
-            <Link
-              href="/#comment-ca-marche"
-              onClick={() => setMobileOpen(false)}
-              className="py-2 text-sm font-medium text-muted-foreground"
-            >
-              Comment &ccedil;a marche
-            </Link>
-            <Link
-              href="/#categories"
-              onClick={() => setMobileOpen(false)}
-              className="py-2 text-sm font-medium text-muted-foreground"
-            >
-              Cat&eacute;gories
-            </Link>
-            <Link
-              href="/jeu"
-              className="mt-2 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-landing-primary text-white font-semibold text-sm"
-            >
-              Jouer
-              <span>&#8594;</span>
-            </Link>
-          </div>
-        </div>
+        <nav id="menu-mobile" aria-label="Navigation principale" className="md:hidden border-t border-border bg-background">
+          <ul className="flex flex-col px-4 py-2 divide-y divide-border">
+            {NAV_LINKS.map((l) => (
+              <li key={l.href}>
+                <Link
+                  href={l.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center min-h-[44px] text-sm text-foreground"
+                >
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+            <li className="py-3">
+              <Link
+                href="/jeu"
+                className="flex items-center justify-center gap-2 min-h-[44px] rounded-md bg-foreground text-background font-semibold text-sm"
+              >
+                Jouer
+                <span aria-hidden="true">&#8594;</span>
+              </Link>
+            </li>
+          </ul>
+        </nav>
       )}
     </header>
   );

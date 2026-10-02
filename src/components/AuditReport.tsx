@@ -2,6 +2,8 @@ import type { Card, AuditRecommendation } from "@/types";
 import { ChainsawIcon } from "./ChainsawIcon";
 import { ShieldIcon } from "./ShieldIcon";
 import { ReinforceIcon } from "./ReinforceIcon";
+import { CategoryIcon } from "./icons/CategoryIcon";
+import { formatBillions } from "@/lib/format";
 
 export const recommendationLabels: Record<AuditRecommendation, string> = {
   keep: "Maintenir le budget",
@@ -106,12 +108,12 @@ export function AuditReport({ cards, auditResponses }: {
             return (
               <div key={r.cardId} className="bg-card border border-border p-3 rounded-xl">
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-background text-xl shrink-0">
-                    {card.icon}
+                  <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-background text-muted-foreground shrink-0">
+                    <CategoryIcon deckId={card.deckId} size={20} />
                   </div>
                   <div className="flex flex-col flex-1 min-w-0">
                     <p className="text-sm font-semibold leading-tight line-clamp-1">{card.title}</p>
-                    <p className="text-xs text-muted-foreground font-mono">{card.amountBillions} Md&euro;</p>
+                    <p className="text-xs text-muted-foreground font-mono">{formatBillions(card.amountBillions)}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
