@@ -130,7 +130,7 @@ describe("toBarData / toShares", () => {
   it("formate et colore chaque barre", () => {
     const bars = toBarData(PUBLIC_SPENDING_BY_FUNCTION.items, fmt);
     expect(bars[0]).toMatchObject({ label: "Protection sociale", value: 693, display: "693", tone: "emerald" });
-    expect(bars[2].shortLabel).toBe("Services publics généraux");
+    expect(bars[2].shortLabel).toBe("Administration générale");
   });
 
   it("calcule les parts des recettes fiscales 2026", () => {

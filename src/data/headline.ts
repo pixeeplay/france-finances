@@ -15,7 +15,7 @@ export const HEADLINE_FIGURE = {
   year: Number(PUBLIC_SPENDING_BY_FUNCTION.period),
   /** Population de référence du site (coût par habitant) */
   population: POPULATION_2026,
-  source: "Insee, dépenses publiques par fonction en 2024",
+  source: "Insee, dépenses publiques par grand domaine en 2024",
 } as const;
 
 /** Coût par habitant arrondi à la centaine d'euros. */
