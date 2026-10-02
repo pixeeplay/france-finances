@@ -2,7 +2,7 @@ import type { Card } from "@/types";
 
 /**
  * Lazy-load cards for a single deck using dynamic import().
- * This avoids bundling all 370 cards when only one deck is needed.
+ * This avoids bundling every card when only one deck is needed.
  *
  * Usage:
  *   const cards = await getDeckCards("defense");

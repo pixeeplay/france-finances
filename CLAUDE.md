@@ -17,7 +17,7 @@ DNS : Cloudflare (DNS only, pas de proxy)
 
 ## Contenu
 
-- **369 cartes** reparties en **19 decks** (16 categories + 3 thematiques), niveaux L1=130, L2=130, L3=109
+- **379 cartes** reparties en **19 decks** (16 categories + 3 thematiques), niveaux L1=130, L2=133, L3=116
 - **18 archetypes** budgetaires (8 L1, 6 L2, 4 L3) dans `src/data/archetypes.json`
 - **19 badges** de categorie + **3 badges** de comprehension (quiz) + **12 achievements** generaux (`src/lib/achievements.ts`)
 
@@ -144,7 +144,8 @@ src/
 
 ## Donnees
 
-369 cartes, 19 decks (16 categories + 3 thematiques).
+379 cartes, 19 decks (16 categories + 3 thematiques).
+Ne jamais ecrire le nombre de cartes en dur dans le code : utiliser `TOTAL_CARD_COUNT` / `CARDS_AND_CATEGORIES` (`src/lib/deckMeta.ts`).
 Donnees factuelles, sourcees, neutres. Pas de ton militant.
 Montants en milliards d'euros, cout par habitant base sur 69,1 M habitants (Insee, 1er janvier 2026) : population unique `POPULATION_REFERENCE` (src/lib/cardSchema.ts), reprise par `data:check`, l'accueil et `/chiffres`.
 Sources : PLF/LFSS 2025-2026 (PLF/PLFSS 2027 presentes le 1er octobre 2026, pas encore integres), Cour des comptes, Senat, ministeres, vie-publique.fr.

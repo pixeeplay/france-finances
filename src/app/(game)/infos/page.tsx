@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ChainsawIcon } from "@/components/ChainsawIcon";
 import { ReplayTutorialButton } from "@/components/ReplayTutorialButton";
+import { CARDS_AND_CATEGORIES } from "@/lib/deckMeta";
 
 export default function InfosPage() {
   return (
@@ -32,7 +33,7 @@ export default function InfosPage() {
             <p className="text-sm text-muted-foreground leading-relaxed">
               Un mini-jeu citoyen pour explorer le budget de la France.
               Swipez les dépenses publiques, découvrez votre profil budgétaire
-              et comparez-vous à la communauté. 369 cartes, 16 catégories,
+              et comparez-vous à la communauté. {CARDS_AND_CATEGORIES},
               des données sourcées et neutres.
             </p>
           </div>
@@ -74,6 +75,7 @@ export default function InfosPage() {
             {[
               { href: "/chiffres", title: "Les chiffres", text: "Dette, déficit, budget de l'État, dépense publique" },
               { href: "/simulateur", title: "Le simulateur", text: "Impôts et cotisations prélevés sur un salaire" },
+              { href: "/lexique", title: "Le lexique", text: "Les sigles et mots du budget expliqués simplement" },
             ].map((tool) => (
               <Link
                 key={tool.href}

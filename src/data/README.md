@@ -58,6 +58,11 @@ ne le permet pas, on déplace la carte la plus proche du seuil. Cartes déplacé
 
 Répartition obtenue : 135 cartes L1, 132 L2, 102 L3. Après la correction des montants lors du fact-check (octobre 2026),
 les niveaux ont été réalignés sur le critère de montant : 130 cartes L1, 130 L2, 109 L3.
+Après la reprise des sources et l'ajout de 10 cartes (octobre 2026) : 379 cartes, 130 L1, 133 L2, 116 L3.
+
+Des cartes peuvent afficher un montant de 0 quand aucune source officielle ne chiffre le sujet : la description le dit
+explicitement (« pas de chiffrage officiel »). Le nombre total de cartes affiché dans l'interface est calculé
+(`TOTAL_CARD_COUNT` dans `src/lib/deckMeta.ts`) : ne pas l'écrire en dur.
 
 Pour un futur filtrage par niveau de jeu, tirer les cartes de niveau ≤ au niveau de la session : les petits decks
 (10 cartes) n'ont pas assez de cartes d'un seul niveau pour remplir une session.

@@ -20,7 +20,7 @@
     "id": "log-02",
     "title": "Hébergement d'urgence",
     "subtitle": "Centres d'hébergement et de réinsertion (CHRS), hôtels, centres d'accueil",
-    "description": "Le parc d'hébergement d'urgence (centres d'hébergement, CHRS, nuitées hôtelières) compte environ 203 000 places, un niveau stabilisé depuis 2021 ; près de 52 000 places ont été créées depuis 2017. Le programme 177 est doté de 3,1 Md€ en 2026 (+110 M€), une budgétisation jugée plus sincère par le Sénat. Le 115 ne peut pas répondre à toutes les demandes, en particulier en hiver.",
+    "description": "Le parc d'hébergement d'urgence (centres d'hébergement, CHRS, nuitées hôtelières) compte environ 203 000 places, un niveau stabilisé depuis 2021 ; près de 52 000 places ont été créées depuis 2017. Le budget de l'hébergement d'urgence est doté de 3,1 Md€ en 2026 (+110 M€), une prévision jugée plus sincère par le Sénat. Le 115, numéro d'urgence pour les sans-abri, ne peut pas répondre à toutes les demandes, en particulier en hiver.",
     "amountBillions": 3.1,
     "costPerCitizen": 45,
     "deckId": "logement",
@@ -31,7 +31,7 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["logement", "urgence", "sans-abri"],
-    "equivalence": "Environ 42 € par place et par nuit (crédits rapportés aux 203 000 places)"
+    "equivalence": "Environ 42 € par place et par nuit (budget rapporté aux 203 000 places)"
   },
   {
     "id": "log-03",
@@ -87,7 +87,7 @@
     "id": "log-06",
     "title": "Plan France Très Haut Débit",
     "subtitle": "Aménagement numérique — fibre optique pour tous",
-    "description": "Depuis 2013, l'État cofinance le déploiement de la fibre optique dans les zones rurales non rentables (réseaux d'initiative publique). La grande majorité des locaux sont désormais éligibles à la fibre ; les derniers raccordements, plus complexes, sont plus coûteux. Selon le Sénat, une partie des crédits reportés d'année en année n'a pas été consommée et 0,5 Md€ ont été annulés en avril 2025.",
+    "description": "Depuis 2013, l'État cofinance le déploiement de la fibre optique dans les zones rurales non rentables (réseaux d'initiative publique). La grande majorité des locaux sont désormais éligibles à la fibre ; les derniers raccordements, plus complexes, sont plus coûteux. Selon le Sénat, une partie des sommes reportées d'année en année n'a pas été dépensée et 0,5 Md€ ont été annulés en avril 2025.",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
     "deckId": "logement",
@@ -97,13 +97,13 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["logement", "numérique", "fibre"],
-    "equivalence": "0,5 Md€ de crédits non consommés annulés en avril 2025"
+    "equivalence": "0,5 Md€ non dépensés annulés en avril 2025"
   },
   {
     "id": "log-07",
     "title": "Budget logement et territoires (« Cohésion des territoires »)",
     "subtitle": "Budget global — APL incluses",
-    "description": "Regroupe les aides personnelles au logement (APL, 16,1 Md€), l'hébergement d'urgence (3,1 Md€), la politique de la ville et l'urbanisme. Ses crédits de paiement passent de 23,1 Md€ en 2025 à 22,2 Md€ dans le PLF 2026, sous l'effet du gel des APL et de la hausse de la réduction de loyer de solidarité. S'y ajoutent 11,7 Md€ de dépenses fiscales rattachées.",
+    "description": "Regroupe les aides personnelles au logement (APL, 16,1 Md€), l'hébergement d'urgence (3,1 Md€), la politique de la ville et l'urbanisme. Ce budget passe de 23,1 Md€ en 2025 à 22,2 Md€ dans le projet de budget 2026, sous l'effet du gel des APL et de la hausse de la réduction de loyer de solidarité. S'y ajoutent 11,7 Md€ de niches fiscales rattachées.",
     "amountBillions": 22.2,
     "costPerCitizen": 321,
     "deckId": "logement",
@@ -115,7 +115,7 @@
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["logement", "budget", "cohésion"],
-    "equivalence": "22,2 Md€ de crédits et 11,7 Md€ de niches fiscales liées"
+    "equivalence": "22,2 Md€ de dépenses et 11,7 Md€ de niches fiscales liées"
   },
   {
     "id": "log-08",
@@ -188,7 +188,7 @@
     "id": "log-12",
     "title": "Réduction de loyer de solidarité (RLS)",
     "subtitle": "Baisse de loyer imposée aux bailleurs sociaux pour les locataires bénéficiaires de l'APL",
-    "description": "Instaurée en 2018, la RLS oblige les bailleurs sociaux à baisser le loyer de leurs locataires bénéficiaires de l'APL, ce qui permet à l'État de réduire d'autant les aides versées. Le PLF 2026 la porte à 1,3 Md€, contre 1,1 Md€ en 2025 (+200 M€). Selon l'Union sociale pour l'habitat (USH), elle réduit la capacité des organismes HLM à construire et à rénover.",
+    "description": "Instaurée en 2018, la RLS oblige les bailleurs sociaux à baisser le loyer de leurs locataires bénéficiaires de l'APL, ce qui permet à l'État de réduire d'autant les aides versées. Le projet de budget 2026 la porte à 1,3 Md€, contre 1,1 Md€ en 2025 (+200 M€). Selon l'Union sociale pour l'habitat (USH), elle réduit la capacité des organismes HLM à construire et à rénover.",
     "amountBillions": 1.3,
     "costPerCitizen": 19,
     "deckId": "logement",
@@ -205,8 +205,8 @@
     "id": "log-13",
     "title": "Airbnb et meublés touristiques",
     "subtitle": "Régulation des meublés de tourisme",
-    "description": "Les locations meublées de tourisme se sont fortement développées dans les grandes villes et les zones touristiques, au détriment de l'offre de location longue durée selon plusieurs collectivités. La loi Le Meur du 19 novembre 2024 réduit l'avantage fiscal des meublés de tourisme et renforce les outils de régulation des communes.",
-    "amountBillions": 0.3,
+    "description": "Les locations meublées de tourisme se sont fortement développées dans les grandes villes et les zones touristiques, au détriment de l'offre de location longue durée selon plusieurs collectivités. La loi du 19 novembre 2024 réduit l'avantage fiscal des meublés de tourisme, renforce les outils de régulation des communes et soumet progressivement ces logements aux règles de performance énergétique, jusqu'en 2034. Le manque à gagner fiscal et l'effet sur les loyers n'ont pas de chiffrage officiel.",
+    "amountBillions": 0,
     "costPerCitizen": 0,
     "deckId": "logement",
     "icon": "🏠",
@@ -251,17 +251,17 @@
   },
   {
     "id": "log-16",
-    "title": "Mal-logement (rapport Fondation Abbé Pierre)",
+    "title": "Mal-logement (rapport de la Fondation pour le logement)",
     "subtitle": "4,2 millions de personnes mal logées",
-    "description": "Selon le 31e rapport de la Fondation pour le logement des défavorisés (ex-Fondation Abbé Pierre), 4,2 millions de personnes sont mal logées ou privées de logement personnel, dont 350 000 personnes sans domicile (estimation 2024), 643 000 hébergées contre leur gré chez des tiers et 1,06 million en surpeuplement accentué. 12,3 millions de personnes sont par ailleurs fragilisées par rapport au logement.",
-    "amountBillions": 6.5,
+    "description": "Selon le 31e rapport de la Fondation pour le logement des défavorisés (ex-Fondation Abbé Pierre), 4,2 millions de personnes sont mal logées en France, dont 1,1 million privées de logement personnel : 350 000 personnes sans domicile (estimation de la Fondation), 643 000 hébergées contre leur gré chez des tiers. 1,1 million de personnes vivent en surpeuplement accentué. 12,3 millions de personnes sont par ailleurs fragilisées par rapport au logement. Ces chiffres sont des estimations d'une association, pas une dépense publique.",
+    "amountBillions": 0,
     "costPerCitizen": 0,
     "deckId": "logement",
     "icon": "🏠",
     "source": "Fondation pour le logement des défavorisés (rapport 2026)",
     "sourceUrl": "https://www.fondationpourlelogement.fr/wp-content/uploads/2026/02/reml-2026-cahier-5-les-chiffres-du-mal-logement.pdf",
     "sourceDate": "2026-02-03",
-    "level": 2,
+    "level": 3,
     "tags": ["logement", "mal-logement", "social"],
     "equivalence": "350 000 personnes sans domicile (estimation de la Fondation, 2024)"
   },

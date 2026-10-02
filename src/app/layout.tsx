@@ -6,6 +6,7 @@ import { PageviewTracker } from "@/components/PageviewTracker";
 import { JsonLd } from "@/components/JsonLd";
 import { THEME_COLORS } from "@/lib/theme";
 import "./globals.css";
+import { CARDS_AND_CATEGORIES, TOTAL_CARD_COUNT } from "@/lib/deckMeta";
 
 // Police d'affichage ronde et très grasse : titres et chiffres-clés.
 // Seules les graisses utilisées : 700 (bold), 800 (titres), 900 (hero).
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://france-finances.com"),
   title: "france-finances.com — Comprendre les finances publiques",
   description:
-    "Explorez le budget de la France de manière interactive. 369 cartes, 16 catégories — Comprenez où vont vos impôts.",
+    `Explorez le budget de la France de manière interactive. ${CARDS_AND_CATEGORIES} — Comprenez où vont vos impôts.`,
   manifest: "/manifest.json",
   icons: {
     icon: "/favicon.ico",
@@ -57,7 +58,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "france-finances.com — Comprendre les finances publiques",
     description:
-      "Explorez le budget de la France de manière interactive. 369 cartes de dépenses publiques à découvrir.",
+      `Explorez le budget de la France de manière interactive. ${TOTAL_CARD_COUNT} cartes de dépenses publiques à découvrir.`,
     url: "https://france-finances.com",
     siteName: "france-finances.com",
     images: [
@@ -75,7 +76,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "france-finances.com — Comprendre les finances publiques",
     description:
-      "Explorez le budget de la France de manière interactive. 369 cartes de dépenses publiques.",
+      `Explorez le budget de la France de manière interactive. ${TOTAL_CARD_COUNT} cartes de dépenses publiques.`,
     images: ["/opengraph-image"],
   },
 };

@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/jeu/quotidien`, lastModified: now, changeFrequency: "daily", priority: 0.8 },
     { url: `${baseUrl}/chiffres`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/simulateur`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/lexique`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/classement`, lastModified: now, changeFrequency: "daily", priority: 0.7 },
     { url: `${baseUrl}/categories`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     ...decks.map((deck) => ({

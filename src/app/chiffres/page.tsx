@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { AcronymText } from "@/components/AcronymText";
 import { PageShell } from "@/components/PageShell";
 import { CategoryIcon } from "@/components/icons/CategoryIcon";
 import { UiIcon } from "@/components/icons/UiIcon";
@@ -177,8 +178,7 @@ export default function ChiffresPage() {
               {TITLE}
             </h1>
             <p className="mt-4 max-w-prose text-base text-muted-foreground leading-relaxed">
-              Dette, budget de l&apos;État, dépense publique : les chiffres officiels (Insee, Parlement, DREES,
-              Eurostat), en graphiques.
+              <AcronymText text="Dette, budget de l'État, dépense publique : les chiffres officiels (Insee, Parlement, DREES, Eurostat), en graphiques." />
             </p>
           </div>
           <div className="mt-6 grid grid-cols-2 gap-3 lg:col-span-6">
@@ -235,8 +235,7 @@ export default function ChiffresPage() {
           }
           intro={
             <p>
-              État, Sécurité sociale et collectivités locales réunis (« administrations publiques »). Le PIB
-              (produit intérieur brut) mesure la richesse produite en France en un an.
+              <AcronymText text="État, Sécurité sociale et collectivités locales réunis (« administrations publiques »). Le PIB (produit intérieur brut) mesure la richesse produite en France en un an." />
             </p>
           }
         >
@@ -377,7 +376,7 @@ export default function ChiffresPage() {
             table={
               <DataTable
                 caption="Répartition des recettes fiscales nettes de l'État prévues pour 2026"
-                columns={[{ header: "Impôt" }, { header: "Montant prévu (PLF)", numeric: true }, { header: "Sur 100 €", numeric: true }]}
+                columns={[{ header: "Impôt" }, { header: "Montant prévu (projet de budget)", numeric: true }, { header: "Sur 100 €", numeric: true }]}
                 rows={revenue.map((r) => [r.label, fmtBn(r.value), r.display])}
               />
             }
@@ -424,8 +423,9 @@ export default function ChiffresPage() {
           }
           intro={
             <p>
-              Dette de l&apos;État, de la Sécurité sociale et des collectivités (définition européenne dite « de Maastricht ») : {formatNumber(firstDebt.pctGdp, 1)} % du
-              PIB fin {firstDebt.period}, {formatNumber(CURRENT_DEBT.pctGdp, 1)} % à {CURRENT_DEBT.period}.
+              <AcronymText
+                text={`Dette de l'État, de la Sécurité sociale et des collectivités (définition européenne dite « de Maastricht ») : ${formatNumber(firstDebt.pctGdp, 1)} % du PIB fin ${firstDebt.period}, ${formatNumber(CURRENT_DEBT.pctGdp, 1)} % à ${CURRENT_DEBT.period}.`}
+              />
             </p>
           }
         >

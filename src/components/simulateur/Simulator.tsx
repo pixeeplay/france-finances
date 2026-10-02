@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useId, useMemo, useRef, useState } from "react";
+import { AcronymText } from "@/components/AcronymText";
 import { BarList } from "@/components/chiffres/DataBlocks";
 import { REFERENCE_SALARIES } from "@/data/fiscal-2026";
 import { formatEuros, formatRatio } from "@/lib/format";
@@ -369,7 +370,11 @@ function SimTile({ label, value, detail, tone }: { label: string; value: string;
     <div className={`rounded-2xl border p-4 ${TONES[tone]}`}>
       <p className="kicker">{label}</p>
       <p className="mt-1 numeral text-2xl sm:text-3xl leading-tight">{value}</p>
-      {detail ? <p className="mt-1 text-xs text-muted-foreground leading-snug">{detail}</p> : null}
+      {detail ? (
+        <p className="mt-1 text-xs text-muted-foreground leading-snug">
+          <AcronymText text={detail} />
+        </p>
+      ) : null}
     </div>
   );
 }

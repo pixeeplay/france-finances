@@ -1,3 +1,5 @@
+import { TOTAL_CARD_COUNT } from "@/lib/deckMeta";
+
 export function JsonLd() {
   const org = {
     "@context": "https://schema.org",
@@ -41,7 +43,7 @@ export function JsonLd() {
     applicationCategory: "EducationalApplication",
     operatingSystem: "Any",
     description:
-      "Explorez le budget de la France de manière interactive. 369 cartes de dépenses publiques à découvrir.",
+      `Explorez le budget de la France de manière interactive. ${TOTAL_CARD_COUNT} cartes de dépenses publiques à découvrir.`,
     inLanguage: "fr",
     offers: {
       "@type": "Offer",

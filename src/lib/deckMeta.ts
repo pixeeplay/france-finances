@@ -1,9 +1,27 @@
 import decksMeta from "@/data/decks-meta.json";
 
 /**
- * Accès léger aux métadonnées des decks (sans charger les 369 cartes).
+ * Accès léger aux métadonnées des decks (sans charger les cartes).
  * Utilisable côté client (SwipeCard, ResultScreen...).
  */
+
+/**
+ * Nombre total de cartes du jeu, calculé à partir des `cardCount` des decks
+ * (eux-mêmes vérifiés contre les fichiers de cartes par `data:check` et les tests).
+ */
+export const TOTAL_CARD_COUNT: number = decksMeta.decks.reduce(
+  (sum, d) => sum + d.cardCount,
+  0,
+);
+
+/** Nombre de catégories (decks principaux, hors decks thématiques). */
+export const CATEGORY_COUNT: number = decksMeta.decks.filter(
+  (d) => d.type !== "thematic",
+).length;
+
+/** Accroche commune : "379 cartes, 16 catégories". */
+export const CARDS_AND_CATEGORIES = `${TOTAL_CARD_COUNT} cartes, ${CATEGORY_COUNT} catégories`;
+
 const deckNames: Record<string, string> = Object.fromEntries(
   decksMeta.decks.map((d) => [d.id, d.name]),
 );

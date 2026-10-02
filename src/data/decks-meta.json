@@ -6,7 +6,7 @@
       "description": "Budget des armées, renseignement, gendarmerie",
       "icon": "⚔️",
       "color": "#3B82F6",
-      "cardCount": 19,
+      "cardCount": 20,
       "image": "/categories/defense.svg",
       "type": "main"
     },
@@ -56,7 +56,7 @@
       "description": "Police, gendarmerie, tribunaux, prisons",
       "icon": "⚖️",
       "color": "#14B8A6",
-      "cardCount": 18,
+      "cardCount": 19,
       "image": "/categories/justice.svg",
       "type": "main"
     },
@@ -116,7 +116,7 @@
       "description": "France 2030, spatial, IA, quantique",
       "icon": "🚀",
       "color": "#A855F7",
-      "cardCount": 18,
+      "cardCount": 20,
       "image": "/categories/numerique.svg",
       "type": "main"
     },
@@ -126,7 +126,7 @@
       "description": "TVA, IR, IS, CSG, impôts locaux",
       "icon": "💰",
       "color": "#EAB308",
-      "cardCount": 18,
+      "cardCount": 20,
       "image": "/categories/recettes.svg",
       "type": "main"
     },
@@ -136,7 +136,7 @@
       "description": "Formation, primes, aides à l'emploi",
       "icon": "🏢",
       "color": "#0EA5E9",
-      "cardCount": 18,
+      "cardCount": 19,
       "image": "/categories/emploi.svg",
       "type": "main"
     },
@@ -166,7 +166,7 @@
       "description": "Combien coûte l'Europe ? Combien rapporte-t-elle ?",
       "icon": "🇪🇺",
       "color": "#3B82F6",
-      "cardCount": 10,
+      "cardCount": 11,
       "type": "thematic"
     },
     {
@@ -175,7 +175,7 @@
       "description": "Les dépenses qui auraient dû mourir mais qui persistent",
       "icon": "💀",
       "color": "#64748B",
-      "cardCount": 10,
+      "cardCount": 11,
       "type": "thematic"
     },
     {
@@ -184,7 +184,7 @@
       "description": "Le coût du conflit pour la France depuis février 2022",
       "icon": "🇺🇦",
       "color": "#0EA5E9",
-      "cardCount": 10,
+      "cardCount": 11,
       "type": "thematic"
     }
   ]
