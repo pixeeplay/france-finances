@@ -50,7 +50,7 @@ export function AmountQuiz({ card, onAnswer, onContinue }: AmountQuizProps) {
       data-testid="amount-quiz"
     >
       <div className="flex items-center justify-between gap-3">
-        <p className="kicker rounded-full bg-warning/15 px-3 py-1 text-warning">Mini-quiz · avant de voir la carte</p>
+        <p className="kicker rounded-full bg-warning/15 px-3 py-1 text-warning">Avant de voir la carte</p>
         {!answered && (
           <button
             type="button"
