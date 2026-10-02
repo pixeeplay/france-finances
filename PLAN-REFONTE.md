@@ -192,3 +192,4 @@ Phase 3  (plus tard) Feed / dossiers éditoriaux
   - GitHub : pas d'organisation ; l'accès admin passe en priorité par les emails de `ADMIN_EMAILS` (email vérifié du compte GitHub, via l'API `/user/emails`, scope `user:email`).
   - `ADMIN_EMAILS` reste en secours (comptes hors domaine).
 - [ ] Migration de prod qui supprimerait la table `waitlist` : décision humaine avant exécution (export préalable des inscrits).
+- [ ] **Simulateur** : sélecteur « Par mois / Par an » sur tous les montants (saisie et résultats), conservé dans l'URL.
