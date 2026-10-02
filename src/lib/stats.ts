@@ -1,6 +1,7 @@
 import type { Session, Vote, Archetype } from "@/types";
 import { computeSessionResult, type determineArchetype } from "@/lib/archetype";
 import { DAILY_DECK_ID } from "@/lib/daily";
+import { applyQuizAnswer, EMPTY_QUIZ_STATS, type QuizStats } from "@/lib/quiz";
 import {
   computeUnlockedLevel,
   countSessionsByLevel,
@@ -46,6 +47,8 @@ export interface GlobalStats {
   totalCutBillions: number;
   /** Sessions terminees par niveau ("1" | "2" | "3"), cumul jamais purge */
   sessionsPerLevel?: Record<string, number>;
+  /** Mini-quiz "a ton avis, combien ?" */
+  quiz?: QuizStats;
 }
 
 export interface PlayerProfile {
@@ -301,6 +304,14 @@ export function updatePlayerAvatar(emoji: string): void {
   const profile = getPlayerProfile();
   profile.customAvatar = emoji;
   setItem(PROFILE_KEY, profile);
+}
+
+/** Enregistre une reponse au mini-quiz et retourne les stats mises a jour */
+export function recordQuizAnswer(correct: boolean): QuizStats {
+  const stats = getGlobalStats();
+  const quiz = applyQuizAnswer(stats.quiz ?? EMPTY_QUIZ_STATS, correct);
+  setItem(STATS_KEY, { ...stats, quiz });
+  return quiz;
 }
 
 /** Sessions terminees par niveau (cumul + historique local) */

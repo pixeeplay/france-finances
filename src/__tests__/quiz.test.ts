@@ -1,0 +1,157 @@
+import { describe, it, expect, beforeEach, vi } from "vitest";
+import { render, screen, fireEvent } from "@testing-library/react";
+import { createElement } from "react";
+import {
+  applyQuizAnswer,
+  buildQuizOptions,
+  EMPTY_QUIZ_STATS,
+  formatAmount,
+  getQuizIndexes,
+  isCorrectAnswer,
+  QUIZ_OPTION_COUNT,
+  roundSignificant,
+} from "@/lib/quiz";
+import { getGlobalStats, recordQuizAnswer } from "@/lib/stats";
+import { ACHIEVEMENTS } from "@/lib/achievements";
+import { AmountQuiz } from "@/components/AmountQuiz";
+import type { GlobalStats } from "@/lib/stats";
+import decksData from "@/data";
+import type { Card } from "@/types";
+
+vi.mock("@/lib/analytics", () => ({ track: vi.fn() }));
+
+function card(id: string, amountBillions: number): Card {
+  return {
+    id,
+    title: `Carte ${id}`,
+    subtitle: "",
+    description: "",
+    amountBillions,
+    costPerCitizen: 0,
+    deckId: "defense",
+    icon: "",
+    source: "Cour des comptes",
+    level: 1,
+  };
+}
+
+describe("roundSignificant / formatAmount", () => {
+  it("rounds to 2 significant digits", () => {
+    expect(roundSignificant(12.345)).toBe(12);
+    expect(roundSignificant(0.04567)).toBe(0.046);
+    expect(roundSignificant(1260)).toBe(1300);
+    expect(roundSignificant(0)).toBe(0);
+  });
+
+  it("formats millions below 1 Md€", () => {
+    expect(formatAmount(0.45)).toBe("450 M€");
+    expect(formatAmount(0.03)).toBe("30 M€");
+    expect(formatAmount(12.5)).toBe("12,5 Md€");
+  });
+});
+
+describe("getQuizIndexes", () => {
+  it("returns no quiz for short sessions", () => {
+    expect(getQuizIndexes(Array.from({ length: 5 }, (_, i) => card(`c-0${i}`, 1)))).toEqual([]);
+  });
+
+  it("uses the configured positions", () => {
+    expect(getQuizIndexes(Array.from({ length: 10 }, (_, i) => card(`c-0${i}`, 1)))).toEqual([1, 5]);
+  });
+
+  it("skips cards without a usable amount", () => {
+    const cards = Array.from({ length: 10 }, (_, i) => card(`c-0${i}`, i === 1 ? 0 : 1));
+    expect(getQuizIndexes(cards)).toEqual([2, 5]);
+  });
+});
+
+describe("buildQuizOptions", () => {
+  it("returns 4 distinct options with exactly one correct, deterministically", () => {
+    const c = card("def-01", 13);
+    const options = buildQuizOptions(c);
+    expect(options).toHaveLength(QUIZ_OPTION_COUNT);
+    expect(options.filter((o) => o.correct)).toHaveLength(1);
+    expect(new Set(options.map((o) => o.label)).size).toBe(QUIZ_OPTION_COUNT);
+    expect(buildQuizOptions(c)).toEqual(options);
+    const correctIndex = options.findIndex((o) => o.correct);
+    expect(isCorrectAnswer(options, correctIndex)).toBe(true);
+    expect(isCorrectAnswer(options, (correctIndex + 1) % 4)).toBe(false);
+    expect(isCorrectAnswer(options, 99)).toBe(false);
+  });
+
+  it("works for every real card with a positive amount", () => {
+    for (const c of (decksData.cards as Card[]).filter((x) => x.amountBillions > 0)) {
+      const options = buildQuizOptions(c);
+      expect(options).toHaveLength(QUIZ_OPTION_COUNT);
+      expect(new Set(options.map((o) => o.label)).size).toBe(QUIZ_OPTION_COUNT);
+      expect(options.every((o) => o.billions > 0)).toBe(true);
+    }
+  });
+});
+
+describe("quiz stats", () => {
+  it("tracks streaks", () => {
+    let s = EMPTY_QUIZ_STATS;
+    for (const ok of [true, true, false, true, true, true]) s = applyQuizAnswer(s, ok);
+    expect(s).toEqual({ answered: 6, correct: 5, currentStreak: 3, bestStreak: 3 });
+  });
+
+  it("is persisted in the global stats", () => {
+    localStorage.clear();
+    recordQuizAnswer(true);
+    recordQuizAnswer(false);
+    expect(getGlobalStats().quiz).toEqual({ answered: 2, correct: 1, currentStreak: 0, bestStreak: 1 });
+  });
+});
+
+describe("comprehension badges", () => {
+  const base: GlobalStats = {
+    xp: 0,
+    totalSessions: 0,
+    totalCards: 0,
+    categoriesPlayed: [],
+    sessionsPerDeck: {},
+    auditsN3: 0,
+    totalKeptBillions: 0,
+    totalCutBillions: 0,
+  };
+  const badge = (id: string) => ACHIEVEMENTS.find((a) => a.id === id)!;
+
+  it("unlocks on correct answers and streaks", () => {
+    const stats = { ...base, quiz: { answered: 8, correct: 5, currentStreak: 2, bestStreak: 4 } };
+    expect(badge("quiz_ordre_grandeur").check(stats, [])).toBe(true);
+    expect(badge("quiz_serie").check(stats, [])).toBe(false);
+    expect(badge("quiz_serie").progress(stats, [])).toBe(80);
+    expect(badge("quiz_expert").progress(stats, [])).toBe(20);
+    expect(badge("quiz_expert").category).toBe("comprehension");
+  });
+
+  it("handles players without quiz data", () => {
+    expect(badge("quiz_ordre_grandeur").check(base, [])).toBe(false);
+    expect(badge("quiz_ordre_grandeur").progress(base, [])).toBe(0);
+  });
+});
+
+describe("AmountQuiz", () => {
+  beforeEach(() => vi.clearAllMocks());
+
+  it("reveals the answer once and lets the player continue", () => {
+    const c = card("def-01", 13);
+    const onAnswer = vi.fn();
+    const onContinue = vi.fn();
+    render(createElement(AmountQuiz, { card: c, onAnswer, onContinue }));
+
+    expect(screen.getByRole("heading", { name: "À ton avis, combien ?" })).toBeInTheDocument();
+    const wrong = buildQuizOptions(c).find((o) => !o.correct)!;
+    fireEvent.click(screen.getByRole("button", { name: wrong.label }));
+    expect(onAnswer).toHaveBeenCalledWith(false);
+    expect(screen.getByTestId("amount-quiz")).toHaveTextContent("c'était 13");
+
+    // Second click is ignored
+    fireEvent.click(screen.getByRole("button", { name: wrong.label }));
+    expect(onAnswer).toHaveBeenCalledTimes(1);
+
+    fireEvent.click(screen.getByRole("button", { name: "Voir la carte" }));
+    expect(onContinue).toHaveBeenCalled();
+  });
+});

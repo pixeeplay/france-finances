@@ -366,6 +366,42 @@ describe("SwipeStack", () => {
     });
   });
 
+  describe("amount quiz", () => {
+    it("asks for an estimate before revealing the 2nd card and blocks votes meanwhile", async () => {
+      const cards = Array.from({ length: 6 }, (_, i) => makeCard(`def-0${i}`));
+
+      render(<SwipeStack cards={cards} deckId="defense" deckName="Defense" />);
+      await waitFor(() => {
+        expect(useGameStore.getState().session).not.toBeNull();
+      });
+      expect(screen.queryByTestId("amount-quiz")).not.toBeInTheDocument();
+
+      fireEvent.click(screen.getByTestId("swipe-keep-def-00"));
+      expect(await screen.findByTestId("amount-quiz")).toBeInTheDocument();
+
+      // Keyboard votes are disabled while the quiz is open
+      fireEvent.keyDown(window, { key: "ArrowRight" });
+      expect(useGameStore.getState().session!.votes).toHaveLength(1);
+
+      fireEvent.click(screen.getAllByRole("button", { name: /Md€|M€/ })[0]);
+      fireEvent.click(screen.getByRole("button", { name: "Voir la carte" }));
+      expect(screen.queryByTestId("amount-quiz")).not.toBeInTheDocument();
+      expect(JSON.parse(localStorage.getItem("trnc:stats") ?? "{}").quiz.answered).toBe(1);
+    });
+
+    it("is not shown at level 3", async () => {
+      const cards = Array.from({ length: 6 }, (_, i) => makeCard(`def-0${i}`));
+      render(<SwipeStack cards={cards} deckId="defense" deckName="Defense" level={3} />);
+      await waitFor(() => {
+        expect(useGameStore.getState().session).not.toBeNull();
+      });
+      act(() => {
+        useGameStore.getState().voteAndAdvance("def-00", "keep");
+      });
+      expect(screen.queryByTestId("amount-quiz")).not.toBeInTheDocument();
+    });
+  });
+
   describe("screen reader", () => {
     it("renders an sr-only live region with card info", () => {
       const cards = [makeCard("c1"), makeCard("c2")];

@@ -16,6 +16,9 @@ import { useKeyboardSwipe } from "@/hooks/useKeyboardSwipe";
 import { useCommunityVotes } from "@/hooks/useCommunityVotes";
 import { computeCutBillions } from "@/lib/sessionFeedback";
 import { SwipeFeedbackToast, SessionCutCounter, type LastVote } from "./SwipeFeedback";
+import { AmountQuiz } from "./AmountQuiz";
+import { getQuizIndexes } from "@/lib/quiz";
+import { recordQuizAnswer } from "@/lib/stats";
 import type { Card, VoteDirection, GameMode } from "@/types";
 
 interface SwipeStackProps {
@@ -88,6 +91,25 @@ export function SwipeStack({
   const currentIndex = session?.currentIndex ?? 0;
   const totalCards = cards.length;
 
+  // Mini-quiz "A ton avis, combien ?" before revealing some cards (levels 1-2)
+  const quizIndexes = useMemo(() => (level < 3 ? getQuizIndexes(cards) : []), [cards, level]);
+  const [quizzedCardIds, setQuizzedCardIds] = useState<ReadonlySet<string>>(() => new Set());
+  const quizCard = cards[currentIndex];
+  const quizActive =
+    !!quizCard && quizIndexes.includes(currentIndex) && !quizzedCardIds.has(quizCard.id);
+  const handleQuizAnswer = useCallback(
+    (correct: boolean) => {
+      if (!quizCard) return;
+      recordQuizAnswer(correct);
+      track("quiz_answer", { cardId: quizCard.id, correct });
+    },
+    [quizCard]
+  );
+  const handleQuizContinue = useCallback(() => {
+    if (!quizCard) return;
+    setQuizzedCardIds((prev) => new Set(prev).add(quizCard.id));
+  }, [quizCard]);
+
   const handleSwipe = useCallback(
     (direction: VoteDirection) => {
       const card = cards[currentIndex];
@@ -116,7 +138,7 @@ export function SwipeStack({
 
   const handleButtonVote = useCallback(
     (direction: VoteDirection) => {
-      if (!cards[currentIndex] || isAnimating.current) return;
+      if (!cards[currentIndex] || isAnimating.current || quizActive) return;
       isAnimating.current = true;
       if (cardRef.current) {
         cardRef.current.triggerSwipe(direction);
@@ -124,12 +146,12 @@ export function SwipeStack({
         handleSwipe(direction);
       }
     },
-    [currentIndex, cards, handleSwipe]
+    [currentIndex, cards, handleSwipe, quizActive]
   );
 
   useKeyboardSwipe({
     onVote: handleButtonVote,
-    enabled: !!cards[currentIndex],
+    enabled: !!cards[currentIndex] && !quizActive,
     level,
   });
 
@@ -228,7 +250,9 @@ export function SwipeStack({
 
       {/* Screen reader announcement */}
       <div className="sr-only" aria-live="polite" aria-atomic="true">
-        {currentCard
+        {currentCard && quizActive
+          ? `Carte ${currentIndex + 1} sur ${totalCards} : mini-quiz, à ton avis, combien coûte ${currentCard.title} ?`
+          : currentCard
           ? `Carte ${currentIndex + 1} sur ${totalCards} : ${currentCard.title}, ${currentCard.amountBillions} milliards d'euros.`
           : "Session terminée."}
       </div>
@@ -261,6 +285,15 @@ export function SwipeStack({
           counts={communityCounts}
           cutBillions={currentSavings}
         />
+
+        {quizActive && quizCard && (
+          <AmountQuiz
+            key={quizCard.id}
+            card={quizCard}
+            onAnswer={handleQuizAnswer}
+            onContinue={handleQuizContinue}
+          />
+        )}
 
         <AnimatePresence>
           {nextCardInPile && (
