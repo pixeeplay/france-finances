@@ -9,7 +9,7 @@ Le joueur swipe des cartes de depenses budgetaires francaises :
 
 ## Contenu
 
-- **370 cartes** reparties en **19 decks** (16 categories + 3 thematiques)
+- **369 cartes** reparties en **19 decks** (16 categories + 3 thematiques)
 - **16 archetypes** budgetaires (6 L1, 6 L2, 4 L3)
 - **19 badges** de categorie + **12 achievements** generaux
 
@@ -21,14 +21,15 @@ Le joueur swipe des cartes de depenses budgetaires francaises :
 
 ## Stack technique
 
-- **Framework** : Next.js 15 (App Router, RSC)
-- **UI** : Tailwind CSS 4 + shadcn/ui
+- **Framework** : Next.js 16 (App Router, RSC) + React 19
+- **UI** : Tailwind CSS 4, composants maison
 - **Animations** : framer-motion (drag, spring, transforms)
 - **State** : Zustand (store de session de jeu)
 - **Auth** : NextAuth.js v5 (Google + GitHub), trustHost: true
 - **DB** : PostgreSQL + Drizzle ORM (graceful degradation sans DB)
-- **PWA** : serwist (service worker, offline fallback)
-- **Tests** : Vitest + Testing Library (273 tests, coverage 87%)
+- **PWA** : serwist (service worker, offline fallback ; build prod via webpack)
+- **Monitoring** : Sentry
+- **Tests** : Vitest + Testing Library (294 tests, coverage lignes ~89%) + E2E Playwright
 - **CI** : GitHub Actions (lint + type-check + build + test --coverage + E2E + docker), Husky + lint-staged
 - **Deploy** : Docker (output: standalone) via Coolify
 
@@ -36,21 +37,37 @@ Le joueur swipe des cartes de depenses budgetaires francaises :
 
 ```bash
 npm install
+cp .env.example .env.local   # puis completer les variables
 npm run dev
 ```
 
-Le serveur de dev demarre sur http://localhost:3000.
+Le serveur de dev demarre sur http://localhost:3000. Sans `DATABASE_URL`, le jeu fonctionne en mode localStorage.
+
+## Variables d'environnement
+
+Voir `.env.example`. A noter :
+
+| Variable                      | Role                                                                                                                 |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `DATABASE_URL`                | PostgreSQL (optionnelle)                                                                                             |
+| `AUTH_SECRET`                 | Secret NextAuth                                                                                                      |
+| `GOOGLE_CLIENT_*`, `GITHUB_*` | Fournisseurs OAuth                                                                                                   |
+| `ADMIN_EMAILS`                | Emails autorises sur `/pixee-admin` et les routes analytics admin (virgules, insensible a la casse). Vide = personne |
+| `ANALYTICS_SECRET`            | Acces programmatique (cron) a `/api/analytics/dashboard` et `/api/analytics/purge`                                   |
 
 ## Scripts
 
-| Commande             | Description                      |
-| -------------------- | -------------------------------- |
-| `npm run dev`        | Serveur de dev (Turbopack)       |
-| `npm run build`      | Build production                 |
-| `npm run start`      | Serveur de production            |
-| `npm run lint`       | ESLint                           |
-| `npm run test`       | Tests Vitest (+ coverage v8)     |
-| `npm run db:migrate` | Appliquer les migrations Drizzle |
+| Commande              | Description                                    |
+| --------------------- | ---------------------------------------------- |
+| `npm run dev`         | Serveur de dev (Turbopack)                     |
+| `npm run build`       | Build production (webpack, requis par serwist) |
+| `npm run start`       | Serveur de production                          |
+| `npm run lint`        | ESLint                                         |
+| `npm run test`        | Tests Vitest (+ coverage v8)                   |
+| `npm run type-check`  | TypeScript (tsc --noEmit)                      |
+| `npm run test:e2e`    | Tests E2E Playwright                           |
+| `npm run db:generate` | Generer une migration Drizzle                  |
+| `npm run db:migrate`  | Appliquer les migrations Drizzle               |
 
 ## Build Docker
 
@@ -64,17 +81,17 @@ docker run -p 3000:3000 france-finances
 ```
 src/
   app/              # Pages (App Router, route group (game))
-    api/            # API routes (health, sessions, ranking, analytics...)
+    api/            # API routes (health, sessions, ranking, community, me, stats, analytics, og)
     (game)/         # Game pages (jeu, profil, classement, resultats, partage)
     categories/     # Pages categorie
     contribuer/     # Page contribuer (guide contributeur)
     a-propos/       # Page a propos
-    landing/        # Landing page
+    page.tsx        # Landing page
+    pixee-admin/    # Dashboard analytics (ADMIN_EMAILS)
   components/       # Composants React (SwipeCard, SwipeStack, CardDetail...)
-    ui/             # shadcn/ui
     landing/        # Composants landing page
   data/             # Cartes (cards/*.json) et decks (decks-meta.json)
-  db/               # Schema Drizzle + migrations
+  db/               # Schema Drizzle (migrations dans drizzle/)
   stores/           # Zustand stores
   hooks/            # Hooks custom (barrel export)
   lib/              # Utils, analytics, achievements (barrel export)
@@ -83,7 +100,7 @@ src/
 
 ## Donnees
 
-370 cartes, 19 decks (16 categories + 3 thematiques). Montants en milliards d'euros (Md EUR), sources officielles (PLF/LFSS 2025-2026, Cour des comptes, Senat, DREES).
+369 cartes, 19 decks (16 categories + 3 thematiques). Montants en milliards d'euros (Md EUR), sources officielles (PLF/LFSS 2025-2026, Cour des comptes, Senat, DREES).
 
 ## Deploy
 
