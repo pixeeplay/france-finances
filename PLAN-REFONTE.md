@@ -139,3 +139,8 @@ Phase 3  (plus tard) Feed / dossiers éditoriaux
 ## 4. Pour reprendre
 
 1. « Lance le workflow multi-agents des Phases 1 et 2 de PLAN-REFONTE.md ». Garder l'ordre D, puis A, B, C et E en parallèle.
+
+## 5. Avant le déploiement de la refonte
+
+1. **Exporter la table `waitlist` en prod** avant tout `npm run db:migrate`. La migration `drizzle/0002_drop_waitlist.sql` fait un `DROP TABLE IF EXISTS "waitlist"` et efface définitivement les emails inscrits. Exemple : `psql "$DATABASE_URL" -c "\copy waitlist TO 'waitlist-$(date +%F).csv' CSV HEADER"`, puis conserver le fichier hors du serveur.
+2. Seulement ensuite, appliquer les migrations (`npm run db:migrate`), qui restent manuelles : elles ne sont pas lancées au déploiement.

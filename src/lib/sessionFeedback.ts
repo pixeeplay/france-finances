@@ -65,15 +65,10 @@ export function communityAgreement(
   return { percent: Math.round((same / total) * 100), total };
 }
 
-const billionsFormatter = new Intl.NumberFormat("fr-FR", {
+const percentFormatter = new Intl.NumberFormat("fr-FR", {
   minimumFractionDigits: 0,
   maximumFractionDigits: 1,
 });
-
-/** Formate un montant en milliards : 12.35 -> "12,4 Md€" */
-export function formatBillions(value: number): string {
-  return `${billionsFormatter.format(value)} Md€`;
-}
 
 /** Meme format que POST /api/sessions (ex. "def-01") */
 const CARD_ID_REGEX = /^[a-z]{2,4}-\d{2,3}$/;
@@ -95,6 +90,6 @@ export function parseCommunityCardIds(raw: string | null): string[] | null {
 /** Texte factuel optionnel sur l'evolution de la depense (champ trend) */
 export function trendFact(card: Card): string | null {
   if (card.trend === undefined || !Number.isFinite(card.trend) || card.trend === 0) return null;
-  const abs = billionsFormatter.format(Math.abs(card.trend));
+  const abs = percentFormatter.format(Math.abs(card.trend));
   return card.trend > 0 ? `En hausse de ${abs} % sur 5 ans` : `En baisse de ${abs} % sur 5 ans`;
 }

@@ -43,11 +43,6 @@ function keyToUtc(key: string): number {
   return Date.UTC(y, m - 1, d);
 }
 
-/** Decale une cle de date de `days` jours (calendrier, sans effet d'heure d'ete). */
-export function shiftDateKey(key: string, days: number): string {
-  return new Date(keyToUtc(key) + days * DAY_MS).toISOString().slice(0, 10);
-}
-
 /** Nombre de jours de `from` a `to` (negatif si `to` est avant). */
 export function daysBetween(from: string, to: string): number {
   return Math.round((keyToUtc(to) - keyToUtc(from)) / DAY_MS);

@@ -281,5 +281,41 @@ describe("useSync", () => {
         expect.stringContaining("db-session-1")
       );
     });
-  });
+      it("preserves quiz stats and the cumulative level counter when recomputing stats", async () => {
+      mockUseSession.mockReturnValue({
+        data: { user: { id: "user-1", name: "Test", email: "test@test.com" } },
+        status: "authenticated",
+      });
+      mockGetSessions.mockReturnValue([]);
+      const quiz = { answered: 7, correct: 5, currentStreak: 2, bestStreak: 4 };
+      mockGetGlobalStats.mockReturnValue({
+        xp: 0, totalSessions: 0, totalCards: 0, categoriesPlayed: [], sessionsPerDeck: {},
+        auditsN3: 0, totalKeptBillions: 0, totalCutBillions: 0,
+        // 5 sessions N1 played long ago (history purged), cumulative counter kept
+        sessionsPerLevel: { "1": 5 },
+        quiz,
+      });
+
+      const dbSession = (id: string, level: 1 | 2 | 3) => ({
+        id, deckId: "defense", level, archetypeId: "gardien", archetypeName: "Le Gardien",
+        totalDurationMs: 60000, keepCount: 8, cutCount: 2, totalCards: 10,
+        totalKeptBillions: 40, totalCutBillions: 10, date: "2026-03-01T10:00:00Z", votes: [],
+      });
+      globalThis.fetch = vi.fn(() =>
+        Promise.resolve(new Response(JSON.stringify({
+          sessions: [dbSession("db-1", 2), dbSession("db-2", 2), dbSession("db-3", 1)],
+        }), { status: 200 }))
+      );
+
+      renderHook(() => useSync());
+      await vi.advanceTimersByTimeAsync(200);
+
+      const statsCall = localStorageMock.setItem.mock.calls.find(([key]) => key === "trnc:stats");
+      expect(statsCall).toBeDefined();
+      const stats = JSON.parse(statsCall![1]);
+      expect(stats.quiz).toEqual(quiz);
+      expect(stats.sessionsPerLevel).toEqual({ "1": 5, "2": 2, "3": 0 });
+      expect(stats.totalSessions).toBe(3);
+    });
+});
 });

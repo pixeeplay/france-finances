@@ -10,6 +10,11 @@ export const BUDGET_TARGET_MAX = 200;
 /** Decks exclus : couper une recette n'est pas une economie */
 const EXCLUDED_DECKS: readonly string[] = ["recettes"];
 
+/** Le mode budget a-t-il un sens pour ce deck ? (couper une recette n'est pas une economie) */
+export function isBudgetEligibleDeck(deckId: string): boolean {
+  return !EXCLUDED_DECKS.includes(deckId);
+}
+
 export interface BudgetChallengeConstraints {
   /** Aucune carte ne doit permettre d'atteindre l'objectif a elle seule */
   maxCardBillions: number;
@@ -46,12 +51,24 @@ export function drawBudgetChallengeCards(
   count: number = BUDGET_CHALLENGE_CARD_COUNT,
 ): Card[] {
   const { maxCardBillions, minTotalBillions } = budgetChallengeConstraints(target);
-  const eligible = cards.filter(
-    (c) => !EXCLUDED_DECKS.includes(c.deckId) && c.amountBillions > 0 && c.amountBillions <= maxCardBillions,
-  );
-  // Deck trop pauvre (ex. une petite categorie) : on se rabat sur toutes les cartes non exclues
+  const base = cards.filter((c) => isBudgetEligibleDeck(c.deckId));
+  // Deck entierement exclu (ex. recettes) : pas de defi possible, on tire quand meme
+  // des cartes pour ne jamais produire une session vide
+  if (base.length === 0) return seededShuffle(cards, rng).slice(0, count);
+
+  const eligible = base.filter((c) => c.amountBillions > 0 && c.amountBillions <= maxCardBillions);
+  // Deck trop pauvre (ex. une petite categorie) : on complete avec les plus petites cartes
+  // restantes, pour ne laisser entrer une "coupe magique" qu'en dernier recours
   const pool =
-    eligible.length >= count ? eligible : cards.filter((c) => !EXCLUDED_DECKS.includes(c.deckId));
+    eligible.length >= count
+      ? eligible
+      : [
+          ...eligible,
+          ...base
+            .filter((c) => !eligible.includes(c))
+            .sort((a, b) => a.amountBillions - b.amountBillions)
+            .slice(0, count - eligible.length),
+        ];
   const shuffled = seededShuffle(pool, rng);
   const picked = shuffled.slice(0, count);
   const rest = shuffled.slice(count).sort((a, b) => b.amountBillions - a.amountBillions);

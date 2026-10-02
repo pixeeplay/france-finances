@@ -11,7 +11,6 @@ import {
   getParisDateKey,
   INITIAL_DAILY_PROGRESS,
   isValidDateKey,
-  shiftDateKey,
   type DailyResult,
 } from "@/lib/daily";
 import { useDailyStore } from "@/stores/dailyStore";
@@ -19,6 +18,12 @@ import decksData from "@/data";
 import type { Card } from "@/types";
 
 const allCards = decksData.cards as Card[];
+
+/** Decale une cle de date de `days` jours (calendrier UTC) */
+function shiftDateKey(key: string, days: number): string {
+  const [y, m, d] = key.split("-").map(Number);
+  return new Date(Date.UTC(y, m - 1, d + days)).toISOString().slice(0, 10);
+}
 
 function result(dateKey: string, extra: Partial<DailyResult> = {}): DailyResult {
   return { dateKey, directions: ["cut", "keep"], cutBillions: 3, totalBillions: 10, ...extra };
@@ -41,10 +46,9 @@ describe("date key helpers", () => {
     expect(isValidDateKey("2026-1-2")).toBe(false);
   });
 
-  it("shifts and diffs across months, years and DST changes", () => {
-    expect(shiftDateKey("2026-10-31", 1)).toBe("2026-11-01");
-    expect(shiftDateKey("2026-01-01", -1)).toBe("2025-12-31");
-    expect(shiftDateKey("2026-10-25", 1)).toBe("2026-10-26");
+  it("diffs across months, years and DST changes", () => {
+    expect(daysBetween("2026-10-31", "2026-11-01")).toBe(1);
+    expect(daysBetween("2026-01-01", "2025-12-31")).toBe(-1);
     expect(daysBetween("2026-10-24", "2026-10-26")).toBe(2);
     expect(daysBetween("2026-10-26", "2026-10-24")).toBe(-2);
   });

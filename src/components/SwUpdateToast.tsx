@@ -11,15 +11,20 @@ export function SwUpdateToast() {
 
   useEffect(() => {
     if (!("serviceWorker" in navigator)) return;
+    // First visit: the SW takes control (clientsClaim) without any previous version,
+    // so there is nothing to refresh. Only a replaced controller is a real update.
+    const sw = navigator.serviceWorker;
+    let hadController = sw.controller !== null;
 
     function handleControllerChange() {
-      setShowToast(true);
+      if (hadController) setShowToast(true);
+      hadController = true;
     }
 
-    navigator.serviceWorker.addEventListener("controllerchange", handleControllerChange);
+    sw.addEventListener("controllerchange", handleControllerChange);
 
     return () => {
-      navigator.serviceWorker.removeEventListener("controllerchange", handleControllerChange);
+      sw.removeEventListener("controllerchange", handleControllerChange);
     };
   }, []);
 

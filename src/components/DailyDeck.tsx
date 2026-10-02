@@ -13,7 +13,8 @@ import {
   getParisDateKey,
   type DailyResult,
 } from "@/lib/daily";
-import { computeCutBillions, formatBillions } from "@/lib/sessionFeedback";
+import { computeCutBillions } from "@/lib/sessionFeedback";
+import { formatBillions } from "@/lib/format";
 import { ShareIcon } from "./ShareIcon";
 import type { Session, VoteDirection } from "@/types";
 

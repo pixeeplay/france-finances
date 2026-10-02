@@ -6,6 +6,7 @@ import {
   clampBudgetTarget,
   drawBudgetChallengeCards,
   evaluateBudgetChallenge,
+  isBudgetEligibleDeck,
   minimumCutsToReach,
 } from "@/lib/budgetChallenge";
 import { createSeededRng } from "@/lib/random";
@@ -84,6 +85,34 @@ describe("drawBudgetChallengeCards", () => {
     const pool = [card("a-01", 100), card("b-01", 3), card("rec-01", 5, "recettes")];
     const cards = drawBudgetChallengeCards(pool, 50, createSeededRng("small"));
     expect(cards.map((c) => c.id).sort()).toEqual(["a-01", "b-01"]);
+  });
+
+  it("completes a small deck with the smallest oversized cards, not the biggest", () => {
+    const pool = [
+      ...Array.from({ length: 5 }, (_, i) => card(`sml-${i}`, 2)),
+      ...Array.from({ length: 10 }, (_, i) => card(`big-${i}`, 30 + i * 10)),
+    ];
+    const cards = drawBudgetChallengeCards(pool, 50, createSeededRng("small-deck"));
+    expect(cards).toHaveLength(BUDGET_CHALLENGE_CARD_COUNT);
+    const ids = cards.map((c) => c.id);
+    for (let i = 0; i < 5; i++) expect(ids).toContain(`sml-${i}`);
+    // the 7 smallest oversized cards (30..90), never the 3 biggest (100, 110, 120)
+    expect(Math.max(...cards.map((c) => c.amountBillions))).toBe(90);
+  });
+
+  it("never returns an empty session on an excluded deck (recettes)", () => {
+    const recettes = allCards.filter((c) => c.deckId === "recettes");
+    expect(recettes.length).toBeGreaterThan(0);
+    const cards = drawBudgetChallengeCards(recettes, 20, createSeededRng("rec"));
+    expect(cards).toHaveLength(Math.min(BUDGET_CHALLENGE_CARD_COUNT, recettes.length));
+  });
+});
+
+describe("isBudgetEligibleDeck", () => {
+  it("excludes revenue decks only", () => {
+    expect(isBudgetEligibleDeck("recettes")).toBe(false);
+    expect(isBudgetEligibleDeck("defense")).toBe(true);
+    expect(isBudgetEligibleDeck("random")).toBe(true);
   });
 });
 

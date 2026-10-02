@@ -1,6 +1,18 @@
 import { test, expect, type Page } from "@playwright/test";
 
 /**
+ * Answer the "A ton avis, combien ?" mini-quiz if it is shown on the current card.
+ * The quiz blocks the vote buttons until the player picks an amount and continues.
+ */
+async function answerQuizIfPresent(page: Page) {
+  const quiz = page.getByRole("region", { name: "À ton avis, combien ?" });
+  if (!(await quiz.isVisible())) return;
+  await quiz.getByRole("button").first().click();
+  await quiz.getByRole("button", { name: "Voir la carte" }).click();
+  await expect(quiz).toBeHidden();
+}
+
+/**
  * Swipe a card via button click, retrying if the animation guard blocks it.
  * The SwipeStack uses an `isAnimating` ref that silently drops clicks.
  */
@@ -16,6 +28,7 @@ async function swipeCard(page: Page, direction: "keep" | "cut") {
 
   // Retry clicking until the state changes (animation guard may silently drop clicks)
   for (let attempt = 0; attempt < 5; attempt++) {
+    await answerQuizIfPresent(page);
     await page.getByRole("button", { name: label }).click();
 
     if (isLast) {
@@ -63,6 +76,7 @@ async function swipeCardL2(page: Page, direction: L2Direction) {
   const isLast = beforeText === "10/10";
 
   for (let attempt = 0; attempt < 5; attempt++) {
+    await answerQuizIfPresent(page);
     await page.getByRole("button", { name: label }).click();
 
     if (isLast) {
@@ -106,11 +120,12 @@ async function swipeCardL3(
 
   // Click the vote button to trigger the audit screen
   for (let attempt = 0; attempt < 5; attempt++) {
+    await answerQuizIfPresent(page);
     await page.getByRole("button", { name: label }).click();
 
     // Wait for the audit screen to appear
     try {
-      await expect(page.getByText("Audit")).toBeVisible({ timeout: 2_000 });
+      await expect(page.getByText("Audit", { exact: true })).toBeVisible({ timeout: 2_000 });
       break;
     } catch {
       await page.waitForTimeout(300);
@@ -130,7 +145,7 @@ async function swipeCardL3(
   }
 
   // Pick a recommendation
-  await page.getByRole("button", { name: recommendation }).click();
+  await page.getByRole("radio", { name: recommendation }).click();
 
   // Submit the audit
   await page.getByRole("button", { name: /Valider mon audit/i }).click();
@@ -379,7 +394,7 @@ test.describe("L3 (micro-audit) flow", () => {
     ];
     const recommendations = [
       "Maintenir le budget",
-      "Reduire de moitie",
+      "Réduire de moitié",
       "Externaliser",
       "Fusionner avec un autre poste",
       "Renforcer (+15%)",
@@ -425,10 +440,26 @@ test.describe("L3 (micro-audit) flow", () => {
     await page
       .getByRole("button", { name: "Valider cette dépense" })
       .click();
-    await expect(page.getByText("Audit")).toBeVisible({ timeout: 3_000 });
+    await expect(page.getByText("Audit", { exact: true })).toBeVisible({ timeout: 3_000 });
 
     // Click back button — should return to swipe with same card (1/10)
     await page.getByRole("button", { name: "Retour" }).click();
     await expect(page.getByTestId("progress-counter")).toHaveText("1/10", { timeout: 3_000 });
+  });
+});
+
+test.describe("Budget mode", () => {
+  test.beforeEach(async ({ page }) => {
+    await page.addInitScript(() => {
+      localStorage.setItem("trnc:onboarded", "true");
+    });
+  });
+
+  test("budget mode on the revenue deck falls back to a playable classic session", async ({
+    page,
+  }) => {
+    await page.goto("/jeu/recettes?mode=budget&target=20");
+    await expect(page.getByTestId("progress-counter")).toHaveText("1/10", { timeout: 10_000 });
+    await expect(page.getByRole("button", { name: "Valider cette dépense" })).toBeVisible();
   });
 });
