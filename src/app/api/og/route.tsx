@@ -183,7 +183,7 @@ export async function GET(request: NextRequest) {
               display: "flex",
             }}
           >
-            La Tronçonneuse de Poche — nicoquipaie.co
+            La Tronçonneuse de Poche — france-finances.com
           </div>
         </div>
       </div>

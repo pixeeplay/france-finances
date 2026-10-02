@@ -67,16 +67,22 @@ export default function AProposPage() {
             >
               PixeePlay
             </a>
-            , en partenariat avec{" "}
-            <a
-              href="https://nicoquipaie.co"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-landing-primary hover:underline"
-            >
-              nicoquipaie.co
-            </a>
             .
+          </p>
+
+          <h2 className="font-heading text-xl font-bold text-slate-900 mt-8 mb-3">
+            Les outils
+          </h2>
+          <p>
+            En plus du jeu, le site propose{" "}
+            <Link href="/chiffres" className="text-landing-primary hover:underline">
+              les chiffres des finances publiques
+            </Link>{" "}
+            (dette, déficit, budget de l&apos;État, dépense publique) et{" "}
+            <Link href="/simulateur" className="text-landing-primary hover:underline">
+              un simulateur
+            </Link>{" "}
+            des impôts et cotisations prélevés sur un salaire.
           </p>
         </div>
 

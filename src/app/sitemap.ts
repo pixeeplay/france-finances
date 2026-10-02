@@ -10,6 +10,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: baseUrl, lastModified: now, changeFrequency: "weekly", priority: 1 },
     { url: `${baseUrl}/jeu`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${baseUrl}/chiffres`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/simulateur`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/classement`, lastModified: now, changeFrequency: "daily", priority: 0.7 },
     { url: `${baseUrl}/categories`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     ...decks.map((deck) => ({

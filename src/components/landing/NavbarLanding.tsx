@@ -43,8 +43,11 @@ export function NavbarLanding() {
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-8">
-            <Link href="/#chiffres" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              Chiffres cl&eacute;s
+            <Link href="/chiffres" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+              Les chiffres
+            </Link>
+            <Link href="/simulateur" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+              Simulateur
             </Link>
             <Link href="/#comment-ca-marche" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               Comment &ccedil;a marche
@@ -133,11 +136,18 @@ export function NavbarLanding() {
         <div className="md:hidden bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 shadow-lg">
           <div className="flex flex-col px-4 py-4 gap-3">
             <Link
-              href="/#chiffres"
+              href="/chiffres"
               onClick={() => setMobileOpen(false)}
-              className="py-2 text-sm font-medium text-muted-foreground"
+              className="py-2 min-h-[44px] flex items-center text-sm font-medium text-muted-foreground"
             >
-              Chiffres cl&eacute;s
+              Les chiffres
+            </Link>
+            <Link
+              href="/simulateur"
+              onClick={() => setMobileOpen(false)}
+              className="py-2 min-h-[44px] flex items-center text-sm font-medium text-muted-foreground"
+            >
+              Simulateur
             </Link>
             <Link
               href="/#comment-ca-marche"
