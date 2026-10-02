@@ -187,11 +187,11 @@ export function SwipeStack({
     <div className="flex flex-col flex-1 min-h-0">
       {/* Header */}
       <div className="flex items-center gap-3 px-4 pt-3 pb-1">
-        <div className="flex items-center gap-2 shrink-0">
-          <span className="kicker text-muted-foreground">
+        <div className="flex items-center gap-2 min-w-0 max-w-[55%]">
+          <span className="kicker text-muted-foreground truncate" title={deckName}>
             {deckName}
           </span>
-          <span className="kicker bg-primary/20 text-primary px-2 py-0.5 rounded-full">
+          <span className="kicker bg-primary/20 text-primary px-2 py-0.5 rounded-full shrink-0">
             {gameMode === "budget" ? "Budget" : `N${level}`}
           </span>
         </div>
