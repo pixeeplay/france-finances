@@ -1,49 +1,34 @@
 # Plan de refonte -- france-finances.com
 
 **Date :** 2026-09-30
-**Contexte :** projet en pause depuis mars 2026 (Sprint 35). Le partenaire nicoquipaie.co est hors ligne et son responsable injoignable. Objectifs : rapatrier nos publications nicoquipaie, moderniser le site (sortir du look "IA générique"), enrichir le jeu.
+**Contexte :** projet en pause depuis mars 2026 (Sprint 35). Le partenaire nicoquipaie.co est hors ligne et son responsable injoignable. Objectifs : récupérer nos contributions à nicoquipaie, moderniser le site (sortir du look "IA générique"), enrichir le jeu.
 
-> Ce document est destiné à être repris depuis un environnement ayant accès au réseau (voir Phase 0).
+> Mise à jour du 2026-10-02 : la Phase 0 initiale (rapatriement par archives web) est abandonnée. Voir section 1.
 
 ---
 
-## 1. Rapatriement des publications nicoquipaie (priorité 0)
+## 1. Nos contributions à nicoquipaie (déjà en local)
 
-### Ce qu'on sait
+### Constat
 
-- Les publications suivent le format `https://nicoquipaie.co/s/<uuid>`. Exemple indexé : `https://nicoquipaie.co/s/94f61d94-78e3-48b7-b35f-aecbd2b354fb`.
-- Autres pages indexées : `https://nicoquipaie.co/feed/hot` (Tendances), `/chiffres`, `/simulateur`.
-- Les contenus étaient documentés par des sources officielles (rapports parlementaires, Cour des comptes, presse vérifiée). Exemples vus dans les résultats de recherche : la dérive de 259 M€ du projet de facturation électronique (AIFE), le budget de fonctionnement du Sénat (340 M€/an).
-- Aucune trace dans la boîte Gmail (recherche « nicoquipaie » et « Nicolas qui paie » : 0 résultat).
+- Le code source complet de nicoquipaie est en local : `/work/projects/NICOLAS/CestNicolasQuiPaye` (fork `beuzzleklair/CestNicolasQuiPaye`, upstream `lezardoloris/CestNicolasQuiPaye`).
+- **Nos contributions étaient du code, pas des publications.** 18 commits `smiollis` / `beuzzleklair` (28/02 → 05/03/2026) :
 
-### Accès réseau requis
+| Contribution                                                     | Branche / commit                                                    | Réutilisation ici                |
+| ---------------------------------------------------------------- | ------------------------------------------------------------------- | -------------------------------- |
+| Page « Les Chiffres » (finances publiques)                       | `feat/les-chiffres` (`ef34d4e`), `src/lib/constants/budget-2026.ts` | Portage → `/chiffres`            |
+| Simulateur fiscal (IR, cotisations, TVA, répartition budgétaire) | `feat/simulateur` (`52bff80`)                                       | Portage → `/simulateur`          |
+| Archive des sources officielles (68+ URL institutionnelles)      | `9d2c87e`                                                           | Agent B : `sourceUrl` précises   |
+| Infobulles d'acronymes, mode clair/sombre                        | `feat/light-mode-acronyms`                                          | Déjà présent ici (`AcronymText`) |
+| Audit (12 rapports) + 575 tests                                  | `feat/audits-et-tests-v1`                                           | Référence méthodologique         |
 
-Il faut autoriser ces domaines dans les paramètres réseau de l'environnement :
+- Les publications du site (`scripts/seed.ts`, 80 signalements « Nicolas Paie ») ont été rédigées par lezardoloris, en partie issues d'une recherche Gemini. Ce n'est pas notre contenu. Elles peuvent servir d'idées de cartes, à condition de tout re-sourcer à partir de documents officiels. Les publications ajoutées ensuite par les visiteurs n'existaient que dans la base Railway (pas d'accès).
 
-- `nicoquipaie.co`
-- `web.archive.org` et `archive.org` (API CDX Wayback)
-- `archive.ph`
+### Nettoyage des références à nicoquipaie.co
 
-### Procédure
-
-1. **Inventaire.** Via l'API CDX, lister toutes les URL archivées :
-   `http://web.archive.org/cdx/search/cdx?url=nicoquipaie.co*&output=json&fl=original,timestamp,statuscode,mimetype&collapse=urlkey`.
-   Compléter avec `archive.ph/nicoquipaie.co` et le site lui-même s'il répond encore partiellement.
-2. **Détection de l'API.** Si le site était une SPA (pages vides dans l'archive), chercher dans les bundles JS archivés les endpoints de l'API (`/api/...`, Supabase, Firebase…). Les réponses JSON archivées sont souvent plus complètes que le HTML.
-3. **Filtrage.** Garder uniquement nos publications, identifiées par auteur ou profil. Si l'auteur n'est pas identifiable, tout archiver et trier à la main.
-4. **Extraction.** Pour chaque publication : titre, texte, montants, sources (URL), date, catégorie, images.
-5. **Stockage dans le repo.**
-   - Données dans `src/data/publications/<slug>.json`, validées par un schéma Zod dans `src/types/`.
-   - Pages HTML brutes dans `archive/nicoquipaie/` (hors bundle) pour la traçabilité.
-6. **Publication.** Nouvelle rubrique `/dossiers` (liste) et `/dossiers/[slug]`, avec JSON-LD `Article`, sitemap et lien vers les cartes liées.
-7. **Nettoyage des références à nicoquipaie.co :**
-   - `src/components/landing/EcosystemSection.tsx` : section à supprimer ou à remplacer par « Dossiers ».
-   - `src/app/a-propos/page.tsx:72-77`
-   - `src/app/api/og/route.tsx:186` : texte de l'image OG.
-   - `src/app/(game)/infos/page.tsx:28`
-   - `public/les-chiffres.svg`, `le-feed.svg`, `le-simulateur.svg` : à supprimer s'ils ne sont plus utilisés.
-
-**Plan B :** si l'archive est vide, chercher des sauvegardes locales (brouillons, exports, Drive) ou des posts X qui reprenaient les publications.
+- `src/components/landing/EcosystemSection.tsx` : section à supprimer ou à remplacer par « Les Chiffres / Le Simulateur » une fois portés.
+- `src/app/a-propos/page.tsx`, `src/app/api/og/route.tsx`, `src/app/(game)/infos/page.tsx`.
+- `public/les-chiffres.svg`, `le-feed.svg`, `le-simulateur.svg` : à supprimer s'ils ne sont plus utilisés.
 
 ---
 
@@ -57,14 +42,14 @@ Il faut autoriser ces domaines dans les paramètres réseau de l'environnement :
 
 ### Jeu : ce qui est superficiel
 
-| Constat | Détail |
-| --- | --- |
+| Constat                                      | Détail                                                                                                                                                                                        |
+| -------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Les niveaux n'existent que dans la mécanique | Les 369 cartes ont `"level": 1`. L2 et L3 ne changent que les directions de swipe (4 directions, audit). On y accède uniquement par `?level=` (`src/app/(game)/jeu/[deckId]/page.tsx:66-68`). |
-| Aucun retour après un swipe | `SwipeStack.tsx` passe à la carte suivante sans révéler le vote de la communauté ni la conséquence budgétaire. |
-| Aucune rétention | Pas de deck du jour, pas de série de jours, et le tirage aléatoire n'a pas de seed (`src/lib/deckUtils.ts`). |
-| Archétype déclaratif | `src/lib/archetype.ts` se base seulement sur les pourcentages cut/keep. Il ne tient compte ni des montants ni des catégories coupées. |
-| Badges de volume | `src/lib/achievements.ts` : 19 badges « jouer N sessions du deck X » copiés-collés. Rien ne récompense la compréhension. |
-| Pédagogie passive | Aucun quiz ni aucune vérification de connaissances. |
+| Aucun retour après un swipe                  | `SwipeStack.tsx` passe à la carte suivante sans révéler le vote de la communauté ni la conséquence budgétaire.                                                                                |
+| Aucune rétention                             | Pas de deck du jour, pas de série de jours, et le tirage aléatoire n'a pas de seed (`src/lib/deckUtils.ts`).                                                                                  |
+| Archétype déclaratif                         | `src/lib/archetype.ts` se base seulement sur les pourcentages cut/keep. Il ne tient compte ni des montants ni des catégories coupées.                                                         |
+| Badges de volume                             | `src/lib/achievements.ts` : 19 badges « jouer N sessions du deck X » copiés-collés. Rien ne récompense la compréhension.                                                                      |
+| Pédagogie passive                            | Aucun quiz ni aucune vérification de connaissances.                                                                                                                                           |
 
 ### Design : signes d'un look « IA générique »
 
@@ -96,15 +81,10 @@ Il faut autoriser ces domaines dans les paramètres réseau de l'environnement :
 Environ 8 agents. Chacun travaille sur sa propre branche ou worktree, et on les fusionne dans l'ordre indiqué.
 
 ```
-Phase 0  [Rapatriement] ─────────────────────────────┐
-Phase 1  [D Assainissement] ─► [A Design] [B Données] [C Game design]  (A, B, C en parallèle)
+Phase 1  [D Assainissement] ─► [A Design] [B Données] [C Game design] [E Portage Chiffres/Simulateur]  (en parallèle)
 Phase 2  [Fact-check] [Code review] [Audit a11y/perf]
-Phase 3  (plus tard) Chiffres / Simulateur / Feed natifs
+Phase 3  (plus tard) Feed / dossiers éditoriaux
 ```
-
-### Phase 0 : Rapatriement (1 agent, réseau requis)
-
-Voir la section 1. Livrables : `src/data/publications/`, `archive/nicoquipaie/`, les routes `/dossiers`, les références à nicoquipaie.co supprimées.
 
 ### Phase 1
 
@@ -139,24 +119,23 @@ Voir la section 1. Livrables : `src/data/publications/`, `archive/nicoquipaie/`,
 - Remplacer les badges de volume par des badges de compréhension (mini-quiz « à ton avis, combien ? » avant de révéler le montant).
 - Progression L1 → L2 → L3 débloquée par le jeu, pas par l'URL.
 
+**E. Portage Chiffres / Simulateur** (en parallèle de A, B et C)
+
+- Reprendre notre code de `/work/projects/NICOLAS/CestNicolasQuiPaye` (`feat/les-chiffres`, `feat/simulateur`) et l'adapter à la stack et aux conventions de ce repo (pas de shadcn, Zustand, mobile-first, dark).
+- Routes `/chiffres` et `/simulateur`, liens depuis la landing à la place de `EcosystemSection`, sitemap, tests.
+
 ### Phase 2 : Relecture croisée
 
-- **Fact-check** : un agent contradictoire vérifie les montants et les sources des cartes (B) et des dossiers (Phase 0). Il signale aussi le ton militant.
+- **Fact-check** : un agent contradictoire vérifie les montants et les sources des cartes (B) et du portage (E). Il signale aussi le ton militant.
 - **Code review** des branches A et C (`/code-review`).
 - **Audit accessibilité et performance mobile** : Playwright + Lighthouse sur 375px, swipe à 60 fps, `prefers-reduced-motion`.
 
 ### Phase 3 : Plus tard
 
-Reconstruire en natif les rubriques de l'ex-écosystème nicoquipaie :
-
-- **Les Chiffres** : vue d'ensemble du budget.
-- **Le Simulateur** : « ta contribution aux finances publiques ».
-- **Le Feed** : dossiers et débats.
+- **Le Feed / Dossiers** : rubrique éditoriale native, avec nos propres contenus sourcés.
 
 ---
 
 ## 4. Pour reprendre
 
-1. Ouvrir une session dont l'environnement autorise les domaines de la section 1.
-2. Pointer l'agent sur ce fichier : « Exécute la Phase 0 de PLAN-REFONTE.md ».
-3. Enchaîner avec « Lance le workflow multi-agents des Phases 1 et 2 de PLAN-REFONTE.md ». Garder l'ordre D, puis A, B et C en parallèle.
+1. « Lance le workflow multi-agents des Phases 1 et 2 de PLAN-REFONTE.md ». Garder l'ordre D, puis A, B, C et E en parallèle.
