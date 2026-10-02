@@ -122,6 +122,27 @@ export const STATE_BUDGET_2026 = {
 } as const;
 
 /**
+ * Du produit des impôts aux recettes nettes du budget général, loi de finances
+ * pour 2026 (article d'équilibre, état A). En millions d'euros. La somme
+ * retombe exactement sur STATE_BUDGET_2026.netRevenueM (325 382 M€).
+ */
+export const STATE_REVENUE_BRIDGE_2026 = {
+  year: 2026,
+  steps: [
+    { label: "Impôts encaissés par l'État (nets des remboursements)", amountM: 363_603 },
+    { label: "Recettes non fiscales (dividendes, amendes, redevances…)", amountM: 28_900 },
+    { label: "Reversé aux collectivités locales", amountM: -44_824 },
+    { label: "Reversé à l'Union européenne", amountM: -28_440 },
+    { label: "Fonds de concours et attributions de produits", amountM: 6_143 },
+  ],
+  source: {
+    label: "Légifrance — Loi n° 2026-103 du 19 février 2026 de finances pour 2026, article d'équilibre",
+    url: "https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000053509625",
+    date: "2026-02",
+  } satisfies DataSource,
+} as const;
+
+/**
  * Recettes fiscales nettes de l'État prévues pour 2026 (projet de loi de
  * finances initial, avant navette), nettes des remboursements et dégrèvements.
  * « Autres recettes fiscales » regroupe les accises sur les énergies (ex-TICPE),
@@ -275,6 +296,7 @@ export const EU_COMPARISON: ChiffresDataset<EuCountry> = {
 export function getChiffresSources(): DataSource[] {
   const all: DataSource[] = [
     STATE_BUDGET_2026.source,
+    STATE_REVENUE_BRIDGE_2026.source,
     STATE_MISSIONS_2026.source,
     STATE_TAX_REVENUE_2026.source,
     INSEE_APU_2025,

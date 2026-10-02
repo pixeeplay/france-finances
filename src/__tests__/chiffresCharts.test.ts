@@ -226,3 +226,11 @@ describe("pièces de 10 € et couleurs COFOG", () => {
     expect(datumColor({ tone: "blue", color: "#123456" })).toBe("#123456");
   });
 });
+
+describe("STATE_REVENUE_BRIDGE_2026", () => {
+  it("retombe exactement sur les recettes nettes du budget de l'État", async () => {
+    const { STATE_REVENUE_BRIDGE_2026, STATE_BUDGET_2026 } = await import("@/data/chiffres");
+    const sum = STATE_REVENUE_BRIDGE_2026.steps.reduce((acc, s) => acc + s.amountM, 0);
+    expect(sum).toBe(STATE_BUDGET_2026.netRevenueM);
+  });
+});

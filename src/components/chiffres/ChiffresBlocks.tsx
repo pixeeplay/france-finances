@@ -276,3 +276,54 @@ export function Per1000Coins({
     </div>
   );
 }
+
+/**
+ * Passage pas à pas d'un montant à un autre (ex. des impôts encaissés aux
+ * recettes nettes de l'État). Les étapes négatives sont en rouge.
+ */
+export function BridgeList({
+  title,
+  steps,
+  totalLabel,
+  totalM,
+  format,
+}: {
+  title: string;
+  steps: readonly { label: string; amountM: number }[];
+  totalLabel: string;
+  totalM: number;
+  format: (amountBn: number) => string;
+}) {
+  return (
+    <figure className="rounded-2xl border border-border bg-card p-4 sm:p-5">
+      <figcaption className="font-heading text-base sm:text-lg font-bold text-foreground mb-3">{title}</figcaption>
+      <ol className="space-y-2">
+        {steps.map((step, idx) => {
+          const negative = step.amountM < 0;
+          return (
+            <li key={step.label} className="flex items-baseline gap-3 text-sm">
+              <span
+                className={`w-5 shrink-0 text-center font-bold ${negative ? "text-red-600 dark:text-red-400" : "text-emerald-600 dark:text-emerald-400"}`}
+                aria-hidden="true"
+              >
+                {idx === 0 ? "" : negative ? "−" : "+"}
+              </span>
+              <span className="flex-1 min-w-0 text-foreground">{step.label}</span>
+              <span className="shrink-0 font-semibold tabular-nums text-foreground">
+                <span className="sr-only">{negative ? "moins " : idx === 0 ? "" : "plus "}</span>
+                {format(Math.abs(step.amountM) / 1000)}
+              </span>
+            </li>
+          );
+        })}
+        <li className="flex items-baseline gap-3 border-t border-border pt-2 text-sm">
+          <span className="w-5 shrink-0 text-center font-bold text-foreground" aria-hidden="true">=</span>
+          <span className="flex-1 min-w-0 font-bold text-foreground">{totalLabel}</span>
+          <span className="shrink-0 font-heading text-base font-extrabold tabular-nums text-emerald-600 dark:text-emerald-400">
+            {format(totalM / 1000)}
+          </span>
+        </li>
+      </ol>
+    </figure>
+  );
+}

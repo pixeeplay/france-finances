@@ -6,6 +6,7 @@ import { UiIcon } from "@/components/icons/UiIcon";
 import { SourceNote, SourcesLine } from "@/components/chiffres/DataBlocks";
 import {
   BigStat,
+  BridgeList,
   ChartFigure,
   DataTable,
   Per1000Coins,
@@ -27,6 +28,7 @@ import {
   STATE_BUDGET_2026,
   STATE_MISSIONS_2026,
   STATE_TAX_REVENUE_2026,
+  STATE_REVENUE_BRIDGE_2026,
   getChiffresSources,
 } from "@/data/chiffres";
 import {
@@ -92,7 +94,6 @@ export default function ChiffresPage() {
   const interestPerCapita = perCapita(PUBLIC_FINANCES.interestBn, POPULATION_2026);
   const spendingTotal = sumAmounts(PUBLIC_SPENDING_BY_FUNCTION.items);
   const missionsTotal = sumAmounts(STATE_MISSIONS_2026.items);
-  const taxTotal = sumAmounts(STATE_TAX_REVENUE_2026.items);
   const debtGain = debtChangePoints(DEBT_TIMELINE.items);
   const firstDebt = DEBT_TIMELINE.items[0];
 
@@ -109,7 +110,12 @@ export default function ChiffresPage() {
         ? { ...d, tone: "slate" as const }
         : d,
   );
-  const revenue = toShares(STATE_TAX_REVENUE_2026.items, fmtBn, REVENUE_TONES);
+  // Répartition pour 100 € d'impôts : la part de chaque impôt, sans total qui
+  // contredirait les recettes de la loi votée (le détail vient du PLF initial).
+  const revenue = toShares(STATE_TAX_REVENUE_2026.items, fmtBn, REVENUE_TONES).map((d) => ({
+    ...d,
+    display: `${d.pct} €`,
+  }));
   const debt = debtSeries(DEBT_TIMELINE.items);
   const interestComparison = perCapitaComparison(
     [
@@ -341,19 +347,28 @@ export default function ChiffresPage() {
           </div>
           <SourceNote source={STATE_BUDGET_2026.source} period="loi de finances pour 2026" />
 
+          <BridgeList
+            title="Des impôts encaissés aux recettes nettes de l'État"
+            steps={STATE_REVENUE_BRIDGE_2026.steps}
+            totalLabel="Recettes nettes du budget de l'État"
+            totalM={STATE_BUDGET_2026.netRevenueM}
+            format={formatBillionsExact}
+          />
+          <SourceNote source={STATE_REVENUE_BRIDGE_2026.source} period="loi de finances pour 2026" />
+
           <ChartFigure
             id="recettes"
-            title="D'où viennent les impôts de l'État"
-            subtitle={`Recettes fiscales nettes prévues pour 2026 : ${formatBillionsExact(taxTotal)}`}
-            description={`Recettes fiscales nettes prévues pour 2026 : ${formatBillionsExact(taxTotal)}, après remboursements et dégrèvements. Une partie est ensuite reversée aux collectivités et à l'Union européenne.`}
+            title="Sur 100 € d'impôts encaissés par l'État"
+            subtitle="Part de chaque grand impôt, d'après le projet de loi de finances pour 2026"
+            description="Sur 100 € d'impôts encaissés par l'État en 2026 : la part de la TVA, de l'impôt sur le revenu, de l'impôt sur les sociétés et des autres impôts, d'après la répartition prévue dans le projet de loi de finances."
             height={DONUT_CHART_HEIGHT}
-            chart={<RevenueDonutChart data={revenue} centerValue={fmtBn0(taxTotal)} centerLabel="recettes fiscales" />}
+            chart={<RevenueDonutChart data={revenue} centerValue="100 €" centerLabel="d'impôts" />}
             legend={<ShareLegend items={revenue} />}
             table={
               <DataTable
-                caption="Recettes fiscales nettes de l'État prévues pour 2026"
-                columns={[{ header: "Impôt" }, { header: "Montant", numeric: true }, { header: "Part", numeric: true }]}
-                rows={revenue.map((r) => [r.label, r.display, `${r.pct} %`])}
+                caption="Répartition des recettes fiscales nettes de l'État prévues pour 2026"
+                columns={[{ header: "Impôt" }, { header: "Montant prévu (PLF)", numeric: true }, { header: "Sur 100 €", numeric: true }]}
+                rows={revenue.map((r) => [r.label, fmtBn(r.value), r.display])}
               />
             }
             source={STATE_TAX_REVENUE_2026.source}
