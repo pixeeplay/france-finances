@@ -37,57 +37,59 @@ export function ContentProfilePanel({ session }: { session: Session }) {
   const multiDeck = profile.decks.length > 1;
 
   return (
-    <div className="px-4 py-2" data-testid="content-profile">
-      <div className="rounded-2xl border border-border bg-card p-5">
-        <p className="text-base font-bold mb-1">Ce que tes choix pèsent</p>
-        <p className="text-xs text-muted-foreground">
+    <section className="px-4 py-5 border-b border-border" data-testid="content-profile">
+      <div>
+        <p className="kicker text-muted-foreground">En montants</p>
+        <h3 className="mt-1 mb-2 text-xl font-semibold">Ce que tes choix pèsent</h3>
+        <p className="text-sm text-muted-foreground leading-relaxed">
           Tu as remis en question {cardCutPercent}&nbsp;% des cartes, soit {amountPercent}&nbsp;% des montants en jeu (
           {formatBillions(profile.cutBillions)} sur {formatBillions(profile.totalBillions)}).
         </p>
 
         <div
-          className="mt-3 h-2 w-full overflow-hidden rounded-full bg-primary/30"
+          className="mt-4 flex h-3 w-full overflow-hidden rounded-sm bg-muted"
           role="img"
           aria-label={`${amountPercent} % des montants remis en question`}
         >
+          <div className="h-full bg-primary" style={{ width: `${Math.max(0, 100 - amountPercent)}%` }} />
           <div className="h-full bg-danger" style={{ width: `${Math.min(100, amountPercent)}%` }} />
         </div>
 
-        <dl className="mt-3 grid grid-cols-1 gap-2 text-xs">
+        <dl className="mt-4 flex flex-col divide-y divide-border border-t border-border text-sm">
           {multiDeck && profile.topCutDeck && (
-            <div className="flex justify-between gap-3">
-              <dt className="text-muted-foreground">Catégorie la plus coupée</dt>
-              <dd className="text-right font-semibold">
+            <div className="flex items-baseline justify-between gap-3 py-2">
+              <dt className="kicker text-muted-foreground">Catégorie la plus coupée</dt>
+              <dd className="text-right font-medium">
                 {deckName(profile.topCutDeck.deckId)} ({formatBillions(profile.topCutDeck.cutBillions)})
               </dd>
             </div>
           )}
           {multiDeck && profile.topKeptDeck && (
-            <div className="flex justify-between gap-3">
-              <dt className="text-muted-foreground">Catégorie la plus protégée</dt>
-              <dd className="text-right font-semibold">
+            <div className="flex items-baseline justify-between gap-3 py-2">
+              <dt className="kicker text-muted-foreground">Catégorie la plus protégée</dt>
+              <dd className="text-right font-medium">
                 {deckName(profile.topKeptDeck.deckId)} ({formatBillions(profile.topKeptDeck.keptBillions)})
               </dd>
             </div>
           )}
           {profile.largestCut && (
-            <div className="flex justify-between gap-3">
-              <dt className="text-muted-foreground">Plus grosse dépense remise en question</dt>
-              <dd className="text-right font-semibold">
+            <div className="flex items-baseline justify-between gap-3 py-2">
+              <dt className="kicker text-muted-foreground">Plus grosse dépense remise en question</dt>
+              <dd className="text-right font-medium">
                 {profile.largestCut.title} ({formatBillions(profile.largestCut.amountBillions)})
               </dd>
             </div>
           )}
           {profile.largestKept && (
-            <div className="flex justify-between gap-3">
-              <dt className="text-muted-foreground">Plus grosse dépense gardée</dt>
-              <dd className="text-right font-semibold">
+            <div className="flex items-baseline justify-between gap-3 py-2">
+              <dt className="kicker text-muted-foreground">Plus grosse dépense gardée</dt>
+              <dd className="text-right font-medium">
                 {profile.largestKept.title} ({formatBillions(profile.largestKept.amountBillions)})
               </dd>
             </div>
           )}
         </dl>
       </div>
-    </div>
+    </section>
   );
 }

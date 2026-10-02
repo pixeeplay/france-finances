@@ -32,11 +32,11 @@ export default async function SimulateurPage({
 
   return (
     <PageShell>
-      <header className="pb-6">
-        <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+      <header className="pb-6 mb-8 border-b-2 border-foreground">
+        <p className="kicker text-muted-foreground">
           Barème {IR_YEAR} · revenus {IR_INCOME_YEAR}
         </p>
-        <h1 className="mt-2 font-heading text-3xl sm:text-4xl font-bold text-foreground">
+        <h1 className="mt-3 text-4xl sm:text-5xl font-semibold leading-[1.05] text-foreground">
           Ce qui est prélevé sur un salaire
         </h1>
         <p className="mt-4 text-base text-muted-foreground leading-relaxed">
@@ -57,7 +57,7 @@ export default async function SimulateurPage({
       <Simulator initialInput={initialInput} budgetItems={STATE_MISSIONS_2026.items} />
 
       <section aria-labelledby="sim-method-title" className="mt-12 border-t border-border pt-8">
-        <h2 id="sim-method-title" className="font-heading text-lg font-bold text-foreground mb-3">
+        <h2 id="sim-method-title" className="text-2xl font-semibold text-foreground mb-3">
           Hypothèses et limites
         </h2>
         <ul className="list-disc pl-5 space-y-2 text-sm text-muted-foreground leading-relaxed">
@@ -83,7 +83,7 @@ export default async function SimulateurPage({
           </li>
         </ul>
 
-        <h3 className="mt-6 mb-2 font-heading text-base font-semibold text-foreground">Sources</h3>
+        <h3 className="mt-8 mb-2 kicker text-muted-foreground">Sources</h3>
         <ul className="space-y-2 text-sm">
           {[...FISCAL_SOURCES, STATE_MISSIONS_2026.source].map((s) => (
             <li key={s.url}>
@@ -95,7 +95,7 @@ export default async function SimulateurPage({
               >
                 {s.label}
               </a>{" "}
-              <span className="text-muted-foreground">({s.date})</span>
+              <span className="font-mono text-xs text-muted-foreground">({s.date})</span>
             </li>
           ))}
         </ul>
