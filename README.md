@@ -10,8 +10,8 @@ Le joueur swipe des cartes de depenses budgetaires francaises :
 ## Contenu
 
 - **369 cartes** reparties en **19 decks** (16 categories + 3 thematiques)
-- **16 archetypes** budgetaires (6 L1, 6 L2, 4 L3)
-- **19 badges** de categorie + **12 achievements** generaux
+- **18 archetypes** budgetaires (8 L1, 6 L2, 4 L3)
+- **19 badges** de categorie + **12 achievements** generaux + **3 badges** de comprehension (quiz)
 
 ## 3 niveaux de profondeur
 
@@ -29,7 +29,7 @@ Le joueur swipe des cartes de depenses budgetaires francaises :
 - **DB** : PostgreSQL + Drizzle ORM (graceful degradation sans DB)
 - **PWA** : serwist (service worker, offline fallback ; build prod via webpack)
 - **Monitoring** : Sentry
-- **Tests** : Vitest + Testing Library (294 tests, coverage lignes ~89%) + E2E Playwright
+- **Tests** : Vitest + Testing Library (472 tests) + E2E Playwright
 - **CI** : GitHub Actions (lint + type-check + build + test --coverage + E2E + docker), Husky + lint-staged
 - **Deploy** : Docker (output: standalone) via Coolify
 
