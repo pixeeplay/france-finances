@@ -172,16 +172,18 @@
     "id": "rec-11",
     "title": "Taxe sur les géants du numérique (« taxe GAFAM »)",
     "subtitle": "3 % du chiffre d'affaires réalisé en France",
-    "description": "Taxe de 3 % sur le chiffre d'affaires réalisé en France par les grandes entreprises du numérique (publicité en ligne, intermédiation). Les États-Unis ont menacé de représailles commerciales. Conçue comme temporaire dans l'attente d'un accord à l'OCDE (pilier 1), elle est maintenue faute d'accord. D'autres pays européens, comme le Royaume-Uni, l'Italie et l'Espagne, appliquent des taxes similaires.",
-    "amountBillions": 0.7,
-    "costPerCitizen": 10,
+    "description": "Créée en 2019, cette taxe frappe à 3 % le chiffre d'affaires réalisé en France par les grandes entreprises du numérique (publicité en ligne, plateformes d'intermédiation). Elle a rapporté 785 M€ en 2024 ; le projet de budget 2026 prévoit 882 M€. Conçue comme temporaire dans l'attente d'un accord à l'OCDE, elle est maintenue faute d'accord. Les États-Unis ont menacé de représailles commerciales ; d'autres pays européens appliquent des taxes similaires.",
+    "amountBillions": 0.882,
+    "costPerCitizen": 13,
     "deckId": "recettes",
     "icon": "💰",
-    "source": "PLF 2026, DGFiP, OCDE",
+    "source": "Gouvernement, Évaluation des voies et moyens (tome 1) annexée au PLF 2026",
+    "sourceUrl": "https://www.assemblee-nationale.fr/dyn/contenu/visualisation/1087930/file/PLF%202026%20-%20V%26M%20TI%20-%20Evaluations%20des%20recettes.pdf",
     "year": 2026,
+    "sourceDate": "2025-10",
     "level": 3,
     "tags": ["recettes", "GAFAM", "numerique"],
-    "equivalence": "3 % du chiffre d'affaires numérique réalisé en France"
+    "equivalence": "785 M€ encaissés en 2024"
   },
   {
     "id": "rec-12",

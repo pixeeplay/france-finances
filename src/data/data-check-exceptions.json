@@ -1,20 +1,16 @@
 {
   "costPerCitizen": {
-    "emp-16": "non budgétaire : coût de mise en conformité supporté par les entreprises",
     "fre-05": "budget européen : coût par habitant = part française du financement (clé de contribution de 17,2 % en 2024, Sénat), rapportée à 69,1 M d'habitants",
     "fre-06": "budget européen : coût par habitant = part française du financement (clé de contribution de 17,2 % en 2024, Sénat), rapportée à 69,1 M d'habitants",
     "fre-07": "budget européen : coût par habitant = part française du financement (clé de contribution de 17,2 % en 2024, Sénat), rapportée à 69,1 M d'habitants",
     "fre-08": "budget européen : coût par habitant = part française du financement (clé de contribution de 17,2 % en 2024, Sénat), rapportée à 69,1 M d'habitants",
-    "fre-10": "à vérifier : montant du coût du Brexit non sourcé, coût par habitant non dérivé",
     "imm-14": "non budgétaire : transferts privés des ménages",
     "log-09": "non budgétaire : participation des employeurs (Action Logement)",
     "log-11": "non budgétaire : investissement institutionnel et privé",
-    "log-13": "non budgétaire : enjeu de marché, pas une dépense publique",
-    "log-16": "à vérifier : montant non rattaché à une dépense publique identifiée dans la source (rapport de la Fondation pour le logement)",
+    "num-13": "non budgétaire : investissements annoncés, pas une dépense publique",
     "num-16": "non budgétaire : investissement privé",
     "rec-14": "recette payée par les entreprises, pas par les habitants",
     "rec-17": "recette payée par les propriétaires concernés, pas par tous les habitants",
-    "ukr-08": "non budgétaire : avoirs gelés, pas une dépense",
-    "ukr-10": "à vérifier : le montant est exprimé en points de PIB, pas en milliards d'euros"
+    "ukr-08": "non budgétaire : avoirs immobilisés, pas une dépense"
   }
 }

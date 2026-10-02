@@ -191,18 +191,18 @@
   {
     "id": "sec-12",
     "title": "Police municipale",
-    "subtitle": "27 000 agents dans 4 500 communes",
-    "description": "Les polices municipales sont entièrement financées par les communes. La loi « Sécurité globale » (2021) a élargi leurs prérogatives. Les moyens consacrés varient fortement selon les communes, certaines grandes villes y investissant beaucoup, quand de nombreuses petites communes n'en ont pas.",
-    "amountBillions": 5,
-    "costPerCitizen": 72,
+    "subtitle": "28 161 agents dans 3 812 communes ou intercommunalités",
+    "description": "Les polices municipales sont financées par les communes et intercommunalités. Elles comptaient 28 161 agents en 2023, soit 45 % de plus qu'en 2012. Les moyens varient fortement : 1 905 communes emploient moins de trois agents, quand seules 24 grandes villes en emploient plus de 100. Selon le Sénat, l'effort du bloc communal pour ses polices municipales est estimé à 2,5 Md€ en 2023. Un projet de loi examiné en 2025-2026 vise à étendre leurs prérogatives.",
+    "amountBillions": 2.5,
+    "costPerCitizen": 36,
     "deckId": "securite",
     "icon": "🏛️",
-    "trend": 8,
-    "source": "CNFPT, DGCL, Senat",
-    "sourceUrl": "https://www.senat.fr",
+    "source": "Sénat, rapport d'information sur les polices municipales (mai 2025), DGCL",
+    "sourceUrl": "https://www.senat.fr/rap/r24-671/r24-671_mono.html",
+    "sourceDate": "2025-05-28",
     "level": 2,
     "tags": ["police municipale", "collectivites", "sécurité"],
-    "equivalence": "Des moyens très inégaux selon les communes"
+    "equivalence": "45 % d'agents en plus entre 2012 et 2023"
   },
   {
     "id": "sec-13",

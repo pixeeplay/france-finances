@@ -236,15 +236,17 @@
     "id": "agr-15",
     "title": "Irrigation et gestion de l'eau agricole",
     "subtitle": "Mega-bassines et adaptation climatique",
-    "description": "Une faible part de la surface agricole française est irriguée, bien moins qu'en Espagne. Les réserves de substitution (« méga-bassines ») cristallisent un conflit sur le partage de l'eau, illustré par les affrontements de Sainte-Soline en 2023. Le changement climatique réduit la recharge des nappes. L'agriculture est le premier secteur consommateur d'eau en France.",
-    "amountBillions": 0.5,
-    "costPerCitizen": 7,
+    "description": "L'agriculture est la première activité consommatrice d'eau en France (57 % de l'eau consommée). La surface irriguée représentait 5,8 % de la surface agricole en 2010. Pour irriguer l'été, des exploitants veulent stocker l'eau prélevée l'hiver dans des réserves de substitution (« méga-bassines »), qui suscitent de fortes oppositions. Les six agences de l'eau ont engagé en moyenne 116,7 M€ par an de 2016 à 2021 pour la gestion quantitative de l'eau.",
+    "amountBillions": 0.117,
+    "costPerCitizen": 2,
     "deckId": "agriculture",
     "icon": "🌾",
-    "source": "BRGM, OFB, Ministere Transition ecologique",
+    "source": "Cour des comptes (gestion quantitative de l'eau, juillet 2023)",
+    "sourceUrl": "https://www.ccomptes.fr/system/files/2023-07/20230717-gestion-quantitative-de-l-eau.pdf",
+    "sourceDate": "2023-07",
     "level": 3,
     "tags": ["agriculture", "eau", "irrigation"],
-    "equivalence": "L'agriculture, premier secteur consommateur d'eau"
+    "equivalence": "57 % de l'eau consommée en France sert à l'agriculture"
   },
   {
     "id": "agr-16",

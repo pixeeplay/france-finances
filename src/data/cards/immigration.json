@@ -223,16 +223,18 @@
   {
     "id": "imm-14",
     "title": "Diaspora et transferts de fonds",
-    "subtitle": "Transferts privés vers les pays d'origine",
-    "description": "Les personnes immigrées installées en France envoient chaque année plusieurs milliards d'euros vers leurs pays d'origine (Maghreb, Afrique subsaharienne, Turquie, Asie). Les frais de transfert restent élevés. Pour plusieurs pays récepteurs, ces envois représentent une part importante du PIB. Il s'agit de transferts privés, pas de dépenses publiques.",
-    "amountBillions": 12,
+    "subtitle": "Argent envoyé à l'étranger par les travailleurs",
+    "description": "Les « envois de fonds des travailleurs » mesurent l'argent que des personnes vivant et travaillant en France envoient à l'étranger, souvent à leur famille. Selon la Banque de France, leur solde a atteint 17,6 Md€ en 2025, après 17,4 Md€ en 2024. Il s'agit de transferts privés, pas de dépenses publiques, distincts de l'aide publique au développement.",
+    "amountBillions": 17.6,
     "costPerCitizen": 0,
     "deckId": "immigration",
     "icon": "🛂",
-    "source": "Banque mondiale, Banque de France, AFD",
+    "source": "Banque de France (balance des paiements, rapport annuel 2025)",
+    "sourceUrl": "https://www.banque-france.fr/system/files/2026-07/BDP2025_web.pdf",
+    "sourceDate": "2026-07",
     "level": 1,
     "tags": ["immigration", "transferts", "developpement"],
-    "equivalence": "Des transferts privés, distincts de l'aide publique au développement"
+    "equivalence": "17,6 Md€ envoyés à l'étranger en 2025 (solde)"
   },
   {
     "id": "imm-15",

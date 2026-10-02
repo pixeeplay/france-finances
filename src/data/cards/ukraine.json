@@ -81,17 +81,19 @@
   },
   {
     "id": "ukr-06",
-    "title": "Surcoût énergétique indirect (impact du conflit)",
-    "subtitle": "Un coût indirect important, sans chiffrage officiel unique",
-    "description": "La guerre a provoqué une flambée des prix du gaz, du pétrole et de l'électricité en Europe. La France importait environ 17 % de son gaz de Russie en 2021 et s'est tournée vers le gaz naturel liquéfié. Au-delà des 72 Md€ de mesures de soutien chiffrées par la Cour des comptes, le surcoût supporté par les ménages, les entreprises et les collectivités n'a pas fait l'objet d'une évaluation officielle unique : le montant affiché est un ordre de grandeur.",
-    "amountBillions": 45,
-    "costPerCitizen": 651,
+    "title": "Hausse de la facture énergétique en 2022",
+    "subtitle": "Une facture multipliée par 2,5 en un an",
+    "description": "En 2022, dans le contexte de la guerre en Ukraine et d'une moindre disponibilité des réacteurs nucléaires, les prix de gros de l'électricité et du gaz ont été multipliés par 2,6. La facture énergétique de la France (ce qu'elle paie pour importer de l'énergie, moins ce qu'elle exporte) est passée de 46,5 Md€ en 2021 à 117,4 Md€ en 2022, soit 70,9 Md€ de plus. Les ménages ont payé l'énergie 20,6 % plus cher qu'en 2021, malgré le bouclier tarifaire ; le gaz a renchéri de 87 % pour l'industrie.",
+    "amountBillions": 70.9,
+    "costPerCitizen": 1026,
     "deckId": "ukraine",
     "icon": "🔥",
-    "source": "INSEE, Banque de France, RTE",
+    "source": "SDES, ministère de la Transition écologique (bilan énergétique de la France pour 2022)",
+    "sourceUrl": "https://www.statistiques.developpement-durable.gouv.fr/bilan-energetique-de-la-france-pour-2022",
+    "sourceDate": "2024-05-29",
     "level": 1,
     "tags": ["Ukraine", "énergie", "surcoût"],
-    "equivalence": "Un ordre de grandeur, sans évaluation officielle consolidée"
+    "equivalence": "Une facture énergétique passée de 46,5 Md€ à 117,4 Md€ en un an"
   },
   {
     "id": "ukr-07",
@@ -113,16 +115,18 @@
   {
     "id": "ukr-08",
     "title": "Sanctions et gel des avoirs russes",
-    "subtitle": "Des avoirs immobilisés, pas une dépense publique",
-    "description": "L'Union européenne a immobilisé environ 210 Md€ d'actifs de la Banque centrale de Russie, principalement chez le dépositaire Euroclear en Belgique ; une partie est détenue en France. Les revenus exceptionnels générés par ces avoirs servent à financer l'aide à l'Ukraine, notamment le remboursement du prêt de 45 Md$ décidé par le G7 en 2024. L'utilisation des avoirs eux-mêmes fait débat. La France applique les régimes de sanctions européens contre des personnes et entités russes.",
+    "subtitle": "Des fonds immobilisés, pas une dépense publique",
+    "description": "Depuis 2022, près de 22 Md€ de fonds de la Banque centrale de Russie sont immobilisés en France : ils ne sont pas gelés, mais leur gestion est interdite. Les avoirs gelés de personnes et d'entités russes sanctionnées (comptes, biens immobiliers, navires) atteignaient 1,35 Md€ en novembre 2022. Le produit de ces fonds sert à soutenir l'Ukraine. Leur confiscation fait débat : le Gouvernement invoque le risque d'une déstabilisation des marchés financiers.",
     "amountBillions": 22,
     "costPerCitizen": 0,
     "deckId": "ukraine",
     "icon": "🧊",
-    "source": "Conseil de l'UE, Trésor français, Commission européenne",
+    "source": "Ministère de l'Économie, réponses à des questions de sénateurs (décembre 2022 et mars 2025)",
+    "sourceUrl": "https://www.senat.fr/questions/base/2022/qSEQ220802112.html",
+    "sourceDate": "2022-12-22",
     "level": 1,
     "tags": ["Ukraine", "sanctions", "avoirs russes"],
-    "equivalence": "Environ 210 Md€ d'actifs russes immobilisés dans l'UE"
+    "equivalence": "Près de 22 Md€ de fonds de la Banque centrale russe immobilisés en France"
   },
   {
     "id": "ukr-09",
@@ -144,14 +148,16 @@
     "id": "ukr-10",
     "title": "Conséquences économiques globales du conflit",
     "subtitle": "Un coût indirect difficile à chiffrer",
-    "description": "Au-delà des aides directes, le conflit a pesé sur l'économie française : flambée des prix de l'énergie, inflation importée, perturbation des chaînes d'approvisionnement, hausse des taux d'intérêt. En mars 2022, la Banque de France a abaissé ses prévisions de croissance et présenté deux scénarios (2,8 % à 3,4 % pour 2022). Ce coût indirect n'a pas d'évaluation officielle consolidée : le montant affiché est un ordre de grandeur exprimé en points de PIB.",
-    "amountBillions": 0.75,
-    "costPerCitizen": 600,
+    "description": "En mars 2022, la Banque de France a présenté deux scénarios pour l'économie française : une croissance de 3,4 % en 2022 dans le scénario « conventionnel », de 2,8 % dans le scénario « dégradé ». Dans ce dernier, la perte de richesse produite (PIB) cumulée en 2024 était estimée à un peu moins de 2 points par rapport aux prévisions d'avant-guerre. Le principal canal est la hausse des prix des matières premières importées, qui pèse sur l'activité et augmente les prix. Il s'agit de projections faites au début de la guerre, pas d'un bilan chiffré.",
+    "amountBillions": 0,
+    "costPerCitizen": 0,
     "deckId": "ukraine",
     "icon": "📉",
-    "source": "FMI, Banque de France, INSEE, OFCE",
+    "source": "Banque de France (projections macroéconomiques, mars 2022)",
+    "sourceUrl": "https://publications.banque-france.fr/projections-macroeconomiques-mars-2022",
+    "sourceDate": "2022-03",
     "level": 3,
     "tags": ["Ukraine", "économie", "croissance", "inflation"],
-    "equivalence": "Un coût indirect exprimé en points de PIB, sans chiffrage officiel consolidé"
+    "equivalence": "Croissance prévue en 2022 : 3,4 % ou 2,8 % selon le scénario"
   }
 ]

@@ -384,18 +384,18 @@
   {
     "id": "ene-14",
     "title": "Bornes de recharge véhicules électriques",
-    "subtitle": "Objectif 400 000 bornes en 2030",
-    "description": "Le programme ADVENIR, financé par les certificats d'économies d'énergie, subventionne l'installation de points de recharge. Le réseau public dépasse 150 000 points de recharge, pour un objectif de 400 000 en 2030. La fin de la vente des voitures thermiques neuves dans l'UE, prévue en 2035, rend ce déploiement nécessaire.",
-    "amountBillions": 0.7,
-    "costPerCitizen": 10,
+    "subtitle": "Le programme Advenir, financé par les primes énergie",
+    "description": "Le programme Advenir, financé par les certificats d'économies d'énergie (une obligation imposée aux fournisseurs d'énergie), subventionne l'installation de points de recharge pour voitures électriques, notamment dans les copropriétés, les parkings ouverts au public et sur la voirie des collectivités. Au 31 mars 2024, 138 548 points de recharge avaient fait l'objet d'une demande d'aide, pour 224 M€ engagés. Le programme est reconduit jusqu'à fin 2027 avec un budget de 200 M€, apporté par six fournisseurs d'énergie.",
+    "amountBillions": 0.2,
+    "costPerCitizen": 3,
     "deckId": "energie",
     "icon": "🔋",
-    "trend": 20,
-    "source": "AVERE France, ADVENIR, France 2030",
-    "sourceUrl": "https://advenir.mobi/",
+    "source": "Ministère de la Transition écologique (convention du programme Advenir 2025-2027), Avere-France",
+    "sourceUrl": "https://www.ecologie.gouv.fr/sites/default/files/documents/Advenir_2027_Convention.pdf",
+    "sourceDate": "2024",
     "level": 3,
     "tags": ["electrique", "transport", "infrastructure"],
-    "equivalence": "Objectif : 400 000 points de recharge publics en 2030"
+    "equivalence": "Environ 1 600 € d'aide engagée en moyenne par point de recharge"
   },
   {
     "id": "ene-15",
@@ -450,17 +450,18 @@
   {
     "id": "ene-18",
     "title": "Pompes à chaleur (aides)",
-    "subtitle": "MaPrimeRénov' + primes énergie (CEE) + TVA réduite",
-    "description": "La France vise 1 million de pompes à chaleur installées par an. Les aides (MaPrimeRénov', certificats d'économies d'énergie, TVA réduite) peuvent couvrir une large part du coût d'installation. Le marché a reculé en 2024. Une partie importante des appareils vendus en France est fabriquée par des groupes étrangers, ce qui alimente le débat sur le soutien à la production européenne.",
-    "amountBillions": 1.5,
-    "costPerCitizen": 22,
+    "subtitle": "MaPrimeRénov' et primes énergie (CEE)",
+    "description": "En 2023, MaPrimeRénov' et les certificats d'économies d'énergie ont financé de l'ordre de 1 Md€ d'aides à l'installation de pompes à chaleur. Pour une pompe à chaleur air/eau d'un coût moyen de 14 700 €, les aides vont de 2 500 € à 9 000 € selon les revenus du ménage. Le Gouvernement vise une production d'un million de pompes à chaleur en France dès 2027 et veut réorienter les aides vers les appareils français et européens les plus performants.",
+    "amountBillions": 1,
+    "costPerCitizen": 14,
     "deckId": "energie",
     "icon": "🌡️",
-    "trend": -15,
-    "source": "ADEME, Uniclima, MaPrimeRenov', France 2030",
+    "source": "Ministère de l'Économie (plan d'action pour produire 1 million de pompes à chaleur, 2024), Anah",
+    "sourceUrl": "https://www.entreprises.gouv.fr/files/files/presse/2024/1768-dp-plan-daction-pour-produire-1-million-de-pompes-a-chaleur-en-france.pdf",
+    "sourceDate": "2024-04",
     "level": 2,
     "tags": ["énergie", "pac", "renovation"],
-    "equivalence": "Objectif : 1 million de pompes à chaleur par an"
+    "equivalence": "Jusqu'à 9 000 € d'aide pour une pompe à chaleur de 14 700 €"
   },
   {
     "id": "ene-19",
@@ -482,15 +483,17 @@
   {
     "id": "ene-20",
     "title": "Géothermie profonde",
-    "subtitle": "Agence de la transition écologique (ADEME) + Fonds chaleur + France 2030",
-    "description": "L'Île-de-France dispose de l'un des plus importants réseaux de chaleur géothermique d'Europe. La géothermie profonde est une énergie renouvelable disponible en continu, sans intermittence. Les pouvoirs publics visent une forte accélération d'ici 2030, avec le soutien du Fonds chaleur de l'Ademe (800 M€ en 2026). Un forage coûte plusieurs millions d'euros et comporte un risque géologique.",
-    "amountBillions": 0.2,
-    "costPerCitizen": 3,
+    "subtitle": "Une chaleur renouvelable encore marginale",
+    "description": "La géothermie ne couvre qu'environ 1 % de la consommation de chaleur en France. Fin 2022, 78 installations de géothermie profonde produisaient de la chaleur, dont 58 en Île-de-France, surtout pour alimenter des réseaux de chaleur urbains. Le plan d'action de 2023 vise à économiser à terme 100 TWh de gaz par an grâce à la géothermie. Le principal soutien public est le Fonds chaleur de l'Ademe (800 M€ en 2026, toutes énergies confondues) ; aucun montant propre à la géothermie n'est publié.",
+    "amountBillions": 0,
+    "costPerCitizen": 0,
     "deckId": "energie",
     "icon": "🌋",
-    "source": "ADEME, BRGM, AFPG",
+    "source": "Ministère de la Transition écologique (plan d'action géothermie, 2023), Sénat (avis sur le PLF 2026)",
+    "sourceUrl": "https://www.ecologie.gouv.fr/sites/default/files/documents/20231222_DP_Plan-action-geothermie.pdf",
+    "sourceDate": "2023-02",
     "level": 3,
     "tags": ["énergie", "geothermie", "renouvelable"],
-    "equivalence": "Fonds chaleur de l'Ademe : 800 M€ en 2026"
+    "equivalence": "58 des 78 installations de géothermie profonde se trouvent en Île-de-France"
   }
 ]

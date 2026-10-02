@@ -188,18 +188,18 @@
   {
     "id": "edu-12",
     "title": "Cantine scolaire",
-    "subtitle": "8 millions d'élèves à la cantine chaque jour",
-    "description": "Environ 8 millions d'élèves déjeunent chaque jour à la cantine, gérée par les communes (écoles), les départements (collèges) et les régions (lycées). Le prix payé par les familles est souvent modulé selon leurs revenus et ne couvre qu'une partie du coût. La loi EGalim impose 50 % de produits durables et de qualité, dont 20 % de bio.",
-    "amountBillions": 7,
-    "costPerCitizen": 101,
+    "subtitle": "720 millions de repas servis par les communes",
+    "description": "Les communes et intercommunalités assurent la restauration des écoles primaires, de la petite enfance et de certaines personnes âgées : environ 720 millions de repas en 2017. Selon la Cour des comptes, leurs charges de fonctionnement pour ce service atteignaient 5,3 Md€ en 2018, à 85 % pour le scolaire et le périscolaire (hors collèges et lycées). Dans les collectivités contrôlées, un repas coûtait en moyenne 7,33 € en 2017, pour un tarif de 2,76 € en moyenne : le contribuable local en finance l'essentiel. La loi EGalim impose 50 % de produits durables et de qualité, dont 20 % de bio.",
+    "amountBillions": 5.3,
+    "costPerCitizen": 77,
     "deckId": "education",
     "icon": "🍽️",
-    "trend": 3,
-    "source": "CNFCE, ADEME, Ministere de l'Education nationale",
-    "sourceUrl": "https://www.education.gouv.fr",
+    "source": "Cour des comptes (rapport public annuel 2020, restauration collective des communes)",
+    "sourceUrl": "https://www.ccomptes.fr/system/files/2020-02/20200225-07-TomeI-services-communaux-restauration-collective.pdf",
+    "sourceDate": "2020-02",
     "level": 2,
     "tags": ["cantine", "alimentation", "école"],
-    "equivalence": "Une part du coût du repas prise en charge par les collectivités"
+    "equivalence": "Un repas à 7,33 € facturé 2,76 € en moyenne aux familles"
   },
   {
     "id": "edu-13",

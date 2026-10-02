@@ -246,17 +246,17 @@
     "id": "def-16",
     "title": "Opération Sentinelle",
     "subtitle": "Sécurité intérieure militaire",
-    "description": "Depuis les attentats de 2015, l'armée déploie en permanence des milliers de soldats sur le territoire national : gares, sites touristiques, lieux de culte, grands événements. Le surcoût annuel est estimé à environ 250 M€ (primes, hébergement, transport). Le dispositif, conçu comme temporaire, est maintenu depuis plus de dix ans et pèse sur l'entraînement de l'armée de Terre.",
+    "description": "Depuis les attentats de janvier 2015, l'armée déploie des soldats sur le territoire national pour protéger gares, sites touristiques, lieux de culte et grands événements. En 2022, le dispositif reposait sur 3 000 militaires en permanence, renforçables jusqu'à 10 000. Le ministère des Armées ne comptabilise que les surcoûts (131,5 M€ en 2020) ; en coût complet, la Cour des comptes estime l'opération à 252 M€ en 2020 et à plus de 2 Md€ cumulés de 2015 à 2020.",
     "amountBillions": 0.25,
     "costPerCitizen": 4,
     "deckId": "defense",
     "icon": "🛡️",
-    "trend": -5,
-    "source": "Ministere des Armees, Senat rapport OPINT, PLF 2026",
-    "year": 2026,
+    "source": "Cour des comptes (rapport sur l'opération Sentinelle, 2022)",
+    "sourceUrl": "https://www.ccomptes.fr/sites/default/files/2023-10/20220912-S2022-1439-operation-sentinelle_0.pdf",
+    "sourceDate": "2022-09",
     "level": 3,
     "tags": ["défense", "sécurité-interieure", "sentinelle"],
-    "equivalence": "Un dispositif maintenu depuis 2015"
+    "equivalence": "3 000 soldats déployés en permanence sur le territoire (2022)"
   },
   {
     "id": "def-17",
@@ -279,16 +279,18 @@
   {
     "id": "def-18",
     "title": "Forces spéciales",
-    "subtitle": "Commandement des opérations spéciales (COS)",
-    "description": "Le Commandement des opérations spéciales (COS) coordonne les unités de forces spéciales des trois armées (1er RPIMa, 13e RDP, commandos marine, CPA 10, etc.). La France fait partie des rares nations européennes capables de projeter des forces spéciales à l'échelle mondiale ; elles ont été très engagées au Sahel. Le montant affiché est une estimation, le budget du COS n'étant pas publié séparément.",
-    "amountBillions": 1,
-    "costPerCitizen": 14,
+    "subtitle": "Un budget non publié séparément",
+    "description": "Le Commandement des opérations spéciales (COS), créé en 1992, coordonne les unités de forces spéciales des trois armées (1er RPIMa, 13e RDP, commandos marine, CPA 10, etc.). Ces unités ont été très engagées au Sahel. Leur budget n'est pas isolé dans les documents budgétaires : il n'existe pas de montant officiel publié. La programmation militaire 2014-2019 avait prévu de porter leurs effectifs d'environ 3 000 à 4 000 militaires.",
+    "amountBillions": 0,
+    "costPerCitizen": 0,
     "deckId": "defense",
     "icon": "🎯",
-    "source": "Senat commission défense, LPM 2024-2030",
-    "level": 2,
+    "source": "Sénat, rapport d'information sur les forces spéciales (2014)",
+    "sourceUrl": "https://www.senat.fr/rap/r13-525/r13-525_mono.html",
+    "sourceDate": "2014-05-13",
+    "level": 3,
     "tags": ["défense", "forces-speciales", "cos"],
-    "equivalence": "Un budget non isolé dans les documents budgétaires"
+    "equivalence": "Un objectif de 4 000 militaires fixé en 2014, contre 3 000 auparavant"
   },
   {
     "id": "def-19",
@@ -310,16 +312,18 @@
   },
   {
     "id": "def-20",
-    "title": "Bases militaires outre-mer",
-    "subtitle": "Troupes dans les outre-mer et bases à l'étranger",
-    "description": "La France maintient des forces de souveraineté dans ses territoires ultramarins et des forces de présence à l'étranger (Djibouti, Émirats arabes unis, Gabon). Après le retrait du Sahel et la fermeture de plusieurs bases en Afrique de l'Ouest, le dispositif africain a été fortement réduit. Des renforts ont été envoyés en Nouvelle-Calédonie lors des troubles de 2024.",
-    "amountBillions": 1.7,
-    "costPerCitizen": 25,
+    "title": "Forces armées dans les outre-mer",
+    "subtitle": "Cinq commandements, des Antilles au Pacifique",
+    "description": "La France stationne en permanence des « forces de souveraineté » dans ses territoires ultramarins : Antilles, Guyane, sud de l'océan Indien, Nouvelle-Calédonie et Polynésie française. Selon le Sénat, elles comptaient 8 473 équivalents temps plein en 2021 et leurs crédits atteignaient 946 M€ en 2020, personnels civils compris. Elles protègent ces territoires, surveillent leurs immenses espaces maritimes et interviennent lors des catastrophes naturelles. Les bases à l'étranger (Djibouti, Émirats arabes unis) ne sont pas comptées dans ce montant.",
+    "amountBillions": 0.946,
+    "costPerCitizen": 14,
     "deckId": "defense",
     "icon": "🌍",
-    "source": "Ministere des Armees, LPM, Senat",
-    "level": 2,
+    "source": "Sénat, commission des finances (rapport sur la présence militaire dans les outre-mer)",
+    "sourceUrl": "https://www.senat.fr/rap/r22-012/r22-012_mono.html",
+    "sourceDate": "2022-10-05",
+    "level": 3,
     "tags": ["défense", "outre-mer", "bases"],
-    "equivalence": "Des forces présentes dans les trois océans"
+    "equivalence": "Environ 8 500 militaires et civils répartis dans cinq territoires"
   }
 ]

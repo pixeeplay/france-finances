@@ -277,16 +277,18 @@
     "id": "eta-17",
     "title": "Formation des hauts fonctionnaires (INSP, ex-ENA)",
     "subtitle": "L'école qui a remplacé l'ENA en 2022",
-    "description": "L'Institut national du service public (INSP), qui a remplacé l'ENA en 2022, forme chaque année quelques dizaines de hauts fonctionnaires recrutés sur concours. Les instituts régionaux d'administration (IRA) forment les attachés. La réforme visait à diversifier le recrutement, notamment via des classes préparatoires « Talents ».",
-    "amountBillions": 0.1,
-    "costPerCitizen": 2,
+    "description": "L'Institut national du service public (INSP), créé le 1er janvier 2022 à la place de l'ENA, recrute et forme les cadres supérieurs de l'État. Sa subvention de l'État s'élevait à 40,6 M€ dans le projet de budget 2025. Il compte 455 emplois, dont 155 élèves en formation initiale, 102 stagiaires des cycles préparatoires et 198 agents. Selon le Secrétariat général du Gouvernement, l'institut forme près de 6 000 personnes par an en comptant la formation continue.",
+    "amountBillions": 0.0406,
+    "costPerCitizen": 0.6,
     "deckId": "etat",
     "icon": "🎓",
-    "source": "INSP, PLF 2026, Cour des comptes",
-    "year": 2026,
+    "source": "Assemblée nationale, rapport spécial sur le PLF 2025 (Direction de l'action du Gouvernement)",
+    "sourceUrl": "https://www.assemblee-nationale.fr/dyn/docs/RAPPANR5L17B0468-tIII-a14.raw",
+    "year": 2025,
+    "sourceDate": "2024-10-19",
     "level": 3,
     "tags": ["état", "ena", "formation"],
-    "equivalence": "L'ENA remplacée par l'INSP en 2022"
+    "equivalence": "Un agent pour 30 personnes formées, selon le Secrétariat général du Gouvernement"
   },
   {
     "id": "eta-18",
@@ -325,16 +327,17 @@
   {
     "id": "eta-20",
     "title": "Véhicules de l'État",
-    "subtitle": "Parc automobile des administrations",
-    "description": "L'État possède plusieurs dizaines de milliers de véhicules (hors armées et forces de sécurité). La loi impose une part croissante de véhicules à faibles émissions lors des renouvellements. Les véhicules de fonction avec chauffeur sont réservés aux ministres, préfets et principaux responsables d'administration.",
-    "amountBillions": 1.5,
-    "costPerCitizen": 22,
+    "subtitle": "Un parc qui passe à l'électrique",
+    "description": "En dehors des véhicules opérationnels (armées, douanes, sécurité, routes), l'État et ses établissements publics ont acquis 5 682 véhicules en 2021, dont 74 % électriques ou hybrides rechargeables, contre 30 % en 2020. La part du diesel dans leur parc est passée de 85 % en 2015 à 57,3 % en septembre 2022. Depuis 2026, au moins 37,4 % des véhicules achetés ou loués doivent être électriques ou à hydrogène. Le coût global du parc n'est pas publié.",
+    "amountBillions": 0,
+    "costPerCitizen": 0,
     "deckId": "etat",
     "icon": "🚗",
-    "source": "DIE, UGAP, PLF 2026",
-    "year": 2026,
-    "level": 2,
+    "source": "Ministère des Transports, réponse à une question écrite au Sénat (février 2023)",
+    "sourceUrl": "https://www.senat.fr/questions/base/2023/qSEQ230104758.html",
+    "sourceDate": "2023-02-02",
+    "level": 3,
     "tags": ["état", "vehicules", "logistique"],
-    "equivalence": "Une part croissante de véhicules électriques imposée lors des renouvellements"
+    "equivalence": "74 % de véhicules électriques ou hybrides rechargeables parmi les achats de 2021"
   }
 ]

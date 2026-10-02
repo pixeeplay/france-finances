@@ -118,15 +118,17 @@
     "id": "zom-08",
     "title": "Conventions de revitalisation",
     "subtitle": "Des conventions financées par les entreprises qui licencient",
-    "description": "Quand une entreprise d'au moins 1 000 salariés procède à un licenciement collectif affectant l'équilibre d'un bassin d'emploi, elle doit financer une convention de revitalisation, d'un montant de 2 à 4 SMIC par emploi supprimé. Ces fonds doivent favoriser la création d'emplois de substitution. Les évaluations soulignent la difficulté à mesurer les emplois réellement créés grâce à ces conventions.",
-    "amountBillions": 0.175,
-    "costPerCitizen": 3,
+    "description": "Quand une entreprise d'au moins 1 000 salariés procède à des licenciements économiques qui déséquilibrent un bassin d'emploi, elle doit financer des actions de revitalisation : au moins 2 SMIC mensuels par emploi supprimé, dans une convention signée avec le préfet. Si elle ne remplit pas ses obligations, elle verse jusqu'à 4 SMIC par emploi supprimé au budget de l'État. Selon l'IGAS, une centaine à plus de 160 conventions sont signées chaque année, pour environ 50 M€ par an. Il s'agit de fonds privés, pas de dépenses publiques.",
+    "amountBillions": 0.05,
+    "costPerCitizen": 0,
     "deckId": "zombies",
     "icon": "📋",
-    "source": "DARES, IGAS, Cour des comptes",
+    "source": "IGAS (évaluation des fonds mutualisés de revitalisation, 2024)",
+    "sourceUrl": "https://www.igas.gouv.fr/sites/igas/files/2024-10/Rapport%20Igas%20Fonds%20revitalisation.pdf",
+    "sourceDate": "2024-02",
     "level": 3,
     "tags": ["zombie", "emploi", "revitalisation"],
-    "equivalence": "2 à 4 SMIC par emploi supprimé"
+    "equivalence": "Entre 300 000 et 500 000 € par convention en moyenne"
   },
   {
     "id": "zom-09",
