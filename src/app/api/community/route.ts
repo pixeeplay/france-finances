@@ -1,14 +1,16 @@
 import type { NextRequest } from "next/server";
 import { db } from "@/db";
 import { votes } from "@/db/schema";
-import { sql } from "drizzle-orm";
+import { sql, inArray } from "drizzle-orm";
 import { withDbCheck, jsonOk, jsonError, rateLimit } from "@/lib/api-utils";
+import { parseCommunityCardIds } from "@/lib/sessionFeedback";
 
 export const dynamic = "force-dynamic";
 
 /**
  * GET /api/community
  * Returns aggregated vote counts per card.
+ * Optional `?ids=def-01,san-02` restricts the result to these cards (max 50).
  * Response: { [cardId]: { keep: N, cut: N, reinforce: N, unjustified: N, total: N } }
  */
 export async function GET(request: NextRequest) {
@@ -18,6 +20,11 @@ export async function GET(request: NextRequest) {
   const unavailable = withDbCheck();
   if (unavailable) return unavailable;
 
+  const ids = parseCommunityCardIds(new URL(request.url).searchParams.get("ids"));
+  if (ids !== null && ids.length === 0) {
+    return jsonOk({}, 60);
+  }
+
   try {
     const rows = await db!
       .select({
@@ -26,6 +33,7 @@ export async function GET(request: NextRequest) {
         count: sql<number>`count(*)::int`,
       })
       .from(votes)
+      .where(ids ? inArray(votes.cardId, ids) : undefined)
       .groupBy(votes.cardId, votes.direction);
 
     // Aggregate into a map

@@ -322,6 +322,50 @@ describe("SwipeStack", () => {
     });
   });
 
+  describe("swipe feedback", () => {
+    it("shows the cumulative cut amount and community agreement after a cut", async () => {
+      globalThis.fetch = vi.fn(() =>
+        Promise.resolve(
+          new Response(
+            JSON.stringify({ c1: { keep: 2, cut: 8, reinforce: 0, unjustified: 0, total: 10 } }),
+          ),
+        ),
+      ) as unknown as typeof fetch;
+      const cards = [makeCard("c1"), makeCard("c2"), makeCard("c3")];
+
+      render(<SwipeStack cards={cards} deckId="defense" deckName="Defense" />);
+
+      await waitFor(() => {
+        expect(useGameStore.getState().session).not.toBeNull();
+      });
+      expect(screen.getByTestId("session-cut-counter")).toHaveTextContent("0");
+
+      fireEvent.click(screen.getByTestId("swipe-cut-c1"));
+
+      await waitFor(() => {
+        expect(screen.getByTestId("swipe-feedback")).toHaveTextContent("80");
+      });
+      expect(screen.getByTestId("swipe-feedback")).toHaveTextContent("même avis");
+      expect(screen.getByTestId("session-cut-counter")).toHaveTextContent("2");
+    });
+
+    it("degrades gracefully when the community API is unavailable", async () => {
+      globalThis.fetch = vi.fn(() => Promise.reject(new Error("offline"))) as unknown as typeof fetch;
+      const cards = [makeCard("c1"), makeCard("c2")];
+
+      render(<SwipeStack cards={cards} deckId="defense" deckName="Defense" />);
+      await waitFor(() => {
+        expect(useGameStore.getState().session).not.toBeNull();
+      });
+
+      fireEvent.click(screen.getByTestId("swipe-keep-c1"));
+
+      await waitFor(() => {
+        expect(screen.getByTestId("swipe-feedback")).toHaveTextContent("Pas encore assez de votes");
+      });
+    });
+  });
+
   describe("screen reader", () => {
     it("renders an sr-only live region with card info", () => {
       const cards = [makeCard("c1"), makeCard("c2")];

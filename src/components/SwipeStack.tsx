@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useRef, useEffect } from "react";
+import { useState, useCallback, useRef, useEffect, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { AnimatePresence } from "framer-motion";
 import { SwipeCard } from "./SwipeCard";
@@ -13,6 +13,9 @@ import { useGameStore } from "@/stores/gameStore";
 import { useShallow } from "zustand/react/shallow";
 import { track } from "@/lib/analytics";
 import { useKeyboardSwipe } from "@/hooks/useKeyboardSwipe";
+import { useCommunityVotes } from "@/hooks/useCommunityVotes";
+import { computeCutBillions } from "@/lib/sessionFeedback";
+import { SwipeFeedbackToast, SessionCutCounter, type LastVote } from "./SwipeFeedback";
 import type { Card, VoteDirection, GameMode } from "@/types";
 
 interface SwipeStackProps {
@@ -130,15 +133,24 @@ export function SwipeStack({
   const currentCard = cards[currentIndex];
   const nextCardInPile = cards[currentIndex + 1];
 
-  // Budget mode: compute current savings from cut votes
-  const currentSavings = gameMode === "budget" && session
-    ? session.votes
-        .filter((v) => v.direction === "cut" || v.direction === "unjustified")
-        .reduce((sum, v) => {
-          const card = cards.find((c) => c.id === v.cardId);
-          return sum + (card?.amountBillions ?? 0);
-        }, 0)
-    : 0;
+  // Community votes for this session's cards (empty when the DB is unavailable)
+  const cardIds = useMemo(() => cards.map((c) => c.id), [cards]);
+  const { counts: communityCounts } = useCommunityVotes(cardIds);
+
+  // Cumulative amount put into question (cut + unjustified) during the session
+  const sessionVotes = session?.votes;
+  const currentSavings = useMemo(
+    () => (sessionVotes ? computeCutBillions(cards, sessionVotes) : 0),
+    [cards, sessionVotes]
+  );
+
+  // Last vote (whatever the path: swipe, buttons, detail sheet, audit) drives the feedback toast
+  const lastVote = useMemo<LastVote | null>(() => {
+    const vote = sessionVotes?.[sessionVotes.length - 1];
+    if (!vote) return null;
+    const card = cards.find((c) => c.id === vote.cardId);
+    return card ? { card, direction: vote.direction, at: vote.timestamp } : null;
+  }, [cards, sessionVotes]);
   const savingsProgress = budgetTarget ? Math.min(currentSavings / budgetTarget, 1) : 0;
   const targetReached = budgetTarget ? currentSavings >= budgetTarget : false;
 
@@ -209,6 +221,8 @@ export function SwipeStack({
         </div>
       )}
 
+      {gameMode !== "budget" && <SessionCutCounter cutBillions={currentSavings} />}
+
       {/* Screen reader announcement */}
       <div className="sr-only" aria-live="polite" aria-atomic="true">
         {currentCard
@@ -238,6 +252,12 @@ export function SwipeStack({
             </div>
           </>
         )}
+
+        <SwipeFeedbackToast
+          lastVote={lastVote}
+          counts={communityCounts}
+          cutBillions={currentSavings}
+        />
 
         <AnimatePresence>
           {nextCardInPile && (
