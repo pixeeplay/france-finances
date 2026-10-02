@@ -3,9 +3,9 @@
     "id": "cul-01",
     "title": "Budget de la Culture",
     "subtitle": "Mission « Culture » + « Médias, livre et industries culturelles »",
-    "description": "Patrimoine, spectacle vivant, musées, archéologie, création artistique. 1 200 musées, 40 000 monuments historiques, 45 sites UNESCO. Le patrimoine religieux (40% des monuments classés) coûte ~500 M€/an aux communes.",
-    "amountBillions": 4.4,
-    "costPerCitizen": 65,
+    "description": "Patrimoine, spectacle vivant, musées, archéologie, création artistique, livre et industries culturelles. Pour 2026, la mission « Culture » dispose de 3,75 Md€ de crédits de paiement (-4,3 % par rapport à 2025) et la mission « Médias, livre et industries culturelles » de 0,71 Md€. La mission Culture subventionne 72 opérateurs (Louvre, Opéra de Paris, Comédie-Française...), dont les budgets totalisent 2,5 Md€.",
+    "amountBillions": 4.46,
+    "costPerCitizen": 66,
     "deckId": "culture",
     "icon": "🎭",
     "trend": 7,
@@ -14,7 +14,8 @@
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["culture", "patrimoine", "musées"],
-    "equivalence": "Le budget Culture = 1/20e du budget Défense"
+    "equivalence": "Mission Culture : 3,75 Md€ de crédits de paiement en 2026",
+    "year": 2026
   },
   {
     "id": "cul-02",

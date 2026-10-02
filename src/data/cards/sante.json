@@ -3,7 +3,7 @@
     "id": "san-01",
     "title": "ONDAM global",
     "subtitle": "Objectif national de dépenses d'assurance maladie",
-    "description": "Plafond voté chaque année en LFSS, couvrant soins de ville, hôpitaux, médico-social. Plus gros poste de dépenses publiques, loin devant l'éducation ou la défense. Déficit de la Sécu : 22,1 Md€ en 2025.",
+    "description": "Plafond voté chaque année en LFSS, couvrant soins de ville, hôpitaux et médico-social. Plus gros poste de dépenses publiques après les retraites, loin devant l'éducation ou la défense. En 2025, le déficit de la Sécurité sociale atteint 21,6 Md€, dont 15,9 Md€ pour la branche maladie (Cour des comptes).",
     "amountBillions": 266,
     "costPerCitizen": 3910,
     "deckId": "sante",

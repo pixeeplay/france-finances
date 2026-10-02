@@ -20,7 +20,7 @@
     "id": "rec-02",
     "title": "Impôt sur le revenu (IR)",
     "subtitle": "2e impôt le plus productif — 44% des foyers le paient",
-    "description": "56% des foyers fiscaux n'y sont pas assujettis. Les 10% les plus aisés paient 70% du total. En 2026, le barème n'est pas indexé sur l'inflation (hausse déguisée). La contribution différentielle sur les hauts revenus (taux minimum 20% > 250 000€) est reconduite.",
+    "description": "Le PLF 2026 prévoyait 104 Md€ d'impôt net sur le revenu en proposant de geler le barème, pour la première fois depuis 2012. La loi de finances pour 2026 a finalement revalorisé le barème de 0,9 % (revenus 2025). Environ 56 % des foyers fiscaux ne sont pas imposables et les 10 % les plus aisés acquittent environ 70 % du produit. La contribution différentielle sur les hauts revenus (taux minimum de 20 % au-delà de 250 000 €) est reconduite.",
     "amountBillions": 104,
     "costPerCitizen": 1530,
     "deckId": "recettes",
@@ -137,10 +137,10 @@
   {
     "id": "rec-09",
     "title": "Prélèvements obligatoires totaux",
-    "subtitle": "43,9% du PIB — record des grandes économies",
-    "description": "Inclut impôts d'État, locaux, et cotisations sociales. Moyenne OCDE : ~34%. Finance un modèle social généreux mais pèse sur la compétitivité. Malgré ce niveau record, le déficit reste à ~5% du PIB.",
-    "amountBillions": 1260,
-    "costPerCitizen": 18530,
+    "subtitle": "43,9 % du PIB prévu en 2026",
+    "description": "Impôts de l'État, des collectivités et de la Sécurité sociale, cotisations sociales comprises. D'après la prévision du PLF 2026, les prélèvements obligatoires atteindraient 1 345,1 Md€ en 2026, contre 1 302,0 Md€ en 2025, et leur taux passerait de 43,6 % à 43,9 % du PIB sous l'effet des mesures nouvelles. Le Sénat rappelle que la France a déjà le taux de prélèvements obligatoires le plus élevé de l'OCDE.",
+    "amountBillions": 1345,
+    "costPerCitizen": 19779,
     "deckId": "recettes",
     "icon": "📊",
     "source": "Sénat (PLF 2026), PLF 2026, vie-publique.fr, OCDE",
@@ -149,7 +149,7 @@
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["recettes", "prélèvements", "PIB"],
-    "equivalence": "Un salarié au SMIC travaille de janvier a début juin uniquement pour les prélèvements"
+    "equivalence": "1 345 Md€ = environ 19 800 € par habitant"
   },
   {
     "id": "rec-10",

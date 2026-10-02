@@ -186,20 +186,20 @@
   },
   {
     "id": "log-12",
-    "title": "RLS : la ponction sur les HLM",
-    "subtitle": "Reduction de loyer de solidarite",
-    "description": "En 2018, l'État a baissé les APL de 5/mois et compensé en imposant aux bailleurs HLM une RLS du même montant. Depuis 2017, 16 Md€ ponctionnes aux organismes HLM, reduisant leur capacité a construire et renover. L'USH qualifie ce mécanisme de toxique.",
+    "title": "Réduction de loyer de solidarité (RLS)",
+    "subtitle": "Baisse de loyer imposée aux bailleurs sociaux pour les locataires bénéficiaires de l'APL",
+    "description": "Instaurée en 2018, la RLS oblige les bailleurs sociaux à baisser le loyer de leurs locataires bénéficiaires de l'APL, ce qui permet à l'État de réduire d'autant les aides versées. Le PLF 2026 la porte à 1,3 Md€, contre 1,1 Md€ en 2025 (+200 M€). Selon l'Union sociale pour l'habitat (USH), elle réduit la capacité des organismes HLM à construire et à rénover.",
     "amountBillions": 1.3,
     "costPerCitizen": 19,
     "deckId": "logement",
     "icon": "🏠",
-    "source": "USH, PLF 2026, Public Senat",
+    "source": "Sénat (avis PLF 2026), PLF 2026, USH",
     "sourceUrl": "https://www.senat.fr/rap/a25-140-6/a25-140-6_mono.html",
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["logement", "HLM", "RLS"],
-    "equivalence": "16 Md€ ponctionnes en 7 ans = 200 000 logements sociaux qui auraient pu être construits"
+    "equivalence": "1,3 Md€ en 2026, soit 200 M€ de plus qu'en 2025"
   },
   {
     "id": "log-13",
@@ -220,18 +220,18 @@
   {
     "id": "log-14",
     "title": "Passoires thermiques et DPE",
-    "subtitle": "5,2 millions de logements classes F ou G",
-    "description": "Depuis janvier 2025, les logements G ne peuvent plus être loues. Les F interdits en 2028, les E en 2034. MaPrimeRenov finance une partie (5-20 000/logement) mais le reste a charge est prohibitif pour les propriétaires modestes. Risque social : retrait du marché locatif.",
+    "subtitle": "3,9 millions de résidences principales classées F ou G",
+    "description": "Au 1er janvier 2025, l'Observatoire national de la rénovation énergétique estime à 3,9 millions le nombre de résidences principales classées F ou G (12,7 % du parc), et à 5,4 millions sur l'ensemble des logements (14,4 %), contre 5,8 millions un an plus tôt. Depuis janvier 2025, les logements classés G ne peuvent plus être proposés à la location ; ce sera le cas des F en 2028 et des E en 2034 (loi Climat et résilience). Le montant affiché est un ordre de grandeur du besoin total de rénovation, sans chiffrage officiel unique.",
     "amountBillions": 150,
-    "costPerCitizen": 30000,
+    "costPerCitizen": 2206,
     "deckId": "logement",
     "icon": "🏠",
-    "source": "Sénat (avis PLF 2026), ADEME, Observatoire DPE, CNR Logement, loi Climat Resilience",
-    "sourceUrl": "https://www.senat.fr/rap/a25-143-3/a25-143-3_mono.html",
-    "sourceDate": "2025-11-24",
+    "source": "SDES - ONRE (novembre 2025), loi Climat et résilience",
+    "sourceUrl": "https://www.statistiques.developpement-durable.gouv.fr/le-parc-de-logements-par-classe-de-performance-energetique-au-1er-janvier-2025",
+    "sourceDate": "2025-11-12",
     "level": 1,
     "tags": ["logement", "DPE", "renovation"],
-    "equivalence": "5,2 millions de passoires = 1 logement sur 5 bientôt interdit à la location"
+    "equivalence": "1 résidence principale sur 8 classée F ou G au 1er janvier 2025"
   },
   {
     "id": "log-15",
@@ -252,18 +252,18 @@
   {
     "id": "log-16",
     "title": "Mal-logement (rapport Fondation Abbé Pierre)",
-    "subtitle": "4,2 millions de personnes mal logees",
-    "description": "330 000 sans domicile (record, +130% en 10 ans), 900 000 en hébergement contraint, 2,4 millions en surpeuplement. Le mal-logement aggrave tout : echec scolaire (+3 points), problèmes de sante (+30%), chomage. C'est le multiplicateur invisible des autres dépenses sociales.",
+    "subtitle": "4,2 millions de personnes mal logées",
+    "description": "Selon le 31e rapport de la Fondation pour le logement des défavorisés (ex-Fondation Abbé Pierre), 4,2 millions de personnes sont mal logées ou privées de logement personnel, dont 350 000 personnes sans domicile (estimation 2024), 643 000 hébergées contre leur gré chez des tiers et 1,06 million en surpeuplement accentué. 12,3 millions de personnes sont par ailleurs fragilisées par rapport au logement.",
     "amountBillions": 6.5,
     "costPerCitizen": 0,
     "deckId": "logement",
     "icon": "🏠",
-    "source": "Fondation pour le logement des défavorisés, Fondation Abbé Pierre rapport 2025, INSEE, DREES",
-    "sourceUrl": "https://www.fondationpourlelogement.fr/reml-2026/",
+    "source": "Fondation pour le logement des défavorisés (rapport 2026)",
+    "sourceUrl": "https://www.fondationpourlelogement.fr/wp-content/uploads/2026/02/reml-2026-cahier-5-les-chiffres-du-mal-logement.pdf",
     "sourceDate": "2026-02-03",
     "level": 2,
     "tags": ["logement", "mal-logement", "social"],
-    "equivalence": "330 000 personnes sans domicile en France = la population de Nice"
+    "equivalence": "350 000 personnes sans domicile (estimation de la Fondation, 2024)"
   },
   {
     "id": "log-17",

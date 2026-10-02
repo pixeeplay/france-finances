@@ -2,20 +2,20 @@
   {
     "id": "sec-01",
     "title": "Police nationale",
-    "subtitle": "Budget de la police nationale — 153 000 agents",
-    "description": "Sécurité publique, police judiciaire, renseignement, CRS, PAF. 87% du budget = salaires. Les JOP 2024 ont coûté ~1,1 Md€ en sécurité. 23 millions d'heures supplémentaires impayées s'accumulent (~270 M€).",
-    "amountBillions": 13.4,
-    "costPerCitizen": 197,
+    "subtitle": "Programme « Police nationale » de la mission Sécurités",
+    "description": "Sécurité publique, police judiciaire, renseignement, CRS, police aux frontières. Le PLF 2026 prévoit 13,9 Md€ de crédits de paiement (+3,3 %) et plus de 1 000 ETP supplémentaires, dont 300 pour la police aux frontières. La trajectoire de la LOPMI est légèrement dépassée.",
+    "amountBillions": 13.9,
+    "costPerCitizen": 204,
     "deckId": "securite",
     "icon": "👮",
     "trend": 3.4,
-    "source": "Sénat PLF 2025, LOPMI, AEF Info",
+    "source": "Sénat (PLF 2026), LOPMI",
     "sourceUrl": "https://www.senat.fr/rap/l25-139-328-1/l25-139-328-1_mono.html",
-    "year": 2025,
+    "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["sécurité", "police", "LOPMI"],
-    "equivalence": "13,4 Md€ = le budget cumule de l'Outre-mer + de la Culture"
+    "equivalence": "13,9 Md€ pour la police, 11,1 Md€ pour la gendarmerie en 2026"
   },
   {
     "id": "sec-02",
@@ -55,10 +55,10 @@
   {
     "id": "sec-04",
     "title": "Administration pénitentiaire",
-    "subtitle": "196 établissements, ~44 000 agents",
-    "description": "~78 000 détenus pour ~62 000 places (taux d'occupation : ~125%). La France a été condamnée 9 fois par la CEDH pour « traitements inhumains ». Le programme « 15 000 places » a livré ~4 000 places à mi-2025. Coût d'une place neuve : ~170 000€.",
-    "amountBillions": 3.9,
-    "costPerCitizen": 57,
+    "subtitle": "Crédits 2026 hors pensions",
+    "description": "Au 1er octobre 2025, la France compte 84 862 détenus pour une densité carcérale de 135,8 % (165,4 % en maisons d'arrêt). La France a été condamnée à plusieurs reprises par la CEDH pour ses conditions de détention. Le plan « 15 000 places », en retard, est complété par un programme de prisons modulaires. Pour 2026, les crédits de paiement de l'administration pénitentiaire atteignent 4,3 Md€ hors pensions (+3 %) et 5,5 Md€ pensions comprises.",
+    "amountBillions": 4.3,
+    "costPerCitizen": 63,
     "deckId": "securite",
     "icon": "🔒",
     "source": "Sénat (avis PLF 2026), Ministère de la Justice, Contrôleur général des lieux de privation de liberté",
@@ -66,7 +66,8 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["justice", "prisons", "surpopulation"],
-    "equivalence": "Construire les 15 000 places manquantes = ~2,6 Md€, soit 1 EPR2"
+    "equivalence": "84 862 détenus pour une densité carcérale de 135,8 %",
+    "year": 2026
   },
   {
     "id": "sec-05",

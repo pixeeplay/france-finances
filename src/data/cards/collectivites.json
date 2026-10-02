@@ -3,17 +3,18 @@
     "id": "col-01",
     "title": "Dépenses totales des collectivités locales",
     "subtitle": "Budget global des collectivités territoriales françaises",
-    "description": "Les collectivités locales (communes, départements, régions, EPCI) dépensent 280 Md€ par an, soit 20 % de la dépense publique totale. Elles emploient 1,9 million d'agents et réalisent 58 % de l'investissement public civil. Les ponctionner revient à casser le moteur de l'investissement de proximité.",
+    "description": "En 2024, les collectivités locales (communes, intercommunalités, départements, régions) ont engagé 206 Md€ de dépenses de fonctionnement et 70 Md€ de dépenses d'investissement (budgets principaux). Leur investissement reste dynamique (+7 % en 2024), tandis que leur épargne brute recule de 7,3 %, à 32,5 Md€, surtout pour les départements.",
     "amountBillions": 280,
     "costPerCitizen": 4120,
     "deckId": "collectivites",
     "icon": "🏘️",
-    "source": "OFGL, DGCL, Observatoire des financés locales, Fondation Jean-Jaurès",
+    "source": "OFGL (rapport 2025), DGCL",
     "sourceUrl": "https://www.collectivites-locales.gouv.fr/files/files/Etudes-et-statistiques/OFGL/rapport%202025/Rapport%20OFGL%202025%201%20vue%20d%20ensemble.pdf",
     "sourceDate": "2025",
     "level": 1,
     "tags": ["collectivités", "budget", "investissement"],
-    "equivalence": "Les collectivités = 8 % de la dette mais 58 % de l'investissement public — les ponctionner, c'est casser l'investissement"
+    "equivalence": "70 Md€ d'investissement local en 2024, en hausse de 7 %",
+    "year": 2024
   },
   {
     "id": "col-02",
@@ -83,19 +84,19 @@
   {
     "id": "col-06",
     "title": "DILICO",
-    "subtitle": "Le fonds de précaution ponctionné sur les collectivités",
-    "description": "Le dispositif de lissage conjoncturel (DILICO) est une ponction de l'État sur les recettes des collectivités pour financer le redressement des financés publiques. Doublé en 2026 à 2 Md€, il cristallise la tension entre l'État et les élus locaux qui dénoncent une recentralisation rampante.",
+    "subtitle": "Mise en réserve d'une partie des recettes des collectivités",
+    "description": "Créé par la loi de finances pour 2025 à l'initiative du Sénat, le dispositif de lissage conjoncturel (Dilico) prélève une année une partie des recettes des collectivités, puis la leur reverse par tiers les trois années suivantes (90 % aux contributrices, le reste à la péréquation). Le Dilico 2025 portait sur 1 Md€ (500 M€ pour le bloc communal, 220 M€ pour les départements, 280 M€ pour les régions). Le PLF 2026 propose un « Dilico 2 » de 2 Md€, aux modalités de reversement modifiées. Les associations d'élus y voient une contrainte supplémentaire sur leurs budgets.",
     "amountBillions": 2,
     "costPerCitizen": 29,
     "deckId": "collectivites",
     "icon": "✂️",
-    "source": "PLF 2026, Public Sénat, AMF, CFL",
+    "source": "Sénat (PLF 2026), PLF 2026, CFL",
     "sourceUrl": "https://www.senat.fr/rap/l25-139-325/l25-139-325_mono.html",
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["austérité", "collectivités", "financement"],
-    "equivalence": "L'État ponctionnait 1 Md€ en 2025, il en prend 2 Md€ en 2026, puis combien en 2027 ?"
+    "equivalence": "1 Md€ mis en réserve en 2025, 2 Md€ proposés pour 2026"
   },
   {
     "id": "col-07",

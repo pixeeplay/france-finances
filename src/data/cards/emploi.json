@@ -138,7 +138,7 @@
     "id": "emp-09",
     "title": "Fraude au CPF",
     "subtitle": "Compte personnel de formation",
-    "description": "Le CPF (500/an par actif, plafonne a 5 000) est devenu un terrain de chasse pour les escrocs. La Caisse des dépôts a bloque 43 000 comptes suspects en 2023. FranceConnect+ obligatoire depuis 2023, reduisant la fraude de 80%. 40% des formations CPF jugées sans valeur par la Cour des comptes.",
+    "description": "Le CPF, géré par la Caisse des dépôts, a été la cible de nombreuses escroqueries. Depuis octobre 2022, l'accès au service passe par FranceConnect+, et la loi de finances pour 2023 a instauré une participation financière des bénéficiaires. Les formations éligibles ont été resserrées et de nombreux organismes déréférencés. Les dépenses liées au CPF financées par France Compétences sont passées de 2,7 Md€ en 2021 à 1,9 Md€ en 2025. Le montant total de la fraude n'est pas chiffré officiellement : celui de la carte est un ordre de grandeur.",
     "amountBillions": 0.25,
     "costPerCitizen": 4,
     "deckId": "emploi",
@@ -148,7 +148,7 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["emploi", "CPF", "fraude"],
-    "equivalence": "Le CPF distribue 2 Md€/an en formation, dont 40% jugées inutiles par la Cour des comptes"
+    "equivalence": "Dépenses du CPF : 1,9 Md€ en 2025, contre 2,7 Md€ en 2021"
   },
   {
     "id": "emp-10",
@@ -260,19 +260,20 @@
   },
   {
     "id": "emp-17",
-    "title": "Accidents du travail mortels",
-    "subtitle": "2 morts par jour — pire bilan d'Europe de l'Ouest",
-    "description": "~650 000 accidents/an dont ~700 mortels. Taux de mortalité 2x supérieur à l'Allemagne et 3x aux Pays-Bas. Le BTP concentré 20% des accidents mortels pour 8% des emplois. Un intérimaire a 2x plus de risques qu'un CDI.",
-    "amountBillions": 50,
-    "costPerCitizen": 735,
+    "title": "Accidents du travail et maladies professionnelles",
+    "subtitle": "764 décès par accident du travail en 2024, soit environ 2 par jour",
+    "description": "En 2025, les charges nettes de la branche AT-MP de la Sécurité sociale, financée par les cotisations des employeurs, atteignent 17,4 Md€ (+6,7 %), dont 5,8 Md€ de rentes d'incapacité permanente ; la branche connaît son premier déficit depuis 2013. En 2024, l'Assurance maladie a recensé 549 614 accidents du travail avec arrêt ou incapacité et 1 297 décès : 764 après un accident du travail (dont plus de la moitié par malaise), 318 après un accident de trajet et 215 dus à une maladie professionnelle.",
+    "amountBillions": 17.4,
+    "costPerCitizen": 256,
     "deckId": "emploi",
     "icon": "🏢",
-    "source": "CNAM AT-MP, Eurostat, DARES, ANACT",
-    "sourceUrl": "https://www.assurance-maladie.ameli.fr/etudes-et-donnees/2024-rapport-annuel-assurance-maladie-risques-professionnels",
-    "sourceDate": "2025-11",
+    "source": "Cour des comptes (RALFSS 2026), Assurance maladie - Risques professionnels (rapport annuel 2024)",
+    "sourceUrl": "https://www.ccomptes.fr/sites/default/files/2026-05/20260527-RALFSS-2026_0.pdf",
+    "sourceDate": "2026-05-27",
     "level": 1,
     "tags": ["emploi", "accidents", "sécurité"],
-    "equivalence": "2 morts au travail par jour en France — 3x plus qu'aux Pays-Bas, et personne n'en parle"
+    "equivalence": "Environ 2 décès par accident du travail chaque jour en 2024",
+    "year": 2025
   },
   {
     "id": "emp-18",

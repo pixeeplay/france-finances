@@ -119,9 +119,9 @@
     "id": "edu-08",
     "title": "Crédit d'impôt recherche (CIR)",
     "subtitle": "Subvention fiscale à la R&D privée",
-    "description": "~8 000 entreprises bénéficiaires, dont les grands groupes (50% du montant). Plus grosse « niche fiscale » française. La Cour des comptes critique un manque d'évaluation depuis 2013. La France est malgré tout devenue le pays le plus attractif pour la R&D étrangère en Europe.",
-    "amountBillions": 7,
-    "costPerCitizen": 103,
+    "description": "Le CIR devrait coûter 8,0 Md€ en 2026 pour un peu plus de 17 500 entreprises, contre 4,5 Md€ en 2009. Les grandes entreprises représentent 42 % des créances (2021). La commission d'enquête du Sénat sur les aides publiques aux entreprises a pointé plusieurs limites du dispositif, notamment son ciblage et son évaluation.",
+    "amountBillions": 8,
+    "costPerCitizen": 118,
     "deckId": "education",
     "icon": "💡",
     "source": "Sénat (PLF 2026), MESRI, Cour des comptes, France Stratégie",
@@ -129,7 +129,8 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["éducation", "fiscalité", "R&D"],
-    "equivalence": "7 Md€ de CIR = le budget annuel de la recherche publique au CNRS"
+    "equivalence": "8 Md€ de CIR en 2026, contre 4,5 Md€ en 2009",
+    "year": 2026
   },
   {
     "id": "edu-09",
@@ -216,21 +217,21 @@
   },
   {
     "id": "edu-14",
-    "title": "AEFE (lycees français à l'étranger)",
-    "subtitle": "580 établissements dans 139 pays",
-    "description": "L'AEFE gère ou homologue 580 établissements scolarisant 392 000 élèves (dont 40% de Français). Les frais de scolarite varient de 3 000 à 30 000€/an. C'est le 1er réseau scolaire mondial à l'étranger et un outil majeur de soft power.",
-    "amountBillions": 1.2,
-    "costPerCitizen": 6,
+    "title": "AEFE (lycées français à l'étranger)",
+    "subtitle": "612 établissements homologués dans le monde",
+    "description": "À la rentrée 2025, l'AEFE coordonne un réseau de 612 établissements homologués : 68 en gestion directe, 155 conventionnés et 389 partenaires autofinancés. Le réseau scolarisait 398 108 élèves en 2024-2025. Les dotations de l'État (subvention pour charges de service public et aide à la scolarité) atteignent 503 M€ dans le PLF 2026 (-5,5 %) et couvrent environ la moitié du budget de l'agence, le reste reposant sur ses ressources propres.",
+    "amountBillions": 0.503,
+    "costPerCitizen": 7,
     "deckId": "education",
     "icon": "🌍",
     "trend": 2,
-    "source": "AEFE, PLF 2026 Action extérieure, Senat",
+    "source": "Sénat (PLF 2026, Action extérieure de l'État), AEFE",
     "sourceUrl": "https://www.senat.fr/rap/l25-139-31/l25-139-31_mono.html",
     "year": 2026,
     "sourceDate": "2025-11-24",
-    "level": 2,
+    "level": 3,
     "tags": ["AEFE", "etranger", "soft power"],
-    "equivalence": "580 lycees français dans 139 pays — plus que McDonald's dans certains continents"
+    "equivalence": "Environ 400 000 élèves scolarisés dans le réseau"
   },
   {
     "id": "edu-15",
