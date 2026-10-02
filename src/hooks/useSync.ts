@@ -10,6 +10,7 @@ import {
   type GlobalStats,
   type PlayerProfile,
 } from "@/lib/stats";
+import { countSessionsByLevel, mergeLevelCounts } from "@/lib/progression";
 
 const SYNC_KEY = "trnc:lastSync";
 
@@ -137,9 +138,17 @@ async function syncData() {
   }
 }
 
-/** Recompute global stats from the full session list */
+/**
+ * Recompute global stats from the full session list.
+ * Fields that cannot be derived from sessions are preserved: the quiz score,
+ * and the cumulative per-level counter (never purged) merged as a max.
+ */
 function recomputeStats(sessions: StoredSession[]) {
+  const previous = getGlobalStats();
+  const levelCounts = mergeLevelCounts(previous.sessionsPerLevel, countSessionsByLevel(sessions));
   const stats: GlobalStats = {
+    ...(previous.quiz ? { quiz: previous.quiz } : {}),
+    sessionsPerLevel: { "1": levelCounts[1], "2": levelCounts[2], "3": levelCounts[3] },
     xp: 0,
     totalSessions: sessions.length,
     totalCards: 0,
