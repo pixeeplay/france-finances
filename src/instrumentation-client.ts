@@ -1,3 +1,5 @@
+// Client-side Sentry init (Next 15.3+ convention, works with Turbopack and webpack).
+// Replaces the former root-level sentry.client.config.ts, ignored by Turbopack.
 import * as Sentry from "@sentry/nextjs";
 
 Sentry.init({
@@ -8,3 +10,5 @@ Sentry.init({
   environment: process.env.NODE_ENV,
   integrations: [Sentry.replayIntegration()],
 });
+
+export const onRouterTransitionStart = Sentry.captureRouterTransitionStart;
