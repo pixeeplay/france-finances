@@ -27,29 +27,36 @@ export function ThemeSection({
 }) {
   const t = TONE_CLASSES[tone];
   return (
-    <section id={id} aria-labelledby={`${id}-title`} className="scroll-mt-36 pt-12">
-      <div className="flex items-center gap-3 mb-3">
-        <span
-          className={`inline-flex size-11 shrink-0 items-center justify-center rounded-2xl text-white shadow-lg ${t.solid}`}
-          aria-hidden="true"
+    <section
+      id={id}
+      aria-labelledby={`${id}-title`}
+      className="scroll-mt-36 pt-12 lg:grid lg:grid-cols-12 lg:gap-x-10 lg:pt-16"
+    >
+      {/* En desktop : titre, phrase-choc et intro dans une colonne collante à gauche */}
+      <div className="lg:col-span-4 lg:self-start lg:sticky lg:top-40">
+        <div className="flex items-center gap-3 mb-3">
+          <span
+            className={`inline-flex size-11 shrink-0 items-center justify-center rounded-2xl text-white shadow-lg ${t.solid}`}
+            aria-hidden="true"
+          >
+            {icon}
+          </span>
+          <p className={`text-xs font-bold uppercase tracking-wider ${t.text}`}>{kicker}</p>
+        </div>
+        <h2
+          id={`${id}-title`}
+          className="font-heading text-2xl sm:text-3xl font-extrabold leading-tight text-foreground mb-3"
         >
-          {icon}
-        </span>
-        <p className={`text-xs font-bold uppercase tracking-wider ${t.text}`}>{kicker}</p>
+          {title}
+        </h2>
+        {punch ? (
+          <p className={`mb-3 max-w-prose rounded-2xl border-l-4 ${t.border} ${t.soft} px-4 py-3 font-heading text-xl sm:text-2xl font-extrabold leading-snug text-foreground`}>
+            {punch}
+          </p>
+        ) : null}
+        {intro ? <div className="max-w-prose text-sm text-muted-foreground leading-relaxed mb-5">{intro}</div> : null}
       </div>
-      <h2
-        id={`${id}-title`}
-        className="font-heading text-2xl sm:text-3xl font-extrabold leading-tight text-foreground mb-3"
-      >
-        {title}
-      </h2>
-      {punch ? (
-        <p className={`mb-3 rounded-2xl border-l-4 ${t.border} ${t.soft} px-4 py-3 font-heading text-xl sm:text-2xl font-extrabold leading-snug text-foreground`}>
-          {punch}
-        </p>
-      ) : null}
-      {intro ? <div className="text-sm text-muted-foreground leading-relaxed mb-5">{intro}</div> : null}
-      <div className="space-y-5">{children}</div>
+      <div className="space-y-5 min-w-0 lg:col-span-8">{children}</div>
     </section>
   );
 }
@@ -70,10 +77,11 @@ export function BigStat({
 }) {
   const t = TONE_CLASSES[tone];
   return (
-    <div className={`rounded-2xl border border-border bg-card p-4 sm:p-5 ${className}`}>
+    <div className={`@container rounded-2xl border border-border bg-card p-4 sm:p-5 ${className}`}>
       <p className="text-xs font-semibold text-muted-foreground leading-snug">{label}</p>
       <p
-        className={`mt-1.5 font-heading text-[1.65rem] sm:text-4xl font-extrabold leading-none tabular-nums ${t.text}`}
+        // En desktop, la taille suit la largeur de la carte (colonnes étroites) : jamais de débordement
+        className={`mt-1.5 font-heading text-[1.65rem] sm:text-4xl lg:text-[min(2.25rem,15cqi)] font-extrabold leading-none tabular-nums ${t.text}`}
       >
         {value}
       </p>
@@ -158,6 +166,7 @@ export function ChartFigure({
   source,
   period,
   note,
+  split = false,
 }: {
   id: string;
   title: string;
@@ -173,6 +182,8 @@ export function ChartFigure({
   period?: string;
   /** Précision repliée avec le tableau */
   note?: ReactNode;
+  /** Graphique et légende côte à côte à partir de md (graphiques compacts, ex. anneau) */
+  split?: boolean;
 }) {
   return (
     <figure
@@ -184,10 +195,12 @@ export function ChartFigure({
         {title}
       </h3>
       {subtitle ? <p className="mt-0.5 text-xs text-muted-foreground">{subtitle}</p> : null}
-      <div aria-hidden="true" style={height ? { height } : undefined} className="mt-4 w-full min-w-0">
-        {chart}
+      <div className={split && legend ? "md:grid md:grid-cols-2 md:items-center md:gap-6" : undefined}>
+        <div aria-hidden="true" style={height ? { height } : undefined} className="mt-4 w-full min-w-0">
+          {chart}
+        </div>
+        {legend ? <div className="mt-4">{legend}</div> : null}
       </div>
-      {legend ? <div className="mt-4">{legend}</div> : null}
       <details className="group mt-4 rounded-xl border border-border bg-background/40">
         <summary className="flex min-h-[44px] cursor-pointer items-center gap-2 px-4 text-sm font-semibold text-foreground">
           <svg
@@ -252,14 +265,16 @@ export function Per1000Coins({
   const coins = coinsPer100(slices);
   const cells = slices.flatMap((s, i) => Array.from({ length: coins[i] }, () => colorFor(s)));
   return (
-    <div>
-      <div className="grid grid-cols-10 gap-1 sm:gap-1.5" aria-hidden="true">
-        {cells.map((color, i) => (
-          <span key={i} className="aspect-square rounded-full" style={{ backgroundColor: color }} />
-        ))}
+    <div className="md:grid md:grid-cols-2 md:items-start md:gap-6">
+      <div>
+        <div className="grid grid-cols-10 gap-1 sm:gap-1.5" aria-hidden="true">
+          {cells.map((color, i) => (
+            <span key={i} className="aspect-square rounded-full" style={{ backgroundColor: color }} />
+          ))}
+        </div>
+        <p className="mt-2 text-xs text-muted-foreground">Une pastille = 10 €.</p>
       </div>
-      <p className="mt-2 text-xs text-muted-foreground">Une pastille = 10 €.</p>
-      <ul className="mt-4 grid grid-cols-2 gap-2">
+      <ul className="mt-4 grid grid-cols-2 gap-2 md:mt-0">
         {slices.map((s) => (
           <li
             key={s.label}
