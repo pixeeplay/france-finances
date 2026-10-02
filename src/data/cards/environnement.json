@@ -3,7 +3,7 @@
     "id": "env-01",
     "title": "Budget de l'Écologie",
     "subtitle": "Budget de l'État pour l'écologie, les transports et l'énergie",
-    "description": "Dans le projet de budget 2026, le budget « Écologie, développement et mobilité durables » prévoit 16,2 Md€ de dépenses dans l'année (-1,7 %) et 17,3 Md€ de nouveaux engagements autorisés sur plusieurs années, quasi stables. Une partie de la baisse vient de changements de financement (aides au service public de l'énergie désormais payées par des taxes qui leur sont réservées). Plusieurs dispositifs de transition sont réduits, comme le Fonds vert.",
+    "description": "Dans le projet de budget 2026, le budget « Écologie, développement et mobilité durables » prévoit 16,2 Md€ de dépenses prévues dans l'année (-1,7 %) et 17,3 Md€ de nouveaux engagements autorisés sur plusieurs années, quasi stables. Une partie de la baisse vient de changements de financement (le soutien aux énergies renouvelables, appelé charges de service public de l'énergie, est financé par des taxes qui lui sont réservées). Plusieurs dispositifs de transition sont réduits, comme le Fonds vert.",
     "amountBillions": 16.2,
     "costPerCitizen": 234,
     "deckId": "environnement",

@@ -172,7 +172,7 @@
     "id": "rec-11",
     "title": "Taxe sur les géants du numérique (« taxe GAFAM »)",
     "subtitle": "3 % du chiffre d'affaires réalisé en France",
-    "description": "Créée en 2019, cette taxe frappe à 3 % le chiffre d'affaires réalisé en France par les grandes entreprises du numérique (publicité en ligne, plateformes d'intermédiation). Elle a rapporté 785 M€ en 2024 ; le projet de budget 2026 prévoit 882 M€. Conçue comme temporaire dans l'attente d'un accord à l'OCDE, elle est maintenue faute d'accord. Les États-Unis ont menacé de représailles commerciales ; d'autres pays européens appliquent des taxes similaires.",
+    "description": "Créée en 2019, cette taxe frappe à 3 % le chiffre d'affaires réalisé en France par les grandes entreprises du numérique (publicité en ligne, plateformes d'intermédiation). Elle a rapporté 785 M€ en 2024 ; le projet de budget 2026 prévoit 882 M€. Conçue comme temporaire dans l'attente d'un accord à l'OCDE, elle est maintenue faute d'accord. Son taux est resté à 3 % en 2026. Les États-Unis ont menacé de représailles commerciales ; d'autres pays européens appliquent des taxes similaires.",
     "amountBillions": 0.882,
     "costPerCitizen": 13,
     "deckId": "recettes",
@@ -189,18 +189,18 @@
     "id": "rec-12",
     "title": "Taxe sur les transactions financières (TTF)",
     "subtitle": "0,4 % sur les achats d'actions de grandes entreprises françaises",
-    "description": "Créée en 2012, la TTF s'applique aux acquisitions d'actions de sociétés françaises dont la capitalisation dépasse 1 Md€. Son taux a été porté de 0,3 % à 0,4 % par la loi de finances pour 2025. Une partie du produit finance l'aide au développement. Le projet de taxe européenne sur les transactions financières reste bloqué.",
-    "amountBillions": 2,
-    "costPerCitizen": 29,
+    "description": "Créée en 2012, la TTF s'applique aux acquisitions d'actions de sociétés françaises dont la capitalisation dépasse 1 Md€. Son taux a été porté de 0,3 % à 0,4 % par la loi de finances pour 2025. Elle a rapporté 1 332 M€ en 2024 ; le projet de budget 2026 prévoit 2 630 M€, avec le nouveau taux appliqué toute l'année. Une partie du produit finance l'aide au développement. Le projet de taxe européenne sur les transactions financières reste bloqué.",
+    "amountBillions": 2.63,
+    "costPerCitizen": 38,
     "deckId": "recettes",
     "icon": "💰",
-    "source": "Sénat (PLF 2026), PLF 2026, DGFiP, AMF",
-    "sourceUrl": "https://www.senat.fr/rap/l25-139-34/l25-139-34_mono.html",
+    "source": "Gouvernement, Évaluation des voies et moyens (tome 1) annexée au PLF 2026, Sénat",
+    "sourceUrl": "https://www.assemblee-nationale.fr/dyn/contenu/visualisation/1087930/file/PLF%202026%20-%20V%26M%20TI%20-%20Evaluations%20des%20recettes.pdf",
     "year": 2026,
-    "sourceDate": "2025-11-24",
+    "sourceDate": "2025-10",
     "level": 2,
     "tags": ["recettes", "TTF", "finance"],
-    "equivalence": "Taux relevé de 0,3 % à 0,4 % en 2025"
+    "equivalence": "1 332 M€ en 2024, 2 630 M€ prévus en 2026"
   },
   {
     "id": "rec-13",
@@ -306,19 +306,19 @@
   {
     "id": "rec-19",
     "title": "Surtaxe sur les bénéfices des grandes entreprises",
-    "subtitle": "Une contribution « exceptionnelle » créée en 2025",
-    "description": "La loi de finances pour 2025 a créé une contribution exceptionnelle et temporaire sur les bénéfices des entreprises dont le chiffre d'affaires dépasse 1 Md€. Son rendement prévu pour 2025 est de 8 Md€. Le projet de budget 2026 proposait de la prolonger d'un an, pour un montant deux fois plus faible (4 Md€). Elle s'ajoute à l'impôt sur les sociétés.",
-    "amountBillions": 8,
-    "costPerCitizen": 116,
+    "subtitle": "Une contribution « exceptionnelle » créée en 2025, prolongée en 2026",
+    "description": "La loi de finances pour 2025 a créé une contribution exceptionnelle sur les bénéfices des entreprises dont le chiffre d'affaires dépasse 1 Md€. Elle s'ajoute à l'impôt sur les sociétés, avec un taux plus élevé pour les plus grandes entreprises. Son rendement prévu pour 2025 est de 8 Md€. Le projet de budget 2026 proposait de la prolonger avec des taux divisés par deux, pour 4 Md€. La loi de finances pour 2026, votée en février 2026, l'a finalement prolongée d'un an à taux inchangés, en relevant le seuil à 1,5 Md€ de chiffre d'affaires. Selon le Sénat, elle doit rapporter 7,3 Md€ en 2026.",
+    "amountBillions": 7.3,
+    "costPerCitizen": 106,
     "deckId": "recettes",
     "icon": "💰",
-    "source": "Gouvernement, Évaluation des voies et moyens (tome 1) annexée au PLF 2026",
-    "sourceUrl": "https://www.assemblee-nationale.fr/dyn/contenu/visualisation/1087930/file/PLF%202026%20-%20V%26M%20TI%20-%20Evaluations%20des%20recettes.pdf",
-    "year": 2025,
-    "sourceDate": "2025-10",
+    "source": "Sénat, commission des finances (loi de finances pour 2026, nouvelle lecture, janvier 2026), loi de finances pour 2026 (article 12), Évaluation des voies et moyens annexée au PLF 2026",
+    "sourceUrl": "https://www.senat.fr/fileadmin/Commissions/Finances/2025-2026/PLF_2026/Essentiel/Essentiel_PLF_2026_nouvelle_lecture_post_commission.pdf",
+    "year": 2026,
+    "sourceDate": "2026-01",
     "level": 2,
     "tags": ["recettes", "impôt sur les sociétés", "entreprises"],
-    "equivalence": "4 Md€ prévus en 2026, deux fois moins qu'en 2025"
+    "equivalence": "7,3 Md€ attendus en 2026, après 8 Md€ prévus en 2025"
   },
   {
     "id": "rec-20",
@@ -335,6 +335,6 @@
     "sourceDate": "2025-10",
     "level": 3,
     "tags": ["recettes", "entreprises", "actionnaires"],
-    "equivalence": "200 M€ par an à partir de 2026"
+    "equivalence": "200 M€ prévus en 2026 (volet durable)"
   }
 ]

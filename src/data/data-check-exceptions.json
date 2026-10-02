@@ -7,10 +7,10 @@
     "imm-14": "non budgétaire : transferts privés des ménages",
     "log-09": "non budgétaire : participation des employeurs (Action Logement)",
     "log-11": "non budgétaire : investissement institutionnel et privé",
-    "num-13": "non budgétaire : investissements annoncés, pas une dépense publique",
     "num-16": "non budgétaire : investissement privé",
     "rec-14": "recette payée par les entreprises, pas par les habitants",
     "rec-17": "recette payée par les propriétaires concernés, pas par tous les habitants",
+    "ukr-06": "non budgétaire : hausse de la facture énergétique du pays, pas une dépense publique",
     "ukr-08": "non budgétaire : avoirs immobilisés, pas une dépense"
   }
 }

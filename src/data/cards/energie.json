@@ -2,7 +2,7 @@
   {
     "id": "ene-01",
     "title": "Subventions éolien & solaire",
-    "subtitle": "Complément de prix versé par l'État aux producteurs (ex-CSPE)",
+    "subtitle": "Complément de prix versé par l'État aux producteurs (charges de service public de l'énergie)",
     "description": "Quand le prix de marché est inférieur au tarif garanti aux producteurs d'énergies renouvelables, l'État compense la différence au titre des charges de service public de l'énergie. Selon la CRE (juillet 2026), le soutien aux énergies renouvelables électriques en métropole atteint 6,2 Md€ en 2025 et 7,3 Md€ en 2026, puis 8,4 Md€ prévus en 2027. En 2026, le photovoltaïque en représente 4,1 Md€, l'éolien terrestre 1,2 Md€ et l'éolien en mer près de 1 Md€. La hausse s'explique par l'augmentation des volumes soutenus et la baisse des prix de marché.",
     "amountBillions": 7.29,
     "costPerCitizen": 105,
@@ -105,7 +105,7 @@
     "id": "ene-07",
     "title": "MaPrimeRénov'",
     "subtitle": "Aide à la rénovation énergétique des logements",
-    "description": "Isolation, changement de chauffage, pompes à chaleur, fenêtres. Après plusieurs réformes, notamment en septembre 2025, le recentrage des aides de l'Anah doit économiser environ 500 M€ de dépenses en 2026, et une partie du financement est reportée sur les certificats d'économies d'énergie. Au 1er janvier 2025, 3,9 millions de résidences principales restent classées F ou G.",
+    "description": "Isolation, changement de chauffage, pompes à chaleur, fenêtres. Après plusieurs réformes, notamment en septembre 2025, le recentrage des aides de l'Anah doit économiser environ 500 M€ de dépenses prévues en 2026, et une partie du financement est reportée sur les certificats d'économies d'énergie. Au 1er janvier 2025, 3,9 millions de résidences principales restent classées F ou G.",
     "amountBillions": 3,
     "costPerCitizen": 43,
     "deckId": "energie",
