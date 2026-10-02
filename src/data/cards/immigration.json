@@ -3,7 +3,7 @@
     "id": "imm-01",
     "title": "Mission Immigration, asile et intégration",
     "subtitle": "Crédits de la mission budgétaire dédiée",
-    "description": "Finance l'accueil des demandeurs d'asile (hébergement, allocation ADA), le traitement des dossiers (OFPRA, CNDA), les CRA, et l'intégration. En 2026, +80 M€, principalement vers rétention et éloignement, tandis que les places d'hébergement baissent de 5 253.",
+    "description": "Finance l'accueil des demandeurs d'asile (hébergement, allocation pour demandeur d'asile), l'instruction des demandes (OFPRA, CNDA), la rétention administrative et l'intégration. En 2026, ses crédits de paiement atteignent 2,16 Md€ (+3,8 %), la hausse se concentrant sur la lutte contre l'immigration irrégulière, tandis que le parc d'hébergement d'urgence des demandeurs d'asile est réduit.",
     "amountBillions": 2.16,
     "costPerCitizen": 32,
     "deckId": "immigration",
@@ -15,24 +15,24 @@
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["immigration", "asile", "budget"],
-    "equivalence": "Le budget annuel du ministère de la Culture (4,4 Md€) divisé par 2"
+    "equivalence": "Environ 32 € par habitant et par an"
   },
   {
     "id": "imm-02",
     "title": "Aide médicale d'État (AME)",
     "subtitle": "Accès aux soins des étrangers en situation irrégulière",
-    "description": "Couvre environ 400 000 bénéficiaires présents depuis +3 mois et à faibles ressources. Le Sénat a proposé de la remplacer par une aide d'urgence plus restrictive. Les défenseurs arguent qu'elle évite des coûts hospitaliers bien supérieurs. Le PLF 2026 la maintient.",
-    "amountBillions": 1.2,
-    "costPerCitizen": 18,
+    "description": "En 2025, les dépenses réelles d'AME atteindraient 1 443 M€ (1 314 M€ pour l'AME de droit commun, 129 M€ pour les soins urgents), pour 1 208 M€ budgétés. Fin 2024, l'AME de droit commun comptait 465 208 bénéficiaires. Pour 2026, la commission des finances du Sénat anticipe 1 375,6 M€ de dépenses de droit commun, soit 238,6 M€ de plus que les crédits prévus. Le Sénat propose de la remplacer par une aide médicale d'urgence plus restreinte ; ses défenseurs font valoir qu'elle évite des soins hospitaliers plus coûteux.",
+    "amountBillions": 1.44,
+    "costPerCitizen": 21,
     "deckId": "immigration",
     "icon": "🏥",
     "source": "Sénat (PLF 2026), PLF 2026, IGAS, vie-publique.fr",
     "sourceUrl": "https://www.senat.fr/rap/l25-139-327/l25-139-327_mono.html",
-    "year": 2026,
+    "year": 2025,
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["immigration", "santé", "AME"],
-    "equivalence": "~3 000€ de dépense annuelle par bénéficiaire (vs ~3 900€/personne pour l'Assurance maladie classique)"
+    "equivalence": "Environ 3 100 € de dépense annuelle par bénéficiaire de l'AME de droit commun"
   },
   {
     "id": "imm-03",
@@ -49,13 +49,13 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["immigration", "coût global", "budget"],
-    "equivalence": "La mission Immigration ne représente que 22% du coût total"
+    "equivalence": "La mission Immigration représente un peu plus du quart du coût total"
   },
   {
     "id": "imm-04",
     "title": "Centres de rétention (CRA)",
     "subtitle": "Investissement immobilier — objectif 3 000 places en 2029",
-    "description": "~1 800 places actuellement, objectif 3 000 en 2029. Le taux d'exécution des OQTF reste très faible (~7%). Coût journalier d'une place : ~200-250€. Le budget d'investissement bondit de 87% en 2026 pour financer les nouvelles constructions.",
+    "description": "Pour atteindre l'objectif de 3 000 places de rétention en 2029, le PLF 2026 prévoit 266,7 M€ d'autorisations d'engagement et 156,2 M€ de crédits de paiement d'investissements immobiliers dans les centres de rétention administrative, contre 21,6 M€ et 43,1 M€ en 2025. Selon la Cour des comptes, une journée de rétention coûte environ 600 €.",
     "amountBillions": 0.266,
     "costPerCitizen": 4,
     "deckId": "immigration",
@@ -67,31 +67,31 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["immigration", "rétention", "OQTF"],
-    "equivalence": "~150 000€ de coût de construction par place de CRA"
+    "equivalence": "266,7 M€ d'engagements en 2026, contre 21,6 M€ en 2025"
   },
   {
     "id": "imm-05",
     "title": "Allocation demandeur d'asile (ADA)",
     "subtitle": "204€/mois pour une personne seule",
-    "description": "Non revalorisée depuis 2019 malgré 18% d'inflation cumulée. ~91 000 bénéficiaires. Le Pacte européen sur l'asile (mi-2026) imposera une aide minimale à des catégories actuellement exclues. Le PLF 2026 réduit l'enveloppe de 10%.",
-    "amountBillions": 0.222,
-    "costPerCitizen": 3,
+    "description": "Pour 2026, 241,4 M€ sont prévus pour l'ADA versée aux demandeurs d'asile, soit 5,2 M€ de moins qu'en LFI 2025 (-2 %), principalement grâce à la réduction des délais de traitement à l'OFPRA. En incluant l'ADA versée aux bénéficiaires de la protection temporaire, l'enveloppe atteint 313,4 M€. La transposition du Pacte européen sur la migration et l'asile entraîne une revalorisation des conditions matérielles d'accueil.",
+    "amountBillions": 0.241,
+    "costPerCitizen": 4,
     "deckId": "immigration",
     "icon": "💶",
-    "trend": -10,
+    "trend": -2,
     "source": "Sénat (PLF 2026), PLF 2026, Forum Réfugiés, OFII",
     "sourceUrl": "https://www.senat.fr/rap/l25-139-315/l25-139-315_mono.html",
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["immigration", "asile", "allocation"],
-    "equivalence": "L'ADA (204€/mois) = 38% du montant du RSA (607€/mois)"
+    "equivalence": "313,4 M€ d'ADA au total en 2026, protection temporaire comprise"
   },
   {
     "id": "imm-06",
     "title": "Hébergement demandeurs d'asile",
     "subtitle": "Dispositif national d'accueil (DNA)",
-    "description": "~95 500 places en 2026 (CADA, HUDA, CAES), en baisse de 5 253 places. ~42% des demandeurs d'asile sans hébergement dédié. Le PLF 2026 transforme 12 500 places HUDA en CADA, une rationalisation sans places supplémentaires.",
+    "description": "Le dispositif national d'accueil regroupe les centres d'accueil des demandeurs d'asile (CADA), l'hébergement d'urgence (HUDA) et les centres d'accueil et d'examen des situations. Dans le PLF 2026, les places d'HUDA passent de 40 011 à 27 711, une partie étant transformée en places de CADA (+11 000). Une part importante des demandeurs d'asile ne bénéficie pas d'un hébergement dédié.",
     "amountBillions": 1.1,
     "costPerCitizen": 16,
     "deckId": "immigration",
@@ -102,13 +102,13 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["immigration", "hébergement", "asile"],
-    "equivalence": "~32€ par nuit et par place en centre d'accueil"
+    "equivalence": "HUDA : de 40 011 places en 2025 à 27 711 en 2026"
   },
   {
     "id": "imm-07",
     "title": "Intégration et accès à la nationalité",
     "subtitle": "Programme 104 — OFII",
-    "description": "Formation linguistique et civique des étrangers primo-arrivants, accompagnement vers l'emploi et le logement. Budget quasi stable en 2026 malgré l'obligation de niveau A2 en français pour les titres de séjour pluriannuels (1er janvier 2026).",
+    "description": "Formation linguistique et civique des étrangers primo-arrivants signataires du contrat d'intégration républicaine, accompagnement vers l'emploi et le logement. Les crédits stagnent à 368 M€ en 2026, malgré l'exigence d'un niveau A2 en français pour les titres de séjour pluriannuels depuis le 1er janvier 2026 ; la dématérialisation de la formation linguistique doit en limiter le coût.",
     "amountBillions": 0.368,
     "costPerCitizen": 5,
     "deckId": "immigration",
@@ -119,13 +119,13 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["immigration", "intégration", "français"],
-    "equivalence": "~1 500€ par parcours d'intégration (contrat CIR de 4 ans)"
+    "equivalence": "368 M€ pour l'intégration et l'accès à la nationalité en 2026"
   },
   {
     "id": "imm-08",
     "title": "Mineurs non accompagnés (MNA)",
-    "subtitle": "~30 000 à 40 000 jeunes étrangers isolés",
-    "description": "Charge sur les départements : coût moyen ~50 000€/mineur/an (hébergement, éducation, santé). L'État ne compensé que ~5 500€ par évaluation + ~90€/jour pendant 14 jours. Le reste est à la charge des départements qui dénoncent un transfert massif non compensé.",
+    "subtitle": "Mineurs étrangers isolés pris en charge par les départements",
+    "description": "Les départements prennent en charge les mineurs non accompagnés au titre de l'aide sociale à l'enfance (hébergement, éducation, santé), pour un coût élevé par jeune. L'État finance la phase d'évaluation et de mise à l'abri, par une contribution forfaitaire. Les départements estiment cette compensation très insuffisante.",
     "amountBillions": 2,
     "costPerCitizen": 29,
     "deckId": "immigration",
@@ -135,13 +135,13 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["immigration", "mineurs", "départements"],
-    "equivalence": "~140€/jour par MNA pris en charge, comparable au coût d'une nuit d'hôtel a Paris"
+    "equivalence": "Une prise en charge assurée par l'aide sociale à l'enfance des départements"
   },
   {
     "id": "imm-09",
     "title": "OFPRA et délais d'instruction asile",
-    "subtitle": "130 000 demandes/an",
-    "description": "L'OFPRA traite ~130 000 demandes d'asile/an. Délai moyen ramene a ~9 mois. Taux de protection ~35% en première instance. La CNDA est la juridiction qui rend le plus de décisions en France (~70 000€/an). Les deboutes (65%) doivent quitter le territoire mais le taux d'execution des OQTF reste ~7%.",
+    "subtitle": "Plus de 100 000 demandes d'asile par an",
+    "description": "L'OFPRA instruit plus de 100 000 demandes d'asile par an ; le PLF 2026 lui accorde 48 emplois supplémentaires pour atteindre 174 000 décisions. Une majorité des demandeurs sont déboutés, en première instance ou devant la Cour nationale du droit d'asile (CNDA), qui est la juridiction rendant le plus de décisions en France. Les déboutés doivent quitter le territoire, mais l'exécution des mesures d'éloignement reste faible.",
     "amountBillions": 0.1,
     "costPerCitizen": 1.5,
     "deckId": "immigration",
@@ -152,13 +152,13 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["immigration", "asile", "OFPRA"],
-    "equivalence": "130 000 dossiers d'asile/an pour 100 M = ~770€ de coût d'instruction par demande"
+    "equivalence": "Objectif de 174 000 décisions de l'OFPRA en 2026"
   },
   {
     "id": "imm-10",
     "title": "Titres de séjour et visas (recettes)",
-    "subtitle": "600 M/an de taxes",
-    "description": "Titres de séjour payants : 200-300 pour un premier titre. La France delivre ~3,5 millions de visas/an (1re au monde) et ~270 000 premiers titres de séjour. Ces taxes financent partiellement l'OFII et les consulats. La dématérialisation (ANEF) réduit les files d'attente mais exclut les personnes sans accès numérique.",
+    "subtitle": "Taxes sur les titres de séjour",
+    "description": "La délivrance des titres de séjour donne lieu à des taxes, de l'ordre de 200 à 300 € pour un premier titre. Ces recettes contribuent au financement de l'OFII. La dématérialisation des démarches (ANEF) réduit les files d'attente en préfecture, mais pose des difficultés aux personnes éloignées du numérique.",
     "amountBillions": 0.6,
     "costPerCitizen": 9,
     "deckId": "immigration",
@@ -169,13 +169,13 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["immigration", "visas", "recettes"],
-    "equivalence": "Les étrangers financent ~600 M€/an en taxes de séjour — ça couvre le tiers du budget Immigration"
+    "equivalence": "De l'ordre de 200 à 300 € de taxes pour un premier titre de séjour"
   },
   {
     "id": "imm-11",
     "title": "Regularisations et sans-papiers",
-    "subtitle": "600 000-900 000 personnes en situation irrégulière",
-    "description": "~30 000 régularisations/an. Les sans-papiers travaillent massivement dans le BTP, la restauration, l'aide a domicile. Ils cotisent à la Secu sans pouvoir bénéficier de la retraite. Le coût net est un sujet de guerre de chiffres entre think tanks.",
+    "subtitle": "Un nombre de personnes en situation irrégulière difficile à estimer",
+    "description": "Environ 30 000 personnes sont régularisées chaque année par admission exceptionnelle au séjour. Selon la Cour des comptes, le nombre d'étrangers en situation irrégulière est incertain : il est généralement approché par le nombre de bénéficiaires de l'aide médicale d'État (466 000 fin 2023), qui ne le mesure qu'imparfaitement. Ces personnes travaillent notamment dans le BTP, la restauration et l'aide à domicile. Leur coût net pour les finances publiques fait l'objet d'estimations divergentes.",
     "amountBillions": 4,
     "costPerCitizen": 60,
     "deckId": "immigration",
@@ -185,13 +185,13 @@
     "sourceDate": "2024-01-04",
     "level": 2,
     "tags": ["immigration", "sans-papiers", "regularisation"],
-    "equivalence": "30 000 régularisations/an sur 600 000-900 000 sans-papiers = un stock qui se renouvelle plus vite qu'il ne se résorbe"
+    "equivalence": "466 000 bénéficiaires de l'AME fin 2023"
   },
   {
     "id": "imm-12",
     "title": "Accueil réfugiés ukrainiens",
     "subtitle": "Protection temporaire UE",
-    "description": "~100 000 Ukrainiens bénéficient de la protection temporaire en France. Droit au travail immediat, ADA, scolarisation. Dispositif distinct de l'asile classique. 65% sont des femmes et enfants. Le taux d'emploi atteint ~30% après 2 ans (supérieur aux autres flux).",
+    "description": "Plusieurs dizaines de milliers d'Ukrainiens bénéficient de la protection temporaire en France, distincte de l'asile : droit au travail immédiat, allocation, scolarisation des enfants. Il s'agit majoritairement de femmes et d'enfants. L'allocation qui leur est versée représente 71,9 M€ dans le PLF 2026.",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
     "deckId": "immigration",
@@ -202,13 +202,13 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["immigration", "Ukraine", "refugies"],
-    "equivalence": "Accueillir 100 000 Ukrainiens coûte ~5 000/personne/an, soit le prix d'un semestre d'université"
+    "equivalence": "71,9 M€ d'allocation pour les bénéficiaires de la protection temporaire en 2026"
   },
   {
     "id": "imm-13",
     "title": "Scolarisation des enfants étrangers",
-    "subtitle": "70 000 élèves allophones/an en UPE2A",
-    "description": "Obligation constitutionnelle de scolariser tous les enfants de 3 à 16 ans, quelle que soit la situation administrative. Le coût par élève allophone est 30-50% supérieur (FLE, accompagnement). 95% des enfants allophones atteignent le niveau B1 en français après 2 ans.",
+    "subtitle": "Élèves allophones et dispositifs UPE2A",
+    "description": "Tous les enfants de 3 à 16 ans doivent être scolarisés, quelle que soit la situation administrative de leurs parents. Les élèves allophones nouvellement arrivés sont accueillis dans des dispositifs spécifiques (UPE2A) pour l'apprentissage du français, avant leur inclusion dans les classes ordinaires.",
     "amountBillions": 1.5,
     "costPerCitizen": 22,
     "deckId": "immigration",
@@ -218,13 +218,13 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["immigration", "education", "integration"],
-    "equivalence": "Un enfant allophone atteint le niveau B1 en français en 2 ans — le meilleur investissement d'intégration"
+    "equivalence": "Une obligation de scolarisation indépendante de la situation administrative"
   },
   {
     "id": "imm-14",
     "title": "Diaspora et transferts de fonds",
-    "subtitle": "12 Md/an envoyes vers les pays d'origine",
-    "description": "Les travailleurs immigres envoient ~12 Md€/an vers leurs pays d'origine (Maghreb, Afrique, Turquie, Asie). C'est 3x l'aide publique au développement française. Les frais de transfert restent élèves (~5-7%). Pour les pays recepteurs, ces remises représentent 10-20% du PIB.",
+    "subtitle": "Transferts privés vers les pays d'origine",
+    "description": "Les personnes immigrées installées en France envoient chaque année plusieurs milliards d'euros vers leurs pays d'origine (Maghreb, Afrique subsaharienne, Turquie, Asie). Les frais de transfert restent élevés. Pour plusieurs pays récepteurs, ces envois représentent une part importante du PIB. Il s'agit de transferts privés, pas de dépenses publiques.",
     "amountBillions": 12,
     "costPerCitizen": 0,
     "deckId": "immigration",
@@ -232,29 +232,29 @@
     "source": "Banque mondiale, Banque de France, AFD",
     "level": 1,
     "tags": ["immigration", "transferts", "developpement"],
-    "equivalence": "Les transferts privés des immigres (12 Md€) = 3x l'aide publique au développement française"
+    "equivalence": "Des transferts privés, distincts de l'aide publique au développement"
   },
   {
     "id": "imm-15",
     "title": "Eloignement et OQTF (execution)",
-    "subtitle": "140 000 OQTF/an, 7% exécutées",
-    "description": "~140 000 OQTF prononcees chaque année, ~7% exécutées. Un eloignement force coûte ~10 000-15 000. Obstacles : laissez-passer consulaires non delivres, absence de cooperation (Algerie, Maroc, Tunisie), recours suspensifs. L'aide au retour volontaire (2 500/personne) est 5x moins chere.",
-    "amountBillions": 0.5,
-    "costPerCitizen": 7,
+    "subtitle": "Coût de la lutte contre l'immigration irrégulière",
+    "description": "La Cour des comptes (2024) évalue le coût de la lutte contre l'immigration irrégulière à environ 1,8 Md€ par an. Entre 2019 et 2022, 447 257 OQTF ont été prononcées ; la direction générale des étrangers en France évalue à 12 % le taux d'exécution des OQTF exécutoires. Un éloignement forcé coûte en moyenne 4 414 €, contre 1 120 € pour un retour volontaire aidé. Obstacles : identification des personnes, laissez-passer consulaires, recours suspensifs.",
+    "amountBillions": 1.8,
+    "costPerCitizen": 26,
     "deckId": "immigration",
     "icon": "🛂",
-    "source": "Sénat (PLF 2026), DGEF, Ministere Intérieur, Cour des comptes",
-    "sourceUrl": "https://www.senat.fr/rap/l25-139-315/l25-139-315_mono.html",
-    "sourceDate": "2025-11-24",
-    "level": 3,
+    "source": "Cour des comptes (janvier 2024), Sénat (PLF 2026)",
+    "sourceUrl": "https://www.ccomptes.fr/sites/default/files/2024-01/20240104-Politique-lutte-contre-immigration-irreguliere.pdf",
+    "sourceDate": "2024-01-04",
+    "level": 2,
     "tags": ["immigration", "OQTF", "eloignement"],
-    "equivalence": "Sur 100 OQTF prononcees, 93 ne sont jamais exécutées"
+    "equivalence": "Un éloignement forcé coûte environ quatre fois plus qu'un retour volontaire"
   },
   {
     "id": "imm-16",
     "title": "Immigration de travail et métiers en tension",
-    "subtitle": "40 000 titres de séjour économiques/an",
-    "description": "60% des entreprises declarent des difficultés de recrutement. Le Passeport Talent vise les profils qualifiés : 15 000 delivres/an. Débat : immigration choisie (Canada, Australie) plutôt que subie (regroupement familial = 90 000 titres/an) ?",
+    "subtitle": "Titres de séjour pour motif économique",
+    "description": "Une majorité d'entreprises déclarent des difficultés de recrutement dans certains métiers. Les titres de séjour pour motif économique, dont le passeport talent pour les profils qualifiés, restent minoritaires par rapport aux titres délivrés pour motif familial ou étudiant. La loi de 2024 a créé un titre de séjour pour les métiers en tension.",
     "amountBillions": 0,
     "costPerCitizen": 0,
     "deckId": "immigration",
@@ -264,13 +264,13 @@
     "sourceDate": "2020-05",
     "level": 3,
     "tags": ["immigration", "travail", "métiers en tension"],
-    "equivalence": "Les immigres occupent 40% des emplois d'aide a domicile, 30% du BTP et 25% de la restauration"
+    "equivalence": "Un titre de séjour « métiers en tension » créé en 2024"
   },
   {
     "id": "imm-17",
     "title": "Déboutés d'asile (ni régularisés, ni expulsés)",
-    "subtitle": "Le stock des ni-ni",
-    "description": "65% des demandeurs d'asile sont déboutés. Beaucoup restent en France dans un statut de ni-ni : ni régularisables, ni expulsables. Ils basculent dans l'hébergement d'urgence, le travail informel et l'AME. Stock estimé : 100 000-300 000 personnes.",
+    "subtitle": "Ni régularisés, ni éloignés",
+    "description": "Une majorité de demandeurs d'asile sont déboutés. Une partie reste en France sans pouvoir être régularisée ni éloignée. Selon la Cour des comptes, les étrangers en situation irrégulière représentent 40 à 60 % des 203 000 occupants de l'hébergement d'urgence généraliste, pour un coût annuel d'environ 1 Md€.",
     "amountBillions": 1.5,
     "costPerCitizen": 22,
     "deckId": "immigration",
@@ -280,13 +280,13 @@
     "sourceDate": "2024-01-04",
     "level": 2,
     "tags": ["immigration", "asile", "déboutés"],
-    "equivalence": "Le stock de déboutés non expulsés grandit chaque année de ~80 000 personnes"
+    "equivalence": "40 à 60 % des occupants de l'hébergement d'urgence généraliste"
   },
   {
     "id": "imm-18",
     "title": "Naturalisation et acquisition de la nationalite",
-    "subtitle": "120 000 nouveaux Français/an",
-    "description": "~50 000 par décret, ~30 000 par mariage, ~30 000 par déclaration. Délai moyen 12-18 mois. Conditions : 5 ans de résidence, niveau B1, assimilation. La France est le pays européen qui naturalise le plus en valeur absolue. Taux de refus ~15%.",
+    "subtitle": "Plusieurs dizaines de milliers de naturalisations par an",
+    "description": "Chaque année, plusieurs dizaines de milliers d'étrangers acquièrent la nationalité française, par décret, par mariage ou par déclaration. La naturalisation suppose notamment cinq ans de résidence et un niveau suffisant en français, relevé par la loi de 2024. Les délais d'instruction restent longs.",
     "amountBillions": 0.1,
     "costPerCitizen": 1.5,
     "deckId": "immigration",
@@ -296,6 +296,6 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["immigration", "naturalisation", "nationalite"],
-    "equivalence": "120 000 nouveaux Français/an = la population d'une ville comme Amiens"
+    "equivalence": "Une condition de niveau de français relevée par la loi de 2024"
   }
 ]

@@ -3,26 +3,26 @@
     "id": "agr-01",
     "title": "Politique agricole commune (PAC)",
     "subtitle": "Part française — aides 1er et 2e pilier",
-    "description": "La France est le premier bénéficiaire de la PAC en Europe. Les aides couvrent les paiements directs aux exploitants (aide de base, écorégime, aides couplées), l'ICHN en zone montagne, et les mesures agroenvironnementales. En 2025, plus de 7,1 Md€ versés aux agriculteurs avant fin décembre.",
-    "amountBillions": 9.3,
-    "costPerCitizen": 137,
+    "description": "La France est le premier bénéficiaire de la PAC en volume. Les aides couvrent les paiements directs aux exploitants (aide de base, écorégime, aides couplées), l'indemnité compensatoire de handicaps naturels en montagne et les mesures agroenvironnementales. En 2024, la France a reçu 9,6 Md€ au titre de la PAC, soit 58 % des dépenses de l'UE en France.",
+    "amountBillions": 9.6,
+    "costPerCitizen": 141,
     "deckId": "agriculture",
     "icon": "🌾",
-    "source": "Ministère de l'Agriculture, La France Agricole, Sénat PLF 2026",
-    "sourceUrl": "https://www.senat.fr/rap/l25-139-33/l25-139-33_mono.html",
-    "year": 2026,
+    "source": "Sénat (PLF 2026), ministère de l'Agriculture",
+    "sourceUrl": "https://www.senat.fr/rap/l25-139-22/l25-139-22_mono.html",
+    "year": 2024,
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["agriculture", "PAC", "Europe"],
-    "equivalence": "Sans la PAC, le prix du panier de courses augmenterait de ~5-10% selon les estimations"
+    "equivalence": "58 % des dépenses de l'Union européenne en France en 2024"
   },
   {
     "id": "agr-02",
     "title": "Budget ministère de l'Agriculture",
     "subtitle": "Mission AAFAR — hors PAC européenne",
-    "description": "Sécurité sanitaire alimentaire (ANSES), enseignement agricole, ONF, gestion des crises sanitaires (grippe aviaire, dermatose bovine) et installation des jeunes agriculteurs. En 2026, les crédits baissent de 200 M€. Les crédits de planification écologique s'effondrent : de 1,3 Md€ en 2024 à 143 M€ en 2026.",
-    "amountBillions": 4.4,
-    "costPerCitizen": 65,
+    "description": "Sécurité sanitaire de l'alimentation, enseignement et recherche agricoles, forêt, gestion des crises sanitaires (grippe aviaire, dermatose nodulaire bovine) et installation des jeunes agriculteurs. En 2026, les crédits de paiement de la mission atteignent 4 Md€, contre 4,2 Md€ votés en 2025 (-5 %). Les crédits de planification écologique passent de 1,3 Md€ en 2024 à 491 M€ en 2025, puis 143 M€ en 2026.",
+    "amountBillions": 4,
+    "costPerCitizen": 59,
     "deckId": "agriculture",
     "icon": "🏛️",
     "trend": -4.5,
@@ -32,13 +32,13 @@
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["agriculture", "budget", "ministère"],
-    "equivalence": "Moins de la moitié du budget d'un seul porte-avions (1,2 Md€/an)"
+    "equivalence": "La mission ne représente qu'environ un cinquième des 25,3 Md€ de dépenses publiques pour l'agriculture"
   },
   {
     "id": "agr-03",
     "title": "Agences de l'eau",
     "subtitle": "Politique de l'eau — 6 agences",
-    "description": "Les 6 agences de l'eau financent la dépollution, l'entretien des cours d'eau, la préservation des zones humides et la modernisation des réseaux d'assainissement. Financées par des redevances, pas directement par l'impôt. La France a besoin de 4 à 6 Md€/an pour moderniser ses réseaux d'eau potable.",
+    "description": "Les 6 agences de l'eau financent la dépollution, l'entretien des cours d'eau, la préservation des zones humides et la modernisation des réseaux d'assainissement. Elles sont financées par des redevances payées par les usagers, pas directement par l'impôt. Le plafond de ces redevances (2,2 Md€) est relevé de 50 M€ en 2026, et le 12e programme d'intervention (2025-2030) prévoit 14 Md€ d'engagements sur cinq ans.",
     "amountBillions": 2.3,
     "costPerCitizen": 34,
     "deckId": "agriculture",
@@ -48,15 +48,15 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["agriculture", "eau", "environnement"],
-    "equivalence": "1 km de metro du Grand Paris Express (~200 M€) pour chaque agence"
+    "equivalence": "Plafond des redevances relevé de 50 M€ en 2026"
   },
   {
     "id": "agr-04",
     "title": "Office national des forêts (ONF)",
     "subtitle": "Gestion de 11 millions d'hectares de forêts publiques",
-    "description": "L'ONF gère 25% du territoire forestier. L'établissement subit des coupes d'effectifs régulières (−37 ETP en 2026) alors que le changement climatique accélère les crises sanitaires. Les recettes de vente de bois couvrent environ la moitié du budget. En 10 ans, l'ONF a perdu plus de 2 000 postes.",
-    "amountBillions": 0.9,
-    "costPerCitizen": 13,
+    "description": "L'ONF gère les forêts publiques, soit environ un quart de la forêt française. Pour 2026, les crédits de l'État en sa faveur atteignent 257,4 M€ (256,8 M€ en 2025), dont environ 228 M€ du programme 149 : c'est le seul opérateur de la mission dont les moyens sont consolidés, notamment pour le renouvellement forestier. Le reste de son budget provient surtout des ventes de bois.",
+    "amountBillions": 0.257,
+    "costPerCitizen": 4,
     "deckId": "agriculture",
     "icon": "🌲",
     "source": "Sénat (PLF 2026), PLF 2026, ONF, Cour des comptes",
@@ -65,13 +65,13 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["agriculture", "forêts", "ONF"],
-    "equivalence": "Moins d'1€ par hectare de forêt publique et par mois"
+    "equivalence": "257,4 M€ de crédits de l'État en 2026"
   },
   {
     "id": "agr-05",
     "title": "Agriculture biologique",
     "subtitle": "Soutien public — conversion + maintien + fonds Avenir Bio",
-    "description": "La France vise 21% de surface agricole en bio d'ici 2030 (contre ~12% aujourd'hui). Le fonds Avenir Bio est passé de 18 M€ à 8 M€ dans le PLF 2026. Paradoxe : la demande de bio stagne tandis que des exploitations font marché arrière faute de débouchés rentables.",
+    "description": "La France vise 21 % de surface agricole en bio d'ici 2030. Les crédits du fonds Avenir Bio sont divisés par deux dans le PLF 2026 (de 18 M€ à 8,8 M€) et le crédit d'impôt bio n'est prorogé que de deux ans. Plusieurs exploitations se déconvertissent faute de débouchés rentables.",
     "amountBillions": 0.25,
     "costPerCitizen": 4,
     "deckId": "agriculture",
@@ -82,7 +82,7 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["agriculture", "bio", "environnement"],
-    "equivalence": "Le prix de 2 cafés par Français et par an pour financer le bio"
+    "equivalence": "Environ 4 € par habitant et par an"
   },
   {
     "id": "agr-06",
@@ -139,7 +139,7 @@
     "id": "agr-09",
     "title": "Pêche et aquaculture",
     "subtitle": "FEAMPA européen + budget national",
-    "description": "La pêche française emploie ~15 000 marins sur ~4 000 navires. La France a perdu 25% de ses quotas post-Brexit. Le FEAMPA financé la modernisation de la flotte et la transition écologique. L'exonération de gazole pour les pêcheurs coûte ~100 M€/an. L'aquaculture pèse 800 M€ de CA mais reste sous-développée.",
+    "description": "La pêche française emploie environ 15 000 marins. Le Brexit a réduit l'accès des pêcheurs français aux eaux britanniques. Le Fonds européen pour les affaires maritimes, la pêche et l'aquaculture (FEAMPA) finance la modernisation de la flotte et la transition écologique. L'aquaculture reste peu développée au regard du potentiel.",
     "amountBillions": 0.4,
     "costPerCitizen": 6,
     "deckId": "agriculture",
@@ -149,13 +149,13 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["agriculture", "pêche", "aquaculture"],
-    "equivalence": "La France a le 2e domaine maritime mondial mais importe 70% de sa consommation de poisson"
+    "equivalence": "La France importe une large part du poisson qu'elle consomme"
   },
   {
     "id": "agr-10",
     "title": "Bien-être animal et abattoirs",
     "subtitle": "Contrôles DGAL + mises aux normes",
-    "description": "La France compte ~250 abattoirs (divisé par 2 en 20 ans). Cameras obligatoires en abattoir depuis 2023 (taux réel : ~40%). Veterinaires inspecteurs en sous-effectif (-20% en 10 ans). La loi Egalim interdit le broyage des poussins males et la castration a vif des porcelets depuis 2022.",
+    "description": "Les services vétérinaires de l'État (DGAL) contrôlent les conditions d'abattage et le bien-être animal en élevage. La loi EGalim (2018) a ouvert une expérimentation de la vidéosurveillance en abattoir. L'élimination des poussins mâles par broyage et la castration à vif des porcelets sont interdites depuis 2022.",
     "amountBillions": 0.15,
     "costPerCitizen": 2,
     "deckId": "agriculture",
@@ -165,13 +165,13 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["agriculture", "abattoirs", "bien-être animal"],
-    "equivalence": "~2€ par Français par an pour contrôler les conditions d'abattage de 1 milliard d'animaux"
+    "equivalence": "Environ 2 € par habitant et par an pour les contrôles d'abattage"
   },
   {
     "id": "agr-11",
     "title": "Vigne, vin et spiritueux",
     "subtitle": "Filiere viticole et fiscalité alcool",
-    "description": "La France est le 2e producteur mondial de vin et 1er exportateur en valeur (13 Md€/an dont cognac). La consommation a chuté de 50% en 40 ans. L'État aide a arracher des vignes (6 000/ha). Paradoxe : promotion du vin à l'export tout en combattant la consommation d'alcool (loi Evin).",
+    "description": "La France est l'un des premiers producteurs et exportateurs mondiaux de vins et spiritueux. La consommation de vin baisse depuis plusieurs décennies et l'État finance des plans d'arrachage de vignes pour réduire les surfaces. La filière bénéficie de la promotion à l'export, alors que la politique de santé publique vise à réduire la consommation d'alcool (loi Évin).",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
     "deckId": "agriculture",
@@ -181,13 +181,13 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["agriculture", "vin", "fiscalite"],
-    "equivalence": "Le vin rapporte 4 Md€ de taxes et 13 Md€ d'export, mais l'alcool coûte 120 Md€/an à la société"
+    "equivalence": "Une filière exportatrice soutenue alors que la santé publique vise à réduire la consommation d'alcool"
   },
   {
     "id": "agr-12",
     "title": "Gaspillage alimentaire et loi AGEC",
     "subtitle": "10 millions de tonnes perdues/an",
-    "description": "10 millions de tonnes de nourriture gaspillees chaque année en France. La loi AGEC (2020) interdit la destruction des invendus alimentaires. Le gaspillage en grande distribution a baissé de 20% depuis la loi Garot (2016). Les ménages gaspillent encore ~30 kg/personne/an. Objectif : diviser par 2 d'ici 2030.",
+    "description": "Selon l'Ademe (2016), environ 10 millions de tonnes de nourriture sont perdues ou gaspillées chaque année en France, pour une valeur commerciale estimée à 16 Md€. Les ménages en jettent environ 30 kg par personne et par an. La loi Garot (2016) puis la loi AGEC (2020) interdisent la destruction des invendus alimentaires et imposent leur don. L'objectif est de réduire le gaspillage de moitié d'ici 2025 dans la distribution et d'ici 2030 dans les autres secteurs.",
     "amountBillions": 16,
     "costPerCitizen": 235,
     "deckId": "agriculture",
@@ -197,29 +197,30 @@
     "sourceDate": "2016-05",
     "level": 1,
     "tags": ["agriculture", "gaspillage", "AGEC"],
-    "equivalence": "Chaque Français jette 1 de nourriture par jour à la poubelle"
+    "equivalence": "Environ 240 € de nourriture gaspillée par habitant et par an"
   },
   {
     "id": "agr-13",
     "title": "Crise agricole et plans d'urgence",
-    "subtitle": "800 M/an de mesures d'urgence recurrentes",
-    "description": "Chaque année depuis 2014, plans d'urgence : gel du vignoble, sécheresse, effondrement des prix du lait, grippe aviaire. En 2024, le blocage des autoroutes a déclenché un plan de 400 M€. Ces plans exceptionnels reviennent si régulièrement qu'ils sont devenus structurels. Le revenu agricole moyen reste a ~26 000€/an.",
-    "amountBillions": 0.8,
-    "costPerCitizen": 12,
+    "subtitle": "Dépenses de crise 2024 : 587 M€ pour 282 M€ prévus",
+    "description": "Gel, sécheresse, crises des prix, épizooties : les dépenses de gestion de crise dépassent chaque année la budgétisation. En 2024, le programme 149 avait prévu 282 M€ de crédits de paiement pour la gestion des crises ; l'exécution a atteint 587 M€ selon la Cour des comptes, au prix de redéploiements de crédits. L'influenza aviaire a coûté 717 M€ d'indemnisations entre 2020 et 2024.",
+    "amountBillions": 0.587,
+    "costPerCitizen": 9,
     "deckId": "agriculture",
     "icon": "🌾",
-    "source": "Sénat (avis PLF 2026), Ministere Agriculture, MSA, FNSEA",
+    "source": "Sénat (avis PLF 2026), Cour des comptes (NEB 2024)",
     "sourceUrl": "https://www.senat.fr/rap/a25-140-1/a25-140-1_mono.html",
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["agriculture", "crise", "urgence"],
-    "equivalence": "La France décrète une crise agricole en moyenne tous les 8 mois depuis 10 ans"
+    "equivalence": "Plus du double des crédits prévus en 2024",
+    "year": 2024
   },
   {
     "id": "agr-14",
     "title": "Enseignement agricole",
     "subtitle": "220 établissements publics + 600 privés",
-    "description": "170 000 élèves dans 800 établissements. Taux d'insertion professionnelle : 87% (le meilleur de l'enseignement professionnel français). Les lycees agricoles gèrent des exploitations pédagogiques. Paradoxe : le réseau est excellent mais meconnu.",
+    "description": "Environ 170 000 élèves et 800 établissements publics et privés. Les lycées agricoles gèrent des exploitations pédagogiques et affichent de bons taux d'insertion professionnelle. Ce réseau, relevant du ministère de l'Agriculture, reste peu connu.",
     "amountBillions": 1.5,
     "costPerCitizen": 22,
     "deckId": "agriculture",
@@ -229,13 +230,13 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["agriculture", "enseignement", "formation"],
-    "equivalence": "87% d'insertion professionnelle — le meilleur taux de tout l'enseignement français"
+    "equivalence": "Environ 800 établissements d'enseignement agricole"
   },
   {
     "id": "agr-15",
     "title": "Irrigation et gestion de l'eau agricole",
     "subtitle": "Mega-bassines et adaptation climatique",
-    "description": "6% de la surface agricole française est irriguée (vs 30% en Espagne). Les mega-bassines cristallisent un conflit majeur (Sainte-Soline, 2023 : 200 blesses). Le BRGM estimé que les nappes phreatiques baisseront de 10-25% d'ici 2050. Coût d'une mega-bassine = 5-10 M€.",
+    "description": "Une faible part de la surface agricole française est irriguée, bien moins qu'en Espagne. Les réserves de substitution (« méga-bassines ») cristallisent un conflit sur le partage de l'eau, illustré par les affrontements de Sainte-Soline en 2023. Le changement climatique réduit la recharge des nappes. L'agriculture est le premier secteur consommateur d'eau en France.",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
     "deckId": "agriculture",
@@ -243,13 +244,13 @@
     "source": "BRGM, OFB, Ministere Transition ecologique",
     "level": 3,
     "tags": ["agriculture", "eau", "irrigation"],
-    "equivalence": "L'agriculture utilise 45% de l'eau douce consommée en France, mais n'irrigue que 6% des terres"
+    "equivalence": "L'agriculture, premier secteur consommateur d'eau"
   },
   {
     "id": "agr-16",
     "title": "Pesticides et plan Ecophyto",
-    "subtitle": "Objectif -50% en 10 ans... résultat +15%",
-    "description": "Le plan Ecophyto visait a diviser par 2 l'usage des pesticides en 10 ans. Bilan 2024 : +15%. Le plan a été mis en pause en 2024. Le glyphosate re-autorise dans l'UE pour 10 ans. Le coût sanitaire des pesticides est estimé à 1-3 Md€/an. La redevance pour pollution diffuse rapporte ~150 M€/an.",
+    "subtitle": "Objectif de réduction de moitié non atteint selon la Cour des comptes",
+    "description": "Lancés en 2008, les plans Écophyto visaient à réduire de moitié l'usage des pesticides. En 2020, la Cour des comptes constate que, dix ans après et malgré des fonds publics importants, ils n'ont pas atteint leurs objectifs. Le plan a été mis en pause début 2024 avant la présentation de la stratégie Écophyto 2030 ; l'UE a renouvelé l'autorisation du glyphosate pour dix ans en novembre 2023. Selon le Sénat, les crédits de la stratégie de réduction des produits phytosanitaires passent de 250 M€ (AE 2024) à 25 M€ dans le PLF 2026.",
     "amountBillions": 0.3,
     "costPerCitizen": 4,
     "deckId": "agriculture",
@@ -259,13 +260,13 @@
     "sourceDate": "2020-02-04",
     "level": 3,
     "tags": ["agriculture", "pesticides", "sante"],
-    "equivalence": "Objectif : -50% de pesticides en 10 ans. Résultat : +15%. Et le plan a été suspendu"
+    "equivalence": "Crédits phytosanitaires : 250 M€ en 2024, 25 M€ proposés pour 2026"
   },
   {
     "id": "agr-17",
     "title": "Souverainete alimentaire",
     "subtitle": "Dependance aux importations",
-    "description": "La France est excédentaire en cereales, vin, produits laitiers, mais dependante en fruits (60% importes), legumes (40%), poisson (70%). La France nourrirait 80 millions de personnes avec sa production... mais pas avec les mêmes produits que ceux que les Français mangent.",
+    "description": "La France est excédentaire en céréales, vins et produits laitiers, mais dépend des importations pour une large part des fruits, des légumes et du poisson. Selon le Sénat, la balance commerciale agroalimentaire a été ponctuellement déficitaire en 2025. Les concours publics à l'agriculture atteignent 16,3 Md€ en 2026 (25,7 Md€ avec les crédits européens).",
     "amountBillions": 50,
     "costPerCitizen": 735,
     "deckId": "agriculture",
@@ -275,15 +276,15 @@
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["agriculture", "souverainete", "importations"],
-    "equivalence": "La France exporte 1 Md€ de fromage/an et importe 1 Md€ d'avocats et mangues"
+    "equivalence": "Concours publics à l'agriculture : 25,7 Md€ avec les crédits européens"
   },
   {
     "id": "agr-18",
-    "title": "Cantines publiques et restauration collective",
-    "subtitle": "3,5 milliards de repas/an",
-    "description": "La restauration collective publique sert 3,5 milliards de repas/an. La loi EGalim impose 50% de produits durables et 20% de bio — objectif atteint a ~30%. Un repas de cantine scolaire coûte 8-10 a produire. Un repas d'hôpital coûte 3-5. Le gaspillage en restauration collective = 120g/repas.",
-    "amountBillions": 4,
-    "costPerCitizen": 59,
+    "title": "Cantines et restauration collective",
+    "subtitle": "Près de 4 milliards de repas par an",
+    "description": "La restauration collective (scolaire, santé, médico-social, administrations, entreprises) sert près de 4 milliards de repas par an dans plus de 80 000 lieux, pour environ 9,5 Md€ d'achats. La loi EGalim impose 50 % de produits durables et de qualité, dont 20 % de bio. En 2024, les cantines qui ont télédéclaré leurs achats atteignent 29,5 % de produits durables et 11,8 % de bio ; près de 30 % d'entre elles respectent les deux objectifs.",
+    "amountBillions": 9.5,
+    "costPerCitizen": 140,
     "deckId": "agriculture",
     "icon": "🌾",
     "source": "Ministère de l'Agriculture, CNRC, ADEME, loi EGalim, DGAL",
@@ -291,29 +292,30 @@
     "sourceDate": "2025-12",
     "level": 2,
     "tags": ["agriculture", "cantines", "EGalim"],
-    "equivalence": "Un repas d'hôpital coûte moins qu'un café au comptoir — et ça se goûte"
+    "equivalence": "29,5 % de produits durables et 11,8 % de bio en 2024, pour des objectifs de 50 % et 20 %",
+    "year": 2024
   },
   {
     "id": "agr-19",
     "title": "Grippe aviaire et crises sanitaires animales",
-    "subtitle": "50 millions de volailles abattues en 4 ans",
-    "description": "La grippe aviaire H5N1 a frappe la France 4 hivers consécutifs (2020-2024). Coût : 600 M€ d'indemnisations + 400 M€ de pertes de marché + 500 M€ de prophylaxie. La vaccination obligatoire depuis 2023 coûte 100 M€/an mais n'est pas acceptée par tous les partenaires commerciaux.",
-    "amountBillions": 1.5,
-    "costPerCitizen": 22,
+    "subtitle": "717 M€ d'indemnisations entre 2020 et 2024",
+    "description": "L'influenza aviaire H5N1 a frappé les élevages français plusieurs hivers de suite depuis 2020. Selon le Sénat, la crise a coûté 717 M€ à l'État entre 2020 et 2024 pour le seul volet indemnisation des éleveurs. La vaccination des canards est obligatoire depuis l'automne 2023. D'autres épizooties, comme la dermatose nodulaire bovine, mobilisent aussi les crédits de crise.",
+    "amountBillions": 0.717,
+    "costPerCitizen": 11,
     "deckId": "agriculture",
     "icon": "🌾",
     "source": "Sénat (avis PLF 2026), DGAL, Ministere Agriculture, ANSES",
     "sourceUrl": "https://www.senat.fr/rap/a25-140-1/a25-140-1_mono.html",
     "sourceDate": "2025-11-24",
-    "level": 2,
+    "level": 3,
     "tags": ["agriculture", "grippe aviaire", "sanitaire"],
-    "equivalence": "50 millions de volailles abattues en 4 ans = plus que la population française en poulets"
+    "equivalence": "717 M€ d'indemnisations en cinq ans, hors prophylaxie et pertes de marché"
   },
   {
     "id": "agr-20",
     "title": "Foret française et bois-énergie",
     "subtitle": "ONF + reboisement + filiere bois",
-    "description": "La forêt française couvre 17 millions d'hectares (31% du territoire). Menacée par les scolytes, secheresses et incendies (+50% de surfaces brulees en 2022). Plan de reboisement France 2030 : 1 milliard d'arbres en 10 ans. Le bois-énergie représente 40% de la production d'énergie renouvelable.",
+    "description": "La forêt couvre environ 17 millions d'hectares, près d'un tiers du territoire métropolitain. Elle est menacée par les scolytes, les sécheresses et les incendies, exceptionnels en 2022. France 2030 vise la plantation d'un milliard d'arbres en dix ans. Le bois-énergie représente environ 30 % de la production d'énergies renouvelables.",
     "amountBillions": 1.2,
     "costPerCitizen": 18,
     "deckId": "agriculture",
@@ -323,6 +325,6 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["agriculture", "forêt", "bois"],
-    "equivalence": "La France exporte des grumes vers la Chine et importe des meubles chinois en bois français"
+    "equivalence": "Objectif : un milliard d'arbres plantés en dix ans"
   }
 ]

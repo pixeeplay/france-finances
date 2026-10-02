@@ -3,9 +3,9 @@
     "id": "cul-01",
     "title": "Budget de la Culture",
     "subtitle": "Mission « Culture » + « Médias, livre et industries culturelles »",
-    "description": "Patrimoine, spectacle vivant, musées, archéologie, création artistique. 1 200 musées, 40 000 monuments historiques, 45 sites UNESCO. Le patrimoine religieux (40% des monuments classés) coûte ~500 M€/an aux communes.",
-    "amountBillions": 4.4,
-    "costPerCitizen": 65,
+    "description": "Patrimoine, spectacle vivant, musées, archéologie, création artistique, livre et industries culturelles. Pour 2026, la mission « Culture » dispose de 3,75 Md€ de crédits de paiement (-4,3 % par rapport à 2025) et la mission « Médias, livre et industries culturelles » de 0,71 Md€. La mission Culture subventionne 72 opérateurs (Louvre, Opéra de Paris, Comédie-Française...), dont les budgets totalisent 2,5 Md€.",
+    "amountBillions": 4.46,
+    "costPerCitizen": 66,
     "deckId": "culture",
     "icon": "🎭",
     "trend": 7,
@@ -14,15 +14,16 @@
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["culture", "patrimoine", "musées"],
-    "equivalence": "Le budget Culture = 1/20e du budget Défense"
+    "equivalence": "Mission Culture : 3,75 Md€ de crédits de paiement en 2026",
+    "year": 2026
   },
   {
     "id": "cul-02",
     "title": "Audiovisuel public",
     "subtitle": "France Télévisions, Radio France, Arte, INA",
-    "description": "Financé par TVA affectée depuis la suppression de la redevance (2022). France Télévisions emploie ~9 000 salariés. Netflix et YouTube captent plus de temps d'écran que la TV publique chez les -35 ans. Le débat sur la fusion revient à chaque quinquennat.",
-    "amountBillions": 4,
-    "costPerCitizen": 59,
+    "description": "Depuis la suppression de la redevance (2022), l'audiovisuel public est financé par une fraction de TVA. Le PLF 2026 lui attribue 3,878 Md€ (-1,8 % par rapport à 2025), dont près des deux tiers pour France Télévisions et 17 % pour Radio France. La Cour des comptes juge « indispensable et urgente » une réforme du cadre social de France Télévisions. Le débat sur le regroupement des sociétés revient régulièrement.",
+    "amountBillions": 3.88,
+    "costPerCitizen": 57,
     "deckId": "culture",
     "icon": "📺",
     "source": "Budget.gouv.fr, ARCOM, Sénat",
@@ -30,13 +31,14 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["culture", "audiovisuel", "médias"],
-    "equivalence": "L'audiovisuel public coûte autant que la DGSI + l'aide juridictionnelle"
+    "equivalence": "Près des deux tiers pour France Télévisions",
+    "year": 2026
   },
   {
     "id": "cul-03",
     "title": "SNCF et transport ferroviaire",
     "subtitle": "Subventions publiques au transport ferroviaire",
-    "description": "Réseau de 30 000 km vieillissant (âge moyen des voies : 33 ans). Le TGV est rentable mais TER et Intercités structurellement déficitaires. La dette historique de SNCF Réseau (~24 Md€) reprise par l'État en 2020. Ouverture à la concurrence en cours.",
+    "description": "Réseau ferré d'environ 28 000 km, vieillissant. Les TGV dégagent des marges, tandis que les TER et Intercités dépendent des contributions des régions et de l'État. L'État a repris 35 Md€ de dette de SNCF Réseau en 2020 et 2022. L'ouverture à la concurrence est en cours sur les lignes régionales.",
     "amountBillions": 20,
     "costPerCitizen": 294,
     "deckId": "culture",
@@ -46,13 +48,13 @@
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["transports", "rail", "SNCF"],
-    "equivalence": "Remettre en état tout le réseau ferré coûterait ~100 Md€ sur 20 ans"
+    "equivalence": "Les besoins de régénération du réseau se chiffrent en milliards d'euros par an"
   },
   {
     "id": "cul-04",
     "title": "Routes et autoroutes",
     "subtitle": "Entretien réseau routier + concessions autoroutières",
-    "description": "~12 000 km de routes nationales + 9 200 km d'autoroutes concédées. Les sociétés d'autoroutes réalisent ~25% de marge nette. L'État a cédé les concessions pour ~15 Md€ ; elles en ont rapporté >100 Md€ aux concessionnaires. La taxe poids lourds abandonnée en 2014.",
+    "description": "L'État entretient environ 12 000 km de routes nationales non concédées ; environ 9 000 km d'autoroutes sont concédés à des sociétés privées jusqu'aux années 2030. La rentabilité de ces concessions, privatisées en 2006, fait l'objet de critiques récurrentes de la Cour des comptes et de l'Autorité de régulation des transports. L'écotaxe poids lourds a été abandonnée en 2014.",
     "amountBillions": 4.5,
     "costPerCitizen": 66,
     "deckId": "culture",
@@ -62,13 +64,13 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["transports", "routes", "autoroutes"],
-    "equivalence": "Les autoroutes privées rapportent chaque année autant que le budget Culture + Sport réunis"
+    "equivalence": "Les principales concessions autoroutières arrivent à échéance entre 2031 et 2036"
   },
   {
     "id": "cul-05",
     "title": "Transports en commun urbains",
     "subtitle": "Métro, tramway, bus — IdF + grandes villes",
-    "description": "Île-de-France Mobilités : 1er réseau européen. Le Grand Paris Express (200 km de métro, 68 gares) : plus grand chantier d'infrastructure en Europe, coût réévalué à ~44 Md€. Le déficit annuel d'IDFM dépasse 1 Md€.",
+    "description": "Île-de-France Mobilités organise l'un des premiers réseaux de transport urbain d'Europe. Le Grand Paris Express (200 km de métro automatique, 68 gares) est le plus grand chantier d'infrastructure d'Europe ; la Société des grands projets y consacre environ 5 Md€ par an. Le financement du fonctionnement des transports franciliens repose sur le versement mobilité, les recettes tarifaires et les contributions des collectivités, et fait l'objet de négociations récurrentes.",
     "amountBillions": 12,
     "costPerCitizen": 176,
     "deckId": "culture",
@@ -78,45 +80,47 @@
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["transports", "urbain", "Grand Paris"],
-    "equivalence": "Le Grand Paris Express coûtera autant que 6 EPR2 nucléaires"
+    "equivalence": "Environ 5 Md€ par an de dépenses de la Société des grands projets"
   },
   {
     "id": "cul-06",
     "title": "Sport (budget + JOP héritage)",
-    "subtitle": "Budget ministériel du Sport + ANS + héritage JOP 2024",
-    "description": "~16 millions de licenciés sportifs, 360 000 clubs. Les JOP 2024 ont coûté ~8,8 Md€ dont ~3 Md€ publics. La sédentarité coûte ~7 Md€/an en dépenses de santé. L'objectif « 30 minutes d'activité/jour à l'école » peine à se déployer.",
-    "amountBillions": 1.5,
-    "costPerCitizen": 22,
+    "subtitle": "Programme « Sport » (Agence nationale du sport, opérateurs)",
+    "description": "Le programme « Sport » porte notamment la subvention de l'État à l'Agence nationale du sport et aux opérateurs du sport : 554,4 M€ de crédits de paiement en 2026 (-6,5 %). La mission « Sport, jeunesse et vie associative », qui finance aussi le service civique, est en proportion celle qui contribue le plus aux économies du PLF 2026 : -17,5 %, à 1 235,9 M€.",
+    "amountBillions": 0.554,
+    "costPerCitizen": 8,
     "deckId": "culture",
     "icon": "⚽",
     "source": "Sénat (PLF 2026), Ministère des Sports, ANS, Cour des comptes",
     "sourceUrl": "https://www.senat.fr/rap/l25-139-330/l25-139-330_mono.html",
     "sourceDate": "2025-11-24",
-    "level": 2,
+    "level": 3,
     "tags": ["sport", "JOP", "clubs"],
-    "equivalence": "1,5 Md€ = le prix de 3 stades de 60 000 places"
+    "equivalence": "Mission Sport, jeunesse et vie associative : -17,5 % en 2026",
+    "year": 2026
   },
   {
     "id": "cul-07",
     "title": "Subventions à la presse",
     "subtitle": "Aides à la presse — directes + indirectes",
-    "description": "L'AFP reçoit ~130 M€/an de l'État. Le taux de TVA super-réduit (2,1%) appliqué aux abonnements. 10 milliardaires contrôlent ~80% de la presse nationale. Les aides bénéficient aussi à des titres rentables.",
-    "amountBillions": 1.8,
-    "costPerCitizen": 26,
+    "description": "En 2026, le programme « Presse et médias » est doté de 346 M€ : 178,3 M€ d'aides à la presse écrite (-5,8 %), 147,2 M€ pour l'AFP (124 M€ de compensation de ses missions d'intérêt général et 23,2 M€ d'abonnements de l'État) et un soutien aux radios locales. S'y ajoutent 65 M€ de dépenses fiscales, dont 58 M€ pour le taux de TVA super-réduit de 2,1 % sur la presse.",
+    "amountBillions": 0.41,
+    "costPerCitizen": 6,
     "deckId": "culture",
     "icon": "📰",
     "source": "Ministère de la Culture, DGMIC, Sénat",
     "sourceUrl": "https://www.senat.fr/rap/l25-139-318/l25-139-318_mono.html",
     "sourceDate": "2025-11-24",
-    "level": 2,
+    "level": 3,
     "tags": ["culture", "presse", "médias"],
-    "equivalence": "Les aides à la presse = le budget annuel de 3 grandes bibliothèques nationales"
+    "equivalence": "346 M€ de crédits et 65 M€ de dépenses fiscales en 2026",
+    "year": 2026
   },
   {
     "id": "cul-08",
     "title": "Patrimoine et monuments",
     "subtitle": "Entretien et restauration des monuments historiques",
-    "description": "45 000 immeubles protégés, 300 000 objets mobiliers. Notre-Dame : ~700 M€ financés par des dons privés (846 M€ collectés). Le Loto du patrimoine rapporte ~25 M€/an pour ~100 sites. Une église sur 5 est en péril selon la Fondation du patrimoine.",
+    "description": "Environ 45 000 immeubles protégés au titre des monuments historiques. La reconstruction de Notre-Dame de Paris a été financée par une souscription nationale de plus de 840 M€ de dons. Le Loto du patrimoine finance chaque année la restauration d'une centaine de sites. Les besoins d'investissement des grands opérateurs restent élevés.",
     "amountBillions": 1,
     "costPerCitizen": 15,
     "deckId": "culture",
@@ -126,15 +130,15 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["culture", "patrimoine", "monuments"],
-    "equivalence": "Restaurer 1 cathedrale = le prix de 10 crèches"
+    "equivalence": "Plus de 840 M€ de dons pour Notre-Dame de Paris"
   },
   {
     "id": "cul-09",
     "title": "Aviation civile",
     "subtitle": "Budget annexe de l'aviation civile (DGAC)",
-    "description": "~180 millions de passagers/an, 2e marché aérien européen. 100% autofinancé par le secteur (redevances et taxes), pas par l'impôt. Le kérosène reste détaxé, un avantage estimé à ~3-4 Md€/an. 3 liaisons aériennes supprimées en 2023 (TGV <2h30).",
-    "amountBillions": 2.3,
-    "costPerCitizen": 34,
+    "description": "Le budget annexe « Contrôle et exploitation aériens » (BACEA) finance la DGAC, le contrôle aérien et la sécurité de l'aviation civile : 2,4 Md€ en 2026, dont 1 442 M€ de dépenses de personnel (+3 %). Il est financé par les redevances et taxes du transport aérien, et non par l'impôt général. Le kérosène des vols commerciaux n'est pas soumis à l'accise sur les carburants.",
+    "amountBillions": 2.4,
+    "costPerCitizen": 35,
     "deckId": "culture",
     "icon": "✈️",
     "source": "Sénat (PLF 2026), DGAC, budget.gouv.fr, Réseau Action Climat",
@@ -142,13 +146,14 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["transports", "aérien", "DGAC"],
-    "equivalence": "La détaxe du kerosene = le budget annuel de la Culture"
+    "equivalence": "Dépenses de personnel de la DGAC : 1 442 M€ en 2026",
+    "year": 2026
   },
   {
     "id": "cul-10",
     "title": "Transition écologique (hors énergie)",
     "subtitle": "Biodiversité, eau, déchets, air",
-    "description": "OFB, Ademe, parcs nationaux, plan Biodiversité, plan Eau. Le Plan Eau prévoit ~2 Md€ sur 10 ans pour les fuites (1 litre sur 5 est perdu). L'OFB est sous-doté : la France abrite 10% de la biodiversité mondiale mais n'y consacre que ~0,1% de son PIB.",
+    "description": "OFB, Ademe, parcs nationaux, plan Biodiversité, plan Eau. Selon le Sénat, seuls 415 M€ ont été engagés sur 2023-2026 pour la stratégie nationale biodiversité, pour un besoin estimé à 1,25 Md€ par l'Inspection générale des finances. Le réseau d'eau potable perd environ un litre sur cinq en fuites.",
     "amountBillions": 5,
     "costPerCitizen": 74,
     "deckId": "culture",
@@ -158,13 +163,13 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["environnement", "biodiversité", "écologie"],
-    "equivalence": "Le budget biodiversité français = 1/10e du budget annuel de la PAC européenne"
+    "equivalence": "415 M€ engagés pour la biodiversité sur 2023-2026, pour 1,25 Md€ de besoins estimés"
   },
   {
     "id": "cul-11",
     "title": "CNC et industrie du cinema",
     "subtitle": "Autofinance par la taxe TSA",
-    "description": "Le CNC s'autofinance via la taxe sur les entrees en salle, la taxe TV et la taxe VOD. Budget ~800 M€ sans subvention de l'État. Netflix et Disney+ contribuent ~100 M€/an. La France est le 1er producteur de films en Europe.",
+    "description": "Le CNC ne reçoit aucun crédit budgétaire : il est financé par quatre taxes affectées (entrées en salle, éditeurs et distributeurs de télévision, vidéo et plateformes en ligne), dont le produit est estimé à 785 M€ en 2026 (+3,8 %). En 2025, l'État a prélevé 500 M€ sur sa trésorerie, puis 50 M€ supplémentaires sont prévus en 2026.",
     "amountBillions": 0.8,
     "costPerCitizen": 12,
     "deckId": "culture",
@@ -176,13 +181,13 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["cinema", "CNC", "culture"],
-    "equivalence": "Netflix contribue ~100 M€/an au cinema français via la taxe VOD"
+    "equivalence": "785 M€ de taxes affectées au CNC en 2026"
   },
   {
     "id": "cul-12",
     "title": "Velo et mobilités douces",
     "subtitle": "Plan velo : 2 Md€ sur 4 ans",
-    "description": "Le Plan velo financé pistes cyclables, stationnements sécurisés, aides à l'achat. La France est passée de 3% a 5% de part modale velo en 5 ans (vs 27% aux Pays-Bas). Les vols de velos restent un frein majeur (~400 000€/an). 1 km de piste cyclable coûte ~200 000€.",
+    "description": "Le plan vélo finance pistes cyclables, stationnements sécurisés et aides à l'achat. La part modale du vélo progresse mais reste loin de celle des Pays-Bas. Les crédits de l'État pour le vélo, portés notamment par l'Afit France, dépendent de recettes jugées structurellement incertaines par le Sénat.",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
     "deckId": "culture",
@@ -193,13 +198,13 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["velo", "mobilite", "transport"],
-    "equivalence": "1 km de piste cyclable coûte ~200 000€ (vs ~10 M€ pour 1 km de tramway)"
+    "equivalence": "Les crédits vélo dépendent du budget de l'Afit France"
   },
   {
     "id": "cul-13",
     "title": "Grand Paris Express",
     "subtitle": "200 km de metro automatique, 68 gares",
-    "description": "Plus grand projet de transport en Europe : 44 Md€ au total. Les lignes 15 Sud et 16 en chantier avance. Le coût a dépasse les prévisions initiales de 35 Md€. Finance par des taxes franciliennes. Polemique : un projet parisien financé par des taxes nationales.",
+    "description": "Plus grand projet de transport en Europe, le Grand Paris Express compte 200 km de métro automatique et 68 gares. Son coût a dépassé les prévisions initiales. Il est financé par des taxes affectées franciliennes et par les emprunts de la Société des grands projets, dont les dépenses annuelles avoisinent 5 Md€. Depuis 2025, IDFM verse une redevance d'infrastructure pour l'usage du réseau.",
     "amountBillions": 44,
     "costPerCitizen": 647,
     "deckId": "culture",
@@ -210,13 +215,13 @@
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["metro", "transport", "infrastructure"],
-    "equivalence": "Le Grand Paris Express coûte plus que 3 porte-avions nucléaires neufs"
+    "equivalence": "Environ 5 Md€ de dépenses par an pour la Société des grands projets"
   },
   {
     "id": "cul-14",
     "title": "Tourisme (politique et recettes)",
-    "subtitle": "1ere destination mondiale, 3e en recettes",
-    "description": "100 millions de visiteurs/an mais seulement 3e en recettes (derriere les États-Unis et l'Espagne). Le tourisme représente 8% du PIB et 2 millions d'emplois. 1€ public investi génère ~30€ de recettes — meilleur ROI de toutes les politiques publiques.",
+    "subtitle": "1re destination mondiale en nombre de visiteurs",
+    "description": "La France est la première destination touristique mondiale en nombre de visiteurs internationaux, mais pas en recettes. Le tourisme représente une part importante du PIB et de l'emploi. L'État soutient la promotion via Atout France.",
     "amountBillions": 2,
     "costPerCitizen": 29,
     "deckId": "culture",
@@ -227,13 +232,13 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["tourisme", "recettes", "attractivite"],
-    "equivalence": "1€ public investi dans le tourisme génère ~30€ de recettes — meilleur ROI de toutes les politiques publiques"
+    "equivalence": "1re destination mondiale en nombre de visiteurs"
   },
   {
     "id": "cul-15",
     "title": "Taxe aérien et quotas carbone",
     "subtitle": "Taxe de solidarite Chirac + ETS",
-    "description": "Taxe de solidarité sur les billets d'avion (1,13€ en eco, 45€ en business) qui financé UNITAID. Depuis 2024, les compagnies doivent acheter des quotas carbone. L'interdiction des vols courts (<2h30 si alternative TGV) ne concerne que 3 lignes.",
+    "description": "La taxe de solidarité sur les billets d'avion, créée en 2006, finance notamment UNITAID ; elle a été relevée en 2025. Les vols intra-européens sont soumis au marché carbone européen (ETS). L'interdiction des vols intérieurs lorsqu'une alternative en train de moins de 2h30 existe ne concerne que quelques liaisons.",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
     "deckId": "culture",
@@ -245,13 +250,13 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["aerien", "taxe", "carbone"],
-    "equivalence": "Un aller-retour Paris-New York génère ~1,7 tonne de CO2 par passager, taxe ~45€ en classe eco"
+    "equivalence": "Taxe sur les billets d'avion, relevée en 2025"
   },
   {
     "id": "cul-16",
     "title": "Musees nationaux",
     "subtitle": "Louvre, Orsay, Versailles et grands musées",
-    "description": "Le Louvre est le musée le plus visité au monde (8,9 millions de visiteurs en 2024). Ses recettes propres couvrent 60% de son budget (~280 M€). L'État subventionne les 40% restants. Versailles est quasi autonome financièrement. Les 1 200 musées de France forment un réseau sans équivalent mondial. Débat : la gratuité pour les -26 ans attire-t-elle de nouveaux publics ou subventionne-t-elle les touristes étrangers ?",
+    "description": "Le Louvre est le musée le plus visité au monde. Ses ressources propres (billetterie, mécénat) financent une part croissante de son budget, aux côtés de la subvention de l'État, alors que ses besoins d'investissement dépassent 1 Md€ sur dix ans. À partir de 2026, une hausse des tarifs pour les visiteurs non européens doit rapporter plus de 23 M€ dans les quatre monuments les plus fréquentés, dont plus de 15 M€ pour le Louvre. La gratuité pour les moins de 26 ans résidents de l'UE fait débat.",
     "amountBillions": 1.5,
     "costPerCitizen": 22,
     "deckId": "culture",
@@ -262,13 +267,13 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["culture", "musees", "patrimoine"],
-    "equivalence": "Le Louvre génère plus de recettes touristiques que le PIB de certains pays africains"
+    "equivalence": "Plus de 15 M€ attendus en 2026 de la hausse des tarifs au Louvre"
   },
   {
     "id": "cul-17",
     "title": "Fret ferroviaire",
     "subtitle": "Aides + subventions + investissement réseau fret",
-    "description": "Le fret ferroviaire ne transporte que 9% des marchandises en France (vs 19% en Allemagne, 30% en Suisse). La part modale a été divisée par 2 en 20 ans. Fret SNCF a accumulé 5 Md€ de dette. L'UE impose l'ouverture à la concurrence. Le gouvernement vise un doublement du fret ferroviaire d'ici 2030. Chaque tonne transportée par train émet 9x moins de CO2 que par camion.",
+    "description": "Le fret ferroviaire transporte environ 9 % des marchandises en France, une part nettement inférieure à celle de l'Allemagne ou de la Suisse. Fret SNCF a été restructuré en 2025 pour se conformer aux règles européennes sur les aides d'État. Le gouvernement vise un doublement de la part modale du fret ferroviaire d'ici 2030. Le Sénat souligne l'état préoccupant des infrastructures.",
     "amountBillions": 1,
     "costPerCitizen": 15,
     "deckId": "culture",
@@ -278,13 +283,13 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["transport", "fret", "ferroviaire"],
-    "equivalence": "Transferer 1% de marchandises de la route vers le rail = -500 000 camions/an sur les autoroutes"
+    "equivalence": "Objectif : doubler la part du fret ferroviaire d'ici 2030"
   },
   {
     "id": "cul-18",
     "title": "Ports maritimes",
     "subtitle": "Marseille, Le Havre, Dunkerque",
-    "description": "La France possède le 2e domaine maritime mondial (11 millions de km2) mais ses ports sont en décrochage : Marseille est le 5e port européen (loin derrière Rotterdam, Anvers, Hambourg). Le Havre traite 3 millions de conteneurs/an (vs 14 millions pour Rotterdam). La Stratégie nationale portuaire (2021) prévoit 1,5 Md€ d'investissement sur 10 ans.",
+    "description": "La France possède le 2e domaine maritime mondial, mais ses grands ports (Marseille-Fos, Haropa, Dunkerque) restent loin derrière Rotterdam, Anvers ou Hambourg. La stratégie nationale portuaire (2021) vise à reconquérir des parts de marché.",
     "amountBillions": 0.6,
     "costPerCitizen": 9,
     "deckId": "culture",
@@ -294,13 +299,13 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["transport", "ports", "maritime"],
-    "equivalence": "Rotterdam traite 5x plus de conteneurs que Le Havre, avec un territoire 40x plus petit"
+    "equivalence": "2e domaine maritime mondial"
   },
   {
     "id": "cul-19",
     "title": "Bibliothèques publiques",
     "subtitle": "16 500 bibliotheques + BnF",
-    "description": "16 500 bibliothèques publiques maillent le territoire (1er réseau culturel de France). 28% des Français sont inscrits en bibliothèque. La BnF conserve 40 millions de documents. Gallica donne accès a 10 millions de documents gratuits en ligne. Les bibliothèques deviennent des tiers-lieux (coworking, formation numérique, aide aux démarches).",
+    "description": "Environ 16 500 bibliothèques et points d'accès au livre maillent le territoire, ce qui en fait le premier réseau culturel de proximité. La BnF conserve plusieurs dizaines de millions de documents et Gallica en donne une partie en accès libre. Les bibliothèques développent des services de tiers-lieu (accès numérique, aide aux démarches).",
     "amountBillions": 2,
     "costPerCitizen": 29,
     "deckId": "culture",
@@ -310,13 +315,13 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["culture", "bibliotheques", "lecture"],
-    "equivalence": "16 500 bibliothèques = plus que le nombre de boulangeries (32 000) rapporte au budget"
+    "equivalence": "Le premier réseau culturel de proximité"
   },
   {
     "id": "cul-20",
     "title": "Archéologie préventive (INRAP)",
     "subtitle": "Redevance d'archeologie préventive + INRAP",
-    "description": "Avant tout chantier de construction, un diagnostic archéologique est obligatoire depuis 2001. L'INRAP (2 000 agents) réalisé ~2 000 diagnostics et ~200 fouilles/an. Découvertes majeures : villa gallo-romaine de Nîmes, sépultures médiévales sous Notre-Dame de Paris. La redevance (0,60€/m2) est payée par les aménageurs. La France découvre en moyenne 1 site majeur par semaine.",
+    "description": "Avant certains chantiers d'aménagement, un diagnostic archéologique peut être prescrit par l'État (loi de 2001). L'INRAP réalise une grande part des diagnostics et des fouilles. La redevance d'archéologie préventive est payée par les aménageurs.",
     "amountBillions": 0.2,
     "costPerCitizen": 3,
     "deckId": "culture",
@@ -327,6 +332,6 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["culture", "archeologie", "patrimoine"],
-    "equivalence": "0,60€/m2 de construction pour protéger 2 000 ans de patrimoine enfoui"
+    "equivalence": "Une redevance payée par les aménageurs"
   }
 ]

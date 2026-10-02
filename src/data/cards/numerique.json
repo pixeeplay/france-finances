@@ -2,10 +2,10 @@
   {
     "id": "num-01",
     "title": "Plan France 2030",
-    "subtitle": "54 Md€ sur 5 ans — technologies d'avenir",
-    "description": "Semiconducteurs, hydrogène vert, batteries, spatial, quantique, IA, biomédicaments. Critiqué pour sa dispersion et des taux de décaissement plus lents que prévus. Le Sénat a voté des coupes dans le PLF 2026, jugées « inapplicables » par Bercy.",
-    "amountBillions": 10,
-    "costPerCitizen": 147,
+    "subtitle": "54 Md€ sur 2022-2030 — technologies d'avenir",
+    "description": "Le plan France 2030 mobilise 54 Md€ sur 2022-2030 (54,5 Md€ avec les 450 M€ d'engagements ajoutés par le PLF 2026) : semi-conducteurs, hydrogène, batteries, spatial, quantique, IA, santé. En 2026, 5,1 Md€ de crédits de paiement financent 75 % des décaissements prévus, le reste étant couvert par la trésorerie des opérateurs. Le Sénat juge lacunaires les informations transmises au Parlement sur son déploiement.",
+    "amountBillions": 5.1,
+    "costPerCitizen": 75,
     "deckId": "numerique",
     "icon": "🚀",
     "source": "Sénat (PLF 2026), SGPI France 2030, PLF 2026, IFRAP",
@@ -14,13 +14,13 @@
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["numérique", "investissement", "France 2030"],
-    "equivalence": "Le budget de 6 CNRS chaque année pendant 5 ans"
+    "equivalence": "5,1 Md€ de crédits de paiement en 2026"
   },
   {
     "id": "num-02",
     "title": "Programme spatial (CNES + ESA)",
     "subtitle": "Centre spatial guyanais, Ariane 6, Galileo",
-    "description": "Le CNES est le bras spatial de la France, 1er contributeur à l'ESA. L'État a annoncé 9 Md€ sur 3 ans. France 2030 ajoute 1,5 Md€ pour les lanceurs réutilisables et les constellations. 1 lancement Ariane 6 coûte ~150 M€ (vs ~67 M$ un Falcon 9 SpaceX).",
+    "description": "Le CNES met en œuvre la politique spatiale française et porte une large part de la contribution de la France à l'Agence spatiale européenne. Le programme 193 « Recherche spatiale » est doté de 1 848 M€ en 2026 ; France 2030 finance en complément les lanceurs réutilisables et les constellations. Les lancements d'Ariane 6 restent plus coûteux que ceux de SpaceX.",
     "amountBillions": 2.8,
     "costPerCitizen": 41,
     "deckId": "numerique",
@@ -31,13 +31,13 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["numérique", "spatial", "CNES"],
-    "equivalence": "1 lancement Ariane 6 coûte ~150 M€ (vs ~67 M$ pour un Falcon 9 SpaceX)"
+    "equivalence": "Programme 193 : 1 848 M€ en 2026"
   },
   {
     "id": "num-03",
     "title": "Stratégie nationale IA",
     "subtitle": "Phase 2 — 2,5 Md€ (2024-2028)",
-    "description": "Renforce le calcul haute performance (supercalculateur Jean Zay), formation de 3 000 doctorants, soutien aux startups (Mistral AI, Hugging Face). La France est le leader européen de l'IA par le nombre de startups. Mais le budget français = ce que Google investit en IA en ~1 semaine.",
+    "description": "La deuxième phase de la stratégie nationale pour l'IA renforce le calcul haute performance (supercalculateur Jean Zay), la formation de doctorants et le soutien aux start-up françaises du secteur. Les investissements publics restent modestes au regard de ceux des grands groupes américains du numérique.",
     "amountBillions": 2.5,
     "costPerCitizen": 37,
     "deckId": "numerique",
@@ -47,13 +47,13 @@
     "sourceDate": "2025-02",
     "level": 2,
     "tags": ["numérique", "IA", "recherche"],
-    "equivalence": "Le budget IA français = ce que Google ou Microsoft investit en IA en ~1 semaine"
+    "equivalence": "2,5 Md€ de financements publics sur la période"
   },
   {
     "id": "num-04",
     "title": "Stratégie quantique nationale",
-    "subtitle": "1,8 Md€ sur 5 ans — ordinateur quantique 128 qubits en 2026",
-    "description": "Recherche fondamentale (CNRS, CEA, INRIA), startups (Pasqal, Alice & Bob, Quandela). La France est 3e investisseur mondial derrière USA et Chine. Enjeu : les futurs ordinateurs quantiques pourront casser les systèmes de chiffrement actuels.",
+    "subtitle": "1,8 Md€ sur 5 ans",
+    "description": "Lancée en 2021, la stratégie nationale quantique mobilise 1,8 Md€ sur cinq ans : recherche fondamentale (CNRS, CEA, Inria) et soutien aux start-up (Pasqal, Alice & Bob, Quandela). Les futurs ordinateurs quantiques pourraient casser les systèmes de chiffrement actuels, d'où les travaux sur la cryptographie post-quantique.",
     "amountBillions": 0.36,
     "costPerCitizen": 5,
     "deckId": "numerique",
@@ -63,13 +63,13 @@
     "sourceDate": "2022-01",
     "level": 3,
     "tags": ["numérique", "quantique", "recherche"],
-    "equivalence": "Le budget annuel de 4 lycees pour préparer la prochaine révolution informatique"
+    "equivalence": "1,8 Md€ sur cinq ans, soit environ 0,36 Md€ par an"
   },
   {
     "id": "num-05",
     "title": "Transformation numérique de l'État",
     "subtitle": "DINUM — France Connect, démarches-simplifiées.fr",
-    "description": "47 millions d'utilisateurs France Connect, design system de l'État, APIs inter-administrations. France dans le top 5 européen pour l'e-gouvernement. Paradoxe : malgré la numérisation, 13 millions de Français restent en difficulté avec le numérique.",
+    "description": "La direction interministérielle du numérique (DINUM) pilote FranceConnect, utilisé par plus de 40 millions de personnes, le système de design de l'État et les échanges de données entre administrations. Malgré la numérisation des démarches, une part importante de la population reste en difficulté avec le numérique.",
     "amountBillions": 0.2,
     "costPerCitizen": 3,
     "deckId": "numerique",
@@ -80,13 +80,13 @@
     "sourceDate": "2025-10-31",
     "level": 3,
     "tags": ["numérique", "État", "administration"],
-    "equivalence": "0,4 centime par démarche en ligne (plus de 500 millions/an)"
+    "equivalence": "Plus de 40 millions d'utilisateurs de FranceConnect"
   },
   {
     "id": "num-06",
     "title": "Semiconducteurs et industrie verte",
     "subtitle": "France 2030 + C3IV — filière puces",
-    "description": "Extension STMicroelectronics à Crolles (Grenoble), projet GlobalFoundries. Le C3IV prorogé jusqu'en 2028. L'Europe vise 20% de la production mondiale de puces d'ici 2030 (contre ~8% aujourd'hui). 1 usine de puces = 5-10 Md€ d'investissement.",
+    "description": "Extension de l'usine STMicroelectronics de Crolles, soutien à la filière dans le cadre de France 2030 et du crédit d'impôt pour l'industrie verte (C3IV). L'Europe vise 20 % de la production mondiale de semi-conducteurs d'ici 2030 (European Chips Act). Une usine de puces représente plusieurs milliards d'euros d'investissement. La Cour des comptes a évalué ce soutien public en 2026.",
     "amountBillions": 0.8,
     "costPerCitizen": 12,
     "deckId": "numerique",
@@ -97,13 +97,13 @@
     "sourceDate": "2026-04-21",
     "level": 3,
     "tags": ["numérique", "semiconducteurs", "industrie"],
-    "equivalence": "1 usine de puces = 5-10 Md€ d'investissement (~le budget annuel de la Justice)"
+    "equivalence": "Objectif européen : 20 % de la production mondiale de puces en 2030"
   },
   {
     "id": "num-07",
     "title": "Cybersécurité civile",
     "subtitle": "ANSSI + cyber France 2030 + Campus Cyber",
-    "description": "L'ANSSI protège les systèmes de l'État et des opérateurs vitaux. 831 incidents traités en 2024. Le marché français pèse ~5 Md€. Le coût des cyberattaques : ~2 Md€/an pour l'économie. Distinct du COMCYBER militaire (master deck) — ici c'est le volet civil.",
+    "description": "L'ANSSI protège les systèmes d'information de l'État et des opérateurs d'importance vitale, et traite chaque année des centaines d'incidents. Le Campus Cyber et France 2030 soutiennent la filière. Ce volet civil est distinct du commandement de la cyberdéfense des armées (COMCYBER).",
     "amountBillions": 0.4,
     "costPerCitizen": 6,
     "deckId": "numerique",
@@ -113,15 +113,15 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["numérique", "cybersécurité", "ANSSI"],
-    "equivalence": "6€ de prévention par citoyen vs 2 Md€ de degats annuels"
+    "equivalence": "Le volet civil de la cybersécurité, distinct du COMCYBER"
   },
   {
     "id": "num-08",
     "title": "France Travail (ex-Pôle Emploi)",
-    "subtitle": "55 000 agents — accompagnement des demandeurs d'emploi",
-    "description": "Gère ~3 millions de demandeurs en catégorie A. Transformation en guichet unique avec missions locales et Cap Emploi. Le taux de retour à l'emploi durable (CDI/CDD > 6 mois) reste inférieur à 50% des sorties.",
-    "amountBillions": 5.5,
-    "costPerCitizen": 81,
+    "subtitle": "Premier opérateur de l'État — 48 632 emplois en 2026",
+    "description": "France Travail accompagne les demandeurs d'emploi et verse les allocations chômage pour le compte de l'Unédic. En 2026, il reçoit 1,16 Md€ de subvention de l'État (-12 %) et 2,16 Md€ de transferts, soit environ 23 % de ses ressources ; la contribution de l'Unédic atteint 5,2 Md€ (74 %). Son plafond d'emplois passe à 48 632 ETPT. Le réseau France Travail coordonne aussi missions locales et Cap emploi.",
+    "amountBillions": 3.32,
+    "costPerCitizen": 49,
     "deckId": "numerique",
     "icon": "💼",
     "source": "Sénat (PLF 2026), France Travail, PLF 2026, Cour des comptes",
@@ -130,13 +130,13 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["numérique", "emploi", "France Travail"],
-    "equivalence": "~1 800€ de coût d'accompagnement par demandeur d'emploi et par an"
+    "equivalence": "L'Unédic finance environ les trois quarts de France Travail"
   },
   {
     "id": "num-09",
     "title": "Bpifrance (financement de l'innovation)",
-    "subtitle": "40 Md/an de financements mobilises",
-    "description": "Bpifrance soutient 100 000 entreprises/an via prêts (~20 Md€), garanties (~12 Md€), fonds propres (~5 Md€) et aides à l'innovation (~3 Md€). Elle gère aussi les PGE. Critique : financé-t-elle les startups qui en ont besoin, ou les licornes qui trouvent déjà du capital privé ?",
+    "subtitle": "Banque publique d'investissement",
+    "description": "Bpifrance, banque publique d'investissement, soutient les entreprises par des prêts, des garanties, des investissements en fonds propres et des aides à l'innovation ; elle opère aussi une partie des aides de France 2030. Son action fait débat : soutien aux entreprises qui peinent à se financer ou concurrence avec le capital privé sur les entreprises les plus attractives.",
     "amountBillions": 40,
     "costPerCitizen": 588,
     "deckId": "numerique",
@@ -147,13 +147,13 @@
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["numerique", "Bpifrance", "innovation"],
-    "equivalence": "Bpifrance mobilisé chaque jour l'équivalent du budget annuel de 4 lycees"
+    "equivalence": "Prêts, garanties, fonds propres et aides à l'innovation"
   },
   {
     "id": "num-10",
     "title": "French Tech et écosystème startup",
-    "subtitle": "25 000 startups, 30 licornes",
-    "description": "La French Tech regroupe ~25 000 startups et 30 licornes (Doctolib, BlaBlaCar, Mistral AI). La France est devenue le 1er écosystème startup européen en 2022 (13 Md€ de levees), avant de retomber a ~8 Md€ en 2024. Le taux de survie a 5 ans est de 40%.",
+    "subtitle": "Une trentaine de licornes françaises",
+    "description": "La French Tech regroupe plusieurs dizaines de milliers de start-up et une trentaine de licornes (Doctolib, BlaBlaCar, Mistral AI). Les levées de fonds ont atteint un pic en 2022 avant de reculer. L'État soutient l'écosystème via la Mission French Tech, Bpifrance et France 2030.",
     "amountBillions": 0.3,
     "costPerCitizen": 4,
     "deckId": "numerique",
@@ -161,13 +161,13 @@
     "source": "Mission French Tech, DGE, France Digitale",
     "level": 3,
     "tags": ["numerique", "startups", "French Tech"],
-    "equivalence": "~4€/an par Français pour un écosystème qui leve 8 Md€ de capital privé — effet de levier x25"
+    "equivalence": "Une trentaine de licornes françaises"
   },
   {
     "id": "num-11",
     "title": "Cables sous-marins et souveraineté numérique",
-    "subtitle": "99% du trafic internet passe par les cables",
-    "description": "Marseille est le 1er point d'atterrissage en Méditerranée. Alcatel Submarine Networks est le 1er fabricant mondial. Les GAFAM posent désormais leurs propres cables, marginalisant les opérateurs telecoms. Le sabotage de cables en mer Baltique (2023) a révèle la vulnérabilité de cette infrastructure.",
+    "subtitle": "L'essentiel du trafic internet international",
+    "description": "L'essentiel du trafic internet international passe par les câbles sous-marins. Marseille est un point d'atterrissage majeur en Méditerranée et Alcatel Submarine Networks, repris par l'État en 2024, est l'un des principaux fabricants mondiaux. Les grands acteurs du numérique posent désormais leurs propres câbles. Les incidents en mer Baltique ont révélé la vulnérabilité de ces infrastructures.",
     "amountBillions": 0.2,
     "costPerCitizen": 3,
     "deckId": "numerique",
@@ -175,13 +175,13 @@
     "source": "ANSSI, SGDSN, Alcatel Submarine Networks, ARCEP",
     "level": 3,
     "tags": ["numerique", "cables", "souverainete"],
-    "equivalence": "1 cable sous-marin transatlantique coûte ~300 M€ et transporte toute la bibliothèque du Congres en 1 seconde"
+    "equivalence": "L'essentiel du trafic internet international transite par les câbles sous-marins"
   },
   {
     "id": "num-12",
     "title": "Cloud souverain et donnees publiques",
     "subtitle": "Label SecNumCloud — hébergement des donnees critiques",
-    "description": "L'État héberge ses donnees critiques dans des clouds souverains labellisés SecNumCloud. Le Health Data Hub a été transféré de Microsoft Azure vers un hebergeur certifie après un bras de fer de 3 ans. Le marché du cloud public en France pese ~16 Md€, domine a 65% par AWS, Azure et Google.",
+    "description": "La doctrine « cloud au centre » impose d'héberger les données sensibles de l'État dans des offres qualifiées SecNumCloud par l'ANSSI. La Cour des comptes (2025) relève la faible utilisation des clouds internes de l'État et les enjeux de souveraineté liés à la dépendance aux fournisseurs américains, qui dominent le marché du cloud. L'hébergement du Health Data Hub chez Microsoft a suscité une longue controverse.",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
     "deckId": "numerique",
@@ -191,13 +191,13 @@
     "sourceDate": "2025-10-31",
     "level": 3,
     "tags": ["numerique", "cloud", "souverainete"],
-    "equivalence": "Les donnees de sante de 67 millions de Français etaient hebergees chez Microsoft jusqu'en 2024"
+    "equivalence": "Des données sensibles réservées aux offres qualifiées SecNumCloud"
   },
   {
     "id": "num-13",
     "title": "IA generative et investissements français",
     "subtitle": "Mistral AI, Hugging Face, Jean Zay",
-    "description": "Mistral AI (valorisation ~6 Md€ en 2024) est le champion français. Hugging Face est le GitHub de l'IA. L'État investit 500 M dans les compute credits. Mais les États-Unis investissent 100x plus. Le risque : la France formé les chercheurs, les GAFAM les embauchent.",
+    "description": "Mistral AI, valorisée près de 6 Md€ en 2024, est devenue le principal acteur français de l'IA générative ; Hugging Face héberge une grande partie des modèles ouverts mondiaux. L'État soutient l'accès au calcul (supercalculateur Jean Zay) et la recherche. Les investissements publics restent sans commune mesure avec ceux des États-Unis, et les chercheurs formés en France sont très sollicités par les grands groupes étrangers.",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
     "deckId": "numerique",
@@ -207,13 +207,13 @@
     "sourceDate": "2025-02",
     "level": 3,
     "tags": ["numerique", "IA", "Mistral"],
-    "equivalence": "Le budget IA de la France = ce que Google dépense en IA en 2 semaines"
+    "equivalence": "Mistral AI valorisée près de 6 Md€ en 2024"
   },
   {
     "id": "num-14",
     "title": "Illectronisme et fracture numérique",
-    "subtitle": "13 millions de Français en difficulté",
-    "description": "20% des Français en difficulté avec le numérique. L'État dematerialise massivement les démarches tout en creant une barrière pour 1 Français sur 5. Le Defenseur des droits reçoit 30 000 reclamations/an. 4 000 conseillers numériques France Services déployés.",
+    "subtitle": "Environ 15 % de la population en situation d'illectronisme",
+    "description": "Environ 15 % des personnes de 15 ans ou plus sont en situation d'illectronisme selon l'Insee. La dématérialisation des démarches administratives peut exclure ces publics. L'État a déployé environ 4 000 conseillers numériques et le réseau France Services pour les accompagner.",
     "amountBillions": 0.3,
     "costPerCitizen": 4,
     "deckId": "numerique",
@@ -223,13 +223,13 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["numerique", "illectronisme", "inclusion"],
-    "equivalence": "L'État a dematerialise 100% des démarches mais 20% des Français ne savent pas cliquer"
+    "equivalence": "Environ 4 000 conseillers numériques France Services"
   },
   {
     "id": "num-15",
     "title": "Régulation du numérique (CNIL, DSA, DMA)",
     "subtitle": "Amendes record et cadre européen",
-    "description": "La CNIL sanctionne les geants du numérique (150 M€ a Google en 2024). Le DSA et le DMA imposent de nouvelles obligations aux plateformes. L'AI Act réglemente l'IA par le risque. La France pousse l'UE vers plus de régulation.",
+    "description": "La CNIL contrôle le respect du RGPD et sanctionne les manquements, y compris des grandes plateformes (150 M€ d'amende à Google en 2021 pour les cookies). Le règlement sur les services numériques (DSA), le règlement sur les marchés numériques (DMA) et le règlement sur l'IA (AI Act) encadrent désormais les plateformes au niveau européen. La Cour des comptes a contrôlé la CNIL en 2026.",
     "amountBillions": 0.1,
     "costPerCitizen": 1.5,
     "deckId": "numerique",
@@ -239,13 +239,13 @@
     "sourceDate": "2026-06-04",
     "level": 3,
     "tags": ["numerique", "regulation", "CNIL"],
-    "equivalence": "~1,50€/an par Français pour réguler des plateformes qui pesent 10 000 Md$ de capitalisation"
+    "equivalence": "150 M€ d'amende infligée à Google en 2021"
   },
   {
     "id": "num-16",
     "title": "Datacenters et consommation énergétique",
-    "subtitle": "3% de la consommation électrique nationale",
-    "description": "La France est le 4e marché européen de datacenters. L'IA fait exploser les besoins : consommation pourrait doubler d'ici 2030. Avantage : l'électricité nucléaire bas carbone attire les hyperscalers. Inconvenient : chaque datacenter consomme autant qu'une ville de 50 000 habitants.",
+    "subtitle": "Une consommation électrique en hausse",
+    "description": "La France attire les centres de données grâce à une électricité bas carbone et abondante. Selon RTE, leur consommation pourrait fortement augmenter avec l'essor de l'intelligence artificielle. Les grands projets de centres de données représentent des besoins de raccordement électrique considérables.",
     "amountBillions": 3.5,
     "costPerCitizen": 0,
     "deckId": "numerique",
@@ -254,13 +254,13 @@
     "sourceUrl": "https://www.rte-france.com/bases-electricite/consommation-electricite/essor-data-centers-france",
     "level": 2,
     "tags": ["numerique", "datacenters", "énergie"],
-    "equivalence": "1 datacenter d'IA consomme autant d'électricité qu'une ville de 50 000 habitants"
+    "equivalence": "Une consommation électrique en forte croissance avec l'IA"
   },
   {
     "id": "num-17",
     "title": "Identite numérique (France Identite)",
     "subtitle": "Carte d'identité sur smartphone",
-    "description": "L'application France Identite permet de dematerialiser la carte d'identité. Socle de FranceConnect+ pour les démarches sensibles. 8 millions de Français l'ont adoptée fin 2025. La France est en avance sur l'UE (portefeuille d'identité européen prévu 2026-2027).",
+    "description": "L'application France Identité permet de disposer d'une version numérique de la carte nationale d'identité et sert de socle à FranceConnect+ pour les démarches sensibles. Le portefeuille d'identité numérique européen (règlement eIDAS 2) doit être proposé dans tous les États membres d'ici 2026-2027.",
     "amountBillions": 0.1,
     "costPerCitizen": 1.5,
     "deckId": "numerique",
@@ -270,13 +270,13 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["numerique", "identite", "FranceConnect"],
-    "equivalence": "France Identite = votre carte d'identité dans votre poche, acceptée partout (en theorie)"
+    "equivalence": "La carte d'identité sur smartphone"
   },
   {
     "id": "num-18",
     "title": "Open data et donnees publiques",
-    "subtitle": "data.gouv.fr — 45 000 jeux de donnees",
-    "description": "La France est classée 1re en Europe et 2e mondiale pour l'open data. 40 000 développeurs utilisent les API publiques. L'ouverture des donnees de sante et des algorithmes (Parcoursup) fait débat. Coût microscopique pour un impact économique estimé à 1-3 Md€/an.",
+    "subtitle": "data.gouv.fr et API publiques",
+    "description": "La France figure parmi les pays les mieux classés en Europe pour l'ouverture des données publiques (data.gouv.fr, API publiques). L'ouverture des données de santé et des algorithmes publics (Parcoursup) fait débat. Le coût de la politique d'open data est faible au regard des usages qu'elle permet.",
     "amountBillions": 0.03,
     "costPerCitizen": 0.45,
     "deckId": "numerique",
@@ -284,6 +284,6 @@
     "source": "Etalab, OCDE OUR Data Index, Commission européenne",
     "level": 3,
     "tags": ["numerique", "open data", "transparence"],
-    "equivalence": "~0,45€/an par Français pour l'open data, génère 1-3 Md€ de valeur économique — ratio x3000"
+    "equivalence": "Un coût public très faible"
   }
 ]
