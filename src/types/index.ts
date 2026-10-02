@@ -19,9 +19,17 @@ export interface Card {
   trend?: number;
   /** Source officielle */
   source: string;
-  /** URL de la source */
+  /** URL de la source (document ou page précise, https, domaine ASCII) */
   sourceUrl?: string;
-  /** Niveau de difficulté (1 = swipe simple, 2 = 4 directions, 3 = micro-audit) */
+  /** Année budgétaire du montant (ex. 2026 pour la LFI 2026) */
+  year?: number;
+  /** Date de publication de la source principale (AAAA, AAAA-MM ou AAAA-MM-JJ) */
+  sourceDate?: string;
+  /**
+   * Profondeur de la carte (voir src/data/README.md) :
+   * 1 = grand poste, 2 = dispositif, 3 = niche ou micro-audit.
+   * Distinct du niveau de jeu de la session (Session.level).
+   */
   level: 1 | 2 | 3;
   /** Tags pour le filtrage */
   tags?: string[];
