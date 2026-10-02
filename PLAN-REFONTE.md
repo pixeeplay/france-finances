@@ -186,10 +186,8 @@ Phase 3  (plus tard) Feed / dossiers éditoriaux
 
 ## 6. Todo équipe (accès admin)
 
-- [ ] **Coolify** : ajouter `ADMIN_EMAILS=smiollis@gmail.com,seb@pixeeplay.com,arnaud@pixeeplay.com,alexis@pixeeplay.com` (sans espaces ; le parseur doit quand même faire un `trim`).
-- [ ] **SSO admin Google Workspace + GitHub** : toute l'équipe a un compte Google Workspace `@pixeeplay.com`.
-  - Google : restreindre l'accès admin au domaine (`ADMIN_DOMAINS=pixeeplay.com`, vérification du claim `hd` + `email_verified` dans le callback NextAuth, et pas seulement du suffixe de l'email). Option : client OAuth « Interne » dans la console Google Cloud du Workspace pour un connecteur dédié à l'admin.
-  - GitHub : pas d'organisation ; l'accès admin passe en priorité par les emails de `ADMIN_EMAILS` (email vérifié du compte GitHub, via l'API `/user/emails`, scope `user:email`).
-  - `ADMIN_EMAILS` reste en secours (comptes hors domaine).
-- [ ] Migration de prod qui supprimerait la table `waitlist` : décision humaine avant exécution (export préalable des inscrits).
+- [x] **Coolify** : `ADMIN_EMAILS` défini (2026-10-02).
+- [~] **SSO admin** : abandonné (2026-10-02). Le back-office se limite à une page Analytics (`/pixee-admin`) ; la connexion Google/GitHub existante + `ADMIN_EMAILS` suffit. À reconsidérer seulement si le back-office grossit.
+- [ ] Table `waitlist` : export puis suppression validés (2026-10-02), à exécuter sur la base de prod (accès VPS requis).
 - [ ] **Simulateur** : sélecteur « Par mois / Par an » sur tous les montants (saisie et résultats), conservé dans l'URL.
+- [ ] **PLF 2027** : présenté le 1er octobre 2026, vote attendu avant le 31 décembre 2026. Mettre à jour cartes et `/chiffres` sur la loi votée (début 2027) ; en attendant, garder la LF 2026.
