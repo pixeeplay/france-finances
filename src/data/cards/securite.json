@@ -303,5 +303,22 @@
     "level": 3,
     "tags": ["sécurité", "radicalisation", "terrorisme"],
     "equivalence": "Environ 1,50 € par habitant et par an"
+  },
+  {
+    "id": "sec-19",
+    "title": "Frais de justice",
+    "subtitle": "Expertises, écoutes et interprètes : 760 M€ en 2026",
+    "description": "Les frais de justice couvrent les dépenses engagées lors des enquêtes et des procès : honoraires des experts et des interprètes, gardiennage des biens saisis, écoutes téléphoniques… Ils sont estimés à 759,7 M€ en 2026, soit plus de la moitié de plus qu'en 2017, alors que le nombre d'affaires est plutôt stable : les enquêtes sont plus complexes (violences sexuelles et intrafamiliales, narcotrafic). Depuis 1993, ces frais sont à la charge de l'État ; le projet de budget 2026 proposait d'en faire payer une partie aux personnes condamnées.",
+    "amountBillions": 0.76,
+    "costPerCitizen": 11,
+    "deckId": "securite",
+    "icon": "⚖️",
+    "source": "Sénat, rapport sur le PLF 2026 (examen des articles), ministère de la Justice",
+    "sourceUrl": "https://www.senat.fr/rap/l25-139-21/l25-139-21_mono.html",
+    "year": 2026,
+    "sourceDate": "2025-11-24",
+    "level": 3,
+    "tags": ["justice", "enquêtes", "frais de justice"],
+    "equivalence": "Plus de 50 % de hausse depuis 2017"
   }
 ]

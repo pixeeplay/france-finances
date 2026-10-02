@@ -302,5 +302,39 @@
     "level": 2,
     "tags": ["recettes", "APE", "participations"],
     "equivalence": "Des dividendes variables selon les résultats des entreprises"
+  },
+  {
+    "id": "rec-19",
+    "title": "Surtaxe sur les bénéfices des grandes entreprises",
+    "subtitle": "Une contribution « exceptionnelle » créée en 2025",
+    "description": "La loi de finances pour 2025 a créé une contribution exceptionnelle et temporaire sur les bénéfices des entreprises dont le chiffre d'affaires dépasse 1 Md€. Son rendement prévu pour 2025 est de 8 Md€. Le projet de budget 2026 proposait de la prolonger d'un an, pour un montant deux fois plus faible (4 Md€). Elle s'ajoute à l'impôt sur les sociétés.",
+    "amountBillions": 8,
+    "costPerCitizen": 116,
+    "deckId": "recettes",
+    "icon": "💰",
+    "source": "Gouvernement, Évaluation des voies et moyens (tome 1) annexée au PLF 2026",
+    "sourceUrl": "https://www.assemblee-nationale.fr/dyn/contenu/visualisation/1087930/file/PLF%202026%20-%20V%26M%20TI%20-%20Evaluations%20des%20recettes.pdf",
+    "year": 2025,
+    "sourceDate": "2025-10",
+    "level": 2,
+    "tags": ["recettes", "impôt sur les sociétés", "entreprises"],
+    "equivalence": "4 Md€ prévus en 2026, deux fois moins qu'en 2025"
+  },
+  {
+    "id": "rec-20",
+    "title": "Taxe sur les rachats d'actions",
+    "subtitle": "Une taxe créée par la loi de finances pour 2025",
+    "description": "Instaurée par la loi de finances pour 2025, cette taxe s'applique lorsque des entreprises rachètent leurs propres actions, une opération qui réduit le nombre d'actions en circulation et profite aux actionnaires restants. Elle comporte deux volets, dont un seul est durable : elle devrait rapporter 400 M€ en 2025, puis 200 M€ en 2026.",
+    "amountBillions": 0.4,
+    "costPerCitizen": 6,
+    "deckId": "recettes",
+    "icon": "💰",
+    "source": "Gouvernement, Évaluation des voies et moyens (tome 1) annexée au PLF 2026",
+    "sourceUrl": "https://www.assemblee-nationale.fr/dyn/contenu/visualisation/1087930/file/PLF%202026%20-%20V%26M%20TI%20-%20Evaluations%20des%20recettes.pdf",
+    "year": 2025,
+    "sourceDate": "2025-10",
+    "level": 3,
+    "tags": ["recettes", "entreprises", "actionnaires"],
+    "equivalence": "200 M€ par an à partir de 2026"
   }
 ]

@@ -325,5 +325,22 @@
     "level": 3,
     "tags": ["défense", "outre-mer", "bases"],
     "equivalence": "Environ 8 500 militaires et civils répartis dans cinq territoires"
+  },
+  {
+    "id": "def-21",
+    "title": "Factures reportées du ministère des Armées",
+    "subtitle": "Un « report de charges » de plus de 8 Md€",
+    "description": "Le report de charges regroupe les dépenses dues mais non réglées en fin d'année : prestations déjà effectuées et factures impayées faute de crédits, dont le paiement est renvoyé à l'année suivante. Pour le ministère des Armées, il est passé de 3,88 Md€ fin 2022 à environ 8,02 Md€ fin 2024, soit plus du double en deux ans. Le ministère prévoit de le ramener à 7,5 Md€ fin 2025, mais il atteindrait 8,6 Md€ fin 2026, environ 20 % de ses crédits hors salaires. Le Sénat en fait une priorité de sincérité budgétaire.",
+    "amountBillions": 8.6,
+    "costPerCitizen": 124,
+    "deckId": "defense",
+    "icon": "🛡️",
+    "source": "Sénat, rapport sur le PLF 2026 (Défense)",
+    "sourceUrl": "https://www.senat.fr/rap/l25-139-38/l25-139-38_mono.html",
+    "year": 2026,
+    "sourceDate": "2025-11-24",
+    "level": 2,
+    "tags": ["défense", "factures", "budget"],
+    "equivalence": "Plus du double du niveau de fin 2022"
   }
 ]

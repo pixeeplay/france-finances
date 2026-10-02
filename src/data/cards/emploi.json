@@ -297,5 +297,22 @@
     "level": 2,
     "tags": ["emploi", "seniors", "retraite"],
     "equivalence": "Un taux d'emploi des 60-64 ans inférieur à la moyenne européenne"
+  },
+  {
+    "id": "emp-19",
+    "title": "Prélèvement de l'État sur l'assurance chômage",
+    "subtitle": "4,1 Md€ repris à l'Unédic en 2026",
+    "description": "Depuis 2023, l'État réduit la compensation qu'il verse à l'assurance chômage (Unédic) en prélevant sur la part de TVA qui lui est affectée, pour financer ses propres politiques de l'emploi. Ce prélèvement a atteint 2 Md€ en 2023, 2,6 Md€ en 2024 et 3,35 Md€ en 2025 ; le projet de budget 2026 prévoit 4,1 Md€, le maximum envisagé lors de la négociation avec les partenaires sociaux. Le Sénat relève que l'assurance chômage est pourtant redevenue déficitaire.",
+    "amountBillions": 4.1,
+    "costPerCitizen": 59,
+    "deckId": "emploi",
+    "icon": "🏢",
+    "source": "Sénat, rapport sur le PLF 2026 (Travail, emploi et administration des ministères sociaux)",
+    "sourceUrl": "https://www.senat.fr/rap/l25-139-331/l25-139-331_mono.html",
+    "year": 2026,
+    "sourceDate": "2025-11-24",
+    "level": 2,
+    "tags": ["emploi", "assurance chômage", "Unédic"],
+    "equivalence": "Un prélèvement doublé entre 2023 et 2026"
   }
 ]

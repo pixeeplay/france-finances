@@ -159,5 +159,21 @@
     "level": 3,
     "tags": ["Europe", "Brexit", "commerce"],
     "equivalence": "Part de la France dans le financement de l'UE : 16,75 % en 2019, 18,52 % en 2023"
+  },
+  {
+    "id": "fre-11",
+    "title": "Prochain budget européen 2028-2034",
+    "subtitle": "Une contribution française qui pourrait passer de 26 à 38 Md€ par an",
+    "description": "La Commission européenne a présenté le 16 juillet 2025 sa proposition de budget de l'UE pour 2028-2034 : 1 985 Md€ d'engagements sur sept ans, qui doivent aussi couvrir le remboursement du plan de relance européen. Selon les services du ministère de l'Économie, la contribution annuelle moyenne de la France passerait de 26 Md€ (période 2021-2027) à 38 Md€, soit 12 Md€ de plus par an. Ce n'est qu'une proposition, que les États membres doivent encore négocier.",
+    "amountBillions": 12,
+    "costPerCitizen": 174,
+    "deckId": "france-europe",
+    "icon": "🇪🇺",
+    "source": "Sénat, rapport sur le PLF 2026 (participation de la France au budget de l'UE), ministère de l'Économie",
+    "sourceUrl": "https://www.senat.fr/rap/l25-139-21/l25-139-21_mono.html",
+    "sourceDate": "2025-11-24",
+    "level": 1,
+    "tags": ["Europe", "budget européen", "contribution"],
+    "equivalence": "12 Md€ de plus par an pour la France"
   }
 ]

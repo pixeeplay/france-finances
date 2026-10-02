@@ -288,5 +288,38 @@
     "level": 3,
     "tags": ["numerique", "open data", "transparence"],
     "equivalence": "Un coût public très faible"
+  },
+  {
+    "id": "num-19",
+    "title": "L'État au capital d'Eutelsat",
+    "subtitle": "Environ 1 Md€ pour des satellites en orbite basse",
+    "description": "En juillet 2025, l'État a racheté à Bpifrance environ 13,6 % du capital de l'opérateur de satellites Eutelsat pour 258 M€, puis a participé en octobre à deux augmentations de capital pour 750 M€, soit environ 1 Md€ au total. Objectif : sécuriser l'exploitation de sa constellation de satellites en orbite basse, issue de la fusion avec le britannique OneWeb et jugée stratégique pour des usages civils et militaires. L'opération représente près de la moitié des crédits de l'Agence des participations de l'État consommés en 2025.",
+    "amountBillions": 1,
+    "costPerCitizen": 14,
+    "deckId": "numerique",
+    "icon": "🛰️",
+    "source": "Sénat, avis sur le PLF 2026 (Participations financières de l'État), Agence des participations de l'État",
+    "sourceUrl": "https://www.senat.fr/rap/a25-140-8/a25-140-8_mono.html",
+    "sourceDate": "2025-11-24",
+    "level": 2,
+    "tags": ["numérique", "spatial", "État actionnaire"],
+    "equivalence": "258 M€ de rachat d'actions et 750 M€ d'augmentation de capital"
+  },
+  {
+    "id": "num-20",
+    "title": "Calcul avancé d'Atos racheté par l'État",
+    "subtitle": "400 M€ prévus en 2026",
+    "description": "L'État a conclu en juillet 2025 l'acquisition des activités de calcul avancé (« Advanced Computing ») du groupe Atos, pour un montant prévisionnel de 400 M€ en 2026. L'opération passe par une société créée pour l'occasion, Météore Holding, détenue à 100 % par l'État. Le Sénat, qui l'avait recommandée, y voit un pas de plus vers la souveraineté numérique.",
+    "amountBillions": 0.4,
+    "costPerCitizen": 6,
+    "deckId": "numerique",
+    "icon": "🚀",
+    "source": "Sénat, avis sur le PLF 2026 (Participations financières de l'État), Agence des participations de l'État",
+    "sourceUrl": "https://www.senat.fr/rap/a25-140-8/a25-140-8_mono.html",
+    "year": 2026,
+    "sourceDate": "2025-11-24",
+    "level": 3,
+    "tags": ["numérique", "souveraineté", "État actionnaire"],
+    "equivalence": "Une société détenue à 100 % par l'État"
   }
 ]

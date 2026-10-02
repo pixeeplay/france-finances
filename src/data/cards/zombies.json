@@ -162,5 +162,21 @@
     "level": 1,
     "tags": ["zombie", "retraites", "FRR", "réserves"],
     "equivalence": "1,45 Md€ versés chaque année à la caisse de la dette sociale (CADES) depuis 2025"
+  },
+  {
+    "id": "zom-11",
+    "title": "Petites taxes à faible rendement",
+    "subtitle": "243 taxes qui rapportent chacune moins de 175 M€",
+    "description": "La Cour des comptes recense 243 taxes rapportant chacune moins de 175 M€ par an en 2024, contre 305 en 2019. Ensemble, elles rapporteraient environ 6 Md€, un chiffre sous-estimé car 117 d'entre elles n'ont pas de rendement connu. Elles pèsent surtout sur les entreprises et compliquent le système fiscal, avec des coûts de collecte difficiles à chiffrer. Leur réduction est recommandée depuis plus de dix ans : Inspection générale des finances en 2014, Cour des comptes en 2018 puis en 2025.",
+    "amountBillions": 5.98,
+    "costPerCitizen": 87,
+    "deckId": "zombies",
+    "icon": "🧟",
+    "source": "Cour des comptes (les taxes à faible rendement, avril 2025)",
+    "sourceUrl": "https://www.ccomptes.fr/sites/default/files/2025-04/20250417-Taxes-a-faible-rendement_0.pdf",
+    "sourceDate": "2025-04",
+    "level": 2,
+    "tags": ["zombie", "fiscalité", "taxes"],
+    "equivalence": "243 petites taxes en 2024, contre 305 en 2019"
   }
 ]

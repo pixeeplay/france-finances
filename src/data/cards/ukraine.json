@@ -159,5 +159,21 @@
     "level": 3,
     "tags": ["Ukraine", "économie", "croissance", "inflation"],
     "equivalence": "Croissance prévue en 2022 : 3,4 % ou 2,8 % selon le scénario"
+  },
+  {
+    "id": "ukr-11",
+    "title": "Soutien à l'Ukraine financé hors budget des Armées",
+    "subtitle": "1,2 Md€ prévus sur 2024-2030",
+    "description": "La loi de programmation militaire 2024-2030 prévoit 400 Md€ de crédits pour les armées. Elle compte aussi sur 13,3 Md€ de ressources complémentaires, dont 1,2 Md€ de financement interministériel du soutien à l'Ukraine, c'est-à-dire partagé avec d'autres ministères. En pratique, le Sénat relève que le soutien à l'Ukraine a jusqu'ici surtout été financé par des crédits ouverts en fin d'année.",
+    "amountBillions": 1.2,
+    "costPerCitizen": 17,
+    "deckId": "ukraine",
+    "icon": "🇫🇷",
+    "source": "Sénat, rapport sur le PLF 2026 (Défense), loi de programmation militaire 2024-2030",
+    "sourceUrl": "https://www.senat.fr/rap/l25-139-38/l25-139-38_mono.html",
+    "sourceDate": "2025-11-24",
+    "level": 2,
+    "tags": ["Ukraine", "défense", "programmation militaire"],
+    "equivalence": "1,2 Md€ sur sept ans, en plus des 400 Md€ de la programmation militaire"
   }
 ]
