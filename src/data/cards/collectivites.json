@@ -19,7 +19,7 @@
   {
     "id": "col-02",
     "title": "Communes (budget et diversité)",
-    "subtitle": "Le bloc communal, échelon le plus proche du citoyen",
+    "subtitle": "Communes et intercommunalités, l'échelon le plus proche du citoyen",
     "description": "Avec près de 35 000 communes, la France concentre une part très importante des communes de l'Union européenne ; la grande majorité ont moins de 2 000 habitants. Le bloc communal gère les écoles primaires, la voirie communale, l'état civil, l'urbanisme et une large part des équipements de proximité. Le budget total des communes atteint environ 130 Md€ par an.",
     "amountBillions": 130,
     "costPerCitizen": 1880,
@@ -66,9 +66,9 @@
   },
   {
     "id": "col-05",
-    "title": "DGF (dotation globale de fonctionnement)",
-    "subtitle": "Le principal transfert financier de l'État aux collectivités",
-    "description": "La dotation globale de fonctionnement (DGF) est le principal concours financier de l'État aux collectivités : 27,4 Md€ en loi de finances pour 2025, dont 19,1 Md€ pour les communes et intercommunalités et 8,3 Md€ pour les départements. Elle comprend une part forfaitaire et des dotations de péréquation (DSU, DSR, dotation nationale de péréquation). Après des baisses entre 2014 et 2017, son montant global est resté globalement stable, la péréquation progressant à l'intérieur de l'enveloppe.",
+    "title": "Dotation de l'État aux communes, départements et régions (DGF)",
+    "subtitle": "Le principal versement de l'État aux collectivités pour leur fonctionnement",
+    "description": "La dotation globale de fonctionnement (DGF) est le principal versement de l'État aux collectivités : 27,4 Md€ en loi de finances pour 2025, dont 19,1 Md€ pour les communes et intercommunalités et 8,3 Md€ pour les départements. Elle comprend une part forfaitaire et des dotations de péréquation (DSU, DSR, dotation nationale de péréquation). Après des baisses entre 2014 et 2017, son montant global est resté globalement stable, la péréquation progressant à l'intérieur de l'enveloppe.",
     "amountBillions": 27.4,
     "costPerCitizen": 397,
     "deckId": "collectivites",
@@ -79,13 +79,13 @@
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["dotation", "financement", "inégalités"],
-    "equivalence": "19,1 Md€ pour le bloc communal, 8,3 Md€ pour les départements en 2025"
+    "equivalence": "19,1 Md€ pour les communes et intercommunalités, 8,3 Md€ pour les départements en 2025"
   },
   {
     "id": "col-06",
-    "title": "DILICO",
-    "subtitle": "Mise en réserve d'une partie des recettes des collectivités",
-    "description": "Créé par la loi de finances pour 2025 à l'initiative du Sénat, le dispositif de lissage conjoncturel (Dilico) prélève une année une partie des recettes des collectivités, puis la leur reverse par tiers les trois années suivantes (90 % aux contributrices, le reste à la péréquation). Le Dilico 2025 portait sur 1 Md€ (500 M€ pour le bloc communal, 220 M€ pour les départements, 280 M€ pour les régions). Le PLF 2026 propose un « Dilico 2 » de 2 Md€, aux modalités de reversement modifiées. Les associations d'élus y voient une contrainte supplémentaire sur leurs budgets.",
+    "title": "Recettes des collectivités mises en réserve (Dilico)",
+    "subtitle": "Une part des recettes locales retenue une année, puis reversée sur trois ans",
+    "description": "Créé par la loi de finances pour 2025 à l'initiative du Sénat, le dispositif de lissage conjoncturel (Dilico) prélève une année une partie des recettes des collectivités, puis la leur reverse par tiers les trois années suivantes (90 % aux collectivités qui ont contribué, le reste redistribué aux collectivités les moins riches). Le Dilico 2025 portait sur 1 Md€ (500 M€ pour le bloc communal, 220 M€ pour les départements, 280 M€ pour les régions). Le PLF 2026 propose un « Dilico 2 » de 2 Md€, aux modalités de reversement modifiées. Les associations d'élus y voient une contrainte supplémentaire sur leurs budgets.",
     "amountBillions": 2,
     "costPerCitizen": 29,
     "deckId": "collectivites",
@@ -134,7 +134,7 @@
     "id": "col-09",
     "title": "Intercommunalités (EPCI)",
     "subtitle": "Les 1 250 structures intercommunales et leurs compétences",
-    "description": "Les quelque 1 250 EPCI à fiscalité propre (communautés de communes, d'agglomération, urbaines, métropoles) gèrent notamment les déchets, l'eau, les transports et l'urbanisme, pour un budget total d'environ 50 Md€. Leurs conseillers sont désignés lors des élections municipales, par fléchage sur les listes, et non lors d'un scrutin distinct.",
+    "description": "Les quelque 1 250 intercommunalités qui lèvent leur propre impôt (EPCI à fiscalité propre : communautés de communes, d'agglomération, urbaines, métropoles) gèrent notamment les déchets, l'eau, les transports et l'urbanisme, pour un budget total d'environ 50 Md€. Leurs conseillers sont désignés lors des élections municipales, par fléchage sur les listes, et non lors d'un scrutin distinct.",
     "amountBillions": 50,
     "costPerCitizen": 724,
     "deckId": "collectivites",
@@ -148,8 +148,8 @@
   },
   {
     "id": "col-10",
-    "title": "Péréquation",
-    "subtitle": "La solidarité financière entre territoires riches et pauvres",
+    "title": "Solidarité financière entre collectivités (péréquation)",
+    "subtitle": "Des territoires les plus riches vers les plus pauvres",
     "description": "La péréquation redistribue environ 8 Md€ par an entre collectivités, via des dotations de l'État (DSU, DSR, dotation nationale de péréquation) et des fonds alimentés par les collectivités elles-mêmes (FPIC). Son objectif est de réduire les écarts de ressources entre territoires, qui restent importants.",
     "amountBillions": 8,
     "costPerCitizen": 116,
@@ -165,8 +165,8 @@
   },
   {
     "id": "col-11",
-    "title": "DMTO (frais de notaire)",
-    "subtitle": "Les droits de mutation, recette ultra-cyclique des départements",
+    "title": "Taxes sur les ventes immobilières (« frais de notaire »)",
+    "subtitle": "Les droits de mutation (DMTO), une recette des départements très dépendante du marché immobilier",
     "description": "Les droits de mutation à titre onéreux (DMTO), souvent appelés « frais de notaire », sont une recette majeure des départements, de l'ordre de 14 Md€ par an en moyenne. Très dépendante du marché immobilier, elle a reculé de 22 % en 2023 puis de 12,9 % en 2024 (OFGL), alors que les dépenses sociales des départements continuent de progresser.",
     "amountBillions": 14,
     "costPerCitizen": 203,
@@ -207,7 +207,7 @@
     "source": "AMF, DGCL, Cour des comptes, Conseil constitutionnel",
     "level": 3,
     "tags": ["fiscalité", "autonomie", "démocratie"],
-    "equivalence": "Fractions de TVA et compensations remplacent une partie des impôts locaux"
+    "equivalence": "Une part de la TVA nationale et des compensations de l'État remplacent une partie des impôts locaux"
   },
   {
     "id": "col-14",
@@ -273,8 +273,8 @@
   },
   {
     "id": "col-18",
-    "title": "CNRACL",
-    "subtitle": "Caisse de retraite des fonctionnaires territoriaux et hospitaliers",
+    "title": "Retraites des fonctionnaires territoriaux et hospitaliers",
+    "subtitle": "Leur caisse de retraite (CNRACL), aujourd'hui déficitaire",
     "description": "La CNRACL verse les pensions des fonctionnaires territoriaux et hospitaliers : près de 26,2 Md€ en 2025. Excédentaire jusqu'en 2017, elle est depuis en déficit en raison de la dégradation de son ratio démographique ; selon un rapport IGF-Igas de mai 2024, ce déficit pourrait atteindre 11,1 Md€ en 2030. Le taux de cotisation des employeurs (collectivités, hôpitaux) est relevé par étapes depuis 2025.",
     "amountBillions": 26.2,
     "costPerCitizen": 379,

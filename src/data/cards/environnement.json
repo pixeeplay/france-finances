@@ -1,9 +1,9 @@
 [
   {
     "id": "env-01",
-    "title": "Mission Écologie",
-    "subtitle": "Budget global de la mission Écologie",
-    "description": "Dans le PLF 2026, les crédits de paiement de la mission « Écologie, développement et mobilité durables » atteignent 16,2 Md€ (-1,7 %), pour 17,3 Md€ d'autorisations d'engagement, quasi stables. Une partie de la baisse s'explique par des changements de périmètre (charges de service public de l'énergie financées par des recettes affectées). Plusieurs dispositifs de transition sont réduits, comme le Fonds vert.",
+    "title": "Budget de l'Écologie",
+    "subtitle": "Crédits de l'État pour l'écologie, les transports et l'énergie",
+    "description": "Dans le projet de budget 2026 (PLF), le budget « Écologie, développement et mobilité durables » prévoit 16,2 Md€ de dépenses dans l'année (crédits de paiement, -1,7 %) et 17,3 Md€ de nouveaux engagements autorisés (autorisations d'engagement), quasi stables. Une partie de la baisse s'explique par des changements de périmètre (charges de service public de l'énergie financées par des recettes affectées). Plusieurs dispositifs de transition sont réduits, comme le Fonds vert.",
     "amountBillions": 16.2,
     "costPerCitizen": 234,
     "deckId": "environnement",
@@ -14,13 +14,13 @@
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["écologie", "budget", "transition"],
-    "equivalence": "16,2 Md€ de crédits de paiement en 2026 (-1,7 %)"
+    "equivalence": "16,2 Md€ de dépenses prévues en 2026 (-1,7 %)"
   },
   {
     "id": "env-02",
-    "title": "ADEME",
-    "subtitle": "Agence de la transition écologique",
-    "description": "L'Ademe est l'opérateur de l'État pour la transition écologique : elle finance la chaleur renouvelable, l'économie circulaire, la mobilité et accompagne collectivités et entreprises. Son budget incitatif est estimé à 1,03 Md€ d'autorisations d'engagement en 2026, en baisse de 10 % après -16,9 % en 2025. Le fonds chaleur est maintenu à 800 M€, tandis que le fonds économie circulaire recule de 45,7 %. Sa suppression a été proposée par certains parlementaires.",
+    "title": "Agence de la transition écologique (ADEME)",
+    "subtitle": "Aides à la chaleur renouvelable, au recyclage et à la mobilité",
+    "description": "L'Ademe est l'agence publique de l'État pour la transition écologique : elle finance la chaleur renouvelable, l'économie circulaire, la mobilité et accompagne collectivités et entreprises. Son budget incitatif est estimé à 1,03 Md€ d'autorisations d'engagement en 2026, en baisse de 10 % après -16,9 % en 2025. Le fonds chaleur est maintenu à 800 M€, tandis que le fonds économie circulaire recule de 45,7 %. Sa suppression a été proposée par certains parlementaires.",
     "amountBillions": 3.4,
     "costPerCitizen": 49,
     "deckId": "environnement",
@@ -31,12 +31,12 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["transition", "agence", "subventions"],
-    "equivalence": "Budget incitatif 2026 : 1,03 Md€ (-10 %)"
+    "equivalence": "Enveloppe d'aides 2026 : 1,03 Md€ (-10 %)"
   },
   {
     "id": "env-03",
-    "title": "OFB",
-    "subtitle": "Office français de la biodiversité",
+    "title": "Office français de la biodiversité (OFB)",
+    "subtitle": "Police de l'environnement et protection de la nature",
     "description": "L'Office français de la biodiversité exerce la police de l'environnement : ses inspecteurs contrôlent la chasse, la pêche, les atteintes aux milieux et les pollutions. Il soutient aussi la connaissance et la restauration de la biodiversité. Ses contrôles font régulièrement l'objet de tensions, notamment avec une partie du monde agricole.",
     "amountBillions": 0.584,
     "costPerCitizen": 8,
@@ -53,7 +53,7 @@
   {
     "id": "env-04",
     "title": "Fonds vert",
-    "subtitle": "Transition écologique des collectivités",
+    "subtitle": "Aides aux projets écologiques des collectivités",
     "description": "Le Fonds vert finance la transition écologique des collectivités : rénovation des bâtiments publics, mobilités, adaptation au climat, renaturation. Doté de 2 Md€ à sa création en 2023, puis 2,5 Md€ en 2024, il ne dispose plus que de 650 M€ d'autorisations d'engagement dans le PLF 2026 (1,085 Md€ de crédits de paiement pour honorer les engagements passés). Le Haut Conseil pour le climat relève cette réduction des trois quarts.",
     "amountBillions": 0.65,
     "costPerCitizen": 9,
@@ -151,8 +151,8 @@
   },
   {
     "id": "env-10",
-    "title": "Planification écologique (SGPE)",
-    "subtitle": "Budget vert et neutralité carbone 2050",
+    "title": "Planification écologique",
+    "subtitle": "Classement « vert » du budget et neutralité carbone en 2050",
     "description": "Le Secrétariat général à la planification écologique coordonne la stratégie nationale bas-carbone. Le « budget vert », annexé au projet de loi de finances, classe les dépenses de l'État selon leur impact environnemental (favorables, défavorables, neutres). Le Haut Conseil pour le climat relève que quatre niches fiscales défavorables au climat, représentant 7,77 Md€ de moindres recettes, n'y sont toujours pas classées comme telles, et que les investissements verts devraient presque doubler d'ici 2030.",
     "amountBillions": 33,
     "costPerCitizen": 478,
@@ -164,12 +164,12 @@
     "sourceDate": "2026-07",
     "level": 1,
     "tags": ["planification", "climat", "budget"],
-    "equivalence": "7,77 Md€ de niches fiscales défavorables au climat non classées comme telles (HCC)"
+    "equivalence": "7,77 Md€ de niches fiscales défavorables au climat non classées comme telles (Haut Conseil pour le climat)"
   },
   {
     "id": "env-11",
     "title": "Adaptation au changement climatique",
-    "subtitle": "Plan national d'adaptation (PNACC3)",
+    "subtitle": "Plan national d'adaptation au changement climatique (PNACC3)",
     "description": "Le 3e plan national d'adaptation au changement climatique (PNACC-3) prépare la France à une trajectoire de réchauffement de référence de +4 °C en 2100 : canicules, submersions, sécheresses. Les financements dédiés à l'adaptation restent nettement inférieurs à ceux consacrés à la réduction des émissions.",
     "amountBillions": 2.5,
     "costPerCitizen": 36,
@@ -184,8 +184,8 @@
   },
   {
     "id": "env-12",
-    "title": "Artificialisation des sols et ZAN",
-    "subtitle": "Objectif zéro artificialisation nette d'ici 2050",
+    "title": "Artificialisation des sols (objectif ZAN)",
+    "subtitle": "Objectif 2050 : ne plus réduire, en net, les espaces naturels et agricoles",
     "description": "Environ 20 000 hectares d'espaces naturels, agricoles et forestiers sont artificialisés chaque année. L'objectif « zéro artificialisation nette » (ZAN) d'ici 2050, fixé par la loi Climat et résilience, impose de réduire de moitié le rythme sur 2021-2031 ; ses modalités ont été assouplies depuis. Le fonds friches aide à recycler les terrains déjà artificialisés.",
     "amountBillions": 0.75,
     "costPerCitizen": 11,
@@ -282,7 +282,7 @@
   },
   {
     "id": "env-18",
-    "title": "Qualité de l'eau et PFAS",
+    "title": "Qualité de l'eau et « polluants éternels » (PFAS)",
     "subtitle": "Polluants éternels dans l'eau potable",
     "description": "Les PFAS, dits « polluants éternels », sont des substances très persistantes. Un rapport de l'Assemblée nationale (2024) souligne leur présence généralisée dans l'environnement et l'exposition de la population. La loi du 27 février 2025 interdit progressivement leur usage dans certains produits. Le coût de la dépollution et du traitement de l'eau est estimé à plusieurs milliards d'euros.",
     "amountBillions": 2.5,
@@ -299,8 +299,8 @@
   {
     "id": "env-19",
     "title": "Marché carbone européen (ETS)",
-    "subtitle": "Quotas d'émission CO₂ et recettes",
-    "description": "Le marché européen du carbone (ETS) rapporte environ 4 Md€ par an à la France via la mise aux enchères des quotas. Son extension au chauffage des bâtiments et au carburant (ETS2), initialement prévue en 2027, a été repoussée à 2028 ; elle fera porter un prix du carbone sur les ménages, ce qui suscite des inquiétudes sur son acceptabilité sociale.",
+    "subtitle": "Quotas de CO₂ vendus aux enchères aux industriels, et recettes",
+    "description": "Le marché européen du carbone (ETS), qui oblige les industriels à acheter des quotas pour leurs émissions de CO₂, rapporte environ 4 Md€ par an à la France via la mise aux enchères des quotas. Son extension au chauffage des bâtiments et au carburant (ETS2), initialement prévue en 2027, a été repoussée à 2028 ; elle fera porter un prix du carbone sur les ménages, ce qui suscite des inquiétudes sur son acceptabilité sociale.",
     "amountBillions": 4,
     "costPerCitizen": 58,
     "deckId": "environnement",

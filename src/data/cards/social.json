@@ -31,13 +31,13 @@
     "sourceDate": "2026-06",
     "level": 1,
     "tags": ["social", "réforme", "retraites"],
-    "equivalence": "Suspension : 1,8 Md€ par an en moyenne jusqu'en 2032 selon le COR"
+    "equivalence": "Suspension : 1,8 Md€ par an en moyenne jusqu'en 2032 selon le Conseil d'orientation des retraites"
   },
   {
     "id": "soc-03",
     "title": "Retraites des fonctionnaires",
     "subtitle": "Pensions civiles et militaires + régimes spéciaux",
-    "description": "Le compte d'affectation spéciale « Pensions » verse les retraites des fonctionnaires de l'État, civils et militaires (69,3 Md€ en 2026) ; la mission « Régimes sociaux et de retraite » verse les subventions d'équilibre de certains régimes spéciaux. Le taux de contribution de l'État employeur pour ses fonctionnaires civils est de 82,28 %, un taux d'équilibre sans équivalent dans le privé. Les régimes spéciaux (SNCF, RATP) sont fermés aux nouveaux entrants depuis 2023.",
+    "description": "Le compte spécial « Pensions » du budget de l'État (compte d'affectation spéciale, CAS) verse les retraites des fonctionnaires de l'État, civils et militaires (69,3 Md€ en 2026) ; la mission « Régimes sociaux et de retraite » verse les subventions qui comblent le déficit de certains régimes spéciaux. Le taux de contribution de l'État employeur pour ses fonctionnaires civils est de 82,28 %, un taux d'équilibre sans équivalent dans le privé. Les régimes spéciaux (SNCF, RATP) sont fermés aux nouveaux entrants depuis 2023.",
     "amountBillions": 75.3,
     "costPerCitizen": 1090,
     "deckId": "social",
@@ -48,7 +48,7 @@
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["social", "retraites", "fonctionnaires"],
-    "equivalence": "CAS Pensions : 69,3 Md€ en 2026"
+    "equivalence": "Retraites des fonctionnaires de l'État : 69,3 Md€ en 2026"
   },
   {
     "id": "soc-04",
@@ -69,7 +69,7 @@
   {
     "id": "soc-05",
     "title": "Allocations familiales",
-    "subtitle": "Branche Famille de la Sécu",
+    "subtitle": "Branche famille de la Sécu (CAF)",
     "description": "Prestations familiales, accueil du jeune enfant, aides au logement familiales : la branche famille compte environ 5,7 millions de familles allocataires. La LFSS 2026 crée un « congé de naissance ». La fécondité française reste parmi les plus élevées d'Europe malgré sa baisse (1,62 enfant par femme en 2024). Le service public de la petite enfance vise 200 000 places d'accueil supplémentaires d'ici 2030.",
     "amountBillions": 59.5,
     "costPerCitizen": 861,
@@ -86,7 +86,7 @@
   {
     "id": "soc-06",
     "title": "RSA et minima sociaux",
-    "subtitle": "RSA + AAH + ASS + ASPA (minimum vieillesse)",
+    "subtitle": "Revenu de solidarité, allocation handicap, allocation des chômeurs en fin de droits, minimum vieillesse",
     "description": "RSA, AAH, allocation de solidarité spécifique, minimum vieillesse : environ 4 millions de foyers bénéficiaires. Le RSA s'élève à environ 650 € par mois pour une personne seule ; depuis le 1er janvier 2025, les allocataires sont inscrits à France Travail et accompagnés avec un objectif de 15 heures d'activité par semaine. Le non-recours concerne environ un tiers des personnes éligibles au RSA (DREES). L'AAH est déconjugalisée depuis octobre 2023.",
     "amountBillions": 30,
     "costPerCitizen": 434,
@@ -102,7 +102,7 @@
   {
     "id": "soc-07",
     "title": "Aides au logement (APL)",
-    "subtitle": "Aides personnelles au logement — APL, ALS, ALF",
+    "subtitle": "Aides au logement versées aux ménages modestes (APL, ALS, ALF)",
     "description": "Les aides personnelles au logement (APL, ALS, ALF) bénéficient à environ 6 millions de ménages. Le programme 109 représente 16,1 Md€ en 2026, en baisse de 587 M€ sous l'effet du gel des barèmes, du recentrage des aides aux étudiants extracommunautaires et de la hausse de la réduction de loyer de solidarité. Depuis 2021, les droits sont calculés sur les revenus récents.",
     "amountBillions": 16.1,
     "costPerCitizen": 233,
@@ -119,7 +119,7 @@
   },
   {
     "id": "soc-08",
-    "title": "Allègements cotisations patronales",
+    "title": "Baisses de cotisations des employeurs",
     "subtitle": "Exonérations de cotisations sur les bas salaires",
     "description": "Allègements généraux sur les bas salaires (ex-Fillon), ex-CICE transformé en baisse pérenne de cotisations, exonérations ciblées : ces dispositifs représentent environ 80 Md€ par an, compensés à la Sécurité sociale par l'État. Leur caractère dégressif renchérit le coût des augmentations au-dessus du SMIC, ce que plusieurs rapports décrivent comme une « trappe à bas salaires ». Les LFSS 2025 et 2026 ont commencé à les réduire et à les réformer.",
     "amountBillions": 80,
@@ -132,7 +132,7 @@
     "sourceDate": "2025-11-15",
     "level": 1,
     "tags": ["social", "emploi", "cotisations"],
-    "equivalence": "Environ 80 Md€ par an de cotisations patronales en moins"
+    "equivalence": "Environ 80 Md€ par an de cotisations des employeurs en moins"
   },
   {
     "id": "soc-09",
@@ -220,7 +220,7 @@
   },
   {
     "id": "ret-02",
-    "title": "Agirc-Arrco (complémentaire, excédentaire)",
+    "title": "Retraite complémentaire des salariés (Agirc-Arrco)",
     "subtitle": "Plus de 110 Md€ de réserves fin 2025",
     "description": "Régime paritaire géré par les syndicats et le patronat, l'Agirc-Arrco verse environ 100 Md€ de pensions complémentaires par an. Ses réserves de moyen et long terme atteignent 92,1 Md€ fin 2025, soit près de 11 mois de prestations, et 113,6 Md€ avec le fonds de roulement (COR). Les partenaires sociaux ont décidé à plusieurs reprises de revaloriser les pensions moins vite que l'inflation pour préserver ces réserves. En 2023, le gouvernement a envisagé de les solliciter, ce qui a suscité leur opposition.",
     "amountBillions": 100,
@@ -266,7 +266,7 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["retraites", "régimes spéciaux", "SNCF", "RATP"],
-    "equivalence": "6 % des prestations vieillesse des régimes de base"
+    "equivalence": "6 % des retraites versées par les régimes de base"
   },
   {
     "id": "ret-05",
@@ -318,7 +318,7 @@
   },
   {
     "id": "ret-08",
-    "title": "Réversion (pension de survie)",
+    "title": "Pension de réversion (versée au conjoint survivant)",
     "subtitle": "Près de 10 % des dépenses de retraite",
     "description": "La pension de réversion (54 % de la pension du conjoint décédé au régime général, 60 % à l'Agirc-Arrco) bénéficie à environ 4,4 millions de personnes, très majoritairement des femmes. Elle est réservée aux couples mariés et soumise à condition de ressources au régime général. En 2025, les pensions de droit dérivé représentent 39 Md€, soit 1,3 % du PIB (COR). Son extension aux couples pacsés fait débat.",
     "amountBillions": 39,
@@ -330,7 +330,7 @@
     "sourceDate": "2026-06",
     "level": 1,
     "tags": ["retraites", "réversion", "veuvage"],
-    "equivalence": "39 Md€ de pensions de droit dérivé en 2025",
+    "equivalence": "39 Md€ de pensions de réversion en 2025",
     "year": 2025
   },
   {
@@ -368,7 +368,7 @@
   },
   {
     "id": "soc-13",
-    "title": "Allocation adultes handicapes (AAH)",
+    "title": "Allocation aux adultes handicapés (AAH)",
     "subtitle": "1 033 €/mois pour environ 1,3 million de personnes",
     "description": "L'allocation aux adultes handicapés garantit un revenu minimum à environ 1,3 million de personnes, pour un montant maximal de 1 033 € par mois depuis avril 2025, inférieur au seuil de pauvreté. Elle est déconjugalisée depuis octobre 2023 : les revenus du conjoint ne sont plus pris en compte. Les délais de traitement des maisons départementales des personnes handicapées restent longs.",
     "amountBillions": 13,
@@ -404,8 +404,8 @@
   },
   {
     "id": "soc-15",
-    "title": "Branche autonomie (5e branche Secu)",
-    "subtitle": "41,8 Md€ de charges en 2025",
+    "title": "Sécu : personnes âgées et handicapées (branche autonomie)",
+    "subtitle": "41,8 Md€ de dépenses en 2025",
     "description": "Créée en 2020, la branche autonomie finance la perte d'autonomie des personnes âgées et handicapées : allocation personnalisée d'autonomie, prestation de compensation du handicap, établissements et services. Ses charges atteignent 41,8 Md€ en 2025 (+4,8 %), tirées par le financement des établissements pour personnes âgées (Cour des comptes). La loi « grand âge », plusieurs fois annoncée, n'a pas été adoptée.",
     "amountBillions": 41.8,
     "costPerCitizen": 605,
@@ -418,11 +418,11 @@
     "sourceDate": "2026-05-27",
     "level": 1,
     "tags": ["autonomie", "dependance", "EHPAD"],
-    "equivalence": "41,8 Md€ de charges en 2025 (+4,8 %)"
+    "equivalence": "41,8 Md€ de dépenses en 2025 (+4,8 %)"
   },
   {
     "id": "soc-16",
-    "title": "Accidents du travail (AT-MP)",
+    "title": "Accidents du travail et maladies professionnelles (Sécu)",
     "subtitle": "Une branche passée en déficit en 2025",
     "description": "Financée par les cotisations des employeurs, la branche accidents du travail - maladies professionnelles indemnise les victimes (indemnités journalières, rentes). Longtemps excédentaire, elle connaît en 2025 son premier déficit depuis 2013 (-0,2 Md€), sous l'effet de la hausse des indemnités journalières (+5,7 % pour les prestations légales) et du transfert à la branche maladie au titre de la sous-déclaration des accidents et maladies professionnelles, porté à 1,6 Md€.",
     "amountBillions": 17.4,
@@ -436,7 +436,7 @@
     "sourceDate": "2026-05-27",
     "level": 1,
     "tags": ["travail", "accidents", "cotisations"],
-    "equivalence": "1,6 Md€ versé à la branche maladie au titre de la sous-déclaration en 2025"
+    "equivalence": "1,6 Md€ reversés à l'Assurance maladie en 2025 pour les accidents et maladies professionnels non déclarés"
   },
   {
     "id": "soc-17",
@@ -457,8 +457,8 @@
   },
   {
     "id": "soc-18",
-    "title": "Conge parental (PreParE)",
-    "subtitle": "Prestation partagee d'éducation de l'enfant",
+    "title": "Congé parental (PreParE)",
+    "subtitle": "Prestation partagée d'éducation de l'enfant",
     "description": "La prestation partagée d'éducation de l'enfant rémunère le parent qui réduit ou cesse son activité, pour un montant d'environ 450 € par mois à taux plein. Le nombre de bénéficiaires a fortement baissé, le montant étant jugé trop faible. Plusieurs pays nordiques versent un pourcentage du salaire. La LFSS 2026 crée un congé de naissance mieux indemnisé.",
     "amountBillions": 1.5,
     "costPerCitizen": 22,
@@ -490,8 +490,8 @@
   },
   {
     "id": "soc-20",
-    "title": "Pensions alimentaires impayees (ARIPA)",
-    "subtitle": "Agence de recouvrement des impayes",
+    "title": "Pensions alimentaires impayées",
+    "subtitle": "L'agence publique qui verse et récupère les pensions (ARIPA)",
     "description": "L'Agence de recouvrement et d'intermédiation des pensions alimentaires (ARIPA), gérée par les CAF, verse les pensions alimentaires et recouvre les impayés auprès du parent débiteur. Depuis 2023, l'intermédiation financière est systématique pour les pensions fixées par un juge, sauf refus des deux parents. Les familles monoparentales, majoritairement des mères, sont particulièrement exposées à la pauvreté.",
     "amountBillions": 0.3,
     "costPerCitizen": 4,
@@ -502,7 +502,7 @@
     "sourceDate": "2025-11-15",
     "level": 3,
     "tags": ["social", "pensions", "famille"],
-    "equivalence": "Intermédiation systématique depuis 2023"
+    "equivalence": "Depuis 2023, la pension passe par défaut par la CAF ou la MSA"
   },
   {
     "id": "soc-21",

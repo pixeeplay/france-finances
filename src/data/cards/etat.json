@@ -1,7 +1,7 @@
 [
   {
     "id": "eta-01",
-    "title": "Charge de la dette",
+    "title": "Intérêts de la dette",
     "subtitle": "Intérêts annuels payés sur la dette publique",
     "description": "En comptabilité budgétaire, la charge de la dette de l'État atteindrait 58,0 Md€ en 2026, contre 53,5 Md€ votés pour 2025 (+7,5 %), et 60,4 Md€ en comptabilité générale. Le Sénat anticipe qu'elle devienne à terme le premier poste de dépenses du budget. Une hausse durable de 1 point des taux augmenterait la charge de 3,2 Md€ la première année et de 23,5 Md€ au bout de cinq ans.",
     "amountBillions": 58,
@@ -14,14 +14,14 @@
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["état", "dette", "intérêts"],
-    "equivalence": "+4,5 Md€ de charge d'intérêts en un an",
+    "equivalence": "+4,5 Md€ d'intérêts en un an",
     "year": 2026
   },
   {
     "id": "eta-02",
-    "title": "Masse salariale de l'État",
+    "title": "Salaires des agents de l'État",
     "subtitle": "Rémunérations des agents de l'État",
-    "description": "Dans le PLF 2026, les dépenses de personnel de l'État atteignent environ 109,5 Md€ hors pensions. Fin 2023, la fonction publique comptait un peu plus de 5,8 millions d'agents, dont 44 % dans la fonction publique de l'État. Les revalorisations du point d'indice de 3,5 % en juillet 2022 et de 1,5 % en juillet 2023 coûtent respectivement 7,6 Md€ et 3,4 Md€ en année pleine pour l'ensemble de la fonction publique.",
+    "description": "Dans le projet de budget 2026 (PLF), les dépenses de personnel de l'État atteignent environ 109,5 Md€ hors retraites. Fin 2023, la fonction publique comptait un peu plus de 5,8 millions d'agents, dont 44 % dans la fonction publique de l'État. Les revalorisations du point d'indice de 3,5 % en juillet 2022 et de 1,5 % en juillet 2023 coûtent respectivement 7,6 Md€ et 3,4 Md€ en année pleine pour l'ensemble de la fonction publique.",
     "amountBillions": 109.5,
     "costPerCitizen": 1585,
     "deckId": "etat",
@@ -38,7 +38,7 @@
     "id": "eta-03",
     "title": "Collectivités territoriales",
     "subtitle": "Transferts financiers État → collectivités locales",
-    "description": "Les concours financiers de l'État aux collectivités atteignent 53,4 Md€ dans le PLF 2026, dont la dotation globale de fonctionnement (27,4 Md€ en 2025). En incluant la fiscalité transférée et les dégrèvements, les transferts financiers de l'État atteignent 108,1 Md€, et 155 Md€ au sens élargi. Les collectivités réalisent la majorité de l'investissement public civil.",
+    "description": "Les principaux versements de l'État aux collectivités (« concours financiers ») atteignent 53,4 Md€ dans le projet de budget 2026, dont la dotation globale de fonctionnement (DGF) (27,4 Md€ en 2025). En incluant la fiscalité transférée et les dégrèvements, les transferts financiers de l'État atteignent 108,1 Md€, et 155 Md€ au sens élargi. Les collectivités réalisent la majorité de l'investissement public civil.",
     "amountBillions": 53.4,
     "costPerCitizen": 773,
     "deckId": "etat",
@@ -70,8 +70,8 @@
   {
     "id": "eta-05",
     "title": "Niches fiscales",
-    "subtitle": "Dépenses fiscales — réductions et crédits d'impôt",
-    "description": "Les 474 dépenses fiscales en vigueur en 2025 réduisent les recettes de l'État de 91,8 Md€, soit environ 3 % du PIB. Les quinze premières représentent plus de la moitié du coût, dont le crédit d'impôt recherche (8,1 Md€) et le crédit d'impôt pour l'emploi d'un salarié à domicile (7,0 Md€). Selon la Cour des comptes, seules 55 % sont chiffrées de façon fiable et le nombre de bénéficiaires est inconnu pour 42 % d'entre elles.",
+    "subtitle": "Réductions, crédits et exonérations d'impôt",
+    "description": "Les 474 niches fiscales (« dépenses fiscales ») en vigueur en 2025 réduisent les recettes de l'État de 91,8 Md€, soit environ 3 % du PIB. Les quinze premières représentent plus de la moitié du coût, dont le crédit d'impôt recherche (8,1 Md€) et le crédit d'impôt pour l'emploi d'un salarié à domicile (7,0 Md€). Selon la Cour des comptes, seules 55 % sont chiffrées de façon fiable et le nombre de bénéficiaires est inconnu pour 42 % d'entre elles.",
     "amountBillions": 91.8,
     "costPerCitizen": 1329,
     "deckId": "etat",
@@ -87,8 +87,8 @@
   {
     "id": "eta-06",
     "title": "Aide publique au développement",
-    "subtitle": "Solidarité internationale — AFD",
-    "description": "En 2024, la France est le 5e donateur du Comité d'aide au développement de l'OCDE, avec 15,6 Md€, soit 0,48 % de son RNB (moyenne du CAD : 0,33 %) ; elle était 4e en 2022. La part de l'APD devrait reculer à 0,43 % du RNB en 2025, loin de la cible de 0,7 % fixée par la loi de programmation de 2021. Le PLF 2026 prévoit 3,67 Md€ de crédits de paiement pour la mission « Aide publique au développement », en baisse de 16,1 % par rapport à la LFI 2025.",
+    "subtitle": "Aide aux pays en développement — Agence française de développement",
+    "description": "En 2024, la France est le 5e donateur du Comité d'aide au développement de l'OCDE, avec 15,6 Md€, soit 0,48 % de son revenu national brut (moyenne des pays donateurs : 0,33 %) ; elle était 4e en 2022. La part de l'APD devrait reculer à 0,43 % du RNB en 2025, loin de la cible de 0,7 % fixée par la loi de programmation de 2021. Le PLF 2026 prévoit 3,67 Md€ de crédits de paiement pour la mission « Aide publique au développement », en baisse de 16,1 % par rapport à la LFI 2025.",
     "amountBillions": 15.6,
     "costPerCitizen": 226,
     "deckId": "etat",
@@ -99,14 +99,14 @@
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["état", "international", "aide"],
-    "equivalence": "0,48 % du RNB en 2024, pour une cible légale de 0,7 %",
+    "equivalence": "0,48 % du revenu national en 2024, pour une cible légale de 0,7 %",
     "year": 2024
   },
   {
     "id": "eta-07",
     "title": "Aides publiques aux entreprises",
-    "subtitle": "Subventions, dépenses fiscales et allègements de cotisations",
-    "description": "Selon la commission d'enquête du Sénat (juillet 2025), les aides publiques aux entreprises atteignent au moins 211 Md€ en 2023 au sens large : subventions de l'État, interventions de Bpifrance, dépenses fiscales (y compris déclassées) et allègements de cotisations sociales. Hors Bpifrance, dépenses fiscales déclassées et TVA, l'estimation tombe à 108 Md€. Le ministre de l'Économie a avancé 150 Md€ (40 Md€ de dépenses fiscales, 30 Md€ de dépenses budgétaires, 80 Md€ d'allègements). Ces montants recoupent d'autres cartes (CIR, allègements de charges). La commission relève l'absence d'évaluation consolidée de ces aides.",
+    "subtitle": "Subventions, niches fiscales et baisses de cotisations",
+    "description": "Selon la commission d'enquête du Sénat (juillet 2025), les aides publiques aux entreprises atteignent au moins 211 Md€ en 2023 au sens large : subventions de l'État, interventions de Bpifrance, niches fiscales (y compris celles retirées de la liste officielle) et allègements de cotisations sociales. Hors Bpifrance, dépenses fiscales déclassées et TVA, l'estimation tombe à 108 Md€. Le ministre de l'Économie a avancé 150 Md€ (40 Md€ de dépenses fiscales, 30 Md€ de dépenses budgétaires, 80 Md€ d'allègements). Ces montants recoupent d'autres cartes (CIR, allègements de charges). La commission relève l'absence d'évaluation consolidée de ces aides.",
     "amountBillions": 211,
     "costPerCitizen": 3054,
     "deckId": "etat",
@@ -122,7 +122,7 @@
   {
     "id": "eta-08",
     "title": "Outre-mer",
-    "subtitle": "Transferts nets État → DOM-TOM",
+    "subtitle": "Dépenses de l'État pour les territoires d'outre-mer",
     "description": "2,2 millions d'habitants dans les collectivités d'outre-mer. Les dépenses de l'État en leur faveur, dépenses fiscales comprises, atteignent environ 27 Md€ de crédits de paiement en 2026. Elles incluent les majorations de traitement des fonctionnaires (de 40 % à 53 % selon les territoires), les prestations sociales et le soutien aux collectivités. Le chômage y reste nettement plus élevé qu'en métropole.",
     "amountBillions": 27,
     "costPerCitizen": 391,
@@ -189,8 +189,8 @@
   },
   {
     "id": "eta-12",
-    "title": "Parlement (AN + Senat)",
-    "subtitle": "577 députés + 348 senateurs",
+    "title": "Parlement (Assemblée nationale et Sénat)",
+    "subtitle": "577 députés + 348 sénateurs",
     "description": "En 2026, le budget de l'Assemblée nationale s'élève à 644 M€ et celui du Sénat à 382,3 M€. Les assemblées disposent de l'autonomie financière ; leurs comptes sont certifiés par la Cour des comptes. Les frais de mandat des parlementaires sont couverts par une avance de frais de mandat, qui a remplacé l'IRFM en 2018.",
     "amountBillions": 1.03,
     "costPerCitizen": 15,
@@ -259,7 +259,7 @@
   {
     "id": "eta-16",
     "title": "Préfectures et sous-préfectures",
-    "subtitle": "Administration territoriale de l'État (programme 354)",
+    "subtitle": "Les services de l'État dans les régions et départements",
     "description": "101 préfectures et environ 230 sous-préfectures assurent la présence de l'État dans les territoires. La dématérialisation des titres (permis, cartes grises) a supprimé le passage au guichet pour la plupart de ces démarches, au risque d'exclure les personnes éloignées du numérique. Le réseau France Services vise à maintenir un accueil de proximité.",
     "amountBillions": 2.5,
     "costPerCitizen": 36,
@@ -275,8 +275,8 @@
   },
   {
     "id": "eta-17",
-    "title": "INSP (ex-ENA) et hauts fonctionnaires",
-    "subtitle": "Formation des administrateurs de l'État",
+    "title": "Formation des hauts fonctionnaires (INSP, ex-ENA)",
+    "subtitle": "L'école qui a remplacé l'ENA en 2022",
     "description": "L'Institut national du service public (INSP), qui a remplacé l'ENA en 2022, forme chaque année quelques dizaines de hauts fonctionnaires recrutés sur concours. Les instituts régionaux d'administration (IRA) forment les attachés. La réforme visait à diversifier le recrutement, notamment via des classes préparatoires « Talents ».",
     "amountBillions": 0.1,
     "costPerCitizen": 2,
@@ -291,7 +291,7 @@
   {
     "id": "eta-18",
     "title": "Cour des comptes et inspections générales",
-    "subtitle": "Cour des comptes + CRC + IGF + IGAS + IGA",
+    "subtitle": "Contrôle des comptes publics et inspections des ministères",
     "description": "La Cour des comptes certifie les comptes de l'État et de la Sécurité sociale, évalue les politiques publiques et publie chaque année de nombreux rapports ; les chambres régionales contrôlent les collectivités. Les inspections générales (IGF, IGAS, IGA) réalisent audits et évaluations pour le gouvernement. Les juridictions financières disposent de 267 M€ de crédits de paiement en 2026.",
     "amountBillions": 0.3,
     "costPerCitizen": 4,
@@ -303,12 +303,12 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["état", "audit", "contrôle"],
-    "equivalence": "267 M€ pour les juridictions financières en 2026"
+    "equivalence": "267 M€ pour la Cour des comptes et les chambres régionales des comptes en 2026"
   },
   {
     "id": "eta-19",
     "title": "Conseil d'État et juridictions administratives",
-    "subtitle": "Conseil d'État + 42 TA + 9 CAA",
+    "subtitle": "Conseil d'État, 42 tribunaux administratifs, 9 cours administratives d'appel",
     "description": "Le Conseil d'État, les cours administratives d'appel et les tribunaux administratifs jugent les litiges avec l'administration. Leur budget est de 568 M€ de crédits de paiement en 2026 (-5,2 %), alors que le nombre de saisines augmente fortement. Le contentieux des étrangers représente une part importante et croissante de l'activité des tribunaux administratifs.",
     "amountBillions": 0.568,
     "costPerCitizen": 8,

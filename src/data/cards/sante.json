@@ -1,9 +1,9 @@
 [
   {
     "id": "san-01",
-    "title": "ONDAM global",
-    "subtitle": "Objectif national de dépenses d'assurance maladie",
-    "description": "Plafond voté chaque année en LFSS, couvrant soins de ville, hôpitaux et médico-social. Plus gros poste de dépenses publiques après les retraites, loin devant l'éducation ou la défense. En 2025, le déficit de la Sécurité sociale atteint 21,6 Md€, dont 15,9 Md€ pour la branche maladie (Cour des comptes).",
+    "title": "Dépenses d'assurance maladie (ONDAM)",
+    "subtitle": "Objectif national voté chaque année : soins de ville, hôpitaux, établissements médico-sociaux",
+    "description": "Plafond de dépenses de l'assurance maladie voté chaque année par le Parlement dans la loi de financement de la Sécurité sociale (LFSS), couvrant soins de ville, hôpitaux et établissements médico-sociaux (Ehpad, handicap). Plus gros poste de dépenses publiques après les retraites, loin devant l'éducation ou la défense. En 2025, le déficit de la Sécurité sociale atteint 21,6 Md€, dont 15,9 Md€ pour la branche maladie (Cour des comptes).",
     "amountBillions": 266,
     "costPerCitizen": 3848,
     "deckId": "sante",
@@ -15,13 +15,13 @@
     "sourceDate": "2025-11-15",
     "level": 1,
     "tags": ["santé", "ONDAM", "assurance maladie"],
-    "equivalence": "L'ONDAM = environ 4 fois les crédits de la mission Défense"
+    "equivalence": "Environ 4 fois le budget de la Défense"
   },
   {
     "id": "san-02",
     "title": "Hôpital public",
-    "subtitle": "Sous-ONDAM hospitalier — ~3 000 hôpitaux",
-    "description": "Hôpitaux publics (CHU, centres hospitaliers) et privés financés par l'Assurance maladie : le sous-objectif « établissements de santé » de l'ONDAM dépasse 110 Md€. Le déficit global des hôpitaux publics atteindrait 2,7 Md€ en 2025, après 2,9 Md€ en 2024 (Assurance maladie). Les revalorisations du Ségur de la santé (2020) ont augmenté les charges ; le nombre de lits d'hospitalisation complète a diminué au profit de l'ambulatoire.",
+    "subtitle": "Plus de 110 Md€ d'assurance maladie pour ~3 000 établissements",
+    "description": "Hôpitaux publics (CHU, centres hospitaliers) et privés financés par l'Assurance maladie : la part « établissements de santé » de l'objectif de dépenses d'assurance maladie (ONDAM) dépasse 110 Md€. Le déficit global des hôpitaux publics atteindrait 2,7 Md€ en 2025, après 2,9 Md€ en 2024 (Assurance maladie). Les revalorisations du Ségur de la santé (2020) ont augmenté les charges ; le nombre de lits d'hospitalisation complète a diminué au profit de l'ambulatoire.",
     "amountBillions": 110,
     "costPerCitizen": 1589,
     "deckId": "sante",
@@ -32,13 +32,13 @@
     "sourceDate": "2025-11-15",
     "level": 1,
     "tags": ["santé", "hôpital", "déficit"],
-    "equivalence": "Plus de 110 Md€ pour les établissements de santé dans l'ONDAM"
+    "equivalence": "Plus de 110 Md€ d'assurance maladie pour les établissements de santé"
   },
   {
     "id": "san-03",
     "title": "Médecine de ville",
     "subtitle": "Dépenses remboursées de médecine de ville",
-    "description": "Généralistes, spécialistes, infirmiers, kinésithérapeutes, pharmacie, transports, indemnités journalières. Le sous-objectif « soins de ville » de l'ONDAM dépasse 110 Md€, soit environ 42 % de l'objectif total. La dynamique des indemnités journalières est jugée préoccupante par la Cour des comptes.",
+    "description": "Généralistes, spécialistes, infirmiers, kinésithérapeutes, pharmacie, transports, indemnités journalières. La part « soins de ville » de l'objectif de dépenses d'assurance maladie (ONDAM) dépasse 110 Md€, soit environ 42 % de l'objectif total. La dynamique des indemnités journalières est jugée préoccupante par la Cour des comptes.",
     "amountBillions": 112,
     "costPerCitizen": 1619,
     "deckId": "sante",
@@ -49,7 +49,7 @@
     "sourceDate": "2025-11-15",
     "level": 1,
     "tags": ["santé", "médecine", "soins de ville"],
-    "equivalence": "Environ 42 % de l'ONDAM"
+    "equivalence": "Environ 42 % des dépenses d'assurance maladie (ONDAM)"
   },
   {
     "id": "san-04",
@@ -70,7 +70,7 @@
   },
   {
     "id": "san-05",
-    "title": "EHPAD et dépendance",
+    "title": "Maisons de retraite (Ehpad) et perte d'autonomie",
     "subtitle": "Financement des EHPAD et de l'aide à l'autonomie",
     "description": "Environ 7 500 EHPAD accueillent quelque 600 000 résidents. La branche autonomie de la Sécurité sociale, créée en 2020, finance les établissements et l'aide à domicile. Le reste à charge mensuel des résidents en EHPAD reste élevé. La France comptera près de 5 millions de personnes de 85 ans ou plus en 2050, contre environ 2,4 millions aujourd'hui.",
     "amountBillions": 40,
@@ -104,8 +104,8 @@
   },
   {
     "id": "san-07",
-    "title": "Arrêts maladie (IJ)",
-    "subtitle": "Indemnités journalières pour arrêts de travail",
+    "title": "Arrêts maladie (indemnités journalières)",
+    "subtitle": "Revenus versés par la Sécu pendant un arrêt de travail",
     "description": "Indemnités versées en cas d'arrêt maladie, d'accident du travail ou de maternité. Leur dynamique est jugée préoccupante par la Cour des comptes. En avril 2025, le plafond de revenu pris en compte pour les indemnités maladie a été abaissé de 1,8 à 1,4 SMIC, ce qui réduit la dépense de l'Assurance maladie et accroît la part prise en charge par les employeurs et les complémentaires.",
     "amountBillions": 16,
     "costPerCitizen": 232,
@@ -174,7 +174,7 @@
     "id": "hop-01",
     "title": "Budget global de l'hôpital public",
     "subtitle": "Plus de 110 Md€ pour les établissements de santé",
-    "description": "Le sous-objectif « établissements de santé » de l'ONDAM dépasse 110 Md€. Le déficit global des hôpitaux publics atteindrait 2,7 Md€ en 2025, après 2,9 Md€ en 2024 (Assurance maladie). Depuis le Ségur de la santé (2020), les dépenses hospitalières ont fortement augmenté, sans résoudre les difficultés d'attractivité de certains métiers ni la vétusté d'une partie du patrimoine.",
+    "description": "La part « établissements de santé » de l'objectif de dépenses d'assurance maladie (ONDAM) dépasse 110 Md€. Le déficit global des hôpitaux publics atteindrait 2,7 Md€ en 2025, après 2,9 Md€ en 2024 (Assurance maladie). Depuis le Ségur de la santé (2020), les dépenses hospitalières ont fortement augmenté, sans résoudre les difficultés d'attractivité de certains métiers ni la vétusté d'une partie du patrimoine.",
     "amountBillions": 110,
     "costPerCitizen": 1592,
     "deckId": "sante",
@@ -188,7 +188,7 @@
   },
   {
     "id": "hop-02",
-    "title": "Masse salariale hospitalière",
+    "title": "Salaires du personnel hospitalier",
     "subtitle": "Plus d'un million de personnes employées par les hôpitaux",
     "description": "Les hôpitaux emploient plus d'un million de personnes, dont plusieurs centaines de milliers d'infirmiers. Le Ségur de la santé a revalorisé de 183 € nets par mois les salaires des personnels non médicaux. Des difficultés de recrutement persistent dans certains services, et l'intérim médical est encadré par la loi Rist depuis 2023.",
     "amountBillions": 65,
@@ -200,11 +200,11 @@
     "sourceDate": "2026-05",
     "level": 1,
     "tags": ["santé", "hôpital", "salaires"],
-    "equivalence": "+183 € nets par mois pour les soignants avec le Ségur"
+    "equivalence": "+183 € nets par mois pour les soignants avec le Ségur de la santé (2020)"
   },
   {
     "id": "hop-03",
-    "title": "Tarification à l'activité (T2A)",
+    "title": "Financement des hôpitaux selon leur activité (T2A)",
     "subtitle": "Un financement à l'activité en cours de réforme",
     "description": "La tarification à l'activité (T2A) finance les hôpitaux selon un tarif national par séjour ou acte. Elle est critiquée pour inciter au volume au détriment de la prévention et du suivi des maladies chroniques. Les réformes en cours introduisent davantage de financements forfaitaires et liés à la qualité, notamment pour les urgences et la psychiatrie.",
     "amountBillions": 60,
@@ -283,7 +283,7 @@
   {
     "id": "hop-08",
     "title": "CHU et hôpitaux universitaires",
-    "subtitle": "32 CHU et CHR, dont l'AP-HP",
+    "subtitle": "32 centres hospitaliers universitaires et régionaux, dont l'AP-HP (Paris)",
     "description": "Les 32 CHU et CHR (dont l'AP-HP, les Hospices civils de Lyon, l'AP-HM) concentrent la recherche, la formation des médecins et les soins les plus complexes. L'AP-HP est le premier employeur d'Île-de-France. Les CHU estiment que la tarification ne couvre pas entièrement les surcoûts liés à l'enseignement et à la recherche.",
     "amountBillions": 45,
     "costPerCitizen": 651,
@@ -314,7 +314,7 @@
   },
   {
     "id": "hop-10",
-    "title": "Le virage ambulatoire (économies potentielles)",
+    "title": "Soigner sans nuit à l'hôpital (virage ambulatoire)",
     "subtitle": "Une piste d'économies régulièrement mise en avant",
     "description": "Le virage ambulatoire (chirurgie sans nuitée, hospitalisation à domicile, télémédecine) est l'une des principales pistes d'économies identifiées. Le taux de chirurgie ambulatoire a progressé mais reste inférieur à celui de pays d'Europe du Nord. L'hospitalisation à domicile est moins coûteuse qu'un séjour à l'hôpital pour les patients éligibles.",
     "amountBillions": 6.5,
@@ -347,8 +347,8 @@
   },
   {
     "id": "san-12",
-    "title": "100% Sante (optique, dentaire, audio)",
-    "subtitle": "Zero reste a charge",
+    "title": "100 % Santé (optique, dentaire, audio)",
+    "subtitle": "Lunettes, prothèses dentaires et aides auditives sans reste à charge",
     "description": "La réforme « 100 % santé » a supprimé le reste à charge sur un panier de lunettes, de prothèses dentaires et d'aides auditives, financé par l'Assurance maladie et les complémentaires santé. Le recours aux aides auditives a fortement augmenté ; l'adoption est plus limitée en optique.",
     "amountBillions": 3,
     "costPerCitizen": 43,
@@ -398,7 +398,7 @@
   },
   {
     "id": "san-15",
-    "title": "SAMU et transports sanitaires",
+    "title": "SAMU, ambulances et taxis médicaux",
     "subtitle": "Plus de 6 Md€ par an pour l'Assurance maladie",
     "description": "Ambulances, véhicules sanitaires légers et taxis conventionnés : les dépenses de transport de patients atteignent 6,45 Md€ en 2024, dont 0,65 Md€ de transports urgents préhospitaliers. La Cour des comptes (2026) juge la régulation insuffisante, en particulier la responsabilisation des prescripteurs et des établissements, et propose de développer le transport partagé.",
     "amountBillions": 6.45,
@@ -416,8 +416,8 @@
   },
   {
     "id": "san-16",
-    "title": "Affections de longue durée (ALD)",
-    "subtitle": "Prise en charge a 100% des ALD",
+    "title": "Maladies longues prises en charge à 100 % (ALD)",
+    "subtitle": "Cancer, diabète, maladies cardiaques : les « affections de longue durée »",
     "description": "Environ 12 millions de personnes bénéficient du régime des affections de longue durée (cancer, diabète, maladies cardiovasculaires, troubles psychiatriques graves), avec une prise en charge à 100 % des soins liés à leur affection. Les ALD concentrent environ deux tiers des dépenses de l'Assurance maladie, et leur nombre progresse avec le vieillissement de la population.",
     "amountBillions": 110,
     "costPerCitizen": 1594,
@@ -449,8 +449,8 @@
   },
   {
     "id": "san-18",
-    "title": "Obesite et maladies metaboliques",
-    "subtitle": "Cout sanitaire direct et indirect de l'obesite",
+    "title": "Obésité et maladies métaboliques",
+    "subtitle": "Coût sanitaire direct et indirect de l'obésité",
     "description": "Environ 17 % des adultes sont obèses selon l'étude Obépi-Inserm 2020. L'obésité est un facteur de risque majeur de diabète de type 2 et de maladies cardiovasculaires. Les nouveaux traitements (agonistes du GLP-1) ouvrent des perspectives, mais leur remboursement à grande échelle représenterait un coût important pour l'Assurance maladie. Le coût total de l'obésité fait l'objet d'estimations variables.",
     "amountBillions": 17.5,
     "costPerCitizen": 246,
@@ -465,8 +465,8 @@
   },
   {
     "id": "san-19",
-    "title": "Médecins étrangers (PADHUE)",
-    "subtitle": "Medecins a diplômé hors UE",
+    "title": "Médecins diplômés hors de l'UE",
+    "subtitle": "Praticiens à diplôme hors Union européenne (PADHUE)",
     "description": "Plusieurs milliers de praticiens à diplôme hors Union européenne (PADHUE) exercent en France, principalement à l'hôpital public dans les spécialités en tension. Leur procédure d'autorisation d'exercice est jugée longue et complexe par le Sénat. Le recours à ces médecins pose aussi la question de la fuite des compétences médicales des pays d'origine.",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
@@ -481,8 +481,8 @@
   },
   {
     "id": "san-20",
-    "title": "Telemedecine et numérique en sante",
-    "subtitle": "Segur numérique + Mon espace sante + teleconsultations",
+    "title": "Télémédecine et numérique en santé",
+    "subtitle": "Ségur numérique + Mon espace santé + téléconsultations",
     "description": "Le volet numérique du Ségur de la santé a financé la modernisation des systèmes d'information hospitaliers, le déploiement de Mon espace santé et de l'ordonnance numérique. Mon espace santé a été ouvert à la quasi-totalité des assurés, mais son usage reste limité. L'interopérabilité entre les logiciels hospitaliers reste un enjeu majeur.",
     "amountBillions": 2,
     "costPerCitizen": 29,
