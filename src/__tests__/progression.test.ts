@@ -145,6 +145,23 @@ describe("level components", () => {
     );
   });
 
+  it("LevelLockedNotice points to level 2 first when level 3 is requested from level 1", () => {
+    render(
+      createElement(LevelLockedNotice, {
+        requestedLevel: 3,
+        unlockedLevel: 1,
+        counts: { 1: 1, 2: 0, 3: 0 },
+        deckId: "defense",
+      }),
+    );
+    const notice = screen.getByTestId("level-locked");
+    expect(screen.getByRole("heading", { name: "Niveau 3 verrouillé" })).toBeInTheDocument();
+    expect(notice).toHaveTextContent("Débloquez d'abord le niveau 2");
+    expect(notice).toHaveTextContent("2 sessions N1 terminées (1/2)");
+    expect(notice).toHaveTextContent("encore 1 session N1");
+    expect(notice).not.toHaveTextContent("N2");
+  });
+
   it("NextLevelCTA shows remaining sessions while locked", () => {
     localStorage.setItem("trnc:stats", JSON.stringify({ sessionsPerLevel: { "1": 1 } }));
     render(createElement(NextLevelCTA, { level: 1 }));

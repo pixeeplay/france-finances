@@ -30,13 +30,18 @@ export function LevelLockedNotice({
   counts: LevelCounts;
   deckId: string;
 }) {
-  const progress = getLevelProgress(counts, requestedLevel);
-  const fromLevel = requestedLevel - 1;
+  // Palier suivant a franchir : le niveau intermediaire s'il est lui aussi verrouille
+  const nextLevel = Math.min(requestedLevel, unlockedLevel + 1) as 2 | 3;
+  const progress = getLevelProgress(counts, nextLevel);
+  const fromLevel = nextLevel - 1;
   return (
     <main className="flex-1 flex flex-col items-center justify-center gap-4 px-6 text-center" data-testid="level-locked">
       <h1 className="text-xl font-bold">Niveau {requestedLevel} verrouillé</h1>
       <p className="text-sm text-muted-foreground max-w-[320px]">
-        Il se débloque en jouant : {progress.label} terminées ({progress.done}/{progress.required}),{" "}
+        {nextLevel === requestedLevel
+          ? "Il se débloque en jouant : "
+          : `Débloquez d'abord le niveau ${nextLevel} : `}
+        {progress.label} terminées ({progress.done}/{progress.required}),{" "}
         {remainingText(progress.remaining, fromLevel)}.
       </p>
       <div className="flex w-full max-w-[320px] flex-col gap-3">
