@@ -116,7 +116,7 @@ export const DEFINITIONS: Record<string, string> = {
   CRDS: "Petit prélèvement sur les revenus qui sert à rembourser la dette de la Sécurité sociale.",
   IFI: "Impôt annuel sur le patrimoine immobilier des ménages les plus aisés, qui a remplacé l'ISF en 2018.",
   ISF: "Impôt annuel sur l'ensemble du patrimoine des ménages les plus aisés, supprimé en 2018.",
-  CVAE: "Impôt local payé par les entreprises sur la richesse qu'elles produisent, en cours de suppression.",
+  CVAE: "Impôt local payé par les entreprises sur la richesse qu'elles produisent. Sa suppression, engagée en 2021, a été plusieurs fois reportée.",
   CFE: "Impôt local payé par les entreprises sur la valeur des locaux qu'elles utilisent.",
   DMTO: "Taxes payées lors de l'achat d'un bien immobilier (l'essentiel des « frais de notaire »), qui financent surtout les départements.",
   TICPE:
