@@ -28,3 +28,15 @@ export {
   DEFAULT_SIMULATOR_INPUT,
   SIMULATOR_LIMITS,
 } from "./taxCalculator";
+export {
+  splitPer1000,
+  perCapita,
+  perCapitaComparison,
+  topWithRest,
+  toBarData,
+  toShares,
+  debtSeries,
+  debtChangePoints,
+  euDebtBars,
+  shortenLabel,
+} from "./chiffresCharts";
