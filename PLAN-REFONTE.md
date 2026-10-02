@@ -189,6 +189,6 @@ Phase 3  (plus tard) Feed / dossiers éditoriaux
 - [ ] **Coolify** : ajouter `ADMIN_EMAILS=smiollis@gmail.com,seb@pixeeplay.com,arnaud@pixeeplay.com,alexis@pixeeplay.com` (sans espaces ; le parseur doit quand même faire un `trim`).
 - [ ] **SSO admin Google Workspace + GitHub** : toute l'équipe a un compte Google Workspace `@pixeeplay.com`.
   - Google : restreindre l'accès admin au domaine (`ADMIN_DOMAINS=pixeeplay.com`, vérification du claim `hd` + `email_verified` dans le callback NextAuth, et pas seulement du suffixe de l'email). Option : client OAuth « Interne » dans la console Google Cloud du Workspace pour un connecteur dédié à l'admin.
-  - GitHub : autoriser l'admin aux membres de l'organisation `pixeeplay` (scope `read:org`, vérification de l'appartenance dans le callback) plutôt qu'à une liste d'emails.
+  - GitHub : pas d'organisation ; l'accès admin passe en priorité par les emails de `ADMIN_EMAILS` (email vérifié du compte GitHub, via l'API `/user/emails`, scope `user:email`).
   - `ADMIN_EMAILS` reste en secours (comptes hors domaine).
 - [ ] Migration de prod qui supprimerait la table `waitlist` : décision humaine avant exécution (export préalable des inscrits).
