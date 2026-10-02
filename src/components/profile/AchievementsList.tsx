@@ -1,7 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { ChainsawIcon } from "@/components/ChainsawIcon";
+import { ShieldIcon } from "@/components/ShieldIcon";
+import { UiIcon, type UiIconName } from "@/components/icons/UiIcon";
 import type { Achievement } from "@/lib/achievements";
 import type { GlobalStats, StoredSession } from "@/lib/stats";
 
@@ -10,6 +12,29 @@ interface AchievementsListProps {
   completedIds: string[];
   stats: GlobalStats;
   sessions: StoredSession[];
+}
+
+/** Pictogramme SVG par haut fait (le champ `icon` des données reste un emoji pour le partage) */
+const ACHIEVEMENT_ICONS: Record<string, UiIconName> = {
+  quiz_ordre_grandeur: "target",
+  quiz_serie: "bulb",
+  quiz_expert: "chart",
+  fifty_fifty: "balance",
+  auditor: "clipboard",
+  globe_trotter: "map",
+  liquidator: "flame",
+  faithful: "medal",
+  centurion: "layers",
+  speedrunner: "bolt",
+  expert_n3: "search",
+  millionnaire: "gem",
+  collectionneur: "trophy",
+};
+
+function AchievementIcon({ achievement }: { achievement: Achievement }): ReactNode {
+  if (achievement.icon === "chainsaw" || achievement.id === "first_cut") return <ChainsawIcon size={22} />;
+  if (achievement.id === "guardian") return <ShieldIcon size={22} />;
+  return <UiIcon name={ACHIEVEMENT_ICONS[achievement.id] ?? "medal"} size={22} />;
 }
 
 export function AchievementsList({
@@ -23,73 +48,76 @@ export function AchievementsList({
 
   return (
     <div className="pt-2 space-y-3">
-      <div className="flex items-center justify-between px-1">
-        <h3 className="text-xs font-black uppercase tracking-widest text-muted-foreground">
-          Journal des Hauts Faits
-        </h3>
-        <span className="text-[10px] font-mono font-bold text-primary bg-primary/10 px-2 py-0.5 rounded border border-primary/20">
+      <div className="flex items-baseline justify-between px-1">
+        <h3 className="kicker text-muted-foreground">Journal des hauts faits</h3>
+        <span className="numeral text-sm font-semibold text-foreground">
           {completedGeneral.length} / {generalAchievements.length}
         </span>
       </div>
 
-      <div className="bg-card border border-border rounded-xl divide-y divide-border">
+      <ul className="border-y border-border divide-y divide-border">
         {generalAchievements.map((a) => {
           const completed = completedIds.includes(a.id);
           const prog = completed ? 100 : a.progress(stats, sessions);
           const showTip = !completed && tooltipId === a.id;
-          return (
-            <div
-              key={a.id}
-              className={`relative p-3 flex items-center gap-4 ${
-                completed ? "bg-primary/5" : "opacity-40 cursor-pointer"
-              }`}
-              onClick={() => !completed && setTooltipId(showTip ? null : a.id)}
-            >
-              <div
-                className={`w-10 h-10 rounded-lg flex items-center justify-center text-xl ${
-                  completed ? "bg-primary/20" : "bg-muted grayscale"
+          const descriptionId = `achievement-${a.id}-desc`;
+
+          const content = (
+            <>
+              <span
+                className={`w-10 h-10 shrink-0 rounded-md border flex items-center justify-center ${
+                  completed ? "border-primary/50 text-primary" : "border-border text-muted-foreground"
                 }`}
+                aria-hidden="true"
               >
-                {a.icon === "chainsaw" ? (
-                  <ChainsawIcon size={24} />
-                ) : (
-                  a.icon
-                )}
-              </div>
-              <div className="flex-1">
-                <div className="flex justify-between items-start">
-                  <h4 className="text-xs font-bold">{a.title}</h4>
+                <AchievementIcon achievement={a} />
+              </span>
+              <span className="flex-1 min-w-0">
+                <span className="flex justify-between items-start gap-2">
+                  <span className="text-sm font-semibold">{a.title}</span>
                   {completed ? (
-                    <span className="text-[8px] font-mono text-primary uppercase">
-                      Complété
-                    </span>
+                    <span className="kicker text-primary">Complété</span>
                   ) : (
-                    <span className="text-xs text-muted-foreground">
-                      &#128274;
+                    <span className="text-muted-foreground">
+                      <UiIcon name="lock" size={14} />
+                      <span className="sr-only">Verrouillé</span>
                     </span>
                   )}
-                </div>
+                </span>
                 {completed ? (
-                  <p className="text-[10px] text-muted-foreground leading-tight">
-                    {a.description}
-                  </p>
+                  <span className="block text-xs text-muted-foreground leading-snug">{a.description}</span>
                 ) : showTip ? (
-                  <p className="mt-1 text-[10px] text-primary font-medium leading-tight animate-fade-in">
+                  <span id={descriptionId} className="mt-1 block text-xs text-foreground leading-snug animate-fade-in">
                     {a.description}
-                  </p>
+                  </span>
                 ) : (
-                  <div className="mt-1 h-1 w-full bg-muted rounded-full overflow-hidden">
-                    <div
-                      className="h-full bg-muted-foreground"
-                      style={{ width: `${prog}%` }}
-                    />
-                  </div>
+                  <span className="mt-1.5 block h-1 w-full bg-muted rounded-[1px] overflow-hidden" aria-hidden="true">
+                    <span className="block h-full bg-muted-foreground" style={{ width: `${prog}%` }} />
+                  </span>
                 )}
-              </div>
-            </div>
+              </span>
+            </>
+          );
+
+          return (
+            <li key={a.id}>
+              {completed ? (
+                <div className="p-3 flex items-center gap-4">{content}</div>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => setTooltipId(showTip ? null : a.id)}
+                  aria-expanded={showTip}
+                  aria-controls={showTip ? descriptionId : undefined}
+                  className="w-full min-h-[44px] p-3 flex items-center gap-4 text-left hover:bg-muted/40 transition-colors"
+                >
+                  {content}
+                </button>
+              )}
+            </li>
           );
         })}
-      </div>
+      </ul>
     </div>
   );
 }

@@ -15,7 +15,7 @@ import { track } from "@/lib/analytics";
 import { useKeyboardSwipe } from "@/hooks/useKeyboardSwipe";
 import { useCommunityVotes } from "@/hooks/useCommunityVotes";
 import { computeCutBillions } from "@/lib/sessionFeedback";
-import { SwipeFeedbackToast, SessionCutCounter, type LastVote } from "./SwipeFeedback";
+import { SessionFeedbackBar, feedbackAnnouncement, type LastVote } from "./SwipeFeedback";
 import { AmountQuiz } from "./AmountQuiz";
 import { getQuizIndexes } from "@/lib/quiz";
 import { recordQuizAnswer } from "@/lib/stats";
@@ -58,6 +58,7 @@ export function SwipeStack({
     })));
   const [initialized, setInitialized] = useState(false);
   const cardRef = useRef<SwipeCardHandle>(null);
+  const stackRef = useRef<HTMLDivElement>(null);
   const isAnimating = useRef(false);
 
   useEffect(() => {
@@ -108,6 +109,11 @@ export function SwipeStack({
   const handleQuizContinue = useCallback(() => {
     if (!quizCard) return;
     setQuizzedCardIds((prev) => new Set(prev).add(quizCard.id));
+    // Le quiz se demonte : rendre le focus a la carte revelee (bouton de detail)
+    // plutot que de le laisser retomber sur body.
+    setTimeout(() => {
+      stackRef.current?.querySelector<HTMLButtonElement>("[data-card-detail]")?.focus();
+    }, 0);
   }, [quizCard]);
 
   const handleSwipe = useCallback(
@@ -176,18 +182,16 @@ export function SwipeStack({
     const card = cards.find((c) => c.id === vote.cardId);
     return card ? { card, direction: vote.direction, at: vote.timestamp } : null;
   }, [cards, sessionVotes]);
-  const savingsProgress = budgetTarget ? Math.min(currentSavings / budgetTarget, 1) : 0;
-  const targetReached = budgetTarget ? currentSavings >= budgetTarget : false;
 
   return (
     <div className="flex flex-col flex-1 min-h-0">
       {/* Header */}
       <div className="flex items-center gap-3 px-4 pt-3 pb-1">
         <div className="flex items-center gap-2 shrink-0">
-          <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">
+          <span className="kicker text-muted-foreground">
             {deckName}
           </span>
-          <span className="bg-primary/20 text-primary text-[10px] font-bold px-2 py-0.5 rounded-full">
+          <span className="kicker text-primary border border-primary/50 px-1.5 rounded-sm">
             {gameMode === "budget" ? "Budget" : `N${level}`}
           </span>
         </div>
@@ -196,60 +200,37 @@ export function SwipeStack({
             {Array.from({ length: totalCards }).map((_, i) => (
               <div
                 key={i}
-                className={`h-1 flex-1 rounded-full transition-colors duration-300 ${
+                className={`h-1 flex-1 rounded-[1px] transition-colors duration-300 ${
                   i <= currentIndex ? "bg-primary" : "bg-muted"
                 }`}
               />
             ))}
           </div>
-          <span className="text-[10px] font-semibold text-muted-foreground shrink-0" data-testid="progress-counter">
+          <span className="kicker tabular-nums text-muted-foreground shrink-0" data-testid="progress-counter">
             {currentIndex + 1}/{totalCards}
           </span>
         </div>
         <button
           onClick={handleQuitSession}
           aria-label="Quitter la session"
-          className="w-8 h-8 rounded-full bg-card flex items-center justify-center text-muted-foreground hover:bg-danger hover:text-white transition-colors shadow-sm shrink-0"
+          className="-mr-2 w-11 h-11 rounded-md flex items-center justify-center text-muted-foreground hover:bg-muted hover:text-foreground transition-colors shrink-0"
         >
-          ✕
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true" focusable="false">
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
         </button>
       </div>
 
-      {/* Budget tracker */}
-      {gameMode === "budget" && budgetTarget && (
-        <div className="px-4 pb-2">
-          <div className="bg-card rounded-xl p-3 border border-border">
-            <div className="flex items-center justify-between mb-1.5">
-              <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">
-                Objectif économies
-              </span>
-              <span className={`text-xs font-bold ${targetReached ? "text-primary" : "text-foreground"}`}>
-                {currentSavings.toFixed(1)} / {budgetTarget} Md&euro;
-              </span>
-            </div>
-            <div className="w-full bg-muted h-2.5 rounded-full overflow-hidden">
-              <div
-                className={`h-full rounded-full transition-all duration-500 ${
-                  targetReached
-                    ? "bg-primary"
-                    : "bg-warning"
-                }`}
-                style={{ width: `${savingsProgress * 100}%` }}
-              />
-            </div>
-            {targetReached && (
-              <p className="text-[10px] font-bold text-primary mt-1 text-center">
-                Objectif atteint !
-              </p>
-            )}
-          </div>
-        </div>
-      )}
+      <SessionFeedbackBar
+        lastVote={lastVote}
+        counts={communityCounts}
+        cutBillions={currentSavings}
+        budgetTarget={gameMode === "budget" ? budgetTarget : undefined}
+      />
 
-      {gameMode !== "budget" && <SessionCutCounter cutBillions={currentSavings} />}
-
-      {/* Screen reader announcement */}
+      {/* Screen reader announcement (retour du vote precedent + carte courante) */}
       <div className="sr-only" aria-live="polite" aria-atomic="true">
+        {lastVote ? `${feedbackAnnouncement(lastVote, communityCounts)} ` : ""}
         {currentCard && quizActive
           ? `Carte ${currentIndex + 1} sur ${totalCards} : mini-quiz, à ton avis, combien coûte ${currentCard.title} ?`
           : currentCard
@@ -261,30 +242,24 @@ export function SwipeStack({
       {level >= 2 && (
         <>
           <div className="flex justify-center pt-1 pb-0 opacity-60">
-            <span className="flex items-center gap-1 text-[10px] font-bold text-info tracking-wider">▲ RENFORCER <ReinforceIcon size={10} /></span>
+            <span className="kicker flex items-center gap-1 text-info" aria-hidden="true">▲ Renforcer <ReinforceIcon size={10} /></span>
           </div>
         </>
       )}
 
       {/* Card stack */}
-      <div className="flex-1 relative mx-4 mb-2" style={{ perspective: 1000 }}>
+      <div ref={stackRef} className="flex-1 relative mx-4 mb-2" style={{ perspective: 1000 }}>
         {/* Level 2 side hints */}
         {level >= 2 && (
           <>
             <div className="absolute inset-y-0 -left-5 flex items-center z-30 pointer-events-none">
-              <span className="flex items-center gap-1 text-[10px] font-bold text-primary tracking-wider -rotate-90 whitespace-nowrap opacity-60" aria-hidden="true"><ShieldIcon size={10} className="text-primary" /> OK</span>
+              <span className="kicker flex items-center gap-1 text-primary -rotate-90 whitespace-nowrap opacity-60" aria-hidden="true"><ShieldIcon size={10} className="text-primary" /> OK</span>
             </div>
             <div className="absolute inset-y-0 -right-9 flex items-center z-30 pointer-events-none">
-              <span className="flex items-center gap-1 text-[10px] font-bold text-warning tracking-wider rotate-90 whitespace-nowrap opacity-60" aria-hidden="true"><ChainsawIcon size={10} variant="orange" /> RÉDUIRE</span>
+              <span className="kicker flex items-center gap-1 text-warning rotate-90 whitespace-nowrap opacity-60" aria-hidden="true"><ChainsawIcon size={10} variant="orange" /> Réduire</span>
             </div>
           </>
         )}
-
-        <SwipeFeedbackToast
-          lastVote={lastVote}
-          counts={communityCounts}
-          cutBillions={currentSavings}
-        />
 
         {quizActive && quizCard && (
           <AmountQuiz
@@ -327,14 +302,14 @@ export function SwipeStack({
       {/* Level 2 bottom hint */}
       {level >= 2 && (
         <div className="flex justify-center pb-1 opacity-60">
-          <span className="flex items-center gap-1 text-[10px] font-bold text-danger tracking-wider" aria-hidden="true"><StopIcon size={10} /> INJUSTIFIÉ ▼</span>
+          <span className="kicker flex items-center gap-1 text-danger" aria-hidden="true"><StopIcon size={10} /> Injustifié ▼</span>
         </div>
       )}
 
       {/* Bottom action buttons */}
       {level >= 2 ? (
         <Level2Buttons
-          currentCard={currentCard}
+          disabled={!currentCard || quizActive}
           onVote={handleButtonVote}
         />
       ) : (
@@ -342,7 +317,7 @@ export function SwipeStack({
           <div className="flex flex-col items-center gap-3">
             <button
               onClick={() => handleButtonVote("keep")}
-              disabled={!currentCard}
+              disabled={!currentCard || quizActive}
               aria-label="Valider cette dépense"
               className="w-20 h-20 rounded-full bg-card border-[3px] border-primary flex items-center justify-center transition-transform active:scale-90 disabled:opacity-40"
             >
@@ -354,8 +329,8 @@ export function SwipeStack({
           </div>
 
           <div className="flex flex-col items-center justify-center opacity-60">
-            <span className="text-[10px] font-bold text-muted-foreground tracking-wider uppercase mb-2">
-              Swipez pour décider
+            <span className="kicker text-muted-foreground mb-2">
+              {quizActive ? "Répondez au quiz" : "Swipez pour décider"}
             </span>
             <div className="flex gap-1.5">
               <div className="w-1.5 h-1.5 rounded-full bg-muted-foreground/40" />
@@ -367,7 +342,7 @@ export function SwipeStack({
           <div className="flex flex-col items-center gap-3">
             <button
               onClick={() => handleButtonVote("cut")}
-              disabled={!currentCard}
+              disabled={!currentCard || quizActive}
               aria-label="Remettre en question cette dépense"
               className="w-20 h-20 rounded-full bg-card border-[3px] border-danger flex items-center justify-center transition-transform active:scale-90 disabled:opacity-40"
             >
@@ -385,10 +360,10 @@ export function SwipeStack({
 
 /** 4-button layout for Level 2 */
 function Level2Buttons({
-  currentCard,
+  disabled,
   onVote,
 }: {
-  currentCard: Card | undefined;
+  disabled: boolean;
   onVote: (d: VoteDirection) => void;
 }) {
   return (
@@ -397,7 +372,7 @@ function Level2Buttons({
         <div className="flex flex-col items-center gap-2">
           <button
             onClick={() => onVote("keep")}
-            disabled={!currentCard}
+            disabled={disabled}
             aria-label="Valider cette dépense"
             className="w-16 h-16 rounded-full bg-card border-[3px] border-primary flex items-center justify-center transition-transform active:scale-90 disabled:opacity-40"
           >
@@ -408,7 +383,7 @@ function Level2Buttons({
         <div className="flex flex-col items-center gap-2">
           <button
             onClick={() => onVote("cut")}
-            disabled={!currentCard}
+            disabled={disabled}
             aria-label="Réduire cette dépense"
             className="w-16 h-16 rounded-full bg-card border-[3px] border-warning flex items-center justify-center transition-transform active:scale-90 disabled:opacity-40"
           >
@@ -419,7 +394,7 @@ function Level2Buttons({
         <div className="flex flex-col items-center gap-2">
           <button
             onClick={() => onVote("reinforce")}
-            disabled={!currentCard}
+            disabled={disabled}
             aria-label="Renforcer cette dépense"
             className="w-16 h-16 rounded-full bg-card border-[3px] border-info flex items-center justify-center transition-transform active:scale-90 disabled:opacity-40"
           >
@@ -430,7 +405,7 @@ function Level2Buttons({
         <div className="flex flex-col items-center gap-2">
           <button
             onClick={() => onVote("unjustified")}
-            disabled={!currentCard}
+            disabled={disabled}
             aria-label="Marquer comme injustifié"
             className="w-16 h-16 rounded-full bg-card border-[3px] border-danger flex items-center justify-center transition-transform active:scale-90 disabled:opacity-40"
           >

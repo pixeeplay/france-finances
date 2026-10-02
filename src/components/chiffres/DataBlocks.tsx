@@ -4,7 +4,7 @@ import type { DataSource } from "@/types/simulator";
 /** Mention de source sous un bloc de données. */
 export function SourceNote({ source, period }: { source: DataSource; period?: string }) {
   return (
-    <p className="mt-4 text-xs text-muted-foreground leading-relaxed">
+    <p className="mt-4 font-mono text-xs text-muted-foreground leading-relaxed">
       {period ? <span>Données {period}. </span> : null}
       Source :{" "}
       <a
@@ -23,17 +23,21 @@ export function SourceNote({ source, period }: { source: DataSource; period?: st
 export function DataSection({
   id,
   title,
+  kicker,
   intro,
   children,
 }: {
   id: string;
   title: string;
+  /** Surtitre éditorial (rubrique) */
+  kicker?: string;
   intro?: ReactNode;
   children: ReactNode;
 }) {
   return (
     <section id={id} aria-labelledby={`${id}-title`} className="scroll-mt-24 py-10 border-t border-border">
-      <h2 id={`${id}-title`} className="font-heading text-2xl font-bold text-foreground mb-2">
+      {kicker ? <p className="kicker text-muted-foreground mb-2">{kicker}</p> : null}
+      <h2 id={`${id}-title`} className="text-2xl sm:text-3xl font-semibold leading-tight text-foreground mb-3">
         {title}
       </h2>
       {intro ? <div className="text-sm text-muted-foreground leading-relaxed mb-6 max-w-2xl">{intro}</div> : null}
@@ -45,9 +49,9 @@ export function DataSection({
 /** Chiffre clé : valeur en grand, libellé et précision. */
 export function StatTile({ label, value, detail }: { label: string; value: string; detail?: string }) {
   return (
-    <div className="rounded-xl border border-border bg-card p-4">
-      <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">{label}</p>
-      <p className="mt-1 font-heading text-2xl font-bold tabular-nums text-foreground">{value}</p>
+    <div className="border-t border-border pt-3 pb-1">
+      <p className="kicker text-muted-foreground">{label}</p>
+      <p className="mt-1 numeral text-2xl sm:text-3xl font-semibold leading-tight text-foreground">{value}</p>
       {detail ? <p className="mt-1 text-xs text-muted-foreground leading-snug">{detail}</p> : null}
     </div>
   );
@@ -71,20 +75,20 @@ export function BarList({ items, caption, max }: { items: readonly BarItem[]; ca
   return (
     <figure>
       <figcaption className="sr-only">{caption}</figcaption>
-      <ul className="space-y-3">
+      <ul className="flex flex-col">
         {items.map((item) => {
           const width = top > 0 ? Math.max(0, (item.value / top) * 100) : 0;
           return (
-            <li key={item.label}>
+            <li key={item.label} className="border-t border-border first:border-t-0 py-2.5">
               <div className="flex items-baseline justify-between gap-3 text-sm">
-                <span className={item.highlight ? "font-semibold text-foreground" : "text-foreground/90"}>
+                <span className={item.highlight ? "font-semibold text-foreground" : "text-foreground"}>
                   {item.label}
                 </span>
-                <span className="shrink-0 font-semibold tabular-nums text-foreground">{item.display}</span>
+                <span className="shrink-0 numeral text-base font-semibold text-foreground">{item.display}</span>
               </div>
-              <div className="mt-1 h-2 rounded-full bg-muted" aria-hidden="true">
+              <div className="mt-1.5 h-2.5 rounded-[1px] bg-muted" aria-hidden="true">
                 <div
-                  className={`h-2 rounded-full ${item.highlight ? "bg-foreground" : "bg-primary"}`}
+                  className={`h-full rounded-[1px] ${item.highlight ? "bg-foreground" : "bg-foreground/70"}`}
                   style={{ width: `${width}%` }}
                 />
               </div>

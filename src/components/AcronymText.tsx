@@ -22,6 +22,8 @@ export function AcronymText({ text, className }: AcronymTextProps) {
     key: string;
     top: number;
     left: number;
+    /** Le déclencheur est dans un conteneur .dark (ex. le jeu, sombre même en thème clair) */
+    dark: boolean;
   } | null>(null);
   const tooltipRef = useRef<HTMLSpanElement>(null);
 
@@ -32,6 +34,7 @@ export function AcronymText({ text, className }: AcronymTextProps) {
         key,
         top: rect.top + window.scrollY,
         left: rect.left + rect.width / 2,
+        dark: btn.closest(".dark") !== null,
       });
     },
     [],
@@ -134,7 +137,7 @@ export function AcronymText({ text, className }: AcronymTextProps) {
         createPortal(
           <span
             ref={tooltipRef}
-            className="fixed z-[9999] px-3 py-2 bg-card border border-border rounded-md shadow-(--shadow-card) text-xs text-foreground font-medium max-w-[250px] text-wrap leading-snug pointer-events-auto"
+            className={`${active.dark ? "dark " : ""}fixed z-[9999] px-3 py-2 bg-card border border-border rounded-md shadow-(--shadow-card) text-xs text-foreground font-medium max-w-[250px] text-wrap leading-snug pointer-events-auto`}
             style={{
               top: active.top - 8,
               left: active.left,

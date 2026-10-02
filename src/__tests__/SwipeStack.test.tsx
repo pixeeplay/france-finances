@@ -347,6 +347,9 @@ describe("SwipeStack", () => {
       });
       expect(screen.getByTestId("swipe-feedback")).toHaveTextContent("même avis");
       expect(screen.getByTestId("session-cut-counter")).toHaveTextContent("2");
+      // Feedback is merged into the single live region (no second role=status)
+      expect(screen.queryByRole("status")).not.toBeInTheDocument();
+      expect(screen.getByText(/80 % des joueurs sont du même avis.*Carte 2 sur 3/)).toHaveAttribute("aria-live", "polite");
     });
 
     it("degrades gracefully when the community API is unavailable", async () => {
@@ -382,6 +385,9 @@ describe("SwipeStack", () => {
       // Keyboard votes are disabled while the quiz is open
       fireEvent.keyDown(window, { key: "ArrowRight" });
       expect(useGameStore.getState().session!.votes).toHaveLength(1);
+      // Vote buttons are exposed as disabled while the quiz is open
+      expect(screen.getByRole("button", { name: "Valider cette dépense" })).toBeDisabled();
+      expect(screen.getByRole("button", { name: "Remettre en question cette dépense" })).toBeDisabled();
 
       fireEvent.click(screen.getAllByRole("button", { name: /Md€|M€/ })[0]);
       fireEvent.click(screen.getByRole("button", { name: "Voir la carte" }));

@@ -140,10 +140,15 @@ describe("AmountQuiz", () => {
     const onContinue = vi.fn();
     render(createElement(AmountQuiz, { card: c, onAnswer, onContinue }));
 
-    expect(screen.getByRole("heading", { name: "À ton avis, combien ?" })).toBeInTheDocument();
+    const heading = screen.getByRole("heading", { name: "À ton avis, combien ?" });
+    // Focus moved into the quiz when it appears
+    expect(heading).toHaveFocus();
     const wrong = buildQuizOptions(c).find((o) => !o.correct)!;
     fireEvent.click(screen.getByRole("button", { name: wrong.label }));
     expect(onAnswer).toHaveBeenCalledWith(false);
+    // Choices stay focusable (aria-disabled), focus goes to the continue button
+    expect(screen.getByRole("button", { name: wrong.label })).toHaveAttribute("aria-disabled", "true");
+    expect(screen.getByRole("button", { name: "Voir la carte" })).toHaveFocus();
     expect(screen.getByTestId("amount-quiz")).toHaveTextContent("c'était 13");
 
     // Second click is ignored

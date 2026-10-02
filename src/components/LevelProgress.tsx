@@ -36,8 +36,9 @@ export function LevelLockedNotice({
   const fromLevel = nextLevel - 1;
   return (
     <main className="flex-1 flex flex-col items-center justify-center gap-4 px-6 text-center" data-testid="level-locked">
-      <h1 className="text-xl font-bold">Niveau {requestedLevel} verrouillé</h1>
-      <p className="text-sm text-muted-foreground max-w-[320px]">
+      <p className="kicker text-muted-foreground">Progression</p>
+      <h1 className="-mt-2 text-3xl font-semibold leading-tight">Niveau {requestedLevel} verrouillé</h1>
+      <p className="text-sm text-muted-foreground leading-relaxed max-w-[320px]">
         {nextLevel === requestedLevel
           ? "Il se débloque en jouant : "
           : `Débloquez d'abord le niveau ${nextLevel} : `}
@@ -47,13 +48,13 @@ export function LevelLockedNotice({
       <div className="flex w-full max-w-[320px] flex-col gap-3">
         <Link
           href={levelHref(deckId, unlockedLevel)}
-          className="flex min-h-[44px] items-center justify-center rounded-lg bg-primary px-6 font-semibold text-primary-foreground"
+          className="flex min-h-[48px] items-center justify-center rounded-md bg-foreground px-6 font-semibold text-background hover:opacity-90 transition-opacity"
         >
           Jouer ce deck en niveau {unlockedLevel}
         </Link>
         <Link
           href="/jeu"
-          className="flex min-h-[44px] items-center justify-center rounded-lg border border-foreground/40 px-6 font-semibold"
+          className="flex min-h-[48px] items-center justify-center rounded-md border border-foreground/40 px-6 font-semibold hover:bg-muted transition-colors"
         >
           Choisir un autre deck
         </Link>
@@ -78,31 +79,41 @@ export function NextLevelCTA({ level }: { level: GameLevel }) {
 
   if (!progress.unlocked) {
     return (
-      <p
-        className="rounded-lg border border-border bg-card px-4 py-3 text-center text-sm text-muted-foreground"
-        data-testid="next-level-progress"
-      >
-        Niveau {next} : {progress.done}/{progress.required} sessions N{level},{" "}
-        {remainingText(progress.remaining, level)} pour le débloquer.
-      </p>
+      <div className="border-y border-border py-3" data-testid="next-level-progress">
+        <p className="flex items-baseline justify-between gap-3">
+          <span className="kicker text-muted-foreground">Niveau {next}</span>
+          <span className="numeral text-base font-semibold">
+            {progress.done}/{progress.required}
+          </span>
+        </p>
+        <div className="mt-2 h-1.5 w-full overflow-hidden rounded-[1px] bg-muted" aria-hidden="true">
+          <div
+            className="h-full bg-foreground/70"
+            style={{ width: `${Math.min(100, (progress.done / Math.max(1, progress.required)) * 100)}%` }}
+          />
+        </div>
+        <p className="mt-2 text-sm text-muted-foreground">
+          Se débloque après {progress.required} sessions N{level} : {remainingText(progress.remaining, level)}.
+        </p>
+      </div>
     );
   }
 
   return (
     <div className="flex flex-col gap-2" data-testid="next-level-cta">
       {justUnlocked && (
-        <p className="text-center text-sm font-bold text-primary" role="status">
+        <p className="kicker text-center text-primary" role="status">
           Niveau {next} débloqué
         </p>
       )}
       <Link
         href={levelHref(null, next)}
-        className="flex min-h-[44px] items-center justify-center gap-2 w-full rounded-lg py-4 px-6 bg-primary text-primary-foreground font-semibold text-lg active:scale-[0.98] transition-transform"
+        className="flex min-h-[48px] items-center justify-center gap-2 w-full rounded-md py-4 px-6 bg-foreground text-background font-semibold text-lg hover:opacity-90 transition-opacity"
       >
         Passer au Niveau {next}
-        <span className="text-base" aria-hidden="true">
-          &#8594;
-        </span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
+          <path d="M5 12h14M13 6l6 6-6 6" />
+        </svg>
       </Link>
     </div>
   );

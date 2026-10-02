@@ -22,19 +22,40 @@ export interface LastVote {
 /** Duree d'affichage du retour apres un swipe */
 export const FEEDBACK_DURATION_MS = 2600;
 
-interface SwipeFeedbackToastProps {
+/** Phrase de l'avis de la communaute (complete, pour les lecteurs d'ecran) */
+function agreementSentence(lastVote: LastVote, counts: CommunityCounts): string {
+  const agreement = communityAgreement(counts[lastVote.card.id], lastVote.direction);
+  return agreement
+    ? `${agreement.percent} % des joueurs sont du même avis (${agreement.total} votes)`
+    : "Pas encore assez de votes de la communauté sur cette carte";
+}
+
+/**
+ * Texte du retour de vote pour la zone aria-live de la pile : une seule annonce
+ * par vote, fusionnee avec celle de la carte suivante (pas de role=status en double).
+ */
+export function feedbackAnnouncement(lastVote: LastVote | null, counts: CommunityCounts): string {
+  if (!lastVote) return "";
+  const fact = trendFact(lastVote.card);
+  return `${lastVote.card.title} : ${agreementSentence(lastVote, counts)}.${fact ? ` ${fact}.` : ""}`;
+}
+
+interface SessionFeedbackBarProps {
   lastVote: LastVote | null;
   counts: CommunityCounts;
   /** Montant cumule remis en question dans la session (Md€) */
   cutBillions: number;
+  /** Mode budget : objectif d'economies (Md€), affiche a la place du cumul simple */
+  budgetTarget?: number;
 }
 
 /**
- * Retour affiche brievement apres chaque swipe : avis de la communaute
- * (si disponible), un fait sur la depense et le cumul "tronconne".
- * A placer dans un conteneur `relative` (superpose en haut de la pile).
+ * Bandeau de hauteur fixe au-dessus de la pile : retour bref apres chaque vote
+ * (avis de la communaute, tendance) et cumul "tronconne" de la session.
+ * Il ne recouvre jamais la carte ; l'annonce vocale passe par la zone
+ * aria-live de SwipeStack (voir feedbackAnnouncement).
  */
-export function SwipeFeedbackToast({ lastVote, counts, cutBillions }: SwipeFeedbackToastProps) {
+export function SessionFeedbackBar({ lastVote, counts, cutBillions, budgetTarget }: SessionFeedbackBarProps) {
   const [dismissedAt, setDismissedAt] = useState<number | null>(null);
 
   useEffect(() => {
@@ -44,59 +65,78 @@ export function SwipeFeedbackToast({ lastVote, counts, cutBillions }: SwipeFeedb
     return () => clearTimeout(timer);
   }, [lastVote]);
 
-  if (!lastVote || dismissedAt === lastVote.at) return null;
-
-  const side = voteSide(lastVote.direction);
-  const agreement = communityAgreement(counts[lastVote.card.id], lastVote.direction);
-  const fact = trendFact(lastVote.card);
+  const visible = lastVote !== null && dismissedAt !== lastVote.at;
 
   return (
-    <div
-      className="absolute inset-x-0 top-2 z-40 flex justify-center px-2 pointer-events-none"
-      data-testid="swipe-feedback"
-      role="status"
-    >
-      <div className="max-w-[340px] w-full rounded-xl border border-border bg-card/95 px-3 py-2 shadow-lg">
-        <p className="flex items-center gap-2 text-xs font-semibold text-foreground">
-          {side === "cut" ? (
-            <span aria-hidden="true" className="shrink-0">
-              <ChainsawIcon size={14} />
-            </span>
-          ) : (
-            <span aria-hidden="true" className="shrink-0 text-primary">
-              <ShieldIcon size={14} />
-            </span>
-          )}
-          <span className="truncate">{lastVote.card.title}</span>
-        </p>
-        <p className="mt-0.5 text-[11px] text-muted-foreground">
-          {agreement
-            ? `${agreement.percent} % des joueurs sont du même avis (${agreement.total} votes)`
-            : "Pas encore assez de votes de la communauté sur cette carte"}
-        </p>
-        {fact && <p className="text-[11px] text-muted-foreground">{fact}</p>}
-        {side === "cut" && (
-          <p className="text-[11px] font-semibold text-danger">
-            Cumul remis en question : {formatBillions(cutBillions)}
-          </p>
-        )}
+    <div className="relative mx-4 mb-2 flex h-11 items-center gap-3 border-y border-border">
+      <div className="min-w-0 flex-1" aria-hidden="true">
+        {visible && lastVote ? <FeedbackLines lastVote={lastVote} counts={counts} /> : null}
       </div>
+      {budgetTarget ? (
+        <BudgetCounter cutBillions={cutBillions} target={budgetTarget} />
+      ) : (
+        <p
+          className="shrink-0 flex flex-col items-end leading-none"
+          data-testid="session-cut-counter"
+        >
+          <span className="kicker flex items-center gap-1 text-muted-foreground">
+            <span aria-hidden="true" className="shrink-0">
+              <ChainsawIcon size={11} />
+            </span>
+            Tronçonné
+          </span>
+          <span className="sr-only"> cette session : </span>
+          <span className="numeral mt-0.5 text-base font-semibold text-danger">{formatBillions(cutBillions)}</span>
+        </p>
+      )}
     </div>
   );
 }
 
-/** Ligne discrete et persistante : cumul "tronconne" de la session */
-export function SessionCutCounter({ cutBillions }: { cutBillions: number }) {
+/** Suivi de l'objectif du mode budget : montant / cible et jauge sur le filet du bas */
+function BudgetCounter({ cutBillions, target }: { cutBillions: number; target: number }) {
+  const reached = cutBillions >= target;
+  const progress = Math.min(cutBillions / target, 1) * 100;
   return (
-    <p
-      className="px-4 pb-1 text-[11px] font-semibold text-muted-foreground flex items-center gap-1.5"
-      data-testid="session-cut-counter"
-    >
-      <span aria-hidden="true" className="shrink-0">
-        <ChainsawIcon size={12} />
+    <>
+      <p className="shrink-0 flex flex-col items-end leading-none" data-testid="budget-counter">
+        <span className={`kicker ${reached ? "text-primary" : "text-muted-foreground"}`}>
+          {reached ? "Objectif atteint" : "Objectif économies"}
+        </span>
+        <span className={`numeral mt-0.5 text-base font-semibold ${reached ? "text-primary" : "text-foreground"}`}>
+          {cutBillions.toFixed(1)} / {target}&nbsp;Md€
+        </span>
+      </p>
+      <span className="absolute inset-x-0 -bottom-px h-0.5 bg-muted" aria-hidden="true">
+        <span
+          className={`block h-full transition-[width] duration-500 ${reached ? "bg-primary" : "bg-warning"}`}
+          style={{ width: `${progress}%` }}
+        />
       </span>
-      Tronçonné cette session :{" "}
-      <span className="text-danger tabular-nums">{formatBillions(cutBillions)}</span>
-    </p>
+    </>
+  );
+}
+
+function FeedbackLines({ lastVote, counts }: { lastVote: LastVote; counts: CommunityCounts }) {
+  const side = voteSide(lastVote.direction);
+  const fact = trendFact(lastVote.card);
+  const detail = fact ? `${agreementSentence(lastVote, counts)} · ${fact}` : agreementSentence(lastVote, counts);
+
+  return (
+    <div className="animate-fade-in" data-testid="swipe-feedback">
+      <p className="flex items-center gap-1.5 text-xs font-medium leading-4 text-foreground">
+        {side === "cut" ? (
+          <span className="shrink-0">
+            <ChainsawIcon size={12} />
+          </span>
+        ) : (
+          <span className="shrink-0 text-primary">
+            <ShieldIcon size={12} />
+          </span>
+        )}
+        <span className="truncate">{lastVote.card.title}</span>
+      </p>
+      <p className="truncate text-[11px] leading-4 text-muted-foreground">{detail}</p>
+    </div>
   );
 }

@@ -66,6 +66,7 @@ export const SwipeCard = forwardRef<SwipeCardHandle, SwipeCardProps>(
         className="absolute inset-0 rounded-3xl bg-card border border-border overflow-hidden"
         style={{ scale: 0.95, opacity: 0.7, y: 16 }}
         aria-hidden="true"
+        inert
       >
         <CardContent card={card} />
       </motion.div>
@@ -192,6 +193,7 @@ function CardContent({
             onClick={(e) => { e.stopPropagation(); onTapDetail(); }}
             onPointerDown={(e) => e.stopPropagation()}
             aria-label="Voir le détail de cette dépense"
+            data-card-detail
             className="-my-2 -mr-2 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-full text-foreground hover:bg-muted transition-colors"
           >
             <span className="w-7 h-7 rounded-full border border-border flex items-center justify-center text-base leading-none" aria-hidden="true">+</span>
@@ -219,11 +221,12 @@ function CardContent({
         </div>
       </div>
 
-      <AmountScale amountBillions={card.amountBillions} />
+      {/* Échelle masquée sur les écrans très bas : priorité au texte de la carte */}
+      <AmountScale amountBillions={card.amountBillions} className="[@media(max-height:699px)]:hidden" />
 
       <AcronymText
         text={card.description}
-        className="text-sm leading-relaxed text-muted-foreground line-clamp-6 [@media(min-height:760px)]:line-clamp-9 lg:line-clamp-none"
+        className="shrink-0 text-sm leading-relaxed text-muted-foreground line-clamp-3 [@media(min-height:700px)]:line-clamp-4 [@media(min-height:800px)]:line-clamp-6 [@media(min-height:960px)]:line-clamp-8"
       />
 
       {card.equivalence && (
@@ -231,7 +234,7 @@ function CardContent({
           <span className="kicker text-muted-foreground block mb-0.5">Équivalence</span>
           <AcronymText
             text={card.equivalence}
-            className="text-sm font-medium text-foreground leading-snug line-clamp-2 lg:line-clamp-none"
+            className="text-sm font-medium text-foreground leading-snug line-clamp-2 [@media(min-height:960px)]:line-clamp-3"
           />
         </div>
       )}

@@ -76,9 +76,9 @@ export default function ChiffresPage() {
 
   return (
     <PageShell>
-      <header className="pb-6">
-        <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Données officielles · mise à jour octobre 2026</p>
-        <h1 className="mt-2 font-heading text-3xl sm:text-4xl font-bold text-foreground">{TITLE}</h1>
+      <header className="pb-6 border-b-2 border-foreground">
+        <p className="kicker text-muted-foreground">Données officielles · mise à jour octobre 2026</p>
+        <h1 className="mt-3 text-4xl sm:text-5xl font-semibold leading-[1.05] text-foreground">{TITLE}</h1>
         <p className="mt-4 text-base text-muted-foreground leading-relaxed">
           Les grands agrégats des finances publiques françaises, tels que publiés par l&apos;Insee,
           le ministère chargé du budget, le Parlement, la DREES et Eurostat. Chaque bloc indique
@@ -86,13 +86,13 @@ export default function ChiffresPage() {
         </p>
       </header>
 
-      <nav aria-label="Sommaire" className="-mx-4 px-4 sm:mx-0 sm:px-0 mb-2 overflow-x-auto scrollbar-hide">
-        <ul className="flex gap-2 w-max sm:w-auto sm:flex-wrap">
+      <nav aria-label="Sommaire" className="-mx-4 px-4 sm:mx-0 sm:px-0 py-2 mb-2 overflow-x-auto scrollbar-hide">
+        <ul className="flex gap-x-5 w-max sm:w-auto sm:flex-wrap">
           {NAV.map((item) => (
             <li key={item.id}>
               <a
                 href={`#${item.id}`}
-                className="inline-flex items-center min-h-[44px] px-4 rounded-full border border-border text-sm text-foreground hover:bg-muted transition-colors whitespace-nowrap"
+                className="inline-flex items-center min-h-[44px] text-sm font-medium text-foreground underline-offset-4 hover:underline whitespace-nowrap"
               >
                 {item.label}
               </a>
@@ -102,7 +102,7 @@ export default function ChiffresPage() {
       </nav>
 
       <DataSection id="essentiel" title="L'essentiel">
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-5">
           <StatTile
             label="Dette publique"
             value={formatBillionsExact(CURRENT_DEBT.amountBn)}
@@ -149,7 +149,7 @@ export default function ChiffresPage() {
           </p>
         }
       >
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-6 gap-y-5">
           <StatTile label="Recettes nettes" value={formatBillionsExact(STATE_BUDGET_2026.netRevenueM / 1000)} />
           <StatTile label="Dépenses nettes" value={formatBillionsExact(STATE_BUDGET_2026.netExpenditureM / 1000)} />
           <StatTile
@@ -160,7 +160,7 @@ export default function ChiffresPage() {
         </div>
         <SourceNote source={STATE_BUDGET_2026.source} period="loi de finances pour 2026" />
 
-        <h3 className="mt-8 mb-1 font-heading text-lg font-semibold text-foreground">Crédits par mission</h3>
+        <h3 className="mt-10 mb-1 text-xl font-semibold text-foreground">Crédits par mission</h3>
         <p className="mb-4 text-sm text-muted-foreground leading-relaxed">
           Crédits de paiement, {formatBillionsExact(missionsTotal, 0)} au total hors remboursements et
           dégrèvements d&apos;impôts. Ils incluent les cotisations versées pour les retraites des
@@ -245,28 +245,28 @@ export default function ChiffresPage() {
         title="Comparaison européenne"
         intro={<p>Dette, déficit et dépense publics, en pourcentage du PIB.</p>}
       >
-        <div className="overflow-x-auto rounded-xl border border-border">
-          <table className="w-full text-sm tabular-nums">
+        <div className="overflow-x-auto border-y-2 border-foreground">
+          <table className="w-full text-sm">
             <caption className="sr-only">
               Dette, déficit et dépense publics en {EU_COMPARISON.period}, en pourcentage du PIB
             </caption>
-            <thead className="bg-muted/50 text-xs text-muted-foreground">
+            <thead className="text-muted-foreground">
               <tr>
-                <th scope="col" className="px-3 py-2 text-left font-medium">Pays</th>
-                <th scope="col" className="px-3 py-2 text-right font-medium">Dette</th>
-                <th scope="col" className="px-3 py-2 text-right font-medium">Déficit</th>
-                <th scope="col" className="px-3 py-2 text-right font-medium">Dépense</th>
+                <th scope="col" className="kicker px-3 py-2 text-left font-medium">Pays</th>
+                <th scope="col" className="kicker px-3 py-2 text-right font-medium">Dette</th>
+                <th scope="col" className="kicker px-3 py-2 text-right font-medium">Déficit</th>
+                <th scope="col" className="kicker px-3 py-2 text-right font-medium">Dépense</th>
               </tr>
             </thead>
             <tbody>
               {EU_COMPARISON.items.map((c) => (
-                <tr key={c.code} className={`border-t border-border ${c.highlight ? "font-semibold bg-muted/30" : ""}`}>
+                <tr key={c.code} className={`border-t border-border ${c.highlight ? "font-semibold bg-muted/40" : ""}`}>
                   <th scope="row" className="px-3 py-2 text-left font-normal">
                     {c.highlight ? <strong>{c.country}</strong> : c.country}
                   </th>
-                  <td className="px-3 py-2 text-right">{formatNumber(c.debtPctGdp, 1)} %</td>
-                  <td className="px-3 py-2 text-right">{formatNumber(c.deficitPctGdp, 1)} %</td>
-                  <td className="px-3 py-2 text-right">{formatNumber(c.spendingPctGdp, 1)} %</td>
+                  <td className="numeral px-3 py-2 text-right">{formatNumber(c.debtPctGdp, 1)} %</td>
+                  <td className="numeral px-3 py-2 text-right">{formatNumber(c.deficitPctGdp, 1)} %</td>
+                  <td className="numeral px-3 py-2 text-right">{formatNumber(c.spendingPctGdp, 1)} %</td>
                 </tr>
               ))}
             </tbody>
@@ -287,7 +287,7 @@ export default function ChiffresPage() {
               >
                 {s.label}
               </a>{" "}
-              <span className="text-muted-foreground">({s.date})</span>
+              <span className="font-mono text-xs text-muted-foreground">({s.date})</span>
             </li>
           ))}
         </ul>
@@ -302,13 +302,13 @@ export default function ChiffresPage() {
         <div className="mt-8 flex flex-col sm:flex-row gap-3">
           <Link
             href="/simulateur"
-            className="inline-flex items-center justify-center min-h-[44px] px-6 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-colors"
+            className="inline-flex items-center justify-center min-h-[48px] px-6 rounded-md bg-foreground text-background font-semibold text-sm hover:opacity-90 transition-opacity"
           >
             Estimer ma contribution
           </Link>
           <Link
             href="/jeu"
-            className="inline-flex items-center justify-center min-h-[44px] px-6 rounded-full border border-border text-foreground font-semibold text-sm hover:bg-muted transition-colors"
+            className="inline-flex items-center justify-center min-h-[48px] px-6 rounded-md border border-foreground/40 text-foreground font-semibold text-sm hover:bg-muted transition-colors"
           >
             Jouer à Budget Swipe
           </Link>

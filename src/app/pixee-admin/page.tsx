@@ -59,7 +59,7 @@ export default function AdminPage() {
               key={d}
               onClick={() => setDays(d)}
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
-                days === d ? "bg-primary text-white" : "bg-card text-muted-foreground"
+                days === d ? "bg-primary text-primary-foreground" : "bg-card text-muted-foreground"
               }`}
             >
               {d}j
