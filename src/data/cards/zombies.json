@@ -8,11 +8,12 @@
     "costPerCitizen": 206,
     "deckId": "zombies",
     "icon": "🕳️",
-    "source": "Cour des comptes, France Compétences rapport, PLF 2026",
-    "sourceUrl": null,
-    "level": 1,
+    "source": "Sénat (PLF 2026), Cour des comptes, France Compétences rapport, PLF 2026",
+    "sourceUrl": "https://www.senat.fr/rap/l25-139-331/l25-139-331_mono.html",
+    "year": 2026,
+    "sourceDate": "2025-11-24",
+    "level": 2,
     "tags": ["zombie", "formation", "CPF", "déficit"],
-    "trend": null,
     "equivalence": "Le déficit de France Compétences = 2x le budget du ministère de la Culture"
   },
   {
@@ -24,11 +25,11 @@
     "costPerCitizen": 40,
     "deckId": "zombies",
     "icon": "🧟",
-    "source": "BPI France, Banque de France, Cour des comptes rapport PGE",
-    "sourceUrl": null,
+    "source": "Sénat (PLF 2026), BPI France, Banque de France, Cour des comptes rapport PGE",
+    "sourceUrl": "https://www.senat.fr/rap/l25-139-312/l25-139-312_mono.html",
+    "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["zombie", "COVID", "PGE", "dette"],
-    "trend": null,
     "equivalence": "Les PGE = un prêt de 200 000€ en moyenne par entreprise, garanti par vous"
   },
   {
@@ -41,10 +42,10 @@
     "deckId": "zombies",
     "icon": "⚡",
     "source": "CRE, Cour des comptes, EDF",
-    "sourceUrl": null,
-    "level": 1,
+    "sourceUrl": "https://www.ccomptes.fr/sites/default/files/2024-03/20240315_Mesures-exceptionnelles-lutte-contre-hausse-prix-energie.pdf",
+    "sourceDate": "2024-03",
+    "level": 2,
     "tags": ["zombie", "ARENH", "énergie", "EDF"],
-    "trend": null,
     "equivalence": "EDF a vendu son électricité a perte pendant 15 ans sur ordre de l'État, pour creer de la concurrence"
   },
   {
@@ -56,11 +57,11 @@
     "costPerCitizen": 7,
     "deckId": "zombies",
     "icon": "🏦",
-    "source": "Cour des comptes, IGAS, PLF annexe opérateurs",
-    "sourceUrl": null,
-    "level": 1,
+    "source": "Sénat (PLF 2026), Cour des comptes, IGAS, PLF annexe opérateurs",
+    "sourceUrl": "https://www.senat.fr/rap/l25-139-21/l25-139-21_mono.html",
+    "sourceDate": "2025-11-24",
+    "level": 3,
     "tags": ["zombie", "indemnisation", "mille-feuille"],
-    "trend": null,
     "equivalence": "20+ fonds d'indemnisation la ou 3-4 suffiraient"
   },
   {
@@ -72,11 +73,11 @@
     "costPerCitizen": 338,
     "deckId": "zombies",
     "icon": "🏠",
-    "source": "DGCL, DGFiP, Cour des comptes",
-    "sourceUrl": null,
+    "source": "Sénat (PLF 2026), DGCL, DGFiP, Cour des comptes",
+    "sourceUrl": "https://www.senat.fr/rap/l25-139-326/l25-139-326_mono.html",
+    "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["zombie", "fiscalité", "taxe d'habitation"],
-    "trend": null,
     "equivalence": "La suppression a été compensee à l'euro pres — le contribuable paie toujours, mais autrement"
   },
   {
@@ -88,11 +89,12 @@
     "costPerCitizen": 1,
     "deckId": "zombies",
     "icon": "🏛️",
-    "source": "PLF 2026, CESE rapport d'activité, Cour des comptes",
-    "sourceUrl": null,
-    "level": 1,
+    "source": "Sénat (PLF 2026), PLF 2026, CESE rapport d'activité, Cour des comptes",
+    "sourceUrl": "https://www.senat.fr/rap/l25-139-36/l25-139-36_mono.html",
+    "year": 2026,
+    "sourceDate": "2025-11-24",
+    "level": 3,
     "tags": ["zombie", "institution", "CESE"],
-    "trend": null,
     "equivalence": "45 M€ = le prix de 3 écoles neuves par an"
   },
   {
@@ -104,11 +106,12 @@
     "costPerCitizen": 1176,
     "deckId": "zombies",
     "icon": "🗂️",
-    "source": "PLF 2026 annexe opérateurs, Cour des comptes, Fondation IFRAP",
-    "sourceUrl": null,
+    "source": "Sénat (PLF 2026), PLF 2026 annexe opérateurs, Cour des comptes, Fondation IFRAP",
+    "sourceUrl": "https://www.senat.fr/rap/l25-139-3/l25-139-3_mono.html",
+    "year": 2026,
+    "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["zombie", "opérateurs", "mille-feuille", "administration"],
-    "trend": null,
     "equivalence": "438 opérateurs = plus que le nombre de députés (577) — chacun avec son DG, son CA et ses locaux"
   },
   {
@@ -121,10 +124,8 @@
     "deckId": "zombies",
     "icon": "📋",
     "source": "DARES, IGAS, Cour des comptes",
-    "sourceUrl": null,
-    "level": 1,
+    "level": 3,
     "tags": ["zombie", "emploi", "revitalisation"],
-    "trend": null,
     "equivalence": "~50 000€ par emploi créé, dont une partie enrichit les consultants"
   },
   {
@@ -136,11 +137,12 @@
     "costPerCitizen": 10,
     "deckId": "zombies",
     "icon": "🏢",
-    "source": "IGAS rapport ARS, PLF 2026, Cour des comptes",
-    "sourceUrl": null,
-    "level": 1,
+    "source": "Sénat (PLFSS 2026), IGAS rapport ARS, PLF 2026, Cour des comptes",
+    "sourceUrl": "https://www.senat.fr/rap/l25-131-22/l25-131-22_mono.html",
+    "year": 2026,
+    "sourceDate": "2025-11-15",
+    "level": 3,
     "tags": ["zombie", "santé", "ARS", "bureaucratie"],
-    "trend": null,
     "equivalence": "18 ARS avec 18 DG, 18 sieges, 18 comites, pour un pays de la taille du Texas"
   },
   {
@@ -152,11 +154,11 @@
     "costPerCitizen": 309,
     "deckId": "zombies",
     "icon": "🪦",
-    "source": "FRR rapport annuel, COR, Cour des comptes",
-    "sourceUrl": null,
+    "source": "Sénat (PLF 2026), FRR rapport annuel, COR, Cour des comptes",
+    "sourceUrl": "https://www.senat.fr/rap/l25-139-324/l25-139-324_mono.html",
+    "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["zombie", "retraites", "FRR", "réserves"],
-    "trend": null,
     "equivalence": "21 Md€ dormants = 4 mois de déficit de la Sécurité sociale"
   }
 ]
