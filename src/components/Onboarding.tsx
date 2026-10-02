@@ -7,6 +7,7 @@ import { ShieldIcon } from "./ShieldIcon";
 import { UiIcon } from "./icons/UiIcon";
 import { track } from "@/lib/analytics";
 import { SPRING_SWIPE } from "@/lib/motion-constants";
+import { CARDS_AND_CATEGORIES } from "@/lib/deckMeta";
 
 const ONBOARDED_KEY = "trnc:onboarded";
 
@@ -26,7 +27,7 @@ const slides = [
   {
     id: "go",
     title: "C'est parti !",
-    subtitle: "369 cartes, 16 catégories",
+    subtitle: CARDS_AND_CATEGORIES,
     description: "Choisis un thème ou lance le mode aléatoire. 10 cartes, 3 minutes max. Parfois, devine d'abord le montant d'une dépense avant de découvrir sa carte.",
   },
 ] as const;
