@@ -3,18 +3,19 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Direction artistique « data-journalisme ».
- * - Serif éditoriale pour les titres et les chiffres forts (Source Serif 4)
- * - Grotesk pour le texte courant (Schibsted Grotesk)
- * - Mono pour les étiquettes, axes et sources (IBM Plex Mono)
- * - Palette sobre : la couleur porte le sens (garder / couper / renforcer / injustifié)
- * - Pas de dégradé de texte, pas de lueur néon, pas de flou décoratif.
+ * Identité visuelle « Budget Swipe » : colorée, ludique, lisible.
+ * - Outfit très grasse (800/900) pour les titres et les chiffres-clés
+ * - Geist pour le texte courant et l'interface
+ * - Fond #0F172A, cartes #1E293B ; accents emerald / red / blue / amber
+ * - CTA bleus pleins et arrondis, chiffres-clés en rouge
+ * - Rayons généreux ; pas de dégradé de texte criard ni de lueur néon.
  */
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-surface: var(--card);
+  --color-section: var(--section);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
@@ -34,7 +35,12 @@
   --color-ring: var(--ring);
   --color-rule: var(--rule);
 
-  /* Couleurs de sens (votes). Ne pas les utiliser comme décoration. */
+  /* Bleu de marque : CTA pleins (fond) et grands titres (texte) */
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-fg: var(--brand-fg);
+
+  /* Couleurs de sens (votes) */
   --color-danger: var(--danger);
   --color-info: var(--info);
   --color-warning: var(--warning);
@@ -44,30 +50,32 @@
   --color-reinforce: var(--info);
   --color-unjustified: var(--warning);
 
-  --font-sans: var(--ff-grotesk), ui-sans-serif, system-ui, sans-serif;
-  --font-heading: var(--ff-serif), Georgia, "Times New Roman", serif;
-  --font-serif: var(--ff-serif), Georgia, "Times New Roman", serif;
+  --font-sans: var(--ff-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-heading:
+    var(--ff-display), var(--ff-sans), ui-sans-serif, system-ui, sans-serif;
+  /* Alias historique : les « gros chiffres » utilisent la police d'affichage */
+  --font-serif:
+    var(--ff-display), var(--ff-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--ff-mono), ui-monospace, "SFMono-Regular", monospace;
 
-  --radius-sm: calc(var(--radius) - 2px);
-  --radius-md: var(--radius);
-  --radius-lg: calc(var(--radius) + 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 6px);
-  --radius-3xl: calc(var(--radius) + 10px);
-  --radius-4xl: calc(var(--radius) + 14px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
 
-  /* Ombre de profondeur unique (pile de cartes). Pas de lueur colorée. */
-  --shadow-card:
-    0 1px 2px rgba(0, 0, 0, 0.25), 0 10px 24px -12px rgba(0, 0, 0, 0.45);
+  --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* Thème clair (option, via le sélecteur de la landing) */
 :root {
-  --radius: 0.375rem;
-  --background: #fafaf7;
+  --radius: 0.75rem;
+  --background: #ffffff;
   --foreground: #0f172a;
-  --card: #ffffff;
+  --section: #f8fafc;
+  --card: #f8fafc;
   --card-foreground: #0f172a;
   --popover: #ffffff;
   --popover-foreground: #0f172a;
@@ -76,13 +84,16 @@
   --primary-foreground: #ffffff;
   --secondary: #f1f5f9;
   --secondary-foreground: #0f172a;
-  --muted: #eceae4;
+  --muted: #e2e8f0;
   --muted-foreground: #475569;
   --accent: #f1f5f9;
   --accent-foreground: #0f172a;
-  --border: #dcd9d0;
-  --rule: #0f172a;
-  --ring: #0f172a;
+  --border: #e2e8f0;
+  --rule: #cbd5e1;
+  --ring: #1d4ed8;
+  --brand: #0a33b0;
+  --brand-hover: #1d4ed8;
+  --brand-fg: #0a33b0;
   --danger: #dc2626;
   --info: #2563eb;
   --warning: #b45309;
@@ -93,6 +104,7 @@
 .dark {
   --background: #0f172a;
   --foreground: #f8fafc;
+  --section: #131d33;
   --card: #1e293b;
   --card-foreground: #f8fafc;
   --popover: #1e293b;
@@ -107,8 +119,12 @@
   --accent: #334155;
   --accent-foreground: #f8fafc;
   --border: #334155;
-  --rule: #e2e8f0;
+  --rule: #475569;
   --ring: #34d399;
+  --brand: #0a33b0;
+  --brand-hover: #1d4ed8;
+  /* Bleu vif lisible sur fond sombre (grands titres) */
+  --brand-fg: #5b84ff;
   /* Rouge et bleu éclaircis d'un cran pour le contraste AA du texte sur #1E293B */
   --danger: #f87171;
   --info: #60a5fa;
@@ -130,37 +146,85 @@
     @apply bg-background text-foreground font-sans;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-feature-settings: "kern", "liga";
   }
   h1,
   h2,
   h3 {
-    font-family: var(--ff-serif), Georgia, "Times New Roman", serif;
+    font-family:
+      var(--ff-display), var(--ff-sans), ui-sans-serif, system-ui, sans-serif;
+    font-weight: 800;
     letter-spacing: -0.01em;
   }
   /* Accessible focus rings on all interactive elements */
   :focus-visible {
     outline: 2px solid var(--ring);
     outline-offset: 2px;
-    border-radius: 2px;
+    border-radius: 4px;
   }
 }
 
-/* Étiquette éditoriale (surtitre, légende d'axe, source) */
+/* Surtitre (étiquette courte en capitales) */
 @utility kicker {
-  font-family: var(--ff-mono), ui-monospace, monospace;
+  font-family: var(--ff-sans), ui-sans-serif, system-ui, sans-serif;
   font-size: 0.6875rem;
   line-height: 1rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
-/* Chiffres alignés (tableaux, montants) */
+/* Chiffres-clés : police d'affichage grasse, chiffres alignés */
 @utility numeral {
-  font-family: var(--ff-serif), Georgia, "Times New Roman", serif;
+  font-family:
+    var(--ff-display), var(--ff-sans), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 800;
   font-variant-numeric: lining-nums tabular-nums;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.01em;
+}
+
+/*
+ * Pastille de catégorie : fond teinté + pictogramme dans la couleur du deck.
+ * La couleur est passée en variable CSS `--cat` (voir CategoryBadge).
+ */
+@utility cat-chip {
+  background-color: color-mix(in srgb, var(--cat, #64748b) 14%, transparent);
+  color: color-mix(in srgb, var(--cat, #64748b) 72%, #000);
+}
+/* Texte coloré : assombri en thème clair pour rester AA (≥ 4,5:1) */
+@utility cat-text {
+  color: color-mix(in srgb, var(--cat, #64748b) 55%, #000);
+}
+.dark .cat-chip {
+  background-color: color-mix(in srgb, var(--cat, #64748b) 20%, transparent);
+  color: color-mix(in srgb, var(--cat, #64748b) 78%, #fff);
+}
+.dark .cat-text {
+  color: color-mix(in srgb, var(--cat, #64748b) 72%, #fff);
+}
+
+/* Sections de la landing */
+.section-padding {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+@media (min-width: 1280px) {
+  .section-padding {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.hover-lift {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.15);
+}
+.dark .hover-lift:hover {
+  box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.4);
 }
 
 /* Reduced motion: disable animations for users who prefer it */
@@ -172,6 +236,9 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+  .hover-lift:hover {
+    transform: none;
   }
 }
 

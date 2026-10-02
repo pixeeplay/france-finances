@@ -1,8 +1,8 @@
 import Link from "next/link";
 import decksData from "@/data";
-import { CategoryIcon } from "@/components/icons/CategoryIcon";
+import { CategoryBadge, catStyle } from "@/components/icons/CategoryBadge";
 
-/** Decks thématiques présentés comme des dossiers éditoriaux. */
+/** Decks thématiques présentés comme des dossiers. */
 export function DossiersSection() {
   const dossiers = decksData.decks
     .filter((d) => d.type === "thematic")
@@ -14,39 +14,35 @@ export function DossiersSection() {
   if (dossiers.length === 0) return null;
 
   return (
-    <section id="dossiers" aria-labelledby="dossiers-title" className="border-b border-border">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 md:py-16">
-        <header className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2 mb-6 border-b-2 border-foreground pb-3">
-          <div>
-            <p className="kicker text-muted-foreground mb-2">Dossiers</p>
-            <h2 id="dossiers-title" className="text-3xl md:text-4xl font-semibold leading-tight">
-              Trois sujets à la loupe
-            </h2>
-          </div>
-          <p className="text-sm text-muted-foreground max-w-sm">
-            Des decks thématiques qui traversent les catégories budgétaires.
-          </p>
-        </header>
+    <section id="dossiers" aria-labelledby="dossiers-title" className="section-padding">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <h2 id="dossiers-title" className="text-3xl md:text-4xl text-center mb-2 text-brand-fg dark:text-foreground">
+          Trois dossiers à la loupe
+        </h2>
+        <p className="text-center text-muted-foreground mb-10 text-sm md:text-base">
+          Des decks thématiques qui traversent les catégories budgétaires.
+        </p>
 
-        <ol className="grid md:grid-cols-3 md:divide-x divide-border">
-          {dossiers.map(({ deck, count }, i) => (
-            <li key={deck.id} className="border-b border-border md:border-b-0 md:px-6 md:first:pl-0 md:last:pr-0">
-              <Link href={`/categories/${deck.id}`} className="group flex flex-col gap-3 py-5 min-h-[44px]">
-                <span className="flex items-center justify-between text-muted-foreground">
-                  <span className="kicker tabular-nums">N°&nbsp;{String(i + 1).padStart(2, "0")}</span>
-                  <CategoryIcon deckId={deck.id} size={28} strokeWidth={1.4} />
+        <ul className="grid md:grid-cols-3 gap-4 md:gap-6">
+          {dossiers.map(({ deck, count }) => (
+            <li key={deck.id} style={catStyle(deck.id)}>
+              <Link
+                href={`/categories/${deck.id}`}
+                className="hover-lift group flex h-full flex-col gap-3 rounded-3xl bg-card border border-border p-6"
+              >
+                <span className="flex items-center justify-between">
+                  <CategoryBadge deckId={deck.id} size={52} />
+                  <span className="kicker cat-text">{count} cartes</span>
                 </span>
-                <span className="font-serif text-2xl font-semibold leading-tight group-hover:underline underline-offset-4 decoration-1">
-                  {deck.name}
-                </span>
+                <span className="font-heading text-2xl font-extrabold leading-tight text-foreground">{deck.name}</span>
                 <span className="text-sm text-muted-foreground leading-relaxed">{deck.description}</span>
-                <span className="kicker text-muted-foreground tabular-nums">
-                  {count} cartes
+                <span className="mt-auto pt-2 text-sm font-bold cat-text">
+                  Ouvrir le dossier <span aria-hidden="true">&#8594;</span>
                 </span>
               </Link>
             </li>
           ))}
-        </ol>
+        </ul>
       </div>
     </section>
   );

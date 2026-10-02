@@ -149,7 +149,7 @@ export default function RankingPage() {
             <button
               key={t.value}
               onClick={() => setTab(t.value)}
-              className={`flex-1 h-full flex items-center justify-center rounded-md px-2 text-sm font-semibold transition-colors ${
+              className={`flex-1 h-full flex items-center justify-center rounded-xl px-2 text-sm font-semibold transition-colors ${
                 tab === t.value
                   ? "bg-muted text-primary"
                   : "text-muted-foreground"

@@ -8,7 +8,7 @@ import { ReinforceIcon } from "./ReinforceIcon";
 import { StopIcon } from "./StopIcon";
 import { AcronymText } from "./AcronymText";
 import { AmountScale } from "./AmountScale";
-import { CategoryIcon } from "./icons/CategoryIcon";
+import { CategoryBadge, catStyle } from "./icons/CategoryBadge";
 import type { Card, VoteDirection } from "@/types";
 import { formatBillions, formatEuros } from "@/lib/format";
 import { getDeckName } from "@/lib/deckMeta";
@@ -139,26 +139,26 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
             <div className="flex-1 overflow-y-auto scrollbar-hide px-5 pb-[180px] relative">
               {/* Category & Title */}
               <div className="pt-2">
-                <p className="flex items-center gap-2 text-muted-foreground mb-2">
-                  <CategoryIcon deckId={card.deckId} size={18} />
-                  <span className="kicker">{getDeckName(card.deckId)}</span>
+                <p className="flex items-center gap-2.5 mb-3" style={catStyle(card.deckId)}>
+                  <CategoryBadge deckId={card.deckId} size={36} />
+                  <span className="kicker cat-text">{getDeckName(card.deckId)}</span>
                 </p>
-                <h1 className="text-3xl leading-tight font-semibold text-foreground mb-5">
+                <h1 className="text-3xl leading-tight font-extrabold text-foreground mb-5">
                   <AcronymText text={card.title} />
                 </h1>
               </div>
 
               {/* Badges */}
-              <dl className="grid grid-cols-2 gap-4 border-y border-border py-4 mb-4">
-                <div>
+              <dl className="grid grid-cols-2 gap-2 mb-4">
+                <div className="rounded-2xl bg-background/60 border border-border p-3">
                   <dt className="kicker text-muted-foreground">Coût annuel</dt>
-                  <dd className="numeral text-3xl font-semibold text-foreground">
+                  <dd className="numeral text-3xl text-danger">
                     {formatBillions(card.amountBillions)}
                   </dd>
                 </div>
-                <div className="border-l border-border pl-4">
+                <div className="rounded-2xl bg-background/60 border border-border p-3">
                   <dt className="kicker text-muted-foreground">Par habitant / an</dt>
-                  <dd className="numeral text-3xl font-semibold text-foreground">
+                  <dd className="numeral text-3xl text-primary">
                     {formatEuros(card.costPerCitizen)}
                   </dd>
                   {card.costPerCitizen >= 24 && (
@@ -172,7 +172,7 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
 
               {/* Contexte */}
               <section className="mb-8">
-                <h3 className="text-xl font-semibold text-foreground mb-3">
+                <h3 className="text-xl font-extrabold text-foreground mb-3">
                   Contexte
                 </h3>
                 <AcronymText
@@ -184,10 +184,10 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
               {/* Équivalence */}
               {card.equivalence && (
                 <section className="mb-8">
-                  <h3 className="text-xl font-semibold text-foreground mb-3">
+                  <h3 className="text-xl font-extrabold text-foreground mb-3">
                     Équivalence
                   </h3>
-                  <div className="border-l-2 border-foreground/60 pl-4">
+                  <div className="rounded-2xl bg-warning/10 border border-warning/25 p-4">
                     <AcronymText
                       text={card.equivalence}
                       className="text-foreground font-medium text-[15px] leading-snug"
@@ -199,10 +199,10 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
               {/* Subtitle / Détail (masqué si contenu dans l'équivalence) */}
               {card.subtitle && !(card.equivalence && card.equivalence.includes(card.subtitle)) && (
                 <section className="mb-8">
-                  <h3 className="text-xl font-semibold text-foreground mb-3">
+                  <h3 className="text-xl font-extrabold text-foreground mb-3">
                     Détail
                   </h3>
-                  <div className="border-l-2 border-border pl-4">
+                  <div className="rounded-2xl bg-background/60 border border-border p-4">
                     <AcronymText
                       text={card.subtitle}
                       className="text-foreground font-medium text-[15px] leading-snug"
@@ -214,12 +214,12 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
               {/* Trend */}
               {card.trend !== undefined && (
                 <section className="mb-8">
-                  <h3 className="text-xl font-semibold text-foreground mb-3">
+                  <h3 className="text-xl font-extrabold text-foreground mb-3">
                     Évolution
                   </h3>
                   <div className="flex items-center gap-2">
                     <span
-                      className="numeral text-2xl font-semibold text-foreground"
+                      className="numeral text-2xl text-info"
                     >
                       {card.trend > 0 ? "+" : ""}
                       {card.trend.toLocaleString("fr-FR")}{"\u00A0"}%
@@ -233,7 +233,7 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
 
               {/* Sources */}
               <section className="mb-6">
-                <h3 className="text-xl font-semibold text-foreground mb-3">
+                <h3 className="text-xl font-extrabold text-foreground mb-3">
                   Sources
                 </h3>
                 <div className="flex flex-col gap-2.5">
@@ -242,18 +242,18 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
                       href={card.sourceUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-between gap-3 min-h-[44px] p-3.5 rounded-lg border border-border hover:bg-muted transition-colors group"
+                      className="flex items-center justify-between gap-3 min-h-[44px] p-3.5 rounded-2xl bg-background/60 border border-border hover:border-info/60 transition-colors group"
                     >
                       <AcronymText
                         text={card.source}
                         className="text-foreground font-medium text-[15px]"
                       />
-                      <span className="text-muted-foreground text-lg group-hover:text-foreground transition-colors" aria-hidden="true">
+                      <span className="text-info text-lg transition-colors" aria-hidden="true">
                         ↗
                       </span>
                     </a>
                   ) : (
-                    <div className="p-3.5 rounded-lg border border-border">
+                    <div className="p-3.5 rounded-2xl bg-background/60 border border-border">
                       <AcronymText
                         text={card.source}
                         className="text-foreground font-medium text-[15px]"
@@ -269,7 +269,7 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
                   {card.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="font-mono text-[11px] text-muted-foreground border border-border px-2 py-0.5 rounded-sm"
+                      className="text-xs font-medium text-info bg-info/10 px-2.5 py-1 rounded-full"
                     >
                       #{tag}
                     </span>
@@ -328,7 +328,7 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
                   <button
                     onClick={() => handleVote("keep")}
                     aria-label="Valider cette dépense"
-                    className="flex items-center justify-center gap-2 py-3.5 min-h-[44px] rounded-xl border-2 border-primary/80 text-primary font-bold hover:bg-primary hover:text-primary-foreground active:scale-95 transition-all"
+                    className="flex items-center justify-center gap-2 py-3.5 min-h-[48px] rounded-2xl border-2 border-primary/80 bg-primary/10 text-primary font-heading font-bold hover:bg-primary hover:text-primary-foreground active:scale-95 transition-all"
                   >
                     <ShieldIcon size={20} />
                     OK pour moi
@@ -336,7 +336,7 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
                   <button
                     onClick={() => handleVote("cut")}
                     aria-label="Remettre en question cette dépense"
-                    className="group/item flex items-center justify-center gap-2 py-3.5 min-h-[44px] rounded-xl border-2 border-danger/80 text-danger font-bold hover:bg-danger hover:text-background active:scale-95 transition-all"
+                    className="group/item flex items-center justify-center gap-2 py-3.5 min-h-[48px] rounded-2xl border-2 border-danger/80 bg-danger/10 text-danger font-heading font-bold hover:bg-danger hover:text-background active:scale-95 transition-all"
                   >
                     <ChainsawIcon size={20} className="chainsaw-hover-white" />
                     À revoir

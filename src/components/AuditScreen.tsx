@@ -4,7 +4,8 @@ import { useState } from "react";
 import { ChainsawIcon } from "./ChainsawIcon";
 import { ShieldIcon } from "./ShieldIcon";
 import { ReinforceIcon } from "./ReinforceIcon";
-import { CategoryIcon } from "./icons/CategoryIcon";
+import { CategoryBadge } from "./icons/CategoryBadge";
+import { UiIcon, type UiIconName } from "./icons/UiIcon";
 import { formatBillions } from "@/lib/format";
 import auditData from "@/data/audit-questions.json";
 import type { Card, AuditRecommendation, AuditResponse } from "@/types";
@@ -19,19 +20,19 @@ interface AuditScreenProps {
   onBack: () => void;
 }
 
-const questionIcons: Record<string, string> = {
-  balance: "⚖️",
-  gavel: "⚖️",
-  savings: "💰",
+const questionIcons: Record<string, { icon: UiIconName; chip: string }> = {
+  balance: { icon: "balance", chip: "bg-info/15 text-info" },
+  gavel: { icon: "clipboard", chip: "bg-warning/15 text-warning" },
+  savings: { icon: "coin", chip: "bg-primary/15 text-primary" },
 };
 
 const recommendationIcons: Record<string, React.ReactNode> = {
   keep: <ShieldIcon size={16} className="text-primary" />,
   reduce: <ChainsawIcon size={16} />,
-  externalize: <span className="text-sm" aria-hidden="true">🔄</span>,
-  merge: <span className="text-sm" aria-hidden="true">🔀</span>,
+  externalize: <UiIcon name="swap" size={16} className="text-info" />,
+  merge: <UiIcon name="merge" size={16} className="text-info" />,
   reinforce: <ReinforceIcon size={16} />,
-  delete: <span className="text-sm text-danger" aria-hidden="true">✖</span>,
+  delete: <UiIcon name="close" size={16} className="text-danger" />,
 };
 
 export function AuditScreen({
@@ -89,7 +90,7 @@ export function AuditScreen({
         <button
           onClick={onBack}
           aria-label="Fermer l'audit"
-          className="w-11 h-11 rounded-md flex items-center justify-center text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
+          className="w-11 h-11 rounded-xl flex items-center justify-center text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true" focusable="false">
             <path d="M6 6l12 12M18 6L6 18" />
@@ -110,14 +111,12 @@ export function AuditScreen({
       {/* Main scrollable content */}
       <main className="flex-1 overflow-y-auto scrollbar-hide px-4 pb-28 flex flex-col gap-6">
         {/* Card summary */}
-        <div className="flex items-center justify-between bg-card p-4 rounded-xl border border-border">
-          <div className="flex items-center gap-3">
-            <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-background text-muted-foreground">
-              <CategoryIcon deckId={card.deckId} size={24} />
-            </div>
+        <div className="flex items-center justify-between bg-card p-4 rounded-2xl border border-border">
+          <div className="flex items-center gap-3 min-w-0">
+            <CategoryBadge deckId={card.deckId} size={48} />
             <div>
               <h3 className="font-bold text-foreground line-clamp-1">{card.title}</h3>
-              <p className="text-sm text-muted-foreground tabular-nums">{formatBillions(card.amountBillions)}</p>
+              <p className="text-sm font-semibold text-danger tabular-nums">{formatBillions(card.amountBillions)}</p>
             </div>
           </div>
           {dirLabel && (
@@ -137,8 +136,8 @@ export function AuditScreen({
                 className="flex items-center justify-between bg-card p-4 rounded-xl border border-border"
               >
                 <div className="flex items-center gap-3 pr-4">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-background text-muted-foreground">
-                    <span>{questionIcons[q.icon] || q.icon}</span>
+                  <div className={`flex items-center justify-center w-10 h-10 shrink-0 rounded-xl ${questionIcons[q.icon]?.chip ?? "bg-muted text-muted-foreground"}`} aria-hidden="true">
+                    <UiIcon name={questionIcons[q.icon]?.icon ?? "search"} size={20} />
                   </div>
                   <p className="font-medium text-sm leading-tight">{q.text}</p>
                 </div>

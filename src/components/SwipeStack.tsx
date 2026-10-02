@@ -191,7 +191,7 @@ export function SwipeStack({
           <span className="kicker text-muted-foreground">
             {deckName}
           </span>
-          <span className="kicker text-primary border border-primary/50 px-1.5 rounded-sm">
+          <span className="kicker bg-primary/20 text-primary px-2 py-0.5 rounded-full">
             {gameMode === "budget" ? "Budget" : `N${level}`}
           </span>
         </div>
@@ -200,7 +200,7 @@ export function SwipeStack({
             {Array.from({ length: totalCards }).map((_, i) => (
               <div
                 key={i}
-                className={`h-1 flex-1 rounded-[1px] transition-colors duration-300 ${
+                className={`h-1 flex-1 rounded-full transition-colors duration-300 ${
                   i <= currentIndex ? "bg-primary" : "bg-muted"
                 }`}
               />
@@ -213,7 +213,7 @@ export function SwipeStack({
         <button
           onClick={handleQuitSession}
           aria-label="Quitter la session"
-          className="-mr-2 w-11 h-11 rounded-md flex items-center justify-center text-muted-foreground hover:bg-muted hover:text-foreground transition-colors shrink-0"
+          className="-mr-1.5 w-11 h-11 rounded-full flex items-center justify-center text-muted-foreground hover:bg-danger hover:text-white transition-colors shrink-0"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true" focusable="false">
             <path d="M6 6l12 12M18 6L6 18" />
@@ -319,7 +319,7 @@ export function SwipeStack({
               onClick={() => handleButtonVote("keep")}
               disabled={!currentCard || quizActive}
               aria-label="Valider cette dépense"
-              className="w-20 h-20 rounded-full bg-card border-[3px] border-primary flex items-center justify-center transition-transform active:scale-90 disabled:opacity-40"
+              className="w-20 h-20 rounded-full bg-card border-[3px] border-primary flex items-center justify-center shadow-lg shadow-primary/25 transition-transform active:scale-90 disabled:opacity-40"
             >
               <ShieldIcon size={40} className="text-primary" />
             </button>
@@ -344,7 +344,7 @@ export function SwipeStack({
               onClick={() => handleButtonVote("cut")}
               disabled={!currentCard || quizActive}
               aria-label="Remettre en question cette dépense"
-              className="w-20 h-20 rounded-full bg-card border-[3px] border-danger flex items-center justify-center transition-transform active:scale-90 disabled:opacity-40"
+              className="w-20 h-20 rounded-full bg-card border-[3px] border-danger flex items-center justify-center shadow-lg shadow-danger/25 transition-transform active:scale-90 disabled:opacity-40"
             >
               <ChainsawIcon size={40} />
             </button>
@@ -374,44 +374,44 @@ function Level2Buttons({
             onClick={() => onVote("keep")}
             disabled={disabled}
             aria-label="Valider cette dépense"
-            className="w-16 h-16 rounded-full bg-card border-[3px] border-primary flex items-center justify-center transition-transform active:scale-90 disabled:opacity-40"
+            className="w-16 h-16 rounded-full bg-card border-[3px] border-primary flex items-center justify-center shadow-lg shadow-primary/25 transition-transform active:scale-90 disabled:opacity-40"
           >
             <ShieldIcon size={28} className="text-primary" />
           </button>
-          <span className="text-[9px] font-bold text-primary uppercase tracking-wider">OK</span>
+          <span className="text-[10px] font-bold text-primary uppercase tracking-wider">OK</span>
         </div>
         <div className="flex flex-col items-center gap-2">
           <button
             onClick={() => onVote("cut")}
             disabled={disabled}
             aria-label="Réduire cette dépense"
-            className="w-16 h-16 rounded-full bg-card border-[3px] border-warning flex items-center justify-center transition-transform active:scale-90 disabled:opacity-40"
+            className="w-16 h-16 rounded-full bg-card border-[3px] border-warning flex items-center justify-center shadow-lg shadow-warning/25 transition-transform active:scale-90 disabled:opacity-40"
           >
             <ChainsawIcon size={28} variant="orange" />
           </button>
-          <span className="text-[9px] font-bold text-warning uppercase tracking-wider">Réduire</span>
+          <span className="text-[10px] font-bold text-warning uppercase tracking-wider">Réduire</span>
         </div>
         <div className="flex flex-col items-center gap-2">
           <button
             onClick={() => onVote("reinforce")}
             disabled={disabled}
             aria-label="Renforcer cette dépense"
-            className="w-16 h-16 rounded-full bg-card border-[3px] border-info flex items-center justify-center transition-transform active:scale-90 disabled:opacity-40"
+            className="w-16 h-16 rounded-full bg-card border-[3px] border-info flex items-center justify-center shadow-lg shadow-info/25 transition-transform active:scale-90 disabled:opacity-40"
           >
             <ReinforceIcon size={28} />
           </button>
-          <span className="text-[9px] font-bold text-info uppercase tracking-wider">Renforcer</span>
+          <span className="text-[10px] font-bold text-info uppercase tracking-wider">Renforcer</span>
         </div>
         <div className="flex flex-col items-center gap-2">
           <button
             onClick={() => onVote("unjustified")}
             disabled={disabled}
             aria-label="Marquer comme injustifié"
-            className="w-16 h-16 rounded-full bg-card border-[3px] border-danger flex items-center justify-center transition-transform active:scale-90 disabled:opacity-40"
+            className="w-16 h-16 rounded-full bg-card border-[3px] border-danger flex items-center justify-center shadow-lg shadow-danger/25 transition-transform active:scale-90 disabled:opacity-40"
           >
             <StopIcon size={28} />
           </button>
-          <span className="text-[9px] font-bold text-danger uppercase tracking-wider">Injustifié</span>
+          <span className="text-[10px] font-bold text-danger uppercase tracking-wider">Injustifié</span>
         </div>
       </div>
     </div>

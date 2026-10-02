@@ -28,7 +28,7 @@ export function PlayerProfileCard({ profile, stats, rank }: PlayerProfileCardPro
           </p>
         </div>
         <div className="text-right shrink-0">
-          <p className="text-lg font-mono font-bold text-primary">
+          <p className="text-lg numeral text-primary">
             #{rank ?? "—"}
           </p>
           <p className="text-[10px] text-muted-foreground uppercase font-bold">Rang</p>

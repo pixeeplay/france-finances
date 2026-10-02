@@ -3,7 +3,7 @@ export default function ClassementLoading() {
     <div className="flex-1 flex flex-col overflow-hidden animate-pulse">
       {/* Header skeleton */}
       <header className="flex items-center p-4 pb-2 justify-center bg-background/90 border-b border-border">
-        <div className="h-7 w-36 rounded-md bg-muted" />
+        <div className="h-7 w-36 rounded-xl bg-muted" />
       </header>
 
       {/* Profile card skeleton */}
@@ -22,7 +22,7 @@ export default function ClassementLoading() {
       <div className="px-4 py-3">
         <div className="flex h-10 items-center justify-center rounded-lg bg-card p-1 gap-1">
           {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="flex-1 h-full rounded-md bg-muted" />
+            <div key={i} className="flex-1 h-full rounded-xl bg-muted" />
           ))}
         </div>
       </div>

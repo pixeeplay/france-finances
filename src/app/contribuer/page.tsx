@@ -63,7 +63,7 @@ export default function ContribuerPage() {
       <NavbarLanding />
 
       <main className="max-w-3xl mx-auto px-4 sm:px-6 pt-12 pb-16">
-        <h1 className="text-4xl sm:text-5xl font-semibold leading-tight mb-4">
+        <h1 className="text-4xl sm:text-5xl font-black tracking-tight leading-tight mb-4 text-brand-fg">
           Contribuer au projet
         </h1>
         <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
@@ -173,7 +173,7 @@ export default function ContribuerPage() {
           <a
             href="/CONTRIBUER.md"
             download
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 min-h-[44px] rounded-md bg-foreground text-background font-semibold text-sm hover:opacity-90 transition-opacity"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 min-h-[44px] rounded-2xl bg-brand text-white font-heading font-bold text-sm hover:bg-brand-hover transition-colors"
           >
             <DownloadIcon />
             Télécharger le guide complet
@@ -182,7 +182,7 @@ export default function ContribuerPage() {
             href="https://pixeeplay.fr/play/?intent=contribuer"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 min-h-[44px] rounded-md border border-foreground/40 text-foreground font-semibold text-sm hover:bg-muted transition-colors"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 min-h-[44px] rounded-2xl border-2 border-border bg-card text-foreground font-heading font-bold text-sm hover:bg-muted transition-colors"
           >
             Nous contacter
             <span>&#8594;</span>
@@ -213,7 +213,7 @@ export default function ContribuerPage() {
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section className="mb-10">
-      <h2 className="text-2xl font-semibold mb-4">{title}</h2>
+      <h2 className="text-2xl font-extrabold mb-4">{title}</h2>
       {children}
     </section>
   );
@@ -222,7 +222,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 function SubmitOption({ step, title, description }: { step: string; title: string; description: string }) {
   return (
     <div className="flex items-start gap-3">
-      <div className="w-7 h-7 rounded-full border border-foreground/40 text-foreground font-mono flex items-center justify-center text-sm font-bold shrink-0">
+      <div className="w-8 h-8 rounded-full bg-brand text-white font-heading flex items-center justify-center text-sm font-extrabold shrink-0">
         {step}
       </div>
       <div>

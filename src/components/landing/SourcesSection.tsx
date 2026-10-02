@@ -13,38 +13,37 @@ const sources = [
 
 export function SourcesSection() {
   return (
-    <section id="sources" aria-labelledby="sources-title" className="border-b border-border">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 md:py-16 grid gap-8 lg:grid-cols-12">
-        <header className="lg:col-span-4">
-          <p className="kicker text-muted-foreground mb-3">Méthode</p>
-          <h2 id="sources-title" className="text-3xl md:text-4xl font-semibold leading-tight">
-            Des chiffres sourcés, sans parti pris
-          </h2>
-        </header>
-        <div className="lg:col-span-8">
-          <p className="leading-relaxed max-w-prose">
-            Chaque carte cite ses sources officielles. Les montants sont exprimés en milliards
-            d&apos;euros par an&nbsp;; le coût par habitant est calculé sur une base d&apos;environ
-            68&nbsp;millions d&apos;habitants. Le jeu ne dit pas ce qu&apos;il faut couper&nbsp;:
-            il montre ce que coûte chaque politique publique.
-          </p>
-          <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-1">
-            {sources.map((s) => (
-              <li key={s.name}>
-                <a
-                  href={s.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title={s.title}
-                  className="inline-flex items-center min-h-[44px] font-mono text-sm text-muted-foreground underline decoration-border underline-offset-4 hover:text-foreground hover:decoration-foreground transition-colors"
-                >
-                  {s.name}
-                  <span className="sr-only"> (nouvel onglet)</span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+    <section id="sources" aria-labelledby="sources-title" className="section-padding">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+        <h2 id="sources-title" className="text-3xl md:text-4xl text-brand-fg dark:text-foreground mb-4">
+          Toutes nos données sont sourcées.
+        </h2>
+        <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-8">
+          Chaque carte cite ses sources officielles. Montants en milliards d&apos;euros par an, coût par
+          habitant calculé sur environ 68&nbsp;millions d&apos;habitants. Le jeu ne dit pas ce qu&apos;il
+          faut couper&nbsp;: il montre ce que coûte chaque politique publique.
+        </p>
+
+        <ul className="flex flex-wrap items-center justify-center gap-3">
+          {sources.map((s) => (
+            <li key={s.name}>
+              <a
+                href={s.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={s.title}
+                className="inline-flex items-center min-h-[44px] px-5 rounded-xl bg-card border border-border text-sm font-medium text-muted-foreground hover:border-brand-fg/50 hover:text-foreground transition-colors"
+              >
+                {s.name}
+                <span className="sr-only"> (nouvel onglet)</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <p className="mt-8 text-muted-foreground text-sm">
+          <strong className="text-foreground">400+ sources.</strong> Aucun parti pris.
+        </p>
       </div>
     </section>
   );

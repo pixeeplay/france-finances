@@ -35,13 +35,13 @@ export function SwUpdateToast() {
       role="alert"
       className="fixed bottom-20 left-4 right-4 z-[200] mx-auto max-w-sm animate-slide-in-bottom"
     >
-      <div className="flex items-center justify-between gap-3 rounded-md border border-border bg-card px-4 py-3 shadow-(--shadow-card)">
+      <div className="flex items-center justify-between gap-3 rounded-xl border border-border bg-card px-4 py-3 shadow-(--shadow-card)">
         <p className="text-sm font-medium text-foreground">
           Nouvelle version disponible
         </p>
         <button
           onClick={() => window.location.reload()}
-          className="shrink-0 rounded-md bg-primary px-3 py-1.5 text-xs font-bold text-primary-foreground transition-colors hover:bg-primary/90 min-h-[44px]"
+          className="shrink-0 rounded-xl bg-primary px-3 py-1.5 text-xs font-bold text-primary-foreground transition-colors hover:bg-primary/90 min-h-[44px]"
         >
           Actualiser
         </button>

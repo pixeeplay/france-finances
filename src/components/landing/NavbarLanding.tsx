@@ -3,14 +3,14 @@
 import { useState, useCallback, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { applyTheme } from "@/lib/theme";
+import { Logo } from "./Logo";
 
 const NAV_LINKS = [
-  { href: "/chiffres", label: "Les chiffres" },
+  { href: "/chiffres", label: "Chiffres clés" },
   { href: "/simulateur", label: "Simulateur" },
-  { href: "/#ordres-de-grandeur", label: "Ordres de grandeur" },
-  { href: "/#dossiers", label: "Dossiers" },
+  { href: "/#comment-ca-marche", label: "Comment ça marche" },
   { href: "/#categories", label: "Catégories" },
-  { href: "/#sources", label: "Sources" },
+  { href: "/#dossiers", label: "Dossiers" },
 ];
 
 /** Suit la classe `dark` de <html> (sombre par défaut, y compris au rendu serveur). */
@@ -24,7 +24,7 @@ const getServerThemeSnapshot = () => true;
 
 function SunIcon() {
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <circle cx="12" cy="12" r="4.5" />
       <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
     </svg>
@@ -33,7 +33,7 @@ function SunIcon() {
 
 function MoonIcon() {
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
     </svg>
   );
@@ -56,18 +56,17 @@ export function NavbarLanding() {
   const themeLabel = isDark ? "Passer en thème clair" : "Passer en thème sombre";
 
   return (
-    <header className="sticky top-0 z-50 bg-background border-b border-border">
+    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/60">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-14">
-          <Link href="/" className="flex items-center min-h-[44px] font-serif text-xl tracking-tight" aria-label="france-finances.com, accueil">
-            <span className="font-semibold text-foreground">france-finances</span>
-            <span className="text-muted-foreground">.com</span>
+        <div className="flex items-center justify-between h-16">
+          <Link href="/" className="flex items-center min-h-[44px]" aria-label="france-finances.com, accueil">
+            <Logo />
           </Link>
 
           {/* Desktop nav */}
-          <nav aria-label="Navigation principale" className="hidden md:flex items-center gap-6">
+          <nav aria-label="Navigation principale" className="hidden lg:flex items-center gap-7">
             {NAV_LINKS.map((l) => (
-              <Link key={l.href} href={l.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <Link key={l.href} href={l.href} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
                 {l.label}
               </Link>
             ))}
@@ -80,30 +79,30 @@ export function NavbarLanding() {
             </button>
             <Link
               href="/jeu"
-              className="inline-flex items-center gap-2 min-h-[44px] px-4 rounded-md bg-foreground text-background font-semibold text-sm hover:opacity-90 transition-opacity"
+              className="inline-flex items-center gap-2 min-h-[44px] px-5 rounded-full bg-brand text-white font-heading font-bold text-sm hover:bg-brand-hover transition-colors"
             >
               Jouer
               <span aria-hidden="true">&#8594;</span>
             </Link>
           </nav>
 
-          {/* Mobile: theme toggle + menu */}
-          <div className="md:hidden flex items-center">
+          {/* Mobile / tablette : thème + menu */}
+          <div className="lg:hidden flex items-center">
             <button
               onClick={toggleTheme}
-              className="min-h-[44px] min-w-[44px] flex items-center justify-center text-foreground"
+              className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-full text-foreground"
               aria-label={themeLabel}
             >
               {isDark ? <SunIcon /> : <MoonIcon />}
             </button>
             <button
               onClick={() => setMobileOpen((o) => !o)}
-              className="min-h-[44px] min-w-[44px] flex items-center justify-center text-foreground"
+              className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-full text-foreground"
               aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
               aria-expanded={mobileOpen}
               aria-controls="menu-mobile"
             >
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
                 {mobileOpen ? <path d="M18 6 6 18M6 6l12 12" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
               </svg>
             </button>
@@ -111,25 +110,25 @@ export function NavbarLanding() {
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Menu mobile */}
       {mobileOpen && (
-        <nav id="menu-mobile" aria-label="Navigation principale" className="md:hidden border-t border-border bg-background">
-          <ul className="flex flex-col px-4 py-2 divide-y divide-border">
+        <nav id="menu-mobile" aria-label="Navigation principale" className="lg:hidden border-t border-border bg-background shadow-lg">
+          <ul className="flex flex-col px-4 py-3 gap-1">
             {NAV_LINKS.map((l) => (
               <li key={l.href}>
                 <Link
                   href={l.href}
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center min-h-[44px] text-sm text-foreground"
+                  className="flex items-center min-h-[44px] px-3 rounded-xl text-sm font-medium text-foreground hover:bg-muted"
                 >
                   {l.label}
                 </Link>
               </li>
             ))}
-            <li className="py-3">
+            <li className="pt-2">
               <Link
                 href="/jeu"
-                className="flex items-center justify-center gap-2 min-h-[44px] rounded-md bg-foreground text-background font-semibold text-sm"
+                className="flex items-center justify-center gap-2 min-h-[48px] rounded-full bg-brand text-white font-heading font-bold text-sm hover:bg-brand-hover"
               >
                 Jouer
                 <span aria-hidden="true">&#8594;</span>

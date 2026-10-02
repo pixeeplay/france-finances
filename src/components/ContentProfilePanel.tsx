@@ -38,17 +38,17 @@ export function ContentProfilePanel({ session }: { session: Session }) {
   const multiDeck = profile.decks.length > 1;
 
   return (
-    <section className="px-4 py-5 border-b border-border" data-testid="content-profile">
+    <section className="mx-4 my-2 rounded-2xl bg-card border border-border p-5" data-testid="content-profile">
       <div>
-        <p className="kicker text-muted-foreground">En montants</p>
-        <h3 className="mt-1 mb-2 text-xl font-semibold">Ce que tes choix pèsent</h3>
+        <p className="kicker text-danger">En montants</p>
+        <h3 className="mt-1 mb-2 text-xl font-extrabold">Ce que tes choix pèsent</h3>
         <p className="text-sm text-muted-foreground leading-relaxed">
           Tu as remis en question {cardCutPercent}&nbsp;% des cartes, soit {amountPercent}&nbsp;% des montants en jeu (
           {formatBillions(profile.cutBillions)} sur {formatBillions(profile.totalBillions)}).
         </p>
 
         <div
-          className="mt-4 flex h-3 w-full overflow-hidden rounded-sm bg-muted"
+          className="mt-4 flex h-3.5 w-full overflow-hidden rounded-full bg-muted"
           role="img"
           aria-label={`${amountPercent} % des montants remis en question`}
         >

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { UiIcon } from "@/components/icons/UiIcon";
 import { useProgression } from "@/hooks/useProgression";
 import {
   getLevelProgress,
@@ -36,8 +37,11 @@ export function LevelLockedNotice({
   const fromLevel = nextLevel - 1;
   return (
     <main className="flex-1 flex flex-col items-center justify-center gap-4 px-6 text-center" data-testid="level-locked">
-      <p className="kicker text-muted-foreground">Progression</p>
-      <h1 className="-mt-2 text-3xl font-semibold leading-tight">Niveau {requestedLevel} verrouillé</h1>
+      <span className="w-20 h-20 rounded-3xl bg-warning/15 text-warning flex items-center justify-center" aria-hidden="true">
+        <UiIcon name="lock" size={40} />
+      </span>
+      <p className="kicker text-warning">Progression</p>
+      <h1 className="-mt-2 text-3xl font-extrabold leading-tight">Niveau {requestedLevel} verrouillé</h1>
       <p className="text-sm text-muted-foreground leading-relaxed max-w-[320px]">
         {nextLevel === requestedLevel
           ? "Il se débloque en jouant : "
@@ -48,13 +52,13 @@ export function LevelLockedNotice({
       <div className="flex w-full max-w-[320px] flex-col gap-3">
         <Link
           href={levelHref(deckId, unlockedLevel)}
-          className="flex min-h-[48px] items-center justify-center rounded-md bg-foreground px-6 font-semibold text-background hover:opacity-90 transition-opacity"
+          className="flex min-h-[52px] items-center justify-center rounded-2xl bg-brand px-6 font-heading font-bold text-white hover:bg-brand-hover transition-colors"
         >
           Jouer ce deck en niveau {unlockedLevel}
         </Link>
         <Link
           href="/jeu"
-          className="flex min-h-[48px] items-center justify-center rounded-md border border-foreground/40 px-6 font-semibold hover:bg-muted transition-colors"
+          className="flex min-h-[52px] items-center justify-center rounded-2xl bg-card border border-border px-6 font-heading font-bold hover:bg-muted transition-colors"
         >
           Choisir un autre deck
         </Link>
@@ -79,16 +83,16 @@ export function NextLevelCTA({ level }: { level: GameLevel }) {
 
   if (!progress.unlocked) {
     return (
-      <div className="border-y border-border py-3" data-testid="next-level-progress">
+      <div className="rounded-2xl bg-card border border-border p-4" data-testid="next-level-progress">
         <p className="flex items-baseline justify-between gap-3">
-          <span className="kicker text-muted-foreground">Niveau {next}</span>
-          <span className="numeral text-base font-semibold">
+          <span className="kicker text-info">Prochain palier : niveau {next}</span>
+          <span className="numeral text-lg text-info">
             {progress.done}/{progress.required}
           </span>
         </p>
-        <div className="mt-2 h-1.5 w-full overflow-hidden rounded-[1px] bg-muted" aria-hidden="true">
+        <div className="mt-2 h-2.5 w-full overflow-hidden rounded-full bg-muted" aria-hidden="true">
           <div
-            className="h-full bg-foreground/70"
+            className="h-full rounded-full bg-info"
             style={{ width: `${Math.min(100, (progress.done / Math.max(1, progress.required)) * 100)}%` }}
           />
         </div>
@@ -108,7 +112,7 @@ export function NextLevelCTA({ level }: { level: GameLevel }) {
       )}
       <Link
         href={levelHref(null, next)}
-        className="flex min-h-[48px] items-center justify-center gap-2 w-full rounded-md py-4 px-6 bg-foreground text-background font-semibold text-lg hover:opacity-90 transition-opacity"
+        className="flex min-h-[48px] items-center justify-center gap-2 w-full rounded-2xl py-4 px-6 bg-brand text-white font-heading font-bold text-lg hover:bg-brand-hover transition-colors"
       >
         Passer au Niveau {next}
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">

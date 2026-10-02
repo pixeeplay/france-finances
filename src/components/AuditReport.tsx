@@ -2,7 +2,8 @@ import type { Card, AuditRecommendation } from "@/types";
 import { ChainsawIcon } from "./ChainsawIcon";
 import { ShieldIcon } from "./ShieldIcon";
 import { ReinforceIcon } from "./ReinforceIcon";
-import { CategoryIcon } from "./icons/CategoryIcon";
+import { CategoryBadge } from "./icons/CategoryBadge";
+import { UiIcon } from "./icons/UiIcon";
 import { formatBillions } from "@/lib/format";
 
 export const recommendationLabels: Record<AuditRecommendation, string> = {
@@ -26,10 +27,10 @@ export const recommendationColors: Record<AuditRecommendation, string> = {
 export const recommendationIcons: Record<AuditRecommendation, React.ReactNode> = {
   keep: <ShieldIcon size={14} className="text-muted-foreground" />,
   reduce: <ChainsawIcon size={14} />,
-  externalize: <span className="text-xs text-info" aria-hidden="true">🔄</span>,
-  merge: <span className="text-xs text-info" aria-hidden="true">🔀</span>,
+  externalize: <UiIcon name="swap" size={14} className="inline text-info" />,
+  merge: <UiIcon name="merge" size={14} className="inline text-info" />,
   reinforce: <ReinforceIcon size={14} />,
-  delete: <span className="text-xs text-danger" aria-hidden="true">✖</span>,
+  delete: <UiIcon name="close" size={14} className="inline text-danger" />,
 };
 
 export function AuditReport({ cards, auditResponses }: {
@@ -64,7 +65,7 @@ export function AuditReport({ cards, auditResponses }: {
   return (
     <div className="px-4 py-2 space-y-4">
       {/* Summary */}
-      <div className="bg-card border border-border rounded-xl p-5 space-y-4">
+      <div className="bg-card border border-border rounded-2xl p-5 space-y-4">
         <h3 className="text-base font-bold">
           Sur {auditResponses.length} dépenses auditées :
         </h3>
@@ -72,7 +73,7 @@ export function AuditReport({ cards, auditResponses }: {
           {summaryItems.map((s) => (
             <span
               key={s.label}
-              className={`flex items-center justify-center px-2.5 py-1.5 rounded-md border text-center ${s.color}`}
+              className={`flex items-center justify-center px-2.5 py-1.5 rounded-xl border text-center ${s.color}`}
             >
               {s.count} {s.label}
             </span>
@@ -82,10 +83,12 @@ export function AuditReport({ cards, auditResponses }: {
         <div className="h-px w-full bg-border" />
 
         <div className="flex items-start gap-3">
-          <span className="text-2xl" aria-hidden="true">💰</span>
+          <span className="w-11 h-11 shrink-0 rounded-xl bg-primary/15 text-primary flex items-center justify-center" aria-hidden="true">
+            <UiIcon name="coin" size={24} />
+          </span>
           <div className="flex flex-col">
             <p className="text-sm font-medium text-muted-foreground">Impact estimé</p>
-            <p className="text-lg font-bold text-primary font-mono tracking-tight">
+            <p className="numeral text-xl text-primary">
               {totalSavings >= 0 ? "-" : "+"}{Math.abs(totalSavings).toFixed(1)} Md&euro; {totalSavings >= 0 ? "d'économies" : "d'investissement"}
             </p>
             <p className="text-sm font-medium text-primary/80">
@@ -106,14 +109,12 @@ export function AuditReport({ cards, auditResponses }: {
             if (!card) return null;
             const rec = r.recommendation as AuditRecommendation;
             return (
-              <div key={r.cardId} className="bg-card border border-border p-3 rounded-xl">
+              <div key={r.cardId} className="bg-card border border-border p-3 rounded-2xl">
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-background text-muted-foreground shrink-0">
-                    <CategoryIcon deckId={card.deckId} size={20} />
-                  </div>
+                  <CategoryBadge deckId={card.deckId} size={40} />
                   <div className="flex flex-col flex-1 min-w-0">
                     <p className="text-sm font-semibold leading-tight line-clamp-1">{card.title}</p>
-                    <p className="text-xs text-muted-foreground font-mono">{formatBillions(card.amountBillions)}</p>
+                    <p className="text-xs font-semibold text-danger tabular-nums">{formatBillions(card.amountBillions)}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-2">

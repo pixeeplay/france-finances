@@ -32,11 +32,11 @@ export default async function SimulateurPage({
 
   return (
     <PageShell>
-      <header className="pb-6 mb-8 border-b-2 border-foreground">
-        <p className="kicker text-muted-foreground">
+      <header className="mb-8">
+        <p className="inline-flex kicker rounded-full bg-info/15 px-3 py-1 text-info">
           Barème {IR_YEAR} · revenus {IR_INCOME_YEAR}
         </p>
-        <h1 className="mt-3 text-4xl sm:text-5xl font-semibold leading-[1.05] text-foreground">
+        <h1 className="mt-4 text-4xl sm:text-5xl font-black leading-[1.05] tracking-tight text-brand-fg">
           Ce qui est prélevé sur un salaire
         </h1>
         <p className="mt-4 text-base text-muted-foreground leading-relaxed">
@@ -56,8 +56,8 @@ export default async function SimulateurPage({
 
       <Simulator initialInput={initialInput} budgetItems={STATE_MISSIONS_2026.items} />
 
-      <section aria-labelledby="sim-method-title" className="mt-12 border-t border-border pt-8">
-        <h2 id="sim-method-title" className="text-2xl font-semibold text-foreground mb-3">
+      <section aria-labelledby="sim-method-title" className="mt-10 rounded-3xl bg-section border border-border p-5 sm:p-6">
+        <h2 id="sim-method-title" className="text-2xl font-extrabold text-foreground mb-3">
           Hypothèses et limites
         </h2>
         <ul className="list-disc pl-5 space-y-2 text-sm text-muted-foreground leading-relaxed">
@@ -95,7 +95,7 @@ export default async function SimulateurPage({
               >
                 {s.label}
               </a>{" "}
-              <span className="font-mono text-xs text-muted-foreground">({s.date})</span>
+              <span className="text-xs text-muted-foreground">({s.date})</span>
             </li>
           ))}
         </ul>
