@@ -25,6 +25,7 @@ import { ChevronIcon } from "./ChevronIcon";
 import { DailyResultPanel } from "./DailyDeck";
 import { BudgetChallengeSummary } from "./BudgetChallenge";
 import { ContentProfilePanel } from "./ContentProfilePanel";
+import { NextLevelCTA } from "./LevelProgress";
 
 const SITE_URL = "https://france-finances.com";
 
@@ -358,24 +359,8 @@ export function ResultScreen() {
 
       {/* CTAs */}
       <div className="flex flex-col gap-3 px-4 py-6 mt-2">
-        {level === 1 && (
-          <button
-            onClick={() => router.push("/jeu?level=2")}
-            className="flex items-center justify-center gap-2 w-full rounded-xl py-4 px-6 bg-primary text-white font-bold text-lg shadow-(--shadow-glow-green) active:scale-95 transition-transform"
-          >
-            Passer au Niveau 2
-            <span className="text-base">&#8594;</span>
-          </button>
-        )}
-        {level === 2 && (
-          <button
-            onClick={() => router.push("/jeu?level=3")}
-            className="flex items-center justify-center gap-2 w-full rounded-xl py-4 px-6 bg-primary text-white font-bold text-lg shadow-(--shadow-glow-green) active:scale-95 transition-transform"
-          >
-            Passer au Niveau 3
-            <span className="text-base">&#8594;</span>
-          </button>
-        )}
+        {/* Next level: unlocked by playing (not by URL) */}
+        <NextLevelCTA level={level} />
         <button
           onClick={() => router.push("/jeu")}
           className="flex items-center justify-center w-full rounded-xl py-4 px-6 border-2 border-border text-foreground font-bold hover:bg-card transition-colors"

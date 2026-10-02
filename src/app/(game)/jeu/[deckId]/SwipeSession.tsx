@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import { SwipeStack } from "@/components/SwipeStack";
 import { CardDetail } from "@/components/CardDetail";
 import { AuditScreen } from "@/components/AuditScreen";
+import { LevelLockedNotice } from "@/components/LevelProgress";
+import { useProgression } from "@/hooks/useProgression";
 import { useGameStore } from "@/stores/gameStore";
 import { useShallow } from "zustand/react/shallow";
 import type { Card, VoteDirection, AuditResponse, GameMode } from "@/types";
@@ -98,6 +100,28 @@ export function SwipeSession({ deckId, deckName, cards, level = 1, gameMode = "c
     },
     [detailCard, session, voteAndAdvance, completeSession, router, level]
   );
+
+  // Levels 2-3 are unlocked by playing: wait for local progression, then gate
+  const progression = useProgression();
+  if (level > 1) {
+    if (!progression) {
+      return (
+        <main className="flex-1 flex items-center justify-center" aria-busy="true">
+          <p className="text-sm text-muted-foreground">Chargement…</p>
+        </main>
+      );
+    }
+    if (level > progression.unlockedLevel) {
+      return (
+        <LevelLockedNotice
+          requestedLevel={level as 2 | 3}
+          unlockedLevel={progression.unlockedLevel}
+          counts={progression.counts}
+          deckId={deckId}
+        />
+      );
+    }
+  }
 
   return (
     <main className="flex-1 flex flex-col min-h-0">

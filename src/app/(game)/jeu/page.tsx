@@ -5,7 +5,9 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import decksData from "@/data";
-import { getPlayedDeckIds, getGlobalStats, getSessions } from "@/lib/stats";
+import { getPlayedDeckIds, getGlobalStats } from "@/lib/stats";
+import { useProgression } from "@/hooks/useProgression";
+import { EMPTY_LEVEL_COUNTS, getLevelProgress, resolvePlayableLevel } from "@/lib/progression";
 import { track } from "@/lib/analytics";
 import { useOnboarding, Onboarding } from "@/components/Onboarding";
 import { DailyDeckEntry } from "@/components/DailyDeck";
@@ -37,27 +39,19 @@ const thematicDecks = allDecks.filter((d) => d.type === "thematic");
 /** Number of distinct main categories needed to unlock thematic decks */
 const THEMATIC_UNLOCK_CATEGORIES = 3;
 
-const LEVEL_UNLOCK = {
-  2: { sessions: 1, label: "1 session N1 complétée" },
-  3: { sessions: 2, label: "2 sessions N2 complétées" },
-} as const;
-
 const BUDGET_TARGETS = [5, 10, 20, 30, 50] as const;
 
 function PlayPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const { showOnboarding, dismissOnboarding } = useOnboarding();
-  const initialLevel = (Number(searchParams.get("level")) || 1) as 1 | 2 | 3;
+  const initialLevel = Math.min(Math.max(Number(searchParams.get("level")) || 1, 1), 3) as 1 | 2 | 3;
   const [selectedDeck, setSelectedDeck] = useState<string | null>(null);
   const [randomMode, setRandomMode] = useState(false);
   const [playedDecks, setPlayedDecks] = useState<string[]>([]);
   const [sessionsPerDeck, setSessionsPerDeck] = useState<Record<string, number>>({});
   const [level, setLevel] = useState<1 | 2 | 3>(initialLevel);
   const [tooltip, setTooltip] = useState<2 | 3 | null>(null);
-  const [sessionsCount, setSessionsCount] = useState(0);
-  const [n1Sessions, setN1Sessions] = useState(0);
-  const [n2Sessions, setN2Sessions] = useState(0);
   const [budgetMode, setBudgetMode] = useState(false);
   const [budgetTarget, setBudgetTarget] = useState<number>(20);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -66,13 +60,9 @@ function PlayPageContent() {
 
   useEffect(() => {
     const stats = getGlobalStats();
-    const sessions = getSessions();
     // eslint-disable-next-line react-hooks/set-state-in-effect -- hydrating from localStorage on mount
     setPlayedDecks(getPlayedDeckIds());
-    setSessionsCount(stats.totalSessions);
     setSessionsPerDeck(stats.sessionsPerDeck ?? {});
-    setN1Sessions(sessions.filter((s) => s.level === 1).length);
-    setN2Sessions(sessions.filter((s) => s.level === 2).length);
   }, []);
 
   // Show chevron if content is scrollable
@@ -89,8 +79,15 @@ function PlayPageContent() {
     return () => el.removeEventListener("scroll", check);
   }, []);
 
-  const isLevel2Unlocked = n1Sessions >= LEVEL_UNLOCK[2].sessions || initialLevel >= 2;
-  const isLevel3Unlocked = n2Sessions >= LEVEL_UNLOCK[3].sessions || initialLevel >= 3;
+  // Levels are unlocked by playing (?level= only preselects an unlocked level)
+  const progression = useProgression();
+  const levelCounts = progression?.counts ?? EMPTY_LEVEL_COUNTS;
+  const unlockedLevel = progression?.unlockedLevel ?? 1;
+  const level2Progress = getLevelProgress(levelCounts, 2);
+  const level3Progress = getLevelProgress(levelCounts, 3);
+  const isLevel2Unlocked = level2Progress.unlocked;
+  const isLevel3Unlocked = level3Progress.unlocked;
+  const playableLevel = resolvePlayableLevel(level, unlockedLevel);
 
   const mainCategoriesPlayed = playedDecks.filter((id) =>
     mainDecks.some((d) => d.id === id)
@@ -99,9 +96,10 @@ function PlayPageContent() {
 
   const levelOptions: { value: 1 | 2 | 3; label: string; locked: boolean; unlockHint: string; progress: string }[] = [
     { value: 1, label: "Niveau 1", locked: false, unlockHint: "", progress: "" },
-    { value: 2, label: "Niveau 2", locked: !isLevel2Unlocked, unlockHint: LEVEL_UNLOCK[2].label, progress: `${Math.min(n1Sessions, LEVEL_UNLOCK[2].sessions)}/${LEVEL_UNLOCK[2].sessions}` },
-    { value: 3, label: "Niveau 3", locked: !isLevel3Unlocked, unlockHint: LEVEL_UNLOCK[3].label, progress: `${Math.min(n2Sessions, LEVEL_UNLOCK[3].sessions)}/${LEVEL_UNLOCK[3].sessions}` },
+    { value: 2, label: "Niveau 2", locked: !isLevel2Unlocked, unlockHint: `${level2Progress.label} terminées`, progress: `${level2Progress.done}/${level2Progress.required}` },
+    { value: 3, label: "Niveau 3", locked: !isLevel3Unlocked, unlockHint: `${level3Progress.label} terminées`, progress: `${level3Progress.done}/${level3Progress.required}` },
   ];
+  const progressByLevel = { 2: level2Progress, 3: level3Progress } as const;
 
   const handleLevelClick = useCallback((opt: typeof levelOptions[number]) => {
     if (opt.locked) {
@@ -111,21 +109,21 @@ function PlayPageContent() {
     }
     setTooltip(null);
     setLevel(opt.value);
-  }, [levelOptions]);
+  }, []);
 
   const handleLaunch = useCallback(() => {
     const deckId = randomMode ? "random" : selectedDeck;
     if (!deckId) return;
-    track("deck_selected", { deckId, level, mode: budgetMode ? "budget" : "classic" });
+    track("deck_selected", { deckId, level: playableLevel, mode: budgetMode ? "budget" : "classic" });
     const params = new URLSearchParams();
-    if (level > 1) params.set("level", String(level));
+    if (playableLevel > 1) params.set("level", String(playableLevel));
     if (budgetMode) {
       params.set("mode", "budget");
       params.set("target", String(budgetTarget));
     }
     const qs = params.toString();
     router.push(`/jeu/${deckId}${qs ? `?${qs}` : ""}`);
-  }, [randomMode, selectedDeck, level, budgetMode, budgetTarget, router]);
+  }, [randomMode, selectedDeck, playableLevel, budgetMode, budgetTarget, router]);
 
   return (
     <main className="flex-1 flex flex-col overflow-hidden relative">
@@ -271,7 +269,7 @@ function PlayPageContent() {
                 onMouseEnter={() => opt.locked && setTooltip(opt.value as 2 | 3)}
                 onMouseLeave={() => opt.locked && setTooltip(null)}
                 className={`flex h-full grow items-center justify-center rounded-lg px-2 text-sm font-semibold transition-colors ${
-                  !opt.locked && level === opt.value
+                  !opt.locked && playableLevel === opt.value
                     ? "bg-primary text-primary-foreground"
                     : opt.locked
                       ? "opacity-50 text-foreground cursor-not-allowed"
@@ -302,7 +300,7 @@ function PlayPageContent() {
                     <div className="flex-1 h-1.5 bg-slate-700 rounded-full overflow-hidden">
                       <div
                         className="h-full bg-primary rounded-full transition-all"
-                        style={{ width: `${Math.min(100, (sessionsCount / LEVEL_UNLOCK[opt.value as 2 | 3].sessions) * 100)}%` }}
+                        style={{ width: `${Math.min(100, (progressByLevel[opt.value as 2 | 3].done / progressByLevel[opt.value as 2 | 3].required) * 100)}%` }}
                       />
                     </div>
                     <span className="text-[10px] font-mono font-bold text-primary">{opt.progress}</span>
@@ -398,7 +396,7 @@ function PlayPageContent() {
           className="relative w-full bg-primary hover:bg-primary/90 text-white font-bold text-lg py-4 rounded-xl shadow-(--shadow-glow-green) transition-all active:scale-95 flex items-center justify-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed"
         >
           <CardsIcon size={24} />
-          {budgetMode ? `Lancer le défi (${budgetTarget} Md\u20AC)` : `Lancer la session ${level > 1 ? `(N${level})` : ""}`}
+          {budgetMode ? `Lancer le défi (${budgetTarget} Md\u20AC)` : `Lancer la session ${playableLevel > 1 ? `(N${playableLevel})` : ""}`}
         </button>
       </div>
     </main>

@@ -1,6 +1,13 @@
 import type { Session, Vote, Archetype } from "@/types";
 import { computeSessionResult, type determineArchetype } from "@/lib/archetype";
 import { DAILY_DECK_ID } from "@/lib/daily";
+import {
+  computeUnlockedLevel,
+  countSessionsByLevel,
+  mergeLevelCounts,
+  type GameLevel,
+  type LevelCounts,
+} from "@/lib/progression";
 
 // === Storage Keys ===
 const SESSIONS_KEY = "trnc:sessions";
@@ -37,6 +44,8 @@ export interface GlobalStats {
   auditsN3: number;
   totalKeptBillions: number;
   totalCutBillions: number;
+  /** Sessions terminees par niveau ("1" | "2" | "3"), cumul jamais purge */
+  sessionsPerLevel?: Record<string, number>;
 }
 
 export interface PlayerProfile {
@@ -224,6 +233,11 @@ export function saveCompletedSession(session: Session): void {
   if (stored.level === 3) {
     stats.auditsN3 += 1;
   }
+  const levelKey = String(stored.level);
+  stats.sessionsPerLevel = {
+    ...(stats.sessionsPerLevel ?? {}),
+    [levelKey]: (stats.sessionsPerLevel?.[levelKey] ?? 0) + 1,
+  };
   setItem(STATS_KEY, stats);
 
   // Update profile
@@ -287,6 +301,16 @@ export function updatePlayerAvatar(emoji: string): void {
   const profile = getPlayerProfile();
   profile.customAvatar = emoji;
   setItem(PROFILE_KEY, profile);
+}
+
+/** Sessions terminees par niveau (cumul + historique local) */
+export function getLevelCounts(): LevelCounts {
+  return mergeLevelCounts(getGlobalStats().sessionsPerLevel, countSessionsByLevel(getSessions()));
+}
+
+/** Niveau maximal debloque par le joueur */
+export function getUnlockedLevel(): GameLevel {
+  return computeUnlockedLevel(getLevelCounts());
 }
 
 /** Get decks that have been played */
