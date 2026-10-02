@@ -4,13 +4,16 @@ import { AuthProvider } from "@/components/AuthProvider";
 import { AppInit } from "@/components/AppInit";
 import { PageviewTracker } from "@/components/PageviewTracker";
 import { JsonLd } from "@/components/JsonLd";
+import { THEME_COLORS } from "@/lib/theme";
 import "./globals.css";
 
-// Serif éditoriale : titres et chiffres forts (axe optique pour les grands corps)
+// Serif éditoriale : titres et chiffres forts, toujours en semibold.
+// Une seule graisse statique, sans l'axe optique : bien plus léger à
+// précharger que le fichier variable complet (graisses 200-900 + opsz).
 const serif = Source_Serif_4({
   variable: "--ff-serif",
   subsets: ["latin"],
-  axes: ["opsz"],
+  weight: ["600"],
   display: "swap",
 });
 
@@ -21,12 +24,14 @@ const grotesk = Schibsted_Grotesk({
   display: "swap",
 });
 
-// Mono : étiquettes, axes, sources
+// Mono : étiquettes, axes, sources. Non préchargée : elle ne sert qu'aux
+// petits textes (kicker), le repli système suffit le temps du chargement.
 const mono = IBM_Plex_Mono({
   variable: "--ff-mono",
   subsets: ["latin"],
   weight: ["400", "500"],
   display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -81,7 +86,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: "#0F172A",
+  themeColor: THEME_COLORS.dark,
 };
 
 export default function RootLayout({
@@ -96,7 +101,7 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             // Thème sombre par défaut ; le clair n'est appliqué que sur choix explicite.
-            __html: `(function(){try{if(localStorage.getItem('theme')==='light'){document.documentElement.classList.remove('dark')}}catch(e){}})()`,
+            __html: `(function(){try{if(localStorage.getItem('theme')==='light'){var d=document.documentElement;d.classList.remove('dark');var c=function(){var m=document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content','${THEME_COLORS.light}')};c();document.addEventListener('DOMContentLoaded',c)}}catch(e){}})()`,
           }}
         />
       </head>

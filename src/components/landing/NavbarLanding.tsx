@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useSyncExternalStore } from "react";
 import Link from "next/link";
+import { applyTheme } from "@/lib/theme";
 
 const NAV_LINKS = [
   { href: "/chiffres", label: "Les chiffres" },
@@ -43,7 +44,8 @@ export function NavbarLanding() {
   const isDark = useSyncExternalStore(subscribeTheme, getThemeSnapshot, getServerThemeSnapshot);
 
   const toggleTheme = useCallback(() => {
-    const nowDark = document.documentElement.classList.toggle("dark");
+    const nowDark = !document.documentElement.classList.contains("dark");
+    applyTheme(nowDark);
     try {
       localStorage.setItem("theme", nowDark ? "dark" : "light");
     } catch {
