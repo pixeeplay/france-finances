@@ -3,7 +3,7 @@
     "id": "ukr-01",
     "title": "Aide militaire directe (matériel livré)",
     "subtitle": "Cessions de matériels, formation et maintien en condition (2022-2024)",
-    "description": "Le ministère des Armées estime le soutien militaire de la France à l'Ukraine à 5,9 Md€ entre février 2022 et fin 2024. Ce total inclut jusqu'à 2,3 Md€ de contribution à la Facilité européenne pour la paix et 400 M€ d'achats via le fonds bilatéral : les cessions de matériels, la formation, l'acheminement et le maintien en condition représentent donc environ 3,2 Md€. La France a notamment livré des canons Caesar, des blindés AMX-10 RC, des systèmes sol-air Crotale NG et SAMP/T, des lance-roquettes et des missiles Scalp.",
+    "description": "Le ministère des Armées estime le soutien militaire de la France à l'Ukraine à 5,9 Md€ entre février 2022 et fin 2024, contribution à la Facilité européenne pour la paix (jusqu'à 2,3 Md€) et fonds bilatéral (400 M€) compris. En déduisant ces deux montants, les cessions de matériels, la formation, l'acheminement et le maintien en condition représentent environ 3,2 Md€. La France a notamment livré des canons Caesar, des blindés AMX-10 RC, des systèmes sol-air Crotale NG et SAMP/T, des lance-roquettes et des missiles Scalp.",
     "amountBillions": 3.2,
     "costPerCitizen": 47,
     "deckId": "ukraine",
