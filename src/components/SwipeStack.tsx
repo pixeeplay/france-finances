@@ -301,7 +301,7 @@ export function SwipeStack({
 
       {/* Level 2 bottom hint */}
       {level >= 2 && (
-        <div className="flex justify-center pb-1 opacity-60">
+        <div className={`pointer-events-none flex justify-center pb-1 opacity-60 ${quizActive ? "invisible" : ""}`}>
           <span className="kicker flex items-center gap-1 text-danger" aria-hidden="true"><StopIcon size={10} /> Injustifié ▼</span>
         </div>
       )}

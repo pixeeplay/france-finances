@@ -46,7 +46,7 @@ export function AmountQuiz({ card, onAnswer, onContinue }: AmountQuizProps) {
   return (
     <section
       aria-labelledby="amount-quiz-title"
-      className="absolute inset-0 z-50 flex flex-col rounded-3xl border border-warning/40 bg-card p-5 shadow-(--shadow-card)"
+      className="absolute inset-0 z-50 flex flex-col overflow-y-auto overscroll-contain rounded-3xl border border-warning/40 bg-card p-5 shadow-(--shadow-card)"
       data-testid="amount-quiz"
     >
       <p className="self-start kicker rounded-full bg-warning/15 px-3 py-1 text-warning">Mini-quiz</p>
