@@ -10,7 +10,7 @@ import {
   budgetChallengeConstraints,
   evaluateBudgetChallenge,
 } from "@/lib/budgetChallenge";
-import { formatBillions } from "@/lib/sessionFeedback";
+import { formatBillions } from "@/lib/format";
 import type { Session } from "@/types";
 
 export const BUDGET_CHALLENGE_HREF = `/jeu/random?mode=budget&target=${BUDGET_CHALLENGE_TARGET}`;

@@ -319,11 +319,6 @@ export function getLevelCounts(): LevelCounts {
   return mergeLevelCounts(getGlobalStats().sessionsPerLevel, countSessionsByLevel(getSessions()));
 }
 
-/** Niveau maximal debloque par le joueur */
-export function getUnlockedLevel(): GameLevel {
-  return computeUnlockedLevel(getLevelCounts());
-}
-
 /** Get decks that have been played */
 export function getPlayedDeckIds(): string[] {
   const stats = getGlobalStats();

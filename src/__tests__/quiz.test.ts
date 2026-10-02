@@ -5,13 +5,12 @@ import {
   applyQuizAnswer,
   buildQuizOptions,
   EMPTY_QUIZ_STATS,
-  formatAmount,
   getQuizIndexes,
-  isCorrectAnswer,
   QUIZ_OPTION_COUNT,
   roundSignificant,
 } from "@/lib/quiz";
 import { getGlobalStats, recordQuizAnswer } from "@/lib/stats";
+import { formatBillions } from "@/lib/format";
 import { ACHIEVEMENTS } from "@/lib/achievements";
 import { AmountQuiz } from "@/components/AmountQuiz";
 import type { GlobalStats } from "@/lib/stats";
@@ -35,7 +34,7 @@ function card(id: string, amountBillions: number): Card {
   };
 }
 
-describe("roundSignificant / formatAmount", () => {
+describe("roundSignificant / labels", () => {
   it("rounds to 2 significant digits", () => {
     expect(roundSignificant(12.345)).toBe(12);
     expect(roundSignificant(0.04567)).toBe(0.046);
@@ -43,10 +42,12 @@ describe("roundSignificant / formatAmount", () => {
     expect(roundSignificant(0)).toBe(0);
   });
 
-  it("formats millions below 1 Md€", () => {
-    expect(formatAmount(0.45)).toBe("450 M€");
-    expect(formatAmount(0.03)).toBe("30 M€");
-    expect(formatAmount(12.5)).toBe("12,5 Md€");
+  it("labels amounts with the same formatter as the cards", () => {
+    const label = (b: number) => buildQuizOptions(card("c-01", b)).find((o) => o.correct)?.label;
+    expect(label(0.0456)).toBe(formatBillions(0.0456));
+    expect(label(0.45)).toBe(formatBillions(0.45));
+    expect(label(12.5)).toBe(formatBillions(12.5));
+    expect(label(0.0456)?.replace(/\u00a0/g, " ")).toBe("46 M€");
   });
 });
 
@@ -74,9 +75,7 @@ describe("buildQuizOptions", () => {
     expect(new Set(options.map((o) => o.label)).size).toBe(QUIZ_OPTION_COUNT);
     expect(buildQuizOptions(c)).toEqual(options);
     const correctIndex = options.findIndex((o) => o.correct);
-    expect(isCorrectAnswer(options, correctIndex)).toBe(true);
-    expect(isCorrectAnswer(options, (correctIndex + 1) % 4)).toBe(false);
-    expect(isCorrectAnswer(options, 99)).toBe(false);
+    expect(correctIndex).toBeGreaterThanOrEqual(0);
   });
 
   it("works for every real card with a positive amount", () => {

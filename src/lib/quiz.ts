@@ -1,5 +1,6 @@
 import type { Card } from "@/types";
 import { createSeededRng, seededShuffle } from "./random";
+import { formatBillions } from "./format";
 
 /**
  * Mini-quiz "A ton avis, combien ?" : avant de reveler certaines cartes,
@@ -21,16 +22,6 @@ export function roundSignificant(value: number, digits: number = 2): number {
   const magnitude = Math.floor(Math.log10(Math.abs(value)));
   const factor = Math.pow(10, digits - 1 - magnitude);
   return Math.round(value * factor) / factor;
-}
-
-const frNumber = new Intl.NumberFormat("fr-FR", { maximumFractionDigits: 1 });
-
-/** Montant lisible : < 1 Md€ en millions ("450 M€"), sinon en milliards ("12,5 Md€") */
-export function formatAmount(billions: number): string {
-  if (billions > 0 && billions < 1) {
-    return `${frNumber.format(roundSignificant(billions * 1000, 3))} M€`;
-  }
-  return `${frNumber.format(billions)} Md€`;
 }
 
 export function isQuizEligible(card: Card): boolean {
@@ -66,24 +57,19 @@ export interface QuizOption {
  */
 export function buildQuizOptions(card: Card): QuizOption[] {
   const rng = createSeededRng(`quiz:${card.id}`);
-  const correctLabel = formatAmount(card.amountBillions);
+  const correctLabel = formatBillions(card.amountBillions);
   const options: QuizOption[] = [{ billions: card.amountBillions, label: correctLabel, correct: true }];
   const usedLabels = new Set([correctLabel]);
 
   for (const factor of seededShuffle(DISTRACTOR_FACTORS, rng)) {
     if (options.length >= QUIZ_OPTION_COUNT) break;
     const billions = roundSignificant(card.amountBillions * factor);
-    const label = formatAmount(billions);
+    const label = formatBillions(billions);
     if (billions <= 0 || usedLabels.has(label)) continue;
     usedLabels.add(label);
     options.push({ billions, label, correct: false });
   }
   return seededShuffle(options, rng);
-}
-
-/** Une reponse est juste si c'est la bonne proposition */
-export function isCorrectAnswer(options: readonly QuizOption[], chosenIndex: number): boolean {
-  return options[chosenIndex]?.correct === true;
 }
 
 // === Statistiques de comprehension ===

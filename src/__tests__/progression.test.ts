@@ -12,9 +12,11 @@ import {
   resolvePlayableLevel,
   sessionsAtOrAbove,
 } from "@/lib/progression";
-import { getLevelCounts, getUnlockedLevel, saveCompletedSession } from "@/lib/stats";
+import { getLevelCounts, saveCompletedSession } from "@/lib/stats";
 import { LevelLockedNotice, NextLevelCTA } from "@/components/LevelProgress";
 import type { Session } from "@/types";
+
+const getUnlockedLevel = () => computeUnlockedLevel(getLevelCounts());
 
 vi.mock("@/lib/analytics", () => ({ track: vi.fn() }));
 

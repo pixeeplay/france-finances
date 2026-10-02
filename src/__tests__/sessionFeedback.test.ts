@@ -2,7 +2,6 @@ import { describe, it, expect } from "vitest";
 import {
   communityAgreement,
   computeCutBillions,
-  formatBillions,
   isCutDirection,
   parseCommunityCardIds,
   trendFact,
@@ -80,14 +79,6 @@ describe("communityAgreement", () => {
       percent: 50,
       total: 2,
     });
-  });
-});
-
-describe("formatBillions", () => {
-  it("formats with a French decimal comma and at most one decimal", () => {
-    expect(formatBillions(12.35)).toMatch(/^12,4 Md€$/);
-    expect(formatBillions(3)).toMatch(/^3 Md€$/);
-    expect(formatBillions(0)).toMatch(/^0 Md€$/);
   });
 });
 

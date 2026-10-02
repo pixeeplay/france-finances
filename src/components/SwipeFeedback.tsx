@@ -5,11 +5,11 @@ import { ChainsawIcon } from "./ChainsawIcon";
 import { ShieldIcon } from "./ShieldIcon";
 import {
   communityAgreement,
-  formatBillions,
   trendFact,
   voteSide,
   type CommunityCounts,
 } from "@/lib/sessionFeedback";
+import { formatBillions } from "@/lib/format";
 import type { Card, VoteDirection } from "@/types";
 
 export interface LastVote {

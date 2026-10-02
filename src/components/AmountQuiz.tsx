@@ -1,7 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { buildQuizOptions, formatAmount } from "@/lib/quiz";
+import { buildQuizOptions } from "@/lib/quiz";
+import { formatBillions } from "@/lib/format";
 import type { Card } from "@/types";
 
 interface AmountQuizProps {
@@ -66,7 +67,7 @@ export function AmountQuiz({ card, onAnswer, onContinue }: AmountQuizProps) {
         {answered && (
           <>
             <p className={`text-sm font-bold ${correct ? "text-primary" : "text-danger"}`}>
-              {correct ? "Bonne réponse." : `Raté : c'était ${formatAmount(card.amountBillions)}.`}
+              {correct ? "Bonne réponse." : `Raté : c'était ${formatBillions(card.amountBillions)}.`}
             </p>
             <p className="text-xs text-muted-foreground">Source : {card.source}</p>
             <button

@@ -3,7 +3,8 @@
 import { useMemo } from "react";
 import decksMeta from "@/data/decks-meta.json";
 import { computeContentProfile } from "@/lib/archetype";
-import { formatBillions, isCutDirection } from "@/lib/sessionFeedback";
+import { isCutDirection } from "@/lib/sessionFeedback";
+import { formatBillions } from "@/lib/format";
 import type { Session } from "@/types";
 
 const DECK_NAMES: Record<string, string> = Object.fromEntries(
