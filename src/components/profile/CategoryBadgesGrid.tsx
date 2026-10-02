@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CategoryIcon } from "@/components/icons/CategoryIcon";
 import type { Achievement } from "@/lib/achievements";
 import type { GlobalStats, StoredSession } from "@/lib/stats";
 import type { Deck } from "@/types";
@@ -23,10 +24,10 @@ export function CategoryBadgesGrid({
   return (
     <div className="pt-2 space-y-3">
       <div className="flex items-center justify-between px-1">
-        <h3 className="text-xs font-black uppercase tracking-widest text-muted-foreground">
+        <h3 className="kicker text-muted-foreground">
           Badges Catégories
         </h3>
-        <span className="text-[10px] font-mono font-bold text-primary bg-primary/10 px-2 py-0.5 rounded border border-primary/20">
+        <span className="numeral text-sm font-semibold text-foreground">
           {completedCategory.length} / {categoryBadges.length}
         </span>
       </div>
@@ -39,16 +40,16 @@ export function CategoryBadgesGrid({
           return (
             <div
               key={a.id}
-              className={`relative flex flex-col items-center gap-1 p-2 rounded-xl border transition-all ${
+              className={`relative flex flex-col items-center gap-1 p-2 rounded-md border transition-all ${
                 completed
                   ? "bg-primary/10 border-primary/30"
                   : "bg-card border-border opacity-50"
               }`}
             >
               {deck?.image ? (
-                <Image src={deck.image} alt={deck.name} width={32} height={32} className={completed ? "" : "grayscale"} />
+                <Image src={deck.image} alt="" width={32} height={32} className={completed ? "" : "grayscale"} />
               ) : (
-                <span className="text-2xl">{a.icon}</span>
+                <CategoryIcon deckId={deckId} size={28} className={completed ? "text-primary" : "text-muted-foreground"} />
               )}
               <span className="text-[9px] font-bold text-center leading-tight">
                 {a.title.replace("Expert ", "")}
@@ -62,7 +63,7 @@ export function CategoryBadgesGrid({
                 </div>
               )}
               {completed && (
-                <span className="absolute -top-1 -right-1 text-[10px] bg-primary text-white w-4 h-4 rounded-full flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 text-[10px] bg-primary text-primary-foreground w-4 h-4 rounded-full flex items-center justify-center">
                   &#10003;
                 </span>
               )}

@@ -246,7 +246,7 @@ function PlayPageContent() {
                     aria-label={`Objectif ${t} milliards d'euros`}
                     className={`flex-1 py-2 rounded-lg text-sm font-bold transition-colors ${
                       budgetTarget === t
-                        ? "bg-warning text-white"
+                        ? "bg-warning text-background"
                         : "bg-card border border-border text-foreground hover:bg-muted"
                     }`}
                   >
