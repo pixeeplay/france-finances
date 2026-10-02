@@ -50,3 +50,11 @@ describe("amountScalePosition", () => {
     expect(amountScalePosition(5000)).toBe(1);
   });
 });
+
+describe("séparateur de milliers", () => {
+  it("utilise l'espace insécable (pas l'espace fine, quasi invisible en Outfit)", () => {
+    expect(formatEuros(52030)).toBe("52\u00a0030\u00a0€");
+    expect(formatBillions(1671)).toBe("1\u00a0671\u00a0Md€");
+    expect(formatEuros(52030)).not.toContain("\u202f");
+  });
+});

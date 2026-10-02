@@ -122,7 +122,7 @@ export function Onboarding({ onDone }: OnboardingProps) {
                   <div className="w-16 h-16 rounded-full bg-primary/15 border-[3px] border-primary flex items-center justify-center">
                     <ShieldIcon size={32} className="text-primary" />
                   </div>
-                  <span className="kicker text-primary">← OK</span>
+                  <span className="kicker text-primary">← Garder</span>
                 </div>
                 <div className="font-heading font-extrabold text-2xl text-muted-foreground">ou</div>
                 <div className="flex flex-col items-center gap-2">

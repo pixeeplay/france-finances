@@ -14,7 +14,7 @@ function IconCalendar() {
 /** Encart « deck du jour » : même tirage pour tout le monde, renouvelé à minuit. */
 export function DailyTeaser() {
   return (
-    <section aria-labelledby="daily-teaser-title" className="px-4 sm:px-6 -mt-4 mb-4">
+    <section aria-labelledby="daily-teaser-title" className="section-deep px-4 sm:px-6 pb-14">
       <div className="max-w-4xl mx-auto rounded-3xl border border-primary/30 bg-primary/10 p-5 md:p-7 flex flex-col md:flex-row md:items-center gap-5">
         <div className="w-16 h-16 shrink-0 rounded-2xl bg-primary/15 text-primary flex items-center justify-center" aria-hidden="true">
           <IconCalendar />

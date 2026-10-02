@@ -2,7 +2,7 @@
 
 import { Bar, BarChart, Cell, LabelList, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { useReducedMotion } from "framer-motion";
-import { barsChartHeight, toneColor, type ChartDatum } from "@/lib/chiffresCharts";
+import { barsChartHeight, datumColor, type ChartDatum } from "@/lib/chiffresCharts";
 import {
   DISPLAY_FONT,
   TOOLTIP_CONTENT_STYLE, TOOLTIP_ITEM_STYLE, TOOLTIP_LABEL_STYLE, TOOLTIP_WRAPPER_STYLE } from "./chartStyles";
@@ -28,7 +28,7 @@ export function BarsChart({ data, valueName = "Montant" }: { data: readonly Char
     const d = index === undefined ? undefined : rows[index];
     if (!d) return null;
     return (
-      <text x={Number(x)} y={Number(y) - 6} fill="var(--foreground)" fontSize={12} fontWeight={d.highlight ? 700 : 500}>
+      <text x={Number(x)} y={Number(y) - 6} fill="var(--foreground)" fontSize={13} fontWeight={d.highlight ? 700 : 500}>
         {d.shortLabel}
       </text>
     );
@@ -39,11 +39,11 @@ export function BarsChart({ data, valueName = "Montant" }: { data: readonly Char
     if (!d) return null;
     return (
       <text
-        x={Number(x) + Number(width) + 6}
+        x={Number(x) + Number(width) + 8}
         y={Number(y) + 12}
-        fill={toneColor(d.tone)}
+        fill="var(--foreground)"
         fontFamily={DISPLAY_FONT}
-        fontSize={12}
+        fontSize={13}
         fontWeight={800}
       >
         {d.display}
@@ -56,7 +56,7 @@ export function BarsChart({ data, valueName = "Montant" }: { data: readonly Char
       <BarChart
         data={rows}
         layout="vertical"
-        margin={{ top: 4, right: 76, bottom: 4, left: 0 }}
+        margin={{ top: 4, right: 84, bottom: 4, left: 0 }}
         barCategoryGap={0}
         accessibilityLayer={false}
       >
@@ -86,7 +86,7 @@ export function BarsChart({ data, valueName = "Montant" }: { data: readonly Char
           animationDuration={700}
         >
           {rows.map((d) => (
-            <Cell key={d.label} fill={toneColor(d.tone)} />
+            <Cell key={d.label} fill={datumColor(d)} />
           ))}
           <LabelList dataKey="shortLabel" content={renderName} />
           <LabelList dataKey="display" content={renderValue} />

@@ -6,12 +6,18 @@ import type { ReactNode } from "react";
  * Décoratifs : toujours aria-hidden, le libellé est porté par le texte voisin.
  */
 
-const EU_STARS: ReactNode = Array.from({ length: 12 }, (_, i) => {
-  const angle = (i / 12) * Math.PI * 2 - Math.PI / 2;
-  const cx = 12 + Math.cos(angle) * 8;
-  const cy = 12 + Math.sin(angle) * 8;
-  return <circle key={i} cx={cx.toFixed(2)} cy={cy.toFixed(2)} r="1.1" fill="currentColor" stroke="none" />;
-});
+/** Drapeau européen stylisé : cadre + couronne de 12 étoiles pleines. */
+const EU_STARS: ReactNode = (
+  <>
+    <rect x="1.5" y="3.5" width="21" height="17" rx="2.5" />
+    {Array.from({ length: 12 }, (_, i) => {
+      const angle = (i / 12) * Math.PI * 2 - Math.PI / 2;
+      const cx = 12 + Math.cos(angle) * 5.3;
+      const cy = 12 + Math.sin(angle) * 5.3;
+      return <circle key={i} cx={cx.toFixed(2)} cy={cy.toFixed(2)} r="1.05" fill="currentColor" stroke="none" />;
+    })}
+  </>
+);
 
 const ICONS: Record<string, ReactNode> = {
   // Défense : épées croisées
@@ -145,7 +151,7 @@ const ICONS: Record<string, ReactNode> = {
       <circle cx="12" cy="10" r="3" />
     </>
   ),
-  // La France dans l'Europe : cercle de 12 étoiles
+  // La France dans l'Europe : drapeau européen
   "france-europe": EU_STARS,
   // Zombies budgétaires : fantôme
   zombies: (

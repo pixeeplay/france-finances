@@ -68,27 +68,44 @@ export function SessionFeedbackBar({ lastVote, counts, cutBillions, budgetTarget
   const visible = lastVote !== null && dismissedAt !== lastVote.at;
 
   return (
-    <div className="relative mx-4 mb-2 flex h-12 items-center gap-3 overflow-hidden rounded-2xl bg-card border border-border pl-3 pr-2">
+    <div className="relative mx-4 mb-2 flex h-14 items-center gap-3 overflow-hidden rounded-2xl bg-card border border-border pl-2.5 pr-3">
       <div className="min-w-0 flex-1" aria-hidden="true">
-        {visible && lastVote ? <FeedbackLines lastVote={lastVote} counts={counts} /> : null}
+        {visible && lastVote ? (
+          <FeedbackLines lastVote={lastVote} counts={counts} />
+        ) : budgetTarget ? (
+          <IdleHint label="Objectif" detail={`Trouver ${budgetTarget} Md€ d'économies`} />
+        ) : (
+          <IdleHint label="Tronçonné" detail="Cumul des dépenses à revoir" />
+        )}
       </div>
       {budgetTarget ? (
         <BudgetCounter cutBillions={cutBillions} target={budgetTarget} />
       ) : (
-        <p
-          className="shrink-0 flex flex-col items-end leading-none rounded-xl bg-danger/12 px-2.5 py-1.5"
-          data-testid="session-cut-counter"
-        >
-          <span className="kicker text-[10px] leading-3 flex items-center gap-1 text-danger">
-            <span aria-hidden="true" className="shrink-0">
-              <ChainsawIcon size={11} />
-            </span>
-            Tronçonné
+        <p className="shrink-0 leading-none" data-testid="session-cut-counter">
+          <span className="sr-only">Tronçonné cette session : </span>
+          <span
+            key={cutBillions}
+            className={`numeral block text-2xl leading-7 text-danger ${cutBillions > 0 ? "animate-counter-pop" : ""}`}
+          >
+            {formatBillions(cutBillions)}
           </span>
-          <span className="sr-only"> cette session : </span>
-          <span className="numeral text-base leading-5 text-danger">{formatBillions(cutBillions)}</span>
         </p>
       )}
+    </div>
+  );
+}
+
+/** Ligne de repos du bandeau (aucun retour de vote affiché) */
+function IdleHint({ label, detail }: { label: string; detail: string }) {
+  return (
+    <div className="flex items-center gap-2.5">
+      <span className="shrink-0 flex h-9 w-9 items-center justify-center rounded-xl bg-danger/15">
+        <ChainsawIcon size={20} />
+      </span>
+      <span className="min-w-0">
+        <span className="kicker block text-danger">{label}</span>
+        <span className="block truncate text-xs leading-4 text-muted-foreground">{detail}</span>
+      </span>
     </div>
   );
 }
@@ -99,11 +116,11 @@ function BudgetCounter({ cutBillions, target }: { cutBillions: number; target: n
   const progress = Math.min(cutBillions / target, 1) * 100;
   return (
     <>
-      <p className="shrink-0 flex flex-col items-end leading-none rounded-xl bg-warning/12 px-2.5 py-1.5" data-testid="budget-counter">
+      <p className="shrink-0 flex flex-col items-end leading-none" data-testid="budget-counter">
         <span className={`kicker text-[10px] leading-3 ${reached ? "text-primary" : "text-warning"}`}>
-          {reached ? "Objectif atteint" : "Objectif économies"}
+          {reached ? "Objectif atteint" : "Économies"}
         </span>
-        <span className={`numeral text-base leading-5 ${reached ? "text-primary" : "text-foreground"}`}>
+        <span className={`numeral text-lg leading-6 ${reached ? "text-primary" : "text-foreground"}`}>
           {cutBillions.toFixed(1)} / {target}&nbsp;Md€
         </span>
       </p>

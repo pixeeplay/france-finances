@@ -47,7 +47,7 @@ export function AuditScreen({
   const [recommendation, setRecommendation] = useState<AuditRecommendation | null>(null);
 
   const directionLabel: Record<string, { text: string; colorClass: string }> = {
-    keep: { text: "OK", colorClass: "bg-primary/10 text-primary border-primary/20" },
+    keep: { text: "Garder", colorClass: "bg-primary/10 text-primary border-primary/20" },
     cut: { text: "A reduire", colorClass: "bg-warning/10 text-warning border-warning/20" },
     reinforce: { text: "A renforcer", colorClass: "bg-info/10 text-info border-info/20" },
     unjustified: { text: "Injustifie", colorClass: "bg-danger/10 text-danger border-danger/20" },

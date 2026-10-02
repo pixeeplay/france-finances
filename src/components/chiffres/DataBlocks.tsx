@@ -1,19 +1,39 @@
 import type { DataSource } from "@/types/simulator";
 
-/** Mention de source sous un bloc de données. */
+/** Libellé court d'une source (avant le tiret) : « Insee Première n° 2093 ». */
+export function shortSourceLabel(label: string): string {
+  return label.split(" — ")[0].trim();
+}
+
+const SOURCE_LINK =
+  "underline decoration-muted-foreground/40 underline-offset-2 hover:text-foreground hover:decoration-foreground";
+
+/** Mention de source sous un bloc de données : une ligne, discrète. */
 export function SourceNote({ source, period }: { source: DataSource; period?: string }) {
   return (
-    <p className="mt-4 text-xs text-muted-foreground leading-relaxed">
-      {period ? <span>Données {period}. </span> : null}
+    <p className="mt-3 truncate text-xs text-muted-foreground" title={`${source.label}${period ? ` (${period})` : ""}`}>
       Source :{" "}
-      <a
-        href={source.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="font-semibold text-brand-fg underline underline-offset-2 hover:text-foreground"
-      >
-        {source.label}
+      <a href={source.url} target="_blank" rel="noopener noreferrer" className={SOURCE_LINK}>
+        {shortSourceLabel(source.label)}
       </a>
+      {period ? <span>, {period}</span> : null}
+    </p>
+  );
+}
+
+/** Plusieurs sources sur une seule ligne. */
+export function SourcesLine({ sources }: { sources: readonly DataSource[] }) {
+  return (
+    <p className="mt-3 text-xs text-muted-foreground">
+      Sources :{" "}
+      {sources.map((src, i) => (
+        <span key={src.url}>
+          {i > 0 ? " · " : null}
+          <a href={src.url} target="_blank" rel="noopener noreferrer" title={src.label} className={SOURCE_LINK}>
+            {shortSourceLabel(src.label)}
+          </a>
+        </span>
+      ))}
     </p>
   );
 }

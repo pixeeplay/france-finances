@@ -4,9 +4,10 @@ import { useId } from "react";
 import { useReducedMotion } from "framer-motion";
 import {
   Area,
-  AreaChart,
+  ComposedChart,
   CartesianGrid,
   LabelList,
+  Line,
   ReferenceLine,
   ResponsiveContainer,
   Tooltip,
@@ -42,8 +43,8 @@ export function DebtAreaChart({ data }: { data: readonly DebtSeriesPoint[] }) {
     const isLast = index === lastIndex;
     return (
       <text
-        x={Number(x)}
-        y={Number(y) - (isLast ? 26 : 10)}
+        x={Number(x) + (isLast ? 6 : 0)}
+        y={Number(y) - (isLast ? 14 : 10)}
         textAnchor={isLast ? "end" : "middle"}
         fill={isLast ? "var(--chart-red)" : "var(--foreground)"}
         fontFamily={DISPLAY_FONT}
@@ -57,7 +58,7 @@ export function DebtAreaChart({ data }: { data: readonly DebtSeriesPoint[] }) {
 
   return (
     <ResponsiveContainer width="100%" height={DEBT_CHART_HEIGHT}>
-      <AreaChart data={rows} margin={{ top: 36, right: 16, bottom: 4, left: -12 }} accessibilityLayer={false}>
+      <ComposedChart data={rows} margin={{ top: 30, right: 20, bottom: 4, left: -12 }} accessibilityLayer={false}>
         <defs>
           <linearGradient id={gradientId} x1="0" y1="0" x2="0" y2="1">
             <stop offset="5%" stopColor="var(--chart-red)" stopOpacity={0.45} />
@@ -75,7 +76,7 @@ export function DebtAreaChart({ data }: { data: readonly DebtSeriesPoint[] }) {
           axisLine={false}
           tickLine={false}
           interval={0}
-          padding={{ left: 14, right: 22 }}
+          padding={{ left: 18, right: 30 }}
         />
         <YAxis
           domain={[0, 130]}
@@ -114,20 +115,43 @@ export function DebtAreaChart({ data }: { data: readonly DebtSeriesPoint[] }) {
             return [`${formatNumber(p.pctGdp, 1)} % du PIB${amount}`, "Dette"];
           }}
         />
+        {/* Années consécutives : aire et trait plein */}
         <Area
           type="monotone"
-          dataKey="pctGdp"
+          dataKey="solid"
           stroke="var(--chart-red)"
           strokeWidth={3}
           fill={`url(#${gradientId})`}
-          dot={{ r: 4, fill: "var(--chart-red)", stroke: "var(--card)", strokeWidth: 2 }}
-          activeDot={{ r: 6 }}
+          dot={false}
+          activeDot={false}
+          connectNulls={false}
           isAnimationActive={!reduceMotion}
           animationDuration={900}
+        />
+        {/* Années manquantes (2020-2021) : simple pointillé, sans aire */}
+        <Line
+          type="linear"
+          dataKey="gap"
+          stroke="var(--chart-red)"
+          strokeWidth={2}
+          strokeDasharray="5 5"
+          dot={false}
+          activeDot={false}
+          connectNulls
+          isAnimationActive={false}
+        />
+        {/* Points et valeurs de toute la série */}
+        <Line
+          type="linear"
+          dataKey="pctGdp"
+          stroke="none"
+          dot={{ r: 4, fill: "var(--chart-red)", stroke: "var(--card)", strokeWidth: 2 }}
+          activeDot={{ r: 6 }}
+          isAnimationActive={false}
         >
           <LabelList dataKey="pctGdp" content={renderPointLabel} />
-        </Area>
-      </AreaChart>
+        </Line>
+      </ComposedChart>
     </ResponsiveContainer>
   );
 }

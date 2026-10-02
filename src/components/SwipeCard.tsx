@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useImperativeHandle, forwardRef } from "react";
+import { useRef, useImperativeHandle, forwardRef, useLayoutEffect, useState } from "react";
 // SwipeCard uses drag gestures → requires full `motion` (not `m` + LazyMotion/domAnimation)
 import { motion, animate as fmAnimate, useReducedMotion } from "framer-motion";
 import { useSwipeGesture } from "@/hooks/useSwipeGesture";
@@ -123,7 +123,7 @@ export const SwipeCard = forwardRef<SwipeCardHandle, SwipeCardProps>(
       >
         <div className="border-4 border-primary bg-card/90 rounded-xl px-4 py-2 rotate-12">
           <span className="text-primary font-heading font-black text-2xl uppercase tracking-wider flex items-center gap-2">
-            <ShieldIcon size={28} /> OK
+            <ShieldIcon size={28} /> Garder
           </span>
         </div>
       </motion.div>
@@ -182,11 +182,15 @@ function CardContent({
   onTapDetail?: () => void;
 }) {
   return (
-    <div className="flex flex-col h-full" style={catStyle(card.deckId)}>
-      {/* Liseré de la couleur de la catégorie */}
-      <div className="h-1.5 shrink-0" style={{ backgroundColor: "var(--cat)" }} aria-hidden="true" />
+    <div className="relative flex flex-col h-full" style={catStyle(card.deckId)}>
+      {/* Halo de la couleur de la catégorie (dans l'arrondi, sans liseré rogné) */}
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-36"
+        style={{ background: "linear-gradient(to bottom, color-mix(in srgb, var(--cat) 22%, transparent), transparent)" }}
+        aria-hidden="true"
+      />
 
-      <div className="flex flex-col flex-1 min-h-0 p-5 gap-4">
+      <div className="relative flex flex-col flex-1 min-h-0 p-5 gap-4">
         {/* Catégorie (pastille colorée) + bouton détail */}
         <div className="flex items-center justify-between gap-3">
           <div className="flex items-center gap-2.5 min-w-0">
@@ -229,13 +233,12 @@ function CardContent({
         {/* Échelle masquée sur les écrans très bas : priorité au texte de la carte */}
         <AmountScale amountBillions={card.amountBillions} className="[@media(max-height:699px)]:hidden" />
 
-        <AcronymText
-          text={card.description}
-          className="shrink-0 text-sm leading-relaxed text-muted-foreground line-clamp-3 [@media(min-height:700px)]:line-clamp-4 [@media(min-height:800px)]:line-clamp-6 [@media(min-height:960px)]:line-clamp-8"
-        />
+        {/* La description occupe tout l'espace libre ; le nombre de lignes
+            affichées est calculé sur la hauteur réellement disponible. */}
+        <FittedText text={card.description} />
 
         {card.equivalence && (
-          <div className="mt-auto flex items-center gap-3 rounded-2xl bg-warning/10 border border-warning/25 px-3 py-2.5">
+          <div className="shrink-0 flex items-center gap-3 rounded-2xl bg-warning/10 border border-warning/25 px-3 py-2.5">
             <span className="w-9 h-9 shrink-0 rounded-xl bg-warning/15 text-warning flex items-center justify-center" aria-hidden="true">
               <UiIcon name="balance" size={20} />
             </span>
@@ -249,6 +252,39 @@ function CardContent({
           </div>
         )}
       </div>
+    </div>
+  );
+}
+
+/**
+ * Paragraphe qui remplit la place restante de la carte : on mesure la hauteur
+ * disponible et on fixe le nombre de lignes du clamp en conséquence, pour ne
+ * jamais couper le texte avec « … » alors qu'il reste de la place.
+ */
+function FittedText({ text }: { text: string }) {
+  const boxRef = useRef<HTMLDivElement>(null);
+  const [lines, setLines] = useState(4);
+
+  useLayoutEffect(() => {
+    const box = boxRef.current;
+    if (!box || typeof ResizeObserver === "undefined") return;
+    const measure = () => {
+      const lineHeight = parseFloat(getComputedStyle(box).lineHeight) || 22;
+      setLines(Math.max(2, Math.floor(box.clientHeight / lineHeight)));
+    };
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(box);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={boxRef} className="flex-1 min-h-[3rem] overflow-hidden text-sm leading-relaxed text-muted-foreground">
+      <AcronymText
+        text={text}
+        className="overflow-hidden [display:-webkit-box] [-webkit-box-orient:vertical]"
+        style={{ WebkitLineClamp: lines }}
+      />
     </div>
   );
 }

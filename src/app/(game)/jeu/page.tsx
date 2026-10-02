@@ -152,20 +152,20 @@ function PlayPageContent() {
         ref={scrollRef}
         className="flex-1 overflow-y-auto scrollbar-hide pb-36"
       >
-        {/* Daily deck (same draw for everyone) */}
-        <DailyDeckEntry />
-
-        {/* "Trouve 50 Md€" challenge (budget mode) */}
-        <BudgetChallengeEntry />
+        {/* Deck du jour + défi "Trouve 50 Md€" : deux tuiles côte à côte */}
+        <div className="grid grid-cols-2 gap-3 px-4 pt-4 pb-1">
+          <DailyDeckEntry />
+          <BudgetChallengeEntry />
+        </div>
 
         {/* Random Mode Toggle */}
-        <div className="flex items-center gap-4 px-4 py-4 justify-between border-b border-border">
-          <div className="flex items-center gap-4">
-            <div className="w-10 h-10 rounded-lg bg-primary/15 flex items-center justify-center text-primary shrink-0">
+        <div className="mx-4 mt-3 flex items-center gap-3 rounded-2xl bg-card border border-border px-3 py-2 justify-between">
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 rounded-xl bg-primary/15 flex items-center justify-center text-primary shrink-0">
               <RandomIcon size={22} />
             </div>
             <div className="flex flex-col">
-              <p className="text-base font-semibold leading-tight">
+              <p className="text-sm font-semibold leading-tight">
                 Mode aléatoire
               </p>
               <p className="text-xs text-muted-foreground">
@@ -260,7 +260,7 @@ function PlayPageContent() {
         </div>}
 
         {/* Level Selector */}
-        <div className="px-4 py-4 relative">
+        <div className="px-4 py-3 relative">
           <div className="flex h-12 items-center justify-center rounded-xl bg-card p-1">
             {levelOptions.map((opt) => (
               <button
@@ -435,7 +435,7 @@ function DeckCard({
         </div>
       )}
       <div className="mb-1">
-        <CategoryBadge deckId={deck.id} size={44} />
+        <CategoryBadge deckId={deck.id} size={44} solid />
       </div>
       <div>
         <h3 className="font-bold text-sm leading-tight mb-1">{deck.name}</h3>

@@ -253,7 +253,7 @@ export function SwipeStack({
         {level >= 2 && (
           <>
             <div className="absolute inset-y-0 -left-5 flex items-center z-30 pointer-events-none">
-              <span className="kicker flex items-center gap-1 text-primary -rotate-90 whitespace-nowrap opacity-60" aria-hidden="true"><ShieldIcon size={10} className="text-primary" /> OK</span>
+              <span className="kicker flex items-center gap-1 text-primary -rotate-90 whitespace-nowrap opacity-60" aria-hidden="true"><ShieldIcon size={10} className="text-primary" /> Garder</span>
             </div>
             <div className="absolute inset-y-0 -right-9 flex items-center z-30 pointer-events-none">
               <span className="kicker flex items-center gap-1 text-warning rotate-90 whitespace-nowrap opacity-60" aria-hidden="true"><ChainsawIcon size={10} variant="orange" /> Réduire</span>
@@ -313,18 +313,18 @@ export function SwipeStack({
           onVote={handleButtonVote}
         />
       ) : (
-        <div className="px-6 pb-4 pb-safe flex items-center justify-between">
-          <div className="flex flex-col items-center gap-3">
+        <div className="px-6 pt-1 pb-[calc(0.75rem+env(safe-area-inset-bottom,0px))] flex items-center justify-between">
+          <div className="flex flex-col items-center gap-2">
             <button
               onClick={() => handleButtonVote("keep")}
               disabled={!currentCard || quizActive}
-              aria-label="Valider cette dépense"
-              className="w-20 h-20 rounded-full bg-card border-[3px] border-primary flex items-center justify-center shadow-lg shadow-primary/25 transition-transform active:scale-90 disabled:opacity-40"
+              aria-label="Garder cette dépense"
+              className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-card border-[3px] border-primary flex items-center justify-center shadow-lg shadow-primary/25 transition-transform active:scale-90 disabled:opacity-40"
             >
-              <ShieldIcon size={40} className="text-primary" />
+              <ShieldIcon size={32} className="text-primary sm:scale-125" />
             </button>
             <span className="text-xs font-bold text-primary tracking-wider uppercase">
-              Valider
+              Garder
             </span>
           </div>
 
@@ -339,17 +339,17 @@ export function SwipeStack({
             </div>
           </div>
 
-          <div className="flex flex-col items-center gap-3">
+          <div className="flex flex-col items-center gap-2">
             <button
               onClick={() => handleButtonVote("cut")}
               disabled={!currentCard || quizActive}
               aria-label="Remettre en question cette dépense"
-              className="w-20 h-20 rounded-full bg-card border-[3px] border-danger flex items-center justify-center shadow-lg shadow-danger/25 transition-transform active:scale-90 disabled:opacity-40"
+              className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-card border-[3px] border-danger flex items-center justify-center shadow-lg shadow-danger/25 transition-transform active:scale-90 disabled:opacity-40"
             >
-              <ChainsawIcon size={40} />
+              <ChainsawIcon size={32} className="sm:scale-125" />
             </button>
             <span className="text-xs font-bold text-danger tracking-wider uppercase">
-              À Revoir
+              À revoir
             </span>
           </div>
         </div>
@@ -367,18 +367,18 @@ function Level2Buttons({
   onVote: (d: VoteDirection) => void;
 }) {
   return (
-    <div className="px-4 pb-4 pb-safe">
+    <div className="px-4 pt-1 pb-[calc(0.75rem+env(safe-area-inset-bottom,0px))]">
       <div className="flex items-center justify-evenly">
         <div className="flex flex-col items-center gap-2">
           <button
             onClick={() => onVote("keep")}
             disabled={disabled}
-            aria-label="Valider cette dépense"
+            aria-label="Garder cette dépense"
             className="w-16 h-16 rounded-full bg-card border-[3px] border-primary flex items-center justify-center shadow-lg shadow-primary/25 transition-transform active:scale-90 disabled:opacity-40"
           >
             <ShieldIcon size={28} className="text-primary" />
           </button>
-          <span className="text-[10px] font-bold text-primary uppercase tracking-wider">OK</span>
+          <span className="text-[10px] font-bold text-primary uppercase tracking-wider">Garder</span>
         </div>
         <div className="flex flex-col items-center gap-2">
           <button

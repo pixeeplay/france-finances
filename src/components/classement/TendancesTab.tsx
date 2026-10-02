@@ -75,7 +75,7 @@ export function TendancesTab({
               <RankBadge rank={i + 1} />
               <div className="flex-1 min-w-0">
                 <h4 className="font-semibold text-sm truncate">{item.title}</h4>
-                <p className="text-xs text-primary font-medium">{item.percent}% &quot;OK&quot;</p>
+                <p className="text-xs text-primary font-medium">{item.percent}% &quot;OK&quot;quot;Garder&quot;OK&quot;quot;</p>
               </div>
               <div className="w-16 h-2 bg-muted rounded-full overflow-hidden">
                 <div className="h-full bg-primary rounded-full" style={{ width: `${item.percent}%` }} />

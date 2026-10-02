@@ -173,7 +173,7 @@ export function ResultScreen() {
           <div className="flex flex-col gap-3 mb-5">
             <StatBar
               icon={<ShieldIcon size={14} className="text-primary" />}
-              label="OK"
+              label="Garder"
               count={keepCount}
               percent={keepPercent}
               colorClass="bg-primary"
@@ -201,7 +201,7 @@ export function ResultScreen() {
             />
           </div>
         ) : (
-          /* Level 1 : barre empilée 100 % (OK | à revoir) */
+          /* Level 1 : barre empilée 100 % (garder | à revoir) */
           <div className="mb-5">
             <div className="flex h-3 w-full overflow-hidden rounded-full bg-muted" aria-hidden="true">
               <div className="h-full bg-primary" style={{ width: `${keepPercent}%` }} />
@@ -210,7 +210,7 @@ export function ResultScreen() {
             <div className="mt-3 flex justify-between gap-4">
               <div>
                 <p className="kicker flex items-center gap-1.5 text-primary">
-                  <ShieldIcon size={14} /> OK
+                  <ShieldIcon size={14} /> Garder
                 </p>
                 <p className="numeral text-3xl text-primary">{formatPercent(keepPercent)}</p>
                 <p className="text-xs text-muted-foreground">{keepCount} carte{keepCount > 1 ? "s" : ""}</p>
@@ -338,7 +338,7 @@ export function ResultScreen() {
 }
 
 const VOTE_LABELS: Record<string, string> = {
-  keep: "OK",
+  keep: "Garder",
   cut: "À revoir",
   reinforce: "Renforcer",
   unjustified: "Injustifié",

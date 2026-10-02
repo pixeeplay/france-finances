@@ -1,4 +1,5 @@
 import { describe, it, expect } from "vitest";
+import { getDeckColor } from "@/lib/deckMeta";
 import {
   DEBT_TIMELINE,
   EU_COMPARISON,
@@ -10,7 +11,11 @@ import {
 } from "@/data/chiffres";
 import {
   BAR_ROW_HEIGHT,
+  COFOG_DECK,
   barsChartHeight,
+  coinsPer100,
+  cofogColor,
+  datumColor,
   debtChangePoints,
   debtSeries,
   euDebtBars,
@@ -182,5 +187,42 @@ describe("utilitaires", () => {
     expect(barsChartHeight(10)).toBe(10 * BAR_ROW_HEIGHT + 8);
     expect(barsChartHeight(0)).toBe(BAR_ROW_HEIGHT + 8);
     expect(toneColor("red")).toBe("var(--chart-red)");
+  });
+});
+
+describe("débuts de série et trous de la dette", () => {
+  it("trace en pointillé le segment où des années manquent (2019 -> 2022)", () => {
+    const s = debtSeries(DEBT_TIMELINE.items);
+    const y2019 = s.find((p) => p.period === "2019");
+    const y2022 = s.find((p) => p.period === "2022");
+    const last = s[s.length - 1];
+    expect(y2019).toMatchObject({ solid: null, gap: y2019?.pctGdp });
+    expect(y2022?.gap).toBe(y2022?.pctGdp);
+    expect(y2022?.solid).toBe(y2022?.pctGdp);
+    expect(last.solid).toBe(last.pctGdp);
+    expect(last.gap).toBeNull();
+  });
+});
+
+describe("pièces de 10 € et couleurs COFOG", () => {
+  it("répartit exactement 100 pièces", () => {
+    const coins = coinsPer100(splitPer1000(PUBLIC_SPENDING_BY_FUNCTION.items));
+    expect(coins.reduce((a, b) => a + b, 0)).toBe(100);
+    expect(coins[0]).toBeGreaterThanOrEqual(41);
+    expect(coinsPer100([{ euros: 333 }, { euros: 333 }, { euros: 334 }])).toEqual([33, 33, 34]);
+  });
+
+  it("donne à chaque fonction COFOG la couleur de sa catégorie du jeu", () => {
+    for (const item of PUBLIC_SPENDING_BY_FUNCTION.items) {
+      expect(COFOG_DECK[item.label]).toBeDefined();
+      expect(cofogColor(item.label)).toBe(getDeckColor(COFOG_DECK[item.label]));
+    }
+    const colors = PUBLIC_SPENDING_BY_FUNCTION.items.map((i) => cofogColor(i.label));
+    expect(new Set(colors).size).toBe(colors.length);
+  });
+
+  it("préfère la couleur explicite à la teinte", () => {
+    expect(datumColor({ tone: "blue" })).toBe("var(--chart-blue)");
+    expect(datumColor({ tone: "blue", color: "#123456" })).toBe("#123456");
   });
 });

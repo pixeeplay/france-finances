@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import type { DataSource } from "@/types/simulator";
-import type { ChartTone, Per1000Slice, ShareDatum } from "@/lib/chiffresCharts";
+import { coinsPer100, type ChartTone, type Per1000Slice, type ShareDatum } from "@/lib/chiffresCharts";
 import { SourceNote } from "./DataBlocks";
 import { TONE_CLASSES } from "./palette";
 
@@ -11,6 +11,7 @@ export function ThemeSection({
   icon,
   kicker,
   title,
+  punch,
   intro,
   children,
 }: {
@@ -19,15 +20,17 @@ export function ThemeSection({
   icon: ReactNode;
   kicker: string;
   title: string;
+  /** Phrase-choc affichée en grand sous le titre */
+  punch?: ReactNode;
   intro?: ReactNode;
   children: ReactNode;
 }) {
   const t = TONE_CLASSES[tone];
   return (
-    <section id={id} aria-labelledby={`${id}-title`} className="scroll-mt-32 pt-12">
+    <section id={id} aria-labelledby={`${id}-title`} className="scroll-mt-36 pt-12">
       <div className="flex items-center gap-3 mb-3">
         <span
-          className={`inline-flex size-11 shrink-0 items-center justify-center rounded-2xl ${t.soft} ${t.text}`}
+          className={`inline-flex size-11 shrink-0 items-center justify-center rounded-2xl text-white shadow-lg ${t.solid}`}
           aria-hidden="true"
         >
           {icon}
@@ -40,7 +43,12 @@ export function ThemeSection({
       >
         {title}
       </h2>
-      {intro ? <div className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6">{intro}</div> : null}
+      {punch ? (
+        <p className={`mb-3 rounded-2xl border-l-4 ${t.border} ${t.soft} px-4 py-3 font-heading text-xl sm:text-2xl font-extrabold leading-snug text-foreground`}>
+          {punch}
+        </p>
+      ) : null}
+      {intro ? <div className="text-sm text-muted-foreground leading-relaxed mb-5">{intro}</div> : null}
       <div className="space-y-5">{children}</div>
     </section>
   );
@@ -91,23 +99,7 @@ export function DataTable({
   rows: readonly (readonly string[])[];
 }) {
   return (
-    <details className="group mt-3 rounded-xl border border-border bg-background/40">
-      <summary className="flex min-h-[44px] cursor-pointer items-center gap-2 px-4 text-sm font-semibold text-foreground">
-        <svg
-          viewBox="0 0 24 24"
-          width={16}
-          height={16}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth={2}
-          className="transition-transform group-open:rotate-90"
-          aria-hidden="true"
-        >
-          <path d="m9 6 6 6-6 6" />
-        </svg>
-        Voir les données en tableau
-      </summary>
-      <div className="px-2 pb-3">
+    <div className="-mx-2">
         <table className="w-full text-sm">
           <caption className="sr-only">{caption}</caption>
           <thead>
@@ -144,18 +136,20 @@ export function DataTable({
             ))}
           </tbody>
         </table>
-      </div>
-    </details>
+    </div>
   );
 }
 
 /**
- * Carte de graphique : titre, description, zone de tracé à hauteur réservée
- * (masquée aux lecteurs d'écran, qui ont le tableau), légende, source.
+ * Carte de graphique : titre, sous-titre court, zone de tracé à hauteur
+ * réservée (masquée aux lecteurs d'écran, qui ont le tableau), légende.
+ * La note de méthode et le tableau sont repliés dans « Données et méthode » ;
+ * la source tient sur une ligne.
  */
 export function ChartFigure({
   id,
   title,
+  subtitle,
   description,
   height,
   chart,
@@ -167,6 +161,9 @@ export function ChartFigure({
 }: {
   id: string;
   title: string;
+  /** Unité et périmètre en quelques mots, visibles */
+  subtitle?: string;
+  /** Note de méthode, repliée avec le tableau */
   description: string;
   height?: number;
   chart: ReactNode;
@@ -174,6 +171,7 @@ export function ChartFigure({
   table: ReactNode;
   source: DataSource;
   period?: string;
+  /** Précision repliée avec le tableau */
   note?: ReactNode;
 }) {
   return (
@@ -185,15 +183,35 @@ export function ChartFigure({
       <h3 id={`${id}-fig-title`} className="font-heading text-lg sm:text-xl font-bold leading-snug text-foreground">
         {title}
       </h3>
-      <p id={`${id}-fig-desc`} className="mt-1 mb-4 text-xs sm:text-sm text-muted-foreground leading-relaxed">
-        {description}
-      </p>
-      <div aria-hidden="true" style={height ? { height } : undefined} className="w-full min-w-0">
+      {subtitle ? <p className="mt-0.5 text-xs text-muted-foreground">{subtitle}</p> : null}
+      <div aria-hidden="true" style={height ? { height } : undefined} className="mt-4 w-full min-w-0">
         {chart}
       </div>
       {legend ? <div className="mt-4">{legend}</div> : null}
-      {note ? <div className="mt-4 text-sm text-foreground leading-relaxed">{note}</div> : null}
-      {table}
+      <details className="group mt-4 rounded-xl border border-border bg-background/40">
+        <summary className="flex min-h-[44px] cursor-pointer items-center gap-2 px-4 text-sm font-semibold text-foreground">
+          <svg
+            viewBox="0 0 24 24"
+            width={16}
+            height={16}
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+            className="transition-transform group-open:rotate-90"
+            aria-hidden="true"
+          >
+            <path d="m9 6 6 6-6 6" />
+          </svg>
+          Données et méthode
+        </summary>
+        <div className="space-y-3 px-4 pb-4">
+          <p id={`${id}-fig-desc`} className="text-xs text-muted-foreground leading-relaxed">
+            {description}
+          </p>
+          {note ? <div className="text-xs text-muted-foreground leading-relaxed">{note}</div> : null}
+          {table}
+        </div>
+      </details>
       <figcaption>
         <SourceNote source={source} period={period} />
       </figcaption>
@@ -220,40 +238,38 @@ export function ShareLegend({ items }: { items: readonly ShareDatum[] }) {
 }
 
 /**
- * « Sur 1 000 € de dépense publique » : barre empilée colorée + légende
- * chiffrée. Rendu serveur (HTML/CSS), aucune bibliothèque.
+ * « Sur 1 000 € de dépense publique » : 100 pièces de 10 €, colorées par
+ * fonction (couleur de la catégorie du jeu), puis une tuile par fonction.
+ * Rendu serveur (HTML/CSS), aucune bibliothèque.
  */
-export function Per1000Bar({
+export function Per1000Coins({
   slices,
-  labelFor,
+  colorFor,
 }: {
   slices: readonly Per1000Slice[];
-  labelFor?: (s: Per1000Slice) => string;
+  colorFor: (s: Per1000Slice) => string;
 }) {
+  const coins = coinsPer100(slices);
+  const cells = slices.flatMap((s, i) => Array.from({ length: coins[i] }, () => colorFor(s)));
   return (
     <div>
-      <div className="flex h-12 w-full overflow-hidden rounded-2xl" aria-hidden="true">
-        {slices.map((s) => (
-          <div
-            key={s.label}
-            className={`${TONE_CLASSES[s.tone].dot} flex items-center justify-center whitespace-nowrap border-r-2 border-card last:border-r-0 text-[11px] font-bold text-white dark:text-slate-950`}
-            style={{ width: `${s.euros / 10}%` }}
-            title={`${s.label} : ${s.euros} €`}
-          >
-            {s.euros >= 105 ? `${s.euros} €` : ""}
-          </div>
+      <div className="grid grid-cols-10 gap-1 sm:gap-1.5" aria-hidden="true">
+        {cells.map((color, i) => (
+          <span key={i} className="aspect-square rounded-full" style={{ backgroundColor: color }} />
         ))}
       </div>
-      <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
+      <p className="mt-2 text-xs text-muted-foreground">Une pastille = 10 €.</p>
+      <ul className="mt-4 grid grid-cols-2 gap-2">
         {slices.map((s) => (
-          <li key={s.label} className="flex items-center gap-3 text-sm">
-            <span className={`size-3 shrink-0 rounded-full ${TONE_CLASSES[s.tone].dot}`} aria-hidden="true" />
-            <span className="flex-1 min-w-0 text-foreground">{labelFor ? labelFor(s) : s.label}</span>
-            <span
-              className={`shrink-0 font-heading text-base font-extrabold tabular-nums ${TONE_CLASSES[s.tone].text}`}
-            >
-              {s.euros} €
+          <li
+            key={s.label}
+            className="flex flex-col rounded-2xl border border-border bg-background/40 px-3 py-2.5"
+            style={{ borderLeft: `4px solid ${colorFor(s)}` }}
+          >
+            <span className="font-heading text-xl font-extrabold leading-tight tabular-nums text-foreground">
+              {s.euros}&nbsp;€
             </span>
+            <span className="text-xs leading-snug text-muted-foreground">{s.label.replace(/\s*\(.*\)$/, "")}</span>
           </li>
         ))}
       </ul>

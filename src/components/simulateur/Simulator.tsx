@@ -108,7 +108,7 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
         <label htmlFor={grossId} className="block text-sm font-medium text-foreground">
           Salaire annuel brut
         </label>
-        <div className="mt-2 flex items-center gap-2">
+        <div className="relative mt-2">
           <input
             id={grossId}
             type="number"
@@ -118,9 +118,14 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
             step={100}
             value={input.annualGross}
             onChange={(e) => setGross(e.target.value)}
-            className="w-full min-h-[44px] rounded-xl border border-border bg-background px-3 numeral text-lg text-foreground"
+            className="w-full min-h-[44px] rounded-xl border border-border bg-background pl-3 pr-14 numeral text-lg text-foreground"
           />
-          <span className="kicker text-muted-foreground" aria-hidden="true">€/an</span>
+          <span
+            className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 kicker text-muted-foreground"
+            aria-hidden="true"
+          >
+            €/an
+          </span>
         </div>
         <p className="mt-1 text-xs text-muted-foreground">
           Soit {formatEuros(input.annualGross / 12)} brut par mois.
@@ -136,16 +141,26 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
           step={SLIDER_STEP}
           value={Math.min(input.annualGross, SLIDER_MAX)}
           onChange={(e) => setGross(e.target.value)}
-          className="mt-3 w-full min-h-[44px] accent-[var(--primary)]"
+          className="mt-3 w-full min-h-[44px] accent-[var(--brand-fg)]"
         />
-        <div className="mt-1 flex flex-wrap gap-2">
-          <button
-            type="button"
-            onClick={() => update({ annualGross: REFERENCE_SALARIES.smic })}
-            className="min-h-[44px] px-4 rounded-full bg-info/12 text-info text-xs font-bold hover:bg-info/20"
-          >
-            SMIC ({formatEuros(REFERENCE_SALARIES.smic)})
-          </button>
+        <div className="mt-1 flex flex-wrap items-center gap-2">
+          <span className="text-xs text-muted-foreground">Repères :</span>
+          {[
+            { label: "SMIC", value: REFERENCE_SALARIES.smic },
+            { label: "2 × SMIC", value: REFERENCE_SALARIES.smic * 2 },
+          ].map((preset) => (
+            <button
+              key={preset.label}
+              type="button"
+              aria-pressed={input.annualGross === preset.value}
+              onClick={() => update({ annualGross: preset.value })}
+              className={`min-h-[44px] px-4 rounded-full text-xs font-bold transition-colors ${
+                input.annualGross === preset.value ? "bg-brand text-white" : "bg-muted text-foreground hover:bg-muted/70"
+              }`}
+            >
+              {preset.label} ({formatEuros(preset.value)})
+            </button>
+          ))}
         </div>
 
         <fieldset className="mt-6">

@@ -20,71 +20,82 @@ export const CHART_PALETTE_CLASS = [
 ].join(" ");
 
 /** Classes Tailwind par teinte (texte, fond doux, pastille). */
-export const TONE_CLASSES: Record<ChartTone, { text: string; soft: string; dot: string; border: string }> = {
+export const TONE_CLASSES: Record<ChartTone, { text: string; soft: string; dot: string; border: string; solid: string }> = {
   emerald: {
     text: "text-emerald-700 dark:text-emerald-400",
     soft: "bg-emerald-500/10",
     dot: "bg-emerald-600 dark:bg-emerald-400",
     border: "border-emerald-500/40",
+    solid: "bg-gradient-to-br from-emerald-400 to-emerald-600",
   },
   blue: {
     text: "text-blue-700 dark:text-blue-400",
     soft: "bg-blue-500/10",
     dot: "bg-blue-600 dark:bg-blue-400",
     border: "border-blue-500/40",
+    solid: "bg-gradient-to-br from-blue-400 to-blue-600",
   },
   amber: {
     text: "text-amber-700 dark:text-amber-400",
     soft: "bg-amber-500/10",
     dot: "bg-amber-600 dark:bg-amber-400",
     border: "border-amber-500/40",
+    solid: "bg-gradient-to-br from-amber-400 to-amber-600",
   },
   red: {
     text: "text-red-700 dark:text-red-400",
     soft: "bg-red-500/10",
     dot: "bg-red-600 dark:bg-red-400",
     border: "border-red-500/40",
+    solid: "bg-gradient-to-br from-red-400 to-red-600",
   },
   violet: {
     text: "text-violet-700 dark:text-violet-400",
     soft: "bg-violet-500/10",
     dot: "bg-violet-600 dark:bg-violet-400",
     border: "border-violet-500/40",
+    solid: "bg-gradient-to-br from-violet-400 to-violet-600",
   },
   cyan: {
     text: "text-cyan-700 dark:text-cyan-400",
     soft: "bg-cyan-500/10",
     dot: "bg-cyan-600 dark:bg-cyan-400",
     border: "border-cyan-500/40",
+    solid: "bg-gradient-to-br from-cyan-400 to-cyan-600",
   },
   pink: {
     text: "text-pink-700 dark:text-pink-400",
     soft: "bg-pink-500/10",
     dot: "bg-pink-600 dark:bg-pink-400",
     border: "border-pink-500/40",
+    solid: "bg-gradient-to-br from-pink-400 to-pink-600",
   },
   lime: {
     text: "text-lime-700 dark:text-lime-400",
     soft: "bg-lime-500/10",
     dot: "bg-lime-600 dark:bg-lime-400",
     border: "border-lime-500/40",
+    solid: "bg-gradient-to-br from-lime-400 to-lime-600",
   },
   orange: {
     text: "text-orange-700 dark:text-orange-400",
     soft: "bg-orange-500/10",
     dot: "bg-orange-600 dark:bg-orange-400",
     border: "border-orange-500/40",
+    solid: "bg-gradient-to-br from-orange-400 to-orange-600",
   },
   teal: {
     text: "text-teal-700 dark:text-teal-400",
     soft: "bg-teal-500/10",
     dot: "bg-teal-600 dark:bg-teal-400",
     border: "border-teal-500/40",
+    solid: "bg-gradient-to-br from-teal-400 to-teal-600",
   },
   slate: {
     text: "text-slate-600 dark:text-slate-300",
     soft: "bg-slate-500/10",
     dot: "bg-slate-500 dark:bg-slate-400",
     border: "border-slate-500/40",
+    solid: "bg-gradient-to-br from-slate-400 to-slate-600",
   },
 };

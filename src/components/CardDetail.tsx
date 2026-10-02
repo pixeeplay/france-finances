@@ -285,12 +285,12 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
                   <div className="flex flex-col items-center gap-1.5">
                     <button
                       onClick={() => handleVote("keep")}
-                      aria-label="Valider cette dépense"
+                      aria-label="Garder cette dépense"
                       className="w-12 h-12 rounded-full bg-card border-2 border-primary/80 flex items-center justify-center hover:bg-primary active:scale-95 transition-all"
                     >
                       <ShieldIcon size={20} className="text-primary hover:text-primary-foreground" />
                     </button>
-                    <span className="text-[9px] font-bold text-primary uppercase">OK</span>
+                    <span className="text-[9px] font-bold text-primary uppercase">Garder</span>
                   </div>
                   <div className="flex flex-col items-center gap-1.5">
                     <button
@@ -327,11 +327,11 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
                 <div className="grid grid-cols-2 gap-3 mb-3">
                   <button
                     onClick={() => handleVote("keep")}
-                    aria-label="Valider cette dépense"
+                    aria-label="Garder cette dépense"
                     className="flex items-center justify-center gap-2 py-3.5 min-h-[48px] rounded-2xl border-2 border-primary/80 bg-primary/10 text-primary font-heading font-bold hover:bg-primary hover:text-primary-foreground active:scale-95 transition-all"
                   >
                     <ShieldIcon size={20} />
-                    OK pour moi
+                    Garder
                   </button>
                   <button
                     onClick={() => handleVote("cut")}

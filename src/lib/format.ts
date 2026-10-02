@@ -1,13 +1,23 @@
 /**
  * Formatage éditorial des montants (convention française).
- * - virgule décimale, espace fine insécable pour les milliers (U+202F)
+ * - virgule décimale, espace insécable pour les milliers (U+00A0) : la police
+ *   d'affichage (Outfit) dessine l'espace fine U+202F de Intl avec une chasse
+ *   quasi nulle (« 52030 € »), on la remplace donc par l'espace insécable
  * - espace insécable entre le nombre et l'unité (U+00A0)
  */
 
 const NBSP = " ";
 
-const frInteger = new Intl.NumberFormat("fr-FR", { maximumFractionDigits: 0 });
-const frOneDecimal = new Intl.NumberFormat("fr-FR", { maximumFractionDigits: 1 });
+const NARROW_NBSP = /\u202f/g;
+
+/** Formateur fr-FR dont le séparateur de milliers est l'espace insécable. */
+function frFormatter(options: Intl.NumberFormatOptions): { format: (n: number) => string } {
+  const fmt = new Intl.NumberFormat("fr-FR", options);
+  return { format: (n: number) => fmt.format(n).replace(NARROW_NBSP, NBSP) };
+}
+
+const frInteger = frFormatter({ maximumFractionDigits: 0 });
+const frOneDecimal = frFormatter({ maximumFractionDigits: 1 });
 
 /**
  * Montant exprimé en milliards d'euros -> libellé lisible.
@@ -61,7 +71,7 @@ export function amountScalePosition(
 
 /** Ratio -> pourcentage : 0.1234 -> « 12,3 % » */
 export function formatRatio(ratio: number, digits = 1): string {
-  return new Intl.NumberFormat("fr-FR", {
+  return frFormatter({
     style: "percent",
     minimumFractionDigits: digits,
     maximumFractionDigits: digits,
@@ -70,7 +80,7 @@ export function formatRatio(ratio: number, digits = 1): string {
 
 /** Montant en Md€ à précision fixe : 89.645 -> « 89,6 Md€ » ; -170.5 -> « -170,5 Md€ » */
 export function formatBillionsExact(valueBn: number, digits = 1): string {
-  const n = new Intl.NumberFormat("fr-FR", {
+  const n = frFormatter({
     minimumFractionDigits: 0,
     maximumFractionDigits: digits,
   }).format(valueBn);
@@ -79,7 +89,7 @@ export function formatBillionsExact(valueBn: number, digits = 1): string {
 
 /** 3_595.5 -> « 3 595,5 » */
 export function formatNumber(value: number, digits = 0): string {
-  return new Intl.NumberFormat("fr-FR", {
+  return frFormatter({
     minimumFractionDigits: 0,
     maximumFractionDigits: digits,
   }).format(value);

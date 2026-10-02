@@ -248,8 +248,8 @@ describe("CardDetail", () => {
       <CardDetail card={card} onClose={onClose} onVote={onVote} />,
     );
 
-    // Level 1 shows "OK pour moi" and "A revoir" buttons
-    const keepButton = screen.getByRole("button", { name: "Valider cette dépense" });
+    // Level 1 shows "Garder" and "A revoir" buttons
+    const keepButton = screen.getByRole("button", { name: "Garder cette dépense" });
     await user.click(keepButton);
 
     expect(onVote).toHaveBeenCalledWith("keep");

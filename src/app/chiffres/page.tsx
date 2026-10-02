@@ -3,12 +3,12 @@ import Link from "next/link";
 import { PageShell } from "@/components/PageShell";
 import { CategoryIcon } from "@/components/icons/CategoryIcon";
 import { UiIcon } from "@/components/icons/UiIcon";
-import { SourceNote } from "@/components/chiffres/DataBlocks";
+import { SourceNote, SourcesLine } from "@/components/chiffres/DataBlocks";
 import {
   BigStat,
   ChartFigure,
   DataTable,
-  Per1000Bar,
+  Per1000Coins,
   ShareLegend,
   ThemeSection,
 } from "@/components/chiffres/ChiffresBlocks";
@@ -33,6 +33,7 @@ import {
   DEBT_CHART_HEIGHT,
   DONUT_CHART_HEIGHT,
   barsChartHeight,
+  cofogColor,
   debtChangePoints,
   debtSeries,
   euDebtBars,
@@ -76,8 +77,6 @@ const NAV: readonly { id: string; label: string; tone: ChartTone }[] = [
 ];
 
 const TOP_MISSIONS = 10;
-const SOCIAL_TONES: readonly ChartTone[] = ["violet", "pink", "blue", "cyan", "amber", "orange", "teal", "slate"];
-const HEALTH_TONES: readonly ChartTone[] = ["cyan", "blue", "teal", "emerald", "violet", "amber", "lime"];
 const REVENUE_TONES: readonly ChartTone[] = ["emerald", "blue", "violet", "amber"];
 
 const fmtBn = (v: number) => formatBillionsExact(v);
@@ -98,7 +97,6 @@ export default function ChiffresPage() {
   const firstDebt = DEBT_TIMELINE.items[0];
 
   const per1000 = splitPer1000(PUBLIC_SPENDING_BY_FUNCTION.items);
-  const cofogBars = toBarData(PUBLIC_SPENDING_BY_FUNCTION.items, fmtBn0);
   const missions = toBarData(
     topWithRest(STATE_MISSIONS_2026.items, TOP_MISSIONS, (n) => `${n} autres missions`),
     fmtBn,
@@ -142,9 +140,22 @@ export default function ChiffresPage() {
     POPULATION_2026,
     formatEuros,
   );
-  const social = toBarData(SOCIAL_PROTECTION.items, fmtBn0, SOCIAL_TONES);
-  const health = toBarData(HEALTH_SPENDING.items, fmtBn, HEALTH_TONES);
+  // Séries simples : une seule couleur, celle de la fonction (catégorie du jeu)
+  const socialColor = cofogColor("Protection sociale");
+  const healthColor = cofogColor("Santé");
+  const social = toBarData(SOCIAL_PROTECTION.items, fmtBn0).map((d) => ({ ...d, color: socialColor }));
+  const health = toBarData(HEALTH_SPENDING.items, fmtBn).map((d) => ({ ...d, color: healthColor }));
   const eu = euDebtBars(EU_COMPARISON.items, fmtPct);
+
+  // Phrases-chocs (calculées sur les données affichées)
+  const socialTotal = sumAmounts(SOCIAL_PROTECTION.items);
+  const pensionShare = Math.round((SOCIAL_PROTECTION.items[0].amountBn / socialTotal) * 100);
+  const healthTotal = sumAmounts(HEALTH_SPENDING.items);
+  const hospitalPer100 = Math.round((HEALTH_SPENDING.items[0].amountBn / healthTotal) * 100);
+  const statePer100 = Math.round((STATE_BUDGET_2026.netRevenueM / STATE_BUDGET_2026.netExpenditureM) * 100);
+  const defensePerCapita = interestComparison.find((d) => d.label.startsWith("Défense"));
+  const france = EU_COMPARISON.items.find((c) => c.highlight);
+  const euroArea = EU_COMPARISON.items.find((c) => c.code === "EA");
 
   return (
     <PageShell>
@@ -159,22 +170,21 @@ export default function ChiffresPage() {
             {TITLE}
           </h1>
           <p className="mt-4 text-base text-muted-foreground leading-relaxed">
-            Dette, budget de l&apos;État, dépense publique : les grands chiffres en graphiques, tels que publiés par
-            l&apos;Insee, le Parlement, le ministère chargé du budget, la DREES et Eurostat. Chaque graphique indique
-            l&apos;année des données et sa source.
+            Dette, budget de l&apos;État, dépense publique : les chiffres officiels (Insee, Parlement, DREES,
+            Eurostat), en graphiques.
           </p>
-          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="mt-6 grid grid-cols-2 gap-3">
             <BigStat
               tone="red"
               label="Dette publique"
-              value={formatBillionsExact(CURRENT_DEBT.amountBn)}
+              value={formatBillionsExact(CURRENT_DEBT.amountBn, 0)}
               detail={`${formatNumber(CURRENT_DEBT.pctGdp, 1)} % du PIB, ${CURRENT_DEBT.period}`}
             />
             <BigStat
               tone="red"
-              label="Soit, par habitant"
+              label="Par habitant"
               value={formatEuros(debtPerCapita)}
-              detail={`Pour ${formatNumber(POPULATION_2026 / 1e6, 1)} millions d'habitants (ratio indicatif)`}
+              detail={`${formatNumber(POPULATION_2026 / 1e6, 1)} M d'habitants`}
             />
           </div>
         </header>
@@ -205,7 +215,16 @@ export default function ChiffresPage() {
           tone="blue"
           icon={<UiIcon name="chart" size={22} />}
           kicker="L'essentiel"
-          title={`Les comptes publics ${PUBLIC_FINANCES.year} en six chiffres`}
+          title={`Les comptes publics ${PUBLIC_FINANCES.year} en quatre chiffres`}
+          punch={
+            <>
+              Plus de la moitié de la richesse produite passe par la dépense publique&nbsp;:{" "}
+              <span className="text-blue-600 dark:text-blue-400">
+                {formatNumber(PUBLIC_FINANCES.spendingPctGdp, 1)}&nbsp;% du PIB
+              </span>
+              .
+            </>
+          }
           intro={<p>État, Sécurité sociale et collectivités locales réunis (« administrations publiques »).</p>}
         >
           <div className="grid grid-cols-2 gap-3">
@@ -214,12 +233,6 @@ export default function ChiffresPage() {
               label={`Déficit public ${PUBLIC_FINANCES.year}`}
               value={formatBillionsExact(PUBLIC_FINANCES.deficitBn)}
               detail={`${formatNumber(PUBLIC_FINANCES.deficitPctGdp, 1)} % du PIB`}
-            />
-            <BigStat
-              tone="red"
-              label={`Intérêts de la dette ${PUBLIC_FINANCES.year}`}
-              value={formatBillionsExact(PUBLIC_FINANCES.interestBn)}
-              detail={`Soit ${formatEuros(Math.round(interestPerCapita))} par habitant`}
             />
             <BigStat
               tone="blue"
@@ -234,23 +247,13 @@ export default function ChiffresPage() {
               detail="du PIB, nets des crédits d'impôt"
             />
             <BigStat
-              tone="red"
-              label="Dette publique"
-              value={`${formatNumber(CURRENT_DEBT.pctGdp, 1)} %`}
-              detail={`du PIB, ${CURRENT_DEBT.period}`}
-            />
-            <BigStat
               tone="violet"
               label="Dépense publique totale 2024"
               value={formatBillionsExact(spendingTotal, 0)}
               detail="toutes fonctions (COFOG)"
             />
           </div>
-          <div>
-            <SourceNote source={PUBLIC_FINANCES.source} />
-            <SourceNote source={CURRENT_DEBT.source} />
-            <SourceNote source={POPULATION_SOURCE} />
-          </div>
+          <SourcesLine sources={[PUBLIC_FINANCES.source, PUBLIC_SPENDING_BY_FUNCTION.source, CURRENT_DEBT.source, POPULATION_SOURCE]} />
         </ThemeSection>
 
         {/* 2. 1 000 € de dépense publique */}
@@ -260,57 +263,36 @@ export default function ChiffresPage() {
           icon={<CategoryIcon deckId="social" size={22} />}
           kicker="Dépense publique"
           title="Sur 1 000 € de dépense publique, où va l'argent ?"
+          punch={
+            <>
+              <span style={{ color: cofogColor(per1000[0].label) }}>{per1000[0].euros}&nbsp;€ sur 1&nbsp;000&nbsp;€</span>{" "}
+              vont à la protection sociale&nbsp;; avec la santé, c&apos;est{" "}
+              {per1000[0].euros + per1000[1].euros}&nbsp;€.
+            </>
+          }
           intro={
             <p>
               Dépense de l&apos;ensemble des administrations publiques en {PUBLIC_SPENDING_BY_FUNCTION.period} (
-              {formatBillionsExact(spendingTotal, 0)}), ramenée à 1 000 € et ventilée selon la nomenclature
-              internationale des fonctions (COFOG).
+              {formatBillionsExact(spendingTotal, 0)}), ramenée à 1 000 €.
             </p>
           }
         >
           <ChartFigure
             id="mille"
-            title="La répartition de 1 000 € de dépense publique"
-            description={`Euros par fonction pour 1 000 € dépensés, ${PUBLIC_SPENDING_BY_FUNCTION.period}. Arrondis à l'euro, total 1 000 €.`}
-            chart={<Per1000Bar slices={per1000} />}
+            title="Vos 1 000 € de dépense publique"
+            subtitle={`Euros par fonction, ${PUBLIC_SPENDING_BY_FUNCTION.period}`}
+            description={`Répartition de 1 000 € de dépense publique selon la nomenclature internationale des fonctions (COFOG), ${PUBLIC_SPENDING_BY_FUNCTION.period}. Arrondis à l'euro, total 1 000 €. Les intérêts de la dette sont comptés dans « Services publics généraux ». Chaque fonction garde la couleur de la catégorie correspondante du jeu.`}
+            chart={<Per1000Coins slices={per1000} colorFor={(sl) => cofogColor(sl.label)} />}
             table={
               <DataTable
-                caption={`Répartition de 1 000 € de dépense publique par fonction en ${PUBLIC_SPENDING_BY_FUNCTION.period}`}
+                caption={`Dépense publique par fonction en ${PUBLIC_SPENDING_BY_FUNCTION.period}`}
                 columns={[
                   { header: "Fonction" },
                   { header: "Sur 1 000 €", numeric: true },
                   { header: "Montant", numeric: true },
-                ]}
-                rows={per1000.map((s) => [s.label, `${s.euros} €`, fmtBn0(s.amountBn)])}
-              />
-            }
-            source={PUBLIC_SPENDING_BY_FUNCTION.source}
-            period={PUBLIC_SPENDING_BY_FUNCTION.period}
-            note={
-              <p>
-                La protection sociale (retraites, famille, chômage…) et la santé représentent à elles deux{" "}
-                <strong className="text-emerald-700 dark:text-emerald-400">
-                  {per1000[0].euros + per1000[1].euros} € sur 1 000 €
-                </strong>
-                .
-              </p>
-            }
-          />
-          <ChartFigure
-            id="cofog"
-            title="Dépense publique par fonction, en milliards d'euros"
-            description={`État, Sécurité sociale et collectivités, ${PUBLIC_SPENDING_BY_FUNCTION.period}. Les intérêts de la dette sont comptés dans « Services publics généraux ».`}
-            height={barsChartHeight(cofogBars.length)}
-            chart={<BarsChart data={cofogBars} valueName="Dépense" />}
-            table={
-              <DataTable
-                caption={`Dépense publique par fonction en ${PUBLIC_SPENDING_BY_FUNCTION.period}, en milliards d'euros`}
-                columns={[
-                  { header: "Fonction" },
-                  { header: "Montant", numeric: true },
                   { header: "Part", numeric: true },
                 ]}
-                rows={per1000.map((s) => [s.label, fmtBn0(s.amountBn), fmtPct(s.share)])}
+                rows={per1000.map((sl) => [sl.label, `${sl.euros} €`, fmtBn0(sl.amountBn), fmtPct(sl.share)])}
               />
             }
             source={PUBLIC_SPENDING_BY_FUNCTION.source}
@@ -325,6 +307,12 @@ export default function ChiffresPage() {
           icon={<CategoryIcon deckId="etat" size={22} />}
           kicker={`Budget de l'État ${STATE_BUDGET_2026.year}`}
           title="Ce que l'État encaisse, ce qu'il dépense"
+          punch={
+            <>
+              Pour 100&nbsp;€ dépensés, l&apos;État encaisse{" "}
+              <span className="text-emerald-600 dark:text-emerald-400">{statePer100}&nbsp;€</span> de recettes.
+            </>
+          }
           intro={
             <p>
               L&apos;État n&apos;est qu&apos;une partie de la dépense publique : la Sécurité sociale et les
@@ -332,7 +320,7 @@ export default function ChiffresPage() {
             </p>
           }
         >
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             <BigStat
               tone="emerald"
               label="Recettes nettes"
@@ -347,7 +335,8 @@ export default function ChiffresPage() {
               tone="red"
               label="Solde budgétaire"
               value={formatBillionsExact(STATE_BUDGET_2026.balanceM / 1000)}
-              detail="budget général, budgets annexes et comptes spéciaux"
+              detail="tous budgets de l'État"
+              className="col-span-2 sm:col-span-1"
             />
           </div>
           <SourceNote source={STATE_BUDGET_2026.source} period="loi de finances pour 2026" />
@@ -355,6 +344,7 @@ export default function ChiffresPage() {
           <ChartFigure
             id="recettes"
             title="D'où viennent les impôts de l'État"
+            subtitle={`Recettes fiscales nettes prévues pour 2026 : ${formatBillionsExact(taxTotal)}`}
             description={`Recettes fiscales nettes prévues pour 2026 : ${formatBillionsExact(taxTotal)}, après remboursements et dégrèvements. Une partie est ensuite reversée aux collectivités et à l'Union européenne.`}
             height={DONUT_CHART_HEIGHT}
             chart={<RevenueDonutChart data={revenue} centerValue={fmtBn0(taxTotal)} centerLabel="recettes fiscales" />}
@@ -373,6 +363,7 @@ export default function ChiffresPage() {
           <ChartFigure
             id="missions"
             title="Les dix premières missions de l'État"
+            subtitle={`Crédits de paiement ${STATE_BUDGET_2026.year}, en milliards d'euros. Charge de la dette en rouge.`}
             description={`Crédits de paiement ${STATE_BUDGET_2026.year}, ${formatBillionsExact(missionsTotal, 0)} au total hors remboursements et dégrèvements d'impôts. Ils incluent les retraites des fonctionnaires de chaque mission. La charge de la dette figure dans « Engagements financiers » (en rouge).`}
             height={barsChartHeight(missions.length)}
             chart={<BarsChart data={missions} valueName="Crédits" />}
@@ -397,33 +388,42 @@ export default function ChiffresPage() {
           icon={<UiIcon name="balance" size={22} />}
           kicker="Dette publique"
           title={`+${formatNumber(debtGain, 1)} points de PIB depuis ${firstDebt.period}`}
+          punch={
+            <>
+              Les intérêts de la dette coûtent{" "}
+              <span className="text-red-600 dark:text-red-400">
+                {formatEuros(Math.round(interestPerCapita))} par habitant
+              </span>{" "}
+              et par an{defensePerCapita ? <>, plus que la défense ({defensePerCapita.display})</> : null}.
+            </>
+          }
           intro={
             <p>
-              Dette des administrations publiques au sens de Maastricht. Fin {firstDebt.period}, elle représentait{" "}
-              {formatNumber(firstDebt.pctGdp, 1)} % du PIB ; à {CURRENT_DEBT.period},{" "}
-              {formatNumber(CURRENT_DEBT.pctGdp, 1)} %.
+              Dette des administrations publiques au sens de Maastricht : {formatNumber(firstDebt.pctGdp, 1)} % du
+              PIB fin {firstDebt.period}, {formatNumber(CURRENT_DEBT.pctGdp, 1)} % à {CURRENT_DEBT.period}.
             </p>
           }
         >
           <div className="grid grid-cols-2 gap-3">
             <BigStat
               tone="red"
-              label="Dette par habitant"
-              value={formatEuros(debtPerCapita)}
-              detail={CURRENT_DEBT.period}
+              label={`Intérêts de la dette ${PUBLIC_FINANCES.year}`}
+              value={formatBillionsExact(PUBLIC_FINANCES.interestBn)}
+              detail="toutes administrations"
             />
             <BigStat
               tone="red"
               label={`Intérêts par habitant ${PUBLIC_FINANCES.year}`}
               value={formatEuros(Math.round(interestPerCapita))}
-              detail={`${formatBillionsExact(PUBLIC_FINANCES.interestBn)} au total`}
+              detail="ratio indicatif"
             />
           </div>
 
           <ChartFigure
             id="dette-courbe"
             title="La dette publique en % du PIB"
-            description="Dette en fin d'année (et fin juin 2026), en pourcentage du PIB. Les années sont placées à leur date réelle ; 2020 et 2021 ne figurent pas dans la série reprise ici. La ligne pointillée marque le seuil de 60 % fixé par les règles budgétaires européennes."
+            subtitle="Fin d'année, et fin juin 2026"
+            description="Dette en fin d'année (et fin juin 2026), en pourcentage du PIB. Les années sont placées à leur date réelle ; 2020 et 2021 ne figurent pas dans la série reprise ici : ce segment est tracé en pointillé. La ligne pointillée ambre marque le seuil de 60 % fixé par les règles budgétaires européennes."
             height={DEBT_CHART_HEIGHT}
             chart={<DebtAreaChart data={debt} />}
             legend={
@@ -459,7 +459,7 @@ export default function ChiffresPage() {
             source={DEBT_TIMELINE.source}
             period="annuelles 2019-2025"
             note={
-              <p className="text-xs text-muted-foreground">
+              <p>
                 Point de fin juin 2026 :{" "}
                 <a
                   href={CURRENT_DEBT.source.url}
@@ -477,6 +477,7 @@ export default function ChiffresPage() {
           <ChartFigure
             id="interets"
             title="Les intérêts de la dette, comparés à d'autres dépenses"
+            subtitle="En euros par habitant et par an"
             description={`En euros par habitant. Intérêts payés par l'ensemble des administrations publiques en ${PUBLIC_FINANCES.year} ; autres postes : dépense publique par fonction en ${PUBLIC_SPENDING_BY_FUNCTION.period}. Ratios indicatifs rapportés à la population au 1er janvier 2026.`}
             height={barsChartHeight(interestComparison.length)}
             chart={<BarsChart data={interestComparison} valueName="Par habitant" />}
@@ -490,7 +491,7 @@ export default function ChiffresPage() {
             source={PUBLIC_FINANCES.source}
             period={`${PUBLIC_FINANCES.year} pour les intérêts`}
             note={
-              <p className="text-xs text-muted-foreground">
+              <p>
                 Autres postes :{" "}
                 <a
                   href={PUBLIC_SPENDING_BY_FUNCTION.source.url}
@@ -513,11 +514,17 @@ export default function ChiffresPage() {
           icon={<CategoryIcon deckId="social" size={22} />}
           kicker="Protection sociale"
           title="Les retraites, premier poste de la protection sociale"
-          intro={<p>Premier poste de dépense publique (hors santé), détaillé par risque.</p>}
+          punch={
+            <>
+              <span style={{ color: socialColor }}>{pensionShare}&nbsp;%</span> de la protection sociale va à la
+              vieillesse, c&apos;est-à-dire aux retraites.
+            </>
+          }
         >
           <ChartFigure
             id="social"
             title="Dépense de protection sociale par risque"
+            subtitle={`Milliards d'euros, ${SOCIAL_PROTECTION.period}`}
             description={`Administrations publiques, ${SOCIAL_PROTECTION.period}, en milliards d'euros. Total : ${formatBillionsExact(sumAmounts(SOCIAL_PROTECTION.items), 0)}.`}
             height={barsChartHeight(social.length)}
             chart={<BarsChart data={social} valueName="Dépense" />}
@@ -540,18 +547,18 @@ export default function ChiffresPage() {
           icon={<CategoryIcon deckId="sante" size={22} />}
           kicker="Santé"
           title="Hôpital, ville, médicaments : où va la dépense de santé"
-          intro={
-            <p>
-              Dépense courante de santé au sens international ({formatBillionsExact(sumAmounts(HEALTH_SPENDING.items))}
-              ). Elle comprend aussi les complémentaires santé et le reste à charge des ménages : ce périmètre
-              n&apos;est pas comparable avec la fonction « Santé » de la dépense publique.
-            </p>
+          punch={
+            <>
+              Sur 100&nbsp;€ de dépense de santé,{" "}
+              <span style={{ color: healthColor }}>{hospitalPer100}&nbsp;€</span> vont à l&apos;hôpital.
+            </>
           }
         >
           <ChartFigure
             id="sante-postes"
             title="Dépense courante de santé par poste"
-            description={`${HEALTH_SPENDING.period}, en milliards d'euros, tous financeurs confondus.`}
+            subtitle={`Milliards d'euros, ${HEALTH_SPENDING.period}, tous financeurs`}
+            description={`Dépense courante de santé au sens international (${formatBillionsExact(healthTotal)} en ${HEALTH_SPENDING.period}), tous financeurs confondus. Elle comprend aussi les complémentaires santé et le reste à charge des ménages : ce périmètre n'est pas comparable avec la fonction « Santé » de la dépense publique.`}
             height={barsChartHeight(health.length)}
             chart={<BarsChart data={health} valueName="Dépense" />}
             table={
@@ -573,11 +580,19 @@ export default function ChiffresPage() {
           icon={<CategoryIcon deckId="france-europe" size={22} />}
           kicker="Comparaison européenne"
           title="La France face à ses voisins européens"
-          intro={<p>Dette, déficit et dépense publics en {EU_COMPARISON.period}, en pourcentage du PIB.</p>}
+          punch={
+            france && euroArea ? (
+              <>
+                Dette publique&nbsp;: <span className="text-red-600 dark:text-red-400">{fmtPct(france.debtPctGdp)}</span> du
+                PIB en France, {fmtPct(euroArea.debtPctGdp)} en moyenne dans la zone euro.
+              </>
+            ) : undefined
+          }
         >
           <ChartFigure
             id="eu-dette"
             title="Dette publique en % du PIB"
+            subtitle={`Fin ${EU_COMPARISON.period}. France en rouge, moyennes en ambre.`}
             description={`Fin ${EU_COMPARISON.period}. France en rouge, moyennes de la zone euro et de l'UE en ambre.`}
             height={barsChartHeight(eu.length)}
             chart={<BarsChart data={eu} valueName="Dette" />}

@@ -44,13 +44,16 @@ const DIRECTION_LABEL: Record<VoteDirection, string> = {
 };
 
 /** Rangee de carres colores (version UI, sans emoji) du resultat du jour */
-export function DailySquares({ directions }: { directions: readonly VoteDirection[] }) {
+export function DailySquares({ directions, small = false }: { directions: readonly VoteDirection[]; small?: boolean }) {
   const label = directions.map((d, i) => `Carte ${i + 1} ${DIRECTION_LABEL[d]}`).join(", ");
   return (
-    <div className="flex gap-1" role="img" aria-label={label}>
+    <div className={`flex flex-wrap ${small ? "gap-0.5" : "gap-1"}`} role="img" aria-label={label}>
       {directions.map((d, i) => (
-        <span key={i} className={`flex h-5 w-5 items-center justify-center rounded-md text-background ${SQUARE_CLASS[d]}`}>
-          <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
+        <span
+          key={i}
+          className={`flex items-center justify-center text-background ${small ? "h-3.5 w-3.5 rounded" : "h-5 w-5 rounded-md"} ${SQUARE_CLASS[d]}`}
+        >
+          <svg width={small ? 10 : 14} height={small ? 10 : 14} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
             <path d={SQUARE_GLYPH[d]} />
           </svg>
         </span>
@@ -74,33 +77,31 @@ export function DailyDeckEntry() {
   return (
     <section
       aria-labelledby="daily-deck-title"
-      className="mx-4 my-4 rounded-2xl border border-primary/30 bg-primary/10 p-4"
+      className="flex flex-col rounded-2xl border border-primary/30 bg-primary/10 p-3.5"
       data-testid="daily-deck-entry"
     >
-      <div className="flex items-start justify-between gap-3">
-        <div className="min-w-0">
-          <p className="kicker text-primary">Chaque jour à minuit</p>
-          <h2 id="daily-deck-title" className="mt-1 text-2xl font-extrabold leading-tight">
-            Deck du jour{todayKey ? ` n°${getDailyNumber(todayKey)}` : ""}
-          </h2>
-          <p className="text-sm text-muted-foreground mt-1">
-            Les mêmes 10 dépenses pour tout le monde, renouvelées chaque jour à minuit.
-          </p>
-        </div>
+      <div className="flex items-start justify-between gap-2">
+        <p className="kicker text-primary">Chaque jour</p>
         {hydrated && streak > 0 && (
-          <p className="shrink-0 text-center rounded-xl bg-warning/15 px-3 py-2">
-            <span className="block numeral text-3xl leading-none text-warning">{streak}</span>
-            <span className="mt-1 block kicker text-muted-foreground">
-              {streak > 1 ? "jours de suite" : "jour"}
-            </span>
+          <p
+            className="shrink-0 -mt-0.5 rounded-full bg-warning/15 px-2 py-0.5 numeral text-xs text-warning"
+            aria-label={`Série de ${pluralDays(streak)}`}
+          >
+            {streak} j
           </p>
         )}
       </div>
+      <h2 id="daily-deck-title" className="mt-1 text-xl font-extrabold leading-tight">
+        Deck du jour{todayKey ? ` n°${getDailyNumber(todayKey)}` : ""}
+      </h2>
+      <p className="mt-1 mb-3 text-xs leading-snug text-muted-foreground">
+        Les mêmes 10 dépenses pour tout le monde.
+      </p>
 
       {todayResult && (
-        <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1">
-          <DailySquares directions={todayResult.directions} />
-          <span className="text-xs text-muted-foreground">
+        <div className="-mt-1 mb-3 flex flex-col gap-1">
+          <DailySquares directions={todayResult.directions} small />
+          <span className="text-[11px] leading-4 text-muted-foreground">
             Joué aujourd&apos;hui : {formatBillions(todayResult.cutBillions)} remis en question
           </span>
         </div>
@@ -109,13 +110,14 @@ export function DailyDeckEntry() {
       <Link
         href={`/jeu/${DAILY_DECK_ID}`}
         onClick={() => track("deck_selected", { deckId: DAILY_DECK_ID, level: 1, mode: "daily" })}
-        className="mt-3 flex min-h-[48px] w-full items-center justify-center rounded-2xl bg-primary px-4 text-base font-heading font-bold text-primary-foreground hover:bg-primary-light transition-colors"
+        aria-label={todayResult ? "Rejouer le deck du jour (le premier résultat compte)" : "Jouer le deck du jour"}
+        className="mt-auto flex min-h-[44px] w-full items-center justify-center rounded-xl bg-primary px-3 text-sm font-heading font-bold text-primary-foreground hover:bg-primary-light transition-colors"
       >
-        {todayResult ? "Rejouer (le premier résultat compte)" : "Jouer le deck du jour"}
+        {todayResult ? "Rejouer" : "Jouer"}
       </Link>
       {hydrated && progress.bestStreak > 1 && (
-        <p className="mt-2 kicker text-muted-foreground">
-          Meilleure série : {pluralDays(progress.bestStreak)}
+        <p className="mt-1.5 text-[11px] text-muted-foreground">
+          Record : {pluralDays(progress.bestStreak)}
         </p>
       )}
     </section>

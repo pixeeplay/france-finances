@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useRef, useEffect } from "react";
+import { useState, useCallback, useRef, useEffect, type CSSProperties } from "react";
 import { createPortal } from "react-dom";
 import { ACRONYMS } from "@/data/acronyms";
 
@@ -11,13 +11,14 @@ const acronymPattern = `\\b(${acronymKeys.join("|")})\\b`;
 interface AcronymTextProps {
   text: string;
   className?: string;
+  style?: CSSProperties;
 }
 
 /**
  * Renders text with acronyms highlighted — tap to see definition.
  * Tooltip uses a portal to escape overflow:hidden containers.
  */
-export function AcronymText({ text, className }: AcronymTextProps) {
+export function AcronymText({ text, className, style }: AcronymTextProps) {
   const [active, setActive] = useState<{
     key: string;
     top: number;
@@ -81,7 +82,7 @@ export function AcronymText({ text, className }: AcronymTextProps) {
 
   // If no acronyms found, render plain text
   if (parts.every((p) => p.type === "text")) {
-    return <span className={className}>{text}</span>;
+    return <span className={className} style={style}>{text}</span>;
   }
 
   // Find the active acronym definition for the portal tooltip
@@ -91,7 +92,7 @@ export function AcronymText({ text, className }: AcronymTextProps) {
   const activeDefinition = activePart ? ACRONYMS[activePart] : null;
 
   return (
-    <span className={className}>
+    <span className={className} style={style}>
       {parts.map((part, i) => {
         if (part.type === "text") {
           return <span key={i}>{part.value}</span>;

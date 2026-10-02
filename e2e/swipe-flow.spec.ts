@@ -19,7 +19,7 @@ async function answerQuizIfPresent(page: Page) {
 async function swipeCard(page: Page, direction: "keep" | "cut") {
   const label =
     direction === "keep"
-      ? "Valider cette dépense"
+      ? "Garder cette dépense"
       : "Remettre en question cette dépense";
 
   const progressSpan = page.getByTestId("progress-counter");
@@ -60,7 +60,7 @@ async function swipeCard(page: Page, direction: "keep" | "cut") {
 type L2Direction = "keep" | "cut" | "reinforce" | "unjustified";
 
 const L2_LABELS: Record<L2Direction, string> = {
-  keep: "Valider cette dépense",
+  keep: "Garder cette dépense",
   cut: "Réduire cette dépense",
   reinforce: "Renforcer cette dépense",
   unjustified: "Marquer comme injustifié",
@@ -310,7 +310,7 @@ test.describe("L2 (4 directions) flow", () => {
 
     // Verify L2 buttons are visible (4-direction layout)
     await expect(
-      page.getByRole("button", { name: "Valider cette dépense" })
+      page.getByRole("button", { name: "Garder cette dépense" })
     ).toBeVisible();
     await expect(
       page.getByRole("button", { name: "Réduire cette dépense" })
@@ -438,7 +438,7 @@ test.describe("L3 (micro-audit) flow", () => {
 
     // Click a vote button to trigger audit screen
     await page
-      .getByRole("button", { name: "Valider cette dépense" })
+      .getByRole("button", { name: "Garder cette dépense" })
       .click();
     await expect(page.getByText("Audit", { exact: true })).toBeVisible({ timeout: 3_000 });
 
@@ -460,6 +460,6 @@ test.describe("Budget mode", () => {
   }) => {
     await page.goto("/jeu/recettes?mode=budget&target=20");
     await expect(page.getByTestId("progress-counter")).toHaveText("1/10", { timeout: 10_000 });
-    await expect(page.getByRole("button", { name: "Valider cette dépense" })).toBeVisible();
+    await expect(page.getByRole("button", { name: "Garder cette dépense" })).toBeVisible();
   });
 });

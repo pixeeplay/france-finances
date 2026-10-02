@@ -75,6 +75,7 @@
   --background: #ffffff;
   --foreground: #0f172a;
   --section: #f8fafc;
+  --deep: #eef2f7;
   --card: #f8fafc;
   --card-foreground: #0f172a;
   --popover: #ffffff;
@@ -105,6 +106,8 @@
   --background: #0f172a;
   --foreground: #f8fafc;
   --section: #131d33;
+  /* Fond profond pour alterner les sections de la landing */
+  --deep: #020617;
   --card: #1e293b;
   --card-foreground: #f8fafc;
   --popover: #1e293b;
@@ -153,7 +156,10 @@
     font-family:
       var(--ff-display), var(--ff-sans), ui-sans-serif, system-ui, sans-serif;
     font-weight: 800;
-    letter-spacing: -0.01em;
+    /* Outfit a une espace étroite : sans ce réglage, les mots des titres
+       se collent aux petites tailles (« Ledeckdujour »). */
+    letter-spacing: 0;
+    word-spacing: 0.1em;
   }
   /* Accessible focus rings on all interactive elements */
   :focus-visible {
@@ -161,6 +167,12 @@
     outline-offset: 2px;
     border-radius: 4px;
   }
+}
+
+/* Même correction d'espacement pour tout texte en police d'affichage */
+.font-heading,
+.font-serif {
+  word-spacing: 0.1em;
 }
 
 /* Surtitre (étiquette courte en capitales) */
@@ -202,6 +214,46 @@
   color: color-mix(in srgb, var(--cat, #64748b) 72%, #fff);
 }
 
+/* Pastille pleine (couleur saturée de la catégorie, pictogramme blanc) */
+@utility cat-solid {
+  background-image: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--cat, #64748b) 88%, #fff),
+    color-mix(in srgb, var(--cat, #64748b) 80%, #000)
+  );
+  color: #fff;
+  box-shadow: 0 8px 20px -8px
+    color-mix(in srgb, var(--cat, #64748b) 70%, transparent);
+}
+
+/* Fonds alternés de la landing : profond, et profond teinté d'une couleur */
+.section-deep {
+  background-color: var(--deep);
+}
+.section-tint-red,
+.section-tint-blue,
+.section-tint-amber,
+.section-tint-emerald {
+  background-color: var(--deep);
+  background-image: radial-gradient(
+    ellipse 90% 60% at 50% 0%,
+    color-mix(in srgb, var(--tint) 16%, transparent),
+    transparent 70%
+  );
+}
+.section-tint-red {
+  --tint: var(--danger);
+}
+.section-tint-blue {
+  --tint: var(--info);
+}
+.section-tint-amber {
+  --tint: var(--warning);
+}
+.section-tint-emerald {
+  --tint: var(--primary);
+}
+
 /* Sections de la landing */
 .section-padding {
   padding-top: 4rem;
@@ -225,6 +277,60 @@
 }
 .dark .hover-lift:hover {
   box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.4);
+}
+
+/* Aperçu animé du jeu (hero de la landing) */
+@keyframes hero-swipe {
+  0%,
+  12%,
+  50%,
+  62%,
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+  25%,
+  37% {
+    transform: translateX(-28px) rotate(-6deg);
+  }
+  75%,
+  87% {
+    transform: translateX(28px) rotate(6deg);
+  }
+}
+@keyframes hero-stamp-keep {
+  0%,
+  15%,
+  45%,
+  100% {
+    opacity: 0;
+  }
+  25%,
+  37% {
+    opacity: 1;
+  }
+}
+@keyframes hero-stamp-cut {
+  0%,
+  65%,
+  95%,
+  100% {
+    opacity: 0;
+  }
+  75%,
+  87% {
+    opacity: 1;
+  }
+}
+.hero-swipe {
+  animation: hero-swipe 6s ease-in-out infinite;
+}
+.hero-stamp-keep {
+  opacity: 0;
+  animation: hero-stamp-keep 6s ease-in-out infinite;
+}
+.hero-stamp-cut {
+  opacity: 0;
+  animation: hero-stamp-cut 6s ease-in-out infinite;
 }
 
 /* Reduced motion: disable animations for users who prefer it */
@@ -288,6 +394,24 @@
   to {
     transform: translateY(0);
   }
+}
+
+@keyframes counter-pop {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-counter-pop {
+  display: inline-block;
+  transform-origin: right center;
+  animation: counter-pop 450ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 
 .animate-fade-in {

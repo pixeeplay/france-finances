@@ -37,28 +37,28 @@ const STEPS: Step[] = [
   {
     title: "Swipez",
     description: "Chaque carte = une dépense publique réelle. Gardez-la ou remettez-la en question.",
-    icon: <ChainsawIcon size={30} />,
-    chip: "bg-danger/15",
+    icon: <ChainsawIcon size={32} variant="white" />,
+    chip: "bg-gradient-to-br from-red-400 to-red-600 shadow-lg shadow-red-600/30",
   },
   {
     title: "Découvrez",
     description: "Votre profil budgétaire et comment vous vous situez par rapport aux autres joueurs.",
     icon: <IconProfile />,
-    chip: "bg-info/15 text-info",
+    chip: "bg-gradient-to-br from-sky-400 to-blue-600 text-white shadow-lg shadow-blue-600/30",
   },
   {
     title: "Approfondissez",
     description: "Explorez les chiffres officiels, simulez votre contribution, passez au niveau supérieur.",
     icon: <IconChart />,
-    chip: "bg-warning/15 text-warning",
+    chip: "bg-gradient-to-br from-amber-300 to-amber-600 text-white shadow-lg shadow-amber-600/30",
   },
 ];
 
 const GESTURES = [
-  { label: "OK", hint: "vers la gauche", icon: <ShieldIcon size={16} />, className: "text-primary bg-primary/12 border-primary/30" },
-  { label: "À revoir", hint: "vers la droite", icon: <ChainsawIcon size={16} />, className: "text-danger bg-danger/12 border-danger/30" },
-  { label: "Renforcer", hint: "vers le haut (niv. 2)", icon: <ReinforceIcon size={16} />, className: "text-info bg-info/12 border-info/30" },
-  { label: "Injustifié", hint: "vers le bas (niv. 2)", icon: <StopIcon size={16} />, className: "text-danger bg-danger/12 border-danger/30" },
+  { label: "Garder", hint: "vers la gauche", icon: <ShieldIcon size={14} className="text-white" />, dot: "bg-primary", className: "text-primary bg-primary/15 border-primary/50" },
+  { label: "À revoir", hint: "vers la droite", icon: <ChainsawIcon size={14} variant="white" />, dot: "bg-red-500", className: "text-danger bg-danger/15 border-danger/50" },
+  { label: "Renforcer", hint: "vers le haut (niv. 2)", icon: <ReinforceIcon size={14} className="text-white" />, dot: "bg-blue-500", className: "text-info bg-info/15 border-info/50" },
+  { label: "Injustifié", hint: "vers le bas (niv. 2)", icon: <StopIcon size={14} className="text-white" />, dot: "bg-red-500", className: "text-danger bg-danger/15 border-danger/50" },
 ];
 
 export function HowItWorks() {
@@ -87,10 +87,10 @@ export function HowItWorks() {
           {GESTURES.map((g) => (
             <div
               key={g.label}
-              className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm font-semibold ${g.className}`}
+              className={`inline-flex items-center gap-1.5 rounded-full border py-1 pl-1 pr-3 text-sm font-semibold ${g.className}`}
             >
               <dt className="inline-flex items-center gap-1.5">
-                <span aria-hidden="true" className="inline-flex">{g.icon}</span>
+                <span aria-hidden="true" className={`inline-flex h-6 w-6 items-center justify-center rounded-full ${g.dot}`}>{g.icon}</span>
                 {g.label}
               </dt>
               <dd className="font-normal text-muted-foreground">

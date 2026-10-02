@@ -48,7 +48,7 @@ export async function GET(request: NextRequest) {
   const kicker = "PROFIL BUDGÉTAIRE";
   const brand = "france-finances.com";
   const fonts = await loadOgFonts(
-    `${kicker} ${name} 0123456789 % OK À REVOIR cartes jouées Budget Swipe ${brand}`,
+    `${kicker} ${name} 0123456789 % GARDER À REVOIR cartes jouées Budget Swipe ${brand}`,
   );
 
   return new ImageResponse(
@@ -96,7 +96,7 @@ export async function GET(request: NextRequest) {
           </div>
           <div style={{ display: "flex", justifyContent: "space-between", marginTop: 20 }}>
             <div style={{ display: "flex", flexDirection: "column" }}>
-              <span style={{ fontFamily: OG_MONO, fontSize: 22, letterSpacing: "0.08em", color: OG_COLORS.keep }}>OK</span>
+              <span style={{ fontFamily: OG_MONO, fontSize: 22, letterSpacing: "0.08em", color: OG_COLORS.keep }}>GARDER</span>
               <span style={{ fontSize: 64, fontWeight: 600 }}>{`${keepPercent} %`}</span>
             </div>
             <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end" }}>

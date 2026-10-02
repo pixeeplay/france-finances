@@ -4,6 +4,7 @@
  */
 
 import type { AmountItem, DebtPoint, EuCountry } from "@/data/chiffres";
+import { getDeckColor } from "@/lib/deckMeta";
 
 /** Teintes de la palette des graphiques (variables CSS --chart-<tone>). */
 export const CHART_TONES = [
@@ -38,6 +39,36 @@ export interface ChartDatum {
   tone: ChartTone;
   /** Mise en évidence (ex. la France, les intérêts de la dette) */
   highlight?: boolean;
+  /** Couleur explicite (hex), prioritaire sur la teinte : couleur de catégorie */
+  color?: string;
+}
+
+/**
+ * Une couleur par fonction de la dépense publique (COFOG), reprise de la
+ * catégorie correspondante du jeu : la même couleur désigne la même
+ * politique sur l'accueil, dans le jeu et sur /chiffres.
+ */
+export const COFOG_DECK: Readonly<Record<string, string>> = {
+  "Protection sociale": "social",
+  "Santé": "sante",
+  "Services publics généraux (dont intérêts de la dette)": "etat",
+  "Affaires économiques": "energie",
+  "Enseignement": "education",
+  "Défense": "defense",
+  "Ordre et sécurité publics": "securite",
+  "Loisirs, culture et culte": "culture",
+  "Logement et équipements collectifs": "logement",
+  "Protection de l'environnement": "environnement",
+};
+
+/** Couleur (hex) d'une fonction COFOG (couleur de la catégorie du jeu). */
+export function cofogColor(label: string): string {
+  return getDeckColor(COFOG_DECK[label] ?? "");
+}
+
+/** Couleur effective d'une donnée de graphique. */
+export function datumColor(d: { tone: ChartTone; color?: string }): string {
+  return d.color ?? toneColor(d.tone);
 }
 
 /** Hauteurs réservées des graphiques (px), partagées page serveur / composants client. */
@@ -181,7 +212,14 @@ export interface DebtSeriesPoint {
   t: number;
   pctGdp: number;
   amountBn: number | null;
+  /** Valeur tracée en trait plein (null hors des segments sans trou) */
+  solid: number | null;
+  /** Valeur tracée en pointillé (extrémités d'un segment où des années manquent) */
+  gap: number | null;
 }
+
+/** Écart maximal (années) entre deux points pour les relier en trait plein. */
+const MAX_SOLID_STEP = 1.01;
 
 /**
  * Date d'arrêté d'une période, en années décimales, pour un axe temporel
@@ -198,9 +236,41 @@ export function periodToTime(period: string): number {
 
 /** Série de dette pour le graphique en aires (montant null si non publié). */
 export function debtSeries(points: readonly DebtPoint[]): DebtSeriesPoint[] {
-  return points
+  const rows = points
     .map((p) => ({ period: p.period, t: periodToTime(p.period), pctGdp: p.pctGdp, amountBn: p.amountBn ?? null }))
     .filter((p) => Number.isFinite(p.t));
+  return rows.map((p, i) => {
+    const prev = rows[i - 1];
+    const next = rows[i + 1];
+    const solidPrev = prev !== undefined && p.t - prev.t <= MAX_SOLID_STEP;
+    const solidNext = next !== undefined && next.t - p.t <= MAX_SOLID_STEP;
+    const gapPrev = prev !== undefined && !solidPrev;
+    const gapNext = next !== undefined && !solidNext;
+    return {
+      ...p,
+      solid: solidPrev || solidNext ? p.pctGdp : null,
+      gap: gapPrev || gapNext ? p.pctGdp : null,
+    };
+  });
+}
+
+/**
+ * Répartit 100 « pièces » de 10 € entre les tranches de 1 000 €, au plus
+ * fort reste : la somme vaut exactement 100.
+ */
+export function coinsPer100(slices: readonly { euros: number }[]): number[] {
+  const raw = slices.map((sl) => sl.euros / 10);
+  const coins = raw.map(Math.floor);
+  let remaining = 100 - coins.reduce((sum, v) => sum + v, 0);
+  const order = raw
+    .map((v, idx) => ({ idx, rest: v - Math.floor(v) }))
+    .sort((a, b) => b.rest - a.rest || a.idx - b.idx);
+  for (const { idx } of order) {
+    if (remaining <= 0) break;
+    coins[idx] += 1;
+    remaining -= 1;
+  }
+  return coins;
 }
 
 /** Variation en points de PIB entre le premier et le dernier point. */

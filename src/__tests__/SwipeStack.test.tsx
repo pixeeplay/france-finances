@@ -386,7 +386,7 @@ describe("SwipeStack", () => {
       fireEvent.keyDown(window, { key: "ArrowRight" });
       expect(useGameStore.getState().session!.votes).toHaveLength(1);
       // Vote buttons are exposed as disabled while the quiz is open
-      expect(screen.getByRole("button", { name: "Valider cette dépense" })).toBeDisabled();
+      expect(screen.getByRole("button", { name: "Garder cette dépense" })).toBeDisabled();
       expect(screen.getByRole("button", { name: "Remettre en question cette dépense" })).toBeDisabled();
 
       fireEvent.click(screen.getAllByRole("button", { name: /Md€|M€/ })[0]);

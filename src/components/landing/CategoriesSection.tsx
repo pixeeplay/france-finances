@@ -1,6 +1,6 @@
 import Link from "next/link";
 import decksData from "@/data";
-import { CategoryBadge } from "@/components/icons/CategoryBadge";
+import { CategoryBadge, catStyle } from "@/components/icons/CategoryBadge";
 import type { Deck } from "@/types";
 
 const mainDecks = decksData.decks.filter((d) => d.type !== "thematic");
@@ -18,7 +18,7 @@ export function CategoriesSection() {
 
         {/* Mobile : défilement horizontal */}
         <div className="md:hidden overflow-x-auto scrollbar-hide -mx-4 px-4 pb-4">
-          <ul className="flex gap-3 w-max">
+          <ul className="grid grid-rows-2 grid-flow-col auto-cols-[128px] gap-3 w-max">
             {mainDecks.map((deck) => (
               <li key={deck.id}>
                 <CategoryTile deck={deck} />
@@ -54,9 +54,10 @@ function CategoryTile({ deck }: { deck: Deck }) {
   return (
     <Link
       href={`/categories/${deck.id}`}
-      className="hover-lift flex h-full flex-col items-center gap-2 rounded-2xl bg-card border border-border p-5 w-[150px] md:w-auto text-center"
+      style={catStyle(deck.id)}
+      className="hover-lift flex h-full flex-col items-center gap-2 rounded-2xl bg-card border border-border hover:border-[color:var(--cat)] p-4 md:p-5 text-center transition-colors"
     >
-      <CategoryBadge deckId={deck.id} size={52} />
+      <CategoryBadge deckId={deck.id} size={56} solid />
       <span className="mt-1 text-sm font-bold text-foreground leading-tight">{deck.name}</span>
       <span className="text-xs text-muted-foreground">{deck.cardCount} cartes</span>
     </Link>
