@@ -120,7 +120,7 @@ export function AcronymText({ text, className }: AcronymTextProps) {
                 setActive(null);
               }
             }}
-            className="text-primary font-semibold border-b border-dashed border-primary/40 hover:border-primary transition-colors cursor-help"
+            className="text-foreground font-medium border-b border-dotted border-muted-foreground hover:border-foreground transition-colors cursor-help"
           >
             {part.value}
           </button>
@@ -134,17 +134,17 @@ export function AcronymText({ text, className }: AcronymTextProps) {
         createPortal(
           <span
             ref={tooltipRef}
-            className="fixed z-[9999] px-3 py-2 bg-card border border-primary/30 rounded-lg shadow-xl text-xs text-foreground font-medium max-w-[250px] text-wrap leading-snug pointer-events-auto"
+            className="fixed z-[9999] px-3 py-2 bg-card border border-border rounded-md shadow-(--shadow-card) text-xs text-foreground font-medium max-w-[250px] text-wrap leading-snug pointer-events-auto"
             style={{
               top: active.top - 8,
               left: active.left,
               transform: "translate(-50%, -100%)",
             }}
           >
-            <span className="font-bold text-primary">{activePart}</span>
+            <span className="font-mono font-medium text-foreground">{activePart}</span>
             {" — "}
             {activeDefinition}
-            <span className="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-l-[6px] border-r-[6px] border-t-[6px] border-l-transparent border-r-transparent border-t-primary/30" />
+            <span className="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-l-[6px] border-r-[6px] border-t-[6px] border-l-transparent border-r-transparent border-t-border" />
           </span>,
           document.body,
         )}

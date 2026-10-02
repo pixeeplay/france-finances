@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useEffect, useState, useCallback } from "react";
+import { useState, useCallback } from "react";
 import { useGameStore } from "@/stores/gameStore";
 import { useShallow } from "zustand/react/shallow";
 import { useArchetype } from "@/hooks/useArchetype";
@@ -10,11 +10,11 @@ import { ShieldIcon } from "./ShieldIcon";
 import { ReinforceIcon } from "./ReinforceIcon";
 import { StopIcon } from "./StopIcon";
 import { track } from "@/lib/analytics";
-import { useReducedMotion } from "framer-motion";
+import { formatBillions, formatPercent } from "@/lib/format";
 import dynamic from "next/dynamic";
 const RadarChart = dynamic(() => import("./RadarChart").then((m) => m.RadarChart), {
   ssr: false,
-  loading: () => <div className="w-[240px] h-[240px] mx-auto rounded-full bg-muted/30 animate-pulse" />,
+  loading: () => <div className="w-[240px] h-[240px] mx-auto rounded-full bg-muted/30" />,
 });
 import { computeRadarFromSession } from "@/lib/radarData";
 import type { Vote, Card } from "@/types";
@@ -22,6 +22,7 @@ import { AuditReport } from "./AuditReport";
 import { StatBar } from "./StatBar";
 import { ShareIcon } from "./ShareIcon";
 import { ChevronIcon } from "./ChevronIcon";
+import { CategoryIcon } from "./icons/CategoryIcon";
 
 const SITE_URL = "https://france-finances.com";
 
@@ -41,8 +42,6 @@ export function ResultScreen() {
     reset: s.reset,
   })));
   const { archetype, stats } = useArchetype();
-  const prefersReducedMotion = useReducedMotion();
-  const [showConfetti, setShowConfetti] = useState(!prefersReducedMotion);
   const [shareCopied, setShareCopied] = useState(false);
   const level = session?.level ?? 1;
   const isBudgetMode = session?.gameMode === "budget";
@@ -56,12 +55,6 @@ export function ResultScreen() {
   const cutPercent = Math.round(stats?.cutPercent ?? 0);
   const reinforcePercent = stats && stats.totalCards > 0 ? Math.round((reinforceCount / stats.totalCards) * 100) : 0;
   const unjustifiedPercent = stats && stats.totalCards > 0 ? Math.round((unjustifiedCount / stats.totalCards) * 100) : 0;
-
-  // Hide confetti after a few seconds
-  useEffect(() => {
-    const timer = setTimeout(() => setShowConfetti(false), 4000);
-    return () => clearTimeout(timer);
-  }, []);
 
   const handleShare = useCallback(async () => {
     if (!archetype || !stats) return;
@@ -101,7 +94,7 @@ export function ResultScreen() {
         <p className="text-muted-foreground">Aucune session en cours.</p>
         <button
           onClick={() => router.push("/jeu")}
-          className="rounded-xl py-3 px-6 border-2 border-border text-foreground font-bold hover:bg-card transition-colors"
+          className="min-h-[44px] rounded-lg py-3 px-6 border border-foreground/40 text-foreground font-semibold hover:bg-card transition-colors"
         >
           Jouer
         </button>
@@ -125,219 +118,161 @@ export function ResultScreen() {
   return (
     <div className="flex-1 flex flex-col overflow-y-auto scrollbar-hide" role="region" aria-live="polite" aria-label="Résultats de la session">
       {/* Header */}
-      <div className="flex items-center justify-between p-4 pb-2">
-        <h2 className="text-lg font-bold leading-tight tracking-[-0.015em]">
-          Résultats
+      <div className="flex items-center justify-between px-4 pt-3 pb-2 border-b border-border">
+        <h2 className="kicker text-muted-foreground">
+          Résultats · Niveau {level}
         </h2>
         <button
           onClick={handleContinue}
-          className="w-10 h-10 rounded-full bg-card flex items-center justify-center text-muted-foreground hover:bg-danger hover:text-white transition-colors"
+          aria-label="Fermer les résultats"
+          className="min-h-[44px] min-w-[44px] -mr-2 rounded-full flex items-center justify-center text-muted-foreground hover:bg-card hover:text-foreground transition-colors"
         >
-          ✕
+          <span aria-hidden="true">✕</span>
         </button>
       </div>
 
-      {/* Title & Confetti */}
-      <div className="relative px-4 text-center pb-3 pt-6">
-        {showConfetti && (
-          <>
-            <span className="confetti-particle absolute top-0 left-10 text-xl" aria-hidden="true">
-              ✨
-            </span>
-            <span className="confetti-particle absolute top-4 right-12 text-2xl" aria-hidden="true">
-              🎉
-            </span>
-            <span className="confetti-particle absolute top-2 left-1/3 text-lg" aria-hidden="true">
-              🎊
-            </span>
-            <span className="confetti-particle absolute top-6 right-1/4 text-sm" aria-hidden="true">
-              ✨
-            </span>
-          </>
-        )}
-        <h1 className="text-primary tracking-tight text-3xl font-bold leading-tight drop-shadow-md">
-          Session terminée !
-        </h1>
-      </div>
-
-      {/* Archetype Card */}
-      <div className="p-4">
-        <div className="relative flex flex-col items-center justify-center rounded-2xl p-6 shadow-xl bg-card border border-border">
+      {/* Archétype */}
+      <section className="px-4 pt-6 pb-5 border-b border-border">
+        <div className="flex items-start justify-between gap-3">
+          <p className="kicker text-muted-foreground">Votre profil budgétaire</p>
           <button
             onClick={handleShare}
-            className="absolute top-4 right-4 h-10 w-10 rounded-full bg-background/50 flex items-center justify-center hover:bg-muted transition-colors text-muted-foreground"
+            className="-mt-3 -mr-2 min-h-[44px] min-w-[44px] rounded-full flex items-center justify-center hover:bg-card transition-colors text-muted-foreground"
             aria-label={shareCopied ? "Copié !" : "Partager les résultats"}
             aria-live="polite"
           >
-            {shareCopied ? <span className="text-primary text-sm">✓</span> : <ShareIcon />}
+            {shareCopied ? <span className="text-primary text-sm" aria-hidden="true">✓</span> : <ShareIcon />}
           </button>
-          <div className="text-6xl mb-4" aria-hidden="true">{archetype.icon}</div>
-          <p className="text-2xl font-bold leading-tight tracking-tight mb-2">
-            {archetype.name}
-          </p>
-          <p className="text-muted-foreground text-center text-sm font-medium">
-            &ldquo;{archetype.tagline}&rdquo;
-          </p>
         </div>
-      </div>
-
-      {/* Stats Summary */}
-      <div className="px-4 py-2">
-        <p className="text-center text-sm font-medium text-muted-foreground mb-6">
-          {stats.totalCards} cartes swipées en{" "}
-          {formatDuration(session.totalDuration ?? 0)}
+        <h1 className="text-4xl font-semibold leading-[1.05] mt-1 mb-3">
+          {archetype.name}
+        </h1>
+        <p className="font-serif italic text-lg leading-snug text-muted-foreground">
+          &laquo;&nbsp;{archetype.tagline}&nbsp;&raquo;
         </p>
+        <p className="mt-4 text-sm text-muted-foreground tabular-nums">
+          {stats.totalCards} cartes swipées en {formatDuration(session.totalDuration ?? 0)}
+        </p>
+      </section>
 
-        <div className="bg-card rounded-2xl p-5 border border-border" data-testid="result-stats">
-          <p className="text-base font-bold mb-4 text-center">
-            Répartition des choix
-          </p>
+      {/* Répartition */}
+      <section className="px-4 py-5 border-b border-border" data-testid="result-stats">
+        <h3 className="text-xl font-semibold mb-4">Répartition des choix</h3>
 
-          {level >= 2 ? (
-            /* Level 2: 4-bar layout */
-            <div className="flex flex-col gap-3 mb-4">
-              <StatBar
-                icon={<ShieldIcon size={14} className="text-primary" />}
-                label="OK"
-                count={keepCount}
-                percent={keepPercent}
-                colorClass="bg-primary"
-                glowClass="shadow-(--shadow-glow-green-sm)"
-              />
-              <StatBar
-                icon={<ChainsawIcon size={14} />}
-                label="Réduire"
-                count={cutCount}
-                percent={cutPercent}
-                colorClass="bg-warning"
-                glowClass="shadow-(--shadow-glow-amber)"
-              />
-              <StatBar
-                icon={<ReinforceIcon size={14} />}
-                label="Renforcer"
-                count={reinforceCount}
-                percent={reinforcePercent}
-                colorClass="bg-info"
-                glowClass="shadow-(--shadow-glow-blue)"
-              />
-              <StatBar
-                icon={<StopIcon size={14} />}
-                label="Injustifié"
-                count={unjustifiedCount}
-                percent={unjustifiedPercent}
-                colorClass="bg-danger"
-                glowClass="shadow-(--shadow-glow-red)"
-              />
+        {level >= 2 ? (
+          <div className="flex flex-col gap-3 mb-5">
+            <StatBar
+              icon={<ShieldIcon size={14} className="text-primary" />}
+              label="OK"
+              count={keepCount}
+              percent={keepPercent}
+              colorClass="bg-primary"
+            />
+            <StatBar
+              icon={<ChainsawIcon size={14} />}
+              label="Réduire"
+              count={cutCount}
+              percent={cutPercent}
+              colorClass="bg-warning"
+            />
+            <StatBar
+              icon={<ReinforceIcon size={14} />}
+              label="Renforcer"
+              count={reinforceCount}
+              percent={reinforcePercent}
+              colorClass="bg-info"
+            />
+            <StatBar
+              icon={<StopIcon size={14} />}
+              label="Injustifié"
+              count={unjustifiedCount}
+              percent={unjustifiedPercent}
+              colorClass="bg-danger"
+            />
+          </div>
+        ) : (
+          /* Level 1 : barre empilée 100 % (OK | à revoir) */
+          <div className="mb-5">
+            <div className="flex h-3 w-full overflow-hidden rounded-sm bg-muted" aria-hidden="true">
+              <div className="h-full bg-primary" style={{ width: `${keepPercent}%` }} />
+              <div className="h-full bg-danger" style={{ width: `${cutPercent}%` }} />
             </div>
-          ) : (
-            /* Level 1: donut chart */
-            <div className="flex items-center justify-center gap-6 mb-4">
-              <div
-                className="w-24 h-24 rounded-full flex items-center justify-center"
-                style={{
-                  background: `conic-gradient(var(--color-danger) 0% ${cutPercent}%, var(--color-primary) ${cutPercent}% 100%)`,
-                }}
-              >
-                <div className="w-16 h-16 bg-card rounded-full" />
+            <div className="mt-3 flex justify-between gap-4">
+              <div>
+                <p className="kicker flex items-center gap-1.5 text-primary">
+                  <ShieldIcon size={14} /> OK
+                </p>
+                <p className="numeral text-3xl font-semibold">{formatPercent(keepPercent)}</p>
+                <p className="text-xs text-muted-foreground">{keepCount} carte{keepCount > 1 ? "s" : ""}</p>
               </div>
-
-              <div className="flex flex-col gap-3">
-                <div className="flex items-center gap-2">
-                  <span className="w-3 h-3 rounded-full bg-primary" />
-                  <span className="text-sm font-bold">{keepPercent}%</span>
-                  <span className="text-sm text-muted-foreground flex items-center gap-1">
-                    <ShieldIcon size={14} /> OK ({keepCount})
-                  </span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="w-3 h-3 rounded-full bg-danger" />
-                  <span className="text-sm font-bold">{cutPercent}%</span>
-                  <span className="text-sm text-muted-foreground flex items-center gap-1">
-                    <ChainsawIcon size={14} /> À revoir ({cutCount})
-                  </span>
-                </div>
+              <div className="text-right">
+                <p className="kicker flex items-center justify-end gap-1.5 text-danger">
+                  <ChainsawIcon size={14} /> À revoir
+                </p>
+                <p className="numeral text-3xl font-semibold">{formatPercent(cutPercent)}</p>
+                <p className="text-xs text-muted-foreground">{cutCount} carte{cutCount > 1 ? "s" : ""}</p>
               </div>
-            </div>
-          )}
-
-          {/* Totals kept/cut */}
-          <div className="grid grid-cols-2 gap-3 pt-3 border-t border-border">
-            <div className="text-center">
-              <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-1">
-                Total gardé
-              </p>
-              <p className="text-lg font-bold text-primary">
-                {totalKept.toFixed(1)} Md€
-              </p>
-            </div>
-            <div className="text-center">
-              <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-1">
-                Total à revoir
-              </p>
-              <p className="text-lg font-bold text-danger">
-                {totalCut.toFixed(1)} Md€
-              </p>
             </div>
           </div>
-        </div>
-      </div>
+        )}
+
+        {/* Totaux en Md€ */}
+        <dl className="grid grid-cols-2 gap-4 pt-4 border-t border-border">
+          <div>
+            <dt className="kicker text-muted-foreground">Total gardé</dt>
+            <dd className="numeral text-2xl font-semibold text-primary">
+              {formatBillions(totalKept)}
+            </dd>
+          </div>
+          <div className="border-l border-border pl-4">
+            <dt className="kicker text-muted-foreground">Total à revoir</dt>
+            <dd className="numeral text-2xl font-semibold text-danger">
+              {formatBillions(totalCut)}
+            </dd>
+          </div>
+        </dl>
+      </section>
 
       {/* Radar: Tes choix vs la communauté (Level 2+) */}
       {level >= 2 && session.cards && (() => {
         const radarAxes = computeRadarFromSession(session.cards, session.votes);
         if (radarAxes.length < 3) return null;
         return (
-          <div className="px-4 py-2">
-            <div className="bg-card rounded-2xl p-5 border border-border">
-              <h3 className="text-base font-bold mb-1 text-center">
-                Tes choix vs la communauté
-              </h3>
-              <p className="text-xs text-muted-foreground text-center mb-4">
-                % de coupes par catégorie
-              </p>
-              <RadarChart axes={radarAxes} size={240} />
-            </div>
-          </div>
+          <section className="px-4 py-5 border-b border-border">
+            <h3 className="text-xl font-semibold mb-1">
+              Tes choix vs la communauté
+            </h3>
+            <p className="text-xs text-muted-foreground mb-4">
+              Part des coupes par catégorie
+            </p>
+            <RadarChart axes={radarAxes} size={240} />
+          </section>
         );
       })()}
 
       {/* Budget Mode Result */}
       {isBudgetMode && budgetTarget > 0 && (
-        <div className="px-4 py-2">
-          <div className={`rounded-2xl p-5 border ${
-            totalCut >= budgetTarget
-              ? "bg-primary/10 border-primary/30"
-              : "bg-danger/10 border-danger/30"
-          }`}>
-            <div className="flex items-center gap-3 mb-3">
-              <span className="text-3xl">{totalCut >= budgetTarget ? "\u2705" : "\u274C"}</span>
-              <div>
-                <p className="text-lg font-bold">
-                  {totalCut >= budgetTarget ? "Objectif atteint !" : "Objectif non atteint"}
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  Cible : {budgetTarget} Md&euro; d&apos;economies
-                </p>
-              </div>
-            </div>
-            <div className="w-full bg-muted h-3 rounded-full overflow-hidden mb-2">
-              <div
-                className={`h-full rounded-full transition-all ${
-                  totalCut >= budgetTarget ? "bg-primary" : "bg-warning"
-                }`}
-                style={{ width: `${Math.min((totalCut / budgetTarget) * 100, 100)}%` }}
-              />
-            </div>
-            <p className="text-center text-sm font-bold">
-              {totalCut.toFixed(1)} / {budgetTarget} Md&euro;
-              {totalCut >= budgetTarget && (
-                <span className="text-primary ml-2">
-                  (+{(totalCut - budgetTarget).toFixed(1)} Md&euro;)
-                </span>
-              )}
-            </p>
+        <section className="px-4 py-5 border-b border-border">
+          <p className="kicker text-muted-foreground">Objectif d&apos;économies</p>
+          <p className="font-serif text-xl font-semibold mt-1 mb-3">
+            {totalCut >= budgetTarget ? "Objectif atteint" : "Objectif non atteint"}
+          </p>
+          <div className="w-full bg-muted h-3 rounded-sm overflow-hidden mb-2">
+            <div
+              className={`h-full ${totalCut >= budgetTarget ? "bg-primary" : "bg-warning"}`}
+              style={{ width: `${Math.min((totalCut / budgetTarget) * 100, 100)}%` }}
+            />
           </div>
-        </div>
+          <p className="text-sm tabular-nums">
+            <span className="font-semibold">{formatBillions(totalCut)}</span>
+            <span className="text-muted-foreground"> sur {formatBillions(budgetTarget)} visés</span>
+            {totalCut >= budgetTarget && (
+              <span className="text-primary ml-2">
+                (+{formatBillions(totalCut - budgetTarget)})
+              </span>
+            )}
+          </p>
+        </section>
       )}
 
       {/* Level 3: Audit Report */}
@@ -346,28 +281,28 @@ export function ResultScreen() {
       )}
 
       {/* CTAs */}
-      <div className="flex flex-col gap-3 px-4 py-6 mt-2">
+      <div className="flex flex-col gap-3 px-4 py-6">
         {level === 1 && (
           <button
             onClick={() => router.push("/jeu?level=2")}
-            className="flex items-center justify-center gap-2 w-full rounded-xl py-4 px-6 bg-primary text-white font-bold text-lg shadow-(--shadow-glow-green) active:scale-95 transition-transform"
+            className="flex items-center justify-center gap-2 w-full min-h-[44px] rounded-lg py-4 px-6 bg-primary text-primary-foreground font-semibold text-lg active:scale-[0.98] transition-transform"
           >
             Passer au Niveau 2
-            <span className="text-base">&#8594;</span>
+            <span aria-hidden="true">&#8594;</span>
           </button>
         )}
         {level === 2 && (
           <button
             onClick={() => router.push("/jeu?level=3")}
-            className="flex items-center justify-center gap-2 w-full rounded-xl py-4 px-6 bg-primary text-white font-bold text-lg shadow-(--shadow-glow-green) active:scale-95 transition-transform"
+            className="flex items-center justify-center gap-2 w-full min-h-[44px] rounded-lg py-4 px-6 bg-primary text-primary-foreground font-semibold text-lg active:scale-[0.98] transition-transform"
           >
             Passer au Niveau 3
-            <span className="text-base">&#8594;</span>
+            <span aria-hidden="true">&#8594;</span>
           </button>
         )}
         <button
           onClick={() => router.push("/jeu")}
-          className="flex items-center justify-center w-full rounded-xl py-4 px-6 border-2 border-border text-foreground font-bold hover:bg-card transition-colors"
+          className="flex items-center justify-center w-full min-h-[44px] rounded-lg py-4 px-6 border border-foreground/40 text-foreground font-semibold hover:bg-card transition-colors"
         >
           {level >= 2 ? `Nouveau deck Niveau ${level}` : "Continuer (nouveau deck)"}
         </button>
@@ -375,12 +310,14 @@ export function ResultScreen() {
 
       {/* Detailed History */}
       <div className="px-4 pb-10">
-        <details className="group bg-card rounded-xl border border-border overflow-hidden">
-          <summary className="flex items-center justify-center gap-2 p-4 cursor-pointer font-medium text-sm hover:bg-muted/30 transition-colors list-none">
-            <ChainsawIcon size={18} /> Voir le détail de mes choix
+        <details className="group border-y border-border">
+          <summary className="flex items-center justify-between gap-2 min-h-[44px] py-3 cursor-pointer font-medium text-sm list-none">
+            <span className="flex items-center gap-2">
+              <ChainsawIcon size={18} /> Voir le détail de mes choix
+            </span>
             <ChevronIcon />
           </summary>
-          <div className="p-4 border-t border-border bg-background/30 flex flex-col gap-3">
+          <ol className="flex flex-col divide-y divide-border border-t border-border">
             {session.cards.map((card) => {
               const vote = session.votes.find((v) => v.cardId === card.id);
               return (
@@ -391,49 +328,45 @@ export function ResultScreen() {
                 />
               );
             })}
-          </div>
+          </ol>
         </details>
       </div>
     </div>
   );
 }
 
+const VOTE_LABELS: Record<string, string> = {
+  keep: "OK",
+  cut: "À revoir",
+  reinforce: "Renforcer",
+  unjustified: "Injustifié",
+};
+
 function HistoryItem({ card, vote }: { card: Card; vote: Vote | null }) {
   const dir = vote?.direction ?? "keep";
 
   const iconMap: Record<string, React.ReactNode> = {
-    keep: <ShieldIcon size={16} className="text-primary group-hover/item:text-white transition-colors" />,
-    cut: <ChainsawIcon size={16} className="chainsaw-hover-white" />,
+    keep: <ShieldIcon size={16} className="text-primary" />,
+    cut: <ChainsawIcon size={16} />,
     reinforce: <ReinforceIcon size={16} />,
     unjustified: <StopIcon size={16} />,
   };
 
-  const hoverBgMap: Record<string, string> = {
-    keep: "group-hover/item:bg-primary",
-    cut: "group-hover/item:bg-danger",
-    reinforce: "group-hover/item:bg-info",
-    unjustified: "group-hover/item:bg-danger",
-  };
-
   return (
-    <div className="group/item flex items-center justify-between p-2 rounded-lg hover:bg-muted/30 cursor-pointer transition-all">
-      <div className="flex items-center gap-3">
-        <div className="w-10 h-10 rounded bg-background/50 flex items-center justify-center text-xl">
-          {card.icon}
-        </div>
-        <div className="flex flex-col">
-          <span className="text-sm font-medium">{card.title}</span>
-          <span className="text-[10px] text-muted-foreground">
-            {card.amountBillions} Md€
+    <li className="flex items-center justify-between gap-3 py-2.5">
+      <div className="flex items-center gap-3 min-w-0">
+        <CategoryIcon deckId={card.deckId} size={18} className="shrink-0 text-muted-foreground" />
+        <div className="flex flex-col min-w-0">
+          <span className="text-sm font-medium truncate">{card.title}</span>
+          <span className="text-xs text-muted-foreground tabular-nums">
+            {formatBillions(card.amountBillions)}
           </span>
         </div>
       </div>
-      <div
-        className={`w-8 h-8 rounded-full flex items-center justify-center transition-all group-hover/item:scale-110 ${hoverBgMap[dir]}`}
-      >
+      <div className="flex items-center shrink-0">
+        <span className="sr-only">{VOTE_LABELS[dir]}</span>
         {iconMap[dir]}
       </div>
-    </div>
+    </li>
   );
 }
-
