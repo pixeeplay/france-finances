@@ -121,6 +121,29 @@ export const STATE_BUDGET_2026 = {
 } as const;
 
 /**
+ * Recettes fiscales nettes de l'État prévues pour 2026 (projet de loi de
+ * finances initial, avant navette), nettes des remboursements et dégrèvements.
+ * « Autres recettes fiscales » regroupe les accises sur les énergies (ex-TICPE),
+ * les droits de succession, etc. Total : 372,9 Md€. Les recettes nettes du
+ * budget (STATE_BUDGET_2026) s'en déduisent après recettes non fiscales et
+ * prélèvements sur recettes (collectivités, Union européenne).
+ */
+export const STATE_TAX_REVENUE_2026: ChiffresDataset<AmountItem> = {
+  period: "2026 (PLF initial, octobre 2025)",
+  source: {
+    label: "Sénat — Rapport général sur le PLF 2026, tome I (le budget de 2026 et son contexte)",
+    url: "https://www.senat.fr/rap/l25-139-1/l25-139-19.html",
+    date: "2025-11",
+  },
+  items: [
+    { label: "TVA nette", amountBn: 109.1 },
+    { label: "Impôt sur le revenu net", amountBn: 104.0 },
+    { label: "Impôt sur les sociétés net", amountBn: 59.0 },
+    { label: "Autres recettes fiscales (dont accises sur les énergies)", amountBn: 100.8 },
+  ],
+};
+
+/**
  * Crédits de paiement par mission du budget général (état B), hors mission
  * « Remboursements et dégrèvements » (143,3 Md€), qui correspond à des
  * restitutions d'impôts et non à des dépenses de politiques publiques.
@@ -252,6 +275,7 @@ export function getChiffresSources(): DataSource[] {
   const all: DataSource[] = [
     STATE_BUDGET_2026.source,
     STATE_MISSIONS_2026.source,
+    STATE_TAX_REVENUE_2026.source,
     INSEE_APU_2025,
     INSEE_DETTE_T2_2026,
     PUBLIC_SPENDING_BY_FUNCTION.source,
