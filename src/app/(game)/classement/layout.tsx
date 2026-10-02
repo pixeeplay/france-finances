@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { DEFAULT_OG_IMAGE } from "@/lib/ogMeta";
 
 export const metadata: Metadata = {
   title: "Communauté — La Tronçonneuse de Poche",
@@ -9,9 +10,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Communauté — La Tronçonneuse de Poche",
     description: "Découvre les statistiques de la communauté des joueurs.",
+    images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Communauté — La Tronçonneuse de Poche",
     description: "Découvre les statistiques de la communauté des joueurs.",
   },

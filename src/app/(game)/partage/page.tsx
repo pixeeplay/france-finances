@@ -1,28 +1,14 @@
 import { redirect } from "next/navigation";
 import type { Metadata } from "next";
+import { DEFAULT_ARCHETYPE_ID, getArchetypeById, isArchetypeId } from "@/lib/archetypeNames";
 
 const SITE_URL = "https://france-finances.com";
 
-const ARCHETYPES: Record<string, string> = {
-  austeritaire: "L'Austéritaire",
-  gardien: "Le Gardien",
-  equilibriste: "L'Équilibriste",
-  tranchant: "Le Tranchant",
-  protecteur: "Le Protecteur",
-  bucheron: "Le Bûcheron",
-  elagueur: "L'Élagueur",
-  speedrunner: "Le Speedrunner",
-  stratege: "Le Stratège",
-  reformateur: "Le Réformateur",
-  demolisseur: "Le Démolisseur",
-  conservateur: "Le Conservateur",
-  sceptique: "Le Sceptique",
-  chirurgien: "Le Chirurgien",
-  auditeur_rigoureux: "L'Auditeur rigoureux",
-  liquidateur_en_chef: "Le Liquidateur en chef",
-  investisseur_public: "L'Investisseur public",
-  optimisateur: "L'Optimisateur",
-};
+/** Entier borné lu dans l'URL (lien de partage modifiable à la main). */
+function toCount(raw: string | undefined, fallback: number, max: number): number {
+  const value = Number.parseInt(raw ?? "", 10);
+  return Number.isFinite(value) ? Math.max(0, Math.min(max, value)) : fallback;
+}
 
 export async function generateMetadata({
   searchParams,
@@ -30,13 +16,18 @@ export async function generateMetadata({
   searchParams: Promise<{ a?: string; k?: string; c?: string; n?: string }>;
 }): Promise<Metadata> {
   const { a, k, c, n } = await searchParams;
-  const archetypeId = a ?? "equilibriste";
-  const keepPercent = k ?? "50";
-  const cutPercent = c ?? "50";
-  const totalCards = n ?? "10";
-  const name = ARCHETYPES[archetypeId] ?? "L'Équilibriste";
+  const archetypeId = isArchetypeId(a) ? a : DEFAULT_ARCHETYPE_ID;
+  const keepPercent = toCount(k, 50, 100);
+  const cutPercent = toCount(c, 50, 100);
+  const totalCards = toCount(n, 10, 9999);
+  const { name } = getArchetypeById(archetypeId);
 
-  const ogImageUrl = `${SITE_URL}/api/og?archetype=${archetypeId}&keepPercent=${keepPercent}&cutPercent=${cutPercent}&totalCards=${totalCards}`;
+  const ogImageUrl = `${SITE_URL}/api/og?${new URLSearchParams({
+    archetype: archetypeId,
+    keepPercent: String(keepPercent),
+    cutPercent: String(cutPercent),
+    totalCards: String(totalCards),
+  })}`;
 
   return {
     title: `${name} — La Tronçonneuse de Poche`,

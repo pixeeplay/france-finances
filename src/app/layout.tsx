@@ -60,14 +60,9 @@ export const metadata: Metadata = {
       "Explorez le budget de la France de manière interactive. 369 cartes de dépenses publiques à découvrir.",
     url: "https://france-finances.com",
     siteName: "france-finances.com",
-    images: [
-      {
-        url: "/opengraph-image",
-        width: 1200,
-        height: 630,
-        alt: "france-finances.com — Comprendre les finances publiques",
-      },
-    ],
+    // Images : fichiers opengraph-image.tsx (racine et pages dédiées), repris
+    // automatiquement pour Twitter/X. Ne pas les fixer ici, sinon chaque page
+    // hériterait de l'image de l'accueil sur Twitter/X.
     locale: "fr_FR",
     type: "website",
   },
@@ -76,7 +71,6 @@ export const metadata: Metadata = {
     title: "france-finances.com — Comprendre les finances publiques",
     description:
       "Explorez le budget de la France de manière interactive. 369 cartes de dépenses publiques.",
-    images: ["/opengraph-image"],
   },
 };
 

@@ -3,31 +3,14 @@ import { auth } from "@/auth";
 import { db, isDbAvailable } from "@/db";
 import { sessions } from "@/db/schema";
 import { eq, desc, sql } from "drizzle-orm";
+import { DEFAULT_ARCHETYPE_ID, getArchetypeById, isArchetypeId } from "@/lib/archetypeNames";
+import { DEFAULT_OG_IMAGE } from "@/lib/ogMeta";
 
 const SITE_URL = "https://france-finances.com";
 
-const ARCHETYPE_NAMES: Record<string, string> = {
-  austeritaire: "L'Austenitaire",
-  gardien: "Le Gardien",
-  tranchant: "Le Tranchant",
-  protecteur: "Le Protecteur",
-  equilibriste: "L'Equilibriste",
-  speedrunner: "Le Speedrunner",
-  stratege: "Le Stratege",
-  reformateur: "Le Reformateur",
-  demolisseur: "Le Demolisseur",
-  conservateur: "Le Conservateur",
-  sceptique: "Le Sceptique",
-  chirurgien: "Le Chirurgien",
-  auditeur_rigoureux: "L'Auditeur rigoureux",
-  liquidateur_en_chef: "Le Liquidateur en chef",
-  investisseur_public: "L'Investisseur public",
-  optimisateur: "L'Optimisateur",
-};
-
 export async function generateMetadata(): Promise<Metadata> {
   // Try to get authenticated user's stats for dynamic OG
-  let archetypeId = "equilibriste";
+  let archetypeId = DEFAULT_ARCHETYPE_ID;
   let keepPercent = "50";
   let cutPercent = "50";
   let totalCards = "0";
@@ -49,7 +32,7 @@ export async function generateMetadata(): Promise<Metadata> {
         .limit(1);
 
       if (row && row.totalCards > 0) {
-        archetypeId = row.archetypeId in ARCHETYPE_NAMES ? row.archetypeId : "equilibriste";
+        archetypeId = isArchetypeId(row.archetypeId) ? row.archetypeId : DEFAULT_ARCHETYPE_ID;
         totalCards = String(row.totalCards);
         const total = row.keepCount + row.cutCount;
         keepPercent = String(Math.round((row.keepCount / total) * 100));
@@ -60,8 +43,11 @@ export async function generateMetadata(): Promise<Metadata> {
     // Fallback to defaults
   }
 
-  const name = ARCHETYPE_NAMES[archetypeId] ?? "L'Équilibriste";
+  const { name } = getArchetypeById(archetypeId);
   const ogImageUrl = `${SITE_URL}/api/og?archetype=${archetypeId}&keepPercent=${keepPercent}&cutPercent=${cutPercent}&totalCards=${totalCards}`;
+  // Sans partie jouée (visiteur anonyme, robot d'aperçu), pas de faux profil 50/50
+  const hasPlayed = totalCards !== "0";
+  const ogImage = hasPlayed ? { url: ogImageUrl, width: 1200, height: 630 } : DEFAULT_OG_IMAGE;
 
   return {
     title: `${name} — Profil — La Tronçonneuse de Poche`,
@@ -72,13 +58,13 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       title: `${name} — La Tronçonneuse de Poche`,
       description: `${cutPercent}% du budget à revoir ! Mon archétype : ${name}. Et toi ?`,
-      images: [{ url: ogImageUrl, width: 1200, height: 630 }],
+      images: [ogImage],
     },
     twitter: {
       card: "summary_large_image",
       title: `${name} — La Tronçonneuse de Poche`,
       description: `${cutPercent}% du budget à revoir ! Mon archétype : ${name}. Et toi ?`,
-      images: [ogImageUrl],
+      images: [ogImage.url],
     },
   };
 }

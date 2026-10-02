@@ -36,3 +36,6 @@ export const DEFAULT_DECK_COLOR = "#10B981";
 export function getDeckColor(deckId: string): string {
   return deckColors[deckId] ?? DEFAULT_DECK_COLOR;
 }
+
+/** Nombre total de cartes, tous decks confondus (d'après decks-meta.json, vérifié par data:check). */
+export const TOTAL_CARD_COUNT: number = decksMeta.decks.reduce((sum, d) => sum + d.cardCount, 0);
