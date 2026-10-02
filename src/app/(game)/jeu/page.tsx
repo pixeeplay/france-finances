@@ -9,6 +9,7 @@ import { getPlayedDeckIds, getGlobalStats, getSessions } from "@/lib/stats";
 import { track } from "@/lib/analytics";
 import { useOnboarding, Onboarding } from "@/components/Onboarding";
 import { DailyDeckEntry } from "@/components/DailyDeck";
+import { BudgetChallengeEntry } from "@/components/BudgetChallenge";
 import type { Deck } from "@/types";
 
 function RandomIcon({ size = 24, className }: { size?: number; className?: string }) {
@@ -41,7 +42,7 @@ const LEVEL_UNLOCK = {
   3: { sessions: 2, label: "2 sessions N2 complétées" },
 } as const;
 
-const BUDGET_TARGETS = [5, 10, 15, 20, 30] as const;
+const BUDGET_TARGETS = [5, 10, 20, 30, 50] as const;
 
 function PlayPageContent() {
   const router = useRouter();
@@ -58,7 +59,7 @@ function PlayPageContent() {
   const [n1Sessions, setN1Sessions] = useState(0);
   const [n2Sessions, setN2Sessions] = useState(0);
   const [budgetMode, setBudgetMode] = useState(false);
-  const [budgetTarget, setBudgetTarget] = useState<number>(15);
+  const [budgetTarget, setBudgetTarget] = useState<number>(20);
   const scrollRef = useRef<HTMLDivElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
   const [showChevron, setShowChevron] = useState(false);
@@ -154,6 +155,9 @@ function PlayPageContent() {
       >
         {/* Daily deck (same draw for everyone) */}
         <DailyDeckEntry />
+
+        {/* "Trouve 50 Md€" challenge (budget mode) */}
+        <BudgetChallengeEntry />
 
         {/* Random Mode Toggle */}
         <div className="flex items-center gap-4 px-4 py-4 justify-between border-b border-border">

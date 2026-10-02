@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { SwipeSession } from "./SwipeSession";
 import decksData from "@/data";
 import { drawCards, filterByDeck } from "@/lib/deckUtils";
+import { clampBudgetTarget, drawBudgetChallengeCards } from "@/lib/budgetChallenge";
 import { DAILY_DECK_ID, drawDailyCards, getDailyNumber, getParisDateKey } from "@/lib/daily";
 import { validateDecksData } from "@/lib/validateData";
 import type { Card, Deck, GameMode } from "@/types";
@@ -96,15 +97,23 @@ export default async function SwipePage({
   const level = Math.min(Math.max(rawLevel, 1), 3) as 1 | 2 | 3;
 
   const gameMode: GameMode = mode === "budget" ? "budget" : "classic";
-  const budgetTarget = gameMode === "budget" ? (Number(target) || 15) : undefined;
+  const budgetTarget = gameMode === "budget" ? clampBudgetTarget(target) : undefined;
 
   const deckCards = deckId === "random" ? allCards : filterByDeck(allCards, deckId);
-  const sessionCards = drawCards(deckCards, 10);
+  // Budget mode: no single card reaches the target, and the draw leaves room for trade-offs
+  const sessionCards =
+    budgetTarget !== undefined
+      ? drawBudgetChallengeCards(deckCards, budgetTarget)
+      : drawCards(deckCards, 10);
 
   return (
     <SwipeSession
       deckId={deckId}
-      deckName={deck?.name ?? "Aléatoire"}
+      deckName={
+        budgetTarget !== undefined && deckId === "random"
+          ? `Trouve ${budgetTarget} Md€`
+          : (deck?.name ?? "Aléatoire")
+      }
       cards={sessionCards}
       level={level}
       gameMode={gameMode}

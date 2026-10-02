@@ -23,6 +23,7 @@ import { StatBar } from "./StatBar";
 import { ShareIcon } from "./ShareIcon";
 import { ChevronIcon } from "./ChevronIcon";
 import { DailyResultPanel } from "./DailyDeck";
+import { BudgetChallengeSummary } from "./BudgetChallenge";
 
 const SITE_URL = "https://france-finances.com";
 
@@ -343,6 +344,8 @@ export function ResultScreen() {
           </div>
         </div>
       )}
+
+      {isBudgetMode && budgetTarget > 0 && <BudgetChallengeSummary session={session} />}
 
       {/* Level 3: Audit Report */}
       {level === 3 && session.auditResponses && session.auditResponses.length > 0 && (
