@@ -171,9 +171,9 @@
     "id": "edu-11",
     "title": "Éducation prioritaire (REP/REP+)",
     "subtitle": "1,7 million d'élèves en zone prioritaire",
-    "description": "Environ 1 100 réseaux d'éducation prioritaire, dont environ 360 REP+, scolarisent 1,7 million d'élèves. Les classes de grande section, CP et CE1 y sont dédoublées, et les enseignants perçoivent une indemnité spécifique, jusqu'à environ 5 000 € par an en REP+. Les écarts de résultats avec les autres établissements persistent au collège.",
-    "amountBillions": 2,
-    "costPerCitizen": 29,
+    "description": "Environ 1 100 réseaux d'éducation prioritaire, dont environ 360 REP+, scolarisent 1,7 million d'élèves. Près de 2,6 Md€ y sont consacrés chaque année. Les classes de grande section, CP et CE1 y sont dédoublées, et les enseignants perçoivent une indemnité spécifique, jusqu'à environ 5 000 € par an en REP+. Les écarts de résultats avec les autres établissements persistent au collège.",
+    "amountBillions": 2.6,
+    "costPerCitizen": 38,
     "deckId": "education",
     "icon": "🏫",
     "trend": 5,
@@ -182,7 +182,8 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["REP", "prioritaire", "egalite"],
-    "equivalence": "Classes dédoublées en grande section, CP et CE1"
+    "equivalence": "Classes dédoublées en grande section, CP et CE1",
+    "year": 2026
   },
   {
     "id": "edu-12",

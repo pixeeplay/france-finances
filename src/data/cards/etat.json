@@ -21,9 +21,9 @@
     "id": "eta-02",
     "title": "Masse salariale de l'État",
     "subtitle": "Rémunérations des agents de l'État",
-    "description": "Fin 2023, la fonction publique comptait un peu plus de 5,8 millions d'agents, dont 44 % dans la fonction publique de l'État. Les revalorisations du point d'indice de 3,5 % en juillet 2022 et de 1,5 % en juillet 2023 coûtent respectivement 7,6 Md€ et 3,4 Md€ en année pleine pour l'ensemble de la fonction publique.",
-    "amountBillions": 165,
-    "costPerCitizen": 2425,
+    "description": "Dans le PLF 2026, les dépenses de personnel de l'État atteignent environ 109,5 Md€ hors pensions. Fin 2023, la fonction publique comptait un peu plus de 5,8 millions d'agents, dont 44 % dans la fonction publique de l'État. Les revalorisations du point d'indice de 3,5 % en juillet 2022 et de 1,5 % en juillet 2023 coûtent respectivement 7,6 Md€ et 3,4 Md€ en année pleine pour l'ensemble de la fonction publique.",
+    "amountBillions": 109.5,
+    "costPerCitizen": 1610,
     "deckId": "etat",
     "icon": "👔",
     "source": "Sénat (avis PLF 2026), Budget.gouv.fr, DGAFP",
@@ -31,7 +31,8 @@
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["état", "fonctionnaires", "salaires"],
-    "equivalence": "5,8 millions d'agents publics, dont 44 % à l'État"
+    "equivalence": "5,8 millions d'agents publics, dont 44 % à l'État",
+    "year": 2026
   },
   {
     "id": "eta-03",

@@ -156,9 +156,9 @@
     "id": "sec-10",
     "title": "Sécurité routiere",
     "subtitle": "Plus de 3 000 morts par an sur les routes",
-    "description": "Plus de 3 000 personnes meurent chaque année sur les routes françaises, un chiffre qui stagne depuis une dizaine d'années. L'Observatoire national interministériel de la sécurité routière évalue le coût social des accidents à environ 50 Md€ par an. Les amendes des radars financent notamment la sécurité routière et les collectivités.",
-    "amountBillions": 3.5,
-    "costPerCitizen": 51,
+    "description": "La politique transversale de sécurité routière mobilise 5,05 Md€ de crédits de paiement en 2026. Plus de 3 000 personnes meurent chaque année sur les routes françaises, un chiffre qui stagne depuis une dizaine d'années. Les amendes des radars financent notamment la sécurité routière et les collectivités.",
+    "amountBillions": 5.05,
+    "costPerCitizen": 74,
     "deckId": "securite",
     "icon": "🚦",
     "trend": 0,
@@ -168,7 +168,7 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["routiere", "radars", "amendes"],
-    "equivalence": "Un coût social des accidents estimé à environ 50 Md€ par an"
+    "equivalence": "Plus de 3 000 morts par an sur les routes"
   },
   {
     "id": "sec-11",

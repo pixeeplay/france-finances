@@ -204,9 +204,9 @@
     "id": "cul-13",
     "title": "Grand Paris Express",
     "subtitle": "200 km de metro automatique, 68 gares",
-    "description": "Plus grand projet de transport en Europe, le Grand Paris Express compte 200 km de métro automatique et 68 gares. Son coût a dépassé les prévisions initiales. Il est financé par des taxes affectées franciliennes et par les emprunts de la Société des grands projets, dont les dépenses annuelles avoisinent 5 Md€. Depuis 2025, IDFM verse une redevance d'infrastructure pour l'usage du réseau.",
-    "amountBillions": 44,
-    "costPerCitizen": 647,
+    "description": "Plus grand projet de transport en Europe, le Grand Paris Express compte 200 km de métro automatique et 68 gares. Son coût global actualisé est de 36,1 Md€ depuis 2021, au-delà des prévisions initiales, auxquels s'ajoutent 3,5 Md€ de contribution de la Société des grands projets aux SERM. Il est financé par des taxes affectées franciliennes et par l'emprunt. Depuis 2025, IDFM verse une redevance d'infrastructure pour l'usage du réseau.",
+    "amountBillions": 36.1,
+    "costPerCitizen": 531,
     "deckId": "culture",
     "icon": "🚇",
     "trend": 8,
@@ -215,7 +215,7 @@
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["metro", "transport", "infrastructure"],
-    "equivalence": "Environ 5 Md€ de dépenses par an pour la Société des grands projets"
+    "equivalence": "36,1 Md€ de coût global actualisé, plus 3,5 Md€ pour les SERM"
   },
   {
     "id": "cul-14",

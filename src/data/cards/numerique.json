@@ -213,9 +213,9 @@
     "id": "num-14",
     "title": "Illectronisme et fracture numérique",
     "subtitle": "Environ 15 % de la population en situation d'illectronisme",
-    "description": "Environ 15 % des personnes de 15 ans ou plus sont en situation d'illectronisme selon l'Insee. La dématérialisation des démarches administratives peut exclure ces publics. L'État a déployé environ 4 000 conseillers numériques et le réseau France Services pour les accompagner.",
-    "amountBillions": 0.3,
-    "costPerCitizen": 4,
+    "description": "Environ 15 % des personnes de 15 ans ou plus sont en situation d'illectronisme selon l'Insee. La dématérialisation des démarches administratives peut exclure ces publics. Le dispositif des conseillers numériques a pris fin : il comptait 2 800 postes fin 2025 et ne reçoit plus que 14 M€ dans le PLF 2026, l'accompagnement reposant désormais surtout sur le réseau France Services et les collectivités.",
+    "amountBillions": 0.014,
+    "costPerCitizen": 0.2,
     "deckId": "numerique",
     "icon": "🚀",
     "source": "Sénat (avis PLF 2026), Defenseur des droits, ANCT, INSEE, France Services",
@@ -223,7 +223,8 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["numerique", "illectronisme", "inclusion"],
-    "equivalence": "Environ 4 000 conseillers numériques France Services"
+    "equivalence": "2 800 conseillers numériques fin 2025, 14 M€ en 2026",
+    "year": 2026
   },
   {
     "id": "num-15",

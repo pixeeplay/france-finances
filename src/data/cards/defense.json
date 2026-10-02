@@ -89,19 +89,19 @@
   {
     "id": "def-06",
     "title": "Service de santé des armées",
-    "subtitle": "SSA — 8 hôpitaux militaires",
-    "description": "Hôpitaux militaires (dont Percy et Bégin), médecine de guerre, recherche biomédicale, soutien des OPEX. Le SSA emploie ~16 000 personnes. Ses hôpitaux sont ouverts aux civils (~70% des patients). Crise de fidélisation : les médecins militaires partent vers le civil.",
-    "amountBillions": 1.8,
-    "costPerCitizen": 27,
+    "subtitle": "SSA — hôpitaux militaires et médecine des forces",
+    "description": "Hôpitaux militaires (dont Percy et Bégin), médecine de guerre, recherche biomédicale, soutien des opérations extérieures. Le SSA dispose d'un budget d'environ 1,5 Md€ et de près de 15 000 personnels. Ses hôpitaux accueillent aussi des patients civils. Le service fait face à des difficultés de fidélisation de ses médecins.",
+    "amountBillions": 1.5,
+    "costPerCitizen": 22,
     "deckId": "defense",
     "icon": "🏥",
     "source": "Sénat (avis PLF 2026), Ministère des Armées PLF 2025",
     "sourceUrl": "https://www.senat.fr/rap/a25-141-6/a25-141-6_mono.html",
-    "year": 2025,
+    "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["militaire", "santé", "hôpitaux"],
-    "equivalence": "Le fonctionnement de ~10 CHU de taille moyenne"
+    "equivalence": "Près de 15 000 personnels"
   },
   {
     "id": "def-07",
