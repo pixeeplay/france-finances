@@ -58,7 +58,7 @@ ALTER TABLE community_votes SET (
   autovacuum_analyze_scale_factor = 0.05
 );
 
--- users, waitlist, audit_responses: low volume, defaults are fine.
+-- users, audit_responses: low volume, defaults are fine.
 
 -- -----------------------------------------------------------------------------
 -- 3. Manual maintenance commands (run periodically or after bulk operations)
@@ -106,5 +106,4 @@ ANALYZE votes;
 ANALYZE analytics_events;
 ANALYZE community_votes;
 ANALYZE users;
-ANALYZE waitlist;
 ANALYZE audit_responses;

@@ -112,16 +112,6 @@ export const analyticsEvents = pgTable("analytics_events", {
   index("idx_analytics_ip").on(t.ip),
 ]);
 
-// === Waitlist (city launch notifications) ===
-export const waitlist = pgTable("waitlist", {
-  id: uuid("id").defaultRandom().primaryKey(),
-  email: text("email").notNull(),
-  city: text("city").notNull().default("paris"),
-  createdAt: timestamp("created_at").defaultNow().notNull(),
-}, (t) => [
-  index("idx_waitlist_email_city").on(t.email, t.city),
-]);
-
 // === Audit responses (Level 3) ===
 export const auditResponses = pgTable("audit_responses", {
   id: uuid("id").defaultRandom().primaryKey(),
