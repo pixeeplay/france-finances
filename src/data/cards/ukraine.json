@@ -9,10 +9,9 @@
     "deckId": "ukraine",
     "icon": "🪖",
     "source": "Ministère des Armées (liste mai 2024), Institut Kiel",
-    "sourceUrl": "https://www.défense.gouv.fr",
+    "sourceUrl": "https://www.defense.gouv.fr",
     "level": 1,
     "tags": ["Ukraine", "aide militaire", "défense"],
-    "trend": null,
     "equivalence": "La France a donne l'équivalent en materiel de ~2,5% du budget annuel de la Défense"
   },
   {
@@ -25,10 +24,9 @@
     "deckId": "ukraine",
     "icon": "🇪🇺",
     "source": "Ministère des Armées, Conseil de l'UE",
-    "sourceUrl": "https://www.défense.gouv.fr",
+    "sourceUrl": "https://www.defense.gouv.fr",
     "level": 1,
     "tags": ["Ukraine", "FEP", "Europe", "défense"],
-    "trend": null,
     "equivalence": "La contribution française à la FEP = le budget annuel de la DGSI"
   },
   {
@@ -41,10 +39,9 @@
     "deckId": "ukraine",
     "icon": "🤝",
     "source": "Ministère des Armées, info.gouv.fr",
-    "sourceUrl": "https://www.défense.gouv.fr",
+    "sourceUrl": "https://www.defense.gouv.fr",
     "level": 1,
     "tags": ["Ukraine", "industrie défense", "bilatéral"],
-    "trend": null,
     "equivalence": "Chaque euro du fonds finance un emploi industriel de défense en France"
   },
   {
@@ -57,10 +54,9 @@
     "deckId": "ukraine",
     "icon": "🎯",
     "source": "Ministère des Armées, EUMAM, info.gouv.fr",
-    "sourceUrl": "https://www.défense.gouv.fr",
+    "sourceUrl": "https://www.defense.gouv.fr",
     "level": 1,
     "tags": ["Ukraine", "formation", "militaire"],
-    "trend": null,
     "equivalence": "Former 1 soldat ukrainien = ~15 000€ (vs ~100 000€ pour un soldat français)"
   },
   {
@@ -73,10 +69,8 @@
     "deckId": "ukraine",
     "icon": "🏠",
     "source": "MEAE, conférence Paris déc. 2022, HCR",
-    "sourceUrl": null,
     "level": 1,
     "tags": ["Ukraine", "humanitaire", "réfugiés"],
-    "trend": null,
     "equivalence": "Les 100 000 réfugiés ukrainiens en France coûtent ~500 M€/an (logement, sante, éducation)"
   },
   {
@@ -89,10 +83,8 @@
     "deckId": "ukraine",
     "icon": "🔥",
     "source": "INSEE, Banque de France, RTE",
-    "sourceUrl": null,
     "level": 1,
     "tags": ["Ukraine", "énergie", "surcoût"],
-    "trend": null,
     "equivalence": "Le surcoût énergétique du conflit = la moitié du budget annuel de la Défense, chaque année pendant 2 ans"
   },
   {
@@ -105,10 +97,9 @@
     "deckId": "ukraine",
     "icon": "📈",
     "source": "LPM 2024-2030, PLF 2026, Ministère des Armées",
-    "sourceUrl": "https://www.défense.gouv.fr",
+    "sourceUrl": "https://www.defense.gouv.fr",
     "level": 1,
     "tags": ["Ukraine", "défense", "LPM", "budget"],
-    "trend": null,
     "equivalence": "La hausse annuelle du budget Défense (+3,3 Md€) = le budget du SNU x 3"
   },
   {
@@ -121,10 +112,8 @@
     "deckId": "ukraine",
     "icon": "🧊",
     "source": "Conseil de l'UE, Trésor français, Commission européenne",
-    "sourceUrl": null,
     "level": 1,
     "tags": ["Ukraine", "sanctions", "avoirs russes"],
-    "trend": null,
     "equivalence": "Les avoirs russes geles en France = le budget annuel du ministère de la Culture x 5"
   },
   {
@@ -137,10 +126,9 @@
     "deckId": "ukraine",
     "icon": "🇫🇷",
     "source": "Ministère des Armées, Institut Kiel, lesfrancais.press",
-    "sourceUrl": "https://www.défense.gouv.fr",
+    "sourceUrl": "https://www.defense.gouv.fr",
     "level": 1,
     "tags": ["Ukraine", "bilan", "aide totale"],
-    "trend": null,
     "equivalence": "L'aide française à l'Ukraine = le prix de 2 cafés par Français et par mois pendant 4 ans"
   },
   {
@@ -153,10 +141,8 @@
     "deckId": "ukraine",
     "icon": "📉",
     "source": "FMI, Banque de France, INSEE, OFCE",
-    "sourceUrl": null,
     "level": 1,
     "tags": ["Ukraine", "économie", "croissance", "inflation"],
-    "trend": null,
     "equivalence": "La guerre a coûte à la France 10x plus en croissance perdue qu'en aide militaire"
   }
 ]

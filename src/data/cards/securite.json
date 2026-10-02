@@ -142,7 +142,7 @@
     "icon": "🚦",
     "trend": 0,
     "source": "ONISR, DSCR, PLF 2026, Cour des comptes",
-    "sourceUrl": "https://www.onisr.sécurité-routiere.gouv.fr",
+    "sourceUrl": "https://www.onisr.securite-routiere.gouv.fr",
     "level": 1,
     "tags": ["routiere", "radars", "amendes"],
     "equivalence": "Les amendes rapportent 3,5 Md€ mais les accidents coûtent 50 Md€ — le bilan est 15x négatif"

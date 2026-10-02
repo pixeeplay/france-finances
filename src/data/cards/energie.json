@@ -53,7 +53,7 @@
     "deckId": "energie",
     "icon": "🛢️",
     "source": "France Renouvelables, économie.gouv.fr PPE3",
-    "sourceUrl": "https://www.économie.gouv.fr",
+    "sourceUrl": "https://www.economie.gouv.fr",
     "level": 1,
     "tags": ["énergie", "fossiles", "importation"],
     "equivalence": "64 Md€ = le budget total de la Défense + celui de la Justice"
@@ -83,7 +83,7 @@
     "icon": "🚗",
     "trend": -15,
     "source": "économie.gouv.fr, PPE3",
-    "sourceUrl": "https://www.économie.gouv.fr",
+    "sourceUrl": "https://www.economie.gouv.fr",
     "level": 1,
     "tags": ["énergie", "mobilité", "électrique"],
     "equivalence": "1,5 Md€ = le coût de 2 ans de fonctionnement du réseau de tramways français"
@@ -126,7 +126,7 @@
     "deckId": "energie",
     "icon": "☀️",
     "source": "économie.gouv.fr PPE3, CRE",
-    "sourceUrl": "https://www.économie.gouv.fr",
+    "sourceUrl": "https://www.economie.gouv.fr",
     "level": 1,
     "tags": ["énergie", "renouvelables", "PPE3"],
     "equivalence": "Dans le pire scénario, 212 Md€ = la moitié du coût de la LPM militaire 2024-2030"
@@ -155,10 +155,8 @@
     "deckId": "energie",
     "icon": "🛡️",
     "source": "CRE (juil. 2024), Banque de France, Cour des comptes",
-    "sourceUrl": null,
     "level": 1,
     "tags": ["énergie", "bouclier tarifaire", "crise"],
-    "trend": null,
     "equivalence": "Entre 1 et 3 ans de budget de la Défense engloutis en 3 ans de crise"
   },
   {
@@ -174,7 +172,6 @@
     "sourceUrl": "https://www.vie-publique.fr",
     "level": 1,
     "tags": ["énergie", "électricité", "bouclier tarifaire"],
-    "trend": null,
     "equivalence": "19,2 Md€ en 2023 = le budget annuel entier de la Justice x 2"
   },
   {
@@ -190,7 +187,6 @@
     "sourceUrl": "https://www.vie-publique.fr",
     "level": 1,
     "tags": ["énergie", "carburant", "transport"],
-    "trend": null,
     "equivalence": "8,5 Md€ = le double du budget annuel du ministère de la Culture"
   },
   {
@@ -203,10 +199,8 @@
     "deckId": "energie",
     "icon": "🏭",
     "source": "Gouvernement, AMF, rapport parlementaire EDF",
-    "sourceUrl": null,
     "level": 1,
     "tags": ["énergie", "EDF", "nationalisation"],
-    "trend": null,
     "equivalence": "Le prix de 8 EPR2 (coût unitaire estimé ~1,2 Md€ hors surcoûts)"
   },
   {
@@ -219,10 +213,8 @@
     "deckId": "energie",
     "icon": "⚛️",
     "source": "CRE, EDF rapport annuel 2022, Cour des comptes",
-    "sourceUrl": null,
     "level": 1,
     "tags": ["énergie", "ARENH", "nucléaire", "EDF"],
-    "trend": null,
     "equivalence": "EDF a vendu son électricité 5 à 10x moins cher que le marché, sur ordre de l'État"
   },
   {
@@ -238,7 +230,6 @@
     "sourceUrl": "https://www.vie-publique.fr",
     "level": 1,
     "tags": ["énergie", "aide sociale", "précarité"],
-    "trend": null,
     "equivalence": "200€ de cheque énergie = environ 1 mois de chauffage pour un studio"
   },
   {
@@ -254,7 +245,6 @@
     "sourceUrl": "https://www.vie-publique.fr",
     "level": 1,
     "tags": ["énergie", "entreprises", "industrie"],
-    "trend": null,
     "equivalence": "La France a dépense 3x moins que l'Allemagne pour protéger ses entreprises"
   },
   {
@@ -267,10 +257,8 @@
     "deckId": "energie",
     "icon": "🌬️",
     "source": "CRE délibération juil. 2024, RTE",
-    "sourceUrl": null,
     "level": 1,
     "tags": ["énergie", "renouvelables", "recettes"],
-    "trend": null,
     "equivalence": "Les éoliennes ont remboursé l'équivalent de 2 ans de cheques énergie"
   },
   {
@@ -283,10 +271,8 @@
     "deckId": "energie",
     "icon": "🛢️",
     "source": "Douanes françaises, DGEC, bilan énergétique 2023",
-    "sourceUrl": null,
     "level": 1,
     "tags": ["énergie", "importations", "hydrocarbures"],
-    "trend": null,
     "equivalence": "La France envoie chaque année l'équivalent du budget de l'Éducation nationale à l'étranger pour ses hydrocarbures"
   },
   {
@@ -302,7 +288,6 @@
     "sourceUrl": "https://www.vie-publique.fr",
     "level": 1,
     "tags": ["énergie", "bilan", "crise"],
-    "trend": null,
     "equivalence": "85 Md€ = la moitié de la charge annuelle de la dette publique"
   },
   {
@@ -348,7 +333,7 @@
     "icon": "🔌",
     "trend": -5,
     "source": "ONPE, ADEME, PLF 2026",
-    "sourceUrl": "https://www.écologie.gouv.fr",
+    "sourceUrl": "https://www.ecologie.gouv.fr",
     "level": 1,
     "tags": ["précarité", "social", "énergie"],
     "equivalence": "Le cheque énergie couvre ~1 mois de chauffage sur 6 mois d'hiver"

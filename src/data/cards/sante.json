@@ -155,10 +155,8 @@
     "deckId": "sante",
     "icon": "🏥",
     "source": "DREES, DGOS, Cour des comptes rapport hospitalier",
-    "sourceUrl": null,
     "level": 1,
     "tags": ["santé", "hôpital", "budget"],
-    "trend": null,
     "equivalence": "Chaque Français dépense 135€/mois pour l'hôpital public, soit un abonnement Netflix x 10"
   },
   {
@@ -171,10 +169,8 @@
     "deckId": "sante",
     "icon": "👩‍⚕️",
     "source": "DGOS, Cour des comptes, FHF",
-    "sourceUrl": null,
     "level": 1,
     "tags": ["santé", "hôpital", "salaires"],
-    "trend": null,
     "equivalence": "Un infirmier hospitalier gagne ~2 100€ nets/mois (après Segur), vs ~2 800€ dans le privé ou en interim"
   },
   {
@@ -187,10 +183,8 @@
     "deckId": "sante",
     "icon": "🏷️",
     "source": "Sénat, IGAS rapport T2A, FHF",
-    "sourceUrl": null,
     "level": 1,
     "tags": ["santé", "hôpital", "T2A", "financement"],
-    "trend": null,
     "equivalence": "Une appendicectomie est remboursée ~2 500€ à l'hôpital, quel que soit le temps réel passé"
   },
   {
@@ -203,10 +197,8 @@
     "deckId": "sante",
     "icon": "🚑",
     "source": "DREES, SFMU, Cour des comptes",
-    "sourceUrl": null,
     "level": 1,
     "tags": ["santé", "urgences", "hôpital"],
-    "trend": null,
     "equivalence": "Un passage aux urgences coûte ~240€ en moyenne, vs ~25€ chez le généraliste"
   },
   {
@@ -219,10 +211,8 @@
     "deckId": "sante",
     "icon": "🏗️",
     "source": "FHF, Cour des comptes, DGOS",
-    "sourceUrl": null,
     "level": 1,
     "tags": ["santé", "hôpital", "dette", "investissement"],
-    "trend": null,
     "equivalence": "La dette de l'hôpital = 3x le budget annuel du ministère de la Justice"
   },
   {
@@ -235,10 +225,8 @@
     "deckId": "sante",
     "icon": "🧠",
     "source": "DREES, ARS, Cour des comptes rapport psychiatrie",
-    "sourceUrl": null,
     "level": 1,
     "tags": ["santé", "psychiatrie", "santé mentale"],
-    "trend": null,
     "equivalence": "Les troubles psychiques coûtent ~109 Md€/an à la société selon l'OMS"
   },
   {
@@ -251,10 +239,8 @@
     "deckId": "sante",
     "icon": "🏘️",
     "source": "DGOS, FHF, ARS",
-    "sourceUrl": null,
     "level": 1,
     "tags": ["santé", "hôpital", "proximité", "rural"],
-    "trend": null,
     "equivalence": "Un hôpital de proximite coûte ~27 M€/an pour desservir ~30 000 habitants"
   },
   {
@@ -267,10 +253,8 @@
     "deckId": "sante",
     "icon": "🎓",
     "source": "Conférence des DG de CHU, AP-HP, DGOS",
-    "sourceUrl": null,
     "level": 1,
     "tags": ["santé", "CHU", "recherche", "formation"],
-    "trend": null,
     "equivalence": "L'AP-HP = le PIB du Tchad (8 Md€), pour 10 millions de patients/an"
   },
   {
@@ -283,10 +267,8 @@
     "deckId": "sante",
     "icon": "⏰",
     "source": "IGAS, Cour des comptes, FHF rapport intérim",
-    "sourceUrl": null,
     "level": 1,
     "tags": ["santé", "intérim", "hôpital"],
-    "trend": null,
     "equivalence": "1 médecin intérimaire coûte autant que 2-3 médecins titulaires"
   },
   {
@@ -299,10 +281,8 @@
     "deckId": "sante",
     "icon": "🏠",
     "source": "HAS, ANAP, Cour des comptes rapport ambulatoire",
-    "sourceUrl": null,
     "level": 1,
     "tags": ["santé", "ambulatoire", "économies"],
-    "trend": null,
     "equivalence": "Chaque point de chirurgie ambulatoire gagne = ~500 M€ d'économies"
   },
   {

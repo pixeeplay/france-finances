@@ -25,7 +25,7 @@
     "deckId": "defense",
     "icon": "🚢",
     "source": "Ministère des Armées PLF 2025, LPM 2024-2030",
-    "sourceUrl": "https://www.défense.gouv.fr",
+    "sourceUrl": "https://www.defense.gouv.fr",
     "level": 1,
     "tags": ["militaire", "marine", "équipement"],
     "equivalence": "Le salaire annuel de ~30 000 infirmieres hospitalières"
@@ -56,7 +56,7 @@
     "icon": "🛡️",
     "trend": 15,
     "source": "Ministère des Armées PLF 2025",
-    "sourceUrl": "https://www.défense.gouv.fr",
+    "sourceUrl": "https://www.defense.gouv.fr",
     "level": 1,
     "tags": ["militaire", "cyber", "technologie"],
     "equivalence": "Le coût de 3 satellites militaires d'observation"
@@ -72,7 +72,7 @@
     "icon": "🕵️",
     "trend": 13,
     "source": "Ministère des Armées PLF 2025, Sénat",
-    "sourceUrl": "https://www.défense.gouv.fr",
+    "sourceUrl": "https://www.defense.gouv.fr",
     "level": 1,
     "tags": ["militaire", "renseignement", "souveraineté"],
     "equivalence": "~2x le budget annuel de l'Opera national de Paris"
@@ -87,7 +87,7 @@
     "deckId": "defense",
     "icon": "🏥",
     "source": "Ministère des Armées PLF 2025",
-    "sourceUrl": "https://www.défense.gouv.fr",
+    "sourceUrl": "https://www.defense.gouv.fr",
     "level": 1,
     "tags": ["militaire", "santé", "hôpitaux"],
     "equivalence": "Le fonctionnement de ~10 CHU de taille moyenne"
@@ -103,7 +103,7 @@
     "icon": "🛰️",
     "trend": 15,
     "source": "Ministère des Armées PLF 2025, LPM 2024-2030",
-    "sourceUrl": "https://www.défense.gouv.fr",
+    "sourceUrl": "https://www.defense.gouv.fr",
     "level": 1,
     "tags": ["militaire", "espace", "technologie"],
     "equivalence": "~2 missions de la sonde Rosetta (ESA)"
@@ -119,7 +119,7 @@
     "icon": "🏗️",
     "trend": 12,
     "source": "Ministère des Armées PLF 2025",
-    "sourceUrl": "https://www.défense.gouv.fr",
+    "sourceUrl": "https://www.defense.gouv.fr",
     "level": 1,
     "tags": ["militaire", "infrastructure", "logement"],
     "equivalence": "La construction de ~24 000 logements sociaux / an"
@@ -134,7 +134,7 @@
     "deckId": "defense",
     "icon": "🤖",
     "source": "Ministère des Armées PLF 2025, LPM 2024-2030",
-    "sourceUrl": "https://www.défense.gouv.fr",
+    "sourceUrl": "https://www.defense.gouv.fr",
     "level": 1,
     "tags": ["militaire", "innovation", "technologie"],
     "equivalence": "4x le budget annuel du CNRS en sciences informatiques"
@@ -165,7 +165,7 @@
     "icon": "🛩️",
     "trend": 40,
     "source": "Rapport au Parlement sur les exportations d'armement 2025, DGA",
-    "sourceUrl": "https://www.défense.gouv.fr",
+    "sourceUrl": "https://www.defense.gouv.fr",
     "level": 1,
     "tags": ["armement", "exportation", "industrie"],
     "equivalence": "Les exportations d'armes rapportent plus que le tourisme a Paris"
@@ -181,7 +181,7 @@
     "icon": "🎖️",
     "trend": 15,
     "source": "LPM 2024-2030, Ministere des Armees",
-    "sourceUrl": "https://www.défense.gouv.fr",
+    "sourceUrl": "https://www.defense.gouv.fr",
     "level": 1,
     "tags": ["reserve", "garde nationale", "défense"],
     "equivalence": "Un réserviste coûte 5x moins qu'un militaire d'active pour une mission similaire"

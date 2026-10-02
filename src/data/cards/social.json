@@ -187,10 +187,8 @@
     "deckId": "social",
     "icon": "👷",
     "source": "CNAV, Agirc-Arrco, COR",
-    "sourceUrl": null,
     "level": 1,
     "tags": ["retraites", "régime général", "privé"],
-    "trend": null,
     "equivalence": "Pour 1 retraite du privé, 1,7 actif cotise (contre 4 en 1960)"
   },
   {
@@ -203,10 +201,8 @@
     "deckId": "social",
     "icon": "📈",
     "source": "Agirc-Arrco rapport annuel 2024, COR",
-    "sourceUrl": null,
     "level": 1,
     "tags": ["retraites", "Agirc-Arrco", "complémentaire"],
-    "trend": null,
     "equivalence": "Les réserves Agirc-Arrco (70 Md€) = le budget du ministère de l'Éducation nationale"
   },
   {
@@ -219,10 +215,8 @@
     "deckId": "social",
     "icon": "🏛️",
     "source": "CAS Pensions, DGAFP, COR",
-    "sourceUrl": null,
     "level": 1,
     "tags": ["retraites", "fonctionnaires", "État"],
-    "trend": null,
     "equivalence": "La pension moyenne d'un fonctionnaire d'État = ~2 200€/mois brut (vs ~1 500€ régime général)"
   },
   {
@@ -235,10 +229,8 @@
     "deckId": "social",
     "icon": "🚂",
     "source": "COR, Cour des comptes rapport régimes spéciaux, PLF 2026",
-    "sourceUrl": null,
     "level": 1,
     "tags": ["retraites", "régimes spéciaux", "SNCF", "RATP"],
-    "trend": null,
     "equivalence": "L'État subventionne ~75% des pensions SNCF/RATP (les cotisants ne financent que 25%)"
   },
   {
@@ -251,10 +243,8 @@
     "deckId": "social",
     "icon": "👴",
     "source": "DREES, CNAV, Fondation Abbé Pierre",
-    "sourceUrl": null,
     "level": 1,
     "tags": ["retraites", "minimum vieillesse", "ASPA", "solidarité"],
-    "trend": null,
     "equivalence": "300 000 retraites éligibles ne demandent pas l'ASPA, par méconnaissance ou par peur de la récupération sur succession"
   },
   {
@@ -267,10 +257,8 @@
     "deckId": "social",
     "icon": "📜",
     "source": "COR projections 2024, Sénat, DREES",
-    "sourceUrl": null,
     "level": 1,
     "tags": ["retraites", "réforme", "âge légal"],
-    "trend": null,
     "equivalence": "18 Md€ d'économies sur 7 ans = moins d'1 an de charge de la dette"
   },
   {
@@ -283,10 +271,8 @@
     "deckId": "social",
     "icon": "⛏️",
     "source": "DREES, CNAV, COR",
-    "sourceUrl": null,
     "level": 1,
     "tags": ["retraites", "pénibilité", "carrières longues"],
-    "trend": null,
     "equivalence": "Un ouvrier vit en moyenne 6 ans de moins qu'un cadre, mais part seulement 2 ans plus tot"
   },
   {
@@ -299,10 +285,8 @@
     "deckId": "social",
     "icon": "💍",
     "source": "DREES, COR, CNAV",
-    "sourceUrl": null,
     "level": 1,
     "tags": ["retraites", "réversion", "veuvage"],
-    "trend": null,
     "equivalence": "La reversion moyenne = ~600€/mois, souvent insuffisante pour une veuve âgée"
   },
   {
@@ -315,10 +299,8 @@
     "deckId": "social",
     "icon": "🌾",
     "source": "MSA, SSI, DREES, COR",
-    "sourceUrl": null,
     "level": 1,
     "tags": ["retraites", "indépendants", "agriculteurs"],
-    "trend": null,
     "equivalence": "Un agriculteur retraite gagne moitié moins qu'un fonctionnaire retraite, après une carriere souvent plus longue"
   },
   {
@@ -331,10 +313,8 @@
     "deckId": "social",
     "icon": "🌐",
     "source": "OCDE Pensions at a Glance 2025, COR, Eurostat",
-    "sourceUrl": null,
     "level": 1,
     "tags": ["retraites", "comparaison", "OCDE", "international"],
-    "trend": null,
     "equivalence": "Un Français passe ~42% de sa vie adulte au travail et ~33% à la retraite"
   },
   {

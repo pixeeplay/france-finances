@@ -12,7 +12,6 @@
     "sourceUrl": "https://www.budget.gouv.fr/budget-de-letat/le-projet-de-loi-de-finances",
     "level": 1,
     "tags": ["Europe", "contribution", "budget UE"],
-    "trend": null,
     "equivalence": "Chaque Français paie ~1€/jour pour l'Union européenne"
   },
   {
@@ -28,7 +27,6 @@
     "sourceUrl": "https://www.touteleurope.eu/fonctionnement-de-l-ue/budget-europeen-quels-sont-les-pays-qui-paient-le-plus-et-ceux-qui-recoivent-le-plus/",
     "level": 1,
     "tags": ["Europe", "retours", "PAC", "fonds structurels"],
-    "trend": null,
     "equivalence": "La France reçoit 65 centimes pour chaque euro verse à l'UE"
   },
   {
@@ -44,7 +42,6 @@
     "sourceUrl": "https://commission.europa.eu/strategy-and-policy/recovery-plan-europe_fr",
     "level": 1,
     "tags": ["Europe", "relance", "NextGenerationEU"],
-    "trend": null,
     "equivalence": "La France reçoit plus de NextGenerationEU que ce que coûte son budget Justice en 4 ans"
   },
   {
@@ -60,7 +57,6 @@
     "sourceUrl": "https://www.consilium.europa.eu/fr/policies/european-peace-facility/",
     "level": 1,
     "tags": ["Europe", "défense", "Ukraine", "FEP"],
-    "trend": null,
     "equivalence": "La contribution française à la FEP = le budget annuel de l'aide juridictionnelle"
   },
   {
@@ -76,7 +72,6 @@
     "sourceUrl": "https://agence.erasmusplus.fr/",
     "level": 1,
     "tags": ["Europe", "éducation", "Erasmus", "mobilité"],
-    "trend": null,
     "equivalence": "6€/an par Français pour 600 000 echanges étudiants/an en Europe"
   },
   {
@@ -92,7 +87,6 @@
     "sourceUrl": "https://www.frontex.europa.eu/",
     "level": 1,
     "tags": ["Europe", "frontières", "immigration", "Frontex"],
-    "trend": null,
     "equivalence": "Le budget Frontex = le prix de 2 heures d'opérations militaires françaises par jour"
   },
   {
@@ -108,12 +102,11 @@
     "sourceUrl": "https://www.gsa.europa.eu/european-gnss/galileo/galileo-european-global-satellite-based-navigation-system",
     "level": 1,
     "tags": ["Europe", "spatial", "souveraineté", "Galileo"],
-    "trend": null,
     "equivalence": "Galileo est utilise chaque jour par 3,5 milliards d'appareils dans le monde"
   },
   {
     "id": "fre-08",
-    "title": "Politique agricole commune (PAC)",
+    "title": "Politique agricole commune (budget de l'UE)",
     "subtitle": "Sans la PAC, le prix du panier de courses augmenterait de ~5-10%",
     "description": "La PAC représente ~31% du budget de l'UE (en baisse : c'était 70% en 1980). La France en est le 1er bénéficiaire en volume mais pas par hectare (les aides sont plus élevées en Grèce ou aux Pays-Bas). Débat européen permanent : faut-il continuer à subventionner l'agriculture intensive ou réorienter vers l'agroécologie ? La PAC post-2027 est en négociation, avec une pression forte pour réduire son poids.",
     "amountBillions": 53,
@@ -124,7 +117,6 @@
     "sourceUrl": "https://agriculture.ec.europa.eu/common-agricultural-policy_fr",
     "level": 1,
     "tags": ["Europe", "agriculture", "PAC"],
-    "trend": null,
     "equivalence": "Sans la PAC, le prix du panier de courses augmenterait de ~5-10% selon les estimations"
   },
   {
@@ -140,7 +132,6 @@
     "sourceUrl": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_fr",
     "level": 1,
     "tags": ["Europe", "environnement", "carbone", "MACF"],
-    "trend": null,
     "equivalence": "Le MACF pourrait devenir la 1re ressource propre de l'UE"
   },
   {
@@ -156,7 +147,6 @@
     "sourceUrl": "https://www.vie-publique.fr/en-bref/278547-brexit-quel-impact-economique-pour-la-france",
     "level": 1,
     "tags": ["Europe", "Brexit", "commerce"],
-    "trend": null,
     "equivalence": "Le Brexit coûte a chaque Français l'équivalent d'un abonnement de streaming par mois"
   }
 ]

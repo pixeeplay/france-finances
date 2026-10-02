@@ -171,7 +171,7 @@
     "icon": "🚲",
     "trend": 25,
     "source": "Plan velo, ADEME, Velo & Territoires",
-    "sourceUrl": "https://www.écologie.gouv.fr",
+    "sourceUrl": "https://www.ecologie.gouv.fr",
     "level": 1,
     "tags": ["velo", "mobilite", "transport"],
     "equivalence": "1 km de piste cyclable coûte ~200 000€ (vs ~10 M€ pour 1 km de tramway)"
@@ -219,7 +219,7 @@
     "icon": "✈️",
     "trend": 10,
     "source": "DGAC, PLF 2026, UNITAID",
-    "sourceUrl": "https://www.écologie.gouv.fr",
+    "sourceUrl": "https://www.ecologie.gouv.fr",
     "level": 1,
     "tags": ["aerien", "taxe", "carbone"],
     "equivalence": "Un aller-retour Paris-New York génère ~1,7 tonne de CO2 par passager, taxe ~45€ en classe eco"

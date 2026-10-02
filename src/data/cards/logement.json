@@ -162,7 +162,7 @@
     "subtitle": "Reduction de loyer de solidarite",
     "description": "En 2018, l'État a baissé les APL de 5/mois et compensé en imposant aux bailleurs HLM une RLS du même montant. Depuis 2017, 16 Md€ ponctionnes aux organismes HLM, reduisant leur capacité a construire et renover. L'USH qualifie ce mécanisme de toxique.",
     "amountBillions": 1.3,
-    "costPerCitizen": 15,
+    "costPerCitizen": 19,
     "deckId": "logement",
     "icon": "🏠",
     "source": "USH, PLF 2026, Public Senat",
