@@ -47,6 +47,9 @@ export function Footer() {
               <Link href="/simulateur" className="inline-flex items-center min-h-[44px] hover:text-foreground">Simulateur</Link>
             </li>
             <li>
+              <Link href="/lexique" className="inline-flex items-center min-h-[44px] hover:text-foreground">Lexique</Link>
+            </li>
+            <li>
               <Link href="/a-propos" className="inline-flex items-center min-h-[44px] hover:text-foreground">À propos</Link>
             </li>
             <li>

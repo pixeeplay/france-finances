@@ -75,6 +75,7 @@ export default function InfosPage() {
             {[
               { href: "/chiffres", title: "Les chiffres", text: "Dette, déficit, budget de l'État, dépense publique" },
               { href: "/simulateur", title: "Le simulateur", text: "Impôts et cotisations prélevés sur un salaire" },
+              { href: "/lexique", title: "Le lexique", text: "Les sigles et mots du budget expliqués simplement" },
             ].map((tool) => (
               <Link
                 key={tool.href}
