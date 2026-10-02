@@ -97,9 +97,14 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
   const toggleOff = "text-muted-foreground hover:text-foreground";
 
   return (
-    <div className="space-y-8">
+    // Desktop : saisie collante à gauche, résultats à droite (la saisie reste
+    // visible pendant la lecture du détail).
+    <div className="flex flex-col gap-8 lg:grid lg:grid-cols-12 lg:items-start">
       {/* Saisie */}
-      <section aria-labelledby="sim-input-title" className="rounded-3xl border border-border bg-card p-5 sm:p-6">
+      <section
+        aria-labelledby="sim-input-title"
+        className="rounded-3xl border border-border bg-card p-5 sm:p-6 lg:col-span-5 lg:row-span-4 lg:sticky lg:top-24"
+      >
         <p className="kicker text-info mb-1">Saisie</p>
         <h2 id="sim-input-title" className="text-2xl font-extrabold text-foreground mb-4">
           Votre situation
@@ -220,7 +225,7 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
       </section>
 
       {/* Synthèse */}
-      <section aria-labelledby="sim-summary-title">
+      <section aria-labelledby="sim-summary-title" className="lg:col-span-7 lg:col-start-6">
         <p className="kicker text-danger mb-1">Synthèse</p>
         <h2 id="sim-summary-title" className="text-2xl font-extrabold text-foreground mb-4">
           Estimation annuelle
@@ -247,7 +252,10 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
       </section>
 
       {/* Détail */}
-      <section aria-labelledby="sim-detail-title" className="rounded-3xl border border-border bg-card p-5 sm:p-6">
+      <section
+        aria-labelledby="sim-detail-title"
+        className="rounded-3xl border border-border bg-card p-5 sm:p-6 lg:col-span-7 lg:col-start-6"
+      >
         <h2 id="sim-detail-title" className="text-2xl font-extrabold text-foreground mb-2">Détail du calcul</h2>
         <dl className="divide-y divide-border">
           <Row label="Salaire brut" value={formatEuros(input.annualGross)} strong />
@@ -272,7 +280,10 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
       </section>
 
       {/* Répartition */}
-      <section aria-labelledby="sim-budget-title" className="rounded-3xl border border-border bg-card p-5 sm:p-6">
+      <section
+        aria-labelledby="sim-budget-title"
+        className="rounded-3xl border border-border bg-card p-5 sm:p-6 lg:col-span-7 lg:col-start-6"
+      >
         <h2 id="sim-budget-title" className="text-2xl font-extrabold leading-tight text-foreground mb-2">
           Si votre impôt sur le revenu et votre TVA suivaient le budget de l&apos;État
         </h2>
@@ -292,7 +303,7 @@ export function Simulator({ initialInput, budgetItems }: SimulatorProps) {
         />
       </section>
 
-      <div className="flex flex-col sm:flex-row gap-3">
+      <div className="flex flex-col sm:flex-row gap-3 lg:col-span-7 lg:col-start-6">
         <button
           type="button"
           onClick={share}

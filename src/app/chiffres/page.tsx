@@ -167,19 +167,21 @@ export default function ChiffresPage() {
     <PageShell>
       <div className={CHART_PALETTE_CLASS}>
         {/* En-tête */}
-        <header className="pb-2">
-          <p className="inline-flex items-center gap-2 rounded-full bg-blue-500/10 px-3 py-1 text-xs font-bold text-blue-700 dark:text-blue-400">
-            <UiIcon name="chart" size={14} />
-            Données officielles · mise à jour octobre 2026
-          </p>
-          <h1 className="mt-4 font-heading text-4xl sm:text-5xl font-black leading-[1.05] text-brand-fg">
-            {TITLE}
-          </h1>
-          <p className="mt-4 text-base text-muted-foreground leading-relaxed">
-            Dette, budget de l&apos;État, dépense publique : les chiffres officiels (Insee, Parlement, DREES,
-            Eurostat), en graphiques.
-          </p>
-          <div className="mt-6 grid grid-cols-2 gap-3">
+        <header className="pb-2 lg:grid lg:grid-cols-12 lg:items-end lg:gap-x-10">
+          <div className="lg:col-span-6">
+            <p className="inline-flex items-center gap-2 rounded-full bg-blue-500/10 px-3 py-1 text-xs font-bold text-blue-700 dark:text-blue-400">
+              <UiIcon name="chart" size={14} />
+              Données officielles · mise à jour octobre 2026
+            </p>
+            <h1 className="mt-4 font-heading text-4xl sm:text-5xl font-black leading-[1.05] text-brand-fg">
+              {TITLE}
+            </h1>
+            <p className="mt-4 max-w-prose text-base text-muted-foreground leading-relaxed">
+              Dette, budget de l&apos;État, dépense publique : les chiffres officiels (Insee, Parlement, DREES,
+              Eurostat), en graphiques.
+            </p>
+          </div>
+          <div className="mt-6 grid grid-cols-2 gap-3 lg:col-span-6">
             <BigStat
               tone="red"
               label="Dette publique"
@@ -363,6 +365,7 @@ export default function ChiffresPage() {
             description="Sur 100 € d'impôts encaissés par l'État en 2026 : la part de la TVA, de l'impôt sur le revenu, de l'impôt sur les sociétés et des autres impôts, d'après la répartition prévue dans le projet de loi de finances."
             height={DONUT_CHART_HEIGHT}
             chart={<RevenueDonutChart data={revenue} centerValue="100 €" centerLabel="d'impôts" />}
+            split
             legend={<ShareLegend items={revenue} />}
             table={
               <DataTable
@@ -667,7 +670,7 @@ export default function ChiffresPage() {
               </li>
             ))}
           </ul>
-          <p className="mt-6 text-sm text-muted-foreground leading-relaxed">
+          <p className="mt-6 max-w-prose text-sm text-muted-foreground leading-relaxed">
             Les montants sont arrondis. Les montants « par habitant » sont des ratios indicatifs (total divisé par la
             population au 1er janvier 2026). Une erreur ? Signalez-la via la page{" "}
             <Link href="/contribuer" className="underline underline-offset-2 hover:text-foreground">
