@@ -82,8 +82,8 @@
   {
     "id": "ukr-06",
     "title": "Surcoût énergétique indirect (impact du conflit)",
-    "subtitle": "Le surcoût énergétique du conflit = la moitié du budget annuel de la Défense, chaque année pendant 2 ans",
-    "description": "La guerre a provoqué une flambée des prix du gaz (+200%), du pétrole (+40%) et de l'électricité (x10 en pic). La France importait 17% de son gaz de Russie en 2021 (vs <5% en 2024). Le surcoût énergétique global (ménages + entreprises + collectivités) est estimé à 40-50 Md€ au-delà du budget du bouclier tarifaire. C'est le coût indirect le plus massif du conflit. La crise a aussi accéléré la transition énergétique et le retour au nucléaire.",
+    "subtitle": "Un coût indirect important, sans chiffrage officiel unique",
+    "description": "La guerre a provoqué une flambée des prix du gaz, du pétrole et de l'électricité en Europe. La France importait environ 17 % de son gaz de Russie en 2021 et s'est tournée vers le gaz naturel liquéfié. Au-delà des 72 Md€ de mesures de soutien chiffrées par la Cour des comptes, le surcoût supporté par les ménages, les entreprises et les collectivités n'a pas fait l'objet d'une évaluation officielle unique : le montant affiché est un ordre de grandeur.",
     "amountBillions": 45,
     "costPerCitizen": 662,
     "deckId": "ukraine",
@@ -91,15 +91,15 @@
     "source": "INSEE, Banque de France, RTE",
     "level": 1,
     "tags": ["Ukraine", "énergie", "surcoût"],
-    "equivalence": "Le surcoût énergétique du conflit = la moitié du budget annuel de la Défense, chaque année pendant 2 ans"
+    "equivalence": "Un ordre de grandeur, sans évaluation officielle consolidée"
   },
   {
     "id": "ukr-07",
     "title": "Hausse du budget Défense (accélération LPM)",
-    "subtitle": "La hausse annuelle du budget Défense (+3,3 Md€) = le budget du SNU x 3",
-    "description": "La LPM 2024-2030 prévoit 413 Md€ sur 7 ans, soit une hausse de 40% par rapport à la LPM précédente. Le budget Défense atteint 50,5 Md€ en 2025. La guerre en Ukraine a justifié cette accélération : reconstitution des stocks (les livraisons à l'Ukraine ont vidé certains arsenaux), montée en cadence de la production de munitions, objectif OTAN de 2% puis 3,5% du PIB. La France est le seul budget en hausse dans le PLF 2026 d'austérité.",
-    "amountBillions": 3.3,
-    "costPerCitizen": 49,
+    "subtitle": "+6,78 Md€ de crédits de paiement en 2026",
+    "description": "La LPM 2024-2030 prévoit 400 Md€ de crédits de paiement hors pensions sur sept ans. En 2026, les crédits de paiement de la mission Défense atteignent 66,7 Md€ (+6,78 Md€), dont 57,2 Md€ hors pensions : à la marche de 3,2 Md€ prévue par la LPM s'ajoute une « surmarche » de 3,5 Md€ annoncée en juillet 2025. La guerre en Ukraine a justifié cette accélération : reconstitution des stocks, montée en cadence de la production de munitions, objectif OTAN de 3,5 % du PIB. La Défense est l'une des rares missions en hausse dans le PLF 2026.",
+    "amountBillions": 6.78,
+    "costPerCitizen": 100,
     "deckId": "ukraine",
     "icon": "📈",
     "source": "Sénat (PLF 2026), LPM 2024-2030, PLF 2026, Ministère des Armées",
@@ -108,13 +108,13 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["Ukraine", "défense", "LPM", "budget"],
-    "equivalence": "La hausse annuelle du budget Défense (+3,3 Md€) = le budget du SNU x 3"
+    "equivalence": "Une marche LPM de 3,2 Md€ et une surmarche de 3,5 Md€ en 2026"
   },
   {
     "id": "ukr-08",
     "title": "Sanctions et gel des avoirs russes",
-    "subtitle": "Les avoirs russes gelés en France = le budget annuel du ministère de la Culture x 5",
-    "description": "L'UE a gelé ~260 Md€ d'actifs de la Banque centrale russe, dont ~22 Md€ localisés en France (Euroclear, banques). Les intérêts générés (~3 Md€/an pour l'UE) sont désormais utilisés pour financer l'aide à l'Ukraine. Le débat sur la confiscation des avoirs eux-mêmes (pas seulement les intérêts) est en cours. La Russie menace de représailles sur les actifs occidentaux en Russie (~80 Md€). La France a aussi sanctionné ~300 individus et entités russes (oligarques, entreprises).",
+    "subtitle": "Des avoirs immobilisés, pas une dépense publique",
+    "description": "L'Union européenne a immobilisé environ 210 Md€ d'actifs de la Banque centrale de Russie, principalement chez le dépositaire Euroclear en Belgique ; une partie est détenue en France. Les revenus exceptionnels générés par ces avoirs servent à financer l'aide à l'Ukraine, notamment le remboursement du prêt de 45 Md$ décidé par le G7 en 2024. L'utilisation des avoirs eux-mêmes fait débat. La France applique les régimes de sanctions européens contre des personnes et entités russes.",
     "amountBillions": 22,
     "costPerCitizen": 0,
     "deckId": "ukraine",
@@ -122,7 +122,7 @@
     "source": "Conseil de l'UE, Trésor français, Commission européenne",
     "level": 1,
     "tags": ["Ukraine", "sanctions", "avoirs russes"],
-    "equivalence": "Les avoirs russes geles en France = le budget annuel du ministère de la Culture x 5"
+    "equivalence": "Environ 210 Md€ d'actifs russes immobilisés dans l'UE"
   },
   {
     "id": "ukr-09",
@@ -143,7 +143,7 @@
   {
     "id": "ukr-10",
     "title": "Conséquences économiques globales du conflit",
-    "subtitle": "Un coût indirect bien supérieur à l'aide directe, mais difficile à chiffrer",
+    "subtitle": "Un coût indirect difficile à chiffrer",
     "description": "Au-delà des aides directes, le conflit a pesé sur l'économie française : flambée des prix de l'énergie, inflation importée, perturbation des chaînes d'approvisionnement, hausse des taux d'intérêt. En mars 2022, la Banque de France a abaissé ses prévisions de croissance et présenté deux scénarios (2,8 % à 3,4 % pour 2022). Ce coût indirect n'a pas d'évaluation officielle consolidée : le montant affiché est un ordre de grandeur exprimé en points de PIB.",
     "amountBillions": 0.75,
     "costPerCitizen": 600,

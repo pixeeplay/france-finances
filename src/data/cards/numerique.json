@@ -135,7 +135,7 @@
   {
     "id": "num-09",
     "title": "Bpifrance (financement de l'innovation)",
-    "subtitle": "40 Md/an de financements mobilises",
+    "subtitle": "Banque publique d'investissement",
     "description": "Bpifrance, banque publique d'investissement, soutient les entreprises par des prêts, des garanties, des investissements en fonds propres et des aides à l'innovation ; elle opère aussi une partie des aides de France 2030. Son action fait débat : soutien aux entreprises qui peinent à se financer ou concurrence avec le capital privé sur les entreprises les plus attractives.",
     "amountBillions": 40,
     "costPerCitizen": 588,
@@ -152,7 +152,7 @@
   {
     "id": "num-10",
     "title": "French Tech et écosystème startup",
-    "subtitle": "25 000 startups, 30 licornes",
+    "subtitle": "Une trentaine de licornes françaises",
     "description": "La French Tech regroupe plusieurs dizaines de milliers de start-up et une trentaine de licornes (Doctolib, BlaBlaCar, Mistral AI). Les levées de fonds ont atteint un pic en 2022 avant de reculer. L'État soutient l'écosystème via la Mission French Tech, Bpifrance et France 2030.",
     "amountBillions": 0.3,
     "costPerCitizen": 4,
@@ -166,7 +166,7 @@
   {
     "id": "num-11",
     "title": "Cables sous-marins et souveraineté numérique",
-    "subtitle": "99% du trafic internet passe par les cables",
+    "subtitle": "L'essentiel du trafic internet international",
     "description": "L'essentiel du trafic internet international passe par les câbles sous-marins. Marseille est un point d'atterrissage majeur en Méditerranée et Alcatel Submarine Networks, repris par l'État en 2024, est l'un des principaux fabricants mondiaux. Les grands acteurs du numérique posent désormais leurs propres câbles. Les incidents en mer Baltique ont révélé la vulnérabilité de ces infrastructures.",
     "amountBillions": 0.2,
     "costPerCitizen": 3,
@@ -212,7 +212,7 @@
   {
     "id": "num-14",
     "title": "Illectronisme et fracture numérique",
-    "subtitle": "13 millions de Français en difficulté",
+    "subtitle": "Environ 15 % de la population en situation d'illectronisme",
     "description": "Environ 15 % des personnes de 15 ans ou plus sont en situation d'illectronisme selon l'Insee. La dématérialisation des démarches administratives peut exclure ces publics. L'État a déployé environ 4 000 conseillers numériques et le réseau France Services pour les accompagner.",
     "amountBillions": 0.3,
     "costPerCitizen": 4,
@@ -244,7 +244,7 @@
   {
     "id": "num-16",
     "title": "Datacenters et consommation énergétique",
-    "subtitle": "3% de la consommation électrique nationale",
+    "subtitle": "Une consommation électrique en hausse",
     "description": "La France attire les centres de données grâce à une électricité bas carbone et abondante. Selon RTE, leur consommation pourrait fortement augmenter avec l'essor de l'intelligence artificielle. Les grands projets de centres de données représentent des besoins de raccordement électrique considérables.",
     "amountBillions": 3.5,
     "costPerCitizen": 0,
@@ -275,7 +275,7 @@
   {
     "id": "num-18",
     "title": "Open data et donnees publiques",
-    "subtitle": "data.gouv.fr — 45 000 jeux de donnees",
+    "subtitle": "data.gouv.fr et API publiques",
     "description": "La France figure parmi les pays les mieux classés en Europe pour l'ouverture des données publiques (data.gouv.fr, API publiques). L'ouverture des données de santé et des algorithmes publics (Parcoursup) fait débat. Le coût de la politique d'open data est faible au regard des usages qu'elle permet.",
     "amountBillions": 0.03,
     "costPerCitizen": 0.45,

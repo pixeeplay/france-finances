@@ -50,13 +50,14 @@ Le jeu ne filtre pas encore les cartes par niveau.
 | 2      | Dispositif         | 1 Md€ ≤ montant < 10 Md€                                                                                      |
 | 3      | Niche, micro-audit | montant < 1 Md€                                                                                               |
 
-Budgets entiers classés en L1 malgré un montant < 10 Md€ : `agr-02`, `cul-01`, `imm-01`.
+Budgets entiers classés en L1 malgré un montant < 10 Md€ : `agr-02`, `cul-01`, `imm-01`, `num-01`.
 
 Équilibrage : chaque deck garde au moins 2 cartes par niveau (`data:check` le vérifie). Quand le critère de montant
 ne le permet pas, on déplace la carte la plus proche du seuil. Cartes déplacées lors de la répartition initiale :
 `col-20`, `fre-07`, `rec-08`, `san-13`, `soc-18` (L2 → L3) et `zom-01` (L1 → L2).
 
-Répartition obtenue : 135 cartes L1, 132 L2, 102 L3.
+Répartition obtenue : 135 cartes L1, 132 L2, 102 L3. Après la correction des montants lors du fact-check (octobre 2026),
+les niveaux ont été réalignés sur le critère de montant : 130 cartes L1, 130 L2, 109 L3.
 
 Pour un futur filtrage par niveau de jeu, tirer les cartes de niveau ≤ au niveau de la session : les petits decks
 (10 cartes) n'ont pas assez de cartes d'un seul niveau pour remplir une session.
@@ -67,6 +68,8 @@ Le coût par habitant est dérivé du montant (population de référence : 68 mi
 Les écarts sont admis seulement s'ils sont listés dans `data-check-exceptions.json` avec leur raison :
 
 - « non budgétaire » : le montant n'est pas une dépense publique (flux privés, avoirs gelés, investissement privé…) ;
+- « budget européen » : le montant est un budget de l'UE ; le coût par habitant est la part française du financement
+  (clé de contribution de la France), rapportée à 68 millions d'habitants ;
 - « à vérifier » : montant et coût par habitant ne portent pas sur la même grandeur ; à trancher lors du fact-check.
 
 `data:check` signale aussi une exception devenue inutile.

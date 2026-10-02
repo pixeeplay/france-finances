@@ -172,7 +172,7 @@
     "id": "log-11",
     "title": "Logement intermédiaire (classes moyennes)",
     "subtitle": "Banque des Territoires — loyers sous le marché",
-    "description": "Le logement intermédiaire (loyers 15-20% sous le marché) cible les classes moyennes coincees. 155 000 logements intermédiaires créés en 10 ans. La crise du credit immobilier (taux passes de 1% a 4%) a fait exploser la demande en locatif intermédiaire.",
+    "description": "Le logement intermédiaire, aux loyers inférieurs à ceux du marché libre, cible les ménages trop aisés pour le logement social mais en difficulté dans les zones tendues. Il est développé notamment par des investisseurs institutionnels et la Caisse des dépôts. La remontée des taux d'intérêt depuis 2022 a accru la demande locative.",
     "amountBillions": 10,
     "costPerCitizen": 0,
     "deckId": "logement",
@@ -182,7 +182,7 @@
     "sourceDate": "2024-09-05",
     "level": 1,
     "tags": ["logement", "intermediaire", "classes moyennes"],
-    "equivalence": "Un loyer intermédiaire a Paris = ~20€/m2 (vs 25-30 dans le privé, vs 7-12 en HLM)"
+    "equivalence": "Des loyers intermédiaires, entre le parc social et le marché libre"
   },
   {
     "id": "log-12",
@@ -204,7 +204,7 @@
   {
     "id": "log-13",
     "title": "Airbnb et meubles touristiques",
-    "subtitle": "800 000 annonces — régulation",
+    "subtitle": "Régulation des meublés de tourisme",
     "description": "Les locations meublées de tourisme se sont fortement développées dans les grandes villes et les zones touristiques, au détriment de l'offre de location longue durée selon plusieurs collectivités. La loi Le Meur du 19 novembre 2024 réduit l'avantage fiscal des meublés de tourisme et renforce les outils de régulation des communes.",
     "amountBillions": 0.3,
     "costPerCitizen": 0,
@@ -284,7 +284,7 @@
   {
     "id": "log-18",
     "title": "Aménagement commercial et friches",
-    "subtitle": "170 000 hectares a recycler",
+    "subtitle": "Recycler les friches plutôt que consommer des terres",
     "description": "Les friches (industrielles, commerciales, urbaines) représentent un gisement foncier important pour atteindre l'objectif de zéro artificialisation nette en 2050. Le fonds friches, créé en 2021, a soutenu de nombreux projets de reconversion, généralement plus coûteux que l'aménagement de terrains vierges. La vacance commerciale en centre-ville est traitée par des programmes comme Action cœur de ville.",
     "amountBillions": 0.5,
     "costPerCitizen": 7,

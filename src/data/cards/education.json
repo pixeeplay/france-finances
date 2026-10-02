@@ -3,7 +3,7 @@
     "id": "edu-01",
     "title": "Éducation nationale",
     "subtitle": "Mission « Enseignement scolaire » — 1er poste de l'État",
-    "description": "Environ 12 millions d'élèves, dont un peu plus de 2 millions dans le privé sous contrat. Le PLF 2026 prévoit 64,5 Md€ de crédits hors pensions (+0,26 %) et 89,6 Md€ en incluant les pensions ; la mission arrive au 2e rang du budget de l'État, derrière la Défense. Le PLF 2026 prévoit la suppression de 4 018 ETP d'enseignants, compensée en partie par 5 440 postes de stagiaires liés à la réforme de la formation initiale. Selon l'OCDE, la France dépense moins par élève du primaire que la moyenne des pays membres.",
+    "description": "Environ 12 millions d'élèves, dont un peu plus de 2 millions dans le privé sous contrat. Le PLF 2026 prévoit 64,5 Md€ de crédits hors pensions (+0,26 %) et 89,6 Md€ en incluant les pensions. Il prévoit la suppression de 4 018 ETP d'enseignants, compensée en partie par 5 440 postes de stagiaires liés à la réforme de la formation initiale. Selon l'OCDE, la France dépense moins par élève du primaire que la moyenne des pays membres.",
     "amountBillions": 89.6,
     "costPerCitizen": 1318,
     "deckId": "education",

@@ -124,7 +124,7 @@
     "id": "def-08",
     "title": "Infrastructures militaires",
     "subtitle": "Construction, rénovation, logement des familles",
-    "description": "Bases aériennes, base navale de Toulon, logements pour les militaires et leurs familles. L'armée est le 2e propriétaire foncier de France. Beaucoup de casernes sont vétustes (certaines datent du XIXe siècle). L'état des logements est la 1ère cause de démission chez les sous-officiers.",
+    "description": "Bases aériennes, base navale de Toulon, logements des militaires et de leurs familles. Le ministère des Armées est l'un des premiers propriétaires fonciers de l'État. Une partie des casernes est vétuste. En 2026, les crédits consacrés aux conditions de vie et de travail augmentent, notamment avec le plan Hébergement.",
     "amountBillions": 2.4,
     "costPerCitizen": 35,
     "deckId": "defense",
@@ -159,7 +159,7 @@
     "id": "def-10",
     "title": "Objectif OTAN 3,5% du PIB",
     "subtitle": "Budget de défense nécessaire en 2035 pour atteindre 3,5 % du PIB",
-    "description": "Au sommet de La Haye (juin 2025), les Alliés se sont engagés à porter leurs dépenses de défense à 5 % du PIB d'ici 2035, dont 3,5 % pour les dépenses militaires de base. Selon le Sénat, atteindre 3,5 % du PIB en 2035 représenterait un budget de l'ordre de 140 Md€ (périmètre OTAN, pensions comprises), à condition d'augmenter l'effort de 0,15 point de PIB chaque année. En 2026, la mission Défense dispose de 66,7 Md€ de crédits de paiement hors pensions.",
+    "description": "Au sommet de La Haye (juin 2025), les Alliés se sont engagés à porter leurs dépenses de défense à 5 % du PIB d'ici 2035, dont 3,5 % pour les dépenses militaires de base. Selon le Sénat, atteindre 3,5 % du PIB en 2035 représenterait un budget de l'ordre de 140 Md€ (périmètre OTAN, pensions comprises), à condition d'augmenter l'effort de 0,15 point de PIB chaque année. En 2026, la mission Défense dispose de 66,7 Md€ de crédits de paiement, dont 57,2 Md€ hors pensions.",
     "amountBillions": 140,
     "costPerCitizen": 2059,
     "deckId": "defense",
@@ -169,7 +169,7 @@
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["militaire", "OTAN", "trajectoire"],
-    "equivalence": "Environ 140 Md€ en 2035, contre 66,7 Md€ de crédits de la mission Défense en 2026 (hors pensions)"
+    "equivalence": "Environ 140 Md€ en 2035, contre 66,7 Md€ de crédits de la mission Défense en 2026"
   },
   {
     "id": "def-11",

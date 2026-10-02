@@ -47,7 +47,7 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["emploi", "outre-mer", "exonérations"],
-    "equivalence": "Le transfert net par ultramarin est ~3x supérieur à la moyenne des transferts par metropolitain"
+    "equivalence": "Des exonérations recentrées sur les bas salaires"
   },
   {
     "id": "emp-04",
@@ -186,7 +186,7 @@
   {
     "id": "emp-12",
     "title": "Travail détaché (travailleurs européens)",
-    "subtitle": "300 000 travailleurs declares + fraude",
+    "subtitle": "Salariés détachés en France",
     "description": "Plusieurs centaines de milliers de salariés détachés sont déclarés chaque année en France, principalement dans le BTP, l'agriculture et le transport. Ils doivent être payés aux conditions françaises mais cotisent dans leur pays d'origine, ce qui réduit leur coût pour l'employeur. La fraude au détachement fait l'objet de contrôles renforcés.",
     "amountBillions": 2.5,
     "costPerCitizen": 35,

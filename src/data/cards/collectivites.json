@@ -117,7 +117,7 @@
   {
     "id": "col-08",
     "title": "Fonction publique territoriale",
-    "subtitle": "1,9 million d'agents au service du quotidien",
+    "subtitle": "Près de 2 millions d'agents au service du quotidien",
     "description": "La fonction publique territoriale emploie près de 2 millions d'agents : ATSEM dans les écoles, agents de voirie, policiers municipaux, bibliothécaires, personnels de crèche. Les revalorisations du point d'indice de 2022 et 2023 et les mesures salariales pèsent sur les budgets locaux. La masse salariale atteint environ 75 Md€ par an.",
     "amountBillions": 75,
     "costPerCitizen": 1103,
@@ -244,7 +244,7 @@
   {
     "id": "col-16",
     "title": "Le mille-feuille territorial",
-    "subtitle": "Six échelons administratifs, record européen",
+    "subtitle": "Plusieurs échelons d'administration locale",
     "description": "Communes, intercommunalités, départements, régions : la France superpose plusieurs niveaux d'administration locale, auxquels s'ajoutent l'État et l'Union européenne. Les chevauchements de compétences entre échelons sont régulièrement pointés par la Cour des comptes ; leur coût ne fait pas l'objet d'une évaluation officielle, et le montant affiché est une estimation.",
     "amountBillions": 15,
     "costPerCitizen": 220,
@@ -291,7 +291,7 @@
   {
     "id": "col-19",
     "title": "Décentralisation (bilan depuis 1982)",
-    "subtitle": "Trois vagues de décentralisation, des transferts mal compensés",
+    "subtitle": "Trois vagues de décentralisation depuis 1982",
     "description": "Depuis les lois Defferre de 1982, plusieurs vagues de décentralisation ont transféré aux collectivités des compétences représentant environ 100 Md€ de charges annuelles. Les transferts financiers de l'État destinés à compenser ces transferts atteignent 44 Md€ en 2026. Les élus locaux dénoncent régulièrement un décalage entre la dynamique des charges transférées, notamment sociales, et celle des compensations.",
     "amountBillions": 100,
     "costPerCitizen": 1470,

@@ -35,8 +35,8 @@
   {
     "id": "zom-03",
     "title": "L'ARENH (mort mais ses effets perdurent)",
-    "subtitle": "EDF a vendu son électricité à perte pendant 15 ans sur ordre de l'État",
-    "description": "L'ARENH (Accès Régulé à l'Électricité Nucléaire Historique) obligeait EDF à vendre 25% de sa production nucléaire à 42€/MWh à ses concurrents. Créé en 2010 pour « favoriser la concurrence », il a surtout subventionné les fournisseurs alternatifs et affaibli EDF. En 2022, le prix du marché était 10x supérieur au prix ARENH. Le mécanisme a pris fin le 31/12/2025 mais ses effets (dette EDF, retard d'investissement) se feront sentir 20 ans. Un zombie budgétaire au sens propre.",
+    "subtitle": "Un mécanisme de vente régulée de l'électricité nucléaire, éteint fin 2025",
+    "description": "L'accès régulé à l'électricité nucléaire historique (ARENH), créé en 2010 pour ouvrir le marché à la concurrence, obligeait EDF à vendre jusqu'à 100 TWh par an, soit environ un quart de sa production nucléaire, à 42 €/MWh aux fournisseurs alternatifs. Lorsque les prix de marché ont flambé en 2022, ce prix fixe est devenu très inférieur au marché, au détriment des résultats d'EDF. Le mécanisme a pris fin le 31 décembre 2025.",
     "amountBillions": 8,
     "costPerCitizen": 118,
     "deckId": "zombies",
@@ -46,13 +46,13 @@
     "sourceDate": "2024-03",
     "level": 2,
     "tags": ["zombie", "ARENH", "énergie", "EDF"],
-    "equivalence": "EDF a vendu son électricité a perte pendant 15 ans sur ordre de l'État, pour creer de la concurrence"
+    "equivalence": "Jusqu'à 100 TWh par an vendus à 42 €/MWh"
   },
   {
     "id": "zom-04",
     "title": "Fonds de garantie des victimes",
-    "subtitle": "20+ fonds d'indemnisation là où 3-4 suffiraient",
-    "description": "Il existe en France plus d'une vingtaine de fonds d'indemnisation spécialisés : FGAO (accidents auto), FGTI (terrorisme), FIVA (amiante), ONIAM (accidents médicaux), fonds nucléaire, fonds mines, etc. Chacun a sa propre gouvernance, son conseil d'administration, ses locaux. La Cour des comptes recommande régulièrement des fusions, mais chaque fonds a ses défenseurs. Certains indemnisent moins de 100 personnes/an avec des frais de gestion de plusieurs millions.",
+    "subtitle": "Une vingtaine de fonds d'indemnisation spécialisés",
+    "description": "La France compte une vingtaine de fonds d'indemnisation spécialisés : FGAO (accidents de la circulation), FGTI (terrorisme et infractions), FIVA (amiante), ONIAM (accidents médicaux), etc. Chacun dispose de sa propre gouvernance. La Cour des comptes a recommandé à plusieurs reprises de rapprocher certains d'entre eux pour réduire les frais de gestion.",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
     "deckId": "zombies",
@@ -62,13 +62,13 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["zombie", "indemnisation", "mille-feuille"],
-    "equivalence": "20+ fonds d'indemnisation la ou 3-4 suffiraient"
+    "equivalence": "Une vingtaine de fonds dotés chacun de sa gouvernance"
   },
   {
     "id": "zom-05",
     "title": "Taxe d'habitation (morte mais pas enterrée)",
-    "subtitle": "La suppression a été compensée à l'euro près — le contribuable paie toujours, mais autrement",
-    "description": "La suppression de la taxe d'habitation (2018-2023, promesse Macron) a coûté 23 Md€/an au budget de l'État, compensés par le transfert de parts de TVA aux communes. Le ménage ne la paye plus directement, mais la paie via d'autres impôts. La taxe foncière, elle, a explosé pour compenser (communes). Résultat net : un simple transfert de charge, pas une vraie baisse d'impôts. Les propriétaires paient plus, les locataires paient moins directement. Les résidences secondaires restent assujetties.",
+    "subtitle": "Une suppression compensée aux collectivités par l'État",
+    "description": "La suppression de la taxe d'habitation sur les résidences principales, engagée en 2018 et achevée en 2023, représente un manque à gagner d'environ 23 Md€ par an. Les communes ont été compensées par le transfert de la part départementale de la taxe foncière, et les départements et intercommunalités par une fraction de TVA. Le coût est donc supporté par le budget de l'État. La taxe reste due sur les résidences secondaires.",
     "amountBillions": 23,
     "costPerCitizen": 338,
     "deckId": "zombies",
@@ -78,7 +78,7 @@
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["zombie", "fiscalité", "taxe d'habitation"],
-    "equivalence": "La suppression a été compensee à l'euro pres — le contribuable paie toujours, mais autrement"
+    "equivalence": "Une compensation financée par le budget de l'État"
   },
   {
     "id": "zom-06",
@@ -100,8 +100,8 @@
   {
     "id": "zom-07",
     "title": "Opérateurs de l'État (le mille-feuille)",
-    "subtitle": "438 opérateurs = plus que le nombre de députés (577) — chacun avec son DG, son CA et ses locaux",
-    "description": "L'État finance 438 « opérateurs » : agences, offices, instituts, autorités, centres. Certains comptent 20 000 agents (Pôle Emploi/France Travail), d'autres moins de 10. La Cour des comptes identifie régulièrement des doublons, chevauchements de missions et frais de structure disproportionnés. Exemples : l'ADEME et l'OFB sur l'environnement, l'ANCT et l'ANRU sur les territoires, le CEREMA et l'IGN sur la géographie. Chaque tentative de fusion échoue face aux résistances corporatistes.",
+    "subtitle": "Plus de 400 opérateurs financés par l'État",
+    "description": "L'État finance plus de 400 opérateurs : agences, offices, établissements publics, instituts. Leur plafond d'emplois est fixé à 401 310 ETPT dans le PLF 2026. Leur taille va de quelques dizaines d'agents à plusieurs dizaines de milliers (France Travail). La Cour des comptes relève régulièrement des chevauchements de missions et des frais de structure ; plusieurs rapprochements ont été proposés ces dernières années.",
     "amountBillions": 80,
     "costPerCitizen": 1176,
     "deckId": "zombies",
@@ -112,13 +112,13 @@
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["zombie", "opérateurs", "mille-feuille", "administration"],
-    "equivalence": "438 opérateurs = plus que le nombre de députés (577) — chacun avec son DG, son CA et ses locaux"
+    "equivalence": "401 310 emplois chez les opérateurs de l'État en 2026"
   },
   {
     "id": "zom-08",
     "title": "Conventions de revitalisation",
-    "subtitle": "~50 000€ par emploi « créé », dont une partie enrichit les consultants",
-    "description": "Quand une grande entreprise licencie > 50 salariés dans un bassin d'emploi fragile, elle doit financer une convention de revitalisation (2-4x le SMIC par emploi supprimé). Ces fonds sont censés créer des emplois de substitution. En pratique, les études montrent que les emplois « créés » existaient souvent déjà ou auraient été créés sans l'aide. Les cabinets de conseil captent 15-20% des montants en frais d'accompagnement. Zombie discret mais tenace.",
+    "subtitle": "Des conventions financées par les entreprises qui licencient",
+    "description": "Quand une entreprise d'au moins 1 000 salariés procède à un licenciement collectif affectant l'équilibre d'un bassin d'emploi, elle doit financer une convention de revitalisation, d'un montant de 2 à 4 SMIC par emploi supprimé. Ces fonds doivent favoriser la création d'emplois de substitution. Les évaluations soulignent la difficulté à mesurer les emplois réellement créés grâce à ces conventions.",
     "amountBillions": 0.175,
     "costPerCitizen": 3,
     "deckId": "zombies",
@@ -126,13 +126,13 @@
     "source": "DARES, IGAS, Cour des comptes",
     "level": 3,
     "tags": ["zombie", "emploi", "revitalisation"],
-    "equivalence": "~50 000€ par emploi créé, dont une partie enrichit les consultants"
+    "equivalence": "2 à 4 SMIC par emploi supprimé"
   },
   {
     "id": "zom-09",
     "title": "Agences régionales de santé (ARS)",
-    "subtitle": "18 ARS avec 18 DG, 18 sièges, 18 comités, pour un pays de la taille du Texas",
-    "description": "Les ARS pilotent l'offre de soins régionale : autorisations, planification, gestion de crise. Créées en 2010 pour simplifier l'organisation (fusion de 7 structures), elles sont devenues un échelon bureaucratique supplémentaire selon leurs critiques. COVID a révélé leur impuissance face à l'urgence (DG d'ARS sans pouvoir de réquisition, dépendance aux instructions parisiennes). Appréciées pour la gestion des autorisations sanitaires, critiquées pour leur lourdeur administrative.",
+    "subtitle": "18 agences régionales de santé",
+    "description": "Les 18 ARS, créées en 2010 en regroupant sept structures, pilotent l'offre de soins régionale : autorisations, planification, gestion de crise. Leurs défenseurs soulignent leur rôle de coordination ; leurs critiques leur reprochent une lourdeur administrative. La crise sanitaire a mis en lumière les difficultés d'articulation avec les préfets et les collectivités.",
     "amountBillions": 0.7,
     "costPerCitizen": 10,
     "deckId": "zombies",
@@ -143,13 +143,13 @@
     "sourceDate": "2025-11-15",
     "level": 3,
     "tags": ["zombie", "santé", "ARS", "bureaucratie"],
-    "equivalence": "18 ARS avec 18 DG, 18 sieges, 18 comites, pour un pays de la taille du Texas"
+    "equivalence": "18 agences régionales de santé"
   },
   {
     "id": "zom-10",
     "title": "Fonds de réserve pour les retraites (FRR)",
-    "subtitle": "21 Md€ dormants = 4 mois de déficit de la Sécurité sociale",
-    "description": "Le FRR a été créé en 2001 pour lisser le choc démographique des retraites (baby-boomers). Doté de 37 Md€ en 2010, il a été partiellement ponctionné pour financer la dette sociale (CADES). Il reste 21 Md€ qui dorment... sans mandat clair. Officiellement « en réserve », mais personne ne sait quand ni comment les utiliser. Le Conseil d'orientation des retraites ne l'intègre même plus dans ses projections. Un zombie riche dans un placard.",
+    "subtitle": "Un fonds qui verse 1,45 Md€ par an à la CADES",
+    "description": "Créé en 2001 pour préparer le départ à la retraite des générations du baby-boom, le FRR n'a jamais atteint les 150 Md€ d'actifs prévus. Depuis la réforme de 2010, il verse chaque année une somme à la Caisse d'amortissement de la dette sociale (2,1 Md€, ramenés à 1,45 Md€ depuis 2025) ; son actif a presque été divisé par deux en dix ans. Le Sénat propose de reprendre son abondement pour lui redonner sa mission initiale.",
     "amountBillions": 21,
     "costPerCitizen": 309,
     "deckId": "zombies",
@@ -159,6 +159,6 @@
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["zombie", "retraites", "FRR", "réserves"],
-    "equivalence": "21 Md€ dormants = 4 mois de déficit de la Sécurité sociale"
+    "equivalence": "1,45 Md€ versés chaque année à la CADES depuis 2025"
   }
 ]

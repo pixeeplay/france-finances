@@ -3,18 +3,18 @@
     "id": "agr-01",
     "title": "Politique agricole commune (PAC)",
     "subtitle": "Part française — aides 1er et 2e pilier",
-    "description": "La France est le premier bénéficiaire de la PAC en Europe. Les aides couvrent les paiements directs aux exploitants (aide de base, écorégime, aides couplées), l'ICHN en zone montagne, et les mesures agroenvironnementales. En 2025, plus de 7,1 Md€ versés aux agriculteurs avant fin décembre.",
-    "amountBillions": 9.3,
-    "costPerCitizen": 137,
+    "description": "La France est le premier bénéficiaire de la PAC en volume. Les aides couvrent les paiements directs aux exploitants (aide de base, écorégime, aides couplées), l'indemnité compensatoire de handicaps naturels en montagne et les mesures agroenvironnementales. En 2024, la France a reçu 9,6 Md€ au titre de la PAC, soit 58 % des dépenses de l'UE en France.",
+    "amountBillions": 9.6,
+    "costPerCitizen": 141,
     "deckId": "agriculture",
     "icon": "🌾",
-    "source": "Ministère de l'Agriculture, La France Agricole, Sénat PLF 2026",
-    "sourceUrl": "https://www.senat.fr/rap/l25-139-33/l25-139-33_mono.html",
-    "year": 2026,
+    "source": "Sénat (PLF 2026), ministère de l'Agriculture",
+    "sourceUrl": "https://www.senat.fr/rap/l25-139-22/l25-139-22_mono.html",
+    "year": 2024,
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["agriculture", "PAC", "Europe"],
-    "equivalence": "Sans la PAC, le prix du panier de courses augmenterait de ~5-10% selon les estimations"
+    "equivalence": "58 % des dépenses de l'Union européenne en France en 2024"
   },
   {
     "id": "agr-02",
@@ -82,7 +82,7 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["agriculture", "bio", "environnement"],
-    "equivalence": "Le prix de 2 cafés par Français et par an pour financer le bio"
+    "equivalence": "Environ 4 € par habitant et par an"
   },
   {
     "id": "agr-06",
@@ -139,7 +139,7 @@
     "id": "agr-09",
     "title": "Pêche et aquaculture",
     "subtitle": "FEAMPA européen + budget national",
-    "description": "La pêche française emploie ~15 000 marins sur ~4 000 navires. La France a perdu 25% de ses quotas post-Brexit. Le FEAMPA financé la modernisation de la flotte et la transition écologique. L'exonération de gazole pour les pêcheurs coûte ~100 M€/an. L'aquaculture pèse 800 M€ de CA mais reste sous-développée.",
+    "description": "La pêche française emploie environ 15 000 marins. Le Brexit a réduit l'accès des pêcheurs français aux eaux britanniques. Le Fonds européen pour les affaires maritimes, la pêche et l'aquaculture (FEAMPA) finance la modernisation de la flotte et la transition écologique. L'aquaculture reste peu développée au regard du potentiel.",
     "amountBillions": 0.4,
     "costPerCitizen": 6,
     "deckId": "agriculture",
@@ -149,7 +149,7 @@
     "sourceDate": "2025-11-24",
     "level": 3,
     "tags": ["agriculture", "pêche", "aquaculture"],
-    "equivalence": "La France a le 2e domaine maritime mondial mais importe 70% de sa consommation de poisson"
+    "equivalence": "La France importe une large part du poisson qu'elle consomme"
   },
   {
     "id": "agr-10",
@@ -187,7 +187,7 @@
     "id": "agr-12",
     "title": "Gaspillage alimentaire et loi AGEC",
     "subtitle": "10 millions de tonnes perdues/an",
-    "description": "10 millions de tonnes de nourriture gaspillees chaque année en France. La loi AGEC (2020) interdit la destruction des invendus alimentaires. Le gaspillage en grande distribution a baissé de 20% depuis la loi Garot (2016). Les ménages gaspillent encore ~30 kg/personne/an. Objectif : diviser par 2 d'ici 2030.",
+    "description": "Selon l'Ademe (2016), environ 10 millions de tonnes de nourriture sont perdues ou gaspillées chaque année en France, pour une valeur commerciale estimée à 16 Md€. Les ménages en jettent environ 30 kg par personne et par an. La loi Garot (2016) puis la loi AGEC (2020) interdisent la destruction des invendus alimentaires et imposent leur don. L'objectif est de réduire le gaspillage de moitié d'ici 2025 dans la distribution et d'ici 2030 dans les autres secteurs.",
     "amountBillions": 16,
     "costPerCitizen": 235,
     "deckId": "agriculture",
@@ -197,7 +197,7 @@
     "sourceDate": "2016-05",
     "level": 1,
     "tags": ["agriculture", "gaspillage", "AGEC"],
-    "equivalence": "Chaque Français jette 1 de nourriture par jour à la poubelle"
+    "equivalence": "Environ 240 € de nourriture gaspillée par habitant et par an"
   },
   {
     "id": "agr-13",
@@ -220,7 +220,7 @@
     "id": "agr-14",
     "title": "Enseignement agricole",
     "subtitle": "220 établissements publics + 600 privés",
-    "description": "170 000 élèves dans 800 établissements. Taux d'insertion professionnelle : 87% (le meilleur de l'enseignement professionnel français). Les lycees agricoles gèrent des exploitations pédagogiques. Paradoxe : le réseau est excellent mais meconnu.",
+    "description": "Environ 170 000 élèves et 800 établissements publics et privés. Les lycées agricoles gèrent des exploitations pédagogiques et affichent de bons taux d'insertion professionnelle. Ce réseau, relevant du ministère de l'Agriculture, reste peu connu.",
     "amountBillions": 1.5,
     "costPerCitizen": 22,
     "deckId": "agriculture",
@@ -230,13 +230,13 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["agriculture", "enseignement", "formation"],
-    "equivalence": "87% d'insertion professionnelle — le meilleur taux de tout l'enseignement français"
+    "equivalence": "Environ 800 établissements d'enseignement agricole"
   },
   {
     "id": "agr-15",
     "title": "Irrigation et gestion de l'eau agricole",
     "subtitle": "Mega-bassines et adaptation climatique",
-    "description": "6% de la surface agricole française est irriguée (vs 30% en Espagne). Les mega-bassines cristallisent un conflit majeur (Sainte-Soline, 2023 : 200 blesses). Le BRGM estimé que les nappes phreatiques baisseront de 10-25% d'ici 2050. Coût d'une mega-bassine = 5-10 M€.",
+    "description": "Une faible part de la surface agricole française est irriguée, bien moins qu'en Espagne. Les réserves de substitution (« méga-bassines ») cristallisent un conflit sur le partage de l'eau, illustré par les affrontements de Sainte-Soline en 2023. Le changement climatique réduit la recharge des nappes. L'agriculture est le premier secteur consommateur d'eau en France.",
     "amountBillions": 0.5,
     "costPerCitizen": 7,
     "deckId": "agriculture",
@@ -244,7 +244,7 @@
     "source": "BRGM, OFB, Ministere Transition ecologique",
     "level": 3,
     "tags": ["agriculture", "eau", "irrigation"],
-    "equivalence": "L'agriculture utilise 45% de l'eau douce consommée en France, mais n'irrigue que 6% des terres"
+    "equivalence": "L'agriculture, premier secteur consommateur d'eau"
   },
   {
     "id": "agr-16",
@@ -266,7 +266,7 @@
     "id": "agr-17",
     "title": "Souverainete alimentaire",
     "subtitle": "Dependance aux importations",
-    "description": "La France est excédentaire en cereales, vin, produits laitiers, mais dependante en fruits (60% importes), legumes (40%), poisson (70%). La France nourrirait 80 millions de personnes avec sa production... mais pas avec les mêmes produits que ceux que les Français mangent.",
+    "description": "La France est excédentaire en céréales, vins et produits laitiers, mais dépend des importations pour une large part des fruits, des légumes et du poisson. Selon le Sénat, la balance commerciale agroalimentaire a été ponctuellement déficitaire en 2025. Les concours publics à l'agriculture atteignent 16,3 Md€ en 2026 (25,7 Md€ avec les crédits européens).",
     "amountBillions": 50,
     "costPerCitizen": 735,
     "deckId": "agriculture",
@@ -276,7 +276,7 @@
     "sourceDate": "2025-11-24",
     "level": 1,
     "tags": ["agriculture", "souverainete", "importations"],
-    "equivalence": "La France exporte 1 Md€ de fromage/an et importe 1 Md€ d'avocats et mangues"
+    "equivalence": "Concours publics à l'agriculture : 25,7 Md€ avec les crédits européens"
   },
   {
     "id": "agr-18",
@@ -315,7 +315,7 @@
     "id": "agr-20",
     "title": "Foret française et bois-énergie",
     "subtitle": "ONF + reboisement + filiere bois",
-    "description": "La forêt française couvre 17 millions d'hectares (31% du territoire). Menacée par les scolytes, secheresses et incendies (+50% de surfaces brulees en 2022). Plan de reboisement France 2030 : 1 milliard d'arbres en 10 ans. Le bois-énergie représente 40% de la production d'énergie renouvelable.",
+    "description": "La forêt couvre environ 17 millions d'hectares, près d'un tiers du territoire métropolitain. Elle est menacée par les scolytes, les sécheresses et les incendies, exceptionnels en 2022. France 2030 vise la plantation d'un milliard d'arbres en dix ans. Le bois-énergie représente environ 30 % de la production d'énergies renouvelables.",
     "amountBillions": 1.2,
     "costPerCitizen": 18,
     "deckId": "agriculture",
@@ -325,6 +325,6 @@
     "sourceDate": "2025-11-24",
     "level": 2,
     "tags": ["agriculture", "forêt", "bois"],
-    "equivalence": "La France exporte des grumes vers la Chine et importe des meubles chinois en bois français"
+    "equivalence": "Objectif : un milliard d'arbres plantés en dix ans"
   }
 ]

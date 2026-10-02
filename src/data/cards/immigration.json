@@ -124,7 +124,7 @@
   {
     "id": "imm-08",
     "title": "Mineurs non accompagnés (MNA)",
-    "subtitle": "~30 000 à 40 000 jeunes étrangers isolés",
+    "subtitle": "Mineurs étrangers isolés pris en charge par les départements",
     "description": "Les départements prennent en charge les mineurs non accompagnés au titre de l'aide sociale à l'enfance (hébergement, éducation, santé), pour un coût élevé par jeune. L'État finance la phase d'évaluation et de mise à l'abri, par une contribution forfaitaire. Les départements estiment cette compensation très insuffisante.",
     "amountBillions": 2,
     "costPerCitizen": 29,
@@ -140,7 +140,7 @@
   {
     "id": "imm-09",
     "title": "OFPRA et délais d'instruction asile",
-    "subtitle": "130 000 demandes/an",
+    "subtitle": "Plus de 100 000 demandes d'asile par an",
     "description": "L'OFPRA instruit plus de 100 000 demandes d'asile par an ; le PLF 2026 lui accorde 48 emplois supplémentaires pour atteindre 174 000 décisions. Une majorité des demandeurs sont déboutés, en première instance ou devant la Cour nationale du droit d'asile (CNDA), qui est la juridiction rendant le plus de décisions en France. Les déboutés doivent quitter le territoire, mais l'exécution des mesures d'éloignement reste faible.",
     "amountBillions": 0.1,
     "costPerCitizen": 1.5,
@@ -157,7 +157,7 @@
   {
     "id": "imm-10",
     "title": "Titres de séjour et visas (recettes)",
-    "subtitle": "600 M/an de taxes",
+    "subtitle": "Taxes sur les titres de séjour",
     "description": "La délivrance des titres de séjour donne lieu à des taxes, de l'ordre de 200 à 300 € pour un premier titre. Ces recettes contribuent au financement de l'OFII. La dématérialisation des démarches (ANEF) réduit les files d'attente en préfecture, mais pose des difficultés aux personnes éloignées du numérique.",
     "amountBillions": 0.6,
     "costPerCitizen": 9,
@@ -207,7 +207,7 @@
   {
     "id": "imm-13",
     "title": "Scolarisation des enfants étrangers",
-    "subtitle": "70 000 élèves allophones/an en UPE2A",
+    "subtitle": "Élèves allophones et dispositifs UPE2A",
     "description": "Tous les enfants de 3 à 16 ans doivent être scolarisés, quelle que soit la situation administrative de leurs parents. Les élèves allophones nouvellement arrivés sont accueillis dans des dispositifs spécifiques (UPE2A) pour l'apprentissage du français, avant leur inclusion dans les classes ordinaires.",
     "amountBillions": 1.5,
     "costPerCitizen": 22,
@@ -223,7 +223,7 @@
   {
     "id": "imm-14",
     "title": "Diaspora et transferts de fonds",
-    "subtitle": "12 Md/an envoyes vers les pays d'origine",
+    "subtitle": "Transferts privés vers les pays d'origine",
     "description": "Les personnes immigrées installées en France envoient chaque année plusieurs milliards d'euros vers leurs pays d'origine (Maghreb, Afrique subsaharienne, Turquie, Asie). Les frais de transfert restent élevés. Pour plusieurs pays récepteurs, ces envois représentent une part importante du PIB. Il s'agit de transferts privés, pas de dépenses publiques.",
     "amountBillions": 12,
     "costPerCitizen": 0,
@@ -253,7 +253,7 @@
   {
     "id": "imm-16",
     "title": "Immigration de travail et métiers en tension",
-    "subtitle": "40 000 titres de séjour économiques/an",
+    "subtitle": "Titres de séjour pour motif économique",
     "description": "Une majorité d'entreprises déclarent des difficultés de recrutement dans certains métiers. Les titres de séjour pour motif économique, dont le passeport talent pour les profils qualifiés, restent minoritaires par rapport aux titres délivrés pour motif familial ou étudiant. La loi de 2024 a créé un titre de séjour pour les métiers en tension.",
     "amountBillions": 0,
     "costPerCitizen": 0,
@@ -285,7 +285,7 @@
   {
     "id": "imm-18",
     "title": "Naturalisation et acquisition de la nationalite",
-    "subtitle": "120 000 nouveaux Français/an",
+    "subtitle": "Plusieurs dizaines de milliers de naturalisations par an",
     "description": "Chaque année, plusieurs dizaines de milliers d'étrangers acquièrent la nationalité française, par décret, par mariage ou par déclaration. La naturalisation suppose notamment cinq ans de résidence et un niveau suffisant en français, relevé par la loi de 2024. Les délais d'instruction restent longs.",
     "amountBillions": 0.1,
     "costPerCitizen": 1.5,

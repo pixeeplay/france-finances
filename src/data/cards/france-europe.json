@@ -36,8 +36,8 @@
   {
     "id": "fre-03",
     "title": "Plan de relance européen (NextGenerationEU)",
-    "subtitle": "La France reçoit plus de NextGenerationEU que ce que coûte son budget Justice en 4 ans",
-    "description": "NextGenerationEU est un emprunt commun inédit de 750 Md€. La France reçoit 40,3 Md€ en subventions (4e bénéficiaire). L'argent finance la rénovation énergétique, le numérique, la santé, les transports. C'est la première dette commune européenne — un tabou brisé par le COVID. Le remboursement (2028-2058) sera assuré par de nouvelles ressources propres de l'UE (taxe carbone aux frontières, taxe GAFAM). Les eurosceptiques y voient un engrenage fédéraliste.",
+    "subtitle": "40,3 Md€ de subventions européennes pour la France",
+    "description": "NextGenerationEU est un instrument de relance financé par un emprunt commun de l'Union européenne. La France bénéficie de 40,3 Md€ de subventions au titre de la facilité pour la reprise et la résilience, qui financent notamment la rénovation énergétique, le numérique, la santé et les transports (plan France Relance). Le remboursement de l'emprunt doit commencer en 2028 ; son financement par de nouvelles ressources propres de l'UE reste en discussion.",
     "amountBillions": 40.3,
     "costPerCitizen": 593,
     "deckId": "france-europe",
@@ -46,7 +46,7 @@
     "sourceUrl": "https://commission.europa.eu/strategy-and-policy/recovery-plan-europe_fr",
     "level": 1,
     "tags": ["Europe", "relance", "NextGenerationEU"],
-    "equivalence": "La France reçoit plus de NextGenerationEU que ce que coûte son budget Justice en 4 ans"
+    "equivalence": "40,3 Md€ de subventions européennes"
   },
   {
     "id": "fre-04",

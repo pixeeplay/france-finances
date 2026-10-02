@@ -369,7 +369,7 @@
   {
     "id": "soc-13",
     "title": "Allocation adultes handicapes (AAH)",
-    "subtitle": "1 033€/mois pour 1,4 million de personnes",
+    "subtitle": "1 033 €/mois pour environ 1,3 million de personnes",
     "description": "L'allocation aux adultes handicapés garantit un revenu minimum à environ 1,3 million de personnes, pour un montant maximal de 1 033 € par mois depuis avril 2025, inférieur au seuil de pauvreté. Elle est déconjugalisée depuis octobre 2023 : les revenus du conjoint ne sont plus pris en compte. Les délais de traitement des maisons départementales des personnes handicapées restent longs.",
     "amountBillions": 13,
     "costPerCitizen": 191,
@@ -405,7 +405,7 @@
   {
     "id": "soc-15",
     "title": "Branche autonomie (5e branche Secu)",
-    "subtitle": "40 Md€ pour la dépendance",
+    "subtitle": "41,8 Md€ de charges en 2025",
     "description": "Créée en 2020, la branche autonomie finance la perte d'autonomie des personnes âgées et handicapées : allocation personnalisée d'autonomie, prestation de compensation du handicap, établissements et services. Ses charges atteignent 41,8 Md€ en 2025 (+4,8 %), tirées par le financement des établissements pour personnes âgées (Cour des comptes). La loi « grand âge », plusieurs fois annoncée, n'a pas été adoptée.",
     "amountBillions": 41.8,
     "costPerCitizen": 615,
