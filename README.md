@@ -57,17 +57,18 @@ Voir `.env.example`. A noter :
 
 ## Scripts
 
-| Commande              | Description                                    |
-| --------------------- | ---------------------------------------------- |
-| `npm run dev`         | Serveur de dev (Turbopack)                     |
-| `npm run build`       | Build production (webpack, requis par serwist) |
-| `npm run start`       | Serveur de production                          |
-| `npm run lint`        | ESLint                                         |
-| `npm run test`        | Tests Vitest (+ coverage v8)                   |
-| `npm run type-check`  | TypeScript (tsc --noEmit)                      |
-| `npm run test:e2e`    | Tests E2E Playwright                           |
-| `npm run db:generate` | Generer une migration Drizzle                  |
-| `npm run db:migrate`  | Appliquer les migrations Drizzle               |
+| Commande              | Description                                      |
+| --------------------- | ------------------------------------------------ |
+| `npm run dev`         | Serveur de dev (Turbopack)                       |
+| `npm run build`       | Build production (webpack, requis par serwist)   |
+| `npm run start`       | Serveur de production                            |
+| `npm run lint`        | ESLint                                           |
+| `npm run test`        | Tests Vitest (+ coverage v8)                     |
+| `npm run type-check`  | TypeScript (tsc --noEmit)                        |
+| `npm run data:check`  | Controle des donnees (voir `src/data/README.md`) |
+| `npm run test:e2e`    | Tests E2E Playwright                             |
+| `npm run db:generate` | Generer une migration Drizzle                    |
+| `npm run db:migrate`  | Appliquer les migrations Drizzle                 |
 
 ## Build Docker
 

@@ -1,0 +1,26 @@
+{
+  "costPerCitizen": {
+    "edu-14": "à vérifier : le montant semble être le budget total de l'AEFE, le coût par habitant la seule subvention de l'État",
+    "emp-16": "non budgétaire : coût de mise en conformité supporté par les entreprises",
+    "eta-15": "à vérifier : montant et coût par habitant ne portent pas sur la même grandeur",
+    "fre-04": "à vérifier : montant à l'échelle de l'UE, coût par habitant non dérivé",
+    "fre-05": "à vérifier : budget européen du programme, coût par habitant non dérivé",
+    "fre-06": "à vérifier : budget européen de l'agence, coût par habitant non dérivé",
+    "fre-07": "à vérifier : budget européen du programme, coût par habitant non dérivé",
+    "fre-08": "à vérifier : budget européen de la PAC, coût par habitant non dérivé",
+    "fre-09": "à vérifier : recettes européennes attendues, coût par habitant non dérivé",
+    "fre-10": "à vérifier : coût macroéconomique, coût par habitant non dérivé",
+    "imm-14": "non budgétaire : transferts privés des ménages",
+    "log-09": "non budgétaire : participation des employeurs (Action Logement)",
+    "log-11": "non budgétaire : investissement institutionnel et privé",
+    "log-13": "non budgétaire : enjeu de marché, pas une dépense publique",
+    "log-14": "à vérifier : besoin total de rénovation, coût par habitant non dérivé",
+    "log-16": "à vérifier : montant et coût par habitant ne portent pas sur la même grandeur",
+    "num-16": "non budgétaire : investissement privé",
+    "rec-14": "recette payée par les entreprises, pas par les habitants",
+    "rec-17": "recette payée par les propriétaires concernés, pas par tous les habitants",
+    "ukr-08": "non budgétaire : avoirs gelés, pas une dépense",
+    "ukr-10": "à vérifier : le montant est exprimé en points de PIB, pas en milliards d'euros",
+    "zom-02": "à vérifier : montant des prêts garantis, coût par habitant non dérivé"
+  }
+}

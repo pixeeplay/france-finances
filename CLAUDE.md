@@ -106,6 +106,7 @@ src/
 - `npm run lint` -- ESLint
 - `npm run test` -- Vitest
 - `npm run type-check` -- tsc --noEmit
+- `npm run data:check` -- Controle des cartes (schema Zod, doublons, URL, cout/habitant, niveaux), lance en CI. Regles : `src/data/README.md`
 - `npm run db:generate` -- Generer une migration Drizzle (dossier `drizzle/`)
 - `npm run db:migrate` -- Migrations Drizzle
 
@@ -115,6 +116,8 @@ src/
 Donnees factuelles, sourcees, neutres. Pas de ton militant.
 Montants en milliards d'euros, cout par citoyen base sur ~68M habitants.
 Sources : PLF/LFSS 2025-2026, Cour des comptes, Senat, ministeres, vie-publique.fr.
+Chaque `sourceUrl` pointe vers un document precis (jamais une page d'accueil), en https et sans domaine accentue.
+Champ `level` des cartes : 1 grand poste, 2 dispositif, 3 niche/micro-audit (critere dans `src/data/README.md`).
 
 ## Notes d'implementation
 
