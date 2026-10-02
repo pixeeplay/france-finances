@@ -231,8 +231,8 @@ export function SwipeStack({
               <div
                 className={`h-full rounded-full transition-all duration-500 ${
                   targetReached
-                    ? "bg-primary shadow-(--shadow-glow-green-sm)"
-                    : "bg-warning shadow-(--shadow-glow-amber)"
+                    ? "bg-primary"
+                    : "bg-warning"
                 }`}
                 style={{ width: `${savingsProgress * 100}%` }}
               />
@@ -344,7 +344,7 @@ export function SwipeStack({
               onClick={() => handleButtonVote("keep")}
               disabled={!currentCard}
               aria-label="Valider cette dépense"
-              className="w-20 h-20 rounded-full bg-card border-[3px] border-primary flex items-center justify-center shadow-lg shadow-primary/30 transition-transform active:scale-90 disabled:opacity-40"
+              className="w-20 h-20 rounded-full bg-card border-[3px] border-primary flex items-center justify-center transition-transform active:scale-90 disabled:opacity-40"
             >
               <ShieldIcon size={40} className="text-primary" />
             </button>
@@ -369,7 +369,7 @@ export function SwipeStack({
               onClick={() => handleButtonVote("cut")}
               disabled={!currentCard}
               aria-label="Remettre en question cette dépense"
-              className="w-20 h-20 rounded-full bg-card border-[3px] border-danger flex items-center justify-center shadow-lg shadow-danger/30 transition-transform active:scale-90 disabled:opacity-40"
+              className="w-20 h-20 rounded-full bg-card border-[3px] border-danger flex items-center justify-center transition-transform active:scale-90 disabled:opacity-40"
             >
               <ChainsawIcon size={40} />
             </button>
@@ -399,7 +399,7 @@ function Level2Buttons({
             onClick={() => onVote("keep")}
             disabled={!currentCard}
             aria-label="Valider cette dépense"
-            className="w-16 h-16 rounded-full bg-card border-[3px] border-primary flex items-center justify-center shadow-lg shadow-primary/30 transition-transform active:scale-90 disabled:opacity-40"
+            className="w-16 h-16 rounded-full bg-card border-[3px] border-primary flex items-center justify-center transition-transform active:scale-90 disabled:opacity-40"
           >
             <ShieldIcon size={28} className="text-primary" />
           </button>
@@ -410,7 +410,7 @@ function Level2Buttons({
             onClick={() => onVote("cut")}
             disabled={!currentCard}
             aria-label="Réduire cette dépense"
-            className="w-16 h-16 rounded-full bg-card border-[3px] border-warning flex items-center justify-center shadow-lg shadow-warning/30 transition-transform active:scale-90 disabled:opacity-40"
+            className="w-16 h-16 rounded-full bg-card border-[3px] border-warning flex items-center justify-center transition-transform active:scale-90 disabled:opacity-40"
           >
             <ChainsawIcon size={28} variant="orange" />
           </button>
@@ -421,7 +421,7 @@ function Level2Buttons({
             onClick={() => onVote("reinforce")}
             disabled={!currentCard}
             aria-label="Renforcer cette dépense"
-            className="w-16 h-16 rounded-full bg-card border-[3px] border-info flex items-center justify-center shadow-lg shadow-info/30 transition-transform active:scale-90 disabled:opacity-40"
+            className="w-16 h-16 rounded-full bg-card border-[3px] border-info flex items-center justify-center transition-transform active:scale-90 disabled:opacity-40"
           >
             <ReinforceIcon size={28} />
           </button>
@@ -432,7 +432,7 @@ function Level2Buttons({
             onClick={() => onVote("unjustified")}
             disabled={!currentCard}
             aria-label="Marquer comme injustifié"
-            className="w-16 h-16 rounded-full bg-card border-[3px] border-danger flex items-center justify-center shadow-lg shadow-danger/30 transition-transform active:scale-90 disabled:opacity-40"
+            className="w-16 h-16 rounded-full bg-card border-[3px] border-danger flex items-center justify-center transition-transform active:scale-90 disabled:opacity-40"
           >
             <StopIcon size={28} />
           </button>

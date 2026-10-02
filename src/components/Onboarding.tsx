@@ -174,7 +174,7 @@ export function Onboarding({ onDone }: OnboardingProps) {
           onClick={goNext}
           className={`w-full py-4 rounded-2xl font-bold text-lg transition-all active:scale-95 ${
             isLast
-              ? "bg-primary text-primary-foreground shadow-lg shadow-primary/30"
+              ? "bg-primary text-primary-foreground"
               : "bg-card border border-border text-foreground hover:bg-muted"
           }`}
         >

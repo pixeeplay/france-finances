@@ -58,7 +58,7 @@ export function SlideToPlay() {
 
         {/* Draggable thumb */}
         <motion.div
-          className="relative left-1 w-14 h-[calc(100%-8px)] bg-primary rounded-xl flex items-center justify-center shadow-lg shadow-primary/30 cursor-grab active:cursor-grabbing z-10 touch-none"
+          className="relative left-1 w-14 h-[calc(100%-8px)] bg-primary rounded-xl flex items-center justify-center cursor-grab active:cursor-grabbing z-10 touch-none"
           style={{ x }}
           drag="x"
           dragConstraints={{ left: 0, right: maxDrag }}

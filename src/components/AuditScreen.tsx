@@ -203,7 +203,7 @@ export function AuditScreen({
           <button
             onClick={handleSubmit}
             disabled={!canSubmit}
-            className="w-full flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-primary text-primary-foreground font-bold text-lg shadow-lg shadow-primary/30 active:scale-[0.98] transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+            className="w-full flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-primary text-primary-foreground font-bold text-lg active:scale-[0.98] transition-all disabled:opacity-40 disabled:cursor-not-allowed"
           >
             Valider mon audit
             <span className="text-base">&rarr;</span>
