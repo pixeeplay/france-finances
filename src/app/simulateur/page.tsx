@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { AcronymText } from "@/components/AcronymText";
 import { PageShell } from "@/components/PageShell";
 import { Simulator } from "@/components/simulateur/Simulator";
 import { STATE_MISSIONS_2026 } from "@/data/chiffres";
@@ -78,8 +79,7 @@ export default async function SimulateurPage({
                 {IR_YEAR}, applicables aux revenus {IR_INCOME_YEAR}.
               </li>
               <li>
-                TVA : on suppose que 80 % du revenu net est consommé, avec un taux moyen de TVA de
-                13 %. C&apos;est un ordre de grandeur, pas une donnée officielle.
+                <AcronymText text="TVA : on suppose que 80 % du revenu net est consommé, avec un taux moyen de TVA de 13 %. C'est un ordre de grandeur, pas une donnée officielle." />
               </li>
               <li>
                 La répartition par poste du budget de l&apos;État (« mission ») est une illustration : le

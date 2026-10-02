@@ -40,3 +40,11 @@ export {
   euDebtBars,
   shortenLabel,
 } from "./chiffresCharts";
+export {
+  findLexiconMatches,
+  findUndefinedAcronyms,
+  getLexiconEntries,
+  getLexiconEntry,
+  lexiconLetter,
+  lexiconSlug,
+} from "./lexique";

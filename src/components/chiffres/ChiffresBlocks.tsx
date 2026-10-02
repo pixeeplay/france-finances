@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { AcronymText } from "@/components/AcronymText";
 import type { DataSource } from "@/types/simulator";
 import { coinsPer100, type ChartTone, type Per1000Slice, type ShareDatum } from "@/lib/chiffresCharts";
 import { SourceNote } from "./DataBlocks";
@@ -85,7 +86,11 @@ export function BigStat({
       >
         {value}
       </p>
-      {detail ? <p className="mt-2 text-xs text-muted-foreground leading-snug">{detail}</p> : null}
+      {detail ? (
+        <p className="mt-2 text-xs text-muted-foreground leading-snug">
+          <AcronymText text={detail} />
+        </p>
+      ) : null}
     </div>
   );
 }
@@ -194,7 +199,11 @@ export function ChartFigure({
       <h3 id={`${id}-fig-title`} className="font-heading text-lg sm:text-xl font-bold leading-snug text-foreground">
         {title}
       </h3>
-      {subtitle ? <p className="mt-0.5 text-xs text-muted-foreground">{subtitle}</p> : null}
+      {subtitle ? (
+        <p className="mt-0.5 text-xs text-muted-foreground">
+          <AcronymText text={subtitle} />
+        </p>
+      ) : null}
       <div className={split && legend ? "md:grid md:grid-cols-2 md:items-center md:gap-6" : undefined}>
         <div aria-hidden="true" style={height ? { height } : undefined} className="mt-4 w-full min-w-0">
           {chart}
@@ -219,7 +228,7 @@ export function ChartFigure({
         </summary>
         <div className="space-y-3 px-4 pb-4">
           <p id={`${id}-fig-desc`} className="text-xs text-muted-foreground leading-relaxed">
-            {description}
+            <AcronymText text={description} />
           </p>
           {note ? <div className="text-xs text-muted-foreground leading-relaxed">{note}</div> : null}
           {table}

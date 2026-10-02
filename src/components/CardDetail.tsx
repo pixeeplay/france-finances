@@ -144,7 +144,7 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
                   <span className="kicker cat-text">{getDeckName(card.deckId)}</span>
                 </p>
                 <h1 className="text-3xl leading-tight font-extrabold text-foreground mb-5">
-                  <AcronymText text={card.title} />
+                  <AcronymText lexiconInNewTab text={card.title} />
                 </h1>
               </div>
 
@@ -176,6 +176,7 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
                   Contexte
                 </h3>
                 <AcronymText
+                  lexiconInNewTab
                   text={card.description}
                   className="text-muted-foreground leading-relaxed text-[15px]"
                 />
@@ -189,6 +190,7 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
                   </h3>
                   <div className="rounded-2xl bg-warning/10 border border-warning/25 p-4">
                     <AcronymText
+                      lexiconInNewTab
                       text={card.equivalence}
                       className="text-foreground font-medium text-[15px] leading-snug"
                     />
@@ -204,6 +206,7 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
                   </h3>
                   <div className="rounded-2xl bg-background/60 border border-border p-4">
                     <AcronymText
+                      lexiconInNewTab
                       text={card.subtitle}
                       className="text-foreground font-medium text-[15px] leading-snug"
                     />
@@ -245,6 +248,7 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
                       className="flex items-center justify-between gap-3 min-h-[44px] p-3.5 rounded-2xl bg-background/60 border border-border hover:border-info/60 transition-colors group"
                     >
                       <AcronymText
+                        lexiconInNewTab
                         text={card.source}
                         className="text-foreground font-medium text-[15px]"
                       />
@@ -255,6 +259,7 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
                   ) : (
                     <div className="p-3.5 rounded-2xl bg-background/60 border border-border">
                       <AcronymText
+                        lexiconInNewTab
                         text={card.source}
                         className="text-foreground font-medium text-[15px]"
                       />

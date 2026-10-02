@@ -245,6 +245,7 @@ function CardContent({
             <div className="min-w-0">
               <span className="kicker text-[10px] text-warning block mb-0.5">Équivalence</span>
               <AcronymText
+                lexiconInNewTab
                 text={card.equivalence}
                 className="text-sm font-semibold text-foreground leading-snug line-clamp-2 [@media(min-height:960px)]:line-clamp-3"
               />
@@ -281,6 +282,7 @@ function FittedText({ text }: { text: string }) {
   return (
     <div ref={boxRef} className="flex-1 min-h-[3rem] overflow-hidden text-sm leading-relaxed text-muted-foreground">
       <AcronymText
+        lexiconInNewTab
         text={text}
         className="overflow-hidden [display:-webkit-box] [-webkit-box-orient:vertical]"
         style={{ WebkitLineClamp: lines }}

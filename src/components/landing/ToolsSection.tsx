@@ -36,7 +36,7 @@ const tools = [
   {
     href: "/simulateur",
     title: "Le simulateur",
-    description: "Estimez l'impôt, la CSG, les cotisations et la TVA prélevés sur un salaire, barème 2026.",
+    description: "Estimez l'impôt sur le revenu, les cotisations sociales et la taxe sur la valeur ajoutée (TVA) prélevés sur un salaire, barème 2026.",
     cta: "Lancer le simulateur",
     Icon: IconCalculator,
     illustration: null,

@@ -1,3 +1,5 @@
+import { AcronymText } from "@/components/AcronymText";
+
 const sources = [
   { name: "Projet de budget 2026 (PLF)", title: "Projet de loi de finances 2026", url: "https://www.budget.gouv.fr/budget-etat/plf-2026" },
   { name: "Cour des comptes", title: "Cour des comptes", url: "https://www.ccomptes.fr" },
@@ -19,9 +21,9 @@ export function SourcesSection() {
           Toutes nos données sont sourcées.
         </h2>
         <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-8">
-          Chaque carte cite ses sources officielles. Montants en milliards d&apos;euros par an, coût par
-          habitant calculé sur 69,1&nbsp;millions d&apos;habitants (Insee, 1er janvier 2026). Le jeu ne dit pas ce qu&apos;il
-          faut couper&nbsp;: il montre ce que coûte chaque politique publique.
+          <AcronymText
+            text={"Chaque carte cite ses sources officielles. Montants en milliards d'euros par an, coût par habitant calculé sur 69,1\u00a0millions d'habitants (Insee, 1er janvier 2026). Le jeu ne dit pas ce qu'il faut couper\u00a0: il montre ce que coûte chaque politique publique."}
+          />
         </p>
 
         <ul className="flex flex-wrap items-center justify-center gap-3">
