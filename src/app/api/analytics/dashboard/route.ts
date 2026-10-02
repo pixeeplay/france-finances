@@ -1,37 +1,30 @@
 import { NextRequest } from "next/server";
-import { timingSafeEqual } from "crypto";
 import { db, isDbAvailable } from "@/db";
 import { analyticsEvents } from "@/db/schema";
 import { sql, gte, and } from "drizzle-orm";
 import { auth } from "@/auth";
 import { dbUnavailableResponse, jsonOk, jsonError } from "@/lib/api-utils";
+import { isAdmin, hasValidAnalyticsSecret } from "@/lib/admin";
 
 export const dynamic = "force-dynamic";
 
 /**
  * GET /api/analytics/dashboard?days=7
  * Returns aggregated analytics: pageviews, unique visitors, top events, top pages.
- * Protected by NextAuth session, with ANALYTICS_SECRET as fallback for programmatic access.
+ * Protected by an admin NextAuth session (ADMIN_EMAILS), with ANALYTICS_SECRET
+ * as fallback for programmatic access. Anonymous -> 401, signed-in non-admin -> 403.
  */
 export async function GET(request: NextRequest) {
-  // Primary auth: NextAuth session
+  // Primary auth: admin session (email listed in ADMIN_EMAILS)
   const session = await auth();
-  if (!session?.user) {
+  if (!isAdmin(session)) {
     // Fallback: ANALYTICS_SECRET header/query param (for cron jobs, programmatic access)
-    const secret = process.env.ANALYTICS_SECRET;
-    if (!secret) {
-      console.warn("[analytics/dashboard] ANALYTICS_SECRET is not set — dashboard inaccessible without auth session");
-      return jsonError("Unauthorized", 401);
-    }
     const provided =
       request.headers.get("x-analytics-secret") ??
       request.nextUrl.searchParams.get("secret");
-    if (
-      !provided ||
-      provided.length !== secret.length ||
-      !timingSafeEqual(Buffer.from(provided), Buffer.from(secret))
-    ) {
-      return jsonError("Unauthorized", 401);
+    if (!hasValidAnalyticsSecret(provided)) {
+      // Signed-in but not admin -> 403; anonymous -> 401
+      return session?.user ? jsonError("Forbidden", 403) : jsonError("Unauthorized", 401);
     }
   }
 

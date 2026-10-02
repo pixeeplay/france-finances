@@ -52,8 +52,8 @@ const navItems = [
 export function BottomNav() {
   const pathname = usePathname();
 
-  // Hide on game/swipe, results, and admin pages
-  if (pathname.startsWith("/jeu/") || pathname === "/resultats" || pathname.startsWith("/pixee-admin")) {
+  // Hide on game/swipe and results pages
+  if (pathname.startsWith("/jeu/") || pathname === "/resultats") {
     return null;
   }
 

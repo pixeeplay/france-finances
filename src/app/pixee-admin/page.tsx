@@ -23,7 +23,7 @@ export default function AdminPage() {
     setError("");
     try {
       const res = await fetch(`/api/analytics/dashboard?days=${d}`);
-      if (res.status === 401) {
+      if (res.status === 401 || res.status === 403) {
         setError("Non autorise");
         setLoading(false);
         return;
