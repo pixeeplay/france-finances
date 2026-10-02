@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { NavbarLanding } from "@/components/landing/NavbarLanding";
 import { HeroSection } from "@/components/landing/HeroSection";
-import { KeyNumbers } from "@/components/landing/KeyNumbers";
+import { MagnitudeSection } from "@/components/landing/MagnitudeSection";
 import { HowItWorks } from "@/components/landing/HowItWorks";
+import { DossiersSection } from "@/components/landing/DossiersSection";
 import { CategoriesSection } from "@/components/landing/CategoriesSection";
 import { EcosystemSection } from "@/components/landing/EcosystemSection";
 import { SourcesSection } from "@/components/landing/SourcesSection";
@@ -16,12 +17,13 @@ export const metadata: Metadata = {
 
 export default function LandingPage() {
   return (
-    <div className="min-h-dvh bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50">
+    <div className="min-h-dvh bg-background text-foreground">
       <NavbarLanding />
       <main>
         <HeroSection />
+        <MagnitudeSection />
         <HowItWorks />
-        <KeyNumbers />
+        <DossiersSection />
         <CategoriesSection />
         <EcosystemSection />
         <SourcesSection />

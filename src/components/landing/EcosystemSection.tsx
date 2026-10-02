@@ -1,20 +1,18 @@
-import Image from "next/image";
+// Section provisoire : l'agent E la remplace par les liens vers /chiffres et /simulateur.
+// Seul le style a été aligné sur la direction artistique (contenu inchangé).
 
 const items = [
   {
-    image: "/les-chiffres.svg",
     title: "Les Chiffres",
-    description: "Toutes les donn\u00E9es budg\u00E9taires fran\u00E7aises en un coup d\u2019\u0153il.",
+    description: "Toutes les données budgétaires françaises en un coup d’œil.",
     url: "https://nicoquipaie.co/chiffres",
   },
   {
-    image: "/le-feed.svg",
     title: "Le Feed",
-    description: "D\u00E9bats, analyses et r\u00E9actions de la communaut\u00E9.",
+    description: "Débats, analyses et réactions de la communauté.",
     url: "https://nicoquipaie.co",
   },
   {
-    image: "/le-simulateur.svg",
     title: "Le Simulateur",
     description: "Simulez votre contribution aux finances publiques.",
     url: "https://nicoquipaie.co/simulateur",
@@ -23,47 +21,34 @@ const items = [
 
 export function EcosystemSection() {
   return (
-    <section className="section-padding">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6">
-        <h2 className="font-heading font-bold text-2xl md:text-3xl text-center mb-2 text-landing-primary dark:text-white">
-          Avec{" "}
-          <a href="https://nicoquipaie.co" target="_blank" rel="noopener noreferrer" className="text-landing-expense hover:scale-110 inline-block transition-transform">NicoQuiPaie</a>
-        </h2>
-        <p className="text-center text-muted-foreground mb-10 text-sm md:text-base">
-          La communaut&eacute; citoyenne pour tron&ccedil;onner les d&eacute;penses publiques
-        </p>
+    <section aria-labelledby="ecosystem-title" className="border-b border-border">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+        <header className="mb-6 border-b-2 border-foreground pb-3">
+          <p className="kicker text-muted-foreground mb-2">Pour aller plus loin</p>
+          <h2 id="ecosystem-title" className="text-3xl md:text-4xl font-semibold leading-tight">
+            Avec NicoQuiPaie
+          </h2>
+        </header>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <ul className="grid md:grid-cols-3 md:divide-x divide-border">
           {items.map((item) => (
-            <a
-              key={item.title}
-              href={item.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 hover-lift group block text-center"
-            >
-              <div className="mb-4 flex justify-center">
-                <Image src={item.image} alt={item.title} width={48} height={48} />
-              </div>
-              <h3 className="font-heading font-bold text-lg text-foreground mb-2 flex items-center justify-center gap-2">
-                {item.title}
-                <svg
-                  width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-                  className="text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity"
-                  aria-hidden="true"
-                >
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                  <polyline points="15 3 21 3 21 9" />
-                  <line x1="10" y1="14" x2="21" y2="3" />
-                </svg>
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {item.description}
-              </p>
-            </a>
+            <li key={item.title} className="border-b border-border md:border-b-0 md:px-6 md:first:pl-0 md:last:pr-0">
+              <a
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col gap-2 py-5 min-h-[44px]"
+              >
+                <span className="font-serif text-xl font-semibold group-hover:underline underline-offset-4 decoration-1">
+                  {item.title}
+                  <span aria-hidden="true" className="ml-1 text-muted-foreground">&#8599;</span>
+                  <span className="sr-only"> (nouvel onglet)</span>
+                </span>
+                <span className="text-sm text-muted-foreground leading-relaxed">{item.description}</span>
+              </a>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );
