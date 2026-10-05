@@ -172,6 +172,11 @@ Phases 1 et 2 livrées et déployées (2026-10-02 → 04) : assainissement et s�
 - [x] Dossiers éditoriaux (Phase 3) : gabarit `/dossiers` + 3 premiers dossiers en brouillon (`feat/dossiers`).
 - [ ] Relire les 3 dossiers et les passer en `publie` (`src/data/dossiers/catalog.ts`).
 - [x] Intégration de la vague sur `vague/octobre` (merges `--no-ff`, checks et e2e prod verts).
+- [x] Corrections des relectures (`vague/octobre-final`) : titres des brouillons retirés du JS public (navigation calculée côté serveur), deck du jour stable au déploiement (`DAILY_KIND_FILTER_FROM`), dossiers alignés sur la loi de finances 2026 et le projet 2027 (dette, impôt sur le revenu, CSG), cartes cumulées ou ponctuelles en agrégat (`cre-10`, `ukr-09`, `ukr-02`, `cre-04`, `eta-15`, `fre-09`), doublon FEP (`fre-04`) et montants non sourcés (`hop-10`, `cul-14`) hors jeu, avertissement « doublon probable » dans `data:check`, accessibilité de `/dossiers` et du graphique 2026/2027, `engines` Node 22.13.
+- [ ] **Déploiement** : le tirage du deck du jour change de règle le `DAILY_KIND_FILTER_FROM` (`src/lib/daily.ts`, 2026-10-06). Déployer au plus tard le 5 octobre 2026 ; sinon, repousser cette date au lendemain du déploiement (et mettre à jour le test qui la fige) pour qu'un deck déjà servi ne change pas en cours de journée.
+- [ ] Doublons probables signalés par `data:check` (même montant, même source) à trancher : `san-02`/`hop-01`, `emp-17`/`soc-16`, `cre-05`/`zom-03`, `soc-02`/`ret-06`/`ret-09`, `soc-01`/`ret-10`, `log-09`/`log-17`, `emp-08`/`san-06`, `def-03`/`ukr-11`, `col-20`/`emp-03`, `agr-06`/`agr-11`, `cul-12`/`cul-15` (certains sont deux postes distincts d'un même rapport).
+- [ ] `/chiffres` : recettes fiscales de l'État encore au PLF 2026 initial (`STATE_TAX_REVENUE_2026`) ; passer à la loi de finances 2026 (dossier de presse 2027 : impôt sur le revenu 99,8 Md€, TVA 99,8 Md€).
+- [ ] `eslint-config-next` en 16.3 alors que `next` est en 16.1 : aligner `next` sur 16.3 dans une PR séparée.
 - [ ] Point Analytics (usage réel) et chiffrage hébergement (OVH / o2switch / Vercel).
 
 ### Appliquer les migrations 0003 et 0004 (prod)
@@ -190,11 +195,17 @@ Procédure :
    SELECT count(*) FROM audit_responses a LEFT JOIN sessions s ON s.id = a.session_id WHERE s.id IS NULL;
    SELECT count(*) FROM sessions s LEFT JOIN users u ON u.id = s.user_id WHERE s.user_id IS NOT NULL AND u.id IS NULL;
    ```
+   Lister aussi les clés étrangères existantes. 0004 supprime les contraintes par leur nom Drizzle (`DROP CONSTRAINT IF EXISTS`) : une clé créée autrefois sous un autre nom (`db:push`) resterait en place, en `NO ACTION`, et bloquerait la cascade. La supprimer à la main avant la migration.
+   ```sql
+   SELECT conrelid::regclass AS table_name, conname, confdeltype
+   FROM pg_constraint
+   WHERE contype = 'f' AND conrelid IN ('votes'::regclass, 'sessions'::regclass, 'audit_responses'::regclass);
+   ```
 3. Regarder le journal Drizzle : `SELECT id, hash, created_at FROM drizzle.__drizzle_migrations ORDER BY created_at;`
    - S'il contient 0000 à 0002 (3 lignes) : `npm run db:migrate` applique 0003 puis 0004.
    - S'il est absent ou incomplet (base créée ou modifiée par `db:push`) : **ne pas** lancer `db:migrate`, qui rejouerait 0000 (`CREATE TABLE` sans `IF NOT EXISTS`) et échouerait. Appliquer les deux fichiers dans une transaction : `psql -v ON_ERROR_STOP=1 -1 -f drizzle/0003_drop_community_votes.sql -f drizzle/0004_schema_alignment.sql`.
-4. Choisir un moment calme : `CREATE INDEX` (sans `CONCURRENTLY`, impossible en transaction) bloque brièvement les écritures sur `analytics_events`.
-5. Contrôler : `\d votes`, `\d sessions`, `\d audit_responses` (clés en `ON DELETE CASCADE`), `\di idx_analytics_ip`, `\dt community_votes` (absente).
+4. Choisir un moment calme (la nuit). Dans la transaction, l'ajout de chaque clé étrangère vérifie toutes les lignes existantes et bloque les écritures sur `votes`, `sessions` et `audit_responses` jusqu'à la fin : les fins de partie envoyées à ce moment attendent (quelques secondes vu le volume actuel). `CREATE INDEX` (sans `CONCURRENTLY`, impossible en transaction) bloque de même les écritures sur `analytics_events`. Si les tables ont beaucoup grossi, ajouter plutôt les clés en `NOT VALID` puis lancer `VALIDATE CONSTRAINT` dans une transaction séparée, qui ne bloque pas les écritures.
+5. Contrôler : `\d votes`, `\d sessions`, `\d audit_responses` (clés en `ON DELETE CASCADE`), `\di idx_analytics_ip`, `\dt community_votes` (absente). Relancer la requête `pg_constraint` de l'étape 2 : une seule clé par colonne, `confdeltype = 'c'` (cascade).
 
 ### Encore ouvert (plus tard)
 
