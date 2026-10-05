@@ -41,22 +41,21 @@ const checklist = [
 ];
 
 const cardExample = `{
-  "id": "san-11",
-  "category": "Santé & Hôpital",
-  "categoryEmoji": "🏥",
-  "categoryId": "sante",
-  "title": "Télémédecine et numérique en santé",
-  "amountLabel": "~2 Md€ / an",
-  "amountValue": 2000000000,
-  "perCitizenLabel": "~29€ / Français / an",
-  "perCitizenValue": 29,
-  "context": "Le Ségur du numérique investit 2 Md€…",
-  "equivalence": "2 Md€ investis mais 60% des hôpitaux…",
-  "sources": [
-    { "label": "ANS", "url": "https://esante.gouv.fr" }
-  ],
-  "locale": "national",
-  "year": 2026
+  "id": "san-01",
+  "title": "Dépenses d'assurance maladie (ONDAM)",
+  "subtitle": "Objectif national voté chaque année : soins de ville, hôpitaux, établissements médico-sociaux",
+  "description": "Plafond de dépenses de l'assurance maladie voté chaque année par le Parlement…",
+  "amountBillions": 266,
+  "costPerCitizen": 3848,
+  "deckId": "sante",
+  "icon": "🏛️",
+  "source": "Sénat (PLFSS 2026), Vie-publique.fr LFSS 2025, Cour des comptes",
+  "sourceUrl": "https://www.senat.fr/rap/l25-131-1/l25-131-1_mono.html",
+  "year": 2025,
+  "sourceDate": "2025-11-15",
+  "level": 1,
+  "tags": ["santé", "ONDAM", "assurance maladie"],
+  "equivalence": "Environ 4 fois le budget de la Défense"
 }`;
 
 export default function ContribuerPage() {
@@ -200,7 +199,7 @@ export default function ContribuerPage() {
         <div className="mt-8">
           <Link
             href="/"
-            className="text-sm underline underline-offset-4 hover:text-foreground"
+            className="inline-flex items-center min-h-[44px] text-sm underline underline-offset-4 hover:text-foreground"
           >
             &larr; Retour à l&apos;accueil
           </Link>

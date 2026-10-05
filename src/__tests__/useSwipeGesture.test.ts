@@ -9,19 +9,21 @@ const animateMock = vi.fn((_mv, _target, opts?: { onComplete?: () => void }) => 
   return { stop: vi.fn() };
 });
 
+// prefers-reduced-motion simule, et appels a .set() des motion values
+const motionState = vi.hoisted(() => ({
+  reducedMotion: false as boolean | null,
+  setCalls: [] as number[],
+}));
+
 // Mock framer-motion
 vi.mock("framer-motion", () => {
-  let currentX = 0;
-  let currentY = 0;
-
   return {
+    useReducedMotion: () => motionState.reducedMotion,
     useMotionValue: (initial: number) => {
-      const isY = initial === 0; // Both start at 0, we track by reference later
       return {
         get: () => initial,
         set: (v: number) => {
-          if (isY) currentY = v;
-          else currentX = v;
+          motionState.setCalls.push(v);
         },
         onChange: vi.fn(() => vi.fn()),
         destroy: vi.fn(),
@@ -44,6 +46,8 @@ describe("useSwipeGesture", () => {
   beforeEach(async () => {
     vi.clearAllMocks();
     vi.resetModules();
+    motionState.reducedMotion = false;
+    motionState.setCalls = [];
     const mod = await import("@/hooks/useSwipeGesture");
     useSwipeGesture = mod.useSwipeGesture;
   });
@@ -253,6 +257,67 @@ describe("useSwipeGesture", () => {
       expect(result.current.redTint).toBeDefined();
       expect(result.current.blueTint).toBeDefined();
       expect(result.current.redBottomTint).toBeDefined();
+    });
+  });
+  describe("prefers-reduced-motion au relachement", () => {
+    beforeEach(() => {
+      motionState.reducedMotion = true;
+    });
+
+    it("vote immediatement sans animation d'envol (horizontal)", () => {
+      const onSwipe = vi.fn();
+      const { result } = renderHook(() => useSwipeGesture({ onSwipe, level: 1 }));
+
+      act(() => {
+        result.current.handleDragEnd(null, { offset: { x: -150, y: 0 } });
+      });
+
+      expect(onSwipe).toHaveBeenCalledWith("keep");
+      expect(animateMock).not.toHaveBeenCalled();
+      expect(motionState.setCalls).toContain(-500);
+    });
+
+    it("vote immediatement sans animation d'envol (vertical, niveau 2)", () => {
+      const onSwipe = vi.fn();
+      const { result } = renderHook(() => useSwipeGesture({ onSwipe, level: 2 }));
+
+      act(() => {
+        result.current.handleDragEnd(null, { offset: { x: 0, y: 150 } });
+      });
+
+      expect(onSwipe).toHaveBeenCalledWith("unjustified");
+      expect(animateMock).not.toHaveBeenCalled();
+      expect(motionState.setCalls).toContain(500);
+    });
+
+    it("revient au centre sans ressort sous le seuil", () => {
+      const onSwipe = vi.fn();
+      const { result } = renderHook(() => useSwipeGesture({ onSwipe, level: 2 }));
+
+      act(() => {
+        result.current.handleDragEnd(null, { offset: { x: 40, y: 30 } });
+      });
+
+      expect(onSwipe).not.toHaveBeenCalled();
+      expect(animateMock).not.toHaveBeenCalled();
+      expect(motionState.setCalls).toEqual([0, 0]);
+    });
+
+    it("garde l'animation quand la preference est inconnue (null)", () => {
+      motionState.reducedMotion = null;
+      const onSwipe = vi.fn();
+      const { result } = renderHook(() => useSwipeGesture({ onSwipe, level: 1 }));
+
+      act(() => {
+        result.current.handleDragEnd(null, { offset: { x: 150, y: 0 } });
+      });
+
+      expect(animateMock).toHaveBeenCalledWith(
+        expect.anything(),
+        500,
+        expect.objectContaining({ type: "spring" })
+      );
+      expect(onSwipe).toHaveBeenCalledWith("cut");
     });
   });
 });

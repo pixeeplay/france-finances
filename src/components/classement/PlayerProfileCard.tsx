@@ -1,5 +1,6 @@
 import type { PlayerProfile } from "@/lib/stats";
 import type { GlobalStats } from "@/lib/stats";
+import { ArchetypeIcon } from "@/components/icons/ArchetypeIcon";
 
 interface PlayerProfileCardProps {
   profile: PlayerProfile;
@@ -11,8 +12,8 @@ export function PlayerProfileCard({ profile, stats, rank }: PlayerProfileCardPro
   return (
     <div className="px-4 pt-3 pb-1">
       <div className="flex items-center gap-3 rounded-xl p-3 bg-primary/10 border border-primary/30">
-        <div className="w-12 h-12 rounded-xl bg-card border border-primary/20 flex items-center justify-center text-xl shrink-0">
-          {profile.archetypeIcon || "👤"}
+        <div className="w-12 h-12 rounded-xl bg-card border border-primary/20 flex items-center justify-center shrink-0">
+          <ArchetypeIcon archetypeId={profile.archetypeId} size={24} />
         </div>
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2">

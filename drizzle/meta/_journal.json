@@ -22,6 +22,20 @@
       "when": 1790937021394,
       "tag": "0002_drop_waitlist",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1791219169422,
+      "tag": "0003_drop_community_votes",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1791219170422,
+      "tag": "0004_schema_alignment",
+      "breakpoints": true
     }
   ]
 }

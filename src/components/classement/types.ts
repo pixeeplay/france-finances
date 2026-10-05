@@ -1,4 +1,6 @@
-import archetypesJson from "@/data/archetypes.json";
+import type { ArchetypeFamilyIcon } from "@/components/icons/ArchetypeIcon";
+
+export type { ArchetypeFamilyIcon };
 
 export interface SpeedPlayer {
   rank: number;
@@ -20,15 +22,6 @@ export interface LeaderboardPlayer {
   level: number;
   isCurrentPlayer?: boolean;
 }
-
-// Archetype icon lookup from archetypes.json
-export const archetypeIcons: Record<string, string> = {};
-for (const a of archetypesJson.archetypes) {
-  archetypeIcons[a.id] = a.icon;
-}
-
-/** Pictogramme d'une famille d'archétypes (SVG, pas d'emoji) */
-export type ArchetypeFamilyIcon = "balance" | "chainsaw" | "shield" | "target" | "search";
 
 export interface ArchetypeFamilyShare {
   icon: ArchetypeFamilyIcon;

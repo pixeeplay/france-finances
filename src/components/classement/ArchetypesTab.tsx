@@ -2,17 +2,9 @@
 
 import dynamic from "next/dynamic";
 import type { CommunityStats } from "@/hooks/useCommunityStats";
-import { ChainsawIcon } from "@/components/ChainsawIcon";
-import { ShieldIcon } from "@/components/ShieldIcon";
-import { UiIcon } from "@/components/icons/UiIcon";
-import { FALLBACK_DISTRIBUTION, type ArchetypeFamilyIcon, type ArchetypeFamilyShare } from "./types";
+import { ARCHETYPE_FAMILIES, FamilyIcon } from "@/components/icons/ArchetypeIcon";
+import { FALLBACK_DISTRIBUTION, type ArchetypeFamilyShare } from "./types";
 import { DataSourceBadge } from "./DataSourceBadge";
-
-function FamilyIcon({ icon }: { icon: ArchetypeFamilyIcon }) {
-  if (icon === "chainsaw") return <ChainsawIcon size={16} />;
-  if (icon === "shield") return <ShieldIcon size={16} className="text-primary" />;
-  return <UiIcon name={icon} size={16} className="text-muted-foreground" />;
-}
 
 const RadarChart = dynamic(() => import("@/components/RadarChart").then((m) => m.RadarChart), { ssr: false });
 
@@ -34,13 +26,7 @@ export function ArchetypesTab({
     }
 
     // Group archetypes into families for display
-    const families: { name: string; icon: ArchetypeFamilyIcon; ids: string[]; count: number }[] = [
-      { name: "Équilibristes", icon: "balance", ids: ["equilibriste"], count: 0 },
-      { name: "Coupeurs", icon: "chainsaw", ids: ["austeritaire", "demolisseur", "liquidateur_en_chef", "tranchant", "bucheron"], count: 0 },
-      { name: "Gardiens", icon: "shield", ids: ["gardien", "conservateur", "investisseur_public", "protecteur"], count: 0 },
-      { name: "Stratèges", icon: "target", ids: ["chirurgien", "stratege", "reformateur", "optimisateur", "elagueur"], count: 0 },
-      { name: "Analystes", icon: "search", ids: ["sceptique", "auditeur_rigoureux", "speedrunner"], count: 0 },
-    ];
+    const families = ARCHETYPE_FAMILIES.map((f) => ({ ...f, count: 0 }));
 
     for (const arch of communityStats.archetypeDistribution) {
       const family = families.find((f) => f.ids.includes(arch.archetypeId));

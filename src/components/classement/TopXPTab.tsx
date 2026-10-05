@@ -1,6 +1,7 @@
 import { RankBadge } from "./RankBadge";
 import { DataSourceBadge } from "./DataSourceBadge";
-import { type LeaderboardPlayer, archetypeIcons } from "./types";
+import { ArchetypeIcon } from "@/components/icons/ArchetypeIcon";
+import { type LeaderboardPlayer } from "./types";
 
 interface TopXPTabProps {
   players: LeaderboardPlayer[];
@@ -26,7 +27,6 @@ export function TopXPTab({ players, isFallback }: TopXPTabProps) {
       {players.map((player) => {
         const rank = player.rank;
         const isMe = player.isCurrentPlayer;
-        const icon = archetypeIcons[player.archetypeId] ?? "🎮";
 
         return (
           <div
@@ -41,8 +41,8 @@ export function TopXPTab({ players, isFallback }: TopXPTabProps) {
             <RankBadge rank={rank} />
 
             {/* Avatar */}
-            <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-lg">
-              {icon}
+            <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center">
+              <ArchetypeIcon archetypeId={player.archetypeId} size={20} />
             </div>
 
             {/* Info */}

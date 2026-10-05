@@ -137,7 +137,7 @@ function PlayPageContent() {
         <button
           onClick={() => router.push("/")}
           aria-label="Retour à l'accueil"
-          className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-card transition-colors text-muted-foreground"
+          className="w-11 h-11 rounded-full flex items-center justify-center hover:bg-card transition-colors text-muted-foreground"
         >
           <span className="text-xl" aria-hidden="true">&larr;</span>
         </button>
@@ -261,7 +261,7 @@ function PlayPageContent() {
 
         {/* Level Selector */}
         <div className="px-4 py-3 relative">
-          <div className="flex h-12 items-center justify-center rounded-xl bg-card p-1">
+          <div className="flex h-[52px] items-center justify-center rounded-xl bg-card p-1">
             {levelOptions.map((opt) => (
               <button
                 key={opt.value}
@@ -269,7 +269,7 @@ function PlayPageContent() {
                 onClick={() => handleLevelClick(opt)}
                 onMouseEnter={() => opt.locked && setTooltip(opt.value as 2 | 3)}
                 onMouseLeave={() => opt.locked && setTooltip(null)}
-                className={`flex h-full grow items-center justify-center rounded-lg px-2 text-sm font-semibold transition-colors ${
+                className={`flex h-full min-h-[44px] grow items-center justify-center rounded-lg px-2 text-sm font-semibold transition-colors ${
                   !opt.locked && playableLevel === opt.value
                     ? "bg-primary text-primary-foreground"
                     : opt.locked

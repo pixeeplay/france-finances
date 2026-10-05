@@ -165,12 +165,34 @@ Phases 1 et 2 livrées et déployées (2026-10-02 → 04) : assainissement et s�
 - [ ] CLAUDE.md aligné sur l'identité colorée (fait sur `chore/docs-solde`).
 - [x] Dépendances : PR Dependabot appliquées, Node 22 LTS (Docker, CI, `@types/node`), actions GitHub en v7 ; eslint 10 reporté (plugins de `eslint-config-next` pas encore compatibles) (`chore/deps-polices`).
 - [x] Polices embarquées dans le repo (`next/font/local`, mêmes fichiers que Google Fonts, rendu identique) (`chore/deps-polices`).
-- [ ] Dette : table `communityVotes` inutilisée, dérive schéma / migrations Drizzle, vrai 404 sur `/pixee-admin`, emojis d'interface restants, reduced motion au relâchement du swipe, boutons Niveau 1/2/3 à 44 px, e2e `/chiffres` et `/simulateur`.
+- [x] Dette (branche `chore/dette`) : table `communityVotes` retirée du schéma, migrations alignées (0003 et 0004, **non exécutées**, voir ci-dessous), vrai 404 sur `/pixee-admin` (`src/proxy.ts`), emojis d'interface remplacés par des pictogrammes, reduced motion au relâchement du swipe, boutons Niveau 1/2/3 et liens de `/infos` et `/contribuer` à 44 px, e2e `/chiffres` et `/simulateur`.
 - [ ] Champ `kind` (dépense / recette / agrégat) : exclure du deck du jour et du défi 50 Md€ ce qui n'est pas une dépense.
 - [ ] Champ `trend` : sourcer ou retirer.
 - [ ] Bloc « Ce que prévoit le projet de budget 2027 », étiqueté projet (loi votée attendue fin décembre).
 - [ ] Dossiers éditoriaux (Phase 3) : gabarit + premiers dossiers, validés avant publication.
 - [ ] Point Analytics (usage réel) et chiffrage hébergement (OVH / o2switch / Vercel).
+
+### Appliquer les migrations 0003 et 0004 (prod)
+
+À faire à la main, après le déploiement du code de `chore/dette` (le code ne lit plus `community_votes`).
+
+- `0003_drop_community_votes.sql` : `DROP TABLE IF EXISTS "community_votes"`. La table n'est ni lue ni écrite par le code ; le pourcentage communautaire vient de `votes`.
+- `0004_schema_alignment.sql` : recrée trois clés étrangères en `ON DELETE CASCADE` (`sessions.user_id`, `votes.session_id`, `audit_responses.session_id`) et crée l'index `idx_analytics_ip`. Aucune colonne ni table supprimée ; rejouable (`DROP CONSTRAINT IF EXISTS`, `CREATE INDEX IF NOT EXISTS`). Effet voulu par le schéma : supprimer un compte supprime ses sessions, leurs votes et leurs réponses d'audit.
+
+Procédure :
+
+1. Sauvegarder : `pg_dump -Fc` de la base.
+2. Vérifier l'absence de lignes orphelines (sinon l'ajout des clés étrangères échoue et la transaction est annulée ; rien n'est perdu) :
+   ```sql
+   SELECT count(*) FROM votes v LEFT JOIN sessions s ON s.id = v.session_id WHERE s.id IS NULL;
+   SELECT count(*) FROM audit_responses a LEFT JOIN sessions s ON s.id = a.session_id WHERE s.id IS NULL;
+   SELECT count(*) FROM sessions s LEFT JOIN users u ON u.id = s.user_id WHERE s.user_id IS NOT NULL AND u.id IS NULL;
+   ```
+3. Regarder le journal Drizzle : `SELECT id, hash, created_at FROM drizzle.__drizzle_migrations ORDER BY created_at;`
+   - S'il contient 0000 à 0002 (3 lignes) : `npm run db:migrate` applique 0003 puis 0004.
+   - S'il est absent ou incomplet (base créée ou modifiée par `db:push`) : **ne pas** lancer `db:migrate`, qui rejouerait 0000 (`CREATE TABLE` sans `IF NOT EXISTS`) et échouerait. Appliquer les deux fichiers dans une transaction : `psql -v ON_ERROR_STOP=1 -1 -f drizzle/0003_drop_community_votes.sql -f drizzle/0004_schema_alignment.sql`.
+4. Choisir un moment calme : `CREATE INDEX` (sans `CONCURRENTLY`, impossible en transaction) bloque brièvement les écritures sur `analytics_events`.
+5. Contrôler : `\d votes`, `\d sessions`, `\d audit_responses` (clés en `ON DELETE CASCADE`), `\di idx_analytics_ip`, `\dt community_votes` (absente).
 
 ### Encore ouvert (plus tard)
 

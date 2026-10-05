@@ -26,7 +26,7 @@ export default function InfosPage() {
                 <h2 className="text-lg font-bold">Budget Swipe</h2>
                 <p className="text-xs text-muted-foreground">
                   par{" "}
-                  <a href="https://pixeeplay.fr" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">pixeeplay</a>
+                  <a href="https://pixeeplay.fr" target="_blank" rel="noopener noreferrer" className="inline-flex items-center min-h-[44px] -my-[14px] text-primary hover:underline">pixeeplay</a>
                 </p>
               </div>
             </div>
@@ -193,7 +193,7 @@ export default function InfosPage() {
         <div className="px-4 py-6 text-center flex flex-col gap-2">
           <Link
             href="/infos/confidentialite"
-            className="text-xs text-primary hover:underline"
+            className="inline-flex items-center justify-center self-center min-h-[44px] px-2 text-xs text-primary hover:underline"
           >
             Politique de confidentialit&eacute;
           </Link>

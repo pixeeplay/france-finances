@@ -55,7 +55,7 @@ DNS : Cloudflare (DNS only, pas de proxy)
 - aria-hidden sur SVGs et emojis decoratifs
 - min-h-[44px] sur elements interactifs
 - API responses standardisees : jsonOk(), jsonError(), withDbCheck()
-- Admin (`/pixee-admin`, `/api/analytics/dashboard`, `/api/analytics/purge`) : controle via `isAdmin(session)` (`src/lib/admin.ts`, env `ADMIN_EMAILS`). Non-admin -> `notFound()` cote page, 401/403 cote API. Toute nouvelle route admin DOIT utiliser ce helper. `src/lib/admin.ts` importe `crypto` : ne pas l'ajouter au barrel `src/lib/index.ts` (importe cote client)
+- Admin (`/pixee-admin`, `/api/analytics/dashboard`, `/api/analytics/purge`) : controle via `isAdmin(session)` (`src/lib/admin.ts`, env `ADMIN_EMAILS`). Non-admin -> 404 (statut pose par `src/proxy.ts` avant le rendu, `notFound()` en defense dans le layout), 401/403 cote API. Toute nouvelle route admin DOIT utiliser ce helper. `src/lib/admin.ts` importe `crypto` : ne pas l'ajouter au barrel `src/lib/index.ts` (importe cote client)
 
 ## Direction artistique et design tokens
 
@@ -126,7 +126,7 @@ src/
     data-check-exceptions.json # Exceptions documentees cout/habitant
     index.ts        # Barrel export
   db/
-    schema.ts       # Tables: users, accounts, authSessions, verificationTokens, sessions, votes, communityVotes, analyticsEvents, auditResponses
+    schema.ts       # Tables: users, accounts, authSessions, verificationTokens, sessions, votes, analyticsEvents, auditResponses
     index.ts        # Drizzle client + pool
   stores/
     gameStore.ts    # Zustand (voteAndAdvance, useShallow, gameMode budget)
@@ -146,7 +146,7 @@ src/
 - `npm run type-check` -- tsc --noEmit
 - `npm run data:check` -- Controle des cartes (schema Zod, doublons, URL, cout/habitant, niveaux), lance en CI. Regles : `src/data/README.md`
 - `npm run db:generate` -- Generer une migration Drizzle (dossier `drizzle/`)
-- `npm run db:migrate` -- Migrations Drizzle (manuel ; avant 0002_drop_waitlist, exporter la table waitlist en prod, voir PLAN-REFONTE.md)
+- `npm run db:migrate` -- Migrations Drizzle (manuel ; 0003 et 0004 a appliquer en prod selon la procedure de PLAN-REFONTE.md section 4)
 
 ## Donnees
 

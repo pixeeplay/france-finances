@@ -2,6 +2,8 @@
 
 import { useRouter } from "next/navigation";
 import type { StoredSession } from "@/lib/stats";
+import { UiIcon } from "@/components/icons/UiIcon";
+import { ArchetypeIcon } from "@/components/icons/ArchetypeIcon";
 
 interface JournalTabProps {
   sessions: StoredSession[];
@@ -14,7 +16,7 @@ export function JournalTab({ sessions }: JournalTabProps) {
     return (
       <section className="p-4">
         <div className="flex flex-col items-center justify-center min-h-[300px] text-center gap-3">
-          <span className="text-4xl">📜</span>
+          <UiIcon name="book" size={40} className="text-muted-foreground" />
           <p className="text-muted-foreground text-sm">
             Joue une session pour voir ton journal.
           </p>
@@ -39,14 +41,8 @@ export function JournalTab({ sessions }: JournalTabProps) {
                 key={s.id}
                 className="flex items-center gap-3 p-3 bg-card border border-border rounded-xl"
               >
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-lg shrink-0">
-                  {s.archetypeId === "austeritaire"
-                    ? "\u2702\uFE0F"
-                    : s.archetypeId === "gardien"
-                      ? "\uD83D\uDEE1"
-                      : s.archetypeId === "speedrunner"
-                        ? "\uD83D\uDD25"
-                        : "\u2696\uFE0F"}
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                  <ArchetypeIcon archetypeId={s.archetypeId} size={20} />
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex justify-between">

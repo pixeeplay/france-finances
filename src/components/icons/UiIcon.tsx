@@ -127,6 +127,42 @@ const PATHS = {
       <path d="M14.5 9a3 3 0 0 0-5 1.5c0 3 5 1.5 5 4.5a3 3 0 0 1-5 1M12 6.5v1.5M12 16v1.5" />
     </>
   ),
+  // Silhouette : joueur sans archétype
+  user: (
+    <>
+      <circle cx="12" cy="8" r="4" />
+      <path d="M4 21a8 8 0 0 1 16 0" />
+    </>
+  ),
+  // Horloge : nombre de sessions
+  clock: (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 7v5l3 2" />
+    </>
+  ),
+  // Triangle d'alerte : page d'erreur
+  alert: (
+    <>
+      <path d="M12 3 2 20h20z" />
+      <path d="M12 10v4" />
+      <circle cx="12" cy="17" r="0.6" fill="currentColor" />
+    </>
+  ),
+  // Livre ouvert : journal des sessions
+  book: (
+    <>
+      <path d="M12 6c-2-1.5-5-2-9-2v14c4 0 7 .5 9 2 2-1.5 5-2 9-2V4c-4 0-7 .5-9 2z" />
+      <path d="M12 6v14" />
+    </>
+  ),
+  // Nuage barré : hors connexion
+  offline: (
+    <>
+      <path d="M7 18h10a4 4 0 0 0 .6-7.95A6 6 0 0 0 6.2 9.1 4.5 4.5 0 0 0 7 18z" />
+      <path d="M3 3l18 18" />
+    </>
+  ),
 } as const satisfies Record<string, ReactNode>;
 
 export type UiIconName = keyof typeof PATHS;
