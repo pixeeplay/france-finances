@@ -18,6 +18,7 @@ const validCard = {
   year: 2026,
   sourceDate: "2025-11-24",
   level: 2,
+  kind: "depense",
   tags: ["militaire"],
   equivalence: "",
 };
@@ -57,7 +58,21 @@ describe("cardSchema", () => {
   });
 
   it("refuse null sur un champ optionnel", () => {
-    expect(cardSchema.safeParse({ ...validCard, trend: null }).success).toBe(false);
+    expect(cardSchema.safeParse({ ...validCard, year: null }).success).toBe(false);
+  });
+
+  it("exige kind parmi depense, recette, agregat", () => {
+    const { kind: _kind, ...withoutKind } = validCard;
+    void _kind;
+    expect(cardSchema.safeParse(withoutKind).success).toBe(false);
+    expect(cardSchema.safeParse({ ...validCard, kind: "dépense" }).success).toBe(false);
+    for (const kind of ["depense", "recette", "agregat"]) {
+      expect(cardSchema.safeParse({ ...validCard, kind }).success).toBe(true);
+    }
+  });
+
+  it("n'accepte plus le champ trend (évolution sans source)", () => {
+    expect(cardSchema.safeParse({ ...validCard, trend: 12 }).success).toBe(false);
   });
 });
 
@@ -103,6 +118,19 @@ describe("checkData", () => {
     expect(report.errors).toEqual([]);
     expect(report.stats.cards).toBe(6);
     expect(report.stats.levels).toEqual({ 1: 2, 2: 2, 3: 2 });
+    expect(report.stats.kinds).toEqual({ depense: 6, recette: 0, agregat: 0 });
+  });
+
+  it("exige des recettes dans le deck des recettes", () => {
+    const recDeck = { ...deck, id: "recettes", name: "Recettes", cardCount: 2 };
+    const cards = [
+      { ...validCard, id: "rec-01", title: "TVA", deckId: "recettes", kind: "recette" },
+      { ...validCard, id: "rec-02", title: "Fraude", deckId: "recettes", kind: "agregat" },
+    ];
+    const report = checkData({ decksMeta: { decks: [recDeck] }, cardFiles: { recettes: cards } });
+    expect(report.errors.some((e) => e.includes("rec-02") && e.includes("deck des recettes"))).toBe(true);
+    expect(report.errors.some((e) => e.includes("rec-01"))).toBe(false);
+    expect(report.stats.kinds).toEqual({ depense: 0, recette: 1, agregat: 1 });
   });
 
   it("signale ids et titres en double", () => {
@@ -184,6 +212,23 @@ describe("données réelles (src/data)", () => {
     });
     expect(report.errors).toEqual([]);
     expect(report.stats.cards).toBeGreaterThan(300);
+  });
+
+  it("aucune carte ne garde de champ trend (évolution sur 5 ans sans source)", () => {
+    for (const content of Object.values(cardFiles)) {
+      for (const card of content as Record<string, unknown>[]) expect(card).not.toHaveProperty("trend");
+    }
+  });
+
+  it("classe les indicateurs connus hors dépenses", () => {
+    const kindOf = new Map<string, unknown>();
+    for (const content of Object.values(cardFiles)) {
+      for (const card of content as { id: string; kind: unknown }[]) kindOf.set(card.id, card.kind);
+    }
+    // fraude fiscale, déficit public, dette des collectivités, facture énergétique
+    for (const id of ["eta-04", "eta-10", "col-12", "ene-04"]) expect(kindOf.get(id)).toBe("agregat");
+    expect(kindOf.get("rec-01")).toBe("recette");
+    expect(kindOf.get("def-01")).toBe("depense");
   });
 });
 

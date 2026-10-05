@@ -1,4 +1,5 @@
 import type { Card, VoteDirection } from "@/types";
+import { isSpendingCard } from "./cardKind";
 import { createSeededRng, seededShuffle } from "./random";
 
 /** Identifiant de route du deck du jour : /jeu/quotidien */
@@ -7,7 +8,11 @@ export const DAILY_CARD_COUNT = 10;
 /** Jour n°1 du deck du jour (sert a numeroter les tirages) */
 export const DAILY_EPOCH = "2026-10-01";
 export const DAILY_TIMEZONE = "Europe/Paris";
-/** Decks exclus du tirage : les recettes ne sont pas des depenses a "tronconner" */
+/**
+ * Decks sans aucune depense (toutes leurs cartes sont des recettes) : absents
+ * de la mosaique de l'image de partage. Le tirage, lui, filtre carte par carte
+ * sur `kind` (voir drawDailyCards).
+ */
 export const DAILY_EXCLUDED_DECKS: readonly string[] = ["recettes"];
 /** Nombre maximal de resultats conserves en local */
 const MAX_STORED_RESULTS = 60;
@@ -60,7 +65,8 @@ export function getDailyNumber(key: string): number {
 /**
  * Tire les cartes du jour : meme resultat pour une meme date, quel que soit
  * l'ordre des cartes en entree. Au plus une carte par deck tant que possible
- * pour varier les categories.
+ * pour varier les categories. Seules les depenses sont tirees : une recette ou
+ * un indicateur (fraude estimee, dette...) n'est pas une depense a "tronconner".
  */
 export function drawDailyCards(
   cards: readonly Card[],
@@ -68,7 +74,7 @@ export function drawDailyCards(
   count: number = DAILY_CARD_COUNT,
 ): Card[] {
   const pool = cards
-    .filter((c) => !DAILY_EXCLUDED_DECKS.includes(c.deckId))
+    .filter(isSpendingCard)
     .sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
   const shuffled = seededShuffle(pool, createSeededRng(`daily:${dateKey}`));
 

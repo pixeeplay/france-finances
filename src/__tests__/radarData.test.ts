@@ -14,6 +14,7 @@ function makeCard(id: string, deckId: string): Card {
     icon: "🎯",
     source: "Test",
     level: 1,
+    kind: "depense",
   };
 }
 

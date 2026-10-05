@@ -13,6 +13,7 @@
     "year": 2024,
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "depense",
     "tags": ["agriculture", "PAC", "Europe"],
     "equivalence": "58 % des dépenses de l'Union européenne en France en 2024"
   },
@@ -25,12 +26,12 @@
     "costPerCitizen": 58,
     "deckId": "agriculture",
     "icon": "🏛️",
-    "trend": -4.5,
     "source": "Sénat PLF 2026, Public Sénat",
     "sourceUrl": "https://www.senat.fr/rap/l25-139-33/l25-139-33_mono.html",
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "depense",
     "tags": ["agriculture", "budget", "ministère"],
     "equivalence": "Ce budget ne représente qu'environ un cinquième des 25,3 Md€ de dépenses publiques pour l'agriculture"
   },
@@ -47,6 +48,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-310-1/l25-139-310-1_mono.html",
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "depense",
     "tags": ["agriculture", "eau", "environnement"],
     "equivalence": "Plafond des redevances relevé de 50 M€ en 2026"
   },
@@ -64,6 +66,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["agriculture", "forêts", "ONF"],
     "equivalence": "257,4 M€ versés par l'État en 2026"
   },
@@ -81,6 +84,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["agriculture", "bio", "environnement"],
     "equivalence": "Environ 4 € par habitant et par an"
   },
@@ -98,6 +102,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["agriculture", "sécurité alimentaire", "contrôle"],
     "equivalence": "2 centimes par repas pour garantir la sécurité de ce qu'on mange"
   },
@@ -115,6 +120,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["agriculture", "calamités", "assurance"],
     "equivalence": "Le prix d'un ticket de metro par Français et par an contre les crises agricoles"
   },
@@ -132,6 +138,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "depense",
     "tags": ["agriculture", "total", "vue d'ensemble"],
     "equivalence": "~63 000€ de soutien public par exploitation agricole et par an"
   },
@@ -148,6 +155,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-310-2/l25-139-310-2_mono.html",
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["agriculture", "pêche", "aquaculture"],
     "equivalence": "La France importe une large part du poisson qu'elle consomme"
   },
@@ -164,6 +172,7 @@
     "sourceUrl": "https://www.senat.fr/rap/a25-140-1/a25-140-1_mono.html",
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["agriculture", "abattoirs", "bien-être animal"],
     "equivalence": "Environ 2 € par habitant et par an pour les contrôles d'abattage"
   },
@@ -180,6 +189,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-33/l25-139-33_mono.html",
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["agriculture", "vin", "fiscalite"],
     "equivalence": "Une filière exportatrice soutenue alors que la santé publique vise à réduire la consommation d'alcool"
   },
@@ -196,6 +206,7 @@
     "sourceUrl": "https://librairie.ademe.fr/dechets-economie-circulaire/2435-etat-des-lieux-des-masses-de-gaspillages-alimentaires-et-de-sa-gestion-aux-differentes-etapes-de-la-chaine-alimentaire.html",
     "sourceDate": "2016-05",
     "level": 1,
+    "kind": "agregat",
     "tags": ["agriculture", "gaspillage", "AGEC"],
     "equivalence": "Environ 240 € de nourriture gaspillée par habitant et par an"
   },
@@ -212,6 +223,7 @@
     "sourceUrl": "https://www.senat.fr/rap/a25-140-1/a25-140-1_mono.html",
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["agriculture", "crise", "urgence"],
     "equivalence": "Plus du double de la somme prévue en 2024",
     "year": 2024
@@ -229,6 +241,7 @@
     "sourceUrl": "https://www.senat.fr/rap/a25-140-1/a25-140-1_mono.html",
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "depense",
     "tags": ["agriculture", "enseignement", "formation"],
     "equivalence": "Environ 800 établissements d'enseignement agricole"
   },
@@ -245,6 +258,7 @@
     "sourceUrl": "https://www.ccomptes.fr/system/files/2023-07/20230717-gestion-quantitative-de-l-eau.pdf",
     "sourceDate": "2023-07",
     "level": 3,
+    "kind": "depense",
     "tags": ["agriculture", "eau", "irrigation"],
     "equivalence": "57 % de l'eau consommée en France sert à l'agriculture"
   },
@@ -261,6 +275,7 @@
     "sourceUrl": "https://www.ccomptes.fr/fr/publications/le-bilan-des-plans-ecophyto",
     "sourceDate": "2020-02-04",
     "level": 3,
+    "kind": "depense",
     "tags": ["agriculture", "pesticides", "sante"],
     "equivalence": "Budget pour réduire les pesticides : 250 M€ en 2024, 25 M€ proposés pour 2026"
   },
@@ -277,6 +292,7 @@
     "sourceUrl": "https://www.senat.fr/rap/a25-140-1/a25-140-1_mono.html",
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "agregat",
     "tags": ["agriculture", "souverainete", "importations"],
     "equivalence": "Aides publiques à l'agriculture : 25,7 Md€ avec les fonds européens"
   },
@@ -293,6 +309,7 @@
     "sourceUrl": "https://ma-cantine.agriculture.gouv.fr/static/documents/rapport-bilan-statistique-EGALIM_2025.pdf",
     "sourceDate": "2025-12",
     "level": 2,
+    "kind": "agregat",
     "tags": ["agriculture", "cantines", "EGalim"],
     "equivalence": "29,5 % de produits durables et 11,8 % de bio en 2024, pour des objectifs de 50 % et 20 %",
     "year": 2024
@@ -310,6 +327,7 @@
     "sourceUrl": "https://www.senat.fr/rap/a25-140-1/a25-140-1_mono.html",
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["agriculture", "grippe aviaire", "sanitaire"],
     "equivalence": "717 M€ d'indemnisations en cinq ans, hors prophylaxie et pertes de marché"
   },
@@ -326,6 +344,7 @@
     "sourceUrl": "https://www.senat.fr/rap/a25-140-1/a25-140-1_mono.html",
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "depense",
     "tags": ["agriculture", "forêt", "bois"],
     "equivalence": "Objectif : un milliard d'arbres plantés en dix ans"
   }

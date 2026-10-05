@@ -129,6 +129,7 @@ function makeCard(overrides: Partial<Card> = {}): Card {
     icon: "🏠",
     source: "PLF 2025",
     level: 1,
+    kind: "depense",
     ...overrides,
   };
 }
@@ -202,6 +203,27 @@ describe("SwipeCard", () => {
     );
 
     expect(screen.queryByText("Équivalence")).not.toBeInTheDocument();
+  });
+
+  it("shows no kind label on a spending card", () => {
+    render(<SwipeCard card={makeCard()} isTop={true} onSwipe={vi.fn()} />);
+
+    expect(screen.queryByTestId("card-kind-label")).not.toBeInTheDocument();
+    expect(screen.getByText("Coût annuel")).toBeInTheDocument();
+  });
+
+  it("labels revenue and indicator cards discreetly", () => {
+    const { unmount } = render(
+      <SwipeCard card={makeCard({ kind: "recette", deckId: "recettes" })} isTop={true} onSwipe={vi.fn()} />,
+    );
+    expect(screen.getByTestId("card-kind-label")).toHaveTextContent("Recette");
+    expect(screen.getByText("Montant annuel")).toBeInTheDocument();
+    expect(screen.queryByText("Coût annuel")).not.toBeInTheDocument();
+    unmount();
+
+    render(<SwipeCard card={makeCard({ kind: "agregat", deckId: "etat" })} isTop={true} onSwipe={vi.fn()} />);
+    expect(screen.getByTestId("card-kind-label")).toHaveTextContent("Indicateur");
+    expect(screen.getByRole("article")).toHaveAccessibleName(/\(indicateur\)/);
   });
 });
 

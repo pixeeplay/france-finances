@@ -5,7 +5,6 @@ import { ChainsawIcon } from "./ChainsawIcon";
 import { ShieldIcon } from "./ShieldIcon";
 import {
   communityAgreement,
-  trendFact,
   voteSide,
   type CommunityCounts,
 } from "@/lib/sessionFeedback";
@@ -36,8 +35,7 @@ function agreementSentence(lastVote: LastVote, counts: CommunityCounts): string 
  */
 export function feedbackAnnouncement(lastVote: LastVote | null, counts: CommunityCounts): string {
   if (!lastVote) return "";
-  const fact = trendFact(lastVote.card);
-  return `${lastVote.card.title} : ${agreementSentence(lastVote, counts)}.${fact ? ` ${fact}.` : ""}`;
+  return `${lastVote.card.title} : ${agreementSentence(lastVote, counts)}.`;
 }
 
 interface SessionFeedbackBarProps {
@@ -51,7 +49,7 @@ interface SessionFeedbackBarProps {
 
 /**
  * Bandeau de hauteur fixe au-dessus de la pile : retour bref apres chaque vote
- * (avis de la communaute, tendance) et cumul "tronconne" de la session.
+ * (avis de la communaute) et cumul "tronconne" de la session (depenses seulement).
  * Il ne recouvre jamais la carte ; l'annonce vocale passe par la zone
  * aria-live de SwipeStack (voir feedbackAnnouncement).
  */
@@ -136,8 +134,7 @@ function BudgetCounter({ cutBillions, target }: { cutBillions: number; target: n
 
 function FeedbackLines({ lastVote, counts }: { lastVote: LastVote; counts: CommunityCounts }) {
   const side = voteSide(lastVote.direction);
-  const fact = trendFact(lastVote.card);
-  const detail = fact ? `${agreementSentence(lastVote, counts)} · ${fact}` : agreementSentence(lastVote, counts);
+  const detail = agreementSentence(lastVote, counts);
 
   return (
     <div className="animate-fade-in" data-testid="swipe-feedback">

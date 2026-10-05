@@ -54,6 +54,17 @@ export const sourceDateSchema = z
 
 const nonEmpty = z.string().trim().min(1);
 
+/**
+ * Nature du montant d'une carte :
+ * - "depense" : dépense publique (État, Sécurité sociale, collectivités, part française
+ *   du budget européen), dépenses fiscales et allègements de cotisations compris ;
+ * - "recette" : impôt, cotisation ou autre ressource publique ;
+ * - "agregat" : indicateur qui n'est ni une dépense ni une recette publique que l'on
+ *   pourrait décider (fraude estimée, dette, déficit, coût social, facture énergétique…).
+ */
+export const CARD_KINDS = ["depense", "recette", "agregat"] as const;
+export const cardKindSchema = z.enum(CARD_KINDS);
+
 export const cardSchema = z.strictObject({
   id: z.string().regex(/^[a-z]{3}-\d{2}$/, { message: "id attendu : xxx-00" }),
   title: nonEmpty,
@@ -65,8 +76,6 @@ export const cardSchema = z.strictObject({
   costPerCitizen: z.number().finite().nonnegative(),
   deckId: nonEmpty,
   icon: nonEmpty,
-  /** Évolution sur 5 ans en %. */
-  trend: z.number().finite().optional(),
   source: nonEmpty,
   sourceUrl: sourceUrlSchema.optional(),
   /** Année budgétaire du montant (ex. 2026 pour la LFI 2026). */
@@ -75,6 +84,8 @@ export const cardSchema = z.strictObject({
   sourceDate: sourceDateSchema.optional(),
   /** 1 = grand poste, 2 = dispositif, 3 = niche / micro-audit. */
   level: z.union([z.literal(1), z.literal(2), z.literal(3)]),
+  /** Nature du montant : dépense, recette ou agrégat (critère dans src/data/README.md). */
+  kind: cardKindSchema,
   tags: z.array(nonEmpty).optional(),
   equivalence: z.string().optional(),
   /** `false` : carte hors jeu (gardée dans les données, sans montant officiel). */
@@ -98,3 +109,4 @@ export const decksMetaSchema = z.strictObject({
 
 export type CardData = z.infer<typeof cardSchema>;
 export type DeckData = z.infer<typeof deckSchema>;
+export type CardKindData = z.infer<typeof cardKindSchema>;

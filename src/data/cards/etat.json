@@ -8,11 +8,11 @@
     "costPerCitizen": 839,
     "deckId": "etat",
     "icon": "📊",
-    "trend": 15,
     "source": "Sénat (PLF 2026), Agence France Trésor, budget.gouv.fr, Cour des comptes",
     "sourceUrl": "https://www.senat.fr/rap/l25-139-312/l25-139-312_mono.html",
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "depense",
     "tags": ["état", "dette", "intérêts"],
     "equivalence": "+4,5 Md€ d'intérêts en un an",
     "year": 2026
@@ -30,6 +30,7 @@
     "sourceUrl": "https://www.senat.fr/rap/a25-145-5/a25-145-5_mono.html",
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "depense",
     "tags": ["état", "fonctionnaires", "salaires"],
     "equivalence": "5,8 millions d'agents publics, dont 44 % à l'État",
     "year": 2026
@@ -47,6 +48,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-325/l25-139-325_mono.html",
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "depense",
     "tags": ["état", "collectivités", "décentralisation"],
     "equivalence": "108,1 Md€ de transferts financiers de l'État aux collectivités en 2026",
     "year": 2026
@@ -64,6 +66,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-314/l25-139-314_mono.html",
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "agregat",
     "tags": ["état", "fraude", "recettes"],
     "equivalence": "11,4 Md€ recouvrés au titre du contrôle fiscal en 2024"
   },
@@ -81,6 +84,7 @@
     "year": 2025,
     "sourceDate": "2026-04",
     "level": 1,
+    "kind": "depense",
     "tags": ["état", "fiscalité", "niches"],
     "equivalence": "Environ 3 % du PIB en 2025"
   },
@@ -93,11 +97,11 @@
     "costPerCitizen": 226,
     "deckId": "etat",
     "icon": "🌍",
-    "trend": -13,
     "source": "Sénat (PLF 2026), OCDE DAC, budget.gouv.fr, AFD",
     "sourceUrl": "https://www.senat.fr/rap/l25-139-34/l25-139-34_mono.html",
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "depense",
     "tags": ["état", "international", "aide"],
     "equivalence": "0,48 % du revenu national en 2024, pour une cible légale de 0,7 %",
     "year": 2024
@@ -115,6 +119,7 @@
     "sourceUrl": "https://www.senat.fr/rap/r24-808-1/r24-808-1-syn.pdf",
     "sourceDate": "2025-07",
     "level": 1,
+    "kind": "depense",
     "tags": ["état", "entreprises", "subventions"],
     "equivalence": "Entre 108 et 211 Md€ selon les aides prises en compte (2023)",
     "year": 2023
@@ -132,6 +137,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-320/l25-139-320_mono.html",
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "depense",
     "tags": ["état", "outre-mer", "territoires"],
     "equivalence": "Environ 27 Md€ de dépenses de l'État pour les outre-mer en 2026"
   },
@@ -149,6 +155,7 @@
     "year": 2025,
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "depense",
     "tags": ["état", "diplomatie", "affaires étrangères"],
     "equivalence": "Le budget du Quai d'Orsay = 1/10e de celui de la Défense"
   },
@@ -165,6 +172,7 @@
     "sourceUrl": "https://www.insee.fr/fr/statistiques/8997691",
     "sourceDate": "2026-05",
     "level": 1,
+    "kind": "agregat",
     "tags": ["état", "déficit", "dette"],
     "equivalence": "Dette publique : 119 % du PIB fin juin 2026",
     "year": 2025
@@ -178,12 +186,12 @@
     "costPerCitizen": 6,
     "deckId": "etat",
     "icon": "🏛️",
-    "trend": 3,
     "source": "Sénat (PLF 2026), PLF 2026, Cour des comptes, Assemblée nationale",
     "sourceUrl": "https://www.senat.fr/rap/l25-139-322/l25-139-322_mono.html",
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["presidence", "cabinets", "exécutif"],
     "equivalence": "L'Élysée coûte environ 1,86 € par habitant et par an"
   },
@@ -196,11 +204,11 @@
     "costPerCitizen": 15,
     "deckId": "etat",
     "icon": "🗳️",
-    "trend": 2,
     "source": "Sénat (PLF 2026, mission Pouvoirs publics)",
     "sourceUrl": "https://www.senat.fr/rap/l25-139-322/l25-139-322_mono.html",
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "depense",
     "tags": ["parlement", "deputes", "senateurs"],
     "equivalence": "Budget de l'Assemblée rapporté aux 577 députés : environ 1,1 M€ par député et par an",
     "year": 2026
@@ -214,12 +222,12 @@
     "costPerCitizen": 116,
     "deckId": "etat",
     "icon": "🏢",
-    "trend": 3,
     "source": "Sénat (PLF 2026), DIE, PLF 2026, Cour des comptes",
     "sourceUrl": "https://www.senat.fr/rap/l25-139-314/l25-139-314_mono.html",
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "depense",
     "tags": ["immobilier", "patrimoine", "batiments"],
     "equivalence": "96,7 millions de m² et 73,6 Md€ de valeur comptable"
   },
@@ -236,6 +244,7 @@
     "sourceUrl": "https://www.ccomptes.fr/sites/default/files/2025-10/20251031-S2025-1479-Enjeux-souverainete-des-SI-civils-de-l-Etat.pdf",
     "sourceDate": "2025-10-31",
     "level": 2,
+    "kind": "depense",
     "tags": ["informatique", "numerique", "modernisation"],
     "equivalence": "Environ 3 Md€ de dépenses numériques par an"
   },
@@ -252,6 +261,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-205/l25-205_mono.html",
     "sourceDate": "2025-12",
     "level": 2,
+    "kind": "recette",
     "tags": ["jours feries", "économie", "productivite"],
     "equivalence": "4,2 Md€ par an attendus de la suppression de 2 jours fériés",
     "year": 2026
@@ -270,6 +280,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "depense",
     "tags": ["état", "préfectures", "administration"],
     "equivalence": "101 préfectures et environ 230 sous-préfectures"
   },
@@ -287,6 +298,7 @@
     "year": 2025,
     "sourceDate": "2024-10-19",
     "level": 3,
+    "kind": "depense",
     "tags": ["état", "ena", "formation"],
     "equivalence": "Un agent pour 30 personnes formées, selon le Secrétariat général du Gouvernement"
   },
@@ -304,6 +316,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["état", "audit", "contrôle"],
     "equivalence": "267 M€ pour la Cour des comptes et les chambres régionales des comptes en 2026"
   },
@@ -321,6 +334,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["état", "justice-admin", "contentieux"],
     "equivalence": "568 M€ en 2026, malgré la hausse des saisines"
   },
@@ -337,6 +351,7 @@
     "sourceUrl": "https://www.senat.fr/questions/base/2023/qSEQ230104758.html",
     "sourceDate": "2023-02-02",
     "level": 3,
+    "kind": "depense",
     "tags": ["état", "vehicules", "logistique"],
     "equivalence": "74 % de véhicules électriques ou hybrides rechargeables parmi les achats de 2021",
     "playable": false

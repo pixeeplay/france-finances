@@ -18,8 +18,54 @@
 | `year`           | non         | année budgétaire du montant (ex. `2026` pour la LFI 2026)                                               |
 | `sourceDate`     | non         | date de publication de la source : `AAAA`, `AAAA-MM` ou `AAAA-MM-JJ`                                    |
 | `level`          | oui         | 1, 2 ou 3 (voir ci-dessous)                                                                             |
+| `kind`           | oui         | `depense`, `recette` ou `agregat` (voir « Nature » ci-dessous)                                          |
 
 Les champs optionnels sont absents plutôt que `null`. Toute clé non prévue par le schéma est une erreur.
+
+L'ancien champ `trend` (« évolution sur 5 ans », 62 cartes) a été retiré en octobre 2026 : aucune carte n'en citait la
+source. Une évolution ne revient sur une carte que si une source officielle précise la chiffre, et elle est alors écrite
+dans la description, avec sa période et sa source.
+
+## Nature (`kind`)
+
+Le champ dit ce que représente le montant de la carte. Seules les dépenses alimentent le deck du jour, le défi
+« Trouve 50 Md€ », l'archétype de fin de partie et le cumul « tronçonné » : couper une recette ou une fraude estimée
+n'est pas une économie. En jeu normal, les autres cartes restent jouables et portent un petit libellé « Recette » ou
+« Indicateur » ; leur montant s'intitule « Montant annuel » ou « Montant », jamais « Coût annuel ».
+
+| Valeur    | Critère                                                                                                                                                                                                                                                                                          |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `depense` | Dépense publique que l'on peut décider : crédits de l'État, Sécurité sociale, collectivités, opérateurs, part française du budget européen. Les dépenses fiscales (niches, crédits d'impôt) et les allègements de cotisations comptent comme des dépenses, comme dans les documents budgétaires. |
+| `recette` | Ressource publique : impôt, taxe, cotisation, prélèvement, dividendes, amendes, subventions reçues de l'UE.                                                                                                                                                                                      |
+| `agregat` | Indicateur qui n'est ni une dépense ni une recette décidable : fraude estimée, dette, déficit, coût social ou sanitaire, facture énergétique, flux privés, investissements d'entreprises (EDF, RTE, Enedis), économies attendues d'une réforme, objectif ou bilan chiffré.                       |
+
+Règle de tri : on regarde le montant affiché, pas le sujet. « Fraude aux prestations sociales » parle de dépenses, mais
+son montant est une estimation de fraude : `agregat`. Le deck `recettes` ne contient que des recettes (`data:check` le
+vérifie).
+
+Répartition (octobre 2026) : 281 dépenses, 33 recettes et 54 agrégats parmi les 368 cartes jouables ; hors jeu,
+4 dépenses et 5 agrégats.
+
+Cas limites, tranchés ainsi :
+
+- Restent des dépenses : `eta-01` (intérêts de la dette, une ligne du budget même si elle est peu pilotable),
+  `cre-04` (rachat d'EDF, opération financière de l'État), `zom-02` (pertes sur les prêts garantis, payées par l'État),
+  `zom-05` (compensation de la taxe d'habitation, supportée par le budget de l'État), `fre-11` (hausse proposée de la
+  contribution européenne), `ene-06`, `ene-14` et `ene-18` (aides décidées par l'État mais financées par les
+  certificats d'économies d'énergie), `emp-01` (formation professionnelle, financement mêlant État et entreprises),
+  `cre-10` (coût brut pour l'État de la crise énergétique), `soc-17`, `log-17`, `emp-18`, `san-13` (politiques
+  publiques dont le montant agrège plusieurs dispositifs).
+- Recettes : `emp-04` (CVAE, un impôt en cours de suppression), `emp-19` (prélèvement de l'État sur l'assurance
+  chômage), `eta-15` (rendement estimé d'une contribution proposée), `fre-03` (subventions européennes reçues),
+  `log-15` (prélèvement SRU payé par les communes), `cre-08` (reversements des énergies renouvelables à l'État).
+- Agrégats : `col-06` (Dilico, une mise en réserve de recettes locales, ni dépense ni recette définitive), `col-16`
+  (surcoût estimé du mille-feuille), `col-19` (bilan de la décentralisation), `def-10` (objectif OTAN pour 2035),
+  `def-21` (factures reportées, un stock d'impayés), `log-12` (baisse de loyer imposée aux bailleurs sociaux),
+  `log-09` (Action Logement, contribution des employeurs hors budget), `fre-02` (dépenses de l'UE en France),
+  `agr-18` (achats de la restauration collective, publique et privée), `env-07` (gestion des déchets, collectivités et
+  entreprises), `ene-03`, `ene-05`, `ene-08`, `ene-17` (investissements d'EDF et des réseaux, payés par les factures),
+  `san-14` (coût des addictions), `soc-02` et `ret-06` (économies attendues de la réforme des retraites), `ret-10`
+  (comparaison internationale).
 
 ## Sources
 

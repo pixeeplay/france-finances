@@ -12,6 +12,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-331/l25-139-331_mono.html",
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "depense",
     "tags": ["emploi", "formation", "CPF"],
     "equivalence": "~1 200€ de dépense formation par actif et par an"
   },
@@ -29,6 +30,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "depense",
     "tags": ["emploi", "fiscalité", "services à la personne"],
     "equivalence": "2e niche fiscale, derrière le crédit d'impôt recherche (8 Md€)"
   },
@@ -46,6 +48,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "depense",
     "tags": ["emploi", "outre-mer", "exonérations"],
     "equivalence": "Des exonérations recentrées sur les bas salaires"
   },
@@ -58,12 +61,12 @@
     "costPerCitizen": 58,
     "deckId": "emploi",
     "icon": "🏭",
-    "trend": -25,
     "source": "Sénat (PLF 2026 et loi de finances pour 2026, nouvelle lecture), DGFiP, CCI France",
     "sourceUrl": "https://www.senat.fr/rap/l25-139-21/l25-139-21_mono.html",
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "recette",
     "tags": ["emploi", "compétitivité", "impôt de production"],
     "equivalence": "Suppression engagée en 2021, reportée à plusieurs reprises"
   },
@@ -81,6 +84,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["emploi", "chômage partiel", "crise"],
     "equivalence": "220 M€ prévus en 2026, dont 118 M€ pour le dispositif « rebond »"
   },
@@ -98,6 +102,7 @@
     "year": 2024,
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "depense",
     "tags": ["emploi", "prime d'activité", "travailleurs pauvres"],
     "equivalence": "Plus de 10,5 Md€ versés en 2024"
   },
@@ -115,6 +120,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "depense",
     "tags": ["emploi", "jeunes", "insertion"],
     "equivalence": "~5 000 € par jeune accompagné sur un parcours complet"
   },
@@ -131,6 +137,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-131-1/l25-131-1_mono.html",
     "sourceDate": "2025-11-15",
     "level": 1,
+    "kind": "depense",
     "tags": ["emploi", "CICE", "cotisations"],
     "equivalence": "100 000 à 300 000 emplois créés ou sauvegardés selon les études"
   },
@@ -147,6 +154,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-331/l25-139-331_mono.html",
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "agregat",
     "tags": ["emploi", "CPF", "fraude"],
     "equivalence": "Dépenses du compte formation : 1,9 Md€ en 2025, contre 2,7 Md€ en 2021"
   },
@@ -164,6 +172,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["emploi", "zones franches", "ruralite"],
     "equivalence": "Environ la moitié des communes en zone de revitalisation rurale"
   },
@@ -180,6 +189,7 @@
     "sourceUrl": "https://www.senat.fr/rap/a25-142-6/a25-142-6_mono.html",
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["emploi", "syndicats", "dialogue social"],
     "equivalence": "Subvention de l'État au fonds qui finance syndicats et patronat : 34,7 M€ en 2026"
   },
@@ -196,6 +206,7 @@
     "sourceUrl": "https://www.ccomptes.fr/system/files/2019-02/02-lutte-fraude-travail-detache-Tome-1.pdf",
     "sourceDate": "2019-02",
     "level": 3,
+    "kind": "agregat",
     "tags": ["emploi", "detachement", "Europe"],
     "equivalence": "516 000 salariés détachés déclarés en 2017",
     "playable": false
@@ -214,6 +225,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["emploi", "inspection", "travail"],
     "equivalence": "Environ 1 agent de contrôle pour 10 000 salariés"
   },
@@ -230,6 +242,7 @@
     "sourceUrl": "https://www.securite-sociale.fr/files/live/sites/SSFR/files/medias/HCFIPS/2026/Note%20annuelle%20de%20suivi%20et%20d'%C3%A9valuation%20des%20fraudes%20sociales%20VF.pdf",
     "sourceDate": "2026",
     "level": 2,
+    "kind": "agregat",
     "tags": ["emploi", "travail illégal", "économie souterraine"],
     "equivalence": "Entre 6,2 et 7,9 Md€ de cotisations non payées en 2024",
     "year": 2024
@@ -247,6 +260,7 @@
     "sourceUrl": "https://www.assemblee-nationale.fr/14/rap-enq/r2436.asp",
     "sourceDate": "2014-12",
     "level": 1,
+    "kind": "depense",
     "tags": ["emploi", "35 heures", "temps de travail"],
     "equivalence": "Environ 350 000 emplois créés selon l'estimation la plus souvent retenue"
   },
@@ -263,6 +277,7 @@
     "sourceUrl": "https://www.senat.fr/leg/etudes-impact/pjl25-944-ei/pjl25-944-ei.html",
     "sourceDate": "2026-09-10",
     "level": 3,
+    "kind": "agregat",
     "tags": ["emploi", "RSE", "egalite"],
     "equivalence": "3,6 % d'écart de salaire à poste comparable dans le privé (2024)",
     "playable": false
@@ -280,6 +295,7 @@
     "sourceUrl": "https://www.ccomptes.fr/sites/default/files/2026-05/20260527-RALFSS-2026_0.pdf",
     "sourceDate": "2026-05-27",
     "level": 1,
+    "kind": "depense",
     "tags": ["emploi", "accidents", "sécurité"],
     "equivalence": "Environ 2 décès par accident du travail chaque jour en 2024",
     "year": 2025
@@ -297,6 +313,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-131-1/l25-131-1_mono.html",
     "sourceDate": "2025-11-15",
     "level": 2,
+    "kind": "depense",
     "tags": ["emploi", "seniors", "retraite"],
     "equivalence": "Un taux d'emploi des 60-64 ans inférieur à la moyenne européenne"
   },
@@ -314,6 +331,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "recette",
     "tags": ["emploi", "assurance chômage", "Unédic"],
     "equivalence": "Un prélèvement doublé entre 2023 et 2026"
   }

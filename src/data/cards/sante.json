@@ -8,12 +8,12 @@
     "costPerCitizen": 3848,
     "deckId": "sante",
     "icon": "🏛️",
-    "trend": 3.4,
     "source": "Sénat (PLFSS 2026), Vie-publique.fr LFSS 2025, Cour des comptes",
     "sourceUrl": "https://www.senat.fr/rap/l25-131-1/l25-131-1_mono.html",
     "year": 2025,
     "sourceDate": "2025-11-15",
     "level": 1,
+    "kind": "depense",
     "tags": ["santé", "ONDAM", "assurance maladie"],
     "equivalence": "Environ 4 fois le budget de la Défense"
   },
@@ -26,11 +26,11 @@
     "costPerCitizen": 1589,
     "deckId": "sante",
     "icon": "🏥",
-    "trend": 3.8,
     "source": "Ministère de la Santé, Académie de médecine, Sénat",
     "sourceUrl": "https://www.senat.fr/rap/l25-131-1/l25-131-1_mono.html",
     "sourceDate": "2025-11-15",
     "level": 1,
+    "kind": "depense",
     "tags": ["santé", "hôpital", "déficit"],
     "equivalence": "Plus de 110 Md€ d'assurance maladie pour les établissements de santé"
   },
@@ -48,6 +48,7 @@
     "year": 2025,
     "sourceDate": "2025-11-15",
     "level": 1,
+    "kind": "depense",
     "tags": ["santé", "médecine", "soins de ville"],
     "equivalence": "Environ 42 % des dépenses d'assurance maladie (ONDAM)"
   },
@@ -65,6 +66,7 @@
     "year": 2025,
     "sourceDate": "2025-11-15",
     "level": 1,
+    "kind": "depense",
     "tags": ["santé", "médicaments", "pharmacie"],
     "equivalence": "Médicaments biologiques : de 6 Md€ en 2017 à 14 Md€ en 2024"
   },
@@ -82,6 +84,7 @@
     "year": 2026,
     "sourceDate": "2025-11-15",
     "level": 1,
+    "kind": "depense",
     "tags": ["santé", "dépendance", "personnes âgées"],
     "equivalence": "Près de 5 millions de personnes de 85 ans ou plus en 2050"
   },
@@ -99,6 +102,7 @@
     "year": 2025,
     "sourceDate": "2025-11-15",
     "level": 1,
+    "kind": "depense",
     "tags": ["santé", "psychiatrie", "santé mentale"],
     "equivalence": "109 Md€ par an de coût économique et social selon la Fondation FondaMental (2018)"
   },
@@ -111,12 +115,12 @@
     "costPerCitizen": 232,
     "deckId": "sante",
     "icon": "🤒",
-    "trend": 6.5,
     "source": "Sénat (PLFSS 2026), CNAM, LFSS 2025, Comité d'alerte ONDAM",
     "sourceUrl": "https://www.senat.fr/rap/l25-131-1/l25-131-1_mono.html",
     "year": 2025,
     "sourceDate": "2025-11-15",
     "level": 1,
+    "kind": "depense",
     "tags": ["santé", "arrêts maladie", "indemnités"],
     "equivalence": "Plafond des indemnités abaissé de 1,8 à 1,4 SMIC en avril 2025"
   },
@@ -133,6 +137,7 @@
     "sourceUrl": "https://www.securite-sociale.fr/files/live/sites/SSFR/files/medias/HCFIPS/2026/Note%20annuelle%20de%20suivi%20et%20d'%C3%A9valuation%20des%20fraudes%20sociales%20VF.pdf",
     "sourceDate": "2026",
     "level": 2,
+    "kind": "agregat",
     "tags": ["santé", "fraude", "contrôle"],
     "equivalence": "Des montants détectés inférieurs à la fraude potentielle estimée"
   },
@@ -150,6 +155,7 @@
     "year": 2025,
     "sourceDate": "2025-11-15",
     "level": 2,
+    "kind": "depense",
     "tags": ["santé", "accès aux soins", "territoires"],
     "equivalence": "Plusieurs millions de Français dans une zone sous-dotée"
   },
@@ -162,11 +168,11 @@
     "costPerCitizen": 347,
     "deckId": "sante",
     "icon": "💳",
-    "trend": -2,
     "source": "Sénat (PLFSS 2026), DREES comptes de la santé 2024, Vie-publique.fr",
     "sourceUrl": "https://www.senat.fr/rap/l25-131-1/l25-131-1_mono.html",
     "sourceDate": "2025-11-15",
     "level": 1,
+    "kind": "agregat",
     "tags": ["santé", "reste à charge", "mutuelles"],
     "equivalence": "Environ 7,5 % de la dépense de santé à la charge directe des ménages"
   },
@@ -183,6 +189,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-131-1/l25-131-1_mono.html",
     "sourceDate": "2025-11-15",
     "level": 1,
+    "kind": "depense",
     "tags": ["santé", "hôpital", "budget"],
     "equivalence": "Environ 132 € par habitant et par mois"
   },
@@ -199,6 +206,7 @@
     "sourceUrl": "https://drees.solidarites-sante.gouv.fr/publications-communique-de-presse-documents-de-reference/panoramas-de-la-drees/260520-Etablissements-de-sant%C3%A9-en-2024",
     "sourceDate": "2026-05",
     "level": 1,
+    "kind": "depense",
     "tags": ["santé", "hôpital", "salaires"],
     "equivalence": "+183 € nets par mois pour les soignants avec le Ségur de la santé (2020)"
   },
@@ -215,6 +223,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-131-22/l25-131-22_mono.html",
     "sourceDate": "2025-11-15",
     "level": 1,
+    "kind": "depense",
     "tags": ["santé", "hôpital", "T2A", "financement"],
     "equivalence": "Un tarif national par séjour, quelle que soit la durée réelle de prise en charge"
   },
@@ -231,6 +240,7 @@
     "sourceUrl": "https://www.assurance-maladie.ameli.fr/sites/default/files/2026-07_rapport-propositions-pour-2027_assurance-maladie.pdf",
     "sourceDate": "2026-07",
     "level": 2,
+    "kind": "depense",
     "tags": ["santé", "urgences", "hôpital"],
     "equivalence": "Plus de 20 millions de passages par an"
   },
@@ -247,6 +257,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-131-1/l25-131-1_mono.html",
     "sourceDate": "2025-11-15",
     "level": 1,
+    "kind": "agregat",
     "tags": ["santé", "hôpital", "dette", "investissement"],
     "equivalence": "Environ 30 Md€ de dette hospitalière"
   },
@@ -263,6 +274,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-131-22/l25-131-22_mono.html",
     "sourceDate": "2025-11-15",
     "level": 1,
+    "kind": "depense",
     "tags": ["santé", "psychiatrie", "santé mentale"],
     "equivalence": "109 Md€ par an de coût économique et social selon la Fondation FondaMental (2018)"
   },
@@ -279,6 +291,7 @@
     "sourceUrl": "https://www.securite-sociale.fr/files/live/sites/SSFR/files/medias/PLFSS/2026/PLFSS2026-Annexe6-2025-10-13_avec%20couverture.pdf",
     "sourceDate": "2025-10-13",
     "level": 2,
+    "kind": "depense",
     "tags": ["santé", "hôpital", "proximité", "rural"],
     "equivalence": "326 hôpitaux de proximité labellisés"
   },
@@ -295,6 +308,7 @@
     "sourceUrl": "https://drees.solidarites-sante.gouv.fr/publications-communique-de-presse-documents-de-reference/panoramas-de-la-drees/260520-Etablissements-de-sant%C3%A9-en-2024",
     "sourceDate": "2026-05",
     "level": 1,
+    "kind": "depense",
     "tags": ["santé", "CHU", "recherche", "formation"],
     "equivalence": "32 CHU et CHR"
   },
@@ -311,6 +325,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-131-22/l25-131-22_mono.html",
     "sourceDate": "2025-11-15",
     "level": 2,
+    "kind": "depense",
     "tags": ["santé", "intérim", "hôpital"],
     "equivalence": "Un plafond de rémunération appliqué depuis avril 2023"
   },
@@ -327,6 +342,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-131-22/l25-131-22_mono.html",
     "sourceDate": "2025-11-15",
     "level": 2,
+    "kind": "depense",
     "tags": ["santé", "ambulatoire", "économies"],
     "equivalence": "Une piste d'économies, sans chiffrage officiel unique"
   },
@@ -339,11 +355,11 @@
     "costPerCitizen": 36,
     "deckId": "sante",
     "icon": "💉",
-    "trend": 3,
     "source": "Sénat (PLFSS 2026), DREES, Sante publique France, Cour des comptes",
     "sourceUrl": "https://www.senat.fr/rap/l25-131-22/l25-131-22_mono.html",
     "sourceDate": "2025-11-15",
     "level": 2,
+    "kind": "depense",
     "tags": ["prevention", "vaccination", "sante"],
     "equivalence": "Onze vaccins obligatoires pour les enfants nés depuis 2018"
   },
@@ -356,11 +372,11 @@
     "costPerCitizen": 43,
     "deckId": "sante",
     "icon": "👓",
-    "trend": 5,
     "source": "Sénat (PLFSS 2026), DREES, Secu bilan 100% Sante, HCAAM",
     "sourceUrl": "https://www.senat.fr/rap/l25-131-22/l25-131-22_mono.html",
     "sourceDate": "2025-11-15",
     "level": 2,
+    "kind": "depense",
     "tags": ["optique", "dentaire", "reforme"],
     "equivalence": "0 € de reste à charge sur le panier « 100 % santé »"
   },
@@ -373,11 +389,11 @@
     "costPerCitizen": 14,
     "deckId": "sante",
     "icon": "💊",
-    "trend": 4,
     "source": "Sénat (PLFSS 2026), ANSM, CEPS, France 2030",
     "sourceUrl": "https://www.senat.fr/rap/l25-131-22/l25-131-22_mono.html",
     "sourceDate": "2025-11-15",
     "level": 3,
+    "kind": "depense",
     "tags": ["médicaments", "industrie", "penuries"],
     "equivalence": "Une forte dépendance à la production asiatique de principes actifs"
   },
@@ -390,11 +406,11 @@
     "costPerCitizen": 216,
     "deckId": "sante",
     "icon": "🚬",
-    "trend": 2,
     "source": "Sénat (PLFSS 2026), OFDT, Sante publique France, CAE",
     "sourceUrl": "https://www.senat.fr/rap/l25-131-22/l25-131-22_mono.html",
     "sourceDate": "2025-11-15",
     "level": 1,
+    "kind": "agregat",
     "tags": ["addictions", "tabac", "alcool"],
     "equivalence": "Coût social estimé à plus de 250 Md€ par l'OFDT (2019)"
   },
@@ -407,11 +423,11 @@
     "costPerCitizen": 93,
     "deckId": "sante",
     "icon": "🚑",
-    "trend": 5,
     "source": "Cour des comptes (RALFSS 2026), CNAM",
     "sourceUrl": "https://www.ccomptes.fr/sites/default/files/2026-05/20260527-RALFSS-2026-7-Transports-patients-a-la-charge-de-l-assurance-maladie.pdf",
     "sourceDate": "2026-05-27",
     "level": 2,
+    "kind": "depense",
     "tags": ["SAMU", "transport", "urgences"],
     "equivalence": "6,45 Md€ de transports de patients en 2024",
     "year": 2024
@@ -425,11 +441,11 @@
     "costPerCitizen": 1594,
     "deckId": "sante",
     "icon": "🏥",
-    "trend": 3,
     "source": "Sénat (PLFSS 2026), CNAM, DREES, HCAAM",
     "sourceUrl": "https://www.senat.fr/rap/l25-131-22/l25-131-22_mono.html",
     "sourceDate": "2025-11-15",
     "level": 1,
+    "kind": "depense",
     "tags": ["sante", "ald", "assurance-maladie"],
     "equivalence": "Environ deux tiers des dépenses de l'Assurance maladie"
   },
@@ -446,6 +462,7 @@
     "sourceUrl": "https://www.assurance-maladie.ameli.fr/sites/default/files/2026-07_rapport-propositions-pour-2027_assurance-maladie.pdf",
     "sourceDate": "2026-07",
     "level": 2,
+    "kind": "depense",
     "tags": ["santé", "maternité", "natalité"],
     "equivalence": "Une mortalité infantile supérieure à la moyenne européenne"
   },
@@ -462,6 +479,7 @@
     "sourceUrl": "https://www.assurance-maladie.ameli.fr/sites/default/files/2026-07_rapport-propositions-pour-2027_assurance-maladie.pdf",
     "sourceDate": "2026-07",
     "level": 1,
+    "kind": "agregat",
     "tags": ["sante", "obesite", "metabolique"],
     "equivalence": "Environ 17 % des adultes obèses"
   },
@@ -478,6 +496,7 @@
     "sourceUrl": "https://www.senat.fr/rap/r25-824/r25-824_mono.html",
     "sourceDate": "2026",
     "level": 3,
+    "kind": "depense",
     "tags": ["sante", "medecins", "padhue"],
     "equivalence": "Des praticiens essentiels dans les spécialités hospitalières en tension"
   },
@@ -494,6 +513,7 @@
     "sourceUrl": "https://www.assurance-maladie.ameli.fr/sites/default/files/2026-07_rapport-propositions-pour-2027_assurance-maladie.pdf",
     "sourceDate": "2026-07",
     "level": 2,
+    "kind": "depense",
     "tags": ["sante", "numerique", "telemedecine"],
     "equivalence": "Mon espace santé ouvert à la quasi-totalité des assurés"
   }

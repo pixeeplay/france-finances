@@ -8,7 +8,11 @@ import {
   decksMetaSchema,
   expectedCostPerCitizen,
   type CardData,
+  type CardKindData,
 } from "./cardSchema";
+
+/** Deck dont toutes les cartes doivent être des recettes. */
+export const REVENUE_DECK_ID = "recettes";
 
 /** Écart toléré entre costPerCitizen et montant / 69,1 M : 1 € ou 5 %. */
 export const COST_TOLERANCE_ABSOLUTE = 1;
@@ -39,6 +43,8 @@ export interface DataCheckReport {
     homepageSourceUrl: number;
     withYear: number;
     levels: Record<1 | 2 | 3, number>;
+    /** Répartition des cartes jouables par nature (dépense / recette / agrégat). */
+    kinds: Record<CardKindData, number>;
   };
 }
 
@@ -80,6 +86,7 @@ export function checkData({ decksMeta, cardFiles, costExceptions = {} }: DataChe
   const errors: string[] = [];
   const warnings: string[] = [];
   const levels: Record<1 | 2 | 3, number> = { 1: 0, 2: 0, 3: 0 };
+  const kinds: Record<CardKindData, number> = { depense: 0, recette: 0, agregat: 0 };
   let withSourceUrl = 0;
   let homepageSourceUrl = 0;
   let withYear = 0;
@@ -151,7 +158,13 @@ export function checkData({ decksMeta, cardFiles, costExceptions = {} }: DataChe
 
   for (const card of cards) {
     levels[card.level] += 1;
+    if (card.playable !== false) kinds[card.kind] += 1;
     if (card.year !== undefined) withYear += 1;
+
+    // Nature : le deck des recettes ne contient que des recettes
+    if (card.deckId === REVENUE_DECK_ID && card.kind !== "recette") {
+      errors.push(`Carte ${card.id} : kind="${card.kind}" dans le deck des recettes (attendu "recette")`);
+    }
 
     // Cohérence coût par habitant / montant
     if (isCostCoherent(card.amountBillions, card.costPerCitizen)) {
@@ -208,6 +221,7 @@ export function checkData({ decksMeta, cardFiles, costExceptions = {} }: DataChe
       homepageSourceUrl,
       withYear,
       levels,
+      kinds,
     },
   };
 }

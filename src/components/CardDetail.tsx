@@ -12,6 +12,7 @@ import { CategoryBadge, catStyle } from "./icons/CategoryBadge";
 import type { Card, VoteDirection } from "@/types";
 import { formatBillions, formatEuros } from "@/lib/format";
 import { getDeckName } from "@/lib/deckMeta";
+import { cardAmountLabel, cardKindLabel } from "@/lib/cardKind";
 import { SPRING_SWIPE } from "@/lib/motion-constants";
 import { UiIcon } from "./icons/UiIcon";
 
@@ -143,6 +144,11 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
                 <p className="flex items-center gap-2.5 mb-3" style={catStyle(card.deckId)}>
                   <CategoryBadge deckId={card.deckId} size={36} />
                   <span className="kicker cat-text">{getDeckName(card.deckId)}</span>
+                  {cardKindLabel(card) && (
+                    <span className="kicker rounded-md border border-border px-1.5 py-0.5 text-[10px] text-muted-foreground">
+                      {cardKindLabel(card)}
+                    </span>
+                  )}
                 </p>
                 <h1 className="text-3xl leading-tight font-extrabold text-foreground mb-5">
                   <AcronymText lexiconInNewTab text={card.title} />
@@ -152,7 +158,7 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
               {/* Badges */}
               <dl className="grid grid-cols-2 gap-2 mb-4">
                 <div className="rounded-2xl bg-background/60 border border-border p-3">
-                  <dt className="kicker text-muted-foreground">Coût annuel</dt>
+                  <dt className="kicker text-muted-foreground">{cardAmountLabel(card)}</dt>
                   <dd className="numeral text-3xl text-danger">
                     {formatBillions(card.amountBillions)}
                   </dd>
@@ -211,26 +217,6 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
                       text={card.subtitle}
                       className="text-foreground font-medium text-[15px] leading-snug"
                     />
-                  </div>
-                </section>
-              )}
-
-              {/* Trend */}
-              {card.trend !== undefined && (
-                <section className="mb-8">
-                  <h3 className="text-xl font-extrabold text-foreground mb-3">
-                    Évolution
-                  </h3>
-                  <div className="flex items-center gap-2">
-                    <span
-                      className="numeral text-2xl text-info"
-                    >
-                      {card.trend > 0 ? "+" : ""}
-                      {card.trend.toLocaleString("fr-FR")}{"\u00A0"}%
-                    </span>
-                    <span className="text-muted-foreground text-sm">
-                      sur la période récente
-                    </span>
                   </div>
                 </section>
               )}

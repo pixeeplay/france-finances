@@ -13,6 +13,7 @@
     "year": 2025,
     "sourceDate": "2026-06",
     "level": 1,
+    "kind": "depense",
     "tags": ["social", "retraites", "pensions"],
     "equivalence": "422 Md€ de retraites = près d'un quart de la dépense publique"
   },
@@ -30,6 +31,7 @@
     "year": 2026,
     "sourceDate": "2026-06",
     "level": 1,
+    "kind": "agregat",
     "tags": ["social", "réforme", "retraites"],
     "equivalence": "Suspension : 1,8 Md€ par an en moyenne jusqu'en 2032 selon le Conseil d'orientation des retraites"
   },
@@ -47,6 +49,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "depense",
     "tags": ["social", "retraites", "fonctionnaires"],
     "equivalence": "Retraites des fonctionnaires de l'État : 69,3 Md€ en 2026"
   },
@@ -63,6 +66,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-331/l25-139-331_mono.html",
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "depense",
     "tags": ["social", "chômage", "emploi"],
     "equivalence": "Une dette élevée héritée de la crise sanitaire"
   },
@@ -80,6 +84,7 @@
     "year": 2026,
     "sourceDate": "2025-11-15",
     "level": 1,
+    "kind": "depense",
     "tags": ["social", "famille", "natalité"],
     "equivalence": "1,62 enfant par femme en 2024, parmi les plus élevés d'Europe"
   },
@@ -96,6 +101,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-329/l25-139-329_mono.html",
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "depense",
     "tags": ["social", "solidarité", "minima sociaux"],
     "equivalence": "Environ un tiers de non-recours au RSA selon la DREES"
   },
@@ -108,11 +114,11 @@
     "costPerCitizen": 233,
     "deckId": "social",
     "icon": "🏘️",
-    "trend": -3,
     "source": "Sénat (PLF 2026), CNAF, Cour des comptes, budget.gouv.fr",
     "sourceUrl": "https://www.senat.fr/rap/l25-139-35-1/l25-139-35-1_mono.html",
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "depense",
     "tags": ["social", "logement", "APL"],
     "equivalence": "-587 M€ en 2026 par rapport à 2025",
     "year": 2026
@@ -131,6 +137,7 @@
     "year": 2025,
     "sourceDate": "2025-11-15",
     "level": 1,
+    "kind": "depense",
     "tags": ["social", "emploi", "cotisations"],
     "equivalence": "Environ 80 Md€ par an de cotisations des employeurs en moins"
   },
@@ -147,6 +154,7 @@
     "sourceUrl": "https://www.ccomptes.fr/sites/default/files/2025-05/20250526-RALFSS-2025-Fraude-retraites-versees-a-l-etranger.pdf",
     "sourceDate": "2025-05-26",
     "level": 2,
+    "kind": "depense",
     "tags": ["social", "fraude", "retraites"],
     "equivalence": "5,9 Md€ = 2,7 % des pensions versées par le régime général et l'Agirc-Arrco",
     "year": 2022
@@ -160,12 +168,12 @@
     "costPerCitizen": 313,
     "deckId": "social",
     "icon": "📉",
-    "trend": 41,
     "source": "Cour des comptes (RALFSS 2026), LFSS 2026",
     "sourceUrl": "https://www.ccomptes.fr/sites/default/files/2026-05/20260527-RALFSS-2026_0.pdf",
     "year": 2025,
     "sourceDate": "2026-05-27",
     "level": 1,
+    "kind": "agregat",
     "tags": ["social", "déficit", "sécurité sociale"],
     "equivalence": "La branche maladie représente près des trois quarts du déficit 2025"
   },
@@ -182,6 +190,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-331/l25-139-331_mono.html",
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "depense",
     "tags": ["social", "apprentissage", "formation"],
     "equivalence": "Aide à l'embauche ramenée à 5 000 € ou 2 000 € en 2025"
   },
@@ -198,6 +207,7 @@
     "sourceUrl": "https://www.drees.solidarites-sante.gouv.fr/sites/default/files/2025-12/La%20protection%20sociale%20en%20France%20et%20en%20Europe%20en%202024%20-%20R%C3%A9sultats%20des%20comptes%20de%20la%20protection%20sociale%20-%20%C3%89dition%202025_0.pdf",
     "sourceDate": "2025-12",
     "level": 1,
+    "kind": "depense",
     "tags": ["social", "protection sociale", "modèle français"],
     "equivalence": "13 650 € par habitant en moyenne en 2024",
     "year": 2024
@@ -215,6 +225,7 @@
     "sourceUrl": "https://www.cor-retraites.fr/sites/default/files/2026-07/RA_2026_def_1.pdf",
     "sourceDate": "2026-06",
     "level": 1,
+    "kind": "depense",
     "tags": ["retraites", "régime général", "privé"],
     "equivalence": "Environ 1,7 cotisant pour un retraité"
   },
@@ -231,6 +242,7 @@
     "sourceUrl": "https://www.cor-retraites.fr/sites/default/files/2026-07/RA_2026_def_1.pdf",
     "sourceDate": "2026-06",
     "level": 1,
+    "kind": "depense",
     "tags": ["retraites", "Agirc-Arrco", "complémentaire"],
     "equivalence": "Réserves de 92,1 Md€, près de 11 mois de prestations"
   },
@@ -247,6 +259,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-324/l25-139-324_mono.html",
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "depense",
     "tags": ["retraites", "fonctionnaires", "État"],
     "equivalence": "69,3 Md€ de pensions de l'État en 2026",
     "year": 2026
@@ -265,6 +278,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "depense",
     "tags": ["retraites", "régimes spéciaux", "SNCF", "RATP"],
     "equivalence": "6 % des retraites versées par les régimes de base"
   },
@@ -281,6 +295,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-131-22/l25-131-22_mono.html",
     "sourceDate": "2025-11-15",
     "level": 2,
+    "kind": "depense",
     "tags": ["retraites", "minimum vieillesse", "ASPA", "solidarité"],
     "equivalence": "Environ la moitié des personnes éligibles ne la demandent pas"
   },
@@ -297,6 +312,7 @@
     "sourceUrl": "https://www.cor-retraites.fr/sites/default/files/2026-07/RA_2026_def_1.pdf",
     "sourceDate": "2026-06",
     "level": 1,
+    "kind": "agregat",
     "tags": ["retraites", "réforme", "âge légal"],
     "equivalence": "Environ 18 Md€ d'économies annuelles attendues en 2030"
   },
@@ -313,6 +329,7 @@
     "sourceUrl": "https://www.cor-retraites.fr/sites/default/files/2026-07/RA_2026_def_1.pdf",
     "sourceDate": "2026-06",
     "level": 2,
+    "kind": "depense",
     "tags": ["retraites", "pénibilité", "carrières longues"],
     "equivalence": "Environ six ans d'écart d'espérance de vie entre cadres et ouvriers (Insee)"
   },
@@ -329,6 +346,7 @@
     "sourceUrl": "https://www.cor-retraites.fr/sites/default/files/2026-07/RA_2026_def_1.pdf",
     "sourceDate": "2026-06",
     "level": 1,
+    "kind": "depense",
     "tags": ["retraites", "réversion", "veuvage"],
     "equivalence": "39 Md€ de pensions de réversion en 2025",
     "year": 2025
@@ -346,6 +364,7 @@
     "sourceUrl": "https://www.cor-retraites.fr/sites/default/files/2026-07/RA_2026_def_1.pdf",
     "sourceDate": "2026-06",
     "level": 1,
+    "kind": "depense",
     "tags": ["retraites", "indépendants", "agriculteurs"],
     "equivalence": "Une retraite agricole minimale portée à 85 % du SMIC net en 2021"
   },
@@ -362,6 +381,7 @@
     "sourceUrl": "https://www.cor-retraites.fr/sites/default/files/2026-07/RA_2026_def_1.pdf",
     "sourceDate": "2026-06",
     "level": 1,
+    "kind": "agregat",
     "tags": ["retraites", "comparaison", "OCDE", "international"],
     "equivalence": "14,1 % du PIB : 2e rang des pays suivis par le COR, après l'Italie",
     "year": 2025
@@ -375,12 +395,12 @@
     "costPerCitizen": 188,
     "deckId": "social",
     "icon": "♿",
-    "trend": 5,
     "source": "Sénat (PLF 2026), CNAF, MDPH, PLF 2026",
     "sourceUrl": "https://www.senat.fr/rap/l25-139-329/l25-139-329_mono.html",
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "depense",
     "tags": ["handicap", "AAH", "social"],
     "equivalence": "1 033 € par mois au maximum, sous le seuil de pauvreté"
   },
@@ -393,12 +413,12 @@
     "costPerCitizen": 116,
     "deckId": "social",
     "icon": "👶",
-    "trend": 8,
     "source": "Sénat (PLFSS 2026), CNAF, HCFEA, PLF 2026",
     "sourceUrl": "https://www.senat.fr/rap/l25-131-1/l25-131-1_mono.html",
     "year": 2026,
     "sourceDate": "2025-11-15",
     "level": 2,
+    "kind": "depense",
     "tags": ["creches", "petite enfance", "famille"],
     "equivalence": "Objectif : 200 000 places supplémentaires d'ici 2030"
   },
@@ -411,12 +431,12 @@
     "costPerCitizen": 605,
     "deckId": "social",
     "icon": "🧓",
-    "trend": 6,
     "source": "Cour des comptes (RALFSS 2026), Sénat (PLFSS 2026), CNSA",
     "sourceUrl": "https://www.ccomptes.fr/sites/default/files/2026-05/20260527-RALFSS-2026_0.pdf",
     "year": 2025,
     "sourceDate": "2026-05-27",
     "level": 1,
+    "kind": "depense",
     "tags": ["autonomie", "dependance", "EHPAD"],
     "equivalence": "41,8 Md€ de dépenses en 2025 (+4,8 %)"
   },
@@ -429,12 +449,12 @@
     "costPerCitizen": 252,
     "deckId": "social",
     "icon": "⚠️",
-    "trend": 2,
     "source": "Cour des comptes (RALFSS 2026), Sénat (PLFSS 2026)",
     "sourceUrl": "https://www.ccomptes.fr/sites/default/files/2026-05/20260527-RALFSS-2026_0.pdf",
     "year": 2025,
     "sourceDate": "2026-05-27",
     "level": 1,
+    "kind": "depense",
     "tags": ["travail", "accidents", "cotisations"],
     "equivalence": "1,6 Md€ reversés à l'Assurance maladie en 2025 pour les accidents et maladies professionnels non déclarés"
   },
@@ -447,11 +467,11 @@
     "costPerCitizen": 145,
     "deckId": "social",
     "icon": "🧒",
-    "trend": 3,
     "source": "Sénat (PLF 2026), DREES, Observatoire des inégalités, UNICEF France",
     "sourceUrl": "https://www.senat.fr/rap/l25-139-329/l25-139-329_mono.html",
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "depense",
     "tags": ["pauvrete", "enfants", "ASE"],
     "equivalence": "Environ un enfant sur cinq sous le seuil de pauvreté"
   },
@@ -469,6 +489,7 @@
     "year": 2026,
     "sourceDate": "2025-11-15",
     "level": 3,
+    "kind": "depense",
     "tags": ["social", "conge-parental", "famille"],
     "equivalence": "Environ 450 € par mois à taux plein"
   },
@@ -485,6 +506,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-329/l25-139-329_mono.html",
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "depense",
     "tags": ["social", "aide-alimentaire", "pauvrete"],
     "equivalence": "Une demande en forte hausse avec l'inflation"
   },
@@ -501,6 +523,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-131-22/l25-131-22_mono.html",
     "sourceDate": "2025-11-15",
     "level": 3,
+    "kind": "depense",
     "tags": ["social", "pensions", "famille"],
     "equivalence": "Depuis 2023, la pension passe par défaut par la CAF ou la MSA"
   },
@@ -517,6 +540,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-329/l25-139-329_mono.html",
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "depense",
     "tags": ["social", "enfance", "ase"],
     "equivalence": "23 % des sans-domicile nés en France ont été placés enfants (Insee, 2012)"
   },
@@ -533,6 +557,7 @@
     "sourceUrl": "https://www.securite-sociale.fr/files/live/sites/SSFR/files/medias/HCFIPS/2026/Note%20annuelle%20de%20suivi%20et%20d'%C3%A9valuation%20des%20fraudes%20sociales%20VF.pdf",
     "sourceDate": "2026",
     "level": 2,
+    "kind": "agregat",
     "tags": ["social", "fraude", "prestations"],
     "equivalence": "Près de 700 M€ recouvrés",
     "year": 2024

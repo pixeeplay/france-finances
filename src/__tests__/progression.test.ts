@@ -88,6 +88,7 @@ function completedSession(level: 1 | 2 | 3, id: string): Session {
         icon: "",
         source: "s",
         level: 1,
+        kind: "depense",
       },
     ],
     votes: [{ cardId: "def-01", direction: "cut", duration: 1, timestamp: 1 }],

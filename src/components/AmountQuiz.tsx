@@ -70,7 +70,7 @@ export function AmountQuiz({ card, onAnswer, onContinue }: AmountQuizProps) {
         À ton avis, combien ?
       </h2>
       <p className="mt-1 text-sm text-muted-foreground leading-snug">
-        Devine le montant de la prochaine dépense, puis découvre sa carte.
+        Devine le montant de la prochaine carte, puis découvre-la.
       </p>
       <p className="mt-3 text-base font-bold leading-snug">{card.title}</p>
       {card.subtitle && <p className="text-xs text-muted-foreground">{card.subtitle}</p>}

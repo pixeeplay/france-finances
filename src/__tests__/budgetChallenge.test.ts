@@ -15,7 +15,7 @@ import type { Card, Vote, VoteDirection } from "@/types";
 
 const allCards = decksData.cards as Card[];
 
-function card(id: string, amountBillions: number, deckId = "defense"): Card {
+function card(id: string, amountBillions: number, deckId = "defense", kind: Card["kind"] = "depense"): Card {
   return {
     id,
     title: id,
@@ -27,6 +27,7 @@ function card(id: string, amountBillions: number, deckId = "defense"): Card {
     icon: "",
     source: "test",
     level: 1,
+    kind,
   };
 }
 
@@ -60,6 +61,7 @@ describe("drawBudgetChallengeCards", () => {
       expect(new Set(cards.map((c) => c.id)).size).toBe(cards.length);
       expect(cards.every((c) => c.amountBillions <= 20 && c.amountBillions > 0)).toBe(true);
       expect(cards.every((c) => c.deckId !== "recettes")).toBe(true);
+      expect(cards.every((c) => c.kind === "depense")).toBe(true);
       const total = cards.reduce((s, c) => s + c.amountBillions, 0);
       expect(total).toBeGreaterThanOrEqual(80);
     }
@@ -81,8 +83,14 @@ describe("drawBudgetChallengeCards", () => {
     expect(total).toBeGreaterThanOrEqual(80);
   });
 
-  it("falls back to every non-revenue card when the deck is too small", () => {
-    const pool = [card("a-01", 100), card("b-01", 3), card("rec-01", 5, "recettes")];
+  it("falls back to every spending card when the deck is too small", () => {
+    const pool = [
+      card("a-01", 100),
+      card("b-01", 3),
+      card("rec-01", 5, "recettes", "recette"),
+      card("eta-04", 10, "etat", "agregat"),
+      card("col-11", 4, "collectivites", "recette"),
+    ];
     const cards = drawBudgetChallengeCards(pool, 50, createSeededRng("small"));
     expect(cards.map((c) => c.id).sort()).toEqual(["a-01", "b-01"]);
   });

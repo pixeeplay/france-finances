@@ -1,4 +1,6 @@
 // === CARD ===
+export type CardKind = "depense" | "recette" | "agregat";
+
 export interface Card {
   id: string;
   /** Titre court de la dépense */
@@ -15,8 +17,6 @@ export interface Card {
   deckId: string;
   /** Emoji ou icône représentative */
   icon: string;
-  /** Évolution sur 5 ans en pourcentage (ex: +12.5) */
-  trend?: number;
   /** Source officielle */
   source: string;
   /** URL de la source (document ou page précise, https, domaine ASCII) */
@@ -31,6 +31,13 @@ export interface Card {
    * Distinct du niveau de jeu de la session (Session.level).
    */
   level: 1 | 2 | 3;
+  /**
+   * Nature du montant (voir src/data/README.md) : dépense publique, recette
+   * publique, ou agrégat (indicateur : fraude estimée, dette, coût social...).
+   * Seules les dépenses comptent dans le défi budget, le deck du jour,
+   * l'archétype et le cumul « tronçonné ».
+   */
+  kind: CardKind;
   /** Tags pour le filtrage */
   tags?: string[];
   /** Equivalence parlante (comparaison budgetaire) */

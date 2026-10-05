@@ -13,6 +13,7 @@
     "year": 2025,
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "depense",
     "tags": ["zombie", "formation", "CPF", "déficit"],
     "equivalence": "Dépenses du compte formation (CPF) : 1,9 Md€ en 2025, après un pic de 2,7 Md€ en 2021"
   },
@@ -29,6 +30,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-312/l25-139-312_mono.html",
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "depense",
     "tags": ["zombie", "COVID", "PGE", "dette"],
     "equivalence": "5,7 Md€ déjà payés par l'État pour des prêts non remboursés, à fin octobre 2025"
   },
@@ -45,6 +47,7 @@
     "sourceUrl": "https://www.ccomptes.fr/sites/default/files/2024-03/20240315_Mesures-exceptionnelles-lutte-contre-hausse-prix-energie.pdf",
     "sourceDate": "2024-03",
     "level": 2,
+    "kind": "agregat",
     "tags": ["zombie", "ARENH", "énergie", "EDF"],
     "equivalence": "Jusqu'à 100 TWh par an vendus à 42 €/MWh"
   },
@@ -61,6 +64,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-21/l25-139-21_mono.html",
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["zombie", "indemnisation", "mille-feuille"],
     "equivalence": "Une vingtaine de fonds dotés chacun de sa gouvernance"
   },
@@ -77,6 +81,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-326/l25-139-326_mono.html",
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "depense",
     "tags": ["zombie", "fiscalité", "taxe d'habitation"],
     "equivalence": "Une compensation financée par le budget de l'État"
   },
@@ -94,6 +99,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["zombie", "institution", "CESE"],
     "equivalence": "34,1 M€ = environ 0,50 € par habitant et par an"
   },
@@ -111,6 +117,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "depense",
     "tags": ["zombie", "opérateurs", "mille-feuille", "administration"],
     "equivalence": "401 310 emplois dans ces organismes en 2026"
   },
@@ -127,6 +134,7 @@
     "sourceUrl": "https://www.igas.gouv.fr/sites/igas/files/2024-10/Rapport%20Igas%20Fonds%20revitalisation.pdf",
     "sourceDate": "2024-02",
     "level": 3,
+    "kind": "agregat",
     "tags": ["zombie", "emploi", "revitalisation"],
     "equivalence": "Entre 300 000 et 500 000 € par convention en moyenne"
   },
@@ -144,6 +152,7 @@
     "year": 2026,
     "sourceDate": "2025-11-15",
     "level": 3,
+    "kind": "depense",
     "tags": ["zombie", "santé", "ARS", "bureaucratie"],
     "equivalence": "18 agences régionales de santé"
   },
@@ -160,6 +169,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-324/l25-139-324_mono.html",
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "agregat",
     "tags": ["zombie", "retraites", "FRR", "réserves"],
     "equivalence": "1,45 Md€ versés chaque année à la caisse de la dette sociale (CADES) depuis 2025"
   },
@@ -176,6 +186,7 @@
     "sourceUrl": "https://www.ccomptes.fr/sites/default/files/2025-04/20250417-Taxes-a-faible-rendement_0.pdf",
     "sourceDate": "2025-04",
     "level": 2,
+    "kind": "recette",
     "tags": ["zombie", "fiscalité", "taxes"],
     "equivalence": "243 petites taxes en 2024, contre 305 en 2019"
   }

@@ -13,6 +13,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "depense",
     "tags": ["numérique", "investissement", "France 2030"],
     "equivalence": "5,1 Md€ de dépenses prévues en 2026"
   },
@@ -30,6 +31,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "depense",
     "tags": ["numérique", "spatial", "CNES"],
     "equivalence": "Budget de l'État pour la recherche spatiale : 1 848 M€ en 2026"
   },
@@ -46,6 +48,7 @@
     "sourceUrl": "https://www.senat.fr/rap/a25-140-5/a25-140-5_mono.html",
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "depense",
     "tags": ["numérique", "IA", "recherche"],
     "equivalence": "2,5 Md€ de fonds publics depuis le lancement de la stratégie"
   },
@@ -62,6 +65,7 @@
     "sourceUrl": "https://www.senat.fr/rap/r21-377/r21-377.html",
     "sourceDate": "2022-01",
     "level": 3,
+    "kind": "depense",
     "tags": ["numérique", "quantique", "recherche"],
     "equivalence": "1,8 Md€ sur cinq ans, soit environ 0,36 Md€ par an"
   },
@@ -79,6 +83,7 @@
     "year": 2026,
     "sourceDate": "2025-10-31",
     "level": 3,
+    "kind": "depense",
     "tags": ["numérique", "État", "administration"],
     "equivalence": "Plus de 40 millions d'utilisateurs de FranceConnect"
   },
@@ -96,6 +101,7 @@
     "year": 2026,
     "sourceDate": "2026-04-21",
     "level": 3,
+    "kind": "depense",
     "tags": ["numérique", "semiconducteurs", "industrie"],
     "equivalence": "Objectif européen : 20 % de la production mondiale de puces en 2030"
   },
@@ -112,6 +118,7 @@
     "sourceUrl": "https://www.senat.fr/rap/a25-141-9/a25-141-9_mono.html",
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["numérique", "cybersécurité", "ANSSI"],
     "equivalence": "Le volet civil de la cybersécurité, distinct de la cyberdéfense militaire (COMCYBER)"
   },
@@ -129,6 +136,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "depense",
     "tags": ["numérique", "emploi", "France Travail"],
     "equivalence": "L'assurance chômage (Unédic) finance environ les trois quarts de France Travail"
   },
@@ -146,6 +154,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "agregat",
     "tags": ["numerique", "Bpifrance", "innovation"],
     "equivalence": "Prêts, garanties, fonds propres et aides à l'innovation"
   },
@@ -162,6 +171,7 @@
     "sourceUrl": "https://www.senat.fr/rap/a25-140-8/a25-140-8_mono.html",
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["numerique", "cables", "souverainete"],
     "equivalence": "138 M€ pour 80 % du capital du fabricant (2024-2025)"
   },
@@ -178,6 +188,7 @@
     "sourceUrl": "https://www.ccomptes.fr/sites/default/files/2025-10/20251031-S2025-1479-Enjeux-souverainete-des-SI-civils-de-l-Etat.pdf",
     "sourceDate": "2025-10-31",
     "level": 3,
+    "kind": "depense",
     "tags": ["numerique", "cloud", "souverainete"],
     "equivalence": "Des données sensibles réservées aux offres qualifiées SecNumCloud"
   },
@@ -194,6 +205,7 @@
     "sourceUrl": "https://www.senat.fr/rap/a25-140-5/a25-140-5_mono.html",
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "agregat",
     "tags": ["numerique", "IA", "Mistral"],
     "equivalence": "Plus de 1 000 start-up françaises dans l'IA"
   },
@@ -210,6 +222,7 @@
     "sourceUrl": "https://www.senat.fr/rap/a25-143-1/a25-143-1_mono.html",
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["numerique", "illectronisme", "inclusion"],
     "equivalence": "2 800 conseillers numériques fin 2025, 14 M€ en 2026",
     "year": 2026
@@ -227,6 +240,7 @@
     "sourceUrl": "https://www.ccomptes.fr/sites/default/files/2026-06/20260604-CNIL.pdf",
     "sourceDate": "2026-06-04",
     "level": 3,
+    "kind": "depense",
     "tags": ["numerique", "regulation", "CNIL"],
     "equivalence": "150 M€ d'amende infligée à Google en 2021"
   },
@@ -242,6 +256,7 @@
     "source": "ARCEP, RTE, France Datacenter, ADEME",
     "sourceUrl": "https://www.rte-france.com/bases-electricite/consommation-electricite/essor-data-centers-france",
     "level": 2,
+    "kind": "agregat",
     "tags": ["numerique", "datacenters", "énergie"],
     "equivalence": "Une consommation électrique en forte croissance avec l'IA"
   },
@@ -258,6 +273,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-32/l25-139-32_mono.html",
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["numerique", "identite", "FranceConnect"],
     "equivalence": "La carte d'identité sur smartphone"
   },
@@ -274,6 +290,7 @@
     "sourceUrl": "https://www.senat.fr/rap/a25-140-8/a25-140-8_mono.html",
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "depense",
     "tags": ["numérique", "spatial", "État actionnaire"],
     "equivalence": "258 M€ de rachat d'actions et 750 M€ d'augmentation de capital"
   },
@@ -291,6 +308,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["numérique", "souveraineté", "État actionnaire"],
     "equivalence": "Une société détenue à 100 % par l'État"
   }

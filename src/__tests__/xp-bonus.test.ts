@@ -36,6 +36,7 @@ function makeCard(id: string, deckId: string = "defense", amountBillions: number
     icon: "\uD83C\uDFAF",
     source: "Test",
     level: 1,
+    kind: "depense",
   };
 }
 
