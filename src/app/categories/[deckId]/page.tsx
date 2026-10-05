@@ -41,7 +41,7 @@ export default async function CategoryPage({ params }: Props) {
     .sort((a, b) => b.amountBillions - a.amountBillions);
   const max = cards[0]?.amountBillions ?? 0;
   const min = cards[cards.length - 1]?.amountBillions ?? 0;
-  const isDossier = deck.type === "thematic";
+  const isTheme = deck.type === "thematic";
 
   return (
     <>
@@ -49,15 +49,15 @@ export default async function CategoryPage({ params }: Props) {
       <header className="bg-section border-b border-border" style={catStyle(deck.id)}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 md:py-14">
           <Link
-            href={isDossier ? "/#dossiers" : "/#categories"}
+            href={isTheme ? "/#themes" : "/#categories"}
             className="inline-flex items-center gap-1.5 min-h-[44px] text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
-            <span aria-hidden="true">&larr;</span> {isDossier ? "Tous les dossiers" : "Toutes les catégories"}
+            <span aria-hidden="true">&larr;</span> {isTheme ? "Tous les thèmes" : "Toutes les catégories"}
           </Link>
 
           <p className="mt-4 flex items-center gap-3">
             <CategoryBadge deckId={deck.id} size={56} />
-            <span className="kicker cat-text">{isDossier ? "Dossier" : "Catégorie"}</span>
+            <span className="kicker cat-text">{isTheme ? "Thème" : "Catégorie"}</span>
           </p>
           <h1 className="mt-3 text-4xl md:text-5xl font-black leading-tight tracking-tight">{deck.name}</h1>
           <p className="mt-3 text-lg text-muted-foreground max-w-prose">{deck.description}</p>

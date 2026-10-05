@@ -1,6 +1,6 @@
 /**
  * Images Open Graph des decks : pages /categories/[deckId] et /jeu/[deckId]
- * (catégories, dossiers, deck du jour, mode aléatoire).
+ * (catégories, thèmes, deck du jour, mode aléatoire).
  */
 import { ImageResponse } from "next/og";
 import decksMeta from "@/data/decks-meta.json";
@@ -134,7 +134,7 @@ export async function renderDeckOgImage(deckId: string, cta: string): Promise<Im
   const color = getDeckColor(deck.id);
   const cards = await getDeckCards(deck.id);
   const samples = pickSampleCards(cards);
-  const kicker = deck.type === "thematic" ? "Dossier" : "Catégorie";
+  const kicker = deck.type === "thematic" ? "Thème" : "Catégorie";
 
   return new ImageResponse(
     (

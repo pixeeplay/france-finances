@@ -9,6 +9,7 @@ Les niveaux se debloquent en jouant (2 sessions N1 -> N2, 2 sessions N2 -> N3, `
 A la fin d'une session (10-12 cartes), le joueur obtient un archetype budgetaire (calcule sur les categories et montants coupes) et ses stats.
 Apres chaque swipe : retour (avis de la communaute, fait marquant, montant cumule). Mini-quiz « a ton avis, combien ? » avant certains montants.
 Modes : deck du jour `/jeu/quotidien` (meme tirage pour tous, seed = date Paris, serie de jours, partage facon Wordle) et defi « Trouve 50 Md€ » (mode budget).
+Dossiers editoriaux `/dossiers` (articles courts et sources, encadres « Le chiffre », graphiques de /chiffres, « Joue ces cartes »). Les decks thematiques s'appellent « themes » (`/#themes`).
 Outils : `/chiffres` (les finances publiques en chiffres) et `/simulateur` (simulateur fiscal IR/cotisations/TVA, 100 % client), portes depuis nos contributions a nicoquipaie.
 
 Repo : https://github.com/pixeeplay/france-finances/
@@ -101,6 +102,7 @@ src/
     (game)/         # Game pages (jeu, jeu/[deckId] dont jeu/quotidien, profil, classement, resultats, infos, partage)
     chiffres/       # Les finances publiques en chiffres (donnees : src/data/chiffres.ts, projet 2027 : src/data/plf-2027.ts)
     simulateur/     # Simulateur fiscal (calculs : src/lib/taxCalculator.ts, baremes : src/data/fiscal-2026.ts)
+    dossiers/       # Dossiers editoriaux (contenu TS : src/data/dossiers, helpers : src/lib/dossiers.ts). status "brouillon" visible hors production seulement, "publie" partout
     categories/     # Category pages
     contribuer/     # Contributor guide page
     a-propos/       # About page

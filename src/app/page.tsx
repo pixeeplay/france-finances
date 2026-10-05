@@ -6,7 +6,7 @@ import { DailyTeaser } from "@/components/landing/DailyTeaser";
 import { HowItWorks } from "@/components/landing/HowItWorks";
 import { KeyNumbers } from "@/components/landing/KeyNumbers";
 import { CategoriesSection } from "@/components/landing/CategoriesSection";
-import { DossiersSection } from "@/components/landing/DossiersSection";
+import { ThemesSection } from "@/components/landing/ThemesSection";
 import { ToolsSection } from "@/components/landing/ToolsSection";
 import { SourcesSection } from "@/components/landing/SourcesSection";
 import { Footer } from "@/components/landing/Footer";
@@ -28,7 +28,7 @@ export default function LandingPage() {
         <HowItWorks />
         <KeyNumbers />
         <CategoriesSection />
-        <DossiersSection />
+        <ThemesSection />
         <ToolsSection />
         <SourcesSection />
       </main>
