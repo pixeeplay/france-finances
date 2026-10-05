@@ -2,30 +2,34 @@ import Link from "next/link";
 import decksData from "@/data";
 import { catStyle } from "@/components/icons/CategoryBadge";
 import { CategoryIcon } from "@/components/icons/CategoryIcon";
+import { hasVisibleDossiers } from "@/lib/dossiers";
 
-/** Decks thématiques présentés comme des dossiers. */
-export function DossiersSection() {
-  const dossiers = decksData.decks
+/**
+ * Decks thématiques (qui traversent les catégories budgétaires). Appelés
+ * « thèmes » pour ne pas les confondre avec les dossiers éditoriaux (/dossiers).
+ */
+export function ThemesSection() {
+  const themes = decksData.decks
     .filter((d) => d.type === "thematic")
     .map((deck) => ({
       deck,
       count: decksData.cards.filter((c) => c.deckId === deck.id).length,
     }));
 
-  if (dossiers.length === 0) return null;
+  if (themes.length === 0) return null;
 
   return (
-    <section id="dossiers" aria-labelledby="dossiers-title" className="section-padding section-tint-amber">
+    <section id="themes" aria-labelledby="themes-title" className="section-padding section-tint-amber">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <h2 id="dossiers-title" className="text-3xl md:text-4xl text-center mb-2 text-brand-fg dark:text-foreground">
-          Trois dossiers à la loupe
+        <h2 id="themes-title" className="text-3xl md:text-4xl text-center mb-2 text-brand-fg dark:text-foreground">
+          Trois thèmes à la loupe
         </h2>
         <p className="text-center text-muted-foreground mb-10 text-sm md:text-base">
           Des decks thématiques qui traversent les catégories budgétaires.
         </p>
 
         <ul className="grid md:grid-cols-3 gap-4 md:gap-6">
-          {dossiers.map(({ deck, count }) => (
+          {themes.map(({ deck, count }) => (
             <li key={deck.id} style={catStyle(deck.id)}>
               <Link
                 href={`/categories/${deck.id}`}
@@ -40,13 +44,23 @@ export function DossiersSection() {
                   <span className="text-sm text-muted-foreground leading-relaxed">{deck.description}</span>
                   <span className="sr-only">{count} cartes.</span>
                   <span className="mt-auto pt-2 text-sm font-bold cat-text">
-                    Ouvrir le dossier <span aria-hidden="true">&#8594;</span>
+                    Voir le thème <span aria-hidden="true">&#8594;</span>
                   </span>
                 </span>
               </Link>
             </li>
           ))}
         </ul>
+
+        {hasVisibleDossiers() ? (
+          <p className="mt-8 text-center text-sm text-muted-foreground">
+            Pour aller plus loin, lisez{" "}
+            <Link href="/dossiers" className="font-bold text-brand-fg underline underline-offset-2 hover:no-underline">
+              nos dossiers
+            </Link>
+            &nbsp;: des articles courts et sourcés pour comprendre les finances publiques.
+          </p>
+        ) : null}
       </div>
     </section>
   );

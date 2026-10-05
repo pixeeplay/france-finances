@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { hasVisibleDossiers } from "@/lib/dossiers";
 import { Logo } from "./Logo";
 
 export function Footer() {
@@ -46,6 +47,11 @@ export function Footer() {
             <li>
               <Link href="/simulateur" className="inline-flex items-center min-h-[44px] hover:text-foreground">Simulateur</Link>
             </li>
+            {hasVisibleDossiers() ? (
+              <li>
+                <Link href="/dossiers" className="inline-flex items-center min-h-[44px] hover:text-foreground">Dossiers</Link>
+              </li>
+            ) : null}
             <li>
               <Link href="/lexique" className="inline-flex items-center min-h-[44px] hover:text-foreground">Lexique</Link>
             </li>

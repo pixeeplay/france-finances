@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useSyncExternalStore } from "react";
 import Link from "next/link";
+import { hasVisibleDossiers } from "@/lib/dossiers";
 import { applyTheme } from "@/lib/theme";
 import { Logo } from "./Logo";
 
@@ -10,7 +11,9 @@ const NAV_LINKS = [
   { href: "/simulateur", label: "Simulateur" },
   { href: "/#comment-ca-marche", label: "Comment ça marche" },
   { href: "/#categories", label: "Catégories" },
-  { href: "/#dossiers", label: "Dossiers" },
+  // Dossiers éditoriaux s'il y en a de publiés (brouillons visibles hors production),
+  // sinon les decks thématiques de l'accueil
+  hasVisibleDossiers() ? { href: "/dossiers", label: "Dossiers" } : { href: "/#themes", label: "Thèmes" },
 ];
 
 /** Suit la classe `dark` de <html> (sombre par défaut, y compris au rendu serveur). */
