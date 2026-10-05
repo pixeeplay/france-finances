@@ -199,7 +199,7 @@ export default function ContribuerPage() {
         <div className="mt-8">
           <Link
             href="/"
-            className="text-sm underline underline-offset-4 hover:text-foreground"
+            className="inline-flex items-center min-h-[44px] text-sm underline underline-offset-4 hover:text-foreground"
           >
             &larr; Retour à l&apos;accueil
           </Link>

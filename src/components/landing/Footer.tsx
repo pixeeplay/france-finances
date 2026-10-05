@@ -65,7 +65,7 @@ export function Footer() {
               href="https://pixeeplay.fr"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold text-brand-fg hover:underline"
+              className="inline-flex items-center min-h-[44px] -my-[14px] font-semibold text-brand-fg hover:underline"
             >
               PixeePlay
               <span className="sr-only"> (nouvel onglet)</span>
