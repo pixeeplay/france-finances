@@ -1,6 +1,6 @@
 "use client";
 
-import { useMotionValue, useTransform, animate } from "framer-motion";
+import { useMotionValue, useTransform, useReducedMotion, animate } from "framer-motion";
 import { useCallback } from "react";
 import type { VoteDirection } from "@/types";
 import { SPRING_SWIPE, SPRING_SNAP } from "@/lib/motion-constants";
@@ -16,10 +16,13 @@ interface UseSwipeGestureOptions {
 
 /**
  * Logique de swipe. Niveau 1 : gauche/droite. Niveau 2+ : 4 directions.
+ * Avec « réduire les animations » (prefers-reduced-motion), le relâchement ne
+ * lance ni envol ni ressort : la carte part (ou revient) immédiatement.
  */
 export function useSwipeGesture({ onSwipe, level = 1 }: UseSwipeGestureOptions) {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
+  const prefersReducedMotion = useReducedMotion() ?? false;
 
   const rotate = useTransform(x, [-300, 0, 300], [-MAX_ROTATION, 0, MAX_ROTATION]);
 
@@ -66,6 +69,11 @@ export function useSwipeGesture({ onSwipe, level = 1 }: UseSwipeGestureOptions) 
       if (level >= 2 && !isHorizontal && absY > SWIPE_THRESHOLD) {
         const direction: VoteDirection = info.offset.y < 0 ? "reinforce" : "unjustified";
         const exitY = info.offset.y < 0 ? -EXIT_DISTANCE : EXIT_DISTANCE;
+        if (prefersReducedMotion) {
+          y.set(exitY);
+          onSwipe(direction);
+          return;
+        }
         animate(y, exitY, {
           ...SPRING_SWIPE,
           onComplete: () => onSwipe(direction),
@@ -73,16 +81,24 @@ export function useSwipeGesture({ onSwipe, level = 1 }: UseSwipeGestureOptions) 
       } else if (isHorizontal && absX > SWIPE_THRESHOLD) {
         const direction: VoteDirection = info.offset.x < 0 ? "keep" : "cut";
         const exitX = info.offset.x < 0 ? -EXIT_DISTANCE : EXIT_DISTANCE;
+        if (prefersReducedMotion) {
+          x.set(exitX);
+          onSwipe(direction);
+          return;
+        }
         animate(x, exitX, {
           ...SPRING_SWIPE,
           onComplete: () => onSwipe(direction),
         });
+      } else if (prefersReducedMotion) {
+        x.set(0);
+        y.set(0);
       } else {
         animate(x, 0, SPRING_SNAP);
         if (level >= 2) animate(y, 0, SPRING_SNAP);
       }
     },
-    [x, y, onSwipe, level]
+    [x, y, onSwipe, level, prefersReducedMotion]
   );
 
   return {
