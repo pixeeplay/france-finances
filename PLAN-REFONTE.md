@@ -169,7 +169,9 @@ Phases 1 et 2 livrées et déployées (2026-10-02 → 04) : assainissement et s�
 - [x] Champ `kind` (dépense / recette / agrégat) : seules les dépenses dans le deck du jour, le défi 50 Md€, l'archétype et le cumul « tronçonné » (`feat/kind-trend`).
 - [x] Champ `trend` : retiré (aucune source), `feat/kind-trend`.
 - [x] Bloc « Ce que prévoit le projet de budget 2027 », étiqueté projet (loi votée attendue fin décembre) : section `#budget-2027` de `/chiffres` + bandeau sur l'accueil (`feat/plf-2027`).
-- [ ] Dossiers éditoriaux (Phase 3) : gabarit + premiers dossiers, validés avant publication.
+- [x] Dossiers éditoriaux (Phase 3) : gabarit `/dossiers` + 3 premiers dossiers en brouillon (`feat/dossiers`).
+- [ ] Relire les 3 dossiers et les passer en `publie` (`src/data/dossiers/catalog.ts`).
+- [x] Intégration de la vague sur `vague/octobre` (merges `--no-ff`, checks et e2e prod verts).
 - [ ] Point Analytics (usage réel) et chiffrage hébergement (OVH / o2switch / Vercel).
 
 ### Appliquer les migrations 0003 et 0004 (prod)

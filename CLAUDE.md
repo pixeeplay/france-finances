@@ -32,7 +32,7 @@ DNS : Cloudflare (DNS only, pas de proxy)
 - **DB** : PostgreSQL + Drizzle ORM (graceful degradation sans DB)
 - **PWA** : serwist (service worker, offline fallback). Plugin webpack : le build prod tourne en `next build --webpack`, serwist est desactive en dev (Turbopack)
 - **Monitoring** : Sentry (`src/instrumentation.ts` serveur/edge, `src/instrumentation-client.ts` client)
-- **Tests** : Vitest + Testing Library (545 tests) + E2E Playwright (14 tests, `e2e/`, `E2E_PROD=1` pour tester un build de prod)
+- **Tests** : Vitest + Testing Library (591 tests) + E2E Playwright (26 tests, 13 scenarios x chromium et mobile, `e2e/`, `E2E_PROD=1` pour tester un build de prod)
 - **CI** : GitHub Actions (lint + type-check + test --coverage + build + E2E + docker), Husky + lint-staged + commitlint
 - **Deploy** : Docker (output: standalone) via Coolify
 
