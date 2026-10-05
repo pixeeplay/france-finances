@@ -31,7 +31,7 @@ DNS : Cloudflare (DNS only, pas de proxy)
 - **DB** : PostgreSQL + Drizzle ORM (graceful degradation sans DB)
 - **PWA** : serwist (service worker, offline fallback). Plugin webpack : le build prod tourne en `next build --webpack`, serwist est desactive en dev (Turbopack)
 - **Monitoring** : Sentry (`src/instrumentation.ts` serveur/edge, `src/instrumentation-client.ts` client)
-- **Tests** : Vitest + Testing Library (485 tests) + E2E Playwright (14 tests, `e2e/`, `E2E_PROD=1` pour tester un build de prod)
+- **Tests** : Vitest + Testing Library (545 tests) + E2E Playwright (14 tests, `e2e/`, `E2E_PROD=1` pour tester un build de prod)
 - **CI** : GitHub Actions (lint + type-check + test --coverage + build + E2E + docker), Husky + lint-staged + commitlint
 - **Deploy** : Docker (output: standalone) via Coolify
 
@@ -59,32 +59,38 @@ DNS : Cloudflare (DNS only, pas de proxy)
 
 ## Direction artistique et design tokens
 
-Direction « data-journalisme » : typographie editoriale, grille sobre, couleur reservee au sens. Pas de degrades de texte, d'ombres neon (« glow ») ni de flous decoratifs.
+Identite **coloree et ludique** (retour a l'identite d'avant la refonte, validee par le proprietaire le 2026-10-02 apres le rejet d'une version « data-journalisme » serif et grise jugee « tres triste ») :
+gros titres bleu vif en police ronde tres grasse, montants cles en rouge, boutons pleins bleus arrondis, drapeau tricolore dans le logo (« france-finances » + « .com » rouge), une couleur par categorie (`getDeckColor`, `src/lib/deckMeta.ts`) dans des pastilles, pages de donnees avec graphiques (recharts, charge seulement sur `/chiffres`).
+Ne jamais revenir a un style gris/serif/monochrome. Montrer des captures avant de deployer un changement visuel.
+Pas de degrades de texte criards ni d'ombres neon ; contrastes AA ; contenu desktop aligne sur la largeur du header (`max-w-6xl`), texte courant en `max-w-prose`.
 
-Tokens dans `src/app/globals.css` (`@theme inline`), toujours passer par eux (`bg-background`, `bg-card`, `text-muted-foreground`, `text-primary-foreground`, `text-danger`...), jamais de `slate-*` ou `text-white` en dur sur fond colore.
+Tokens dans `src/app/globals.css` (`@theme inline`), toujours passer par eux (`bg-background`, `bg-card`, `bg-brand`, `text-brand-fg`, `text-muted-foreground`, `text-primary-foreground`, `text-danger`...), jamais de `slate-*` ou `text-white` en dur sur fond colore (sauf `text-white` sur `bg-brand`).
 Theme sombre par defaut (classe `dark` sur `<html>`), theme clair disponible (`localStorage.theme`, `meta theme-color` synchronisee par `src/lib/theme.ts`).
 
-| Token                       | Sombre  | Clair   | Sens                  |
-| --------------------------- | ------- | ------- | --------------------- |
-| `--background`              | #0F172A | #FAFAF7 | Fond                  |
-| `--card`                    | #1E293B | #FFFFFF | Cartes                |
-| `--foreground`              | #F8FAFC | #0F172A | Texte principal       |
-| `--muted-foreground`        | #CBD5E1 | #475569 | Texte secondaire      |
-| `--primary` (`keep`)        | #10B981 | #047857 | Garder / OK           |
-| `--danger` (`cut`)          | #F87171 | #DC2626 | Couper / A revoir     |
-| `--info` (`reinforce`)      | #60A5FA | #2563EB | Renforcer             |
-| `--warning` (`unjustified`) | #F59E0B | #B45309 | Injustifie (token)    |
-| `--community`               | #94A3B8 | #64748B | Avis de la communaute |
+| Token                       | Sombre  | Clair   | Sens                            |
+| --------------------------- | ------- | ------- | ------------------------------- |
+| `--background`              | #0F172A | #FFFFFF | Fond                            |
+| `--card`                    | #1E293B | #F8FAFC | Cartes                          |
+| `--foreground`              | #F8FAFC | #0F172A | Texte principal                 |
+| `--muted-foreground`        | #CBD5E1 | #475569 | Texte secondaire                |
+| `--brand`                   | #0A33B0 | #0A33B0 | Boutons pleins (CTA)            |
+| `--brand-fg`                | #5B84FF | #0A33B0 | Titres bleus, liens             |
+| `--primary` (`keep`)        | #10B981 | #047857 | Garder / OK                     |
+| `--danger` (`cut`)          | #F87171 | #DC2626 | A revoir, montants cles         |
+| `--info` (`reinforce`)      | #60A5FA | #2563EB | Renforcer                       |
+| `--warning` (`unjustified`) | #F59E0B | #B45309 | Reduire (niveau 2), equivalence |
+| `--community`               | #94A3B8 | #64748B | Avis de la communaute           |
 
-Rayon de base `--radius: 0.375rem` (preferer `rounded-md`).
-Attention : en jeu au niveau 2, « Reduire » est en amber et « Injustifie » en rouge (decision ouverte, voir PLAN-REFONTE.md).
+Rayon de base `--radius: 0.75rem` (arrondis genereux : `rounded-2xl` / `rounded-3xl` sur cartes et boutons).
+En jeu au niveau 2 : « Reduire » en amber, « Injustifie » en rouge (statu quo valide le 2026-10-02).
 
 Polices (`next/font/google`, `src/app/layout.tsx`) :
 
-- Titres et chiffres : Source Serif 4 (`--ff-serif`, graisse 600 seule), classes `font-heading` / `font-serif`, h1-h3 par defaut
-- Texte : Schibsted Grotesk (`--ff-grotesk`, `font-sans`)
-- Etiquettes, sources : IBM Plex Mono (`--ff-mono`, 400/500, `preload: false`)
-- Utilitaires : `kicker` (surtitre mono capitales) et `numeral` (chiffres serif tabulaires)
+- Titres et chiffres cles : **Outfit** 700/800/900 (`--ff-display`, classes `font-heading` / `font-serif`, h1-h3 par defaut)
+- Texte : **Geist** (`--ff-sans`, `font-sans`)
+- Rares usages techniques (sources, tableaux) : Geist Mono (`--ff-mono`, non prechargee)
+- Images de partage (OG, `src/lib/og.tsx`) : Outfit embarquee dans `src/assets/fonts` (pas de telechargement Google)
+- Utilitaires : `kicker` (surtitre capitales) et `numeral` (chiffres tabulaires)
 
 ## Structure des fichiers
 

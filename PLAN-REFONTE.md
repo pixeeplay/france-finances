@@ -146,49 +146,37 @@ Phase 3  (plus tard) Feed / dossiers éditoriaux
 
 ---
 
-## 4. Décisions ouvertes
+## 4. État au 2026-10-05
 
-**Produit / game design**
+### En ligne
 
-1. ✅ Validé 2026-10-02 (statu quo). Couleurs du niveau 2 : en jeu, « Réduire » est en amber et « Injustifié » en rouge, alors que le token `unjustified` est amber. Harmoniser ou garder.
-2. ✅ Validé 2026-10-02. Seuils de déblocage (2 sessions N1 → N2, 2 sessions N2 → N3). Les joueurs qui passaient par `?level=` repartent au niveau 1.
-3. ✅ Validé 2026-10-02 : gardés. Garder ou supprimer les 19 badges de volume (« jouer 3 sessions du deck X »).
-4. Champ `kind` (dépense / recette / agrégat) sur les cartes, pour exclure du deck du jour et du défi les cartes qui ne sont pas des dépenses (fraude fiscale, dette des collectivités…). Le niveau des cartes n'est pas non plus utilisé pour le tirage.
-5. Choisir un deck sur `/jeu` désactive le mode budget : un défi budget sur un deck de catégorie n'est accessible que par URL.
-6. Table `communityVotes` jamais alimentée (le pourcentage communautaire vient de `votes`) : la supprimer ou la brancher.
+Phases 1 et 2 livrées et déployées (2026-10-02 → 04) : assainissement et sécurité admin (`ADMIN_EMAILS`), identité colorée restaurée, `/chiffres` avec graphiques, `/simulateur` (vue mensuelle/annuelle), `/lexique`, jeu enrichi (retour après swipe, deck du jour, défi 50 Md€, quiz passable, progression), 368 cartes jouables sourcées (+ 9 hors jeu), jargon remplacé ou défini, images de partage refaites, nom « Budget Swipe » / marque france-finances.com. Table `waitlist` exportée puis supprimée en prod. SSO abandonné. Reclassement « adulte » du domaine (ancien propriétaire, 2023) demandé auprès des filtres : résolu.
 
-**Données**
+### Décisions prises
 
-7. Population de référence : 68 M (cartes, `data:check`) ou 69,1 M (Insee 2026, `/chiffres`).
-8. ukr-10 (montant en points de PIB), fre-10, log-16 : exceptions « à vérifier », à convertir ou retirer. Montants dérivés à valider : ukr-01, ret-02, edu-17, fre-05 à fre-08 (clé de contribution UE 17,2 %).
-9. Faits ajoutés de mémoire à vérifier : env-09 (ZFE), env-18, env-19, rec-12, ene-15, soc-06, ret-05, soc-18, san-14. URL à vérifier dans un navigateur : num-03, num-13, log-13, fre-06.
-10. Sections de la page Chiffres d'origine écartées (recettes détaillées, IR par décile, fraude sociale…) : à réintroduire ou non avec des sources officielles. Hypothèses du simulateur à valider (TVA moyenne 13 % sur 80 % du revenu, parent isolé, un salaire non-cadre).
+- Couleurs niveau 2 : statu quo (Réduire amber, Injustifié rouge).
+- Seuils de déblocage : 2 sessions par niveau. Badges de volume : gardés.
+- Population de référence : 69,1 M (Insee 2026), partout.
+- Cartes sans montant officiel : hors jeu (`playable: false`), num-10 et num-18 supprimées.
+- Ton : « vous » sur le site, « tu » dans le jeu.
 
-**Technique**
+### Vague en cours (2026-10-05)
 
-11. Deux familles de formatage dans `src/lib/format.ts` (éditoriale et tableaux) : garder les deux ou fusionner.
-12. Dérive schéma / migrations Drizzle (FK en cascade, `idx_analytics_ip`) à régulariser dans une migration dédiée.
-13. `/pixee-admin` renvoie le fallback 404 avec un statut 200 (streaming) : contrôle dans `proxy.ts` ou non.
-14. Migrer serwist vers `@serwist/turbopack` pour repasser le build sur Turbopack ; CSP sans `worker-src` (erreur serwist « waiting » observée).
-15. `components.json` et `class-variance-authority` subsistent sans composant shadcn.
-16. `recomputeStats` reconstruit xp et sessions à partir de l'historique local purgé à 30 jours ; les sessions du deck du jour sont comptées sous `daily`.
+- [ ] CLAUDE.md aligné sur l'identité colorée (fait sur `chore/docs-solde`).
+- [ ] Dépendances : PR Dependabot (13) + actions GitHub (Node 20 déprécié).
+- [ ] Polices embarquées dans le repo (E2E CI qui échouait sur le téléchargement Google Fonts).
+- [ ] Dette : table `communityVotes` inutilisée, dérive schéma / migrations Drizzle, vrai 404 sur `/pixee-admin`, emojis d'interface restants, reduced motion au relâchement du swipe, boutons Niveau 1/2/3 à 44 px, e2e `/chiffres` et `/simulateur`.
+- [ ] Champ `kind` (dépense / recette / agrégat) : exclure du deck du jour et du défi 50 Md€ ce qui n'est pas une dépense.
+- [ ] Champ `trend` : sourcer ou retirer.
+- [ ] Bloc « Ce que prévoit le projet de budget 2027 », étiqueté projet (loi votée attendue fin décembre).
+- [ ] Dossiers éditoriaux (Phase 3) : gabarit + premiers dossiers, validés avant publication.
+- [ ] Point Analytics (usage réel) et chiffrage hébergement (OVH / o2switch / Vercel).
 
-## 4 bis. Pour reprendre
+### Encore ouvert (plus tard)
 
-1. Relire `refonte/integration` et trancher les décisions ci-dessus.
-2. Intégrer le PLF / PLFSS 2027 (agent B).
-3. Phase 3 : Feed / dossiers éditoriaux.
-
-## 5. Avant le déploiement de la refonte
-
-0. **Définir `ADMIN_EMAILS` dans Coolify** (sinon plus personne n'accède à `/pixee-admin`) ; vérifier qu'aucun cron n'appelle `/api/analytics/purge` sans `ANALYTICS_SECRET`.
-1. **Exporter la table `waitlist` en prod** avant tout `npm run db:migrate`. La migration `drizzle/0002_drop_waitlist.sql` fait un `DROP TABLE IF EXISTS "waitlist"` et efface définitivement les emails inscrits. Exemple : `psql "$DATABASE_URL" -c "\copy waitlist TO 'waitlist-$(date +%F).csv' CSV HEADER"`, puis conserver le fichier hors du serveur.
-2. Seulement ensuite, appliquer les migrations (`npm run db:migrate`), qui restent manuelles : elles ne sont pas lancées au déploiement.
-
-## 6. Todo équipe (accès admin)
-
-- [x] **Coolify** : `ADMIN_EMAILS` défini (2026-10-02).
-- [~] **SSO admin** : abandonné (2026-10-02). Le back-office se limite à une page Analytics (`/pixee-admin`) ; la connexion Google/GitHub existante + `ADMIN_EMAILS` suffit. À reconsidérer seulement si le back-office grossit.
-- [x] Table `waitlist` : 11 inscrits exportés hors serveur, table supprimée en prod (2026-10-02).
-- [ ] **Simulateur** : sélecteur « Par mois / Par an » sur tous les montants (saisie et résultats), conservé dans l'URL.
-- [ ] **PLF 2027** : présenté le 1er octobre 2026, vote attendu avant le 31 décembre 2026. Mettre à jour cartes et `/chiffres` sur la loi votée (début 2027) ; en attendant, garder la LF 2026.
+- PLF / PLFSS 2027 : mettre à jour cartes, `/chiffres` et barèmes du simulateur une fois la loi votée.
+- Serwist sur Turbopack (`@serwist/turbopack`) pour quitter `--webpack` ; CSP `worker-src`.
+- Deux familles de formatage dans `src/lib/format.ts` ; `components.json` et `class-variance-authority` sans usage.
+- `recomputeStats` reconstruit xp/sessions depuis un historique local purgé à 30 jours.
+- Plusieurs URL de source par carte (rec-19, emp-04) ; emp-19, rec-20, def-21 à vérifier contre la loi votée.
+- Performance réelle sur mobile milieu de gamme (Lighthouse, 60 fps).
