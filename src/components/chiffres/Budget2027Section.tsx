@@ -27,6 +27,8 @@ const CHART_MISSIONS = 10;
 const fmtBn = (v: number) => formatBillionsExact(v);
 const fmtPctGdp = (v: number) => formatRatio(v / 100, 1);
 const fmtSignedBn = (v: number) => (v > 0 ? `+${fmtBn(v)}` : v < 0 ? `−${fmtBn(-v)}` : "stable");
+/** Écart signé sans unité, pour les tableaux dont l'en-tête porte « Md€ » (largeur à 390 px). */
+const fmtSignedNumber = (v: number) => (v > 0 ? `+${formatNumber(v, 1)}` : v < 0 ? `−${formatNumber(-v, 1)}` : "0");
 
 function formatFrDate(iso: string): string {
   const [y, m, d] = iso.split("-").map(Number);
@@ -243,13 +245,18 @@ export function Budget2027Section() {
             caption="Crédits des 31 missions du budget de l'État, loi de finances 2026 et projet 2027"
             columns={[
               { header: "Mission" },
-              { header: "2026", numeric: true },
-              { header: "2027 (projet)", numeric: true },
-              { header: "Écart", numeric: true },
+              { header: "2026 (Md€)", numeric: true },
+              { header: "2027, projet (Md€)", numeric: true },
+              { header: "Écart (Md€)", numeric: true },
             ]}
             rows={[...PLF_2027_MISSIONS]
               .sort((a, b) => b.plf2027Bn - a.plf2027Bn)
-              .map((m) => [m.label, fmtBn(m.lfi2026Bn), fmtBn(m.plf2027Bn), fmtSignedBn(plf2027Delta(m))])}
+              .map((m) => [
+                m.label,
+                formatNumber(m.lfi2026Bn, 1),
+                formatNumber(m.plf2027Bn, 1),
+                fmtSignedNumber(plf2027Delta(m)),
+              ])}
           />
         }
         source={PLF_2027_PRESS_KIT}
