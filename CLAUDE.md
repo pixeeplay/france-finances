@@ -126,7 +126,7 @@ src/
     data-check-exceptions.json # Exceptions documentees cout/habitant
     index.ts        # Barrel export
   db/
-    schema.ts       # Tables: users, accounts, authSessions, verificationTokens, sessions, votes, communityVotes, analyticsEvents, auditResponses
+    schema.ts       # Tables: users, accounts, authSessions, verificationTokens, sessions, votes, analyticsEvents, auditResponses
     index.ts        # Drizzle client + pool
   stores/
     gameStore.ts    # Zustand (voteAndAdvance, useShallow, gameMode budget)

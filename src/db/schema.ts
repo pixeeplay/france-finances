@@ -84,17 +84,6 @@ export const votes = pgTable("votes", {
   index("idx_votes_card_direction").on(t.cardId, t.direction),
 ]);
 
-// === Community aggregates (materialized cache, updated periodically) ===
-export const communityVotes = pgTable("community_votes", {
-  cardId: text("card_id").primaryKey(),
-  keepCount: integer("keep_count").notNull().default(0),
-  cutCount: integer("cut_count").notNull().default(0),
-  reinforceCount: integer("reinforce_count").notNull().default(0),
-  unjustifiedCount: integer("unjustified_count").notNull().default(0),
-  totalVotes: integer("total_votes").notNull().default(0),
-  updatedAt: timestamp("updated_at").defaultNow().notNull(),
-});
-
 // === Analytics events ===
 export const analyticsEvents = pgTable("analytics_events", {
   id: uuid("id").defaultRandom().primaryKey(),

@@ -52,12 +52,6 @@ ALTER TABLE sessions SET (
   autovacuum_analyze_scale_factor = 0.05
 );
 
--- community_votes: moderate write volume.
-ALTER TABLE community_votes SET (
-  autovacuum_vacuum_scale_factor = 0.1,
-  autovacuum_analyze_scale_factor = 0.05
-);
-
 -- users, audit_responses: low volume, defaults are fine.
 
 -- -----------------------------------------------------------------------------
@@ -104,6 +98,5 @@ ALTER TABLE community_votes SET (
 ANALYZE sessions;
 ANALYZE votes;
 ANALYZE analytics_events;
-ANALYZE community_votes;
 ANALYZE users;
 ANALYZE audit_responses;
