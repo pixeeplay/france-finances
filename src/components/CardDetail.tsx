@@ -13,6 +13,7 @@ import type { Card, VoteDirection } from "@/types";
 import { formatBillions, formatEuros } from "@/lib/format";
 import { getDeckName } from "@/lib/deckMeta";
 import { SPRING_SWIPE } from "@/lib/motion-constants";
+import { UiIcon } from "./icons/UiIcon";
 
 interface CardDetailProps {
   card: Card | null;
@@ -131,7 +132,7 @@ export function CardDetail({ card, level = 1, onClose, onVote }: CardDetailProps
                 aria-label="Fermer le détail"
                 className="absolute top-2 right-2 min-h-[44px] min-w-[44px] flex items-center justify-center text-muted-foreground hover:text-foreground rounded-full hover:bg-muted transition-colors"
               >
-                <span className="text-lg" aria-hidden="true">✕</span>
+                <UiIcon name="close" size={20} />
               </button>
             </div>
 

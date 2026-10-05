@@ -1,11 +1,13 @@
 "use client";
 
+import { UiIcon } from "@/components/icons/UiIcon";
+
 export default function OfflinePage() {
   return (
     <div className="dark min-h-dvh flex items-center justify-center bg-background text-foreground p-6">
       <div className="max-w-sm text-center space-y-6">
-        <div className="text-6xl" aria-hidden="true">
-          &#128268;
+        <div className="flex justify-center text-muted-foreground">
+          <UiIcon name="offline" size={56} />
         </div>
         <h1 className="text-2xl font-bold">Hors connexion</h1>
         <p className="text-muted-foreground">

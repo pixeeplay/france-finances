@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { UiIcon } from "@/components/icons/UiIcon";
 
 export function ReplayTutorialButton() {
   const router = useRouter();
@@ -15,7 +16,7 @@ export function ReplayTutorialButton() {
       onClick={handleReplay}
       className="flex items-center gap-2 bg-info/10 text-info font-semibold text-sm px-4 py-3 rounded-xl border border-info/20 hover:bg-info/20 transition-colors w-full"
     >
-      <span className="text-lg" aria-hidden="true">&#128218;</span>
+      <UiIcon name="book" size={20} />
       Revoir le tutoriel
     </button>
   );

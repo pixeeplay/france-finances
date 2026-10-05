@@ -23,6 +23,7 @@ import { StatBar } from "./StatBar";
 import { ShareIcon } from "./ShareIcon";
 import { ChevronIcon } from "./ChevronIcon";
 import { CategoryBadge } from "./icons/CategoryBadge";
+import { UiIcon } from "./icons/UiIcon";
 import { DailyResultPanel } from "./DailyDeck";
 import { BudgetChallengeSummary } from "./BudgetChallenge";
 import { ContentProfilePanel } from "./ContentProfilePanel";
@@ -131,7 +132,7 @@ export function ResultScreen() {
           aria-label="Fermer les résultats"
           className="min-h-[44px] min-w-[44px] -mr-1.5 rounded-full flex items-center justify-center text-muted-foreground hover:bg-danger hover:text-white transition-colors"
         >
-          <span aria-hidden="true">✕</span>
+          <UiIcon name="close" size={18} />
         </button>
       </div>
 

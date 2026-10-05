@@ -1,4 +1,5 @@
 import type { StoredSession } from "@/lib/stats";
+import { UiIcon } from "@/components/icons/UiIcon";
 
 interface SessionsTabProps {
   sessions: StoredSession[];
@@ -9,7 +10,7 @@ export function SessionsTab({ sessions }: SessionsTabProps) {
     return (
       <section className="p-4">
         <div className="flex flex-col items-center justify-center min-h-[300px] text-center gap-3">
-          <span className="text-4xl">📊</span>
+          <UiIcon name="chart" size={40} className="text-muted-foreground" />
           <p className="text-muted-foreground text-sm">
             Joue une session pour voir tes mesures.
           </p>

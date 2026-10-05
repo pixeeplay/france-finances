@@ -3,6 +3,7 @@
 import { useSession, signIn, signOut } from "next-auth/react";
 import Image from "next/image";
 import { updatePlayerAvatar, type PlayerProfile } from "@/lib/stats";
+import { ArchetypeIcon } from "@/components/icons/ArchetypeIcon";
 
 const AVATAR_EMOJIS: { emoji: string; label: string }[] = [
   { emoji: "\uD83D\uDC64", label: "Silhouette" },
@@ -66,6 +67,8 @@ export function ProfileHeader({
         <div className="relative flex-shrink-0">
           <button
             onClick={() => setShowAvatarPicker(!showAvatarPicker)}
+            aria-label="Choisir ton avatar"
+            aria-expanded={showAvatarPicker}
             className="w-11 h-11 rounded-xl bg-card border border-primary/20 flex items-center justify-center text-xl hover:border-primary/50 transition-colors"
           >
             {authSession?.user?.image ? (
@@ -78,7 +81,11 @@ export function ProfileHeader({
                 className="w-full h-full rounded-xl object-cover"
               />
             ) : (
-              profile?.customAvatar || profile?.archetypeIcon || "\uD83D\uDC64"
+              profile?.customAvatar ? (
+                <span aria-hidden="true">{profile.customAvatar}</span>
+              ) : (
+                <ArchetypeIcon archetypeId={profile?.archetypeId} size={24} />
+              )
             )}
           </button>
           <div className="absolute -bottom-1 -right-1 bg-primary text-primary-foreground text-[8px] font-bold px-1 rounded ring-2 ring-background pointer-events-none">

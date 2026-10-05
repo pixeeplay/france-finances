@@ -3,6 +3,7 @@ import type { Achievement } from "@/lib/achievements";
 import type { Deck } from "@/types";
 import { CategoryBadgesGrid } from "./CategoryBadgesGrid";
 import { AchievementsList } from "./AchievementsList";
+import { UiIcon } from "@/components/icons/UiIcon";
 
 interface OverviewTabProps {
   stats: GlobalStats;
@@ -137,17 +138,17 @@ export function OverviewTab({
         {/* Mini stats grid */}
         <div className="grid grid-cols-2 gap-3">
           {[
-            { label: "Sessions", value: stats.totalSessions, icon: "🕐" },
-            { label: "Cartes Swipées", value: stats.totalCards, icon: "🃏" },
+            { label: "Sessions", value: stats.totalSessions, icon: "clock" as const },
+            { label: "Cartes Swipées", value: stats.totalCards, icon: "layers" as const },
             {
               label: "Catégories",
               value: String(stats.categoriesPlayed.length).padStart(2, "0"),
-              icon: "📊",
+              icon: "map" as const,
             },
             {
               label: "Audits (Niveau 3)",
               value: String(stats.auditsN3).padStart(2, "0"),
-              icon: "✅",
+              icon: "clipboard" as const,
             },
           ].map((stat) => (
             <div
@@ -160,7 +161,7 @@ export function OverviewTab({
                 </p>
                 <p className="text-lg numeral">{stat.value}</p>
               </div>
-              <span className="text-sm opacity-50">{stat.icon}</span>
+              <UiIcon name={stat.icon} size={16} className="text-muted-foreground" />
             </div>
           ))}
         </div>

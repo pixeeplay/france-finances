@@ -1,4 +1,5 @@
 import type { PlayerProfile } from "@/lib/stats";
+import { UiIcon } from "@/components/icons/UiIcon";
 import { RankBadge } from "./RankBadge";
 import { DataSourceBadge } from "./DataSourceBadge";
 import type { SpeedPlayer } from "./types";
@@ -84,8 +85,12 @@ export function SpeedTab({
             <RankBadge rank={rank} />
 
             {/* Avatar */}
-            <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-lg">
-              <span aria-hidden="true">{rank <= 3 ? ["🥇", "🥈", "🥉"][rank - 1] : "⚡"}</span>
+            <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center">
+              <UiIcon
+                name={rank <= 3 ? "medal" : "bolt"}
+                size={20}
+                className={rank <= 3 ? "text-warning" : "text-muted-foreground"}
+              />
             </div>
 
             {/* Info */}
