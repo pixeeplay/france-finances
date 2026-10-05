@@ -84,12 +84,12 @@ Theme sombre par defaut (classe `dark` sur `<html>`), theme clair disponible (`l
 Rayon de base `--radius: 0.75rem` (arrondis genereux : `rounded-2xl` / `rounded-3xl` sur cartes et boutons).
 En jeu au niveau 2 : « Reduire » en amber, « Injustifie » en rouge (statu quo valide le 2026-10-02).
 
-Polices (`next/font/google`, `src/app/layout.tsx`) :
+Polices embarquees (`next/font/local`, `src/app/layout.tsx`, fichiers woff2 variables latin + licences OFL dans `src/assets/fonts`) : aucun appel a Google Fonts, ni au build ni en dev. Ne pas revenir a `next/font/google`.
 
 - Titres et chiffres cles : **Outfit** 700/800/900 (`--ff-display`, classes `font-heading` / `font-serif`, h1-h3 par defaut)
 - Texte : **Geist** (`--ff-sans`, `font-sans`)
 - Rares usages techniques (sources, tableaux) : Geist Mono (`--ff-mono`, non prechargee)
-- Images de partage (OG, `src/lib/og.tsx`) : Outfit embarquee dans `src/assets/fonts` (pas de telechargement Google)
+- Images de partage (OG, `src/lib/og.tsx`) : Outfit en TTF dans `src/assets/fonts` (Satori ne lit pas le woff2)
 - Utilitaires : `kicker` (surtitre capitales) et `numeral` (chiffres tabulaires)
 
 ## Structure des fichiers

@@ -10,6 +10,10 @@ updates:
       - dependencies
     commit-message:
       prefix: "deps"
+    ignore:
+      # @types/node suit la version de Node du Dockerfile et de la CI (22 LTS).
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
   - package-ecosystem: github-actions
     directory: /
     schedule:
