@@ -42,9 +42,9 @@ function ProjectNotice() {
   return (
     <div
       role="note"
-      className="flex gap-3 rounded-2xl border-2 border-dashed border-amber-500/60 bg-amber-500/10 p-4 text-sm leading-relaxed text-foreground"
+      className="flex gap-3 rounded-2xl border-2 border-dashed border-warning/60 bg-warning/10 p-4 text-sm leading-relaxed text-foreground"
     >
-      <span className="shrink-0 self-start rounded-md border-2 border-amber-600 px-2 py-0.5 text-xs font-black uppercase tracking-wider text-amber-700 dark:border-amber-400 dark:text-amber-400">
+      <span className="shrink-0 self-start rounded-md border-2 border-warning px-2 py-0.5 text-xs font-black uppercase tracking-wider text-warning">
         Projet
       </span>
       <p>
@@ -76,20 +76,27 @@ function PairedBars({ rows }: { rows: readonly MissionComparison[] }) {
               </span>
               <span
                 className={`shrink-0 font-heading font-extrabold tabular-nums ${
-                  delta > 0 ? "text-amber-700 dark:text-amber-400" : delta < 0 ? "text-blue-700 dark:text-blue-400" : "text-muted-foreground"
+                  delta > 0 ? "text-warning" : delta < 0 ? "text-info" : "text-muted-foreground"
                 }`}
               >
+                <span className="sr-only">écart : </span>
                 {fmtSignedBn(delta)}
               </span>
             </div>
             <div className="mt-1 space-y-1">
               <div className="flex items-center gap-2">
                 <span className="h-2 rounded-full bg-[var(--chart-slate)] opacity-60" style={{ width: `${(r.lfi2026Bn / max) * 78}%` }} />
-                <span className="text-[11px] tabular-nums text-muted-foreground">{fmtBn(r.lfi2026Bn)}</span>
+                <span className="text-[11px] tabular-nums text-muted-foreground">
+                  <span className="sr-only">2026, loi votée : </span>
+                  {fmtBn(r.lfi2026Bn)}
+                </span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="h-3 rounded-full" style={{ width: `${(r.plf2027Bn / max) * 78}%`, backgroundColor: color }} />
-                <span className="font-heading text-xs font-extrabold tabular-nums text-foreground">{fmtBn(r.plf2027Bn)}</span>
+                <span className="font-heading text-xs font-extrabold tabular-nums text-foreground">
+                  <span className="sr-only">2027, projet : </span>
+                  {fmtBn(r.plf2027Bn)}
+                </span>
               </div>
             </div>
           </li>
@@ -102,18 +109,18 @@ function PairedBars({ rows }: { rows: readonly MissionComparison[] }) {
 const KIND_META: Record<MeasureKind, { title: string; dot: string; text: string }> = {
   economie: {
     title: "Moindres dépenses",
-    dot: "bg-blue-600 dark:bg-blue-400",
-    text: "text-blue-700 dark:text-blue-400",
+    dot: "bg-info",
+    text: "text-info",
   },
   recette: {
     title: "Recettes",
-    dot: "bg-emerald-600 dark:bg-emerald-400",
-    text: "text-emerald-700 dark:text-emerald-400",
+    dot: "bg-primary",
+    text: "text-primary",
   },
   hausse: {
     title: "Hausses de moyens",
-    dot: "bg-amber-600 dark:bg-amber-400",
-    text: "text-amber-700 dark:text-amber-400",
+    dot: "bg-warning",
+    text: "text-warning",
   },
 };
 
@@ -176,7 +183,7 @@ export function Budget2027Section() {
       punch={
         <>
           Objectif&nbsp;: un déficit public de{" "}
-          <span className="text-amber-700 dark:text-amber-400">{fmtPctGdp(-y2027.balancePctGdp)} du PIB</span> en 2027,
+          <span className="text-warning">{fmtPctGdp(-y2027.balancePctGdp)} du PIB</span> en 2027,
           après {fmtPctGdp(-y2026.balancePctGdp)} prévu en 2026.
         </>
       }
@@ -284,7 +291,7 @@ export function Budget2027Section() {
               [
                 "Déficit de la Sécurité sociale (régimes de base)",
                 "—",
-                fmtBn(-PLF_2027_SOCIAL_SECURITY.lfss2026.balanceBn),
+                fmtBn(-PLF_2027_SOCIAL_SECURITY.forecast2026.balanceBn),
                 fmtBn(-PLF_2027_SOCIAL_SECURITY.plfss2027.balanceBn),
               ],
               [
@@ -297,8 +304,8 @@ export function Budget2027Section() {
           />
         </div>
         <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
-          2025 : exécution ; 2026 : prévision révisée (budget de l&apos;État et Sécurité sociale : lois votées pour
-          2026) ; 2027 : projet. La dépense publique est ici comptée hors crédits d&apos;impôt, d&apos;où un écart avec le
+          2025 : exécution ; 2026 : prévision révisée, sauf le déficit du budget de l&apos;État (loi de finances
+          votée) ; 2027 : projet. La dépense publique est ici comptée hors crédits d&apos;impôt, d&apos;où un écart avec le
           chiffre de l&apos;Insee cité plus haut.
         </p>
         <SourceNote source={PLF_2027_PRESS_KIT} period="chiffres clés" />
@@ -312,7 +319,8 @@ export function Budget2027Section() {
           2026 (et non par rapport à une évolution « à politique inchangée » comme les{" "}
           {fmtBn(PLF_2027_EFFORT.newMeasuresBn)} du Gouvernement), l&apos;effort structurel serait d&apos;environ{" "}
           {formatBillionsExact(PLF_2027_EFFORT.hcfpStructuralBn, 0)} ({formatNumber(PLF_2027_EFFORT.hcfpStructuralPctGdp, 1)} point de
-          PIB). La dette atteindrait près de {formatNumber(Math.round(y2027.debtPctGdp), 0)} % du PIB fin 2027.
+          PIB), dont {formatBillionsExact(PLF_2027_EFFORT.hcfpStructuralRevenueBn, 0)} en recettes et{" "}
+          {formatBillionsExact(PLF_2027_EFFORT.hcfpStructuralSpendingBn, 0)} en dépenses. La dette atteindrait près de {formatNumber(Math.round(y2027.debtPctGdp), 0)} % du PIB fin 2027.
         </p>
         <SourceNote source={HCFP_AVIS_2026_5} period="25 septembre 2026" />
       </div>

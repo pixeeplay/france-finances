@@ -89,7 +89,7 @@ describe("données du projet de budget 2027", () => {
   });
 
   it("le solde de la Sécurité sociale égale recettes - dépenses", () => {
-    for (const y of [PLF_2027_SOCIAL_SECURITY.lfss2026, PLF_2027_SOCIAL_SECURITY.plfss2027]) {
+    for (const y of [PLF_2027_SOCIAL_SECURITY.forecast2026, PLF_2027_SOCIAL_SECURITY.plfss2027]) {
       expect(y.revenueBn - y.expenditureBn).toBeCloseTo(y.balanceBn, 1);
     }
   });

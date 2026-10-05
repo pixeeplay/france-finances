@@ -79,6 +79,9 @@ export const PLF_2027_EFFORT = {
    */
   hcfpStructuralBn: 28,
   hcfpStructuralPctGdp: 0.9,
+  /** Répartition de cet effort structurel selon le HCFP : recettes / dépenses */
+  hcfpStructuralRevenueBn: 17,
+  hcfpStructuralSpendingBn: 11,
 } as const;
 
 // === BUDGET DE L'ÉTAT ===
@@ -229,7 +232,7 @@ export const PLF_2027_MEASURES: readonly Plf2027Measure[] = [
   },
   {
     label: "Contribution des collectivités locales à l'effort budgétaire",
-    detail: "Contribution progressive selon les capacités financières ; petites communes et collectivités fragiles très majoritairement exonérées, collectivités d'outre-mer exonérées.",
+    detail: "Contribution progressive selon les capacités financières ; petites communes très majoritairement exonérées, ainsi que les collectivités fragiles financièrement ; collectivités d'outre-mer exonérées.",
     kind: "economie",
     amountBn: 2.5,
   },
@@ -315,9 +318,14 @@ export const PLF_2027_ONDAM: readonly OndamItem[] = [
 
 export const PLF_2027_ONDAM_TOTAL = { y2026Bn: 273.3, y2027Bn: 278.7, growthPct: 2.0 } as const;
 
-/** Solde des régimes obligatoires de base de la Sécurité sociale (LFSS 2026, PLFSS 2027). */
+/**
+ * Solde des régimes obligatoires de base de la Sécurité sociale : 2026 tel que
+ * prévu dans le PLFSS 2027 (le dossier de presse titre la colonne « LFSS 2026 »
+ * mais présente -21,8 Md€ comme la prévision 2026, recettes moins dynamiques
+ * que prévu par la loi votée), et projet 2027.
+ */
 export const PLF_2027_SOCIAL_SECURITY = {
-  lfss2026: { revenueBn: 661.3, expenditureBn: 683.1, balanceBn: -21.8 },
+  forecast2026: { revenueBn: 661.3, expenditureBn: 683.1, balanceBn: -21.8 },
   plfss2027: { revenueBn: 683.7, expenditureBn: 696.4, balanceBn: -12.7 },
   /** Déficit 2027 « spontané », sans les mesures du PLFSS */
   spontaneousDeficit2027Bn: 22.6,
