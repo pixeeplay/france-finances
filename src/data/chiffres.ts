@@ -15,6 +15,7 @@
 
 import type { DataSource } from "@/types/simulator";
 import { POPULATION_REFERENCE } from "@/lib/cardSchema";
+import { PLF_2027_SOURCES } from "@/data/plf-2027";
 
 export interface ChiffresDataset<T> {
   /** Année (ou période) à laquelle se rapportent les montants */
@@ -305,6 +306,7 @@ export function getChiffresSources(): DataSource[] {
     HEALTH_SPENDING.source,
     EU_COMPARISON.source,
     POPULATION_SOURCE,
+    ...PLF_2027_SOURCES,
   ];
   const seen = new Set<string>();
   return all.filter((s) => {

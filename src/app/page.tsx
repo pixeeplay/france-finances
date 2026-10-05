@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { NavbarLanding } from "@/components/landing/NavbarLanding";
 import { HeroSection } from "@/components/landing/HeroSection";
+import { Budget2027Banner } from "@/components/landing/Budget2027Banner";
 import { DailyTeaser } from "@/components/landing/DailyTeaser";
 import { HowItWorks } from "@/components/landing/HowItWorks";
 import { KeyNumbers } from "@/components/landing/KeyNumbers";
@@ -21,6 +22,7 @@ export default function LandingPage() {
     <div className="min-h-dvh bg-background text-foreground">
       <NavbarLanding />
       <main>
+        <Budget2027Banner />
         <HeroSection />
         <DailyTeaser />
         <HowItWorks />
