@@ -14,6 +14,7 @@ import { CategoryBadge, catStyle } from "./icons/CategoryBadge";
 import type { Card, VoteDirection } from "@/types";
 import { formatBillions, formatEuros } from "@/lib/format";
 import { getDeckName } from "@/lib/deckMeta";
+import { cardAmountLabel, cardKindLabel } from "@/lib/cardKind";
 import { UiIcon } from "./icons/UiIcon";
 import { SPRING_SWIPE, TWEEN_INSTANT } from "@/lib/motion-constants";
 
@@ -74,10 +75,11 @@ export const SwipeCard = forwardRef<SwipeCardHandle, SwipeCardProps>(
     );
   }
 
+  const kindLabel = cardKindLabel(card);
   return (
     <motion.div
       role="article"
-      aria-label={`${card.title} \u2014 ${formatBillions(card.amountBillions)}. Swipez pour voter.`}
+      aria-label={`${card.title}${kindLabel ? ` (${kindLabel.toLowerCase()})` : ""} \u2014 ${formatBillions(card.amountBillions)}. Swipez pour voter.`}
       className="absolute inset-0 rounded-3xl bg-card border border-primary/30 shadow-(--shadow-card) overflow-hidden cursor-grab active:cursor-grabbing touch-none select-none will-change-transform"
       style={{ x, y: level >= 2 ? y : undefined, rotate }}
       drag={level >= 2 ? true : "x"}
@@ -181,6 +183,9 @@ function CardContent({
   card: Card;
   onTapDetail?: () => void;
 }) {
+  // Recette ou indicateur : libellé discret, et le montant n'est pas présenté comme un coût
+  const kindLabel = cardKindLabel(card);
+  const amountLabel = cardAmountLabel(card);
   return (
     <div className="relative flex flex-col h-full" style={catStyle(card.deckId)}>
       {/* Halo de la couleur de la catégorie (dans l'arrondi, sans liseré rogné) */}
@@ -196,6 +201,14 @@ function CardContent({
           <div className="flex items-center gap-2.5 min-w-0">
             <CategoryBadge deckId={card.deckId} size={36} />
             <span className="kicker cat-text truncate">{getDeckName(card.deckId)}</span>
+            {kindLabel && (
+              <span
+                className="kicker shrink-0 rounded-md border border-border px-1.5 py-0.5 text-[10px] text-muted-foreground"
+                data-testid="card-kind-label"
+              >
+                {kindLabel}
+              </span>
+            )}
           </div>
           {onTapDetail && (
             <button
@@ -217,7 +230,7 @@ function CardContent({
         {/* Chiffres */}
         <div className="grid grid-cols-[1.25fr_1fr] gap-2">
           <div className="flex flex-col rounded-2xl bg-background/60 border border-border px-3 py-2.5">
-            <span className="kicker text-[10px] text-muted-foreground">Coût annuel</span>
+            <span className="kicker text-[10px] text-muted-foreground">{amountLabel}</span>
             <span className="numeral text-[1.75rem] leading-tight text-danger">
               {formatBillions(card.amountBillions)}
             </span>

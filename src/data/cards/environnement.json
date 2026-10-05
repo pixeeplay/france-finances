@@ -13,6 +13,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "depense",
     "tags": ["écologie", "budget", "transition"],
     "equivalence": "16,2 Md€ de dépenses prévues en 2026 (-1,7 %)"
   },
@@ -30,6 +31,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "depense",
     "tags": ["transition", "agence", "subventions"],
     "equivalence": "Enveloppe d'aides 2026 : 1,03 Md€ (-10 %)"
   },
@@ -47,6 +49,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["biodiversite", "contrôle", "environnement"],
     "equivalence": "Environ 8 € par habitant et par an"
   },
@@ -64,6 +67,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["collectivites", "transition", "investissement"],
     "equivalence": "650 M€ d'engagements en 2026, contre 2,5 Md€ en 2024"
   },
@@ -80,6 +84,7 @@
     "sourceUrl": "https://www.senat.fr/rap/r14-610-1/r14-610-1.html",
     "sourceDate": "2015-07",
     "level": 1,
+    "kind": "agregat",
     "tags": ["sante", "pollution", "environnement"],
     "equivalence": "Jusqu'à environ 100 Md€ par an selon le Sénat (2015)"
   },
@@ -97,6 +102,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["catastrophes", "prevention", "climat"],
     "equivalence": "287,4 M€ pour le fonds Barnier, 720 M€ prélevés sur les contrats d'assurance"
   },
@@ -114,6 +120,7 @@
     "year": 2026,
     "sourceDate": "2023",
     "level": 1,
+    "kind": "agregat",
     "tags": ["dechets", "recyclage", "économie circulaire"],
     "equivalence": "Plus de 500 kg de déchets ménagers par habitant et par an"
   },
@@ -130,6 +137,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-310-1/l25-139-310-1_mono.html",
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["biodiversite", "parcs", "protection"],
     "equivalence": "11 parcs nationaux"
   },
@@ -146,6 +154,7 @@
     "sourceUrl": "https://www.senat.fr/rap/r22-738/r22-738-syn.pdf",
     "sourceDate": "2023-06",
     "level": 3,
+    "kind": "depense",
     "tags": ["transport", "pollution", "mobilite"],
     "equivalence": "Un dispositif contesté, dont la suppression a été votée par l'Assemblée en 2025"
   },
@@ -163,6 +172,7 @@
     "year": 2026,
     "sourceDate": "2026-07",
     "level": 1,
+    "kind": "depense",
     "tags": ["planification", "climat", "budget"],
     "equivalence": "7,77 Md€ de niches fiscales défavorables au climat non classées comme telles (Haut Conseil pour le climat)"
   },
@@ -179,6 +189,7 @@
     "sourceUrl": "https://www.senat.fr/rap/a25-143-3/a25-143-3_mono.html",
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "depense",
     "tags": ["adaptation", "climat", "investissement"],
     "equivalence": "Une trajectoire de référence de +4 °C en France en 2100"
   },
@@ -195,6 +206,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-35-1/l25-139-35-1_mono.html",
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["urbanisme", "sols", "biodiversite"],
     "equivalence": "Environ 20 000 hectares artificialisés par an"
   },
@@ -212,6 +224,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["énergie", "chaleur", "transition"],
     "equivalence": "800 M€ maintenus en 2026"
   },
@@ -228,6 +241,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-310-1/l25-139-310-1_mono.html",
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["habitat", "climat", "prevention"],
     "equivalence": "Environ 10,4 millions de maisons individuelles exposées",
     "year": 2026
@@ -245,6 +259,7 @@
     "sourceUrl": "https://www.cerema.fr/fr/actualites/evaluation-enjeux-exposes-au-recul-du-trait-cote-court-moyen",
     "sourceDate": "2024",
     "level": 3,
+    "kind": "depense",
     "tags": ["littoral", "climat", "adaptation"],
     "equivalence": "5 200 logements potentiellement affectés d'ici 2050"
   },
@@ -261,6 +276,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-328-2/l25-139-328-2_mono.html",
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["forêt", "incendies", "prevention"],
     "equivalence": "Plus de 70 000 hectares brûlés en 2022"
   },
@@ -277,6 +293,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-310-1/l25-139-310-1_mono.html",
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["dechets", "compost", "collectivites"],
     "equivalence": "Tri à la source des biodéchets obligatoire depuis 2024"
   },
@@ -293,6 +310,7 @@
     "sourceUrl": "https://www.assemblee-nationale.fr/dyn/16/rapports/cion-dvp/l16b2408_rapport-fond.pdf",
     "sourceDate": "2024-03",
     "level": 2,
+    "kind": "agregat",
     "tags": ["eau", "pollution", "sante"],
     "equivalence": "Des substances qui ne se dégradent pratiquement pas"
   },
@@ -309,6 +327,7 @@
     "sourceUrl": "https://www.senat.fr/rap/a25-143-2/a25-143-2_mono.html",
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "recette",
     "tags": ["carbone", "europe", "recettes"],
     "equivalence": "Environ 4 Md€ par an de recettes de quotas"
   },
@@ -325,6 +344,7 @@
     "sourceUrl": "https://www.hautconseilclimat.fr/wp-content/uploads/2026/07/RANC-2026-5_WEB.pdf",
     "sourceDate": "2026-07",
     "level": 1,
+    "kind": "agregat",
     "tags": ["climat", "prospective", "coût"],
     "equivalence": "Un coût de l'inaction supérieur d'un ordre de grandeur à celui de la transition (HCC)"
   }

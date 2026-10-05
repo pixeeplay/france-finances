@@ -26,6 +26,7 @@ function makeCard(overrides: Partial<Card> = {}): Card {
     icon: "🎯",
     source: "PLF 2025",
     level: 1,
+    kind: "depense",
     ...overrides,
   };
 }

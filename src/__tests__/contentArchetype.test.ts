@@ -23,6 +23,7 @@ function card(id: string, amountBillions: number, deckId = "defense"): Card {
     icon: "",
     source: "test",
     level: 1,
+    kind: "depense",
   };
 }
 
@@ -68,6 +69,19 @@ describe("computeContentProfile", () => {
     expect(p.largestKept?.id).toBe("big-02");
     const culture = p.decks.find((d) => d.deckId === "culture");
     expect(culture).toMatchObject({ cutCount: 2, keptCount: 2, cutBillions: 2, keptBillions: 2 });
+  });
+
+  it("ignores revenue and indicator cards", () => {
+    const cards = [
+      card("dep-01", 10),
+      { ...card("eta-04", 100, "etat"), kind: "agregat" as const },
+      { ...card("rec-01", 200, "recettes"), kind: "recette" as const },
+    ];
+    const p = computeContentProfile(cards, votesFor(cards, ["keep", "cut", "cut"]));
+    expect(p.totalBillions).toBe(10);
+    expect(p.cutBillions).toBe(0);
+    expect(p.largestCut).toBeNull();
+    expect(p.decks.map((d) => d.deckId)).toEqual(["defense"]);
   });
 
   it("handles empty sessions and unknown cards", () => {
@@ -116,6 +130,25 @@ describe("content-based archetypes", () => {
     expect(determineArchetype(few, 1).id).toBe("gardien");
   });
 
+  it("computes the archetype on spending cards only", () => {
+    const directions: VoteDirection[] = ["keep", "keep", "cut", "keep", "keep", "keep", "keep", "keep", "keep", "keep"];
+    const base = computeSessionResult(session(mixed, directions));
+    const others: Card[] = [
+      { ...card("eta-04", 100, "etat"), kind: "agregat" },
+      { ...card("eta-10", 150, "etat"), kind: "agregat" },
+      { ...card("rec-01", 200, "recettes"), kind: "recette" },
+      { ...card("rec-02", 100, "recettes"), kind: "recette" },
+    ];
+    const withOthers = computeSessionResult(
+      session([...mixed, ...others], [...directions, "cut", "cut", "cut", "cut"]),
+    );
+    expect(withOthers.archetype.id).toBe(base.archetype.id);
+    expect(withOthers.profile.totalBillions).toBe(base.profile.totalBillions);
+    // Les stats affichées portent toujours sur toutes les cartes votées
+    expect(withOthers.stats.totalCards).toBe(14);
+    expect(withOthers.stats.cutCount).toBe(5);
+  });
+
   it("does not apply level-1 content archetypes to other levels", () => {
     const s = session(mixed, ["cut", "cut", "keep", "keep", "keep", "keep", "keep", "keep", "keep", "keep"], 2);
     expect(computeSessionResult(s).archetype.level).toBe(2);
@@ -128,7 +161,7 @@ describe("ContentProfilePanel", () => {
     render(createElement(ContentProfilePanel, { session: s }));
     const panel = screen.getByTestId("content-profile");
     expect(panel).toHaveTextContent("10 % des cartes");
-    expect(panel).toHaveTextContent("48 % des montants");
+    expect(panel).toHaveTextContent("48 % des dépenses en jeu");
     expect(panel).toHaveTextContent("Santé");
     expect(panel).toHaveTextContent("Carte big-01");
   });

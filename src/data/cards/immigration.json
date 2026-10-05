@@ -8,12 +8,12 @@
     "costPerCitizen": 31,
     "deckId": "immigration",
     "icon": "🛂",
-    "trend": 3.8,
     "source": "PLF 2026, Sénat, Public Sénat",
     "sourceUrl": "https://www.senat.fr/rap/l25-139-315/l25-139-315_mono.html",
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "depense",
     "tags": ["immigration", "asile", "budget"],
     "equivalence": "Environ 31 € par habitant et par an"
   },
@@ -31,6 +31,7 @@
     "year": 2025,
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "depense",
     "tags": ["immigration", "santé", "AME"],
     "equivalence": "Environ 3 100 € de dépense annuelle par bénéficiaire de l'AME de droit commun"
   },
@@ -48,6 +49,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "depense",
     "tags": ["immigration", "coût global", "budget"],
     "equivalence": "Le budget Immigration représente un peu plus du quart du coût total"
   },
@@ -60,12 +62,12 @@
     "costPerCitizen": 4,
     "deckId": "immigration",
     "icon": "🔒",
-    "trend": 87,
     "source": "Sénat PLF 2026, Contrôleur général des lieux de privation de liberté",
     "sourceUrl": "https://www.senat.fr/rap/l25-139-315/l25-139-315_mono.html",
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["immigration", "rétention", "OQTF"],
     "equivalence": "266,7 M€ d'engagements en 2026, contre 21,6 M€ en 2025"
   },
@@ -78,12 +80,12 @@
     "costPerCitizen": 3,
     "deckId": "immigration",
     "icon": "💶",
-    "trend": -2,
     "source": "Sénat (PLF 2026), PLF 2026, Forum Réfugiés, OFII",
     "sourceUrl": "https://www.senat.fr/rap/l25-139-315/l25-139-315_mono.html",
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["immigration", "asile", "allocation"],
     "equivalence": "313,4 M€ d'ADA au total en 2026, protection temporaire comprise"
   },
@@ -101,6 +103,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "depense",
     "tags": ["immigration", "hébergement", "asile"],
     "equivalence": "Hébergement d'urgence des demandeurs d'asile (HUDA) : de 40 011 places en 2025 à 27 711 en 2026"
   },
@@ -118,6 +121,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["immigration", "intégration", "français"],
     "equivalence": "368 M€ pour l'intégration et l'accès à la nationalité en 2026"
   },
@@ -134,6 +138,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-329/l25-139-329_mono.html",
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "depense",
     "tags": ["immigration", "mineurs", "départements"],
     "equivalence": "Une prise en charge assurée par l'aide sociale à l'enfance des départements"
   },
@@ -151,6 +156,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["immigration", "asile", "OFPRA"],
     "equivalence": "Objectif de 174 000 décisions de l'office de l'asile (OFPRA) en 2026"
   },
@@ -168,6 +174,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "recette",
     "tags": ["immigration", "visas", "recettes"],
     "equivalence": "De l'ordre de 200 à 300 € de taxes pour un premier titre de séjour"
   },
@@ -184,6 +191,7 @@
     "sourceUrl": "https://www.ccomptes.fr/sites/default/files/2024-01/20240104-Politique-lutte-contre-immigration-irreguliere.pdf",
     "sourceDate": "2024-01-04",
     "level": 2,
+    "kind": "agregat",
     "tags": ["immigration", "sans-papiers", "regularisation"],
     "equivalence": "466 000 bénéficiaires de l'AME fin 2023"
   },
@@ -201,6 +209,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["immigration", "Ukraine", "refugies"],
     "equivalence": "71,9 M€ d'allocation pour les bénéficiaires de la protection temporaire en 2026"
   },
@@ -217,6 +226,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-313/l25-139-313_mono.html",
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "depense",
     "tags": ["immigration", "education", "integration"],
     "equivalence": "Une obligation de scolarisation indépendante de la situation administrative"
   },
@@ -233,6 +243,7 @@
     "sourceUrl": "https://www.banque-france.fr/system/files/2026-07/BDP2025_web.pdf",
     "sourceDate": "2026-07",
     "level": 1,
+    "kind": "agregat",
     "tags": ["immigration", "transferts", "developpement"],
     "equivalence": "17,6 Md€ envoyés à l'étranger en 2025 (solde)"
   },
@@ -249,6 +260,7 @@
     "sourceUrl": "https://www.ccomptes.fr/sites/default/files/2024-01/20240104-Politique-lutte-contre-immigration-irreguliere.pdf",
     "sourceDate": "2024-01-04",
     "level": 2,
+    "kind": "depense",
     "tags": ["immigration", "OQTF", "eloignement"],
     "equivalence": "Un éloignement forcé coûte environ quatre fois plus qu'un retour volontaire"
   },
@@ -265,6 +277,7 @@
     "sourceUrl": "https://www.ccomptes.fr/fr/publications/lentree-le-sejour-et-le-premier-accueil-des-personnes-etrangeres",
     "sourceDate": "2020-05",
     "level": 3,
+    "kind": "agregat",
     "tags": ["immigration", "travail", "métiers en tension"],
     "equivalence": "Un titre de séjour « métiers en tension » créé en 2024"
   },
@@ -281,6 +294,7 @@
     "sourceUrl": "https://www.ccomptes.fr/sites/default/files/2024-01/20240104-Politique-lutte-contre-immigration-irreguliere.pdf",
     "sourceDate": "2024-01-04",
     "level": 2,
+    "kind": "depense",
     "tags": ["immigration", "asile", "déboutés"],
     "equivalence": "40 à 60 % des occupants de l'hébergement d'urgence généraliste"
   },
@@ -297,6 +311,7 @@
     "sourceUrl": "https://www.senat.fr/rap/a25-145-2/a25-145-2_mono.html",
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["immigration", "naturalisation", "nationalite"],
     "equivalence": "Une condition de niveau de français relevée par la loi de 2024"
   }

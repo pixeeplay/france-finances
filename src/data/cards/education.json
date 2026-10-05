@@ -8,12 +8,12 @@
     "costPerCitizen": 1297,
     "deckId": "education",
     "icon": "🏫",
-    "trend": 0.2,
     "source": "Sénat (PLF 2026), DEPP",
     "sourceUrl": "https://www.senat.fr/rap/l25-139-313/l25-139-313_mono.html",
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "depense",
     "tags": ["éducation", "budget", "enseignement"],
     "equivalence": "89,6 Md€ en 2026, retraites des personnels comprises"
   },
@@ -31,6 +31,7 @@
     "year": 2025,
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "depense",
     "tags": ["éducation", "supérieur", "universités"],
     "equivalence": "14,7 Md€ de subventions aux universités et autres établissements publics en 2026"
   },
@@ -47,6 +48,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-313/l25-139-313_mono.html",
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "depense",
     "tags": ["éducation", "salaires", "enseignants"],
     "equivalence": "Revalorisations des enseignants : 4,2 Md€ en 2026"
   },
@@ -63,6 +65,7 @@
     "sourceUrl": "https://www.senat.fr/rap/r22-800/r22-800.html",
     "sourceDate": "2023-06",
     "level": 2,
+    "kind": "depense",
     "tags": ["éducation", "infrastructure", "rénovation"],
     "equivalence": "2 Md€ de prêts EduRénov pour 10 000 bâtiments scolaires"
   },
@@ -80,6 +83,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "depense",
     "tags": ["éducation", "handicap", "inclusion"],
     "equivalence": "139 993 accompagnants (AESH) en 2025, trois fois plus qu'en 2017"
   },
@@ -96,6 +100,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-323/l25-139-323_mono.html",
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "depense",
     "tags": ["éducation", "recherche", "CNRS"],
     "equivalence": "Budget de la recherche scientifique pluridisciplinaire : 8,2 Md€ en 2026"
   },
@@ -112,6 +117,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-323/l25-139-323_mono.html",
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "depense",
     "tags": ["éducation", "bourses", "étudiants"],
     "equivalence": "662 000 étudiants boursiers",
     "year": 2026
@@ -129,6 +135,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-326/l25-139-326_mono.html",
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "depense",
     "tags": ["éducation", "fiscalité", "R&D"],
     "equivalence": "8 Md€ de CIR en 2026, contre 4,5 Md€ en 2009",
     "year": 2026
@@ -146,6 +153,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-330/l25-139-330_mono.html",
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["éducation", "citoyenneté", "jeunesse"],
     "equivalence": "160 M€ en 2024, 65,9 M€ en 2025, plus rien en 2026",
     "year": 2025
@@ -164,6 +172,7 @@
     "year": 2025,
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "depense",
     "tags": ["éducation", "privé", "mixité sociale"],
     "equivalence": "Un peu plus de 2 millions d'élèves dans le privé, environ 10 millions dans le public"
   },
@@ -176,11 +185,11 @@
     "costPerCitizen": 38,
     "deckId": "education",
     "icon": "🏫",
-    "trend": 5,
     "source": "Sénat (PLF 2026), DEPP, Ministere de l'Education nationale",
     "sourceUrl": "https://www.senat.fr/rap/l25-139-313/l25-139-313_mono.html",
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "depense",
     "tags": ["REP", "prioritaire", "egalite"],
     "equivalence": "Classes dédoublées en grande section, CP et CE1",
     "year": 2026
@@ -198,6 +207,7 @@
     "sourceUrl": "https://www.ccomptes.fr/system/files/2020-02/20200225-07-TomeI-services-communaux-restauration-collective.pdf",
     "sourceDate": "2020-02",
     "level": 2,
+    "kind": "depense",
     "tags": ["cantine", "alimentation", "école"],
     "equivalence": "Un repas à 7,33 € facturé 2,76 € en moyenne aux familles"
   },
@@ -210,11 +220,11 @@
     "costPerCitizen": 101,
     "deckId": "education",
     "icon": "🔧",
-    "trend": 7,
     "source": "Sénat (PLF 2026), DEPP, Ministere de l'Education nationale, CEREQ",
     "sourceUrl": "https://www.senat.fr/rap/l25-139-313/l25-139-313_mono.html",
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "depense",
     "tags": ["lycee pro", "formation", "apprentissage"],
     "equivalence": "Environ un lycéen sur trois en voie professionnelle"
   },
@@ -227,12 +237,12 @@
     "costPerCitizen": 7,
     "deckId": "education",
     "icon": "🌍",
-    "trend": 2,
     "source": "Sénat (PLF 2026, Action extérieure de l'État), AEFE",
     "sourceUrl": "https://www.senat.fr/rap/l25-139-31/l25-139-31_mono.html",
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["AEFE", "etranger", "soft power"],
     "equivalence": "Environ 400 000 élèves scolarisés dans le réseau"
   },
@@ -245,12 +255,12 @@
     "costPerCitizen": 27,
     "deckId": "education",
     "icon": "🚀",
-    "trend": 4,
     "source": "Sénat (PLF 2026), PLF 2026, CNES, ESA",
     "sourceUrl": "https://www.senat.fr/rap/l25-139-323/l25-139-323_mono.html",
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "depense",
     "tags": ["espace", "ESA", "recherche"],
     "equivalence": "1 848 M€ pour la recherche spatiale en 2026"
   },
@@ -267,6 +277,7 @@
     "sourceUrl": "https://www.ccomptes.fr/fr/publications/le-service-public-numerique-pour-leducation",
     "sourceDate": "2019-07",
     "level": 2,
+    "kind": "depense",
     "tags": ["education", "numerique", "tablettes"],
     "equivalence": "2013-2017 : 2 Md€ des collectivités, près de 300 M€ de l'État"
   },
@@ -283,6 +294,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-323/l25-139-323_mono.html",
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["education", "étudiants", "crous"],
     "equivalence": "Budget vie étudiante : 3,23 Md€ en 2026, dont 2,32 Md€ de bourses",
     "year": 2026
@@ -300,6 +312,7 @@
     "sourceUrl": "https://www.ccomptes.fr/system/files/2020-03/20200227-rapport-premier-bilan-loi-ORE-3.pdf",
     "sourceDate": "2020-02",
     "level": 3,
+    "kind": "depense",
     "tags": ["education", "parcoursup", "orientation"],
     "equivalence": "Réorientations en 1re année : près de 550 M€ par an selon la Cour des comptes"
   },
@@ -316,6 +329,7 @@
     "sourceUrl": "https://www.senat.fr/rap/r20-843/r20-8430.html",
     "sourceDate": "2021-09-22",
     "level": 3,
+    "kind": "depense",
     "tags": ["éducation", "harcèlement", "jeunesse"],
     "equivalence": "800 000 à 1 million d'enfants victimes chaque année"
   },
@@ -332,6 +346,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-313/l25-139-313_mono.html",
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["education", "enseignants", "formation"],
     "equivalence": "807 M€ pour la formation des enseignants en 2026",
     "year": 2026

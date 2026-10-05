@@ -13,6 +13,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "depense",
     "tags": ["Europe", "contribution", "budget UE"],
     "equivalence": "Environ 1,1 € par habitant et par jour pour le budget européen"
   },
@@ -29,6 +30,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-22/l25-139-22_mono.html",
     "year": 2024,
     "level": 1,
+    "kind": "agregat",
     "tags": ["Europe", "retours", "PAC", "fonds structurels"],
     "equivalence": "240 € par habitant reçus de l'UE en 2024 (22e rang)",
     "sourceDate": "2025-11-24"
@@ -45,6 +47,7 @@
     "source": "Commission européenne, France Relance, Cour des comptes européenne",
     "sourceUrl": "https://commission.europa.eu/strategy-and-policy/recovery-plan-europe_fr",
     "level": 1,
+    "kind": "recette",
     "tags": ["Europe", "relance", "NextGenerationEU"],
     "equivalence": "40,3 Md€ de subventions européennes"
   },
@@ -61,6 +64,7 @@
     "sourceUrl": "https://www.defense.gouv.fr/sites/default/files/ministere-armees/Rapport%20au%20Parlement%202025%20sur%20les%20exportations%20d%E2%80%99armement%20de%20la%20France%20%28V122025%29.pdf",
     "sourceDate": "2025",
     "level": 2,
+    "kind": "depense",
     "tags": ["Europe", "défense", "Ukraine", "FEP"],
     "equivalence": "Plafond du fonds porté de 5,7 à 17 Md€ depuis 2021"
   },
@@ -77,6 +81,7 @@
     "sourceUrl": "https://erasmus-plus.ec.europa.eu/sites/default/files/2024-03/annex-awp-erasmus-mar-2024_en.PDF",
     "sourceDate": "2024-03",
     "level": 2,
+    "kind": "depense",
     "tags": ["Europe", "éducation", "Erasmus", "mobilité"],
     "equivalence": "Plus de 26 Md€ sur 2021-2027",
     "year": 2024
@@ -94,6 +99,7 @@
     "sourceUrl": "https://prd.frontex.europa.eu/wp-content/uploads/frontex_vobu_2025.pdf",
     "sourceDate": "2025",
     "level": 2,
+    "kind": "depense",
     "tags": ["Europe", "frontières", "immigration", "Frontex"],
     "equivalence": "Un budget passé de 0,83 Md€ en 2023 à 1,12 Md€ en 2025"
   },
@@ -110,6 +116,7 @@
     "sourceUrl": "https://defence-industry-space.ec.europa.eu/eu-space-regulation-ready-take-2021-04-28_en",
     "sourceDate": "2021-04-28",
     "level": 3,
+    "kind": "depense",
     "tags": ["Europe", "spatial", "souveraineté", "Galileo"],
     "equivalence": "14,88 Md€ sur 7 ans pour l'ensemble du programme spatial européen"
   },
@@ -125,6 +132,7 @@
     "source": "Commission européenne (CAP funds), Sénat (PLF 2026)",
     "sourceUrl": "https://agriculture.ec.europa.eu/common-agricultural-policy/financing-cap/cap-funds_en",
     "level": 1,
+    "kind": "depense",
     "tags": ["Europe", "agriculture", "PAC"],
     "equivalence": "386,6 Md€ sur 2021-2027, soit environ 55 Md€ par an"
   },
@@ -140,6 +148,7 @@
     "source": "Sénat (PLF 2026, Relations financières avec l'UE), Commission européenne",
     "sourceUrl": "https://www.senat.fr/rap/l25-139-22/l25-139-22_mono.html",
     "level": 2,
+    "kind": "recette",
     "tags": ["Europe", "environnement", "carbone", "MACF"],
     "equivalence": "Environ 1,5 Md€ par an envisagés pour le budget de l'UE",
     "sourceDate": "2025-11-24"
@@ -157,6 +166,7 @@
     "sourceUrl": "https://www.vie-publique.fr/files/rapport/pdf/289888_0.pdf",
     "sourceDate": "2023-06",
     "level": 3,
+    "kind": "depense",
     "tags": ["Europe", "Brexit", "commerce"],
     "equivalence": "Part de la France dans le financement de l'UE : 16,75 % en 2019, 18,52 % en 2023",
     "playable": false
@@ -174,6 +184,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-21/l25-139-21_mono.html",
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "depense",
     "tags": ["Europe", "budget européen", "contribution"],
     "equivalence": "12 Md€ de plus par an pour la France"
   }

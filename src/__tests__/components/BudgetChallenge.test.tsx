@@ -17,6 +17,7 @@ function card(id: string, amountBillions: number): Card {
     icon: "",
     source: "test",
     level: 1,
+    kind: "depense",
   };
 }
 

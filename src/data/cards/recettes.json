@@ -13,6 +13,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "recette",
     "tags": ["recettes", "TVA", "consommation"],
     "equivalence": "Environ 8 € de TVA par habitant et par jour"
   },
@@ -25,12 +26,12 @@
     "costPerCitizen": 1506,
     "deckId": "recettes",
     "icon": "📋",
-    "trend": 9,
     "source": "Sénat (PLF 2026), PLF 2026, DGFiP, vie-publique.fr",
     "sourceUrl": "https://www.senat.fr/rap/l25-139-21/l25-139-21_mono.html",
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "recette",
     "tags": ["recettes", "IR", "impôt"],
     "equivalence": "Un foyer imposé paie en moyenne ~3 500€/an d'IR"
   },
@@ -48,6 +49,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "recette",
     "tags": ["recettes", "IS", "entreprises"],
     "equivalence": "Une fois les remboursements aux entreprises déduits, l'IS encaissé est inférieur d'un tiers à son montant brut"
   },
@@ -65,6 +67,7 @@
     "year": 2026,
     "sourceDate": "2025-11-15",
     "level": 1,
+    "kind": "recette",
     "tags": ["recettes", "CSG", "cotisations"],
     "equivalence": "9,2 % prélevés sur 98,25 % du salaire brut"
   },
@@ -82,6 +85,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "recette",
     "tags": ["recettes", "carburants", "taxe"],
     "equivalence": "Taxes (accise et TVA) : plus de la moitié du prix d'un plein de carburant"
   },
@@ -98,6 +102,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-21/l25-139-21_mono.html",
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "recette",
     "tags": ["recettes", "succession", "patrimoine"],
     "equivalence": "Les Français transmettent ~300 Md€ par an, l'État en prélève ~7%"
   },
@@ -114,6 +119,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-326/l25-139-326_mono.html",
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "recette",
     "tags": ["recettes", "foncier", "communes"],
     "equivalence": "Un propriétaire français paie en moyenne ~800€/an de foncier (tres variable)"
   },
@@ -131,6 +137,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "recette",
     "tags": ["recettes", "IFI", "fortune"],
     "equivalence": "Le rétablissement d'un ISF élargi rapporterait plusieurs milliards selon les estimations"
   },
@@ -148,6 +155,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "recette",
     "tags": ["recettes", "prélèvements", "PIB"],
     "equivalence": "1 345 Md€ = environ 19 500 € par habitant"
   },
@@ -165,6 +173,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "recette",
     "tags": ["recettes", "non fiscal", "dividendes"],
     "equivalence": "Des recettes très variables d'une année sur l'autre"
   },
@@ -182,6 +191,7 @@
     "year": 2026,
     "sourceDate": "2025-10",
     "level": 3,
+    "kind": "recette",
     "tags": ["recettes", "GAFAM", "numerique"],
     "equivalence": "785 M€ encaissés en 2024"
   },
@@ -199,6 +209,7 @@
     "year": 2026,
     "sourceDate": "2025-10",
     "level": 2,
+    "kind": "recette",
     "tags": ["recettes", "TTF", "finance"],
     "equivalence": "1 332 M€ en 2024, 2 630 M€ prévus en 2026"
   },
@@ -216,6 +227,7 @@
     "year": 2024,
     "sourceDate": "2025-12",
     "level": 1,
+    "kind": "recette",
     "tags": ["recettes", "cotisations", "Secu"],
     "equivalence": "Plus de la moitié des ressources de la protection sociale"
   },
@@ -232,6 +244,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-325/l25-139-325_mono.html",
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "recette",
     "tags": ["recettes", "foncier", "entreprises"],
     "equivalence": "Deux impôts assis sur la valeur locative des locaux"
   },
@@ -249,6 +262,7 @@
     "year": 2026,
     "sourceDate": "2026-04",
     "level": 2,
+    "kind": "recette",
     "tags": ["recettes", "jeux", "FDJ"],
     "equivalence": "Paris sportifs en ligne : 11,5 Md€ de mises en 2025"
   },
@@ -266,6 +280,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "recette",
     "tags": ["recettes", "amendes", "radars"],
     "equivalence": "Un produit partagé entre l'État et les collectivités"
   },
@@ -283,6 +298,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "recette",
     "tags": ["recettes", "taxe habitation", "secondaire"],
     "equivalence": "Une majoration possible de 5 % à 60 % en zone tendue"
   },
@@ -300,6 +316,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "recette",
     "tags": ["recettes", "APE", "participations"],
     "equivalence": "Des dividendes variables selon les résultats des entreprises"
   },
@@ -317,6 +334,7 @@
     "year": 2026,
     "sourceDate": "2026-01",
     "level": 2,
+    "kind": "recette",
     "tags": ["recettes", "impôt sur les sociétés", "entreprises"],
     "equivalence": "7,3 Md€ attendus en 2026, après 8 Md€ prévus en 2025"
   },
@@ -334,6 +352,7 @@
     "year": 2025,
     "sourceDate": "2025-10",
     "level": 3,
+    "kind": "recette",
     "tags": ["recettes", "entreprises", "actionnaires"],
     "equivalence": "200 M€ prévus en 2026 (volet durable)"
   }

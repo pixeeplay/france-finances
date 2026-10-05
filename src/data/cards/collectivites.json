@@ -12,6 +12,7 @@
     "sourceUrl": "https://www.collectivites-locales.gouv.fr/files/files/Etudes-et-statistiques/OFGL/rapport%202025/Rapport%20OFGL%202025%201%20vue%20d%20ensemble.pdf",
     "sourceDate": "2025",
     "level": 1,
+    "kind": "depense",
     "tags": ["collectivités", "budget", "investissement"],
     "equivalence": "70 Md€ d'investissement local en 2024, en hausse de 7 %",
     "year": 2024
@@ -29,6 +30,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-325/l25-139-325_mono.html",
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "depense",
     "tags": ["communes", "maires", "territoire"],
     "equivalence": "Près de 35 000 communes, dont une grande majorité de moins de 2 000 habitants"
   },
@@ -45,6 +47,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-325/l25-139-325_mono.html",
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "depense",
     "tags": ["départements", "social", "crise"],
     "equivalence": "Les dépenses sociales (RSA, APA, aide sociale à l'enfance) sont leur premier poste"
   },
@@ -61,6 +64,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-325/l25-139-325_mono.html",
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "depense",
     "tags": ["régions", "transport", "formation"],
     "equivalence": "Lycées, TER, formation professionnelle et développement économique"
   },
@@ -78,6 +82,7 @@
     "year": 2025,
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "depense",
     "tags": ["dotation", "financement", "inégalités"],
     "equivalence": "19,1 Md€ pour les communes et intercommunalités, 8,3 Md€ pour les départements en 2025"
   },
@@ -95,6 +100,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "agregat",
     "tags": ["austérité", "collectivités", "financement"],
     "equivalence": "1 Md€ mis en réserve en 2025, 2 Md€ proposés pour 2026"
   },
@@ -111,6 +117,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-325/l25-139-325_mono.html",
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "depense",
     "tags": ["investissement", "btp", "emploi"],
     "equivalence": "Environ 70 Md€ d'investissement local en 2024 (+7 %)"
   },
@@ -127,6 +134,7 @@
     "sourceUrl": "https://www.senat.fr/rap/a25-145-5/a25-145-5_mono.html",
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "depense",
     "tags": ["agents", "fonction publique", "emploi"],
     "equivalence": "Près de 2 millions d'agents dans les écoles, crèches, routes et mairies"
   },
@@ -143,6 +151,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-325/l25-139-325_mono.html",
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "depense",
     "tags": ["intercommunalité", "démocratie", "mutualisation"],
     "equivalence": "Déchets, eau, transports, urbanisme : des compétences exercées à l'échelle intercommunale"
   },
@@ -160,6 +169,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "depense",
     "tags": ["solidarité", "égalité", "financement"],
     "equivalence": "Environ 8 Md€ redistribués chaque année entre collectivités"
   },
@@ -176,6 +186,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-325/l25-139-325_mono.html",
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "recette",
     "tags": ["immobilier", "fiscalité", "départements"],
     "equivalence": "-22 % en 2023, puis -12,9 % en 2024"
   },
@@ -192,6 +203,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-325/l25-139-325_mono.html",
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "agregat",
     "tags": ["dette", "investissement", "finances"],
     "equivalence": "Les collectivités ne peuvent pas emprunter pour financer leur fonctionnement"
   },
@@ -208,6 +220,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-325/l25-139-325_mono.html",
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "agregat",
     "tags": ["fiscalité", "autonomie", "démocratie"],
     "equivalence": "Une part de la TVA nationale et des compensations de l'État remplacent une partie des impôts locaux"
   },
@@ -224,6 +237,7 @@
     "sourceUrl": "https://ofb.gouv.fr/sites/ofb-gouv-fr/files/2026-07/cp_sispea_2024_0.pdf",
     "sourceDate": "2026-06-25",
     "level": 1,
+    "kind": "depense",
     "tags": ["eau", "infrastructure", "régie"],
     "equivalence": "Un litre d'eau potable sur cinq perdu en fuites (2024)"
   },
@@ -240,6 +254,7 @@
     "sourceUrl": "https://www.senat.fr/rap/a25-143-2/a25-143-2_mono.html",
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "depense",
     "tags": ["transport", "mobilité", "collectivités"],
     "equivalence": "Le versement mobilité des employeurs finance une large part des transports urbains"
   },
@@ -256,6 +271,7 @@
     "sourceUrl": "https://www.vie-publique.fr/files/rapport/pdf/294451.pdf",
     "sourceDate": "2024-05",
     "level": 2,
+    "kind": "agregat",
     "tags": ["organisation", "doublons", "administration"],
     "equivalence": "4,8 Md€ à la charge des communes, 6,3 % de leurs dépenses de fonctionnement"
   },
@@ -272,6 +288,7 @@
     "sourceUrl": "https://www.senat.fr/rap/a25-145-11/a25-145-11_mono.html",
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "depense",
     "tags": ["élus", "démocratie", "indemnités"],
     "equivalence": "Environ 500 000 élus locaux, en majorité non indemnisés"
   },
@@ -289,6 +306,7 @@
     "year": 2025,
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "depense",
     "tags": ["retraite", "déficit", "cotisations"],
     "equivalence": "Déficit annuel projeté à 11,1 Md€ en 2030"
   },
@@ -305,6 +323,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-325/l25-139-325_mono.html",
     "sourceDate": "2025-11-24",
     "level": 1,
+    "kind": "agregat",
     "tags": ["décentralisation", "histoire", "compétences"],
     "equivalence": "44 Md€ de transferts de l'État au titre de la décentralisation en 2026"
   },
@@ -322,6 +341,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 3,
+    "kind": "depense",
     "tags": ["outre-mer", "autonomie", "statut"],
     "equivalence": "Accord de Bougival signé le 12 juillet 2025"
   }

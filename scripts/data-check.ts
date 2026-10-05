@@ -38,6 +38,9 @@ const { stats } = report;
 console.log(`data:check — ${stats.decks} decks, ${stats.cards} cartes`);
 console.log(`  niveaux : L1=${stats.levels[1]} L2=${stats.levels[2]} L3=${stats.levels[3]}`);
 console.log(
+  `  nature (jouables) : ${stats.kinds.depense} dépenses, ${stats.kinds.recette} recettes, ${stats.kinds.agregat} agrégats`,
+);
+console.log(
   `  sources : ${stats.withSourceUrl}/${stats.cards} avec sourceUrl, dont ${stats.homepageSourceUrl} page(s) d'accueil ; ${stats.withYear} carte(s) avec year`,
 );
 

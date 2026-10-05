@@ -41,6 +41,7 @@ function makeCard(id: string, deckId: string = "defense"): Card {
     icon: "🎯",
     source: "Test",
     level: 1,
+    kind: "depense",
   };
 }
 

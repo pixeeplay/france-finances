@@ -43,7 +43,7 @@ export function ContentProfilePanel({ session }: { session: Session }) {
         <p className="kicker text-danger">En montants</p>
         <h3 className="mt-1 mb-2 text-xl font-extrabold">Ce que tes choix pèsent</h3>
         <p className="text-sm text-muted-foreground leading-relaxed">
-          Tu as remis en question {cardCutPercent}&nbsp;% des cartes, soit {amountPercent}&nbsp;% des montants en jeu (
+          Tu as remis en question {cardCutPercent}&nbsp;% des cartes, soit {amountPercent}&nbsp;% des dépenses en jeu (
           {formatBillions(profile.cutBillions)} sur {formatBillions(profile.totalBillions)}).
         </p>
 

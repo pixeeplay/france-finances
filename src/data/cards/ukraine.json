@@ -12,6 +12,7 @@
     "sourceUrl": "https://www.defense.gouv.fr/sites/default/files/ministere-armees/Rapport%20au%20Parlement%202025%20sur%20les%20exportations%20d%E2%80%99armement%20de%20la%20France%20%28V122025%29.pdf",
     "sourceDate": "2025",
     "level": 2,
+    "kind": "depense",
     "tags": ["Ukraine", "aide militaire", "défense"],
     "equivalence": "Environ 6 % d'une année de budget de la Défense (50,5 Md€ en 2025)"
   },
@@ -28,6 +29,7 @@
     "sourceUrl": "https://www.defense.gouv.fr/sites/default/files/ministere-armees/Rapport%20au%20Parlement%202025%20sur%20les%20exportations%20d%E2%80%99armement%20de%20la%20France%20%28V122025%29.pdf",
     "sourceDate": "2025",
     "level": 2,
+    "kind": "depense",
     "tags": ["Ukraine", "FEP", "Europe", "défense"],
     "equivalence": "La France finance 18 % des remboursements du fonds"
   },
@@ -44,6 +46,7 @@
     "sourceUrl": "https://www.defense.gouv.fr/actualites/soutien-france-lukraine-quel-bilan-debut-guerre",
     "sourceDate": "2023-12-19",
     "level": 3,
+    "kind": "depense",
     "tags": ["Ukraine", "industrie défense", "bilatéral"],
     "equivalence": "200 M€ en 2023, puis 200 M€ supplémentaires"
   },
@@ -60,6 +63,7 @@
     "sourceUrl": "https://www.defense.gouv.fr/actualites/soutien-france-lukraine-quel-bilan-debut-guerre",
     "sourceDate": "2023-12-19",
     "level": 3,
+    "kind": "depense",
     "tags": ["Ukraine", "formation", "militaire"],
     "equivalence": "Près de 8 000 soldats formés en 2023, environ un quart de la mission européenne de formation (EUMAM)"
   },
@@ -75,6 +79,7 @@
     "source": "Ministère de l'Europe et des Affaires étrangères",
     "sourceUrl": "https://www.diplomatie.gouv.fr/en/the-ministry-in-action/action-for-peace-and-respect-for-human-rights/emergency-humanitarian-action/french-humanitarian-assistance-to-ukraine",
     "level": 3,
+    "kind": "depense",
     "tags": ["Ukraine", "humanitaire", "réfugiés"],
     "equivalence": "434 M€ d'aide humanitaire en deux ans et demi",
     "sourceDate": "2024-09"
@@ -92,6 +97,7 @@
     "sourceUrl": "https://www.statistiques.developpement-durable.gouv.fr/bilan-energetique-de-la-france-pour-2022",
     "sourceDate": "2024-05-29",
     "level": 1,
+    "kind": "agregat",
     "tags": ["Ukraine", "énergie", "surcoût"],
     "equivalence": "Une facture énergétique passée de 46,5 Md€ à 117,4 Md€ en un an"
   },
@@ -109,6 +115,7 @@
     "year": 2026,
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "depense",
     "tags": ["Ukraine", "défense", "LPM", "budget"],
     "equivalence": "3,2 Md€ de hausse prévue par la loi de programmation militaire et 3,5 Md€ de plus en 2026"
   },
@@ -125,6 +132,7 @@
     "sourceUrl": "https://www.senat.fr/questions/base/2022/qSEQ220802112.html",
     "sourceDate": "2022-12-22",
     "level": 1,
+    "kind": "agregat",
     "tags": ["Ukraine", "sanctions", "avoirs russes"],
     "equivalence": "Près de 22 Md€ de fonds de la Banque centrale russe immobilisés en France"
   },
@@ -141,6 +149,7 @@
     "sourceUrl": "https://www.defense.gouv.fr/sites/default/files/ministere-armees/Rapport%20au%20Parlement%202025%20sur%20les%20exportations%20d%E2%80%99armement%20de%20la%20France%20%28V122025%29.pdf",
     "sourceDate": "2025",
     "level": 2,
+    "kind": "depense",
     "tags": ["Ukraine", "bilan", "aide totale"],
     "equivalence": "5,9 Md€ en près de 3 ans, soit environ 29 € par habitant et par an"
   },
@@ -157,6 +166,7 @@
     "sourceUrl": "https://publications.banque-france.fr/projections-macroeconomiques-mars-2022",
     "sourceDate": "2022-03",
     "level": 3,
+    "kind": "agregat",
     "tags": ["Ukraine", "économie", "croissance", "inflation"],
     "equivalence": "Croissance prévue en 2022 : 3,4 % ou 2,8 % selon le scénario",
     "playable": false
@@ -174,6 +184,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-38/l25-139-38_mono.html",
     "sourceDate": "2025-11-24",
     "level": 2,
+    "kind": "depense",
     "tags": ["Ukraine", "défense", "programmation militaire"],
     "equivalence": "1,2 Md€ sur sept ans, en plus des 400 Md€ de la programmation militaire"
   }

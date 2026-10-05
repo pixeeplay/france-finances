@@ -1,4 +1,5 @@
 import type { Card, Vote, VoteDirection } from "@/types";
+import { isSpendingCard } from "./cardKind";
 
 /** Compteurs agreges par carte, tels que renvoyes par GET /api/community */
 export interface CardVoteCounts {
@@ -26,11 +27,13 @@ export function isCutDirection(direction: VoteDirection): boolean {
 }
 
 /**
- * Somme (Md€) des cartes remises en question (cut + unjustified) dans une session.
- * Les votes dont la carte est inconnue sont ignores.
+ * Somme (Md€) des depenses remises en question (cut + unjustified) dans une session :
+ * le cumul « tronconne ». Les recettes et les indicateurs ne comptent pas (couper
+ * une recette ou une fraude estimee n'est pas une economie), ni les votes dont la
+ * carte est inconnue.
  */
 export function computeCutBillions(cards: readonly Card[], votes: readonly Vote[]): number {
-  const amounts = new Map(cards.map((c) => [c.id, c.amountBillions]));
+  const amounts = new Map(cards.filter(isSpendingCard).map((c) => [c.id, c.amountBillions]));
   let total = 0;
   for (const vote of votes) {
     if (!isCutDirection(vote.direction)) continue;
@@ -65,11 +68,6 @@ export function communityAgreement(
   return { percent: Math.round((same / total) * 100), total };
 }
 
-const percentFormatter = new Intl.NumberFormat("fr-FR", {
-  minimumFractionDigits: 0,
-  maximumFractionDigits: 1,
-});
-
 /** Meme format que POST /api/sessions (ex. "def-01") */
 const CARD_ID_REGEX = /^[a-z]{2,4}-\d{2,3}$/;
 export const MAX_COMMUNITY_IDS = 50;
@@ -85,11 +83,4 @@ export function parseCommunityCardIds(raw: string | null): string[] | null {
     .map((id) => id.trim())
     .filter((id) => CARD_ID_REGEX.test(id));
   return [...new Set(ids)].slice(0, MAX_COMMUNITY_IDS);
-}
-
-/** Texte factuel optionnel sur l'evolution de la depense (champ trend) */
-export function trendFact(card: Card): string | null {
-  if (card.trend === undefined || !Number.isFinite(card.trend) || card.trend === 0) return null;
-  const abs = percentFormatter.format(Math.abs(card.trend));
-  return card.trend > 0 ? `En hausse de ${abs} % sur 5 ans` : `En baisse de ${abs} % sur 5 ans`;
 }

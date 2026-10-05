@@ -4,7 +4,6 @@ import {
   computeCutBillions,
   isCutDirection,
   parseCommunityCardIds,
-  trendFact,
   voteSide,
 } from "@/lib/sessionFeedback";
 import { sanitizeCommunityResponse } from "@/hooks/useCommunityVotes";
@@ -22,6 +21,7 @@ function card(id: string, amountBillions: number, extra: Partial<Card> = {}): Ca
     icon: "",
     source: "test",
     level: 1,
+    kind: "depense",
     ...extra,
   };
 }
@@ -57,6 +57,16 @@ describe("computeCutBillions", () => {
   it("ignores votes on unknown cards", () => {
     expect(computeCutBillions(cards, [vote("zzz", "cut"), vote("b", "cut")])).toBe(2.5);
   });
+
+  it("only counts spending cards (not revenue or indicators)", () => {
+    const mixed = [
+      card("dep", 4),
+      card("rec", 100, { kind: "recette" }),
+      card("agr", 50, { kind: "agregat" }),
+    ];
+    const votes = [vote("dep", "cut"), vote("rec", "cut"), vote("agr", "unjustified")];
+    expect(computeCutBillions(mixed, votes)).toBe(4);
+  });
 });
 
 describe("communityAgreement", () => {
@@ -82,17 +92,6 @@ describe("communityAgreement", () => {
   });
 });
 
-describe("trendFact", () => {
-  it("describes rises and falls", () => {
-    expect(trendFact(card("a", 1, { trend: 12.5 }))).toBe("En hausse de 12,5 % sur 5 ans");
-    expect(trendFact(card("a", 1, { trend: -4 }))).toBe("En baisse de 4 % sur 5 ans");
-  });
-
-  it("returns null without a meaningful trend", () => {
-    expect(trendFact(card("a", 1))).toBeNull();
-    expect(trendFact(card("a", 1, { trend: 0 }))).toBeNull();
-  });
-});
 
 describe("parseCommunityCardIds", () => {
   it("returns null when absent or empty", () => {

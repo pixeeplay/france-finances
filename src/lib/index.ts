@@ -1,5 +1,6 @@
 export { track } from "./analytics";
 export { computeStats, determineArchetype, computeContentProfile, computeSessionResult } from "./archetype";
+export { isSpendingCard, cardKindLabel, cardAmountLabel, CARD_KIND_LABELS } from "./cardKind";
 export { shuffleDeck, drawCards, filterByDeck } from "./deckUtils";
 export { computeRadarFromSession, computeRadarFromHistory } from "./radarData";
 export { cn } from "./utils";

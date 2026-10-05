@@ -31,6 +31,7 @@ function card(id: string, amountBillions: number): Card {
     icon: "",
     source: "Cour des comptes",
     level: 1,
+    kind: "depense",
   };
 }
 

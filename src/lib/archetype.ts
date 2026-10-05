@@ -1,5 +1,6 @@
 import type { Card, Vote, Archetype, Session, SessionStats, ArchetypeCondition } from "@/types";
 import archetypesData from "@/data/archetypes.json";
+import { isSpendingCard } from "./cardKind";
 import { isCutDirection } from "./sessionFeedback";
 
 /** Calcule les stats d'une session à partir des votes */
@@ -58,9 +59,13 @@ export interface ContentProfile {
 
 const round1 = (n: number) => Math.round(n * 10) / 10;
 
-/** Analyse le contenu d'une session : quels montants et quelles categories ont ete coupes. */
+/**
+ * Analyse le contenu d'une session : quelles depenses et quelles categories ont ete coupees.
+ * Seules les depenses comptent (`kind: "depense"`) : couper une recette ou un indicateur
+ * (fraude estimee, dette...) n'est pas une economie.
+ */
 export function computeContentProfile(cards: readonly Card[], votes: readonly Vote[]): ContentProfile {
-  const byId = new Map(cards.map((c) => [c.id, c]));
+  const byId = new Map(cards.filter(isSpendingCard).map((c) => [c.id, c]));
   const decks = new Map<string, DeckBreakdown>();
   let cutBillions = 0;
   let keptBillions = 0;
@@ -191,13 +196,29 @@ export function determineArchetype(
   return archetypes.find((a) => a.id === fallbackIds[level]) ?? archetypes.find((a) => a.level === level) ?? archetypes[0];
 }
 
-/** Stats + profil de contenu + archetype d'une session terminee (point d'entree unique). */
+/**
+ * Votes portant sur des depenses. Si la session n'en contient aucune (deck des
+ * recettes), tous les votes sont gardes pour ne pas produire de stats vides.
+ */
+function spendingVotes(cards: readonly Card[], votes: Vote[]): Vote[] {
+  const spendingIds = new Set(cards.filter(isSpendingCard).map((c) => c.id));
+  const filtered = votes.filter((v) => spendingIds.has(v.cardId));
+  return filtered.length > 0 ? filtered : votes;
+}
+
+/**
+ * Stats + profil de contenu + archetype d'une session terminee (point d'entree unique).
+ * `stats` porte sur toutes les cartes votees (affichage) ; l'archetype, lui, ne tient
+ * compte que des depenses (repartition des votes et montants coupes).
+ */
 export function computeSessionResult(session: Pick<Session, "cards" | "votes" | "level" | "totalDuration">): {
   stats: Omit<SessionStats, "archetype">;
   profile: ContentProfile;
   archetype: Archetype;
 } {
-  const stats = computeStats(session.votes, session.totalDuration ?? 0);
+  const totalDuration = session.totalDuration ?? 0;
+  const stats = computeStats(session.votes, totalDuration);
+  const archetypeStats = computeStats(spendingVotes(session.cards, session.votes), totalDuration);
   const profile = computeContentProfile(session.cards, session.votes);
-  return { stats, profile, archetype: determineArchetype(stats, session.level, profile) };
+  return { stats, profile, archetype: determineArchetype(archetypeStats, session.level, profile) };
 }

@@ -73,12 +73,20 @@ describe("drawDailyCards", () => {
     expect(a).not.toEqual(b);
   });
 
-  it("excludes revenue cards and favours distinct decks", () => {
+  it("only draws spending cards and favours distinct decks", () => {
     for (const day of ["2026-10-02", "2026-11-15", "2027-03-01"]) {
       const cards = drawDailyCards(allCards, day);
       expect(cards.every((c) => c.deckId !== "recettes")).toBe(true);
+      expect(cards.every((c) => c.kind === "depense")).toBe(true);
       expect(new Set(cards.map((c) => c.deckId)).size).toBe(DAILY_CARD_COUNT);
       expect(new Set(cards.map((c) => c.id)).size).toBe(DAILY_CARD_COUNT);
+    }
+  });
+
+  it("never draws revenue or indicator cards, whatever the day", () => {
+    for (let i = 0; i < 60; i++) {
+      const day = new Date(Date.UTC(2026, 9, 1 + i)).toISOString().slice(0, 10);
+      expect(drawDailyCards(allCards, day).every((c) => c.kind === "depense")).toBe(true);
     }
   });
 

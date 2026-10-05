@@ -1,4 +1,5 @@
 import type { Card, Vote } from "@/types";
+import { isSpendingCard } from "./cardKind";
 import { seededShuffle, type Rng } from "./random";
 import { isCutDirection } from "./sessionFeedback";
 
@@ -7,7 +8,7 @@ export const BUDGET_CHALLENGE_TARGET = 50;
 export const BUDGET_CHALLENGE_CARD_COUNT = 12;
 export const BUDGET_TARGET_MIN = 1;
 export const BUDGET_TARGET_MAX = 200;
-/** Decks exclus : couper une recette n'est pas une economie */
+/** Decks exclus : ils ne contiennent aucune depense (couper une recette n'est pas une economie) */
 const EXCLUDED_DECKS: readonly string[] = ["recettes"];
 
 /** Le mode budget a-t-il un sens pour ce deck ? (couper une recette n'est pas une economie) */
@@ -43,6 +44,8 @@ function sum(cards: readonly Card[]): number {
  * Tire les cartes d'un defi budgetaire : aucune carte ne depasse ~40 % de
  * l'objectif (pas de "coupe magique") et le total tire depasse l'objectif
  * d'au moins 60 % quand le deck le permet, pour qu'il y ait de vrais arbitrages.
+ * Seules les depenses (`kind: "depense"`) sont tirees : ni recette, ni
+ * indicateur (fraude estimee, dette, deficit...).
  */
 export function drawBudgetChallengeCards(
   cards: readonly Card[],
@@ -51,8 +54,8 @@ export function drawBudgetChallengeCards(
   count: number = BUDGET_CHALLENGE_CARD_COUNT,
 ): Card[] {
   const { maxCardBillions, minTotalBillions } = budgetChallengeConstraints(target);
-  const base = cards.filter((c) => isBudgetEligibleDeck(c.deckId));
-  // Deck entierement exclu (ex. recettes) : pas de defi possible, on tire quand meme
+  const base = cards.filter((c) => isBudgetEligibleDeck(c.deckId) && isSpendingCard(c));
+  // Deck sans depense (ex. recettes) : pas de defi possible, on tire quand meme
   // des cartes pour ne jamais produire une session vide
   if (base.length === 0) return seededShuffle(cards, rng).slice(0, count);
 
