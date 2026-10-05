@@ -1,4 +1,4 @@
-import { STATE_TAX_REVENUE_2026 } from "@/data/chiffres";
+import { PLF_2027_PRESS_KIT } from "@/data/plf-2027";
 import { formatEuros } from "@/lib/format";
 import type { DossierBody } from "./types";
 
@@ -115,13 +115,13 @@ export const irDossier: DossierBody = {
       blocks: [
         {
           type: "p",
-          text: "L'impôt sur le revenu n'est qu'un prélèvement parmi d'autres. Tout le monde paie la TVA sur ses achats, et la CSG est prélevée dès le premier euro de salaire (voir notre dossier « Où va 1 euro de CSG ? »). Dans le budget de l'État, l'impôt sur le revenu net, prévu à 104 Md€ pour 2026, arrive juste derrière la TVA nette (109,1 Md€).",
-          refs: ["senat-plf-2026-recettes"],
+          text: "L'impôt sur le revenu n'est qu'un prélèvement parmi d'autres. Tout le monde paie la TVA sur ses achats, et la CSG est prélevée dès le premier euro de salaire (voir notre dossier « Où va 1 euro de CSG ? »). Dans la loi de finances pour 2026, l'impôt sur le revenu net rapporte 99,8 Md€ à l'État, autant que sa part de la TVA. En cours d'année, le Gouvernement a revu ces montants à 96,8 Md€ pour l'impôt sur le revenu et 99,7 Md€ pour la TVA. Le projet de budget pour 2027, pas encore voté, prévoit 102,5 Md€ et 107,0 Md€.",
+          refs: ["dp-budget-2027"],
         },
         {
           type: "p",
-          text: "Les deux montants, 92 Md€ et 104 Md€, ne mesurent pas la même chose : le premier additionne les avis d'imposition sur les revenus de 2024, le second correspond aux recettes prévues dans le budget de l'année 2026.",
-          refs: ["dgfip-41", "senat-plf-2026-recettes"],
+          text: "Les deux montants, 92 Md€ et 99,8 Md€, ne mesurent pas la même chose : le premier additionne les avis d'imposition sur les revenus de 2024, le second correspond aux recettes votées dans le budget de l'année 2026.",
+          refs: ["dgfip-41", "dp-budget-2027"],
         },
         {
           type: "p",
@@ -155,10 +155,10 @@ export const irDossier: DossierBody = {
       date: "2026-04-15",
     },
     {
-      id: "senat-plf-2026-recettes",
-      label: STATE_TAX_REVENUE_2026.source.label,
-      url: STATE_TAX_REVENUE_2026.source.url,
-      date: STATE_TAX_REVENUE_2026.source.date,
+      id: "dp-budget-2027",
+      label: `${PLF_2027_PRESS_KIT.label}, solde général du budget de l'État (loi de finances 2026, 2026 révisé, projet 2027)`,
+      url: PLF_2027_PRESS_KIT.url,
+      date: PLF_2027_PRESS_KIT.date,
     },
   ],
 };

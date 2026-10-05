@@ -140,8 +140,8 @@ export const csgDossier: DossierBody = {
         },
         {
           type: "p",
-          text: "Ces clés de répartition bougent presque chaque année, au gré des lois de financement. Le projet de loi pour 2026 prévoyait par exemple de transférer 0,69 point de CSG sur les revenus de remplacement de la branche famille vers l'assurance maladie, soit 1,4 Md€.",
-          refs: ["plfss-annexe3"],
+          text: "Ces clés de répartition bougent presque chaque année, au gré des lois de financement. La loi de financement pour 2026 a par exemple transféré 0,69 point de CSG sur les revenus de remplacement de la branche famille vers l'assurance maladie, soit 1,4 Md€.",
+          refs: ["l131-8", "plfss-annexe3"],
         },
       ],
     },

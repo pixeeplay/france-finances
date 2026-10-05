@@ -6,6 +6,7 @@ import {
   PUBLIC_SPENDING_BY_FUNCTION,
   STATE_MISSIONS_2026,
 } from "@/data/chiffres";
+import { PLF_2027_PRESS_KIT } from "@/data/plf-2027";
 import { formatBillionsExact } from "@/lib/format";
 import type { DossierBarRow, DossierBody } from "./types";
 
@@ -159,12 +160,12 @@ export const detteDossier: DossierBody = {
     },
     {
       id: "budget",
-      title: "Bientôt le premier poste du budget ?",
+      title: "Vers le premier poste du budget de l'État ?",
       blocks: [
         {
           type: "p",
-          text: "Dans le budget de l'État, la charge de la dette atteindrait 58,0 Md€ en 2026, contre 53,5 Md€ votés pour 2025 (+ 7,5 %). Avec les autres engagements financiers, la mission correspondante pèse 60,3 Md€, juste derrière l'enseignement scolaire (89,7 Md€) et la défense (66,7 Md€).",
-          refs: ["senat-plf-2026", "senat-etat-b"],
+          text: "Dans la loi de finances pour 2026, la charge de la dette de l'État s'élève à 59,3 Md€. Avec les autres engagements financiers, la mission correspondante pèse 60,3 Md€. En comptant les cotisations de l'État aux retraites de ses agents, elle arrive derrière l'enseignement scolaire (89,7 Md€) et la défense (66,7 Md€). En cours d'année, la charge de la dette 2026 a été revue à 62,6 Md€, sous l'effet de taux et d'une inflation plus élevés que prévu.",
+          refs: ["dp-budget-2027", "senat-etat-b"],
         },
         {
           type: "chart",
@@ -184,8 +185,13 @@ export const detteDossier: DossierBody = {
         },
         {
           type: "p",
-          text: "Le rapporteur du Sénat estime que la charge de la dette de l'État pourrait dépasser 70 Md€ en 2027 et 90 Md€ en 2029, la barre des 100 Md€ pouvant être atteinte autour de 2030. Elle deviendrait alors, à terme, le premier poste de dépenses du budget.",
-          refs: ["senat-plf-2026"],
+          text: "Le projet de budget pour 2027, présenté le 1er octobre 2026 et pas encore voté, prévoit 72,9 Md€ de charge de la dette de l'État, soit 10,3 Md€ de plus que la dernière prévision pour 2026. Selon le Gouvernement, elle atteindrait 93,4 Md€ en 2029. Pour l'ensemble des administrations publiques, il chiffre les intérêts à 79,2 Md€ en 2026 et 91,2 Md€ en 2027 ; ces prévisions ne se comparent pas directement aux 64,7 Md€ mesurés par l'Insee pour 2025.",
+          refs: ["dp-budget-2027"],
+        },
+        {
+          type: "p",
+          text: "Tout dépend du périmètre retenu. Hors cotisations de l'État aux retraites de ses agents, la mission « Engagements financiers de l'État » (74,5 Md€ dans le projet 2027) passerait devant l'enseignement scolaire (65,5 Md€) et la défense (63,4 Md€) : elle deviendrait la première mission du budget de l'État. En comptant ces cotisations, comme dans le graphique ci-dessus, l'enseignement scolaire resterait devant.",
+          refs: ["dp-budget-2027", "senat-etat-b"],
         },
         {
           type: "p",
@@ -232,6 +238,12 @@ export const detteDossier: DossierBody = {
         "Sénat — Rapport général n° 139 (2025-2026) sur le PLF 2026, tome III, annexe 12 : engagements financiers de l'État",
       url: "https://www.senat.fr/rap/l25-139-312/l25-139-312_mono.html",
       date: "2025-11-24",
+    },
+    {
+      id: "dp-budget-2027",
+      label: `${PLF_2027_PRESS_KIT.label}, chiffres clés et fiche de la mission « Engagements financiers de l'État » (projet, non voté)`,
+      url: PLF_2027_PRESS_KIT.url,
+      date: PLF_2027_PRESS_KIT.date,
     },
     {
       id: "senat-etat-b",
