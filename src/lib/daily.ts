@@ -1,4 +1,5 @@
 import type { Card, VoteDirection } from "@/types";
+import legacyPool from "@/data/daily-legacy-pool.json";
 import { isSpendingCard } from "./cardKind";
 import { createSeededRng, seededShuffle } from "./random";
 
@@ -63,19 +64,43 @@ export function getDailyNumber(key: string): number {
 // ---------------------------------------------------------------------------
 
 /**
+ * Premier jour ou le tirage ne garde que les depenses (`kind`). Avant cette
+ * date, le tirage reste celui qui etait en ligne (pool fige dans
+ * `src/data/daily-legacy-pool.json`) : un deck du jour ne doit jamais changer
+ * pour un numero deja servi, meme si l'on deploie en cours de journee.
+ * Regle : cette date doit etre posterieure au jour du deploiement (le lendemain).
+ */
+export const DAILY_KIND_FILTER_FROM = "2026-10-06";
+
+const LEGACY_POOL_IDS: ReadonlySet<string> = new Set(legacyPool.ids);
+
+/** Cartes eligibles au tirage d'une date donnee. */
+function dailyPool(cards: readonly Card[], dateKey: string): Card[] {
+  if (dateKey < DAILY_KIND_FILTER_FROM) {
+    // Ancien tirage : cartes jouables hors deck recettes au moment du gel,
+    // y compris celles passees hors jeu depuis
+    return cards.filter((c) => LEGACY_POOL_IDS.has(c.id));
+  }
+  return cards.filter((c) => c.playable !== false && isSpendingCard(c));
+}
+
+/**
  * Tire les cartes du jour : meme resultat pour une meme date, quel que soit
  * l'ordre des cartes en entree. Au plus une carte par deck tant que possible
- * pour varier les categories. Seules les depenses sont tirees : une recette ou
- * un indicateur (fraude estimee, dette...) n'est pas une depense a "tronconner".
+ * pour varier les categories. Seules les depenses jouables sont tirees : une
+ * recette ou un indicateur (fraude estimee, dette...) n'est pas une depense a
+ * "tronconner".
+ *
+ * `cards` doit contenir aussi les cartes hors jeu (`playable: false`) pour que
+ * les tirages anterieurs a DAILY_KIND_FILTER_FROM restent identiques ; elles
+ * sont ecartees des tirages suivants.
  */
 export function drawDailyCards(
   cards: readonly Card[],
   dateKey: string,
   count: number = DAILY_CARD_COUNT,
 ): Card[] {
-  const pool = cards
-    .filter(isSpendingCard)
-    .sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
+  const pool = dailyPool(cards, dateKey).sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
   const shuffled = seededShuffle(pool, createSeededRng(`daily:${dateKey}`));
 
   const picked: Card[] = [];

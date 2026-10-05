@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { SwipeSession } from "./SwipeSession";
-import decksData from "@/data";
+import decksData, { offPlayCards } from "@/data";
 import { drawCards, filterByDeck } from "@/lib/deckUtils";
 import { clampBudgetTarget, drawBudgetChallengeCards, isBudgetEligibleDeck } from "@/lib/budgetChallenge";
 import { DAILY_DECK_ID, drawDailyCards, getDailyNumber, getParisDateKey } from "@/lib/daily";
@@ -85,7 +85,7 @@ export default async function SwipePage({
       <SwipeSession
         deckId={DAILY_DECK_ID}
         deckName={`Deck du jour n°${getDailyNumber(dailyKey)}`}
-        cards={drawDailyCards(allCards, dailyKey)}
+        cards={drawDailyCards([...allCards, ...offPlayCards], dailyKey)}
         level={1}
         dailyKey={dailyKey}
       />
