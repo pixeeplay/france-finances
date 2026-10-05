@@ -4,6 +4,7 @@ import type { DossierMeta, DossierSource } from "@/data/dossiers/types";
 import type { Card } from "@/types";
 import { CategoryBadge, catStyle } from "@/components/icons/CategoryBadge";
 import { CategoryIcon } from "@/components/icons/CategoryIcon";
+import { cardKindLabel, isSpendingCard } from "@/lib/cardKind";
 import { getDeckName } from "@/lib/deckMeta";
 import { formatDossierDate } from "@/lib/dossiers";
 import { formatBillions, formatEuros } from "@/lib/format";
@@ -28,32 +29,46 @@ export function DraftBanner({ compact = false }: { compact?: boolean }) {
   );
 }
 
-/** Carte d'un dossier dans la liste. */
-export function DossierCard({ dossier, minutes }: { dossier: DossierMeta; minutes: number }) {
+/** Carte d'un dossier dans la liste : titre en h2, nom du lien = titre. */
+export function DossierCard({
+  dossier,
+  minutes,
+  headingLevel = 2,
+}: {
+  dossier: DossierMeta;
+  minutes: number;
+  /** 2 dans la liste /dossiers, 3 sous un intertitre (« Autres dossiers ») */
+  headingLevel?: 2 | 3;
+}) {
+  const Heading = headingLevel === 2 ? "h2" : "h3";
+  const titleId = `dossier-${dossier.slug}-title`;
   return (
     <Link
       href={`/dossiers/${dossier.slug}`}
       style={catStyle(dossier.deckId)}
+      aria-labelledby={titleId}
       className="hover-lift group flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card"
     >
-      <span className="cat-solid relative flex h-28 items-center justify-between px-6" aria-hidden="true">
+      <div className="cat-solid relative flex h-28 items-center justify-between px-6" aria-hidden="true">
         <CategoryIcon deckId={dossier.deckId} size={52} strokeWidth={1.8} />
-        <span className="font-heading text-3xl font-black tabular-nums text-white">{dossier.ogFigure.value}</span>
-      </span>
-      <span className="flex flex-1 flex-col gap-3 p-6">
-        <span className="flex flex-wrap items-center gap-2">
+        <span className="font-heading text-3xl font-black tabular-nums">{dossier.ogFigure.value}</span>
+      </div>
+      <div className="flex flex-1 flex-col gap-3 p-6">
+        <p className="flex flex-wrap items-center gap-2">
           <span className="kicker cat-text">{dossier.kicker}</span>
           {dossier.status === "brouillon" ? <DraftBanner compact /> : null}
-        </span>
-        <span className="font-heading text-2xl font-extrabold leading-tight text-foreground">{dossier.title}</span>
-        <span className="text-sm leading-relaxed text-muted-foreground">{dossier.description}</span>
-        <span className="mt-auto flex items-center justify-between gap-3 pt-2 text-sm">
+        </p>
+        <Heading id={titleId} className="font-heading text-2xl font-extrabold leading-tight text-foreground">
+          {dossier.title}
+        </Heading>
+        <p className="text-sm leading-relaxed text-muted-foreground">{dossier.description}</p>
+        <p className="mt-auto flex items-center justify-between gap-3 pt-2 text-sm">
           <span className="text-muted-foreground">{minutes} min de lecture</span>
-          <span className="font-bold cat-text">
-            Lire <span aria-hidden="true">&#8594;</span>
+          <span className="font-bold cat-text" aria-hidden="true">
+            Lire &#8594;
           </span>
-        </span>
-      </span>
+        </p>
+      </div>
     </Link>
   );
 }
@@ -87,7 +102,14 @@ export function RelatedCards({ cardIds }: { cardIds: readonly string[] }) {
                   Deck {getDeckName(card.deckId)} · {formatEuros(card.costPerCitizen)}/hab.
                 </span>
               </span>
-              <span className="shrink-0 numeral text-lg text-danger">{formatBillions(card.amountBillions)}</span>
+              <span className="shrink-0 text-right">
+                {cardKindLabel(card) ? (
+                  <span className="block kicker text-[10px] text-muted-foreground">{cardKindLabel(card)}</span>
+                ) : null}
+                <span className={`block numeral text-lg ${isSpendingCard(card) ? "text-danger" : "text-foreground"}`}>
+                  {formatBillions(card.amountBillions)}
+                </span>
+              </span>
             </Link>
           </li>
         ))}

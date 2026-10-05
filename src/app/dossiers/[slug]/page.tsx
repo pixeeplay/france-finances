@@ -191,7 +191,7 @@ export default async function DossierPage({ params }: Props) {
             <ul className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3 md:gap-6">
               {others.map((d) => (
                 <li key={d.slug}>
-                  <DossierCard dossier={d} minutes={readingMinutes(d)} />
+                  <DossierCard dossier={d} minutes={readingMinutes(d)} headingLevel={3} />
                 </li>
               ))}
             </ul>

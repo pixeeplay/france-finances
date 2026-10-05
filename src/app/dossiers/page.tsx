@@ -8,7 +8,7 @@ import { hasVisibleDossiers, readingMinutes } from "@/lib/dossiers";
 
 const TITLE = "Les dossiers";
 const DESCRIPTION =
-  "Des articles courts, neutres et sourcés pour comprendre les finances publiques : où va la CSG, pourquoi la dette coûte plus cher, qui paie l'impôt sur le revenu.";
+  "Des articles courts, neutres et sourcés pour comprendre d'où vient l'argent public et où il va, chiffres officiels à l'appui.";
 
 export const metadata: Metadata = {
   title: `${TITLE} — france-finances.com`,
@@ -31,7 +31,7 @@ export default function DossiersPage() {
   return (
     <PageShell>
       <header className="mb-10">
-        <p className="inline-flex items-center gap-2 rounded-full bg-blue-500/10 px-3 py-1 text-xs font-bold text-blue-700 dark:text-blue-400">
+        <p className="inline-flex items-center gap-2 rounded-full bg-info/10 px-3 py-1 text-xs font-bold text-info">
           <UiIcon name="search" size={14} />
           Comprendre · chiffres officiels
         </p>
