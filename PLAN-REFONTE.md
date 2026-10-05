@@ -168,7 +168,7 @@ Phases 1 et 2 livrées et déployées (2026-10-02 → 04) : assainissement et s�
 - [ ] Dette : table `communityVotes` inutilisée, dérive schéma / migrations Drizzle, vrai 404 sur `/pixee-admin`, emojis d'interface restants, reduced motion au relâchement du swipe, boutons Niveau 1/2/3 à 44 px, e2e `/chiffres` et `/simulateur`.
 - [ ] Champ `kind` (dépense / recette / agrégat) : exclure du deck du jour et du défi 50 Md€ ce qui n'est pas une dépense.
 - [ ] Champ `trend` : sourcer ou retirer.
-- [ ] Bloc « Ce que prévoit le projet de budget 2027 », étiqueté projet (loi votée attendue fin décembre).
+- [x] Bloc « Ce que prévoit le projet de budget 2027 », étiqueté projet (loi votée attendue fin décembre) : section `#budget-2027` de `/chiffres` + bandeau sur l'accueil (`feat/plf-2027`).
 - [ ] Dossiers éditoriaux (Phase 3) : gabarit + premiers dossiers, validés avant publication.
 - [ ] Point Analytics (usage réel) et chiffrage hébergement (OVH / o2switch / Vercel).
 

@@ -16,6 +16,7 @@ import {
 } from "@/components/chiffres/ChiffresBlocks";
 import { BarsChart, DebtAreaChart, RevenueDonutChart } from "@/components/chiffres/ChiffresCharts";
 import { CHART_PALETTE_CLASS, TONE_CLASSES } from "@/components/chiffres/palette";
+import { Budget2027Section } from "@/components/chiffres/Budget2027Section";
 import {
   CURRENT_DEBT,
   DEBT_TIMELINE,
@@ -53,7 +54,7 @@ import { formatBillionsExact, formatEuros, formatNumber } from "@/lib/format";
 
 const TITLE = "Les chiffres des finances publiques";
 const DESCRIPTION =
-  "Dette, déficit, budget de l'État 2026, dépense publique par fonction, protection sociale, santé et comparaison européenne : les chiffres officiels, sourcés, en graphiques.";
+  "Dette, déficit, budget de l'État 2026, projet de budget 2027, dépense publique par fonction, protection sociale, santé et comparaison européenne : les chiffres officiels, sourcés, en graphiques.";
 
 export const metadata: Metadata = {
   title: `${TITLE} — france-finances.com`,
@@ -72,6 +73,7 @@ const NAV: readonly { id: string; label: string; tone: ChartTone }[] = [
   { id: "essentiel", label: "L'essentiel", tone: "blue" },
   { id: "depense", label: "1 000 €", tone: "emerald" },
   { id: "etat", label: "État 2026", tone: "blue" },
+  { id: "budget-2027", label: "Budget 2027 (projet)", tone: "amber" },
   { id: "dette", label: "Dette", tone: "red" },
   { id: "protection-sociale", label: "Protection sociale", tone: "violet" },
   { id: "sante", label: "Santé", tone: "cyan" },
@@ -404,6 +406,9 @@ export default function ChiffresPage() {
             period={STATE_MISSIONS_2026.period}
           />
         </ThemeSection>
+
+        {/* 3 bis. Projet de budget 2027 */}
+        <Budget2027Section />
 
         {/* 4. Dette */}
         <ThemeSection

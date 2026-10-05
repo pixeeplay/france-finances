@@ -99,7 +99,7 @@ src/
   app/              # Pages (App Router, route group (game))
     api/            # API routes (health, sessions, ranking, community, me, stats, analytics, og)
     (game)/         # Game pages (jeu, jeu/[deckId] dont jeu/quotidien, profil, classement, resultats, infos, partage)
-    chiffres/       # Les finances publiques en chiffres (donnees : src/data/chiffres.ts)
+    chiffres/       # Les finances publiques en chiffres (donnees : src/data/chiffres.ts, projet 2027 : src/data/plf-2027.ts)
     simulateur/     # Simulateur fiscal (calculs : src/lib/taxCalculator.ts, baremes : src/data/fiscal-2026.ts)
     categories/     # Category pages
     contribuer/     # Contributor guide page
@@ -154,7 +154,7 @@ src/
 Ne jamais ecrire le nombre de cartes en dur dans le code : utiliser `TOTAL_CARD_COUNT` / `CARDS_AND_CATEGORIES` (`src/lib/deckMeta.ts`).
 Donnees factuelles, sourcees, neutres. Pas de ton militant.
 Montants en milliards d'euros, cout par habitant base sur 69,1 M habitants (Insee, 1er janvier 2026) : population unique `POPULATION_REFERENCE` (src/lib/cardSchema.ts), reprise par `data:check`, l'accueil et `/chiffres`.
-Sources : PLF/LFSS 2025-2026 (PLF/PLFSS 2027 presentes le 1er octobre 2026, pas encore integres), Cour des comptes, Senat, ministeres, vie-publique.fr.
+Sources : PLF/LFSS 2025-2026 (PLF/PLFSS 2027 presentes le 1er octobre 2026 : seulement la section « projet » de `/chiffres`, donnees `src/data/plf-2027.ts`, a remplacer par la loi votee ; cartes et simulateur pas encore mis a jour), Cour des comptes, Senat, ministeres, vie-publique.fr.
 Chaque `sourceUrl` pointe vers un document precis (jamais une page d'accueil), en https et sans domaine accentue.
 Champ `level` des cartes : 1 grand poste, 2 dispositif, 3 niche/micro-audit (critere dans `src/data/README.md`).
 
