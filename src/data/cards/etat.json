@@ -261,7 +261,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-205/l25-205_mono.html",
     "sourceDate": "2025-12",
     "level": 2,
-    "kind": "recette",
+    "kind": "agregat",
     "tags": ["jours feries", "économie", "productivite"],
     "equivalence": "4,2 Md€ par an attendus de la suppression de 2 jours fériés",
     "year": 2026

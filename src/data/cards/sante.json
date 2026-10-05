@@ -332,10 +332,10 @@
   {
     "id": "hop-10",
     "title": "Soigner sans nuit à l'hôpital (virage ambulatoire)",
-    "subtitle": "Une piste d'économies régulièrement mise en avant",
+    "subtitle": "Chirurgie sans nuitée, hospitalisation à domicile, télémédecine",
     "description": "Le virage ambulatoire (chirurgie sans nuitée, hospitalisation à domicile, télémédecine) est l'une des principales pistes d'économies identifiées. Le taux de chirurgie ambulatoire a progressé mais reste inférieur à celui de pays d'Europe du Nord. L'hospitalisation à domicile est moins coûteuse qu'un séjour à l'hôpital pour les patients éligibles.",
-    "amountBillions": 6.5,
-    "costPerCitizen": 94,
+    "amountBillions": 0,
+    "costPerCitizen": 0,
     "deckId": "sante",
     "icon": "🏠",
     "source": "Sénat (PLFSS 2026), HAS, ANAP, Cour des comptes rapport ambulatoire",
@@ -344,7 +344,8 @@
     "level": 2,
     "kind": "depense",
     "tags": ["santé", "ambulatoire", "économies"],
-    "equivalence": "Une piste d'économies, sans chiffrage officiel unique"
+    "equivalence": "Une piste d'économies, sans chiffrage officiel unique",
+    "playable": false
   },
   {
     "id": "san-11",

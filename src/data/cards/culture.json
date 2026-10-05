@@ -230,9 +230,9 @@
     "id": "cul-14",
     "title": "Tourisme (politique et recettes)",
     "subtitle": "1re destination mondiale en nombre de visiteurs",
-    "description": "La France est la première destination touristique mondiale en nombre de visiteurs internationaux, mais pas en recettes. Le tourisme représente une part importante du PIB et de l'emploi. L'État soutient la promotion via Atout France.",
-    "amountBillions": 2,
-    "costPerCitizen": 29,
+    "description": "La France est la première destination touristique mondiale en nombre de visiteurs internationaux, mais pas en recettes. L'État soutient la promotion du tourisme via l'opérateur Atout France (23 M€ de subvention prévus en 2026, contre 24,6 M€ en 2025, selon le Sénat).",
+    "amountBillions": 0,
+    "costPerCitizen": 0,
     "deckId": "culture",
     "icon": "✈️",
     "source": "Sénat (avis PLF 2026), Atout France, DGE, OMT",
@@ -241,7 +241,8 @@
     "level": 2,
     "kind": "depense",
     "tags": ["tourisme", "recettes", "attractivite"],
-    "equivalence": "1re destination mondiale en nombre de visiteurs"
+    "equivalence": "Atout France : 23 M€ de subvention de l'État prévus en 2026",
+    "playable": false
   },
   {
     "id": "cul-15",

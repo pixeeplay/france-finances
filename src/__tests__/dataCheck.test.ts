@@ -141,6 +141,23 @@ describe("checkData", () => {
     expect(report.errors.some((e) => e.includes("Titre en double"))).toBe(true);
   });
 
+  it("avertit des doublons probables (même montant, même source), hors cartes hors jeu", () => {
+    const cards = makeDeckCards().map((c, i) => ({ ...c, amountBillions: 1 + i, costPerCitizen: 14 * (1 + i) }));
+    cards[1] = { ...cards[1], amountBillions: cards[0].amountBillions, costPerCitizen: cards[0].costPerCitizen };
+    const report = checkData({ decksMeta: { decks: [deck] }, cardFiles: { defense: cards } });
+    expect(report.errors).toEqual([]);
+    expect(report.warnings.filter((w) => w.startsWith("Doublon probable"))).toEqual([
+      "Doublon probable (même montant, 1 Md€, et même source) : def-01, def-02",
+    ]);
+
+    const offPlay = cards.map((c, i) => (i === 1 ? { ...c, playable: false as const } : c));
+    const report2 = checkData({
+      decksMeta: { decks: [{ ...deck, cardCount: 5 }] },
+      cardFiles: { defense: offPlay },
+    });
+    expect(report2.warnings.some((w) => w.startsWith("Doublon probable"))).toBe(false);
+  });
+
   it("signale un coût par habitant incohérent sauf exception documentée", () => {
     const cards = makeDeckCards();
     cards[0] = { ...cards[0], costPerCitizen: 500 };

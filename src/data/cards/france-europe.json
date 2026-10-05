@@ -56,17 +56,18 @@
     "title": "Fonds européen d'aide militaire (Facilité européenne pour la paix)",
     "subtitle": "Part française du fonds qui rembourse les armes livrées à l'Ukraine",
     "description": "La Facilité européenne pour la paix (FEP), créée en 2021, finance les mesures d'assistance militaire de l'UE, dont les livraisons d'armes à l'Ukraine. Hors budget de l'UE, elle est alimentée directement par les États membres ; son plafond a été porté de 5,7 à 17 Md€. La France en est le 2e contributeur : elle finance 18 % du coût des cessions remboursées, soit jusqu'à 2,3 Md€ fin 2024, dont 1,4 Md€ suspendus au déblocage par la Hongrie.",
-    "amountBillions": 2.3,
-    "costPerCitizen": 33,
+    "amountBillions": 0,
+    "costPerCitizen": 0,
     "deckId": "france-europe",
     "icon": "🕊️",
     "source": "Ministère des Armées (rapport au Parlement 2025), Sénat (PLF 2026)",
     "sourceUrl": "https://www.defense.gouv.fr/sites/default/files/ministere-armees/Rapport%20au%20Parlement%202025%20sur%20les%20exportations%20d%E2%80%99armement%20de%20la%20France%20%28V122025%29.pdf",
     "sourceDate": "2025",
     "level": 2,
-    "kind": "depense",
+    "kind": "agregat",
     "tags": ["Europe", "défense", "Ukraine", "FEP"],
-    "equivalence": "Plafond du fonds porté de 5,7 à 17 Md€ depuis 2021"
+    "equivalence": "Plafond du fonds porté de 5,7 à 17 Md€ depuis 2021",
+    "playable": false
   },
   {
     "id": "fre-05",
@@ -148,7 +149,7 @@
     "source": "Sénat (PLF 2026, Relations financières avec l'UE), Commission européenne",
     "sourceUrl": "https://www.senat.fr/rap/l25-139-22/l25-139-22_mono.html",
     "level": 2,
-    "kind": "recette",
+    "kind": "agregat",
     "tags": ["Europe", "environnement", "carbone", "MACF"],
     "equivalence": "Environ 1,5 Md€ par an envisagés pour le budget de l'UE",
     "sourceDate": "2025-11-24"

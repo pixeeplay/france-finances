@@ -43,8 +43,21 @@ Règle de tri : on regarde le montant affiché, pas le sujet. « Fraude aux pres
 son montant est une estimation de fraude : `agregat`. Le deck `recettes` ne contient que des recettes (`data:check` le
 vérifie).
 
-Répartition (octobre 2026) : 281 dépenses, 33 recettes et 54 agrégats parmi les 368 cartes jouables ; hors jeu,
-4 dépenses et 5 agrégats.
+Deux règles complètent ce critère :
+
+- Un montant cumulé sur plusieurs années (bilan d'une crise, total d'une aide depuis 2022) ou une opération ponctuelle
+  (rachat d'EDF) n'est pas un coût annuel : `agregat`. Sinon la carte s'afficherait « Coût annuel » et pourrait être
+  « coupée » dans le défi comme une économie récurrente.
+- Le rendement attendu d'une mesure seulement proposée (non votée, ou abandonnée) est un `agregat`, comme les économies
+  attendues d'une réforme. Une recette est une ressource réellement perçue ou votée.
+
+Une même somme ne doit être jouable qu'une fois : `data:check` signale en avertissement deux cartes jouables de même
+montant et de même source (« doublon probable »). On garde la carte la plus précise et on passe l'autre hors jeu
+(`playable: false`, montant à 0), comme `fre-04` (doublon de `ukr-02`, contribution à la Facilité européenne pour la
+paix).
+
+Répartition (octobre 2026) : 274 dépenses, 31 recettes et 60 agrégats parmi les 365 cartes jouables ; hors jeu,
+6 dépenses et 6 agrégats.
 
 Cas limites, tranchés ainsi :
 
@@ -53,10 +66,9 @@ Cas limites, tranchés ainsi :
   `zom-05` (compensation de la taxe d'habitation, supportée par le budget de l'État), `fre-11` (hausse proposée de la
   contribution européenne), `ene-06`, `ene-14` et `ene-18` (aides décidées par l'État mais financées par les
   certificats d'économies d'énergie), `emp-01` (formation professionnelle, financement mêlant État et entreprises),
-  `cre-10` (coût brut pour l'État de la crise énergétique), `soc-17`, `log-17`, `emp-18`, `san-13` (politiques
-  publiques dont le montant agrège plusieurs dispositifs).
+  `soc-17`, `log-17`, `emp-18`, `san-13` (politiques publiques dont le montant agrège plusieurs dispositifs).
 - Recettes : `emp-04` (CVAE, un impôt en cours de suppression), `emp-19` (prélèvement de l'État sur l'assurance
-  chômage), `eta-15` (rendement estimé d'une contribution proposée), `fre-03` (subventions européennes reçues),
+  chômage), `fre-03` (subventions européennes reçues),
   `log-15` (prélèvement SRU payé par les communes), `cre-08` (reversements des énergies renouvelables à l'État).
 - Agrégats : `col-06` (Dilico, une mise en réserve de recettes locales, ni dépense ni recette définitive), `col-16`
   (surcoût estimé du mille-feuille), `col-19` (bilan de la décentralisation), `def-10` (objectif OTAN pour 2035),
@@ -65,7 +77,11 @@ Cas limites, tranchés ainsi :
   `agr-18` (achats de la restauration collective, publique et privée), `env-07` (gestion des déchets, collectivités et
   entreprises), `ene-03`, `ene-05`, `ene-08`, `ene-17` (investissements d'EDF et des réseaux, payés par les factures),
   `san-14` (coût des addictions), `soc-02` et `ret-06` (économies attendues de la réforme des retraites), `ret-10`
-  (comparaison internationale).
+  (comparaison internationale), `cre-10` (coût de la crise énergétique cumulé sur 2021-2024), `ukr-09` (soutien
+  militaire à l'Ukraine cumulé sur 2022-2024), `ukr-02` (contribution à la Facilité européenne pour la paix depuis
+  2022), `cre-04` (rachat d'EDF, opération ponctuelle de 2022-2023), `eta-15` (rendement attendu de la suppression de
+  deux jours fériés, proposée en 2025 et abandonnée), `fre-09` (part envisagée de la taxe carbone aux frontières pour
+  le budget européen).
 
 ## Sources
 
@@ -105,6 +121,7 @@ ne le permet pas, on déplace la carte la plus proche du seuil. Cartes déplacé
 Répartition obtenue : 135 cartes L1, 132 L2, 102 L3. Après la correction des montants lors du fact-check (octobre 2026),
 les niveaux ont été réalignés sur le critère de montant : 130 cartes L1, 130 L2, 109 L3.
 Après la reprise des sources et l'ajout de 10 cartes (octobre 2026) : 368 cartes jouables (130 L1, 133 L2, 105 L3), num-10 et num-18 supprimées (sans source chiffrée), 9 cartes sans montant officiel conservées hors jeu (`playable: false`, filtrées dans `src/data/index.ts`). Le minimum de 2 cartes par niveau et par deck est un avertissement, pas une erreur.
+Après la relecture d'octobre 2026 : 365 cartes jouables (130 L1, 130 L2, 105 L3) ; `hop-10` et `cul-14` (montants sans source officielle) et `fre-04` (doublon de `ukr-02`) passent hors jeu, soit 12 cartes hors jeu.
 
 Des cartes peuvent afficher un montant de 0 quand aucune source officielle ne chiffre le sujet : la description le dit
 explicitement (« pas de chiffrage officiel »). Le nombre total de cartes affiché dans l'interface est calculé

@@ -240,7 +240,7 @@
     "sourceUrl": "https://www.senat.fr/rap/l25-139-321/l25-139-321_mono.html",
     "sourceDate": "2025-11-24",
     "level": 2,
-    "kind": "depense",
+    "kind": "agregat",
     "tags": ["énergie", "EDF", "nationalisation"],
     "equivalence": "9,7 Md€ mobilisés en 2022 et 2023"
   },
@@ -343,7 +343,7 @@
     "sourceUrl": "https://www.ccomptes.fr/sites/default/files/2024-03/20240315_Mesures-exceptionnelles-lutte-contre-hausse-prix-energie.pdf",
     "sourceDate": "2024-03",
     "level": 1,
-    "kind": "depense",
+    "kind": "agregat",
     "tags": ["énergie", "bilan", "crise"],
     "equivalence": "Près de 72 Md€ sur 2021-2024, dont 37,6 Md€ pour la seule année 2023"
   },

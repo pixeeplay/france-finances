@@ -26,7 +26,7 @@
       "description": "Hôpitaux, médicaments, prévention, urgences, addictions",
       "icon": "🏥",
       "color": "#EF4444",
-      "cardCount": 30,
+      "cardCount": 29,
       "image": "/categories/sante.svg",
       "type": "main"
     },
@@ -76,7 +76,7 @@
       "description": "Patrimoine, audiovisuel, rail, routes, écologie",
       "icon": "🎭",
       "color": "#EC4899",
-      "cardCount": 20,
+      "cardCount": 19,
       "image": "/categories/culture.svg",
       "type": "main"
     },
@@ -166,7 +166,7 @@
       "description": "Combien coûte l'Europe ? Combien rapporte-t-elle ?",
       "icon": "🇪🇺",
       "color": "#3B82F6",
-      "cardCount": 10,
+      "cardCount": 9,
       "type": "thematic"
     },
     {

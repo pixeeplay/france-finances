@@ -151,6 +151,20 @@ export function checkData({ decksMeta, cardFiles, costExceptions = {} }: DataChe
     if (ids.length > 1) errors.push(`Titre en double : ${ids.join(", ")}`);
   }
 
+  // Doublons probables : deux cartes jouables avec le même montant et la même
+  // source décrivent souvent le même argent (que l'on pourrait « couper » deux fois)
+  const sameAmountAndSource = new Map<string, string[]>();
+  for (const card of cards) {
+    if (card.playable === false || card.amountBillions === 0 || !card.sourceUrl) continue;
+    const key = `${card.amountBillions}|${card.sourceUrl}`;
+    sameAmountAndSource.set(key, [...(sameAmountAndSource.get(key) ?? []), card.id]);
+  }
+  for (const [key, ids] of sameAmountAndSource) {
+    if (ids.length > 1) {
+      warnings.push(`Doublon probable (même montant, ${key.split("|")[0]} Md€, et même source) : ${ids.join(", ")}`);
+    }
+  }
+
   // Exceptions de coût : doivent viser des cartes existantes
   for (const id of Object.keys(costExceptions)) {
     if (!seenIds.has(id)) errors.push(`data-check-exceptions.json : carte ${id} inconnue`);

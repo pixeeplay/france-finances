@@ -29,7 +29,7 @@
     "sourceUrl": "https://www.defense.gouv.fr/sites/default/files/ministere-armees/Rapport%20au%20Parlement%202025%20sur%20les%20exportations%20d%E2%80%99armement%20de%20la%20France%20%28V122025%29.pdf",
     "sourceDate": "2025",
     "level": 2,
-    "kind": "depense",
+    "kind": "agregat",
     "tags": ["Ukraine", "FEP", "Europe", "défense"],
     "equivalence": "La France finance 18 % des remboursements du fonds"
   },
@@ -149,7 +149,7 @@
     "sourceUrl": "https://www.defense.gouv.fr/sites/default/files/ministere-armees/Rapport%20au%20Parlement%202025%20sur%20les%20exportations%20d%E2%80%99armement%20de%20la%20France%20%28V122025%29.pdf",
     "sourceDate": "2025",
     "level": 2,
-    "kind": "depense",
+    "kind": "agregat",
     "tags": ["Ukraine", "bilan", "aide totale"],
     "equivalence": "5,9 Md€ en près de 3 ans, soit environ 29 € par habitant et par an"
   },
