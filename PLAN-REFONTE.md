@@ -173,13 +173,15 @@ Phases 1 et 2 livrées et déployées (2026-10-02 → 04) : assainissement et s�
 - [ ] Relire les 3 dossiers et les passer en `publie` (`src/data/dossiers/catalog.ts`).
 - [x] Intégration de la vague sur `vague/octobre` (merges `--no-ff`, checks et e2e prod verts).
 - [x] Corrections des relectures (`vague/octobre-final`) : titres des brouillons retirés du JS public (navigation calculée côté serveur), deck du jour stable au déploiement (`DAILY_KIND_FILTER_FROM`), dossiers alignés sur la loi de finances 2026 et le projet 2027 (dette, impôt sur le revenu, CSG), cartes cumulées ou ponctuelles en agrégat (`cre-10`, `ukr-09`, `ukr-02`, `cre-04`, `eta-15`, `fre-09`), doublon FEP (`fre-04`) et montants non sourcés (`hop-10`, `cul-14`) hors jeu, avertissement « doublon probable » dans `data:check`, accessibilité de `/dossiers` et du graphique 2026/2027, `engines` Node 22.13.
-- [ ] **Déploiement** : le tirage du deck du jour change de règle le `DAILY_KIND_FILTER_FROM` (`src/lib/daily.ts`, 2026-10-06). Déployer au plus tard le 5 octobre 2026 ; sinon, repousser cette date au lendemain du déploiement (et mettre à jour le test qui la fige) pour qu'un deck déjà servi ne change pas en cours de journée.
+- [x] **Déploiement** (fait le 2026-10-05 à 19 h 56) : le tirage du deck du jour change de règle le `DAILY_KIND_FILTER_FROM` (`src/lib/daily.ts`, 2026-10-06). Déployer au plus tard le 5 octobre 2026 ; sinon, repousser cette date au lendemain du déploiement (et mettre à jour le test qui la fige) pour qu'un deck déjà servi ne change pas en cours de journée.
 - [ ] Doublons probables signalés par `data:check` (même montant, même source) à trancher : `san-02`/`hop-01`, `emp-17`/`soc-16`, `cre-05`/`zom-03`, `soc-02`/`ret-06`/`ret-09`, `soc-01`/`ret-10`, `log-09`/`log-17`, `emp-08`/`san-06`, `def-03`/`ukr-11`, `col-20`/`emp-03`, `agr-06`/`agr-11`, `cul-12`/`cul-15` (certains sont deux postes distincts d'un même rapport).
 - [ ] `/chiffres` : recettes fiscales de l'État encore au PLF 2026 initial (`STATE_TAX_REVENUE_2026`) ; passer à la loi de finances 2026 (dossier de presse 2027 : impôt sur le revenu 99,8 Md€, TVA 99,8 Md€).
 - [ ] `eslint-config-next` en 16.3 alors que `next` est en 16.1 : aligner `next` sur 16.3 dans une PR séparée.
-- [ ] Point Analytics (usage réel) et chiffrage hébergement (OVH / o2switch / Vercel).
+- [x] Point Analytics (2026-10-05 : ~40 visiteurs uniques / 30 j, surtout l'équipe ; priorité = audience) et chiffrage hébergement (france-finances ≈ 210 Mo sur un VPS de 189 conteneurs saturé ; le déménager seul n'économise rien).
 
 ### Appliquer les migrations 0003 et 0004 (prod)
+
+**Fait le 2026-10-06** (sauvegarde `pg_dump` préalable hors serveur ; base sans journal Drizzle, fichiers appliqués via `psql -1`). Vérifié : 3 clés étrangères en cascade, `community_votes` supprimée, `idx_analytics_ip` créé, 30 sessions / 304 votes intacts. Pour les prochaines migrations : la base n'a pas de table `drizzle.__drizzle_migrations`, appliquer les fichiers à la main de la même façon.
 
 À faire à la main, après le déploiement du code de `chore/dette` (le code ne lit plus `community_votes`).
 
