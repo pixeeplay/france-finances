@@ -81,7 +81,13 @@ function dailyPool(cards: readonly Card[], dateKey: string): Card[] {
     // y compris celles passees hors jeu depuis
     return cards.filter((c) => LEGACY_POOL_IDS.has(c.id));
   }
-  return cards.filter((c) => c.playable !== false && isSpendingCard(c));
+  // Une carte passee hors jeu apres le debut du filtre reste tiree jusqu'a la
+  // veille de `offPlayFrom`, pour que le deck du jour deja servi ne change pas.
+  return cards.filter(
+    (c) =>
+      isSpendingCard(c) &&
+      (c.playable !== false || (c.offPlayFrom !== undefined && dateKey < c.offPlayFrom)),
+  );
 }
 
 /**

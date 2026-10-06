@@ -144,25 +144,26 @@ export const STATE_REVENUE_BRIDGE_2026 = {
 } as const;
 
 /**
- * Recettes fiscales nettes de l'État prévues pour 2026 (projet de loi de
- * finances initial, avant navette), nettes des remboursements et dégrèvements.
- * « Autres recettes fiscales » regroupe les accises sur les énergies (ex-TICPE),
- * les droits de succession, etc. Total : 372,9 Md€. Les recettes nettes du
- * budget (STATE_BUDGET_2026) s'en déduisent après recettes non fiscales et
- * prélèvements sur recettes (collectivités, Union européenne).
+ * Recettes fiscales nettes de l'État votées pour 2026 (loi de finances
+ * initiale), nettes des remboursements et dégrèvements ; TVA = part revenant
+ * à l'État. Total : 363,6 Md€, identique au premier terme de
+ * STATE_REVENUE_BRIDGE_2026 (article d'équilibre de la LF 2026).
+ * Source : dossier de presse « Budget 2027 », tableau « Solde général du
+ * budget de l'État », colonne LFI 2026 (p. 55).
  */
 export const STATE_TAX_REVENUE_2026: ChiffresDataset<AmountItem> = {
-  period: "2026 (PLF initial, octobre 2025)",
+  period: "2026 (loi de finances votée)",
   source: {
-    label: "Sénat — Rapport général sur le PLF 2026, tome I (le budget de 2026 et son contexte)",
-    url: "https://www.senat.fr/rap/l25-139-1/l25-139-19.html",
-    date: "2025-11",
+    label: "Ministères économiques et financiers — Dossier de presse « Budget 2027 » (colonne loi de finances 2026)",
+    url: "https://solidarites.gouv.fr/sites/solidarite/files/2026-10/DP-BUDGET-2027.pdf",
+    date: "2026-10",
   },
   items: [
-    { label: "TVA nette", amountBn: 109.1 },
-    { label: "Impôt sur le revenu net", amountBn: 104.0 },
-    { label: "Impôt sur les sociétés net", amountBn: 59.0 },
-    { label: "Autres impôts (dont taxes sur les carburants et l'énergie)", amountBn: 100.8 },
+    { label: "TVA (part de l'État)", amountBn: 99.8 },
+    { label: "Impôt sur le revenu", amountBn: 99.8 },
+    { label: "Impôt sur les sociétés", amountBn: 61.6 },
+    { label: "Taxes sur les carburants et l'énergie", amountBn: 23.5 },
+    { label: "Autres impôts", amountBn: 78.9 },
   ],
 };
 

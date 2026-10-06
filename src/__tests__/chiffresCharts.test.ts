@@ -7,6 +7,7 @@ import {
   PUBLIC_SPENDING_BY_FUNCTION,
   STATE_MISSIONS_2026,
   STATE_TAX_REVENUE_2026,
+  STATE_REVENUE_BRIDGE_2026,
   getChiffresSources,
 } from "@/data/chiffres";
 import {
@@ -134,13 +135,14 @@ describe("toBarData / toShares", () => {
   });
 
   it("calcule les parts des recettes fiscales 2026", () => {
-    const shares = toShares(STATE_TAX_REVENUE_2026.items, fmt, ["emerald", "blue", "violet", "amber"]);
-    expect(shares.map((s) => s.pct)).toEqual([29, 28, 16, 27]);
-    expect(shares.map((s) => s.tone)).toEqual(["emerald", "blue", "violet", "amber"]);
+    const shares = toShares(STATE_TAX_REVENUE_2026.items, fmt, ["emerald", "blue", "violet", "amber", "slate"]);
+    expect(shares.map((s) => s.pct)).toEqual([27, 27, 17, 6, 22]);
+    expect(shares.map((s) => s.tone)).toEqual(["emerald", "blue", "violet", "amber", "slate"]);
   });
 
-  it("les recettes fiscales nettes 2026 somment à 372,9 Md€ et la source est listée", () => {
-    expect(sumAmounts(STATE_TAX_REVENUE_2026.items)).toBeCloseTo(372.9, 6);
+  it("les recettes fiscales nettes 2026 somment à 363,6 Md€, comme le calcul pas à pas, et la source est listée", () => {
+    expect(sumAmounts(STATE_TAX_REVENUE_2026.items)).toBeCloseTo(363.6, 6);
+    expect(STATE_REVENUE_BRIDGE_2026.steps[0].amountM / 1000).toBeCloseTo(sumAmounts(STATE_TAX_REVENUE_2026.items), 0);
     expect(getChiffresSources().map((s) => s.url)).toContain(STATE_TAX_REVENUE_2026.source.url);
   });
 });

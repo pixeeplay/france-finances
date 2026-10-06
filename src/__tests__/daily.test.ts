@@ -115,7 +115,9 @@ describe("drawDailyCards", () => {
     for (let i = 0; i < 60; i++) {
       const day = new Date(Date.UTC(2026, 9, 6 + i)).toISOString().slice(0, 10);
       expect(
-        drawDailyCards(withOffPlay, day).every((c) => c.playable !== false),
+        drawDailyCards(withOffPlay, day).every(
+          (c) => c.playable !== false || (c.offPlayFrom !== undefined && day < c.offPlayFrom),
+        ),
       ).toBe(true);
     }
   });
@@ -168,17 +170,18 @@ describe("drawDailyCards", () => {
       "soc-06",
       "env-15",
     ]);
+    // Tirage futur (jamais servi) : recalcule apres le retrait des doublons du 2026-10-07.
     expect(drawDailyCards(withOffPlay, "2026-11-15").map((c) => c.id)).toEqual([
-      "sec-08",
-      "ret-01",
-      "edu-01",
-      "zom-01",
-      "imm-15",
-      "def-05",
-      "log-08",
       "cul-09",
-      "eta-08",
-      "emp-17",
+      "imm-17",
+      "env-04",
+      "sec-08",
+      "soc-06",
+      "agr-10",
+      "eta-18",
+      "log-07",
+      "edu-09",
+      "def-12",
     ]);
   });
 

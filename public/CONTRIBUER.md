@@ -2,7 +2,7 @@
 
 > **Comment proposer un deck de cartes pour Budget Swipe**
 > Site : france-finances.com
-> Contact : https://pixeeplay.fr/play/?intent=contribuer
+> Contact : https://pixeeplay.com/play/?intent=contribuer
 
 ---
 
@@ -355,7 +355,7 @@ Toujours utiliser `~` (tilde) car les montants budgétaires sont des estimations
 ### Option 1 : Nous contacter
 
 Envoyez-nous vos propositions via le formulaire de contact :
-https://pixeeplay.fr/play/?intent=contribuer
+https://pixeeplay.com/play/?intent=contribuer
 
 Vous pouvez envoyer :
 

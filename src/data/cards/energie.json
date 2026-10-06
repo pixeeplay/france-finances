@@ -259,7 +259,9 @@
     "level": 2,
     "kind": "agregat",
     "tags": ["énergie", "ARENH", "nucléaire", "EDF"],
-    "equivalence": "20 TWh supplémentaires vendus à prix régulé en 2022"
+    "equivalence": "20 TWh supplémentaires vendus à prix régulé en 2022",
+    "playable": false,
+    "offPlayFrom": "2026-10-07"
   },
   {
     "id": "cre-06",

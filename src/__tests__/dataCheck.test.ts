@@ -254,7 +254,6 @@ describe("cartes hors jeu", () => {
     const { default: data, offPlayCards } = await import("@/data");
     expect(offPlayCards.length).toBeGreaterThan(0);
     for (const card of offPlayCards) {
-      expect(card.amountBillions).toBe(0);
       expect(data.cards.some((c) => c.id === card.id)).toBe(false);
     }
     expect(data.cards.every((c) => c.playable !== false)).toBe(true);

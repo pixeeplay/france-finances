@@ -16,7 +16,7 @@
       "description": "Nucléaire, renouvelables, hydrogène, crise énergétique, précarité",
       "icon": "⚡",
       "color": "#F59E0B",
-      "cardCount": 29,
+      "cardCount": 28,
       "image": "/categories/energie.svg",
       "type": "main"
     },
@@ -26,7 +26,7 @@
       "description": "Hôpitaux, médicaments, prévention, urgences, addictions",
       "icon": "🏥",
       "color": "#EF4444",
-      "cardCount": 29,
+      "cardCount": 28,
       "image": "/categories/sante.svg",
       "type": "main"
     },
@@ -36,7 +36,7 @@
       "description": "Retraites, famille, handicap, dépendance, pauvreté",
       "icon": "🤝",
       "color": "#8B5CF6",
-      "cardCount": 32,
+      "cardCount": 29,
       "image": "/categories/social.svg",
       "type": "main"
     },

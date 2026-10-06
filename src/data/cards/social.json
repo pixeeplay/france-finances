@@ -3,7 +3,7 @@
     "id": "soc-01",
     "title": "Retraites",
     "subtitle": "Total des pensions de retraite (tous régimes)",
-    "description": "En 2025, les dépenses de retraite atteignent 422 Md€, soit 14,1 % du PIB et 24,3 % de l'ensemble des dépenses publiques (COR). La réforme de 2023 (âge légal porté à 64 ans) est suspendue par le budget 2026 de la Sécurité sociale pour la génération 1964 et le début de la génération 1965. Le système de retraite affiche un déficit de 5,1 Md€ en 2025 (-0,2 point de PIB).",
+    "description": "En 2025, les dépenses de retraite atteignent 422 Md€, soit 14,1 % du PIB et 24,3 % de l'ensemble des dépenses publiques (COR). Parmi les pays suivis par le COR, c'est le deuxième niveau le plus élevé en part du PIB, après l'Italie ; rapportées au nombre d'habitants, ces dépenses se situent au niveau médian. La réforme de 2023 (âge légal porté à 64 ans) est suspendue par le budget 2026 de la Sécurité sociale pour la génération 1964 et le début de la génération 1965. Le système de retraite affiche un déficit de 5,1 Md€ en 2025 (-0,2 point de PIB).",
     "amountBillions": 422,
     "costPerCitizen": 6107,
     "deckId": "social",
@@ -33,7 +33,9 @@
     "level": 1,
     "kind": "agregat",
     "tags": ["social", "réforme", "retraites"],
-    "equivalence": "Suspension : 1,8 Md€ par an en moyenne jusqu'en 2032 selon le Conseil d'orientation des retraites"
+    "equivalence": "Suspension : 1,8 Md€ par an en moyenne jusqu'en 2032 selon le Conseil d'orientation des retraites",
+    "playable": false,
+    "offPlayFrom": "2026-10-07"
   },
   {
     "id": "soc-03",
@@ -384,7 +386,9 @@
     "kind": "agregat",
     "tags": ["retraites", "comparaison", "OCDE", "international"],
     "equivalence": "14,1 % du PIB : 2e rang des pays suivis par le COR, après l'Italie",
-    "year": 2025
+    "year": 2025,
+    "playable": false,
+    "offPlayFrom": "2026-10-07"
   },
   {
     "id": "soc-13",
@@ -456,7 +460,9 @@
     "level": 1,
     "kind": "depense",
     "tags": ["travail", "accidents", "cotisations"],
-    "equivalence": "1,6 Md€ reversés à l'Assurance maladie en 2025 pour les accidents et maladies professionnels non déclarés"
+    "equivalence": "1,6 Md€ reversés à l'Assurance maladie en 2025 pour les accidents et maladies professionnels non déclarés",
+    "playable": false,
+    "offPlayFrom": "2026-10-07"
   },
   {
     "id": "soc-17",

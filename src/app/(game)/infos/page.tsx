@@ -26,7 +26,7 @@ export default function InfosPage() {
                 <h2 className="text-lg font-bold">Budget Swipe</h2>
                 <p className="text-xs text-muted-foreground">
                   par{" "}
-                  <a href="https://pixeeplay.fr" target="_blank" rel="noopener noreferrer" className="inline-flex items-center min-h-[44px] -my-[14px] text-primary hover:underline">pixeeplay</a>
+                  <a href="https://pixeeplay.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center min-h-[44px] -my-[14px] text-primary hover:underline">pixeeplay</a>
                 </p>
               </div>
             </div>
@@ -150,7 +150,7 @@ export default function InfosPage() {
               soutenir son développement, contactez-nous !
             </p>
             <a
-              href="https://pixeeplay.fr/play/?intent=sponsoriser"
+              href="https://pixeeplay.com/play/?intent=sponsoriser"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 bg-muted/30 rounded-xl p-4 border border-border/50 hover:bg-muted/50 transition-colors"

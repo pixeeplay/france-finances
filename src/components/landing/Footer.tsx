@@ -25,7 +25,7 @@ export function Footer() {
               Contribuer
             </Link>
             <a
-              href="https://pixeeplay.fr/play/?intent=sponsoriser"
+              href="https://pixeeplay.com/play/?intent=sponsoriser"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center min-h-[44px] px-5 rounded-xl bg-brand text-white text-sm font-heading font-bold hover:bg-brand-hover transition-colors"
@@ -68,7 +68,7 @@ export function Footer() {
           <p>
             Fait avec rigueur par{" "}
             <a
-              href="https://pixeeplay.fr"
+              href="https://pixeeplay.com"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center min-h-[44px] -my-[14px] font-semibold text-brand-fg hover:underline"

@@ -141,3 +141,7 @@ Les écarts sont admis seulement s'ils sont listés dans `data-check-exceptions.
 - « à vérifier » : montant et coût par habitant ne portent pas sur la même grandeur ; à trancher lors du fact-check.
 
 `data:check` signale aussi une exception devenue inutile.
+
+Doublons retirés le 2026-10-06 (`playable: false`, `offPlayFrom: "2026-10-07"`) : `hop-01` (= `san-02`), `soc-16` (= `emp-17`), `cre-05` (= `zom-03`), `soc-02` (= `ret-06`), `ret-10` (comparaison internationale reportée dans `soc-01`). Les autres « doublons probables » de `data:check` sont des sujets différents au montant identique (coïncidence) : `ret-09`, `log-09`/`log-17`, `emp-08`/`san-06`, `def-03`/`ukr-11`, `col-20`/`emp-03`, `agr-06`/`agr-11`, `cul-12`/`cul-15`. Résultat : 360 cartes jouables (126 L1, 129 L2, 105 L3), 17 hors jeu.
+
+`offPlayFrom` : une carte passée hors jeu reste dans le tirage du deck du jour jusqu'à la veille de cette date, pour qu'un deck déjà servi ne change pas. Toujours la fixer au lendemain du déploiement.

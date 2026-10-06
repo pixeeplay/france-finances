@@ -191,7 +191,9 @@
     "level": 1,
     "kind": "depense",
     "tags": ["santé", "hôpital", "budget"],
-    "equivalence": "Environ 132 € par habitant et par mois"
+    "equivalence": "Environ 132 € par habitant et par mois",
+    "playable": false,
+    "offPlayFrom": "2026-10-07"
   },
   {
     "id": "hop-02",

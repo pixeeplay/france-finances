@@ -170,12 +170,12 @@ Phases 1 et 2 livrées et déployées (2026-10-02 → 04) : assainissement et s�
 - [x] Champ `trend` : retiré (aucune source), `feat/kind-trend`.
 - [x] Bloc « Ce que prévoit le projet de budget 2027 », étiqueté projet (loi votée attendue fin décembre) : section `#budget-2027` de `/chiffres` + bandeau sur l'accueil (`feat/plf-2027`).
 - [x] Dossiers éditoriaux (Phase 3) : gabarit `/dossiers` + 3 premiers dossiers en brouillon (`feat/dossiers`).
-- [ ] Relire les 3 dossiers et les passer en `publie` (`src/data/dossiers/catalog.ts`).
+- [x] 3 dossiers relus par le propriétaire et publiés (2026-10-06).
 - [x] Intégration de la vague sur `vague/octobre` (merges `--no-ff`, checks et e2e prod verts).
 - [x] Corrections des relectures (`vague/octobre-final`) : titres des brouillons retirés du JS public (navigation calculée côté serveur), deck du jour stable au déploiement (`DAILY_KIND_FILTER_FROM`), dossiers alignés sur la loi de finances 2026 et le projet 2027 (dette, impôt sur le revenu, CSG), cartes cumulées ou ponctuelles en agrégat (`cre-10`, `ukr-09`, `ukr-02`, `cre-04`, `eta-15`, `fre-09`), doublon FEP (`fre-04`) et montants non sourcés (`hop-10`, `cul-14`) hors jeu, avertissement « doublon probable » dans `data:check`, accessibilité de `/dossiers` et du graphique 2026/2027, `engines` Node 22.13.
 - [x] **Déploiement** (fait le 2026-10-05 à 19 h 56) : le tirage du deck du jour change de règle le `DAILY_KIND_FILTER_FROM` (`src/lib/daily.ts`, 2026-10-06). Déployer au plus tard le 5 octobre 2026 ; sinon, repousser cette date au lendemain du déploiement (et mettre à jour le test qui la fige) pour qu'un deck déjà servi ne change pas en cours de journée.
-- [ ] Doublons probables signalés par `data:check` (même montant, même source) à trancher : `san-02`/`hop-01`, `emp-17`/`soc-16`, `cre-05`/`zom-03`, `soc-02`/`ret-06`/`ret-09`, `soc-01`/`ret-10`, `log-09`/`log-17`, `emp-08`/`san-06`, `def-03`/`ukr-11`, `col-20`/`emp-03`, `agr-06`/`agr-11`, `cul-12`/`cul-15` (certains sont deux postes distincts d'un même rapport).
-- [ ] `/chiffres` : recettes fiscales de l'État encore au PLF 2026 initial (`STATE_TAX_REVENUE_2026`) ; passer à la loi de finances 2026 (dossier de presse 2027 : impôt sur le revenu 99,8 Md€, TVA 99,8 Md€).
+- [x] (2026-10-06 : 5 vrais doublons passés hors jeu, les autres sont des coïncidences, voir `src/data/README.md`) Doublons probables signalés par `data:check` (même montant, même source) à trancher : `san-02`/`hop-01`, `emp-17`/`soc-16`, `cre-05`/`zom-03`, `soc-02`/`ret-06`/`ret-09`, `soc-01`/`ret-10`, `log-09`/`log-17`, `emp-08`/`san-06`, `def-03`/`ukr-11`, `col-20`/`emp-03`, `agr-06`/`agr-11`, `cul-12`/`cul-15` (certains sont deux postes distincts d'un même rapport).
+- [x] (2026-10-06, loi de finances 2026 votée : 363,6 Md€) `/chiffres` : recettes fiscales de l'État encore au PLF 2026 initial (`STATE_TAX_REVENUE_2026`) ; passer à la loi de finances 2026 (dossier de presse 2027 : impôt sur le revenu 99,8 Md€, TVA 99,8 Md€).
 - [ ] `eslint-config-next` en 16.3 alors que `next` est en 16.1 : aligner `next` sur 16.3 dans une PR séparée.
 - [x] Point Analytics (2026-10-05 : ~40 visiteurs uniques / 30 j, surtout l'équipe ; priorité = audience) et chiffrage hébergement (france-finances ≈ 210 Mo sur un VPS de 189 conteneurs saturé ; le déménager seul n'économise rien).
 
@@ -208,6 +208,8 @@ Procédure :
    - S'il est absent ou incomplet (base créée ou modifiée par `db:push`) : **ne pas** lancer `db:migrate`, qui rejouerait 0000 (`CREATE TABLE` sans `IF NOT EXISTS`) et échouerait. Appliquer les deux fichiers dans une transaction : `psql -v ON_ERROR_STOP=1 -1 -f drizzle/0003_drop_community_votes.sql -f drizzle/0004_schema_alignment.sql`.
 4. Choisir un moment calme (la nuit). Dans la transaction, l'ajout de chaque clé étrangère vérifie toutes les lignes existantes et bloque les écritures sur `votes`, `sessions` et `audit_responses` jusqu'à la fin : les fins de partie envoyées à ce moment attendent (quelques secondes vu le volume actuel). `CREATE INDEX` (sans `CONCURRENTLY`, impossible en transaction) bloque de même les écritures sur `analytics_events`. Si les tables ont beaucoup grossi, ajouter plutôt les clés en `NOT VALID` puis lancer `VALIDATE CONSTRAINT` dans une transaction séparée, qui ne bloque pas les écritures.
 5. Contrôler : `\d votes`, `\d sessions`, `\d audit_responses` (clés en `ON DELETE CASCADE`), `\di idx_analytics_ip`, `\dt community_votes` (absente). Relancer la requête `pg_constraint` de l'étape 2 : une seule clé par colonne, `confdeltype = 'c'` (cascade).
+
+- [x] Liens et contact Pixeeplay passés de pixeeplay.fr à pixeeplay.com (2026-10-06 ; pixeeplay.fr n'a pas de serveur de messagerie, `contact@pixeeplay.fr` ne recevait rien).
 
 ### Encore ouvert (plus tard)
 

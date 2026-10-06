@@ -60,7 +60,7 @@ export default function AProposPage() {
           <p>
             france-finances.com est développé par{" "}
             <a
-              href="https://pixeeplay.fr"
+              href="https://pixeeplay.com"
               target="_blank"
               rel="noopener noreferrer"
               className="underline underline-offset-4 hover:text-foreground"

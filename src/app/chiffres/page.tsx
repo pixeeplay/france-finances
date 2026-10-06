@@ -82,7 +82,7 @@ const NAV: readonly { id: string; label: string; tone: ChartTone }[] = [
 ];
 
 const TOP_MISSIONS = 10;
-const REVENUE_TONES: readonly ChartTone[] = ["emerald", "blue", "violet", "amber"];
+const REVENUE_TONES: readonly ChartTone[] = ["emerald", "blue", "violet", "amber", "slate"];
 
 const fmtBn = (v: number) => formatBillionsExact(v);
 const fmtBn0 = (v: number) => formatBillionsExact(v, 0);
@@ -369,15 +369,15 @@ export default function ChiffresPage() {
           <ChartFigure
             id="recettes"
             title="Sur 100 € d'impôts encaissés par l'État"
-            subtitle="Part de chaque grand impôt, d'après le projet de loi de finances pour 2026"
-            description="Sur 100 € d'impôts encaissés par l'État en 2026 : la part de la TVA, de l'impôt sur le revenu, de l'impôt sur les sociétés et des autres impôts, d'après la répartition prévue dans le projet de loi de finances."
+            subtitle="Part de chaque grand impôt dans la loi de finances 2026 (363,6 Md€ au total)"
+            description="Sur 100 € d'impôts encaissés par l'État en 2026 : la part de la TVA, de l'impôt sur le revenu, de l'impôt sur les sociétés, des taxes sur l'énergie et des autres impôts, d'après la loi de finances votée pour 2026."
             height={DONUT_CHART_HEIGHT}
             chart={<RevenueDonutChart data={revenue} centerValue="100 €" centerLabel="d'impôts" />}
             split
             legend={<ShareLegend items={revenue} />}
             table={
               <DataTable
-                caption="Répartition des recettes fiscales nettes de l'État prévues pour 2026"
+                caption="Répartition des recettes fiscales nettes de l'État, loi de finances 2026"
                 columns={[{ header: "Impôt" }, { header: "Montant prévu (projet de budget)", numeric: true }, { header: "Sur 100 €", numeric: true }]}
                 rows={revenue.map((r) => [r.label, fmtBn(r.value), r.display])}
               />

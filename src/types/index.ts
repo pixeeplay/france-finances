@@ -47,6 +47,12 @@ export interface Card {
    * montant officiel chiffré). Absent = jouable.
    */
   playable?: false;
+  /**
+   * Date (AAAA-MM-JJ, heure de Paris) a partir de laquelle une carte passee hors
+   * jeu sort aussi du deck du jour. Avant cette date, elle reste dans le tirage
+   * pour qu'un deck du jour deja servi ne change pas. Absent = deja sortie.
+   */
+  offPlayFrom?: string;
 }
 
 // === DECK ===

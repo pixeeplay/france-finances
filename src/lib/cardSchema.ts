@@ -88,8 +88,10 @@ export const cardSchema = z.strictObject({
   kind: cardKindSchema,
   tags: z.array(nonEmpty).optional(),
   equivalence: z.string().optional(),
-  /** `false` : carte hors jeu (gardée dans les données, sans montant officiel). */
+  /** `false` : carte hors jeu (gardée dans les données : sans montant officiel, ou doublon d'une autre carte). */
   playable: z.literal(false).optional(),
+  /** Date de sortie du deck du jour d'une carte passée hors jeu (AAAA-MM-JJ). */
+  offPlayFrom: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
 });
 
 export const deckSchema = z.strictObject({
